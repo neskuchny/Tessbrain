@@ -1,0 +1,471 @@
+{
+ "version": 1,
+ "name": "Рекламные креативы: 4 формата",
+ "nodes": [
+  {
+   "id": "note",
+   "type": "note",
+   "position": {
+    "x": 40,
+    "y": 60
+   },
+   "data": {
+    "text": "Рекламные креативы: 4 формата.\n\n1) Загрузите референсы слева: логотип, товар, фирменный стиль.\n2) В каждом формате — свой Промпт → Генерация. Впишите оффер в текст формата и нажмите Run.\n\nКаждый формат независим: правьте текст, добавляйте свои референсы. Сделать новый формат: перетащите Промпт и Генерацию, соедините с референсами."
+   },
+   "width": 300,
+   "style": {
+    "width": 300,
+    "height": 200
+   }
+  },
+  {
+   "id": "img-logo",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 60
+   },
+   "data": {
+    "label": "Логотип",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "img-product",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 390
+   },
+   "data": {
+    "label": "Товар",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "img-style",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 720
+   },
+   "data": {
+    "label": "Фирменный стиль",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "p-feed",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1320
+   },
+   "data": {
+    "label": "Лента 1:1",
+    "prompt": "Рекламный креатив 1:1 для ленты. Оффер: [впишите главную выгоду]. Заголовок: [3–6 слов]. CTA-кнопка: [текст]. Товар с референса — герой кадра, логотип с референса в углу (не перерисовывай), фирменные цвета со стилевого референса."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-feed",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 410
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "1:1",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-feed",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 430
+   },
+   "data": {
+    "label": "Лента 1:1",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-story",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1590
+   },
+   "data": {
+    "label": "Сторис 9:16",
+    "prompt": "Вертикальный креатив 9:16. Оффер: [впишите]. Товар с референса крупно, логотип сверху, крупная CTA внизу, безопасные поля под интерфейс. Фирменные цвета с референса."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-story",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 760
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "9:16",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-story",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 800
+   },
+   "data": {
+    "label": "Сторис 9:16",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-yt",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1860
+   },
+   "data": {
+    "label": "Обложка YouTube 16:9",
+    "prompt": "Обложка YouTube 16:9: [3–5 слов очень крупно], товар с референса, высокий контраст, логотип в углу. Читается в маленькой миниатюре."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-yt",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 1110
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-yt",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 1170
+   },
+   "data": {
+    "label": "Обложка YouTube 16:9",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-banner",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1050
+   },
+   "data": {
+    "label": "Веб-баннер 21:9",
+    "prompt": "Широкий баннер 21:9: товар справа, заголовок [впишите] и CTA слева, логотип с референса, фирменные цвета, много воздуха."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-banner",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "21:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-banner",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 60
+   },
+   "data": {
+    "label": "Веб-баннер 21:9",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-p-feed-nb-feed",
+   "source": "p-feed",
+   "sourceHandle": "text",
+   "target": "nb-feed",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-feed-o-feed",
+   "source": "nb-feed",
+   "sourceHandle": "image",
+   "target": "o-feed",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb-feed",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb-feed",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-product-nb-feed",
+   "source": "img-product",
+   "sourceHandle": "image",
+   "target": "nb-feed",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-style-nb-feed",
+   "source": "img-style",
+   "sourceHandle": "image",
+   "target": "nb-feed",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-story-nb-story",
+   "source": "p-story",
+   "sourceHandle": "text",
+   "target": "nb-story",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-story-o-story",
+   "source": "nb-story",
+   "sourceHandle": "image",
+   "target": "o-story",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb-story",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb-story",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-product-nb-story",
+   "source": "img-product",
+   "sourceHandle": "image",
+   "target": "nb-story",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-style-nb-story",
+   "source": "img-style",
+   "sourceHandle": "image",
+   "target": "nb-story",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-yt-nb-yt",
+   "source": "p-yt",
+   "sourceHandle": "text",
+   "target": "nb-yt",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-yt-o-yt",
+   "source": "nb-yt",
+   "sourceHandle": "image",
+   "target": "o-yt",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb-yt",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb-yt",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-product-nb-yt",
+   "source": "img-product",
+   "sourceHandle": "image",
+   "target": "nb-yt",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-style-nb-yt",
+   "source": "img-style",
+   "sourceHandle": "image",
+   "target": "nb-yt",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-banner-nb-banner",
+   "source": "p-banner",
+   "sourceHandle": "text",
+   "target": "nb-banner",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-banner-o-banner",
+   "source": "nb-banner",
+   "sourceHandle": "image",
+   "target": "o-banner",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb-banner",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb-banner",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-product-nb-banner",
+   "source": "img-product",
+   "sourceHandle": "image",
+   "target": "nb-banner",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-style-nb-banner",
+   "source": "img-style",
+   "sourceHandle": "image",
+   "target": "nb-banner",
+   "targetHandle": "image",
+   "type": "default"
+  }
+ ],
+ "edgeStyle": "curved"
+}

@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "name": "Процесс: после встречи",
+  "nodes": [
+    {
+      "id": "t1",
+      "type": "trigger",
+      "position": {
+        "x": 40,
+        "y": 200
+      },
+      "data": {
+        "label": "Запустить вручную",
+        "trigger_type": "manual",
+        "payload": "обработать последнюю встречу"
+      }
+    },
+    {
+      "id": "a1",
+      "type": "ask_brain",
+      "position": {
+        "x": 320,
+        "y": 200
+      },
+      "data": {
+        "label": "Извлечь решения",
+        "prompt": "Из последней встречи выдели принятые решения и договорённости с ответственными и сроками. Отдельно — открытые вопросы."
+      }
+    },
+    {
+      "id": "k1",
+      "type": "task",
+      "position": {
+        "x": 620,
+        "y": 90
+      },
+      "data": {
+        "label": "Задача в трекер",
+        "title": "Выполнить договорённости встречи"
+      }
+    },
+    {
+      "id": "n1",
+      "type": "notify",
+      "position": {
+        "x": 620,
+        "y": 300
+      },
+      "data": {
+        "label": "Сводка в Telegram",
+        "channel": "telegram",
+        "text": "📝 Итоги встречи и задачи",
+        "subject": "После встречи"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-t1-a1",
+      "source": "t1",
+      "target": "a1",
+      "type": "default"
+    },
+    {
+      "id": "e-a1-k1",
+      "source": "a1",
+      "target": "k1",
+      "type": "default"
+    },
+    {
+      "id": "e-a1-n1",
+      "source": "a1",
+      "target": "n1",
+      "type": "default"
+    }
+  ],
+  "edgeStyle": "curved"
+}

@@ -1,0 +1,61 @@
+{
+  "messenger": {
+    "help_unlinked": "Hi! This account is not linked to Tessbrain yet.\nOpen Tessbrain → Settings → Connected accounts → Connect, then press Start here via the deep link.",
+    "linked_success": "✅ Account linked to {user_id}.\nYou can ask questions — I'm connected to your knowledge base.",
+    "invalid_token": "❌ Token is invalid or expired. Generate a new one in the UI.",
+    "ask_question_hint": "Send a question — I'll answer based on your company data.",
+    "chat_unavailable": "⚠️ AI core is currently unavailable. Try opening Tessbrain in your browser or retry in a minute.",
+    "chat_failed": "⚠️ Couldn't generate a response. Please try again shortly.",
+    "chat_empty_reply": "(empty response)",
+    "chat_empty_question": "Send a question — I'll answer.",
+    "board_wait_resumed": "✅ Got it — continuing the process with your reply.",
+    "board_wait_next": "✅ Got it. One more reply is needed — I'll message you next.",
+    "board_wait_failed": "⚠️ Couldn't continue the process. It may already be finished or expired.",
+    "board_wait_expired": "⏳ The reply window has expired — the process was stopped. Start it again if needed.",
+    "system_prompt": "You are Tessbrain, your company's enterprise AI assistant. Keep answers concise (≤ 5 sentences), in English, on-point. If a question requires internal company data you don't have, honestly say 'I need to look this up in the system' and suggest opening the web UI for a detailed answer. Don't fabricate facts."
+  },
+  "share_invite": {
+    "subject": "{owner} invited you to Tessbrain: {note}",
+    "default_note": "(no description)",
+    "text_body": "Hi.\n\n{owner} ({org_or_email}) shared materials with you in Tessbrain.\n\nPackage: {note}\nResources: {resource_count}\nAccess until: {expires_at}\n\nOpen the link:\n{public_url}\n\nYou'll need to enter this email to verify your identity:\n{grantee_email}\n\nIf you no longer need this link — just ignore the email.\nAccess is limited to the listed resources and automatically expires\nwhen the period ends. All views are logged.\n\n— Tessbrain\n",
+    "html_title": "{owner} shared materials with you",
+    "html_lead": "{org_or_email} gave you access to a package in Tessbrain.",
+    "html_package": "Package:",
+    "html_resources": "Resources:",
+    "html_expires": "Access until:",
+    "html_open_button": "Open package",
+    "html_email_hint": "To verify your identity, you'll need to enter this email on the page:",
+    "html_footer": "Access is limited to the listed resources and automatically expires when the period ends. All views are logged. If you no longer need this link, ignore the email."
+  },
+  "tz": {
+    "template_block_header": "TEMPLATE FOR THIS TASK TYPE",
+    "template_structure_intro": "The structure must include the following blocks:",
+    "template_assumption_hint": "If any required block cannot be covered from the available data — explicitly mark it in the TZ as an assumption / open question, do not invent content."
+  },
+  "pulse": {
+    "title": "Execution pulse",
+    "heading": "🫀 Execution pulse",
+    "untitled": "untitled",
+    "more": "…and {count} more",
+    "sec_urgent": "🔴 Needs your attention",
+    "sec_holes": "🕳️ Not set up properly",
+    "sec_stale": "🪨 No movement (30+ days)",
+    "sec_deadline_soon": "⏳ Due within 2 days",
+    "sec_not_in_tracker": "🔍 Raised in a meeting — missing from the tracker",
+    "sec_postponed": "📅 Deadlines moved",
+    "sec_deferred": "💤 Deliberately deferred (leaving these alone)",
+    "sec_overloaded": "⚖️ Overloaded",
+    "note_overdue": "{days} days overdue",
+    "note_blocked": "blocked",
+    "note_no_deadline": "no deadline",
+    "note_no_owner": "no owner",
+    "note_idle": "{days} days of silence",
+    "note_not_in_tracker": "assigned in a meeting, never entered into the tracker",
+    "note_postponed": "deadline moved: {frm} → {to}",
+    "row_overloaded": "• {owner} — {open} open",
+    "goals": "**🎯 Goals:** moving {forward}, stalled {stalled}, regressed {regressed}",
+    "goals_blocked": ", blocked {blocked}",
+    "totals": "**Totals:** {open} open, {done} done; {overdue} overdue, {no_deadline} without a deadline, {no_owner} without an owner, {stale} stalled.",
+    "empty": "No open tasks in sight — either everything is closed, or tasks are not reaching the system yet. Tasks come from two sources: from meetings (once a meeting is synced, action items land in the graph automatically) and from task trackers (the “Integrations” tab). If your meetings are synced and this is still empty, write to us."
+  }
+}

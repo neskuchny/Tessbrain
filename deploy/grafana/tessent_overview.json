@@ -1,0 +1,172 @@
+{
+  "annotations": {"list": []},
+  "title": "Tessbrain — Overview",
+  "uid": "tessent-overview",
+  "schemaVersion": 38,
+  "version": 1,
+  "tags": ["tessent", "overview"],
+  "timezone": "browser",
+  "refresh": "30s",
+  "time": {"from": "now-6h", "to": "now"},
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "HTTP RPS (5m)",
+      "gridPos": {"x": 0, "y": 0, "w": 6, "h": 4},
+      "targets": [{
+        "expr": "sum(rate(tessent_http_requests_total[5m]))",
+        "refId": "A"
+      }]
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "HTTP 5xx rate (5m)",
+      "gridPos": {"x": 6, "y": 0, "w": 6, "h": 4},
+      "targets": [{
+        "expr": "sum(rate(tessent_http_requests_total{status=~\"5..\"}[5m]))",
+        "refId": "A"
+      }],
+      "fieldConfig": {"defaults": {"color": {"mode": "thresholds"}, "thresholds": {"steps": [{"color": "green", "value": null}, {"color": "red", "value": 0.1}]}}}
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "HTTP latency p50/p95/p99",
+      "gridPos": {"x": 12, "y": 0, "w": 12, "h": 8},
+      "targets": [
+        {"expr": "histogram_quantile(0.50, sum(rate(tessent_http_request_duration_seconds_bucket[5m])) by (le))", "legendFormat": "p50", "refId": "A"},
+        {"expr": "histogram_quantile(0.95, sum(rate(tessent_http_request_duration_seconds_bucket[5m])) by (le))", "legendFormat": "p95", "refId": "B"},
+        {"expr": "histogram_quantile(0.99, sum(rate(tessent_http_request_duration_seconds_bucket[5m])) by (le))", "legendFormat": "p99", "refId": "C"}
+      ]
+    },
+    {
+      "id": 4,
+      "type": "timeseries",
+      "title": "LLM calls/min by provider",
+      "gridPos": {"x": 0, "y": 8, "w": 12, "h": 8},
+      "targets": [{
+        "expr": "sum(rate(tessent_llm_calls_total[1m])) by (provider)",
+        "legendFormat": "{{provider}}",
+        "refId": "A"
+      }]
+    },
+    {
+      "id": 5,
+      "type": "timeseries",
+      "title": "LLM cost per minute (USD)",
+      "gridPos": {"x": 12, "y": 8, "w": 12, "h": 8},
+      "targets": [{
+        "expr": "sum(rate(tessent_llm_cost_usd_total[1m])) by (provider)",
+        "legendFormat": "{{provider}}",
+        "refId": "A"
+      }]
+    },
+    {
+      "id": 6,
+      "type": "timeseries",
+      "title": "Validator runs by decision",
+      "gridPos": {"x": 0, "y": 16, "w": 12, "h": 8},
+      "targets": [{
+        "expr": "sum(rate(tessent_validator_runs_total[5m])) by (decision)",
+        "legendFormat": "{{decision}}",
+        "refId": "A"
+      }]
+    },
+    {
+      "id": 7,
+      "type": "timeseries",
+      "title": "Validator latency p95",
+      "gridPos": {"x": 12, "y": 16, "w": 12, "h": 8},
+      "targets": [{
+        "expr": "histogram_quantile(0.95, sum(rate(tessent_validator_run_duration_seconds_bucket[5m])) by (le, decision))",
+        "legendFormat": "p95 {{decision}}",
+        "refId": "A"
+      }]
+    },
+    {
+      "id": 8,
+      "type": "timeseries",
+      "title": "Messenger inbound/min by platform",
+      "gridPos": {"x": 0, "y": 24, "w": 12, "h": 8},
+      "targets": [{
+        "expr": "sum(rate(tessent_messenger_events_total{event=\"inbound\"}[1m])) by (platform)",
+        "legendFormat": "{{platform}}",
+        "refId": "A"
+      }]
+    },
+    {
+      "id": 9,
+      "type": "timeseries",
+      "title": "Messenger reply latency p95",
+      "gridPos": {"x": 12, "y": 24, "w": 12, "h": 8},
+      "targets": [{
+        "expr": "histogram_quantile(0.95, sum(rate(tessent_messenger_chat_duration_seconds_bucket[5m])) by (le, platform))",
+        "legendFormat": "p95 {{platform}}",
+        "refId": "A"
+      }]
+    },
+    {
+      "id": 10,
+      "type": "timeseries",
+      "title": "Share grants — created vs revoked",
+      "gridPos": {"x": 0, "y": 32, "w": 12, "h": 8},
+      "targets": [{
+        "expr": "sum(rate(tessent_share_grants_total[5m])) by (event)",
+        "legendFormat": "{{event}}",
+        "refId": "A"
+      }]
+    },
+    {
+      "id": 11,
+      "type": "timeseries",
+      "title": "Share views by action (security alarms in red)",
+      "gridPos": {"x": 12, "y": 32, "w": 12, "h": 8},
+      "targets": [{
+        "expr": "sum(rate(tessent_share_views_total[5m])) by (action)",
+        "legendFormat": "{{action}}",
+        "refId": "A"
+      }],
+      "fieldConfig": {
+        "overrides": [
+          {"matcher": {"id": "byName", "options": "scope_violation"}, "properties": [{"id": "color", "value": {"mode": "fixed", "fixedColor": "red"}}]},
+          {"matcher": {"id": "byName", "options": "email_mismatch"}, "properties": [{"id": "color", "value": {"mode": "fixed", "fixedColor": "orange"}}]}
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "type": "timeseries",
+      "title": "Quota denials/min",
+      "gridPos": {"x": 0, "y": 40, "w": 12, "h": 8},
+      "targets": [{
+        "expr": "sum(rate(tessent_quota_decisions_total{decision=\"deny\"}[1m])) by (scope)",
+        "legendFormat": "{{scope}}",
+        "refId": "A"
+      }]
+    },
+    {
+      "id": 13,
+      "type": "stat",
+      "title": "Retention cleanup last 24h",
+      "gridPos": {"x": 12, "y": 40, "w": 12, "h": 4},
+      "targets": [{
+        "expr": "sum(increase(tessent_retention_rows_deleted_total[24h])) by (target)",
+        "legendFormat": "{{target}}",
+        "refId": "A"
+      }]
+    },
+    {
+      "id": 14,
+      "type": "stat",
+      "title": "Active messenger links",
+      "gridPos": {"x": 12, "y": 44, "w": 12, "h": 4},
+      "targets": [{
+        "expr": "sum(tessent_messenger_links_active) by (platform)",
+        "legendFormat": "{{platform}}",
+        "refId": "A"
+      }]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "name": "Кейс 2: Встреча → КП (реальный модуль) → письмо",
+  "nodes": [
+    {
+      "id": "note",
+      "type": "note",
+      "position": { "x": 40, "y": 40 },
+      "data": {
+        "label": "Как это работает",
+        "text": "Встреча завершилась → саммари. Опционально: «Данные CRM» (клиент, цены) и «Веб-поиск» (сайт клиента) добавляют контекст. «Документ / КП» собирает коммерческое предложение РЕАЛЬНЫМ модулем документов (структура по типу, реквизиты компании, факты только из входа) и рендерит его в PDF с фирменным бланком → «Письмо клиенту» отправляет письмо С PDF-ВЛОЖЕНИЕМ. Настройте: (1) папки встреч на триггере; (2) в «Данные CRM»/«Веб-поиск» — запрос под клиента (без датасета/веб-ключа они вернут пусто и не помешают); (3) реквизиты и бланк — «Документы по встрече → Реквизиты» и «Фирменный стиль»; (4) на «Письмо» — email клиента в поле адресата + SMTP/SendGrid. Проверьте «Прогон», затем включите триггер."
+      },
+      "style": { "width": 440, "height": 250 }
+    },
+    {
+      "id": "t1",
+      "type": "trigger",
+      "position": { "x": 40, "y": 320 },
+      "data": {
+        "label": "Встреча завершилась",
+        "trigger_type": "event",
+        "event_type": "meeting_ended",
+        "folder_ids": [],
+        "enabled": false,
+        "payload": "саммари встречи с клиентом для подготовки КП"
+      }
+    },
+    {
+      "id": "d1",
+      "type": "meeting_data",
+      "position": { "x": 380, "y": 200 },
+      "data": { "label": "Саммари встречи", "kind": "summary", "meeting_id": "" }
+    },
+    {
+      "id": "crm",
+      "type": "crm_data",
+      "position": { "x": 380, "y": 360 },
+      "data": { "label": "Данные CRM (опц.)", "query": "актуальные цены и данные клиента по теме встречи", "dataset_id": "" }
+    },
+    {
+      "id": "web",
+      "type": "web_search",
+      "position": { "x": 380, "y": 500 },
+      "data": { "label": "Веб-поиск (опц.)", "query": "сайт клиента и рынок по теме встречи" }
+    },
+    {
+      "id": "doc",
+      "type": "document",
+      "position": { "x": 760, "y": 330 },
+      "data": { "label": "Документ: КП (PDF)", "doc_kind": "kp", "custom_prompt": "", "render": "pdf" }
+    },
+    {
+      "id": "n1",
+      "type": "notify",
+      "position": { "x": 1100, "y": 330 },
+      "data": { "label": "Письмо клиенту", "channel": "email", "chat_id": "", "subject": "Коммерческое предложение" }
+    }
+  ],
+  "edges": [
+    { "id": "e-t1-d1", "source": "t1", "target": "d1", "targetHandle": "in" },
+    { "id": "e-d1-doc", "source": "d1", "sourceHandle": "out", "target": "doc", "targetHandle": "in" },
+    { "id": "e-crm-doc", "source": "crm", "sourceHandle": "out", "target": "doc", "targetHandle": "in" },
+    { "id": "e-web-doc", "source": "web", "sourceHandle": "out", "target": "doc", "targetHandle": "in" },
+    { "id": "e-doc-n1", "source": "doc", "sourceHandle": "out", "target": "n1", "targetHandle": "in" }
+  ],
+  "edgeStyle": "bezier"
+}

@@ -1,0 +1,125 @@
+{
+ "version": 1,
+ "name": "Контактный лист персонажа",
+ "nodes": [
+  {
+   "id": "note",
+   "type": "note",
+   "position": {
+    "x": 40,
+    "y": 60
+   },
+   "data": {
+    "text": "Контактный лист персонажа.\n\n1) Загрузите фото человека слева.\n2) Промпт → Генерация: сетка 3×3 с ракурсами и эмоциями.\n\nЭто идеальный референс героя для сториборда и рекламы (сохраните картинку и подключайте к другим доскам)."
+   },
+   "width": 300,
+   "style": {
+    "width": 300,
+    "height": 200
+   }
+  },
+  {
+   "id": "img-person",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 60
+   },
+   "data": {
+    "label": "Фото человека",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "p-grid",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 390
+   },
+   "data": {
+    "label": "Контактный лист 3×3",
+    "prompt": "Контактный лист 3×3: девять кадров ОДНОГО человека с фото. Ракурсы: анфас, профиль слева/справа, три четверти, наклон головы. Эмоции: нейтрально, улыбка, смех, задумчивость, решимость. Единый свет и фон, тонкие белые рамки. Сохрани точное сходство лица."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-grid",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "1:1",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-grid",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 60
+   },
+   "data": {
+    "label": "Контактный лист 3×3",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-p-grid-nb-grid",
+   "source": "p-grid",
+   "sourceHandle": "text",
+   "target": "nb-grid",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-img-person-nb-grid",
+   "source": "img-person",
+   "sourceHandle": "image",
+   "target": "nb-grid",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-grid-o-grid",
+   "source": "nb-grid",
+   "sourceHandle": "image",
+   "target": "o-grid",
+   "targetHandle": "image",
+   "type": "default"
+  }
+ ],
+ "edgeStyle": "curved"
+}

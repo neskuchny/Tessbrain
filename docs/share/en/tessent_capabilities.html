@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tessbrain — what the company brain does</title>
+</head>
+<body>
+<style>
+  :root {
+    /* Светлая книга — фиксированная палитра на весь набор страниц.
+       Раньше страница следовала теме ОС и на тёмном экране показывалась
+       тёмной; для единого «книжного» набора она всегда светлая. */
+    --bg:#f3f1ea; --surface:#fff; --surface-2:#f7f5ef; --surface-3:#efece2;
+    --border:#ddd8cb; --border-soft:#e6e2d5;
+    --text:#21201b; --text-dim:#5c584e; --text-faint:#8b8677;
+    --accent:#a97a2c; --accent-soft:rgba(169,122,44,.10);
+    --good:#3f7a56; --risk:#a13f34; --risk-soft:rgba(161,63,52,.09);
+    --info:#4b6a92;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,ui-serif,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  body{padding:56px 24px 90px}
+  .page{max-width:1120px;margin:0 auto}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.4vw,46px);
+    line-height:1.12;margin:0 0 16px;text-wrap:balance}
+  .lead{font-size:17px;color:var(--text-dim);line-height:1.6;max-width:760px;margin:0 0 8px}
+  .lead b{color:var(--text);font-weight:600}
+  .meta{font-size:12.5px;color:var(--text-faint);margin-top:22px;padding-top:20px;
+    border-top:1px solid var(--border-soft);line-height:1.75;max-width:840px}
+  .meta b{color:var(--text-dim)}
+  nav.toc{display:flex;flex-wrap:wrap;gap:7px;margin-top:30px}
+  nav.toc a{font-size:12.5px;color:var(--text-dim);text-decoration:none;
+    background:var(--surface);border:1px solid var(--border);border-radius:999px;
+    padding:6px 13px;transition:color .15s,border-color .15s}
+  nav.toc a:hover{color:var(--accent);border-color:var(--accent)}
+  section{margin-top:64px;scroll-margin-top:20px}
+  h2{font-family:var(--serif);font-weight:600;font-size:25px;margin:0 0 8px;
+    display:flex;align-items:baseline;gap:12px;text-wrap:balance}
+  h2 .num{font-family:var(--sans);font-size:11px;color:var(--accent);
+    border:1px solid var(--accent);border-radius:999px;min-width:24px;height:24px;
+    padding:0 6px;display:inline-flex;align-items:center;justify-content:center;
+    flex-shrink:0;font-weight:700}
+  .sub{font-size:14.5px;color:var(--text-dim);line-height:1.65;max-width:790px;margin:0 0 12px}
+  .sub b{color:var(--text)}
+  .why{font-size:14.5px;line-height:1.65;max-width:790px;margin:14px 0 24px;
+    padding:14px 18px;background:var(--accent-soft);border-left:3px solid var(--accent);
+    border-radius:0 8px 8px 0;color:var(--text)}
+  .why b{color:var(--accent);font-weight:700}
+  .callout{font-size:14px;line-height:1.7;max-width:830px;margin:16px 0;
+    padding:14px 18px;background:var(--surface-2);border:1px solid var(--border-soft);
+    border-radius:10px;color:var(--text-dim)}
+  .callout b{color:var(--text)}
+  .callout ul{margin:8px 0 0;padding-left:19px}
+  .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    gap:12px;margin:14px 0 22px}
+  .cap{background:var(--surface);border:1px solid var(--border);border-radius:11px;
+    padding:16px 18px}
+  .cap h3{font-size:14.5px;font-weight:650;margin:0 0 7px;line-height:1.35;color:var(--text)}
+  .cap p{font-size:13px;color:var(--text-dim);line-height:1.55;margin:0}
+  .cap p b,.cap h3 b{color:var(--text);font-weight:650}
+  .cap p em{color:var(--text);font-style:normal;font-weight:600}
+  .ex{background:var(--surface-2);border:1px solid var(--border-soft);
+    border-radius:11px;padding:16px 20px;margin:14px 0}
+  .ex .lbl{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:8px}
+  .ex p{font-size:13.5px;color:var(--text);line-height:1.65;margin:0 0 9px}
+  .ex p:last-child{margin-bottom:0}
+  .ex p+p{padding-top:9px;border-top:1px solid var(--border-soft)}
+  table{border-collapse:collapse;width:100%;font-size:13px;margin:0}
+  .twrap{overflow-x:auto;border:1px solid var(--border);border-radius:11px;
+    background:var(--surface);margin:6px 0 18px}
+  th,td{padding:11px 15px;border-bottom:1px solid var(--border-soft);
+    text-align:left;vertical-align:top}
+  thead th{background:var(--surface-2);font-size:11px;text-transform:uppercase;
+    letter-spacing:.04em;color:var(--text-faint);font-weight:650;white-space:nowrap}
+  tbody tr:last-child td{border-bottom:none}
+  td b{color:var(--text)}
+  .honest{background:var(--surface);border:1px solid var(--border);
+    border-left:3px solid var(--risk);border-radius:0 11px 11px 0;
+    padding:18px 22px;margin:16px 0}
+  .honest h3{font-size:13px;font-weight:650;margin:0 0 10px;color:var(--risk);
+    text-transform:uppercase;letter-spacing:.06em}
+  .honest p{font-size:13.5px;color:var(--text-dim);line-height:1.7;margin:0;max-width:830px}
+  .honest p b{color:var(--text)}
+  .honest ul{margin:0;padding-left:19px}
+  .honest li{font-size:13.5px;color:var(--text-dim);line-height:1.68;margin-bottom:9px}
+  .honest li:last-child{margin-bottom:0}
+  .honest li b{color:var(--text)}
+  ul.plain{margin:10px 0 18px;padding-left:19px;max-width:830px}
+  ul.plain li{font-size:14px;color:var(--text-dim);line-height:1.65;margin-bottom:7px}
+  ul.plain li b{color:var(--text)}
+  .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:12px;margin:20px 0 8px}
+  .kpi>div{background:var(--surface);border:1px solid var(--border);
+    border-radius:11px;padding:15px 17px}
+  .kpi .n{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--accent);
+    font-variant-numeric:tabular-nums;line-height:1.1}
+  .kpi .l{font-size:12px;color:var(--text-dim);margin-top:5px;line-height:1.45}
+  code{font-family:var(--mono);font-size:12px;background:var(--surface-3);
+    padding:1px 6px;border-radius:4px;color:var(--accent)}
+  a{color:var(--accent)}
+  footer{margin-top:70px;padding-top:26px;border-top:1px solid var(--border-soft);
+    font-size:12.5px;color:var(--text-faint);line-height:1.85}
+  footer a{color:var(--text-dim)}
+  @media (max-width:640px){body{padding:36px 16px 60px}}
+</style>
+
+<div class="page">
+  <div class="eyebrow">Product map · August 2026</div>
+  <h1>The company brain: what it does and why a business needs it</h1>
+  <p class="lead">A company talks about itself every day — in meetings, in chats, in documents. Normally that stream disappears: it stays in people's heads, in message threads, and in files nobody will open again. <b>Tessbrain turns a company's conversations into its memory, and that memory into work:</b> it answers questions with links to the original source, computes figures in code, drafts documents, runs processes, and notices on its own where the company has drifted out of sync.</p>
+  <div class="meta">This document describes what <b>runs in code</b>. Capabilities behind flags, or existing only in plans, are collected in a separate section at the end and flagged inline — because a product that promises more than it does destroys trust at the first demo.</div>
+
+  <nav class="toc">
+    <a href="#how">1. How the whole thing works</a>
+    <a href="#feeds">1.1. What feeds the system and where it sends results</a>
+    <a href="#sync">1.2. How synchronisation works</a>
+    <a href="#memory">2. Graph memory</a>
+    <a href="#cards">2.1. Cards</a>
+    <a href="#unknown">2.2. The system understands what it does not know</a>
+    <a href="#people">3. Digital profiles of people</a>
+    <a href="#hr">4. HR 2.0</a>
+    <a href="#together">4.1. The system watches how people work together</a>
+    <a href="#sim">5. Simulations</a>
+    <a href="#numbers">6. Numbers</a>
+    <a href="#chat">7. Chats</a>
+    <a href="#boards">8. Boards</a>
+    <a href="#docs">8.1. Documents</a>
+    <a href="#wisdom">9. Company experience as an asset</a>
+    <a href="#sima">10. SIMA</a>
+    <a href="#minitess">11. Mini Tess</a>
+    <a href="#exec">12. For the executive</a>
+    <a href="#bus">13. Data bus</a>
+    <a href="#enterprise">14. Enterprise</a>
+    <a href="#proof">15. Evidence instead of promises</a>
+    <a href="#honest">16. Honest limits</a>
+  </nav>
+
+<section id="how">
+<h2><span class="num">1</span> How the whole thing works</h2>
+<p class="sub">One loop, four stages. Everything else in this document is detail inside it.</p>
+<div class="twrap"><table><thead><tr>
+<th>Stage</th>
+<th>What happens</th>
+</tr></thead><tbody>
+<tr><td>Intake</td><td>Meetings, calls, Telegram and Slack, documents, links, CSV/Excel exports, CRM (amoCRM, Bitrix24, HubSpot, Pipedrive), 1C via OData, Google Sheets, BI. Nothing has to be entered by hand — the system consumes what is happening anyway.</td></tr>
+<tr><td>Extraction</td><td>About thirty specialised extractors each pull their own layer out of a meeting: decisions, tasks, participants, KPIs, risks, ideas, opinions, causal chains, contradictions, outcomes. Every fact carries a source, a date and a confidence. How many model calls this costs depends on the model class: on a strong model the whole base pass is a single call, on a cheaper one it is split.</td></tr>
+<tr><td>Memory</td><td>The company graph: typed entities and typed relationships. Facts are versioned, not overwritten. Overnight the system tidies itself: merges duplicates, weakens unconfirmed material, collects insights.</td></tr>
+<tr><td>Work</td><td>Chat, documents, process boards, reports, simulations, controlled feeds to partners, and a connection into Claude Code and Cursor as a context source.</td></tr>
+</tbody></table></div>
+<ul class="plain">
+<li><b>~30</b> knowledge extractors per meeting</li>
+<li><b>31</b> ready-made process templates out of the box</li>
+<li><b>23</b> tools for external AI assistants over MCP</li>
+</ul>
+<div class="why"><b>Why this matters.</b> <b>The model is a consumable; the asset is what the
+company has accumulated.</b> Company memory, playbooks, data ontology, skills
+and configured processes are not tied to any single AI vendor. The model
+underneath can be swapped — for another provider, for your own servers, for a
+local model inside a closed perimeter (section 14) — and everything
+accumulated stays entirely yours. This is the answer to the main fear in
+adoption: *"we will invest, and in a year the vendor raises the price or shuts
+down."* The performer changes, not the asset. The opposite arrangement — where
+company knowledge lives inside somebody else's assistant — means that when the
+vendor leaves, the accumulated knowledge leaves too.</div>
+</section>
+
+<section id="feeds">
+<h2><span class="num">1.1</span> What feeds the system and where it sends results</h2>
+<p class="sub">The company brain does not work in a vacuum: it sits inside an ecosystem where each service contributes its own kind of conversation. This is not "integrations by the list" but a division of labour — capture and recognition live elsewhere, understanding and memory live here.</p>
+<div class="caps">
+<div class="cap"><h3>Meetings — from MeetFlow</h3><p>Our own meeting-processing system: it records and transcribes, the brain takes the finished material and breaks it into meaning. A trusted internal source, not a third-party service bolted on.</p></div>
+<div class="cap"><h3>Calls — from a call analytics service</h3><p>The domain of client communication is deliberately separated from internal memory: transcripts and audio are <b>not copied to us</b>. Events arrive — deal at risk, complaint, coaching recommendation — and the live client card is pulled from their system at display time. Conclusions their model produced are marked as <em>model narrative</em> and never become company facts: protection against one AI system feeding another its guesses.</p></div>
+<div class="cap"><h3>Messenger — Mini Tess</h3><p>A Telegram bot as a separate entry point: it delivers post-meeting artifacts, answers from company memory, and holds a conversation with an employee (section 11).</p></div>
+<div class="cap"><h3>Data — from where it already lives</h3><p>CRM, 1C via OData, Google Sheets, BI, file exports, links. Plus external parties who push facts in over the bus (section 13).</p></div>
+<div class="cap"><h3>Back outward</h3><p>Writes to CRM (create a deal or lead, append a comment) on a separate path, isolated from reading and closed by default; delivery to Slack, email, Notion, Jira and other connected systems through board blocks; feeds to partners over the bus; "something new appeared" notifications for subscribers.</p></div>
+</div>
+</section>
+
+<section id="sync">
+<h2><span class="num">1.2</span> How synchronisation works: what is pulled and what changes</h2>
+<p class="sub">Three different flows that are easy to confuse — they concern different things.</p>
+<div class="caps">
+<div class="cap"><h3>First: meetings → memory</h3><p>Knowledge sync reads meetings from the source and runs them through extraction. It runs in the background with visible progress, and chat knows about it — during a run it honestly warns "sync in progress, data is incomplete" rather than answering from half the base as if that were all of it.</p></div>
+<div class="cap"><h3>Second: sources → company tables</h3><p>A dataset connected by link or to a CRM refreshes on the schedule its owner set. The fetch is always full — sources like Google Sheets do not offer a delta at all. But the system compares what it fetched against what is stored: <b>unchanged means nothing is rewritten</b>, no model spend on rebuilding the ontology, no empty version in history. Changed means the new data becomes current, the previous version moves into history (5 kept, with rollback), metrics recompute and subscribers are notified.</p></div>
+<div class="cap"><h3>Third: memory → outward</h3><p>Changes the system makes in other systems: CRM writes, document delivery, tasks in trackers. Here the principle is the opposite of intake — money is locked by default: the CRM write path is off until deliberately enabled.</p></div>
+<div class="cap"><h3>Which flow changes what — the short answer</h3><p>Company memory changes only through extraction and overnight tidying. Data tables change through source refresh. External systems change only through explicit process actions. No flow writes into another's territory: a data source cannot alter a fact from a meeting, and meeting extraction does not touch data tables.</p></div>
+<div class="cap"><h3>Different models for different work</h3><p>Each workload gets its own model class, chosen by the rule "sensitivity to quality x frequency". Heavy and rare work that sets the quality of the whole knowledge base (meeting extraction, overnight consolidation, spec generation, final synthesis of a deep search) runs on a strong model. Frequent and interactive work (chat, ordinary search, intermediate steps) runs on a smaller one, where speed and price matter. The company chooses the provider and the key (section 14); the system chooses the tier per task.</p></div>
+</div>
+</section>
+
+<section id="memory">
+<h2><span class="num">2</span> Graph memory — the foundation of everything</h2>
+<p class="sub">Not notes and not document search, but a model of the company: people, projects, clients, decisions, tasks, metrics and the relationships between them. It grows out of conversation on its own.</p>
+<div class="why"><b>Why this matters.</b> A person leaves and the context leaves with them. "I
+think we decided this, but nobody remembers when or why." And third: an
+ordinary AI cannot be trusted, because it answers confidently and without a
+source — and an answer like that cannot be taken to a board meeting.</div>
+<div class="caps">
+<div class="cap"><h3>A fact's history, not an overwrite</h3><p>A project budget, a person's role and department, a task's deadline and assignee, a project's status are kept as a chain of dated versions. A new value <em>does not erase</em> the old one — it marks it superseded, with the date and the source meeting. You see not only "what is it now" but "what was it and when did it change". Amounts are normalised to numbers, so "2M RUB" and "2,500,000 rub" from different meetings are comparable — growth shows as a figure, not as an impression.</p></div>
+<div class="cap"><h3>Query "how it was on a date"</h3><p>The state of the company on 15 March, on 1 May and today — three slices side by side with an automatically computed difference: who appeared, what changed, what disappeared. Retrospective without archaeology through message threads. A version is dated by the <b>meeting date</b>, not the upload date, so an archive loaded in one day does not collapse into a single point.</p></div>
+<div class="cap"><h3>Typed forgetting</h3><p>Contextual links ("mentioned near each other") weaken over time, while structural facts — decided, assigned, changed role — never decay. Memory that forgets nothing bankrupts its owner; untyped forgetting would eat the org chart.</p></div>
+</div>
+</section>
+
+<section id="cards">
+<h2><span class="num">2.1</span> Cards: the system makes sense of what it stored, in advance</h2>
+<p class="sub">Between raw facts and an answer sits a layer that thinks ahead of the question.</p>
+<div class="why"><b>Why this matters.</b> Assembling a picture of a client or a project at the
+moment of asking is slow and expensive. Prepared cards make the frequent case
+instant, and leave the model to do what only it can.</div>
+</section>
+
+<section id="unknown">
+<h2><span class="num">2.2</span> The system understands what it does not know</h2>
+<div class="caps">
+<div class="cap"><h3>Honest "unknown" instead of a plausible answer</h3><p>When memory has no basis for an answer, the system says so instead of producing something that sounds right. This is the property that makes an answer presentable.</p></div>
+</div>
+</section>
+
+<section id="people">
+<h2><span class="num">3</span> Digital profiles of people</h2>
+<p class="sub">A profile of a person built from how they actually participated: role, projects, decisions, opinions, manner of speech — from meetings, not from a questionnaire.</p>
+<div class="why"><b>Why this matters.</b> What a person actually does and what their job title
+says diverge in every company. The profile is built from behaviour.</div>
+</section>
+
+<section id="hr">
+<h2><span class="num">4</span> HR 2.0: everything about a person without questionnaires</h2>
+<p class="sub">Competencies, load, growth and risk of burnout — inferred from participation in real work rather than from a self-assessment form.</p>
+</section>
+
+<section id="together">
+<h2><span class="num">4.1</span> The system watches how people work together</h2>
+<p class="sub">Who works with whom, where communication breaks, which pairs produce results and which stall.</p>
+</section>
+
+<section id="sim">
+<h2><span class="num">5</span> Simulations: clients, partners, a board meeting</h2>
+<p class="sub">Run an offer, a negotiation or a contested decision <em>before</em> money and time are spent.</p>
+<div class="why"><b>Why this matters.</b> Marketing tests its messages with budget, and decisions
+are discussed by the same circle of people with the same blind spots. A
+simulation gives cheap preliminary screening — and honestly says when it is
+too early to believe it.</div>
+<div class="caps">
+<div class="cap"><h3>Simulating real clients</h3><p>The counterpart is not an invented avatar but a <em>real client from the company graph</em>: a dossier assembled from node properties, relationships and the cards of linked people (section 2.1). You can talk to it and run an offer past it.</p></div>
+<div class="cap"><h3>Segments by real attributes</h3><p>Clients are grouped by actual attributes (industry, status, category). Clients without attributes honestly land in "no attributes" rather than being distributed into invented groups.</p></div>
+<div class="cap"><h3>A board meeting of roles and profiles</h3><p>A multi-round discussion of a question: abstract roles (CEO, CFO, CTO) and profiles of real employees at one table, with a record of disagreements and a check of the conclusion against company data.</p></div>
+<div class="cap"><h3>A reaction panel plus a sceptic</h3><p>Personas answer in their own language, with an adversary set over them. In a panel of field personas the adversary attacks the messages.</p></div>
+</div>
+</section>
+
+<section id="numbers">
+<h2><span class="num">6</span> Numbers: ontology and metrics</h2>
+<p class="sub">The governing principle: <b>code computes, not the language model.</b> The model turns a question into a structured plan, the plan executes deterministically and is visible in the API response. If a question does not fit a plan, a fallback engages — the model writes the computation as code, which runs in a sandbox; the answer then arrives together with the code, so the logic can be checked.</p>
+<div class="why"><b>Why this matters.</b> "The report says one number, the CRM another, and
+somebody quoted a third at the meeting." And "you cannot trust an AI
+assistant with figures" — because it does arithmetic in its head and is
+confidently wrong.</div>
+<div class="caps">
+<div class="cap"><h3>A number from a meeting and a number from a system are one object</h3><p>"Revenue 4.2M", said at a standup, and a column from 1C become one metric with a shared history. The summary reads: <em>"meetings said X, the data says Y — a 17% discrepancy"</em>.</p></div>
+<div class="cap"><h3>A plan instead of the model's arithmetic</h3><p>Question → structured plan {operation, column, grouping, filters} → deterministic execution. When the model is unavailable a built-in parser handles common questions ("sum of X by month", "top N by Y") — figures are computed even without an LLM.</p></div>
+<div class="cap"><h3>A passport for every number</h3><p>Coverage (how many rows were counted), how many were skipped, and why.</p></div>
+</div>
+</section>
+
+<section id="chat">
+<h2><span class="num">7</span> Chats: a conversational way into memory</h2>
+<p class="sub">Three different chats for three different jobs — not one window with a mode switch.</p>
+<div class="twrap"><table><thead><tr>
+<th>Chat</th>
+<th>What it does</th>
+<th>When you need it</th>
+</tr></thead><tbody>
+<tr><td><b>Over company memory</b></td><td>Searches the whole memory three ways at once (meaning, exact terms, graph relationships) and synthesises an answer with a list of sources. Three channels are a necessity, not belt-and-braces: semantic search has a proven mathematical ceiling (ICLR'26) — a single vector cannot return every combination of documents, and the best models fail on enumerative queries. So enumerative questions — "show everyone who…", "how many…", "who worked on both A and B" — are recognised and weight the graph channel, where enumeration and intersection are exact by construction</td><td>"What did we decide about client X?", "Show everyone who worked with both A and B"</td></tr>
+<tr><td><b>Over meetings and documents</b></td><td>No base-wide search at all: you choose the materials yourself, and the answer comes strictly from them</td><td>Reviewing a contract, preparing for a call about one client</td></tr>
+<tr><td><b>Product guide</b></td><td>Explains how to use the product from curated help. <b>Deliberately blind to company memory</b> — no meetings, no graph</td><td>"How do I set up a board?"</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="boards">
+<h2><span class="num">8</span> Boards: automations and visual reports</h2>
+<div class="caps">
+<div class="cap"><h3>A board is a diagram that works</h3><p>You lay blocks on a canvas and connect them with arrows: "when this happens → ask the company brain that → make a document → send it there". The diagram is not a picture for a presentation; it <em>is</em> the automation: save it and it runs on a schedule or on an event.</p></div>
+</div>
+<p class="sub">There are two kinds, and they mix on one canvas:</p>
+<div class="twrap"><table><thead><tr>
+<th>Kind</th>
+<th>Assembled from</th>
+<th>What you get</th>
+</tr></thead><tbody>
+<tr><td><b>Process</b></td><td>trigger, data sources (meetings, CRM, web), documents, conditions, delivery</td><td>Automation: do it and send it without a human</td></tr>
+<tr><td><b>Creative</b></td><td>references, prompts, image and text generation</td><td>A presentation, ad creatives, a storyboard, a landing page in blocks</td></tr>
+</tbody></table></div>
+<p class="sub">Mixed boards are the ordinary case, not a trick: "after a meeting collect the results → draw a picture from them → send it to chat" is one board whose first half is process and second half creative.</p>
+<div class="why"><b>Why this matters.</b> "Everything depends on somebody not forgetting."
+"Reports get written but nobody reads them." "Automation takes months through
+a contractor" — here it is assembled by the person who needs it, and it runs
+on the company's own data.</div>
+</section>
+
+<section id="docs">
+<h2><span class="num">8.1</span> Documents: a separate tool, not an attachment to boards</h2>
+<p class="sub">Document generation lives in its own section and works on its own. Boards simply know how to call it — another entrance to the same module, not its owner.</p>
+<div class="why"><b>Why this matters.</b> A commercial proposal gets assembled by copy-paste from
+a previous one, carrying somebody else's details and old prices. Here the
+document is assembled from company memory, and anything missing is honestly
+flagged rather than invented.</div>
+<div class="caps">
+<div class="cap"><h3>A document from a meeting</h3><p>A proposal, a contract, a client brief or a free-form document: the system takes the meeting material and the relationship history, assembles the text and returns a finished Word or PDF file on letterhead.</p></div>
+<div class="cap"><h3>Your own templates with substitution</h3><p>Upload your own DOCX with markers and the system fills them from memory and company details. The key part is that <b>every field is marked</b>: green for what was found in the data, yellow for what was inferred, red for what is missing. Not "your document is ready" but "your document is ready, check these three fields".</p></div>
+<div class="cap"><h3>Playbooks from what accumulated</h3><p>The system finds repeated patterns in memory and assembles them into rules.</p></div>
+</div>
+</section>
+
+<section id="wisdom">
+<h2><span class="num">9</span> Company experience as an asset</h2>
+<p class="sub">The system remembers not only <em>what</em> was decided but <em>how it turned out</em> — and next time says so in advance.</p>
+<div class="why"><b>Why this matters.</b> This is the only layer that answers an investor's
+question, "what accumulates here that cannot be bought?" Company experience
+usually lives in three people's heads and leaves with them.
+
+⚠️ <b>Honestly about the maturity of this section.</b> The layer fills
+automatically as each meeting is processed (decisions from all of them,
+outcomes from retrospectives) and is mixed into chat and spec generation.
+What is missing: its own screen in the interface (patterns are visible only
+through the API) and any quality measurement — the accuracy of situation
+classification and outcome linking has not been measured.</div>
+<div class="caps">
+<div class="cap"><h3>A decision as a type of situation</h3><p>"A competitor cut prices by 15%" becomes "competitor price pressure", classified by business tensions: growth versus margin, speed versus quality, in-house versus contractor. The tension reference is closed — anything that does not fit is honestly marked "other" rather than forced into the nearest match.</p></div>
+<div class="cap"><h3>Linking to a real outcome</h3><p>Retrospectives are mined for how things ended, and confidence rises only from <b>confirmed outcomes</b>, decaying with time. Ten discussions whose fate is unknown produce <em>low</em> confidence, not high — otherwise the number would mean "we talked about this a lot" while reading as "we verified this".</p></div>
+</div>
+</section>
+
+<section id="sima">
+<h2><span class="num">10</span> SIMA: turning an idea into a spec an AI will build correctly</h2>
+<div class="caps">
+<div class="cap"><h3>What it is</h3><p>A separate loop for the small products, services and automations a company needs for itself. The point is not to draw a diagram but to produce a <b>very detailed and correct technical specification grounded in company data</b> — one you can hand to an external AI to implement and then verify that it built exactly that.</p></div>
+</div>
+<p class="sub">The goal the loop works towards: an employee who <b>cannot program</b> conceives a mini-service they or their colleagues need, brings it in SIMA to a coherent specification, hands it to an AI executor, and the system watches the result.</p>
+<div class="why"><b>Why this matters.</b> Asking an AI to "build me a service" in one sentence
+gets you the wrong thing. Meaning is lost between "we thought of it" and "it
+was built": one person writes the spec, another reads it, a third checks it.
+Here the spec is assembled piece by piece, each piece grounded in real company
+data, and acceptance is not an opinion but the result of checks.</div>
+<div class="caps">
+<div class="cap"><h3>Acceptance with three outcomes</h3><p>Passed, failed, and <b>not proven</b>. The third exists because "no evidence" is not the same as "done".</p></div>
+</div>
+</section>
+
+<section id="minitess">
+<h2><span class="num">11</span> Mini Tess — an employee's personal assistant</h2>
+<div class="caps">
+<div class="cap"><h3>What it is</h3><p>A separate product in the ecosystem: a Telegram bot with its own memory of a person. It brings an employee what concerns them personally after meetings, remembers how to talk to them, reminds them about tasks, and lets them ask <b>the company brain without opening the web interface</b> — just by writing in a messenger.</p></div>
+</div>
+<div class="why"><b>Why this matters.</b> Corporate systems die wherever you have to log into
+them. A bot lives in the messenger a person already looks at a hundred times a
+day. And, more importantly, it speaks to each person differently, because it
+knows how that person thinks.</div>
+<div class="caps">
+<div class="cap"><h3>An answer from company memory right in the messenger</h3><p>"What did we decide about client N?" and the answer arrives from the whole company memory with source links, using the same search as the web interface.</p></div>
+<div class="cap"><h3>Personal follow-up — the "coffee scenario"</h3><p>The name is literal: while a person walks from the meeting room to their desk, the system has already prepared drafts for them — matched to their role in <em>that meeting</em>. A strategic summary and questions for the founder, task cards for the project lead, a technical specification ready to hand off for the developer, a draft letter for sales. The role is determined by how the person participated, not by a line in the staffing table. Not a generic "meeting minutes" mailout but work already started for you: you sit down not to an empty screen but to a draft that needs correcting.</p></div>
+</div>
+</section>
+
+<section id="exec">
+<h2><span class="num">12</span> For the executive: the system watches the company itself</h2>
+<p class="sub">Not a dashboard you have to open, but an observer that notices and speaks first.</p>
+<div class="why"><b>Why this matters.</b> An executive learns about a problem last — usually once
+it has already cost money. This layer exists to speak before they find out on
+their own.</div>
+<div class="caps">
+<div class="cap"><h3>Desynchronisation is the main hidden loss of efficiency, and it exists almost everywhere</h3><p>Departments do not tell each other important things, do not pass data along, and understand the same words differently. The company pushes on one part of the system and it breaks in another: sales accelerates the pipeline and support drowns; marketing promises a date production has never heard of. Nobody is individually at fault — connectivity is broken.</p></div>
+<div class="cap"><h3>A synchronisation index</h3><p>One number showing how far the company is moving in one direction, and above all <em>where</em> it diverges. The check runs at four levels: inside a department, between departments, company goals against department goals, and executives against each other. The index keeps history, so you see a trend rather than a snapshot.</p></div>
+<div class="cap"><h3>Honest "unknown" instead of a pretty figure</h3><p>A level with no data does not enter the index. Emptiness does not become perfect synchronisation — which is the first thing metrics like this usually get wrong.</p></div>
+</div>
+</section>
+
+<section id="bus">
+<h2><span class="num">13</span> Data bus: groundwork for external agents and cross-company exchange</h2>
+<div class="caps">
+<div class="cap"><h3>What it is</h3><p>Not simply "send a partner an export". This is the <b>company's reception desk for machines</b>: an external system, somebody else's AI agent or another company gets a key and <b>exactly its own slice</b> of memory — not a file but live answers. And, more importantly, the ability to <b>work</b> on those answers: understand the context and do a task without taking people's time.</p></div>
+</div>
+<div class="why"><b>Why this matters.</b> What passes between companies today is not meaning but
+its compressed residue: a presentation instead of reality, a brief instead of
+context, a CV instead of a person. A contractor spends a month getting up to
+speed, a consultant spends weeks collecting what is already in the message
+threads, a new partner hears an edited version. The bus returns what
+compression loses: the external party gets <b>context, not a retelling</b> —
+within the boundaries you set.</div>
+<div class="caps">
+<div class="cap"><h3>The boundary runs before the model</h3><p>The slice, the blocking of fact types and the redaction are applied to the material <em>before</em> an answer is composed. The model physically does not see what is forbidden — more reliable than "we asked the assistant not to talk about salaries".</p></div>
+<div class="cap"><h3>Redaction sieves</h3><p>Forbidden fact types → allowed fields inside a fact → replacing amounts with "[AMOUNT HIDDEN]", emails and phone numbers. The number of redactions is returned in the response. The real protection here is the folder slice and type blocking: a secrecy ceiling as a separate sieve on the main path does not yet fire, so it cannot be sold as a boundary.</p></div>
+</div>
+</section>
+
+<section id="enterprise">
+<h2><span class="num">14</span> Enterprise: access and infrastructure</h2>
+<p class="sub">The things that usually stop an adoption at the security department.</p>
+<div class="caps">
+<div class="cap"><h3>A classification level on every fact</h3><p>Not on a folder but on an individual graph node: a scale from "visible to all" to "CEO only". It works with the caveats in "Honest limits": classification filtering applies on the file graph backend, and the classification itself has to be set manually — everything defaults to "internal". The scenario "the M&amp;A discussion will not surface for an intern" requires both.</p></div>
+<div class="cap"><h3>The filter works inside the AI's answer</h3><p>Not only in the interface: on supported configurations, forbidden material is cut before synthesis, so the model cannot let slip what it never saw.</p></div>
+<div class="cap"><h3>Isolation at the database level</h3><p>Row-level security policies: even a bug in application code will not let one client see another's data. An argument for a security officer, not a marketing claim.</p></div>
+<div class="cap"><h3>An audit trail that cannot be cleaned up</h3><p>The main audit log is protected from modification and deletion by a database trigger — compliance by construction rather than by promise. Plus a separate log of sensitive <em>reads</em> (profiles and confidential nodes): a leak more often looks like a read than a change. The data bus's own log does not yet have this protection.</p></div>
+<div class="cap"><h3>An organisation tree and holdings</h3><p>One person in several organisations with switching, a holding above corporations, custom roles on top of built-in ones, a "Chinese wall" between companies in a group.</p></div>
+<div class="cap"><h3>A closed perimeter</h3><p>The model can run on your own servers. "Internal" has a single definition for the whole product, checked both at boot and at call time.</p></div>
+</div>
+</section>
+
+<section id="proof">
+<h2><span class="num">15</span> Evidence instead of promises</h2>
+<p class="sub">The section where "we are better" is replaced by numbers — including the ones that are not in our favour. Otherwise it would not be worth having.</p>
+<div class="caps">
+<div class="cap"><h3>Runs on public sets</h3><p>LongMemEval (the oracle variant and the variant with distractor sessions), LoCoMo, HotpotQA, RAGTruth, TruthfulQA, QMSum. Accepted public sets rather than our own convenient examples; data is downloaded from public sources, and the judge and model are recorded in every result.</p></div>
+<div class="cap"><h3>Where we win — measured</h3><p>The difference comes from how we <em>assemble and present</em> memory, not from the mere fact of having it:</p></div>
+</div>
+<div class="twrap"><table><thead><tr>
+<th>What was compared</th>
+<th>Baseline</th>
+<th>Ours</th>
+<th>Sample</th>
+</tr></thead><tbody>
+<tr><td>HotpotQA — multi-hop questions</td><td>strict answer from fragments 0.57</td><td>analysis mode 0.77</td><td>30</td></tr>
+<tr><td>LoCoMo — multi-session memory</td><td>0.43</td><td>product path with date resolution 0.57</td><td>30</td></tr>
+<tr><td>Hard LongMemEval questions</td><td>"dump the whole history" 0.25</td><td>analysis mode 0.71</td><td>24</td></tr>
+<tr><td>Time-based questions</td><td>ranking without time 0.17</td><td>temporal module 0.40</td><td>30</td></tr>
+<tr><td>Questions spanning many conversations</td><td>retrieval 0.23</td><td>sessions with hits in full 0.57</td><td>30</td></tr>
+</tbody></table></div>
+<div class="caps">
+<div class="cap"><h3>Where we do not win — also measured</h3><p>Our hybrid retrieval (text + meaning + rank fusion) draws level with plain BM25 on LongMemEval: 0.49 against 0.50 on a sample of 200, and 0.675 against 0.675 on 40. Against "no memory at all" the gap is enormous (0.065); against solid text search, there is none.</p></div>
+<div class="cap"><h3>How to read these numbers</h3><p>Sample sizes are 20 to 200 questions. This is honest measurement, not statistics — a difference of two or three hundredths on thirty questions cannot be taken seriously, and we do not take it so.</p></div>
+</div>
+</section>
+
+<section id="honest">
+<h2><span class="num">16</span> Honest limits</h2>
+<p class="sub">This is part of the product, not fine print. A product that promises more than it delivers loses trust at the first demo.</p>
+<p class="sub"><b>Off by default — enabled deliberately</b></p>
+<div class="honest"><ul>
+<li><b>Company experience (section 9) has no screen of its own.</b> The layer fills as meetings are processed and mixes into chat and specs, but accumulated patterns can only be seen through the API. A retrospective is recognised by the meeting title ("retro", "review", "postmortem") — meetings with other titles yield no outcomes.</li>
+<li><b>An outcome is taken from what was said at a retrospective, not from a metric.</b> The system links a decision to what people said about it. There is no external verification against a figure from a system — worth keeping in mind when reading "three of four cases closed successfully".</li>
+<li><b>The quality of the experience layer has not been measured.</b> Unlike other parts of the product, it has neither a benchmark nor output-quality tests — only tests that the formulas compute correctly.</li>
+<li><b>Classification is not assigned automatically.</b> Everything defaults to "internal"; a higher level has to be set by hand.</li>
+<li><b>How much quality a closed perimeter costs has not been measured.</b> All our numbers come from cloud models. The harness for measuring on your own model is ready; the measurement itself has not been run.</li>
+<li><b>There is no agent-to-agent negotiation.</b> An external executor takes a task and returns a result under machine-checked acceptance — request/response, not a dialogue about how to do the work.</li>
+<li><b>Cross-deployment company discovery is not built.</b></li>
+<li><b>Dependencies are pinned with <code>&gt;=</code>, not <code>==</code>,</b> and there is no Python lockfile, so the audited version is not guaranteed to be the installed one.</li>
+</ul></div>
+</section>
+
+  <footer>Built automatically from <code>docs/en/product-capabilities.md</code> — the page and the document cannot drift apart by construction. Figures marked “measured” come from runs whose results live in the repository next to the code that produced them. The loop diagram and the interactive cost calculator are separate pages.</footer>
+</div>
+</body>
+</html>

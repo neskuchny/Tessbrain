@@ -1,0 +1,543 @@
+{
+ "version": 1,
+ "name": "Презентация: 5 слайдов, единый стиль",
+ "nodes": [
+  {
+   "id": "note",
+   "type": "note",
+   "position": {
+    "x": 40,
+    "y": 60
+   },
+   "data": {
+    "text": "Презентация: 5 слайдов в едином стиле.\n\nКаждый слайд — это ПРОМПТ → ГЕНЕРАЦИЯ. Впишите тему в текст слайда и нажмите Run.\n\nСтиль задаёт слайд 1 (фон, цвета, шрифты — опишите в его тексте). Дальше он протягивается сам: выход каждого слайда идёт референсом в следующий. Логотип и референс стиля слева — по желанию.\n\nЧтобы сделать так же на новой доске: перетащите Промпт и Генерацию, соедините, впишите текст."
+   },
+   "width": 300,
+   "style": {
+    "width": 300,
+    "height": 200
+   }
+  },
+  {
+   "id": "img-logo",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 60
+   },
+   "data": {
+    "label": "Логотип (опц.)",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "img-ref",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 390
+   },
+   "data": {
+    "label": "Референс стиля (опц.)",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "p1",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 720
+   },
+   "data": {
+    "label": "Слайд 1 · Титул + стиль",
+    "prompt": "Титульный слайд презентации 16:9: крупный заголовок [впишите тему], подзаголовок, логотип с референса в углу.\n\nСТИЛЬ ВСЕЙ ПРЕЗЕНТАЦИИ (опишите здесь): фон [светлый/тёмный], фирменные цвета [например #0E1220 + электрик-синий], шрифты и настроение [минимализм, много воздуха]. Этот слайд задаёт стиль остальным."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb1",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o1",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 410
+   },
+   "data": {
+    "label": "Слайд 1 · Титул + стиль",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p2",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 990
+   },
+   "data": {
+    "label": "Слайд 2 · Проблема",
+    "prompt": "Слайд «Проблема»: 3 боли аудитории [впишите] списком с иконками, короткие формулировки. Сохрани стиль первого слайда — он в референсах (цвета, шрифты, отступы)."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb2",
+   "type": "nanoBanana",
+   "position": {
+    "x": 1270,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o2",
+   "type": "output",
+   "position": {
+    "x": 1680,
+    "y": 410
+   },
+   "data": {
+    "label": "Слайд 2 · Проблема",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p3",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1260
+   },
+   "data": {
+    "label": "Слайд 3 · Решение",
+    "prompt": "Слайд «Решение»: продукт/идея в центре, 3 преимущества [впишите] вокруг, схема-диаграмма. Тот же стиль, что у слайда 1 (в референсах)."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb3",
+   "type": "nanoBanana",
+   "position": {
+    "x": 1680,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o3",
+   "type": "output",
+   "position": {
+    "x": 2090,
+    "y": 410
+   },
+   "data": {
+    "label": "Слайд 3 · Решение",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p4",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1530
+   },
+   "data": {
+    "label": "Слайд 4 · Цифры",
+    "prompt": "Слайд «Результаты в цифрах»: 4 крупные метрики [впишите] с короткими подписями. Тот же стиль (референсы)."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb4",
+   "type": "nanoBanana",
+   "position": {
+    "x": 2090,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o4",
+   "type": "output",
+   "position": {
+    "x": 2500,
+    "y": 410
+   },
+   "data": {
+    "label": "Слайд 4 · Цифры",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p5",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1800
+   },
+   "data": {
+    "label": "Слайд 5 · Призыв",
+    "prompt": "Финальный слайд «Следующий шаг»: один сильный призыв к действию [впишите], контакты, логотип с референса. Тот же стиль."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb5",
+   "type": "nanoBanana",
+   "position": {
+    "x": 2500,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o5",
+   "type": "output",
+   "position": {
+    "x": 2910,
+    "y": 60
+   },
+   "data": {
+    "label": "Слайд 5 · Призыв",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-p1-nb1",
+   "source": "p1",
+   "sourceHandle": "text",
+   "target": "nb1",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb1-o1",
+   "source": "nb1",
+   "sourceHandle": "image",
+   "target": "o1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb1",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb1",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p2-nb2",
+   "source": "p2",
+   "sourceHandle": "text",
+   "target": "nb2",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb2-o2",
+   "source": "nb2",
+   "sourceHandle": "image",
+   "target": "o2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb2",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb2",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb1-nb2",
+   "source": "nb1",
+   "sourceHandle": "image",
+   "target": "nb2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p3-nb3",
+   "source": "p3",
+   "sourceHandle": "text",
+   "target": "nb3",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb3-o3",
+   "source": "nb3",
+   "sourceHandle": "image",
+   "target": "o3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb3",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb3",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb2-nb3",
+   "source": "nb2",
+   "sourceHandle": "image",
+   "target": "nb3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p4-nb4",
+   "source": "p4",
+   "sourceHandle": "text",
+   "target": "nb4",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb4-o4",
+   "source": "nb4",
+   "sourceHandle": "image",
+   "target": "o4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb4",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb4",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb3-nb4",
+   "source": "nb3",
+   "sourceHandle": "image",
+   "target": "nb4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p5-nb5",
+   "source": "p5",
+   "sourceHandle": "text",
+   "target": "nb5",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb5-o5",
+   "source": "nb5",
+   "sourceHandle": "image",
+   "target": "o5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb5",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb5",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb4-nb5",
+   "source": "nb4",
+   "sourceHandle": "image",
+   "target": "nb5",
+   "targetHandle": "image",
+   "type": "default"
+  }
+ ],
+ "edgeStyle": "curved"
+}

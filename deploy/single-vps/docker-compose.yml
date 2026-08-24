@@ -1,0 +1,383 @@
+# ============================================================================
+# TESSENT BRAIN — Single-VPS Production Preset
+# ============================================================================
+# Все 5 сервисов на одной 8 ГБ VPS. Цель: ~$20-30/мес/клиент с adequate
+# производительностью (≤50 пользователей, ≤200 встреч/мес).
+#
+# Отличия от dev docker-compose.yml на корне tessent_brain/:
+# - НЕТ публикации внутренних портов наружу (только 8000 через nginx).
+# - Все секреты через ${VAR:?required} — без env запуск падает.
+# - Жёсткие memory limits — иначе на 8 ГБ Neo4j+Qdrant+PG могут OOM.
+# - Каждый контейнер с restart-полисом и логами с ротацией.
+# - Нет volume-маппинга кода: api/worker запускают предсобранный образ.
+#
+# Запуск:
+#   cd tessent_brain/deploy/single-vps
+#   cp .env.example .env && nano .env
+#   docker compose pull
+#   docker compose up -d
+#   docker compose logs -f api  # дождаться "✅ Tessbrain initialized"
+# ============================================================================
+
+services:
+  postgres:
+    image: timescale/timescaledb:2.16.1-pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?required}
+      POSTGRES_USER: ${POSTGRES_USER:?required}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?required}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # init.sql прокидывается из репозитория один раз при первом старте.
+      - ../../backend/db/init.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+    logging: &default_logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  redis:
+    image: redis:7.4-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:?required}"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    logging: *default_logging
+
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    restart: unless-stopped
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      QDRANT__SERVICE__API_KEY: ${QDRANT_API_KEY:?required}
+      QDRANT__SERVICE__READ_ONLY_API_KEY: ${QDRANT_READ_ONLY_API_KEY:-}
+      QDRANT__SERVICE__GRPC_PORT: 6334
+    healthcheck:
+      # Образ qdrant минимальный: НЕТ wget/curl/nc, поэтому прежний
+      # `wget --spider` всегда падал → контейнер вечно unhealthy → api
+      # не стартовал. Но bash в образе есть, и у него есть /dev/tcp.
+      # Открываем сокет к REST-порту, шлём GET /healthz и проверяем 200.
+      test: ["CMD", "bash", "-c", "exec 3<>/dev/tcp/127.0.0.1/6333 && printf 'GET /healthz HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n' >&3 && grep -q '200 OK' <&3"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+    logging: *default_logging
+
+  neo4j:
+    image: neo4j:5.24-community
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?required}
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_dbms_security_procedures_unrestricted: apoc.*
+      # Heap + page cache — узкое место на 8 ГБ боксе.
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 1G
+      NEO4J_server_memory_pagecache_size: 512m
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_plugins:/plugins
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:7474 || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+    logging: *default_logging
+
+  # One-shot: применяет SQL-миграции ДО старта api (идемпотентно —
+  # migrate.py пропускает уже применённые версии). api/worker ждут
+  # успешного завершения. Раньше миграции нигде не запускались — api
+  # стартовал на пустой/устаревшей схеме.
+  migrate:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    image: tessent-brain-api:${IMAGE_TAG:-latest}
+    restart: "no"
+    # migrate.py применяет все backend/db/migrations/*.sql по умолчанию
+    # (без позиционных аргументов; есть флаги --list/--dry-run/--target).
+    command: ["python", "-m", "backend.db.migrate"]
+    environment:
+      APP_ENV: production
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      SECRET_KEY: ${SECRET_KEY:?required}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?required}
+      # Neo4j миграциям не нужен, но Settings в production валидирует ВСЕ
+      # секреты (secret_key/jwt/postgres/neo4j). Без NEO4J_PASSWORD здесь
+      # подхватывается небезопасный дефолт → валидатор рушит migrate ещё
+      # до подключения к БД ("Insecure default secrets ... NEO4J_PASSWORD").
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:?required}
+    depends_on:
+      postgres: { condition: service_healthy }
+    logging: *default_logging
+
+  # One-shot: chown'ит named-volume app_data под uid юзера tessent (1000:1000)
+  # из образа api. Без этого volume создаётся root:root, а api бежит не-root
+  # → PermissionError на 'data/chat_sessions' при импорте sessions.py.
+  init-data:
+    image: tessent-brain-api:${IMAGE_TAG:-latest}
+    restart: "no"
+    user: "0:0"
+    command: ["sh", "-c", "mkdir -p /app/data && chown -R tessent:tessent /app/data"]
+    volumes:
+      - app_data:/app/data
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+    logging: *default_logging
+
+  api:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    image: tessent-brain-api:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    # Переопределяем CMD образа (4 воркера): на 8GB-боксе с лимитом 1.5G
+    # четыре granian-воркера, каждый с полным ML-стеком (~0.5G), упираются
+    # в memcg-лимит и ловят OOM-kill. Для single-VPS (≤50 юзеров) 2 воркеров
+    # асинхронного granian достаточно. Тюнится через GRANIAN_WORKERS.
+    command:
+      - granian
+      - --interface
+      - asgi
+      - backend.api.app:create_app
+      - --factory
+      - --host
+      - "0.0.0.0"
+      - --port
+      - "8000"
+      - --workers
+      - "2"
+    environment:
+      APP_ENV: production
+      DEBUG: "false"
+      LOG_LEVEL: INFO
+      LOG_FORMAT: json
+      # Секреты строго required — backend.config.Settings._forbid_insecure_defaults
+      SECRET_KEY: ${SECRET_KEY:?required}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?required}
+      JWT_SECRET: ${JWT_SECRET_KEY}
+      # БД-подключения
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379/0
+      QDRANT_HOST: qdrant
+      QDRANT_API_KEY: ${QDRANT_API_KEY}
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD}
+      # Supabase — автоматизации (scheduler) и команды для MAC (P5).
+      # Без них automations и mandatory-доступ не работают.
+      SUPABASE_URL: ${SUPABASE_URL:-}
+      SUPABASE_KEY: ${SUPABASE_KEY:-}
+      # MeetFlow — обработка встреч (automation_tools_async). Путь к
+      # смонтированному коду MeetFlow внутри контейнера (см. README).
+      MEETFLOW_PATH: ${MEETFLOW_PATH:-/opt/meetflow}
+      # LLM
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:?required}
+      GEMINI_API_KEY: ${GOOGLE_API_KEY}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      DEFAULT_LLM_PROVIDER: ${DEFAULT_LLM_PROVIDER:-gemini}
+      # Multi-tenant (Phase 7) — включаем сразу в проде
+      MULTITENANT_STRICT: ${MULTITENANT_STRICT:-false}
+      MULTITENANT_STORAGE_STRICT: ${MULTITENANT_STORAGE_STRICT:-false}
+      # CORS whitelist (W6) — НИКОГДА "*" в проде с allow_credentials=True
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:?required in production}
+      # Service-to-service auth (W6, опционально)
+      SERVICE_JWT_SECRET: ${SERVICE_JWT_SECRET:-}
+      SERVICE_JWT_AUDIENCE: ${SERVICE_JWT_AUDIENCE:-tessent-brain}
+      SERVICE_JWT_ISSUER: ${SERVICE_JWT_ISSUER:-meetflow}
+      # Rate-limit + квоты (Phase 4/4a)
+      RATE_LIMIT_ENABLED: "true"
+      RATE_LIMIT_USER_PER_MINUTE: ${RATE_LIMIT_USER_PER_MINUTE:-60}
+      LLM_QUOTA_ENABLED: "true"
+      LLM_USER_DAILY_TOKEN_LIMIT: ${LLM_USER_DAILY_TOKEN_LIMIT:-200000}
+      LLM_TENANT_DAILY_TOKEN_LIMIT: ${LLM_TENANT_DAILY_TOKEN_LIMIT:-5000000}
+      # --- Roadmap P4–P10: безопасные дефолты (careful rollout).
+      # Включать ПОЭТАПНО — см. docs/ru/DEPLOYMENT.md «Поэтапное включение».
+      ONTOLOGY_EXTRACTION_MODE: ${ONTOLOGY_EXTRACTION_MODE:-warn}
+      MANDATORY_ACCESS_MODE: ${MANDATORY_ACCESS_MODE:-off}
+      MEETFLOW_TEAMS_TABLE: ${MEETFLOW_TEAMS_TABLE:-team_members}
+      DATA_LINEAGE_ENABLED: ${DATA_LINEAGE_ENABLED:-off}
+      # --- Hermes-трек (P12) — всё default off, см. DEPLOYMENT §12.6
+      HERMES_SKILLS_ENABLED: ${HERMES_SKILLS_ENABLED:-off}
+      HERMES_SKILL_AUTOLEARN: ${HERMES_SKILL_AUTOLEARN:-off}
+      HERMES_LESSONS_ENABLED: ${HERMES_LESSONS_ENABLED:-off}
+      HERMES_PORTRAIT_ENABLED: ${HERMES_PORTRAIT_ENABLED:-off}
+      HERMES_APPROVAL_MODE: ${HERMES_APPROVAL_MODE:-off}
+      HERMES_APPROVAL_ALLOW: ${HERMES_APPROVAL_ALLOW:-}
+      HERMES_APPROVAL_DENY: ${HERMES_APPROVAL_DENY:-}
+      HERMES_AGENT_TOOLS_ENABLED: ${HERMES_AGENT_TOOLS_ENABLED:-off}
+      HERMES_MAX_STEPS: ${HERMES_MAX_STEPS:-30}
+      HERMES_REAL_EXECUTION: ${HERMES_REAL_EXECUTION:-off}
+      HERMES_MCP_ENABLED: ${HERMES_MCP_ENABLED:-off}
+      HERMES_MCP_SERVERS: ${HERMES_MCP_SERVERS:-}
+    expose:
+      - "8000"
+    volumes:
+      # Файловое состояние backend: чаты (data/chat_sessions), граф знаний
+      # (data/tessent_brain_graph.json), корректировки (data/corrections).
+      # Без volume всё стирается при каждом up/rebuild. Общий с worker.
+      - app_data:/app/data
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      init-data: { condition: service_completed_successfully }
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      qdrant: { condition: service_healthy }
+      neo4j: { condition: service_healthy }
+    deploy:
+      resources:
+        limits:
+          memory: 1.5G
+    logging: *default_logging
+
+  worker:
+    image: tessent-brain-api:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    # ИСПРАВЛЕНО: брокер живёт в backend.workers.taskiq_app:broker.
+    # Модуля backend.workers.tasks не существует — worker молча не
+    # стартовал бы (ночная обработка/таски не выполнялись). См.
+    # docstring backend/workers/taskiq_app.py.
+    command: ["python", "-m", "taskiq", "worker", "backend.workers.taskiq_app:broker"]
+    environment:
+      APP_ENV: production
+      LOG_LEVEL: INFO
+      LOG_FORMAT: json
+      SECRET_KEY: ${SECRET_KEY}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379/0
+      QDRANT_HOST: qdrant
+      QDRANT_API_KEY: ${QDRANT_API_KEY}
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD}
+      # Worker'у тоже нужны Supabase (загрузка транскриптов) и флаги
+      # онтологии/lineage — он пишет в граф теми же путями, что api.
+      SUPABASE_URL: ${SUPABASE_URL:-}
+      SUPABASE_KEY: ${SUPABASE_KEY:-}
+      MEETFLOW_PATH: ${MEETFLOW_PATH:-/opt/meetflow}
+      ONTOLOGY_EXTRACTION_MODE: ${ONTOLOGY_EXTRACTION_MODE:-warn}
+      MANDATORY_ACCESS_MODE: ${MANDATORY_ACCESS_MODE:-off}
+      MEETFLOW_TEAMS_TABLE: ${MEETFLOW_TEAMS_TABLE:-team_members}
+      DATA_LINEAGE_ENABLED: ${DATA_LINEAGE_ENABLED:-off}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      # Тот же data-volume, что и у api (worker пишет в граф теми же путями).
+      - app_data:/app/data
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      init-data: { condition: service_completed_successfully }
+      api: { condition: service_started }
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    logging: *default_logging
+
+  frontend:
+    # Next.js 14 UI (граф знаний, snapshots, чат). Браузер ходит на свой же
+    # origin (APP_DOMAIN), а next-rewrites сервер-сайд проксируют /api на api:8000
+    # → CORS не нужен. NEXT_PUBLIC_API_URL инлайнится в бандл на build.
+    build:
+      context: ../../frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: https://${APP_DOMAIN:?required}
+        # rewrites() запекается на build → цель прокси /api задаём здесь.
+        BACKEND_URL: http://api:8000
+    image: tessent-brain-frontend:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      # Куда next-rewrites проксируют /api (внутренняя docker-сеть).
+      BACKEND_URL: http://api:8000
+      # Опционально — для app/api/banana (image-gen). Без них фича не активна.
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      GEMINI_API_KEY: ${GOOGLE_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    expose:
+      - "3000"
+    depends_on:
+      api: { condition: service_started }
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    logging: *default_logging
+
+  caddy:
+    # Caddy вместо nginx — auto-HTTPS через Let's Encrypt без лишней магии.
+    # Если за CDN/reverse-proxy уже есть TLS, можно отключить через профиль.
+    image: caddy:2.8-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?required}
+      # Домен UI (отдельный сайт-блок в Caddyfile → reverse_proxy frontend:3000).
+      APP_DOMAIN: ${APP_DOMAIN:?required}
+      EMAIL: ${ACME_EMAIL:?required}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      api: { condition: service_started }
+      frontend: { condition: service_started }
+    logging: *default_logging
+
+volumes:
+  app_data:
+  postgres_data:
+  redis_data:
+  qdrant_data:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_plugins:
+  caddy_data:
+  caddy_config:
+
+networks:
+  default:
+    name: tessent_brain

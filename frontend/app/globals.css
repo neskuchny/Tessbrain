@@ -1,0 +1,441 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brain-glow: rgba(12, 140, 231, 0.4);
+  --brain-primary: #0c8ce7;
+  --brain-dark: #072849;
+}
+
+/* Кастомный скроллбар */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(12, 140, 231, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(12, 140, 231, 0.7);
+}
+
+/* Анимация пульса для мозга */
+@keyframes brain-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.brain-pulse {
+  animation: brain-pulse 3s ease-in-out infinite;
+}
+
+/* Shimmer effect for Landing Page */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 3D-граф: чипы-фильтры (Graph3DView) */
+.gv-chip { cursor: pointer; user-select: none; transition: opacity .18s, background .18s, border-color .18s; }
+.gv-chip[data-off="1"] { opacity: 0.34; }
+
+/* Стили для графа */
+.graph-container {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(12, 140, 231, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+/* Стили для чата */
+.chat-message {
+  @apply rounded-lg p-4 mb-3;
+}
+
+.chat-message.user {
+  @apply bg-brain-700/50 ml-8;
+}
+
+.chat-message.assistant {
+  @apply bg-brain-800/50 mr-8 border border-brain-600/30;
+}
+
+/* Карточки */
+.card {
+  @apply bg-brain-800/40 backdrop-blur-sm border border-brain-600/20 rounded-xl p-4;
+  @apply hover:border-brain-500/40 transition-all duration-300;
+}
+
+.card-glow {
+  @apply shadow-lg shadow-brain-500/10;
+}
+
+/* Кнопки */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  @apply disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-primary {
+  @apply bg-brain-600 hover:bg-brain-500 text-white;
+  @apply shadow-lg shadow-brain-600/30 hover:shadow-brain-500/40;
+}
+
+.btn-secondary {
+  @apply bg-brain-800/60 hover:bg-brain-700/60 text-brain-200;
+  @apply border border-brain-600/30 hover:border-brain-500/50;
+}
+
+/* Инпуты */
+.input {
+  @apply w-full px-4 py-3 rounded-lg;
+  @apply bg-brain-900/60 border border-brain-600/30;
+  @apply focus:border-brain-500 focus:ring-2 focus:ring-brain-500/30;
+  @apply placeholder:text-brain-400/50 text-white;
+  @apply outline-none transition-all duration-200;
+}
+
+/* Статус-бейджи */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-green-500/20 text-green-400 border border-green-500/30;
+}
+
+.badge-warning {
+  @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30;
+}
+
+.badge-error {
+  @apply bg-red-500/20 text-red-400 border border-red-500/30;
+}
+
+.badge-info {
+  @apply bg-brain-500/20 text-brain-300 border border-brain-500/30;
+}
+
+/* Типографика */
+.text-gradient {
+  @apply bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-brain-300 via-brain-400 to-brain-300;
+}
+
+/* Сетка нейронов на фоне */
+.neural-grid {
+  background-image: 
+    linear-gradient(rgba(12, 140, 231, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12, 140, 231, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ReactFlow Controls стили */
+.react-flow__controls {
+  background: #0a3f6e !important;
+  border: 1px solid rgba(6, 75, 132, 0.6) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.react-flow__controls-button {
+  background: #0a3f6e !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(6, 75, 132, 0.4) !important;
+  fill: #b9dffd !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #064b84 !important;
+  fill: #e0effe !important;
+}
+
+.react-flow__controls-button:last-child {
+  border-bottom: none !important;
+}
+
+.react-flow__controls-button svg {
+  fill: inherit !important;
+}
+
+/* ReactFlow MiniMap стили */
+.react-flow__minimap {
+  background: #0a3f6e !important;
+  border: 1px solid rgba(6, 75, 132, 0.6) !important;
+  border-radius: 8px !important;
+}
+
+/* ReactFlow Attribution скрыть */
+.react-flow__attribution {
+  display: none !important;
+}
+
+/* ═══════════════════════════════════════════════ */
+/* SIMA-specific styles                            */
+/* ═══════════════════════════════════════════════ */
+
+/* SIMA ReactFlow overrides (scoped to .sima-workspace) */
+.sima-workspace .react-flow__node {
+  border-radius: 12px !important;
+}
+
+.sima-workspace .react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.sima-workspace .react-flow__handle {
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.sima-workspace .react-flow__node:hover .react-flow__handle {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.sima-workspace .react-flow__handle:hover {
+  opacity: 1 !important;
+  transform: scale(1.5) !important;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.6);
+}
+
+.sima-workspace .react-flow__connection-path {
+  stroke: #6366F1 !important;
+  stroke-width: 2 !important;
+}
+
+.sima-workspace .react-flow__connection {
+  z-index: 1001 !important;
+}
+
+.sima-workspace .react-flow__controls {
+  background: rgb(var(--sima-surface)) !important;
+  border: 1px solid rgb(var(--sima-border)) !important;
+  border-radius: 8px !important;
+}
+
+.sima-workspace .react-flow__controls-button {
+  background: rgb(var(--sima-surface)) !important;
+  border-color: rgb(var(--sima-border)) !important;
+  fill: rgb(var(--sima-text-muted)) !important;
+}
+
+.sima-workspace .react-flow__controls-button:hover {
+  background: rgb(var(--sima-surface-light)) !important;
+}
+
+.sima-workspace .react-flow__minimap {
+  background: rgb(var(--sima-surface)) !important;
+  border: 1px solid rgb(var(--sima-border)) !important;
+  border-radius: 8px !important;
+}
+
+.sima-workspace .react-flow__background {
+  background: rgb(var(--sima-bg)) !important;
+}
+
+/* Voice recording animation */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.voice-pulse {
+  animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* SIMA Presentation fade-in */
+@keyframes sima-fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: sima-fadeIn 0.4s ease-out;
+}
+
+/* === SIMA темы (Sima Remix): тёмная по умолчанию, светлая по атрибуту === */
+:root {
+  --sima-bg: 10 14 26;             /* #0A0E1A */
+  --sima-surface: 18 22 42;        /* #12162A */
+  --sima-surface-light: 26 31 53;  /* #1A1F35 */
+  --sima-border: 42 47 69;         /* #2A2F45 */
+  --sima-border-light: 58 63 85;   /* #3A3F55 */
+  --sima-primary: 99 102 241;      /* #6366F1 */
+  --sima-primary-hover: 129 140 248;
+  --sima-accent: 34 211 238;       /* #22D3EE */
+  --sima-accent-green: 52 211 153;
+  --sima-accent-yellow: 251 191 36;
+  --sima-accent-red: 248 113 113;
+  --sima-accent-purple: 167 139 250;
+  --sima-text: 226 232 240;        /* #E2E8F0 */
+  --sima-text-muted: 148 163 184;
+  --sima-text-dim: 100 116 139;
+}
+
+/* Светлая тема — палитра дизайн-прототипа Sima Remix (тёплый кремовый
+   фон, чернильный текст, коричневый акцент) */
+html[data-sima-theme='light'] {
+  --sima-bg: 250 248 243;          /* #FAF8F3 */
+  --sima-surface: 255 255 254;     /* #FFFFFE (paper) */
+  --sima-surface-light: 245 242 235; /* #F5F2EB */
+  --sima-border: 227 224 214;      /* #E3E0D6 */
+  --sima-border-light: 211 209 199; /* #D3D1C7 */
+  --sima-primary: 166 103 58;      /* #A6673A — brown accent */
+  --sima-primary-hover: 138 85 48;
+  --sima-accent: 83 74 183;        /* #534AB7 indigo */
+  --sima-accent-green: 59 109 17;  /* #3B6D11 olive */
+  --sima-accent-yellow: 133 79 11; /* #854F0B amber */
+  --sima-accent-red: 153 60 29;    /* #993C1D */
+  --sima-accent-purple: 83 74 183;
+  --sima-text: 26 26 24;           /* #1A1A18 ink-1 */
+  --sima-text-muted: 95 94 90;     /* #5F5E5A ink-3 */
+  --sima-text-dim: 136 135 128;    /* #888780 ink-4 */
+}
+
+/* Подписи связей — var-токены в ОБЕИХ темах (инлайн-fill убран из
+   DiagramCanvas, иначе перебивал бы CSS и оставлял тёмные чипы на светлой). */
+.sima-workspace .react-flow__edge-textbg {
+  fill: rgb(var(--sima-surface));
+}
+.sima-workspace .react-flow__edge-text {
+  fill: rgb(var(--sima-text-muted));
+}
+
+/* Светлая тема: элементы ReactFlow, чьи цвета заданы props-ами */
+html[data-sima-theme='light'] .sima-workspace .react-flow__background circle {
+  fill: rgb(var(--sima-border));
+}
+html[data-sima-theme='light'] .sima-workspace .react-flow__minimap-mask {
+  fill: rgb(250 248 243 / 0.72);
+}
+
+/* ═══ Лендинг: wow-слой первой страницы (по мотивам SynLabs) ═══ */
+
+/* Плёночное зерно поверх всего лендинга — придаёт «кино»-фактуру */
+.landing-grain {
+  position: fixed;
+  inset: -50%;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: landing-grain 1.3s steps(3) infinite;
+}
+@keyframes landing-grain {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(-4%, 3%); }
+  66% { transform: translate(3%, -4%); }
+}
+
+/* Виньетка — мягко затемняет края, взгляд держится в центре */
+.landing-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 29;
+  pointer-events: none;
+  background: radial-gradient(125% 95% at 50% 45%,
+    transparent 55%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+/* Reveal: блок всплывает при входе во вьюпорт */
+.landing-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.landing-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Живой градиент заголовка hero */
+.landing-title-gradient {
+  background-size: 200% 200%;
+  animation: landing-gradient-shift 6s ease-in-out infinite;
+}
+@keyframes landing-gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Мягкое свечение стеклянной hero-панели */
+.landing-hero-glass {
+  background: rgba(15, 15, 26, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 80px rgba(77, 193, 199, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-grain { animation: none; }
+  .landing-title-gradient { animation: none; }
+  .landing-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Доска (banana): узлы рисуются кастомными компонентами (BaseNode). Тип узла
+   "output" (а также input/default/group) совпадает со ВСТРОЕННЫМИ типами
+   react-flow, и base.css вешает на них свою рамку/фон/фокус-обводку — из-за
+   этого у узла «Output» была «половина белой рамки» слева/снизу. Гасим
+   встроенное оформление именно на доске (scope .banana-flow). */
+.banana-flow .react-flow__node-output,
+.banana-flow .react-flow__node-input,
+.banana-flow .react-flow__node-default,
+.banana-flow .react-flow__node-group {
+  border: none;
+  background: transparent;
+  color: inherit;
+  border-radius: 0;
+  padding: 0;
+}
+.banana-flow .react-flow__node-output.selected,
+.banana-flow .react-flow__node-output:focus,
+.banana-flow .react-flow__node-output:focus-visible,
+.banana-flow .react-flow__node-input.selected,
+.banana-flow .react-flow__node-input:focus,
+.banana-flow .react-flow__node-input:focus-visible,
+.banana-flow .react-flow__node-default.selected,
+.banana-flow .react-flow__node-default:focus,
+.banana-flow .react-flow__node-default:focus-visible,
+.banana-flow .react-flow__node-group.selected,
+.banana-flow .react-flow__node-group:focus,
+.banana-flow .react-flow__node-group:focus-visible {
+  box-shadow: none;
+  outline: none;
+}

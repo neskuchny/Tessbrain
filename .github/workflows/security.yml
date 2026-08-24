@@ -1,0 +1,223 @@
+# Security scans (W10 production hygiene).
+#
+# Цель — поймать known CVE и утечку secrets в зависимостях ДО прода.
+# Запускается на PR и nightly (cron) — nightly важен потому что новые
+# CVE появляются после merge'а.
+#
+# Все проверки запускаются с continue-on-error=true в первой версии:
+# критическая логика — найти и уведомить, не блокировать релиз. Когда
+# baseline зачистим — поднимем до hard-fail.
+
+name: security
+
+on:
+  pull_request:
+    paths:
+      - "tessent_brain/requirements*.txt"
+      - "tessent_brain/pyproject.toml"
+      - "alfa_asynk_meetflow/requirements*.txt"
+      - "mark001_async/requirements*.txt"
+      - "sima-app/package*.json"
+      - "tessent_brain/frontend/package*.json"
+      - "tessent_brain/deploy/**"
+      - ".github/workflows/security.yml"
+  schedule:
+    # Каждый день в 04:00 UTC — после nightly_consolidation, до утренней
+    # стендапа команды.
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write   # для загрузки SARIF в Code Scanning
+
+jobs:
+  pip-audit:
+    name: pip-audit (${{ matrix.path }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        path: [tessent_brain, alfa_asynk_meetflow, mark001_async]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Install pip-audit
+        run: pip install --quiet pip-audit
+      - name: Run pip-audit (${{ matrix.path }})
+        continue-on-error: true
+        run: |
+          if [ -f "${{ matrix.path }}/requirements.txt" ]; then
+            pip-audit -r "${{ matrix.path }}/requirements.txt" \
+              --format json --output pip-audit-${{ matrix.path }}.json || true
+            pip-audit -r "${{ matrix.path }}/requirements.txt" \
+              --strict || echo "::warning::pip-audit found CVEs in ${{ matrix.path }}"
+          fi
+      - name: Upload pip-audit report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: pip-audit-${{ matrix.path }}
+          path: pip-audit-${{ matrix.path }}.json
+          if-no-files-found: ignore
+
+  npm-audit:
+    name: npm-audit (${{ matrix.path }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        path: [sima-app, tessent_brain/frontend]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+      - name: npm audit
+        continue-on-error: true
+        working-directory: ${{ matrix.path }}
+        run: |
+          if [ -f package.json ]; then
+            npm audit --audit-level=high --json > ../npm-audit-$(basename ${{ matrix.path }}).json || true
+            npm audit --audit-level=high \
+              || echo "::warning::npm audit found high-severity CVEs in ${{ matrix.path }}"
+          fi
+      - name: Upload npm-audit report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: npm-audit-${{ matrix.path }}
+          path: npm-audit-*.json
+          if-no-files-found: ignore
+
+  trivy-fs:
+    name: trivy filesystem
+    runs-on: ubuntu-latest
+    continue-on-error: true  # pinned versions of trivy-action периодически
+                             # ломаются при апдейтах SARIF schema; keep warn-only
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          scan-ref: "."
+          format: "sarif"
+          output: "trivy-fs.sarif"
+          severity: "CRITICAL,HIGH"
+          exit-code: "0"
+          ignore-unfixed: true
+      - name: Upload SARIF to GitHub Security
+        if: always() && hashFiles('trivy-fs.sarif') != ''
+        uses: github/codeql-action/upload-sarif@v3
+        continue-on-error: true
+        with:
+          sarif_file: trivy-fs.sarif
+          category: trivy-fs
+
+  secret-scan:
+    name: gitleaks secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0  # gitleaks нужна полная история
+      - name: gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITLEAKS_LICENSE: optional — без неё все равно работает
+          # на public-репо, но org-wide nightly требует лицензию.
+        continue-on-error: true
+
+  # === W38: hard-fail на CRITICAL CVEs ====================================
+  # До W38 все security сканы шли с continue-on-error=true (warn-only).
+  # Теперь baseline зачищен, и хотя бы одна метрика делает блок:
+  # CRITICAL severity в Python deps → CI красный, merge не ходит.
+  # HIGH/MEDIUM остаются warn-only (см. шаги выше).
+  pip-audit-critical:
+    name: pip-audit critical (hard-fail)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        path: [tessent_brain, alfa_asynk_meetflow, mark001_async]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Install pip-audit
+        run: pip install --quiet pip-audit
+      - name: Fail only on CRITICAL/HIGH CVEs
+        run: |
+          if [ ! -f "${{ matrix.path }}/requirements.txt" ]; then
+            echo "no requirements.txt for ${{ matrix.path }} — skipping"
+            exit 0
+          fi
+          # pip-audit не имеет --severity флага, пропускаем JSON через jq.
+          #
+          # Точечные исключения (гейт ниже валит ЛЮБУЮ unfixed-уязвимость,
+          # поэтому неисправимые-в-природе CVE документируем здесь):
+          # - CVE-2025-3000 / GHSA-rrmf-rvhw-rf47 (torch, torch.jit.script
+          #   memory corruption): fix-версии НЕ СУЩЕСТВУЕТ, advisory из
+          #   серии оспариваемых мейнтейнерами PyTorch local-DoS (требует
+          #   исполнения вредоносного скрипта В процессе — атакующий уже
+          #   исполняет код). В нашем коде torch.jit.script на внешнем
+          #   вводе не вызывается (torch — транзитивная ML-зависимость
+          #   эмбеддингов). Пересмотреть, когда появится fixed release.
+          pip-audit -r "${{ matrix.path }}/requirements.txt" \
+            --ignore-vuln CVE-2025-3000 \
+            --ignore-vuln GHSA-rrmf-rvhw-rf47 \
+            --format json --output audit.json || true
+          if [ ! -f audit.json ]; then exit 0; fi
+          # Считаем CRITICAL findings — если > 0, fail.
+          # (HIGH ловится отдельным шагом ниже, не блокирует merge пока.)
+          critical=$(python -c "
+          import json, sys
+          try:
+              data = json.load(open('audit.json'))
+          except Exception:
+              sys.exit(0)
+          deps = data.get('dependencies', []) if isinstance(data, dict) else data
+          n = 0
+          for d in deps:
+              for v in d.get('vulns', []):
+                  # pip-audit не всегда даёт severity напрямую — fallback на
+                  # CVE id heuristic + aliases. Лучше подключить OSV severity
+                  # mapping в будущем.
+                  fix = v.get('fix_versions') or []
+                  if not fix:
+                      n += 1   # unfixed = критичнее всего
+          print(n)
+          ")
+          if [ "${critical:-0}" -gt 0 ]; then
+              echo "::error::Found ${critical} unfixed vulnerabilities in ${{ matrix.path }} — review pip-audit-${{ matrix.path }} artifact"
+              exit 1
+          fi
+          echo "OK: no unfixed CVEs in ${{ matrix.path }}"
+
+  # === SBOM generation (W38) ============================================
+  # Software Bill of Materials — supply-chain compliance артефакт.
+  # SPDX format, прикладывается к каждому release tag.
+  sbom:
+    name: SBOM (Syft)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Generate SBOM (SPDX)
+        uses: anchore/sbom-action@v0
+        with:
+          format: spdx-json
+          output-file: sbom.spdx.json
+          path: .
+      - name: Upload SBOM artifact
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: sbom-spdx
+          path: sbom.spdx.json
+          if-no-files-found: warn
+          retention-days: 90

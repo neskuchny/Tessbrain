@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "name": "Кейс 1: Итоги встречи → в Telegram",
+  "nodes": [
+    {
+      "id": "note",
+      "type": "note",
+      "position": { "x": 40, "y": 40 },
+      "data": {
+        "label": "Как это работает",
+        "text": "Встреча завершилась → «Данные встречи» тянут готовый отчёт (саммари + решения + задачи + участники) из базы знаний → уходит в Telegram. Настройте: (1) на триггере — папки встреч; (2) на «В Telegram» — Chat ID получателя; (3) токен бота в «Интеграции → Telegram». Проверьте кнопкой «Прогон», затем включите триггер."
+      },
+      "style": { "width": 380, "height": 170 }
+    },
+    {
+      "id": "t1",
+      "type": "trigger",
+      "position": { "x": 40, "y": 250 },
+      "data": {
+        "label": "Встреча завершилась",
+        "trigger_type": "event",
+        "event_type": "meeting_ended",
+        "folder_ids": [],
+        "enabled": false,
+        "payload": "итоги завершившейся встречи"
+      }
+    },
+    {
+      "id": "d1",
+      "type": "meeting_data",
+      "position": { "x": 380, "y": 250 },
+      "data": { "label": "Данные встречи: отчёт", "kind": "report", "meeting_id": "" }
+    },
+    {
+      "id": "n1",
+      "type": "notify",
+      "position": { "x": 720, "y": 250 },
+      "data": { "label": "В Telegram", "channel": "telegram", "chat_id": "", "subject": "Итоги встречи" }
+    }
+  ],
+  "edges": [
+    { "id": "e-t1-d1", "source": "t1", "target": "d1", "targetHandle": "in" },
+    { "id": "e-d1-n1", "source": "d1", "sourceHandle": "out", "target": "n1", "targetHandle": "in" }
+  ],
+  "edgeStyle": "bezier"
+}

@@ -1,0 +1,641 @@
+{
+ "version": 1,
+ "name": "Landing page: 6 on-brand blocks",
+ "nodes": [
+  {
+   "id": "note",
+   "type": "note",
+   "position": {
+    "x": 40,
+    "y": 60
+   },
+   "data": {
+    "text": "Landing page: 6 blocks in one style.\n\nEach block is a Prompt → Generate. Type your product into the block text, hit Run. The hero sets the style; it carries through by reference; each block is a separate image (hand off to code section by section).\n\nNew block: drag a Prompt and a Generate, connect."
+   },
+   "width": 300,
+   "style": {
+    "width": 300,
+    "height": 200
+   }
+  },
+  {
+   "id": "img-logo",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 60
+   },
+   "data": {
+    "label": "Logo (optional)",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "img-ref",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 390
+   },
+   "data": {
+    "label": "Style reference (optional)",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "p1",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 720
+   },
+   "data": {
+    "label": "Block 1 · Hero",
+    "prompt": "Landing Hero section (first screen): offer headline [type], subheadline, CTA button, product on the right, logo in the header. Flat straight-on layout, no browser frame. STYLE OF THE WHOLE PAGE (describe): colors, fonts, spacing."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb1",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o1",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 410
+   },
+   "data": {
+    "label": "Block 1 · Hero",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p2",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 990
+   },
+   "data": {
+    "label": "Block 2 · Benefits",
+    "prompt": "“Benefits” section: 3–4 cards with icons and captions [type]. Same style as the Hero (references). Flat layout, no frame."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb2",
+   "type": "nanoBanana",
+   "position": {
+    "x": 1270,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o2",
+   "type": "output",
+   "position": {
+    "x": 1680,
+    "y": 410
+   },
+   "data": {
+    "label": "Block 2 · Benefits",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p3",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1260
+   },
+   "data": {
+    "label": "Block 3 · How it works",
+    "prompt": "“How it works” section: product screenshot/mockup in an interface frame, 2–3 steps [type]. Same style."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb3",
+   "type": "nanoBanana",
+   "position": {
+    "x": 1680,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o3",
+   "type": "output",
+   "position": {
+    "x": 2090,
+    "y": 410
+   },
+   "data": {
+    "label": "Block 3 · How it works",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p4",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1530
+   },
+   "data": {
+    "label": "Block 4 · Social proof",
+    "prompt": "“Trusted by” section: client logos (placeholders), a testimonial with an avatar, 2–3 result numbers [type]. Same style."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb4",
+   "type": "nanoBanana",
+   "position": {
+    "x": 2090,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o4",
+   "type": "output",
+   "position": {
+    "x": 2500,
+    "y": 410
+   },
+   "data": {
+    "label": "Block 4 · Social proof",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p5",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1800
+   },
+   "data": {
+    "label": "Block 5 · Pricing",
+    "prompt": "“Pricing” section: three cards, the middle one highlighted, checkmark features [type], CTA buttons. Same style."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb5",
+   "type": "nanoBanana",
+   "position": {
+    "x": 2500,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o5",
+   "type": "output",
+   "position": {
+    "x": 2910,
+    "y": 410
+   },
+   "data": {
+    "label": "Block 5 · Pricing",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p6",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 2070
+   },
+   "data": {
+    "label": "Block 6 · CTA + footer",
+    "prompt": "Final section: wide call-to-action with a button on a contrasting background + footer with logo, links, contacts. Same style."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb6",
+   "type": "nanoBanana",
+   "position": {
+    "x": 2910,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o6",
+   "type": "output",
+   "position": {
+    "x": 3320,
+    "y": 60
+   },
+   "data": {
+    "label": "Block 6 · CTA + footer",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-p1-nb1",
+   "source": "p1",
+   "sourceHandle": "text",
+   "target": "nb1",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb1-o1",
+   "source": "nb1",
+   "sourceHandle": "image",
+   "target": "o1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb1",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb1",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p2-nb2",
+   "source": "p2",
+   "sourceHandle": "text",
+   "target": "nb2",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb2-o2",
+   "source": "nb2",
+   "sourceHandle": "image",
+   "target": "o2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb2",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb2",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb1-nb2",
+   "source": "nb1",
+   "sourceHandle": "image",
+   "target": "nb2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p3-nb3",
+   "source": "p3",
+   "sourceHandle": "text",
+   "target": "nb3",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb3-o3",
+   "source": "nb3",
+   "sourceHandle": "image",
+   "target": "o3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb3",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb3",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb2-nb3",
+   "source": "nb2",
+   "sourceHandle": "image",
+   "target": "nb3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p4-nb4",
+   "source": "p4",
+   "sourceHandle": "text",
+   "target": "nb4",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb4-o4",
+   "source": "nb4",
+   "sourceHandle": "image",
+   "target": "o4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb4",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb4",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb3-nb4",
+   "source": "nb3",
+   "sourceHandle": "image",
+   "target": "nb4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p5-nb5",
+   "source": "p5",
+   "sourceHandle": "text",
+   "target": "nb5",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb5-o5",
+   "source": "nb5",
+   "sourceHandle": "image",
+   "target": "o5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb5",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb5",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb4-nb5",
+   "source": "nb4",
+   "sourceHandle": "image",
+   "target": "nb5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p6-nb6",
+   "source": "p6",
+   "sourceHandle": "text",
+   "target": "nb6",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb6-o6",
+   "source": "nb6",
+   "sourceHandle": "image",
+   "target": "o6",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb6",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb6",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb6",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb6",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb5-nb6",
+   "source": "nb5",
+   "sourceHandle": "image",
+   "target": "nb6",
+   "targetHandle": "image",
+   "type": "default"
+  }
+ ],
+ "edgeStyle": "curved"
+}

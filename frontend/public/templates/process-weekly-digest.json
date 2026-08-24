@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "name": "Процесс: недельный дайджест",
+  "nodes": [
+    {
+      "id": "note-weekly",
+      "type": "note",
+      "position": {
+        "x": -340,
+        "y": 40
+      },
+      "data": {
+        "text": "Еженедельный дайджест — автоматизация.\n\nТриггер запускается по расписанию → «Спросить мозг» собирает контекст компании → «Отчёт» формирует сводку → «Уведомить» шлёт в Telegram.\n\nНастройте интервал в триггере и получателя в блоке уведомления."
+      }
+    },
+    {
+      "id": "t1",
+      "type": "trigger",
+      "position": {
+        "x": 40,
+        "y": 160
+      },
+      "data": {
+        "label": "Каждый понедельник 9:00",
+        "trigger_type": "schedule",
+        "interval_min": 10080,
+        "payload": "недельный дайджест"
+      }
+    },
+    {
+      "id": "a1",
+      "type": "ask_brain",
+      "position": {
+        "x": 340,
+        "y": 160
+      },
+      "data": {
+        "label": "Итоги недели",
+        "prompt": "Собери итоги прошедшей недели: ключевые решения, прогресс по проектам, риски и что требует внимания. Кратко, по пунктам."
+      }
+    },
+    {
+      "id": "r1",
+      "type": "report",
+      "position": {
+        "x": 640,
+        "y": 160
+      },
+      "data": {
+        "label": "Сводка",
+        "report_type": "summary"
+      }
+    },
+    {
+      "id": "n1",
+      "type": "notify",
+      "position": {
+        "x": 940,
+        "y": 160
+      },
+      "data": {
+        "label": "В Telegram",
+        "channel": "telegram",
+        "text": "📊 Недельный дайджест готов",
+        "subject": "Итоги недели"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-t1-a1",
+      "source": "t1",
+      "target": "a1",
+      "type": "default"
+    },
+    {
+      "id": "e-a1-r1",
+      "source": "a1",
+      "target": "r1",
+      "type": "default"
+    },
+    {
+      "id": "e-r1-n1",
+      "source": "r1",
+      "target": "n1",
+      "type": "default"
+    }
+  ],
+  "edgeStyle": "curved"
+}

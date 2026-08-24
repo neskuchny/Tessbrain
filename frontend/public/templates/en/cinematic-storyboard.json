@@ -1,0 +1,459 @@
+{
+ "version": 1,
+ "name": "Film storyboard: hero + 4 scenes",
+ "nodes": [
+  {
+   "id": "note",
+   "type": "note",
+   "position": {
+    "x": 40,
+    "y": 60
+   },
+   "data": {
+    "text": "Film storyboard: hero + 4 scenes.\n\nFirst a “Character sheet” Prompt → Generate: 3 angles of the character. Then 4 scenes — each a Prompt → Generate, and each takes the character sheet and the previous frame (so the face and clothes stay consistent).\n\nMore scenes: drag a Prompt and a Generate, connect the character sheet."
+   },
+   "width": 300,
+   "style": {
+    "width": 300,
+    "height": 200
+   }
+  },
+  {
+   "id": "p-hero",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 60
+   },
+   "data": {
+    "label": "Character sheet",
+    "prompt": "Character sheet: ONE character in three angles — front, profile, three-quarter. Describe: [gender, age, looks, clothing, a detail]. Neutral background, even light, identical clothing. No text."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-hero",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "3:2",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-hero",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 410
+   },
+   "data": {
+    "label": "Character sheet",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-s1",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 330
+   },
+   "data": {
+    "label": "Scene 1",
+    "prompt": "Storyboard frame, 21:9. The SAME character as on the sheet (keep face, clothing). Scene: [what happens — the setup]. Shot: [wide/medium/close-up]. Dramatic light."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-s1",
+   "type": "nanoBanana",
+   "position": {
+    "x": 1270,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "21:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-s1",
+   "type": "output",
+   "position": {
+    "x": 1680,
+    "y": 410
+   },
+   "data": {
+    "label": "Scene 1",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-s2",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 600
+   },
+   "data": {
+    "label": "Scene 2",
+    "prompt": "21:9 frame, the SAME character, light like the previous frame. Scene: [rising action]. Shot: [type]."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-s2",
+   "type": "nanoBanana",
+   "position": {
+    "x": 1680,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "21:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-s2",
+   "type": "output",
+   "position": {
+    "x": 2090,
+    "y": 410
+   },
+   "data": {
+    "label": "Scene 2",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-s3",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 870
+   },
+   "data": {
+    "label": "Scene 3",
+    "prompt": "21:9 frame, the SAME character. Scene: [climax]. Shot: [type]."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-s3",
+   "type": "nanoBanana",
+   "position": {
+    "x": 2090,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "21:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-s3",
+   "type": "output",
+   "position": {
+    "x": 2500,
+    "y": 410
+   },
+   "data": {
+    "label": "Scene 3",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-s4",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1140
+   },
+   "data": {
+    "label": "Scene 4",
+    "prompt": "21:9 frame, the SAME character. Scene: [resolution/finale]. Shot: [type]."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-s4",
+   "type": "nanoBanana",
+   "position": {
+    "x": 2500,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "21:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-s4",
+   "type": "output",
+   "position": {
+    "x": 2910,
+    "y": 60
+   },
+   "data": {
+    "label": "Scene 4",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-p-hero-nb-hero",
+   "source": "p-hero",
+   "sourceHandle": "text",
+   "target": "nb-hero",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-hero-o-hero",
+   "source": "nb-hero",
+   "sourceHandle": "image",
+   "target": "o-hero",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-s1-nb-s1",
+   "source": "p-s1",
+   "sourceHandle": "text",
+   "target": "nb-s1",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-s1-o-s1",
+   "source": "nb-s1",
+   "sourceHandle": "image",
+   "target": "o-s1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-hero-nb-s1",
+   "source": "nb-hero",
+   "sourceHandle": "image",
+   "target": "nb-s1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-hero-nb-s1",
+   "source": "nb-hero",
+   "sourceHandle": "image",
+   "target": "nb-s1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-s2-nb-s2",
+   "source": "p-s2",
+   "sourceHandle": "text",
+   "target": "nb-s2",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-s2-o-s2",
+   "source": "nb-s2",
+   "sourceHandle": "image",
+   "target": "o-s2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-hero-nb-s2",
+   "source": "nb-hero",
+   "sourceHandle": "image",
+   "target": "nb-s2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-s1-nb-s2",
+   "source": "nb-s1",
+   "sourceHandle": "image",
+   "target": "nb-s2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-s3-nb-s3",
+   "source": "p-s3",
+   "sourceHandle": "text",
+   "target": "nb-s3",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-s3-o-s3",
+   "source": "nb-s3",
+   "sourceHandle": "image",
+   "target": "o-s3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-hero-nb-s3",
+   "source": "nb-hero",
+   "sourceHandle": "image",
+   "target": "nb-s3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-s2-nb-s3",
+   "source": "nb-s2",
+   "sourceHandle": "image",
+   "target": "nb-s3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-s4-nb-s4",
+   "source": "p-s4",
+   "sourceHandle": "text",
+   "target": "nb-s4",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-s4-o-s4",
+   "source": "nb-s4",
+   "sourceHandle": "image",
+   "target": "o-s4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-hero-nb-s4",
+   "source": "nb-hero",
+   "sourceHandle": "image",
+   "target": "nb-s4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-s3-nb-s4",
+   "source": "nb-s3",
+   "sourceHandle": "image",
+   "target": "nb-s4",
+   "targetHandle": "image",
+   "type": "default"
+  }
+ ],
+ "edgeStyle": "curved"
+}

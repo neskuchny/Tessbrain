@@ -1,0 +1,118 @@
+[
+  {
+    "id": "table-grounded-pipeline",
+    "pillar": "table",
+    "kind": "positive",
+    "note": "Таблица с сущностями компании в значениях — заземляется ли скелет лучше, чем чистый LLM над заголовками (который не ЗНАЕТ, что Polis — наш продукт)?",
+    "payload": {
+      "columns": ["product", "owner", "ACV", "stage"],
+      "rows": [
+        {"product": "Polis", "owner": "Иван Петров", "ACV": "1200", "stage": "won"},
+        {"product": "Drive", "owner": "Мария", "ACV": "800", "stage": "lost"},
+        {"product": "Polis", "owner": "Иван Петров", "ACV": "1500", "stage": "won"}
+      ],
+      "nodes": [
+        {"_label": "Product", "name": "Polis"},
+        {"_label": "Product", "name": "Drive"},
+        {"_label": "Person", "name": "Иван Петров"},
+        {"_label": "Person", "name": "Мария"},
+        {"_label": "KPI", "name": "ACV"}
+      ]
+    }
+  },
+  {
+    "id": "table-unknown-control",
+    "pillar": "table",
+    "kind": "negative_control",
+    "note": "Негативный контроль: значения НЕ вяжутся с компанией. Скелет ОБЯЗАН честно сказать is_known=false (не выдумывать бизнес-смысл).",
+    "payload": {
+      "columns": ["col_a", "col_b", "x"],
+      "rows": [{"col_a": "foo", "col_b": "42", "x": "qux"}, {"col_a": "bar", "col_b": "17", "x": "zud"}],
+      "nodes": []
+    },
+    "control": {"check": "is_known", "expect": false}
+  },
+  {
+    "id": "table-generic-readable-control",
+    "pillar": "table",
+    "kind": "negative_control",
+    "note": "Контроль над-claim: общая таблица [date,amount,unit] без сущностей компании. Чистый LLM прочтёт её и так; скелет НЕ должен ложно заявлять знание компании.",
+    "payload": {
+      "columns": ["date", "amount", "unit"],
+      "rows": [{"date": "2026-01-15", "amount": "100", "unit": "usd"}],
+      "nodes": [{"_label": "Product", "name": "Polis"}]
+    },
+    "control": {"check": "is_known", "expect": false}
+  },
+  {
+    "id": "desync-metric-opposite",
+    "pillar": "desync",
+    "kind": "positive",
+    "note": "Маркетинг ↑нагрузку, инженерия ↓нагрузку на ту же платформу. Свяжет ли чистый LLM эти две цели из РАЗНЫХ отделов в рассинхрон?",
+    "payload": {
+      "dept_goals": {
+        "Marketing": ["увеличить нагрузку на платформу ради привлечения пользователей"],
+        "Engineering": ["снизить нагрузку на платформу ради стабильности"]
+      }
+    }
+  },
+  {
+    "id": "desync-aligned-control",
+    "pillar": "desync",
+    "kind": "negative_control",
+    "note": "Негативный контроль: оба отдела хотят ОДНОГО (растить выручку). Скелет НЕ должен выдумывать конфликт.",
+    "payload": {
+      "dept_goals": {"Sales": ["растить выручку за квартал"], "Marketing": ["наращивать выручку через привлечение"]}
+    },
+    "control": {"check": "no_desync"}
+  },
+  {
+    "id": "desync-different-topics-control",
+    "pillar": "desync",
+    "kind": "negative_control",
+    "note": "Контроль над-claim: разные темы, противоположные направления, но РАЗНЫЕ метрики (↑выручку vs ↓отток). Это НЕ metric-конфликт — скелет не должен шуметь на стилистике.",
+    "payload": {
+      "dept_goals": {"Sales": ["увеличить выручку"], "Success": ["снизить отток клиентов"]}
+    },
+    "control": {"check": "no_metric_desync"}
+  },
+  {
+    "id": "blindspot-recurring-3-meetings",
+    "pillar": "blind_spots",
+    "kind": "positive",
+    "note": "Дедлок согласований повторяется в 3 РАЗНЫХ встречах. Заметит ли чистый LLM, читая встречи по отдельности, что это СИСТЕМА, а не три случайности?",
+    "payload": {
+      "episodes": [
+        {"pattern": "дедлок согласований между продуктом и инженерией", "meeting_id": "m1"},
+        {"pattern": "дедлок согласований между продуктом и инженерией", "meeting_id": "m2"},
+        {"pattern": "дедлок согласований между продуктом и инженерией", "meeting_id": "m3"}
+      ]
+    }
+  },
+  {
+    "id": "blindspot-single-meeting-control",
+    "pillar": "blind_spots",
+    "kind": "negative_control",
+    "note": "Негативный контроль: паттерн 5 раз в ОДНОЙ встрече — участники его видят. Скелет НЕ должен называть это слепой зоной (считаем РАЗНЫЕ встречи).",
+    "payload": {
+      "episodes": [
+        {"pattern": "спор о дедлайне", "meeting_id": "m1"},
+        {"pattern": "спор о дедлайне", "meeting_id": "m1"},
+        {"pattern": "спор о дедлайне", "meeting_id": "m1"},
+        {"pattern": "спор о дедлайне", "meeting_id": "m1"},
+        {"pattern": "спор о дедлайне", "meeting_id": "m1"}
+      ]
+    },
+    "control": {"check": "no_blind_spot"}
+  },
+  {
+    "id": "blindspot-drift",
+    "pillar": "blind_spots",
+    "kind": "positive",
+    "note": "Observer-drift: решения систематически переоценивались (обещали успех, по факту провал). Видит ли это чистый LLM без явного предиктед-vs-факт?",
+    "payload": {
+      "episodes": [],
+      "drift": {"evaluated": 6, "drift_index": 0.67, "optimism_rate": 0.67}
+    }
+  }
+]

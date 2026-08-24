@@ -1,0 +1,70 @@
+name: Eval gate
+
+# Гейт качества extraction перед включением ONTOLOGY_EXTRACTION_MODE=strict.
+# - eval-selfcheck: всегда, без секретов — smoke проводки harness/runner/CLI.
+# - eval-llm-gate: реальный LLM-прогон. Включается репо-переменной
+#   RUN_EVAL_LLM_GATE=true; ключ берётся из secrets (см. ниже). Это и
+#   есть формальный гейт: красный → strict НЕ включаем.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eval-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  eval-selfcheck:
+    name: Eval selfcheck (wiring smoke, no keys)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run eval selfcheck (must exit 0)
+        working-directory: tessent_brain
+        run: |
+          # Без EVAL_LLM_ENABLED — проверяем проводку golden→harness→
+          # runner→exit без ключей и тяжёлых зависимостей.
+          python -m backend.core.eval
+
+  eval-llm-gate:
+    name: Eval LLM gate (blocks strict rollout)
+    runs-on: ubuntu-latest
+    needs: eval-selfcheck
+    # Включить: Settings → Variables → RUN_EVAL_LLM_GATE = true.
+    if: ${{ vars.RUN_EVAL_LLM_GATE == 'true' }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install deps for real extraction path
+        run: |
+          python -m pip install --upgrade pip
+          pip install pydantic pydantic-settings structlog httpx tenacity
+      - name: Run eval gate on real LLM
+        working-directory: tessent_brain
+        env:
+          EVAL_LLM_ENABLED: "1"
+          # Прокиньте ключ активного LLM-профиля проекта в этот env
+          # (имя секрета — под ваш ActiveProfile). Пример:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Пороги можно ужесточать по мере роста golden-набора:
+          EVAL_MIN_PRECISION: "0.8"
+          EVAL_MIN_RECALL: "0.8"
+          EVAL_MAX_VIOLATION: "0.05"
+        run: |
+          # exit!=0 → гейт красный → ONTOLOGY_EXTRACTION_MODE=strict
+          # включать НЕЛЬЗЯ, пока качество не дотянуто.
+          python -m backend.core.eval

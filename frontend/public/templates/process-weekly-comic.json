@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "name": "Комикс недели",
+  "nodes": [
+    {
+      "id": "note-flow",
+      "type": "note",
+      "position": { "x": 40, "y": 40 },
+      "data": {
+        "label": "Как это работает",
+        "text": "По пятницам → мозг собирает историю недели → «Визуальный отчёт» (формат «комикс») рисует её полосой кадров с персонажами и эмоциями → факты дублируются текстом → в Telegram. Показывает КАК прошло — то, что в отчёте не напишешь. Нужен ключ OpenAI/Gemini (или режим «код») и Telegram."
+      },
+      "style": { "width": 380, "height": 160 }
+    },
+    {
+      "id": "t1",
+      "type": "trigger",
+      "position": { "x": 40, "y": 260 },
+      "data": {
+        "label": "По пятницам",
+        "trigger_type": "schedule",
+        "payload": "комикс недели"
+      }
+    },
+    {
+      "id": "b1",
+      "type": "ask_brain",
+      "position": { "x": 360, "y": 260 },
+      "data": {
+        "label": "История недели",
+        "prompt": "Собери историю недели в компании как сюжет для комикса: 3-6 ключевых сцен от начала к итогу (что случилось, кто участвовал, какие были эмоции и динамика — напряжение, облегчение, победа). Отметь тон каждой сцены. Только реальные события из встреч/задач, без выдумок."
+      }
+    },
+    {
+      "id": "ig1",
+      "type": "infographic",
+      "position": { "x": 720, "y": 260 },
+      "data": {
+        "label": "Комикс недели",
+        "format": "comic",
+        "model": "nano-banana",
+        "render": "model",
+        "image": null
+      }
+    },
+    {
+      "id": "n1",
+      "type": "notify",
+      "position": { "x": 1050, "y": 260 },
+      "data": {
+        "label": "В Telegram (фото + сюжет)",
+        "channel": "telegram",
+        "subject": "Комикс недели"
+      }
+    }
+  ],
+  "edges": [
+    { "id": "e-t1-b1", "source": "t1", "target": "b1" },
+    { "id": "e-b1-ig1", "source": "b1", "sourceHandle": "out", "target": "ig1", "targetHandle": "text" },
+    { "id": "e-ig1-n1", "source": "ig1", "sourceHandle": "image", "target": "n1", "targetHandle": "in" }
+  ],
+  "edgeStyle": "curved"
+}

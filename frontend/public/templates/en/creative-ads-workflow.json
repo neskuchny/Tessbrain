@@ -1,0 +1,471 @@
+{
+ "version": 1,
+ "name": "Ad creatives: 4 formats",
+ "nodes": [
+  {
+   "id": "note",
+   "type": "note",
+   "position": {
+    "x": 40,
+    "y": 60
+   },
+   "data": {
+    "text": "Ad creatives: 4 formats.\n\n1) Upload references on the left: logo, product, brand style.\n2) Each format has its own Prompt → Generate. Type the offer into the format text and hit Run.\n\nEach format is independent: edit the text, add your own references. To make a new format: drag a Prompt and a Generate, connect them to the references."
+   },
+   "width": 300,
+   "style": {
+    "width": 300,
+    "height": 200
+   }
+  },
+  {
+   "id": "img-logo",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 60
+   },
+   "data": {
+    "label": "Logo",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "img-product",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 390
+   },
+   "data": {
+    "label": "Product",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "img-style",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 720
+   },
+   "data": {
+    "label": "Brand style",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "p-feed",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1320
+   },
+   "data": {
+    "label": "Feed 1:1",
+    "prompt": "1:1 feed ad creative. Offer: [type the main benefit]. Headline: [3–6 words]. CTA button: [text]. Product from the reference is the hero, logo from the reference in a corner (don't redraw), brand colors from the style reference."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-feed",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 410
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "1:1",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-feed",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 430
+   },
+   "data": {
+    "label": "Feed 1:1",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-story",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1590
+   },
+   "data": {
+    "label": "Story 9:16",
+    "prompt": "Vertical 9:16 creative. Offer: [type]. Product from the reference large, logo on top, big CTA at the bottom, safe margins for UI. Brand colors from the reference."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-story",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 760
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "9:16",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-story",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 800
+   },
+   "data": {
+    "label": "Story 9:16",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-yt",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1860
+   },
+   "data": {
+    "label": "YouTube cover 16:9",
+    "prompt": "16:9 YouTube thumbnail: [3–5 words very large], product from the reference, high contrast, logo in a corner. Readable as a small thumbnail."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-yt",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 1110
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-yt",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 1170
+   },
+   "data": {
+    "label": "YouTube cover 16:9",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-banner",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1050
+   },
+   "data": {
+    "label": "Web banner 21:9",
+    "prompt": "Wide 21:9 banner: product on the right, headline [type] and CTA on the left, logo from the reference, brand colors, lots of air."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-banner",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "21:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-banner",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 60
+   },
+   "data": {
+    "label": "Web banner 21:9",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-p-feed-nb-feed",
+   "source": "p-feed",
+   "sourceHandle": "text",
+   "target": "nb-feed",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-feed-o-feed",
+   "source": "nb-feed",
+   "sourceHandle": "image",
+   "target": "o-feed",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb-feed",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb-feed",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-product-nb-feed",
+   "source": "img-product",
+   "sourceHandle": "image",
+   "target": "nb-feed",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-style-nb-feed",
+   "source": "img-style",
+   "sourceHandle": "image",
+   "target": "nb-feed",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-story-nb-story",
+   "source": "p-story",
+   "sourceHandle": "text",
+   "target": "nb-story",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-story-o-story",
+   "source": "nb-story",
+   "sourceHandle": "image",
+   "target": "o-story",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb-story",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb-story",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-product-nb-story",
+   "source": "img-product",
+   "sourceHandle": "image",
+   "target": "nb-story",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-style-nb-story",
+   "source": "img-style",
+   "sourceHandle": "image",
+   "target": "nb-story",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-yt-nb-yt",
+   "source": "p-yt",
+   "sourceHandle": "text",
+   "target": "nb-yt",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-yt-o-yt",
+   "source": "nb-yt",
+   "sourceHandle": "image",
+   "target": "o-yt",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb-yt",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb-yt",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-product-nb-yt",
+   "source": "img-product",
+   "sourceHandle": "image",
+   "target": "nb-yt",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-style-nb-yt",
+   "source": "img-style",
+   "sourceHandle": "image",
+   "target": "nb-yt",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-banner-nb-banner",
+   "source": "p-banner",
+   "sourceHandle": "text",
+   "target": "nb-banner",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-banner-o-banner",
+   "source": "nb-banner",
+   "sourceHandle": "image",
+   "target": "o-banner",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb-banner",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb-banner",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-product-nb-banner",
+   "source": "img-product",
+   "sourceHandle": "image",
+   "target": "nb-banner",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-style-nb-banner",
+   "source": "img-style",
+   "sourceHandle": "image",
+   "target": "nb-banner",
+   "targetHandle": "image",
+   "type": "default"
+  }
+ ],
+ "edgeStyle": "curved"
+}

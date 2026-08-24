@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tessbrain — materials</title>
+<style>
+  :root{
+    /* Светлая книга — фиксированная палитра, как и на самих страницах */
+    --bg:#f3f1ea;--surface:#fff;--surface-2:#faf8f2;--border:#ddd8cb;
+    --border-soft:#e7e3d7;--text:#211f1a;--dim:#5c584e;--faint:#8b8677;
+    --accent:#a97a2c;--accent-soft:rgba(169,122,44,.10);
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',ui-serif,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;padding:76px 24px 96px;background:var(--bg);color:var(--text);
+    font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .page{max-width:720px;margin:0 auto}
+  .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:16px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,48px);
+    margin:0 0 16px;line-height:1.12;letter-spacing:-.01em;text-wrap:balance}
+  .lead{font-family:var(--serif);font-size:clamp(18px,2.2vw,22px);color:var(--dim);
+    line-height:1.5;margin:0 0 44px;font-style:italic;max-width:40ch}
+  .idx{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border)}
+  a.card{display:flex;gap:20px;align-items:baseline;text-decoration:none;
+    padding:22px 6px;border-bottom:1px solid var(--border);transition:padding-left .18s,background .18s}
+  a.card:hover{padding-left:14px;background:linear-gradient(90deg,var(--accent-soft),transparent 60%)}
+  a.card .no{font-family:var(--serif);font-size:15px;color:var(--accent);font-weight:600;
+    min-width:26px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+  a.card .body b{display:block;font-family:var(--serif);font-size:20px;color:var(--text);
+    font-weight:600;margin-bottom:5px;line-height:1.2}
+  a.card:hover .body b{color:var(--accent)}
+  a.card .body span{font-size:13.5px;color:var(--dim);line-height:1.55}
+  a.card .arr{margin-left:auto;color:var(--faint);font-size:18px;align-self:center;
+    transition:transform .18s,color .18s}
+  a.card:hover .arr{transform:translateX(4px);color:var(--accent)}
+  .lang{margin-top:30px;font-size:13.5px}
+  .lang a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(169,122,44,.35)}
+  .lang a:hover{border-bottom-color:var(--accent)}
+  footer{margin-top:26px;padding-top:24px;border-top:1px solid var(--border);
+    font-size:12.5px;color:var(--faint);line-height:1.8;max-width:60ch}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">Tessbrain · August 2026</div>
+  <h1>The company brain</h1>
+  <p class="lead">Four pages about the product. Each one opens on its own — nothing to download, no internet required.</p>
+  <div class="idx">
+    <a class="card" href="tessent_capabilities.html"><span class="no">I</span><span class="body"><b>Capability map</b><span>What the company brain does: 22 sections, from graph memory to honest limits.</span></span><span class="arr">&rarr;</span></a>
+    <a class="card" href="tessent_article.html"><span class="no">II</span><span class="body"><b>What Tessbrain is</b><span>An explanation with live examples: a meeting taken apart step by step, where ordinary search loses the answer, where confidence comes from.</span></span><span class="arr">&rarr;</span></a>
+    <a class="card" href="tessent_map.html"><span class="no">III</span><span class="body"><b>The loop diagram</b><span>A moving map: intake, extraction, memory, the access boundary, work and the experience loop.</span></span><span class="arr">&rarr;</span></a>
+    <a class="card" href="tessent_cost.html"><span class="no">IV</span><span class="body"><b>Cost calculator</b><span>Set your own conditions — the page computes from our measurements.</span></span><span class="arr">&rarr;</span></a>
+  </div>
+  <p class="lang"><a href="../ru/index.html">Русская версия →</a></p>
+  <footer>These pages are self-contained: fonts and styles live inside the files, with no external loads. Open them with a double click in any browser; mail them or drop them in a shared folder.</footer>
+</div>
+</body>
+</html>

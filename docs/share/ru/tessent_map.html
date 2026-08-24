@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мозг компании Tessbrain</title>
+</head>
+<body>
+<style>
+  :root{
+    /* Светлая книга — единая система набора */
+    --ground:#f3f1ea; --panel:#fff; --panel2:#faf8f2;
+    --line:#ddd8cb; --line2:#e7e3d7;
+    --chalk:#211f1a; --muted:#6b6659; --dim:#8b8677;
+    --accent:#a97a2c;
+    /* смысловые цвета этапов — приглушены под кремовый фон */
+    --in:#b07f2a;      /* вход и данные */
+    --parse:#3f6f8f;   /* разбор и память */
+    --guard:#3f7a56;   /* границы доступа */
+    --out:#a6497a;     /* то, что получает человек */
+    --loop:#6b5b95;    /* возврат опыта */
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',ui-serif,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,'DejaVu Sans Mono',monospace;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--ground); color:var(--chalk);
+    font-family:var(--sans);-webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(1100px 620px at 62% 28%, rgba(169,122,44,.045), transparent 70%),
+      radial-gradient(760px 520px at 10% 80%, rgba(63,111,143,.035), transparent 70%);
+  }
+  .wrap{max-width:1680px;margin:0 auto;padding:56px 24px 70px}
+  header{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 22px;margin-bottom:6px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.4vw,52px);margin:0;
+     line-height:1.12;letter-spacing:-.01em;text-wrap:balance}
+  .lede{font-family:var(--serif);color:var(--muted);font-size:clamp(18px,1.8vw,23px);
+     max-width:60ch;line-height:1.5;margin:6px 0 20px;font-style:italic}
+  .legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--sans);
+    font-size:12px;color:var(--muted);margin-bottom:16px}
+  .legend b{font-weight:500;display:inline-flex;align-items:center;gap:7px;color:var(--chalk)}
+  .swatch{width:13px;height:13px;border-radius:3px;display:inline-block}
+  .board{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:16px;
+    background:var(--panel);padding:10px 6px;box-shadow:0 1px 3px rgba(40,34,20,.04)}
+  svg{width:100%;height:auto;min-width:940px;display:block}
+  .lbl{font-family:var(--serif);font-weight:600;fill:var(--chalk)}
+  .sub{font-family:var(--sans);font-size:11.5px;letter-spacing:.1px}
+  .zone-tag{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+  .node{cursor:default}
+  .node:hover .plate{filter:drop-shadow(0 2px 7px rgba(40,34,20,.16))}
+  .tipbox{
+    position:fixed;pointer-events:none;opacity:0;transform:translateY(4px);
+    transition:opacity .14s ease,transform .14s ease;
+    max-width:330px;padding:12px 15px;border-radius:11px;z-index:9;
+    background:#fffdf7;border:1px solid var(--line);color:var(--chalk);
+    font-family:var(--sans);font-size:12.5px;line-height:1.55;
+    box-shadow:0 14px 38px rgba(40,34,20,.18);
+  }
+  .tipbox.on{opacity:1;transform:translateY(0)}
+  .tipbox b{font-weight:700}
+  .tipbox i{display:block;font-style:normal;color:var(--muted);margin-top:6px}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 6px}
+  button{
+    font-family:var(--sans);font-size:12px;letter-spacing:.01em;color:var(--chalk);
+    background:var(--panel);border:1px solid var(--line);border-radius:8px;
+    padding:8px 14px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+  button:hover{border-color:var(--accent);background:#fff}
+  button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);
+    background:rgba(169,122,44,.08);font-weight:600}
+  .facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:24px;
+    font-family:var(--sans);font-size:12.5px;color:var(--muted)}
+  .facts b{color:var(--chalk);font-weight:700;font-variant-numeric:tabular-nums}
+  footer{margin-top:28px;color:var(--muted);font-family:var(--sans);
+    font-size:12px;line-height:1.7;max-width:84ch;border-top:1px solid var(--line);padding-top:20px}
+  @media (prefers-reduced-motion: reduce){
+    .flow{display:none}
+  }
+</style>
+
+
+<div class="wrap">
+  <header>
+    <h1>Мозг компании Tessbrain</h1>
+  </header>
+  <p class="lede">Один контур: всё, что и так происходит в компании, превращается
+    в память со связями — и возвращается работой. Ниже он целиком, с движением
+    по путям. Наведите на любой блок.</p>
+
+  <div class="legend">
+    <b><i class="swatch" style="background:var(--in)"></i>вход и данные</b>
+    <b><i class="swatch" style="background:var(--parse)"></i>разбор и память</b>
+    <b><i class="swatch" style="background:var(--guard)"></i>граница доступа</b>
+    <b><i class="swatch" style="background:var(--out)"></i>что получает человек</b>
+    <b><i class="swatch" style="background:var(--loop)"></i>возврат опыта</b>
+  </div>
+
+  <div class="board"><svg id="map" viewBox="0 0 1660 960" role="img"
+      aria-label="Схема работы мозга компании Tessbrain: вход, разбор, память, граница доступа, работа и возврат опыта"></svg></div>
+
+  <div class="controls">
+    <button id="play" aria-pressed="true">пауза движения</button>
+    <button data-focus="all" aria-pressed="true">весь контур</button>
+    <button data-focus="in">только вход</button>
+    <button data-focus="out">только выход</button>
+    <button data-focus="loop">возврат опыта</button>
+  </div>
+
+  <div class="facts">
+    <span><b>33</b> типа объектов</span>
+    <span><b>48</b> типов связей</span>
+    <span><b>~30</b> извлекателей на одну встречу</span>
+    <span><b>31</b> готовая схема автоматизаций</span>
+    <span><b>23</b> инструмента для внешних ассистентов</span>
+  </div>
+
+  <footer>
+    Схема отражает то, что работает в коде, а не план. Пунктир — задел:
+    переговоры агентов между собой и обнаружение компаний между разными
+    развёртываниями не сделаны. Подробности и честные границы каждой
+    части — в карте возможностей продукта.
+  </footer>
+</div>
+
+<div class="tipbox" id="tip"></div>
+
+<script>
+const SVG = document.getElementById('map');
+const NS = 'http://www.w3.org/2000/svg';
+const C = getComputedStyle(document.documentElement);
+const col = n => C.getPropertyValue('--' + n).trim();
+
+/* ── детерминированное дрожание: «рука», а не генератор случайностей ── */
+let seed = 20260814;
+const rnd = () => (seed = seed * 16807 % 2147483647) / 2147483647 - .5;
+
+function wobble(pts, amp = 2.4, step = 26){
+  const out = [];
+  for (let i = 0; i < pts.length - 1; i++){
+    const [x1,y1] = pts[i], [x2,y2] = pts[i+1];
+    const len = Math.hypot(x2-x1, y2-y1);
+    const n = Math.max(1, Math.round(len/step));
+    for (let k = 0; k < n; k++){
+      const t = k/n;
+      out.push([x1+(x2-x1)*t + rnd()*amp, y1+(y2-y1)*t + rnd()*amp]);
+    }
+  }
+  out.push(pts[pts.length-1]);
+  return out;
+}
+const toPath = p => p.map(([x,y],i)=> (i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1)).join(' ');
+
+function el(tag, attrs = {}, parent = SVG){
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  parent.appendChild(e); return e;
+}
+
+/* прямоугольник «от руки»: две обводки с разным дрожанием */
+function sketchRect(g, x, y, w, h, stroke, fill){
+  const r = 12;
+  const pts = [[x+r,y],[x+w-r,y],[x+w,y+r],[x+w,y+h-r],[x+w-r,y+h],
+               [x+r,y+h],[x,y+h-r],[x,y+r],[x+r,y]];
+  el('path',{d:toPath(wobble(pts,1.7,22)),fill:fill||'none',stroke,
+    'stroke-width':2.1,'stroke-linejoin':'round','stroke-opacity':.95,
+    class:'plate'},g);
+  el('path',{d:toPath(wobble(pts,2.6,30)),fill:'none',stroke,
+    'stroke-width':1.1,'stroke-opacity':.34,'stroke-linejoin':'round'},g);
+}
+
+/* ── содержание: только то, что описано в карте возможностей ── */
+const ZONES = [
+  {tag:'вход',   x:34,   y:96,  w:286, c:'in'},
+  {tag:'разбор', x:384,  y:96,  w:250, c:'parse'},
+  {tag:'память', x:690,  y:96,  w:352, c:'parse'},
+  {tag:'работа', x:1180, y:96,  w:446, c:'out'}
+];
+
+const N = [
+  // вход
+  {id:'meet', z:'in', x:34,  y:150, w:286, h:70, t:'Встречи',
+   s:'MeetFlow — наша система',
+   tip:'Расшифровка приходит готовой. Мозг забирает материал и разбирает его на смыслы — это доверенный внутренний источник, а не сторонний сервис.'},
+  {id:'call', z:'in', x:34,  y:238, w:286, h:70, t:'Звонки',
+   s:'аналитика звонков',
+   tip:'Транскрипты и аудио к нам не копируются: приходят события, карточка клиента тянется у них в момент показа. Их выводы модели помечены и не становятся фактом компании.'},
+  {id:'msg',  z:'in', x:34,  y:326, w:286, h:70, t:'Мессенджеры',
+   s:'Telegram · Slack',
+   tip:'Mini Tess и бот ядра. Вопрос из чата получает ответ по памяти компании; Slack отвечает веткой под вопросом.'},
+  {id:'doc',  z:'in', x:34,  y:414, w:286, h:70, t:'Документы и ссылки',
+   s:'файлы · статьи · веб',
+   tip:'Поглощаются в память наравне со встречами — дальше находятся поиском как всё остальное.'},
+  {id:'data', z:'in', x:34,  y:502, w:286, h:70, t:'Данные',
+   s:'CRM · 1С · Sheets · BI',
+   tip:'Обновляются по расписанию владельца. Если источник не изменился — данные не переписываются и модель не тратится: сравнение с сохранённым идёт до перестройки.'},
+  {id:'ext',  z:'in', x:34,  y:590, w:286, h:70, t:'Снаружи',
+   s:'партнёры по шине данных',
+   tip:'Внешняя сторона может не только читать срез, но и присылать факты — метку источника ставит сервер, подделать происхождение нельзя.'},
+
+  // разбор
+  {id:'parse', z:'parse', x:384, y:206, w:250, h:190, t:'Разбор',
+   s:'~30 извлекателей',
+   tip:'Решения, задачи, участники, показатели, риски, регламенты, противоречия. У каждого факта — источник, дата и уверенность. Тяжёлое идёт на крупной модели, частое — на модели поменьше.'},
+  {id:'rules', z:'parse', x:384, y:428, w:250, h:120, t:'Регламенты',
+   s:'10 типов знания',
+   tip:'Правила компании вылавливаются из каждой встречи автоматически: как принято отвечать, согласовывать, релизить. Свод собирается из того, как компания говорит о работе, а не из идеального представления.'},
+
+  // память
+  {id:'graph', z:'mem', x:690, y:186, w:352, h:250, t:'Граф компании',
+   s:'33 типа объектов · 48 связей',
+   tip:'Люди, проекты, клиенты, решения, задачи, показатели и связи между ними. Не заметки и не поиск по документам, а модель компании, которая растёт из разговоров.'},
+  {id:'ver', z:'mem', x:690, y:462, w:168, h:104, t:'Версии',
+   s:'не перезапись',
+   tip:'Новое значение не стирает старое, а помечает его заменённым — с датой и встречей-источником. Видно не только «сколько сейчас», но и «когда поменялось».'},
+  {id:'night', z:'mem', x:874, y:462, w:168, h:104, t:'Ночью',
+   s:'дедуп · затухание',
+   tip:'Сливаются дубли, затухают контекстные связки «упоминались рядом». Структурные факты — решил, назначен — не затухают никогда, иначе забывание съело бы оргструктуру.'},
+  {id:'exp', z:'mem', x:690, y:592, w:352, h:104, t:'Опыт компании',
+   s:'решение → исход → уверенность',
+   tip:'Система помнит не только что решили, но и чем это кончилось. Уверенность растёт только от подтверждённых исходов и затухает со временем — иначе цифра означала бы «мы часто про это говорили».'},
+
+  // работа
+  {id:'chat', z:'out', x:1180, y:150, w:214, h:78, t:'Чат по памяти',
+   s:'смысл · слова · связи',
+   tip:'Три способа поиска сразу. Перечислительные вопросы — «покажи всех, кто…» — усиливают канал связей графа: у поиска по смыслу есть доказанный математический предел.'},
+  {id:'board', z:'out', x:1412, y:150, w:214, h:78, t:'Доски',
+   s:'автоматизации · отчёты',
+   tip:'Схему рисовать не нужно — опишите словами. Визуальные отчёты: смысл собран заранее и подан образом, факты продублированы текстом под картинкой.'},
+  {id:'docs', z:'out', x:1180, y:246, w:214, h:78, t:'Документы',
+   s:'КП · договор · карточка',
+   tip:'Собираются из памяти компании; всё, чего в памяти нет, помечено, а не додумано.'},
+  {id:'sima', z:'out', x:1412, y:246, w:214, h:78, t:'SIMA',
+   s:'идея → ТЗ → приёмка',
+   tip:'Очень подробное задание на данных компании — и проверка, что исполнитель сделал именно это. Три исхода вместо двух: прошло, не прошло и «не доказано».'},
+  {id:'mini', z:'out', x:1180, y:342, w:214, h:78, t:'Mini Tess',
+   s:'сценарий кофе',
+   tip:'Пока человек идёт от переговорной до стола, для него уже готовы черновики по его роли: руководителю — сводка, разработчику — задание, продажам — письмо.'},
+  {id:'boss', z:'out', x:1412, y:342, w:214, h:78, t:'Руководителю',
+   s:'сигнал до вопроса',
+   tip:'Система смотрит за компанией сама: рассинхрон отделов, слепые зоны, пульс исполнения — сигнал приходит раньше, чем руководитель заметит проблему.'},
+  {id:'bus', z:'out', x:1180, y:438, w:446, h:78, t:'Наружу',
+   s:'партнёры · агенты-исполнители',
+   tip:'Срез по ключу с политикой и аудитом; связь двух компаний с рукопожатием и односторонним разрывом; исполнители задач с машинной приёмкой результата.'},
+];
+
+const byId = Object.fromEntries(N.map(n => [n.id, n]));
+const cx = n => n.x + n.w/2, cy = n => n.y + n.h/2;
+
+const E = [
+  ...['meet','call','msg','doc','data','ext'].map(id => ({a:id, b:'parse', c:'in'})),
+  {a:'meet', b:'rules', c:'in', via:[[352,470]]},
+  {a:'parse', b:'graph', c:'parse'},
+  {a:'rules', b:'graph', c:'parse', via:[[660,470]]},
+  {a:'graph', b:'chat', c:'out'},
+  {a:'graph', b:'docs', c:'out'},
+  {a:'graph', b:'mini', c:'out'},
+  {a:'graph', b:'bus',  c:'out'},
+];
+
+/* ── рисуем ── */
+const gEdge = el('g'), gNode = el('g'), gFlow = el('g',{class:'flow'});
+
+// зоны-подписи
+ZONES.forEach(z => {
+  el('text',{x:z.x+4, y:z.y, class:'zone-tag', fill:col(z.c),
+    'fill-opacity':.75}, SVG).textContent = z.tag;
+});
+
+// граница доступа — мембрана перед выходом
+const memX = 1112;
+const memPts = [[memX,140],[memX-9,280],[memX+9,430],[memX-6,580],[memX,690]];
+el('path',{d:toPath(wobble(memPts,3,34)), fill:'none', stroke:col('guard'),
+  'stroke-width':2.4, 'stroke-dasharray':'11 9', 'stroke-opacity':.85}, gEdge);
+const gm = el('g',{class:'node','data-id':'membrane'}, gNode);
+el('text',{x:memX-8, y:118, class:'zone-tag', fill:col('guard'),
+  'text-anchor':'middle'}, gm).textContent = 'граница';
+el('text',{x:memX-16, y:415, class:'sub', fill:col('guard'), 'fill-opacity':.8,
+  'text-anchor':'middle', transform:'rotate(-90 '+(memX-16)+' 415)'}, gm)
+  .textContent = 'гриф на каждом факте · срез до модели · аудит · закрытый контур';
+byId.membrane = {tip:'Невидимое отсекается до того, как материал попадёт к модели — надёжнее, чем просить ассистента не рассказывать. Гриф и группы на каждом факте, неизменяемый аудит, закрытый контур со своей моделью.',
+  t:'Граница доступа', s:'до модели, а не после'};
+
+// рёбра
+const paths = {};
+E.forEach((e,i) => {
+  const a = byId[e.a], b = byId[e.b];
+  const pts = [[a.x+a.w, cy(a)], ...(e.via||[]), [b.x, cy(b)]];
+  if (!e.via){
+    const mx = (a.x+a.w + b.x)/2;
+    pts.splice(1,0,[mx, cy(a)],[mx, cy(b)]);
+  }
+  const w = wobble(pts, 2, 30), d = toPath(w);
+  paths['e'+i] = d;
+  el('path',{d, fill:'none', stroke:col(e.c), 'stroke-width':1.9,
+    'stroke-opacity':.5,'stroke-linecap':'round'}, gEdge);
+});
+
+// возвратная дуга: исход → опыт
+const loopPts = [[1300,520],[1300,800],[900,872],[706,790],[702,700]];
+const loopD = toPath(wobble(loopPts,2.6,40));
+el('path',{d:loopD, fill:'none', stroke:col('loop'), 'stroke-width':2.2,
+  'stroke-opacity':.6,'stroke-linecap':'round','stroke-dasharray':'2 0'}, gEdge);
+el('text',{x:1000, y:922, class:'sub', fill:col('loop'), 'fill-opacity':.9,
+  'text-anchor':'middle'}, gEdge).textContent =
+  'исход решения возвращается в опыт — и меняет следующий ответ';
+
+// узлы
+N.forEach(n => {
+  const g = el('g',{class:'node','data-id':n.id}, gNode);
+  const c = col(n.z === 'in' ? 'in' : n.z === 'out' ? 'out' : 'parse');
+  sketchRect(g, n.x, n.y, n.w, n.h, c, '#fffdf7ee');
+  const big = n.h > 120;
+  el('text',{x:n.x+16, y:n.y+(big?38:30), class:'lbl',
+    'font-size': big?27:22}, g).textContent = n.t;
+  el('text',{x:n.x+16, y:n.y+(big?62:50), class:'sub', fill:c,
+    'fill-opacity':.85}, g).textContent = n.s;
+});
+
+// мини-граф внутри «Графа компании» — узлы и связи, а не декор
+const gi = byId.graph, gg = el('g',{'pointer-events':'none'}, gNode);
+const dots = [[770,300],[840,268],[912,306],[980,282],[806,372],[884,384],[958,358]];
+dots.forEach(([x,y],i)=>{
+  dots.slice(i+1).forEach(([x2,y2],j)=>{
+    if ((i+j) % 2) return;
+    el('path',{d:toPath(wobble([[x,y],[x2,y2]],1.6,24)), fill:'none',
+      stroke:col('parse'),'stroke-width':1,'stroke-opacity':.28}, gg);
+  });
+});
+dots.forEach(([x,y])=> el('circle',{cx:x,cy:y,r:5.4,fill:col('parse'),
+  'fill-opacity':.85}, gg));
+
+/* ── движение по путям ── */
+function flow(d, color, count, dur, delay){
+  for (let k = 0; k < count; k++){
+    const begin = (delay + k*dur/count).toFixed(2)+'s';
+    // до своего begin частица стоит в (0,0) и торчит в углу холста —
+    // держим её прозрачной ровно до старта движения
+    const c = el('circle',{r:3.6, fill:color, 'fill-opacity':0}, gFlow);
+    el('set',{attributeName:'fill-opacity', to:'.95', begin, fill:'freeze'}, c);
+    const m = el('animateMotion',{dur:dur+'s', repeatCount:'indefinite',
+      path:d, begin, rotate:'auto'}, c);
+    m.setAttribute('keyPoints','0;1');
+    m.setAttribute('keyTimes','0;1');
+    m.setAttribute('calcMode','linear');
+  }
+}
+E.forEach((e,i)=> flow(paths['e'+i], col(e.c), 2, e.c==='out'?5.5:6.5, i*.35));
+flow(loopD, col('loop'), 2, 9, .6);
+
+/* ── подсказки ── */
+const tip = document.getElementById('tip');
+function showTip(id, ev){
+  const n = byId[id]; if (!n || !n.tip) return;
+  tip.innerHTML = '<b>'+n.t+'</b> — '+n.tip+'<i>'+(n.s||'')+'</i>';
+  tip.classList.add('on');
+  const pad = 16, w = 340;
+  let x = ev.clientX + pad, y = ev.clientY + pad;
+  if (x + w > innerWidth) x = ev.clientX - w - pad;
+  if (y + 160 > innerHeight) y = Math.max(10, ev.clientY - 160);
+  tip.style.left = x+'px'; tip.style.top = y+'px';
+}
+gNode.addEventListener('mousemove', e => {
+  const g = e.target.closest('.node');
+  if (g) showTip(g.dataset.id, e); else tip.classList.remove('on');
+});
+gNode.addEventListener('mouseleave', ()=> tip.classList.remove('on'));
+
+/* ── управление ── */
+const playBtn = document.getElementById('play');
+let running = true;
+playBtn.addEventListener('click', ()=>{
+  running = !running;
+  running ? SVG.unpauseAnimations() : SVG.pauseAnimations();
+  playBtn.textContent = running ? 'пауза движения' : 'продолжить движение';
+  playBtn.setAttribute('aria-pressed', String(running));
+});
+
+const focusBtns = [...document.querySelectorAll('[data-focus]')];
+const zoneOf = id => (byId[id]||{}).z;
+focusBtns.forEach(b => b.addEventListener('click', ()=>{
+  const f = b.dataset.focus;
+  focusBtns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  gNode.querySelectorAll('.node').forEach(g=>{
+    const z = zoneOf(g.dataset.id);
+    const on = f === 'all' || (f === 'loop' && (g.dataset.id === 'exp'))
+      || (f === 'in' && (z === 'in' || z === 'parse'))
+      || (f === 'out' && (z === 'out' || g.dataset.id === 'membrane'));
+    g.style.opacity = on ? 1 : .2;
+  });
+  gEdge.style.opacity = f === 'all' ? 1 : .35;
+  gFlow.style.opacity = f === 'all' ? 1 : .45;
+}));
+</script>
+</body>
+</html>

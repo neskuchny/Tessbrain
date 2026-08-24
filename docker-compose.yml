@@ -1,0 +1,260 @@
+services:
+  # ===========================================
+  # TESSENT BRAIN - Infrastructure Services
+  # ===========================================
+
+  # PostgreSQL + TimescaleDB
+  postgres:
+    image: timescale/timescaledb:latest-pg16
+    container_name: tessent_postgres
+    environment:
+      POSTGRES_DB: tessent_brain
+      POSTGRES_USER: tessent
+      POSTGRES_PASSWORD: tessent_secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tessent -d tessent_brain"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Redis (Cache + Task Queue)
+  redis:
+    image: redis:7-alpine
+    container_name: tessent_redis
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Qdrant (Vector Database)
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: tessent_qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      QDRANT__SERVICE__GRPC_PORT: 6334
+    # qdrant image has no curl/wget; rely on api-side retry rather than
+    # a healthcheck. Container being "started" is sufficient — REST listens
+    # on :6333 once the process is up.
+    restart: unless-stopped
+
+  # Neo4j (Graph Database)
+  neo4j:
+    image: neo4j:5-community
+    container_name: tessent_neo4j
+    environment:
+      NEO4J_AUTH: neo4j/neo4j_secret
+      NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
+      NEO4J_dbms_security_procedures_unrestricted: apoc.*,gds.*
+      NEO4J_dbms_memory_heap_initial__size: 512m
+      NEO4J_dbms_memory_heap_max__size: 1G
+    ports:
+      - "7474:7474"  # HTTP
+      - "7687:7687"  # Bolt
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_plugins:/plugins
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7474 >/dev/null 2>&1 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+    restart: unless-stopped
+
+  # ===========================================
+  # TESSENT BRAIN - Application Services
+  # ===========================================
+
+  # Main API Server
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tessent_api
+    environment:
+      - APP_ENV=development
+      - DATABASE_URL=postgresql+asyncpg://tessent:tessent_secret@postgres:5432/tessent_brain
+      - REDIS_URL=redis://redis:6379/0
+      - QDRANT_HOST=qdrant
+      - NEO4J_URI=bolt://neo4j:7687
+      # Внешние секреты — берутся из host .env (рядом с этим compose) или
+      # окружения. Без SUPABASE_URL/KEY не работает /api/v1/auth/login
+      # (он делегирует аутентификацию в Supabase/MeetFlow GoTrue).
+      - SUPABASE_URL=${SUPABASE_URL:-}
+      - SUPABASE_KEY=${SUPABASE_KEY:-}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY:-}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY:-}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      # Cloud LLM провайдеры (Phase 1 multi-provider). Используются если в
+      # профиле задан соответствующий provider; иначе игнорируются. Все
+      # ключи опциональны — добавляй только то, что нужно.
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
+      - QWEN_API_KEY=${QWEN_API_KEY:-}
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY:-}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
+      - TOGETHER_API_KEY=${TOGETHER_API_KEY:-}
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY:-}
+      - GROQ_API_KEY=${GROQ_API_KEY:-}
+      - JWT_SECRET=${JWT_SECRET:-}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-}
+      - SECRET_KEY=${SECRET_KEY:-local-dev-secret}
+      # Hermes autonomy flags (agent_oc). По дизайну default OFF — безопасный
+      # rollout. Включаются через host .env. С OFF agent_oc == OpenClaw.
+      - HERMES_LESSONS_ENABLED=${HERMES_LESSONS_ENABLED:-off}
+      - HERMES_PORTRAIT_ENABLED=${HERMES_PORTRAIT_ENABLED:-off}
+      - HERMES_SKILLS_ENABLED=${HERMES_SKILLS_ENABLED:-off}
+      - HERMES_SKILL_AUTOLEARN=${HERMES_SKILL_AUTOLEARN:-off}
+      - HERMES_AGENT_TOOLS_ENABLED=${HERMES_AGENT_TOOLS_ENABLED:-off}
+      - HERMES_REAL_EXECUTION=${HERMES_REAL_EXECUTION:-off}
+      - HERMES_APPROVAL_MODE=${HERMES_APPROVAL_MODE:-off}
+      - HERMES_APPROVAL_ALLOW=${HERMES_APPROVAL_ALLOW:-}
+      - HERMES_APPROVAL_DENY=${HERMES_APPROVAL_DENY:-}
+      - HERMES_MCP_ENABLED=${HERMES_MCP_ENABLED:-off}
+      - HERMES_MCP_SERVERS=${HERMES_MCP_SERVERS:-}
+      - HERMES_MAX_STEPS=${HERMES_MAX_STEPS:-30}
+      # Путь к локальному пакету alfa_asynk_meetflow (automation_tools_async).
+      # Содержимое монтируется через volume ниже; код добавляет это в sys.path.
+      - MEETFLOW_PATH=/opt/meetflow
+      # Rate-limit: в локальном dev отключаем (по умолчанию 60 req/min,
+      # SPA-фронт с polling sessions/automations/etc. забивает за секунды,
+      # и реальный chat-запрос блокируется до того, как доходит до диспетчера).
+      # В production override через .env: RATE_LIMIT_ENABLED=true + лимиты.
+      - RATE_LIMIT_ENABLED=${RATE_LIMIT_ENABLED:-false}
+      - RATE_LIMIT_USER_PER_MINUTE=${RATE_LIMIT_USER_PER_MINUTE:-3000}
+      - RATE_LIMIT_ANON_PER_MINUTE=${RATE_LIMIT_ANON_PER_MINUTE:-600}
+      - RATE_LIMIT_TENANT_PER_MINUTE=${RATE_LIMIT_TENANT_PER_MINUTE:-10000}
+      # Phase 2 multi-provider: Ollama локальные модели на хосте.
+      # OLLAMA_HOST используется ProfileBackedClient как fallback, если в
+      # llm-профиле не задан base_url. Дефолтный путь — host.docker.internal,
+      # это разрешается в IP хоста и на Windows/Mac (автоматически), и на
+      # Linux (благодаря extra_hosts ниже).
+      - OLLAMA_HOST=${OLLAMA_HOST:-http://host.docker.internal:11434/v1}
+    extra_hosts:
+      # На Linux Docker Engine `host.docker.internal` не резолвится по
+      # умолчанию. `host-gateway` — magic-значение, которое контейнер
+      # маппит на IP host'а через Docker network. На Windows/Mac
+      # Docker Desktop уже даёт host.docker.internal, добавление
+      # extra_hosts не ломает.
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+      # Host-каталог с пакетом MeetFlow (automation_tools_async, etc.).
+      # Read-only — чтобы агент не мог его повредить. Перебить путь — в .env:
+      #   MEETFLOW_HOST_PATH=D:/...
+      - "${MEETFLOW_HOST_PATH:-E:/synlabs/tessent/alfa_asynk_meetflow}:/opt/meetflow:ro"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+      neo4j:
+        condition: service_healthy
+    restart: unless-stopped
+    profiles:
+      - app
+
+  # Background Worker (Night Processing)
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tessent_worker
+    # брокер в backend.workers.taskiq_app:broker (модуля .tasks нет)
+    command: python -m taskiq worker backend.workers.taskiq_app:broker
+    environment:
+      - APP_ENV=development
+      - DATABASE_URL=postgresql+asyncpg://tessent:tessent_secret@postgres:5432/tessent_brain
+      - REDIS_URL=redis://redis:6379/0
+      - QDRANT_HOST=qdrant
+      - NEO4J_URI=bolt://neo4j:7687
+      - SUPABASE_URL=${SUPABASE_URL:-}
+      - SUPABASE_KEY=${SUPABASE_KEY:-}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY:-}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY:-}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      # Cloud LLM провайдеры (Phase 1 multi-provider). Используются если в
+      # профиле задан соответствующий provider; иначе игнорируются. Все
+      # ключи опциональны — добавляй только то, что нужно.
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
+      - QWEN_API_KEY=${QWEN_API_KEY:-}
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY:-}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
+      - TOGETHER_API_KEY=${TOGETHER_API_KEY:-}
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY:-}
+      - GROQ_API_KEY=${GROQ_API_KEY:-}
+      - JWT_SECRET=${JWT_SECRET:-}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-}
+      - SECRET_KEY=${SECRET_KEY:-local-dev-secret}
+      - HERMES_LESSONS_ENABLED=${HERMES_LESSONS_ENABLED:-off}
+      - HERMES_PORTRAIT_ENABLED=${HERMES_PORTRAIT_ENABLED:-off}
+      - HERMES_SKILLS_ENABLED=${HERMES_SKILLS_ENABLED:-off}
+      - HERMES_SKILL_AUTOLEARN=${HERMES_SKILL_AUTOLEARN:-off}
+      - HERMES_AGENT_TOOLS_ENABLED=${HERMES_AGENT_TOOLS_ENABLED:-off}
+      - HERMES_REAL_EXECUTION=${HERMES_REAL_EXECUTION:-off}
+      - HERMES_APPROVAL_MODE=${HERMES_APPROVAL_MODE:-off}
+      - HERMES_APPROVAL_ALLOW=${HERMES_APPROVAL_ALLOW:-}
+      - HERMES_APPROVAL_DENY=${HERMES_APPROVAL_DENY:-}
+      - HERMES_MCP_ENABLED=${HERMES_MCP_ENABLED:-off}
+      - HERMES_MCP_SERVERS=${HERMES_MCP_SERVERS:-}
+      - HERMES_MAX_STEPS=${HERMES_MAX_STEPS:-30}
+      - MEETFLOW_PATH=/opt/meetflow
+      - RATE_LIMIT_ENABLED=${RATE_LIMIT_ENABLED:-false}
+      - RATE_LIMIT_USER_PER_MINUTE=${RATE_LIMIT_USER_PER_MINUTE:-3000}
+      - RATE_LIMIT_ANON_PER_MINUTE=${RATE_LIMIT_ANON_PER_MINUTE:-600}
+      - RATE_LIMIT_TENANT_PER_MINUTE=${RATE_LIMIT_TENANT_PER_MINUTE:-10000}
+      - OLLAMA_HOST=${OLLAMA_HOST:-http://host.docker.internal:11434/v1}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./backend:/app/backend
+      - "${MEETFLOW_HOST_PATH:-E:/synlabs/tessent/alfa_asynk_meetflow}:/opt/meetflow:ro"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    profiles:
+      - app
+
+volumes:
+  postgres_data:
+  redis_data:
+  qdrant_data:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_plugins:
+
+networks:
+  default:
+    name: tessent_network
+
+
+

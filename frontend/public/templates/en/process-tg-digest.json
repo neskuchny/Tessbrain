@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "name": "Competitor Telegram channels digest",
+ "nodes": [
+  {
+   "id": "note-howto",
+   "type": "note",
+   "position": {"x": -360, "y": 20},
+   "data": {
+    "text": "A weekly breakdown of competitors' Telegram channels.\n\n1) Put the channels into \"Web search\": @channel1, @channel2 (public, up to 5).\n2) Run: fresh posts are pulled without any API (t.me/s/), a marketing analyst breaks down topics, hooks and the funnel, and the digest goes to Telegram.\n3) Enable the schedule on the trigger — and the breakdown arrives by itself once a week.\n\nIf a channel is private or unreadable, the board says so honestly."
+   }
+  },
+  {
+   "id": "t1",
+   "type": "trigger",
+   "position": {"x": 40, "y": 140},
+   "data": {
+    "label": "Every Monday",
+    "trigger_type": "schedule",
+    "schedule_kind": "weekly",
+    "weekday": 0,
+    "daily_time": "09:00",
+    "payload": "competitor channels digest"
+   }
+  },
+  {
+   "id": "w1",
+   "type": "web_search",
+   "position": {"x": 320, "y": 140},
+   "data": {
+    "label": "Competitor channels",
+    "query": "[type: @channel1, @channel2]"
+   }
+  },
+  {
+   "id": "g1",
+   "type": "generate",
+   "position": {"x": 620, "y": 140},
+   "data": {
+    "label": "Marketing breakdown",
+    "prompt": "You are a marketing analyst. Below are fresh posts from competitors' Telegram channels. Write a short digest per channel: 1) the week's main topics; 2) what hooks/techniques they use in opening lines; 3) what they sell and how they lead to purchase (the funnel); 4) one idea worth borrowing. Rely ONLY on the texts below, invent nothing. If there are few posts — say so.\n\n{{input}}"
+   }
+  },
+  {
+   "id": "n1",
+   "type": "notify",
+   "position": {"x": 920, "y": 140},
+   "data": {
+    "label": "To Telegram",
+    "text": "",
+    "channel": "telegram"
+   }
+  }
+ ],
+ "edges": [
+  {"id": "e-t1-w1", "source": "t1", "target": "w1", "type": "default"},
+  {"id": "e-w1-g1", "source": "w1", "target": "g1", "type": "default"},
+  {"id": "e-g1-n1", "source": "g1", "target": "n1", "type": "default"}
+ ],
+ "edgeStyle": "curved"
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "name": "Аудио-сводка недели",
+  "nodes": [
+    {
+      "id": "note-flow",
+      "type": "note",
+      "position": { "x": 40, "y": 40 },
+      "data": {
+        "label": "Как это работает",
+        "text": "По пятницам → мозг собирает сводку недели → узел «Озвучка» переводит её в аудио (TTS) → приходит голосом в Telegram. Слушаешь как подкаст, не читая. Нужен ключ OpenAI (для голоса) или ElevenLabs в «Интеграциях», и Telegram."
+      },
+      "style": { "width": 360, "height": 150 }
+    },
+    {
+      "id": "t1",
+      "type": "trigger",
+      "position": { "x": 40, "y": 250 },
+      "data": {
+        "label": "По пятницам",
+        "trigger_type": "schedule",
+        "payload": "аудио-сводка недели"
+      }
+    },
+    {
+      "id": "b1",
+      "type": "ask_brain",
+      "position": { "x": 340, "y": 250 },
+      "data": {
+        "label": "Сводка недели",
+        "prompt": "Собери связную устную сводку по компании за неделю: что произошло, ключевые решения и цифры, на что обратить внимание, что тянется дальше. Пиши как для ПРОСЛУШИВАНИЯ (короткие фразы, естественная речь, без списков-маркеров), 150-250 слов. Только реальные данные из встреч/задач."
+      }
+    },
+    {
+      "id": "au1",
+      "type": "audio",
+      "position": { "x": 700, "y": 250 },
+      "data": {
+        "label": "Озвучка (голос)",
+        "provider": "openai",
+        "voice": "nova"
+      }
+    },
+    {
+      "id": "n1",
+      "type": "notify",
+      "position": { "x": 1010, "y": 250 },
+      "data": {
+        "label": "Голосом в Telegram",
+        "channel": "telegram",
+        "subject": "Аудио-сводка недели"
+      }
+    }
+  ],
+  "edges": [
+    { "id": "e-t1-b1", "source": "t1", "target": "b1" },
+    { "id": "e-b1-au1", "source": "b1", "sourceHandle": "out", "target": "au1", "targetHandle": "text" },
+    { "id": "e-au1-n1", "source": "au1", "sourceHandle": "text", "target": "n1", "targetHandle": "in" }
+  ],
+  "edgeStyle": "curved"
+}

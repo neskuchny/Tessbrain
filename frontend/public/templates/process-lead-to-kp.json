@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "name": "Кейс: Входящая заявка/письмо → КП (PDF) → ответ",
+  "nodes": [
+    {
+      "id": "note",
+      "type": "note",
+      "position": { "x": 40, "y": 40 },
+      "data": {
+        "label": "Как это работает",
+        "text": "Пришла заявка из CRM или письмо → текст заявки течёт в «Документ / КП» (реальный модуль, реквизиты, факты только из заявки), рендерится в PDF с бланком → «Ответ» отправляет письмо с PDF-вложением. Настройте: (1) триггер — «Входящая заявка» (CRM/форма) или «Входящее письмо»; (2) внешний источник шлёт POST на /api/v1/inbound/lead или /inbound/email с user_id и текстом (секрет INBOUND_WEBHOOK_SECRET); (3) реквизиты и бланк — во вкладке документов; (4) на «Ответ» — email получателя. Проверьте «Прогон» (вписав пример заявки в payload триггера), затем включите триггер."
+      },
+      "style": { "width": 440, "height": 220 }
+    },
+    {
+      "id": "t1",
+      "type": "trigger",
+      "position": { "x": 40, "y": 300 },
+      "data": {
+        "label": "Входящая заявка",
+        "trigger_type": "event",
+        "event_type": "new_lead",
+        "enabled": false,
+        "payload": "Заявка: ООО «СтройПро», нужен бетон М300 100 м³ и песок, просят КП со скидкой"
+      }
+    },
+    {
+      "id": "doc",
+      "type": "document",
+      "position": { "x": 400, "y": 300 },
+      "data": {
+        "label": "Документ: КП (PDF)",
+        "doc_kind": "kp",
+        "custom_prompt": "Источник — входящая заявка/письмо клиента (не встреча). Составь КП строго по описанной в заявке задаче.",
+        "render": "pdf"
+      }
+    },
+    {
+      "id": "n1",
+      "type": "notify",
+      "position": { "x": 760, "y": 300 },
+      "data": { "label": "Ответ (письмо + PDF)", "channel": "email", "chat_id": "", "subject": "Коммерческое предложение" }
+    }
+  ],
+  "edges": [
+    { "id": "e-t1-doc", "source": "t1", "target": "doc", "targetHandle": "in" },
+    { "id": "e-doc-n1", "source": "doc", "sourceHandle": "out", "target": "n1", "targetHandle": "in" }
+  ],
+  "edgeStyle": "bezier"
+}

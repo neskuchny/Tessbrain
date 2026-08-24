@@ -1,0 +1,323 @@
+{
+  "version": 1,
+  "name": "Видео-сториборд: раскадровка -> кадры -> клипы",
+  "nodes": [
+    {
+      "id": "note-howto",
+      "type": "note",
+      "position": {
+        "x": -400,
+        "y": 40
+      },
+      "data": {
+        "text": "Видео-сториборд за один Run.\n\nТема -> ИИ составляет раскадровку (3 кадра) -> для каждого кадра генерируется картинка-кадр -> Veo оживляет её в видео-клип.\n\nВпишите тему в первый блок и нажмите Run."
+      }
+    },
+    {
+      "id": "note-scene",
+      "type": "note",
+      "position": {
+        "x": -400,
+        "y": 340
+      },
+      "data": {
+        "text": "Каждая строка - одна сцена.\nСборка текста подставляет раскадровку и просит сгенерировать конкретный кадр; кадр становится первым кадром видео (image-to-video через Veo)."
+      }
+    },
+    {
+      "id": "p0",
+      "type": "prompt",
+      "position": {
+        "x": 40,
+        "y": 40
+      },
+      "data": {
+        "label": "Тема ролика",
+        "prompt": "Составь раскадровку короткого рекламного ролика из 3 кадров по теме: «запуск нового продукта».\nДля каждого кадра дай краткое кинематографичное визуальное описание (что в кадре, план, свет, настроение).\nФормат строго:\nКадр 1: ...\nКадр 2: ...\nКадр 3: ..."
+      }
+    },
+    {
+      "id": "llm",
+      "type": "llmGenerate",
+      "position": {
+        "x": 360,
+        "y": 40
+      },
+      "data": {
+        "label": "Раскадровка (ИИ)",
+        "inputPrompt": null,
+        "outputText": null,
+        "provider": "google",
+        "model": "gemini-2.5-flash",
+        "temperature": 0.7,
+        "maxTokens": 1024,
+        "status": "idle",
+        "error": null
+      }
+    },
+    {
+      "id": "tc1",
+      "type": "textCombiner",
+      "position": {
+        "x": 40,
+        "y": 240
+      },
+      "data": {
+        "label": "Кадр 1: сборка",
+        "template": "Раскадровка ролика:\n{{storyboard}}\n\nСгенерируй визуал ТОЛЬКО Кадра 1: крупный кинематографичный кадр 16:9, без текста и подписей.",
+        "inputs": {},
+        "outputText": null
+      }
+    },
+    {
+      "id": "frame1",
+      "type": "nanoBanana",
+      "position": {
+        "x": 380,
+        "y": 240
+      },
+      "data": {
+        "inputImages": [],
+        "inputPrompt": null,
+        "outputImage": null,
+        "outputVideo": null,
+        "aspectRatio": "16:9",
+        "resolution": "1K",
+        "model": "gpt-image-1.5",
+        "useGoogleSearch": false,
+        "gptImageSize": "auto",
+        "gptImageQuality": "medium",
+        "status": "idle",
+        "error": null,
+        "label": "Кадр 1 (картинка)"
+      }
+    },
+    {
+      "id": "clip1",
+      "type": "nanoBanana",
+      "position": {
+        "x": 720,
+        "y": 240
+      },
+      "data": {
+        "inputImages": [],
+        "inputPrompt": null,
+        "outputImage": null,
+        "outputVideo": null,
+        "aspectRatio": "16:9",
+        "resolution": "1K",
+        "model": "veo-3.1-fast",
+        "useGoogleSearch": false,
+        "gptImageSize": "auto",
+        "gptImageQuality": "medium",
+        "status": "idle",
+        "error": null,
+        "label": "Клип 1 (видео)"
+      }
+    },
+    {
+      "id": "tc2",
+      "type": "textCombiner",
+      "position": {
+        "x": 40,
+        "y": 480
+      },
+      "data": {
+        "label": "Кадр 2: сборка",
+        "template": "Раскадровка ролика:\n{{storyboard}}\n\nСгенерируй визуал ТОЛЬКО Кадра 2: крупный кинематографичный кадр 16:9, без текста и подписей.",
+        "inputs": {},
+        "outputText": null
+      }
+    },
+    {
+      "id": "frame2",
+      "type": "nanoBanana",
+      "position": {
+        "x": 380,
+        "y": 480
+      },
+      "data": {
+        "inputImages": [],
+        "inputPrompt": null,
+        "outputImage": null,
+        "outputVideo": null,
+        "aspectRatio": "16:9",
+        "resolution": "1K",
+        "model": "gpt-image-1.5",
+        "useGoogleSearch": false,
+        "gptImageSize": "auto",
+        "gptImageQuality": "medium",
+        "status": "idle",
+        "error": null,
+        "label": "Кадр 2 (картинка)"
+      }
+    },
+    {
+      "id": "clip2",
+      "type": "nanoBanana",
+      "position": {
+        "x": 720,
+        "y": 480
+      },
+      "data": {
+        "inputImages": [],
+        "inputPrompt": null,
+        "outputImage": null,
+        "outputVideo": null,
+        "aspectRatio": "16:9",
+        "resolution": "1K",
+        "model": "veo-3.1-fast",
+        "useGoogleSearch": false,
+        "gptImageSize": "auto",
+        "gptImageQuality": "medium",
+        "status": "idle",
+        "error": null,
+        "label": "Клип 2 (видео)"
+      }
+    },
+    {
+      "id": "tc3",
+      "type": "textCombiner",
+      "position": {
+        "x": 40,
+        "y": 720
+      },
+      "data": {
+        "label": "Кадр 3: сборка",
+        "template": "Раскадровка ролика:\n{{storyboard}}\n\nСгенерируй визуал ТОЛЬКО Кадра 3: крупный кинематографичный кадр 16:9, без текста и подписей.",
+        "inputs": {},
+        "outputText": null
+      }
+    },
+    {
+      "id": "frame3",
+      "type": "nanoBanana",
+      "position": {
+        "x": 380,
+        "y": 720
+      },
+      "data": {
+        "inputImages": [],
+        "inputPrompt": null,
+        "outputImage": null,
+        "outputVideo": null,
+        "aspectRatio": "16:9",
+        "resolution": "1K",
+        "model": "gpt-image-1.5",
+        "useGoogleSearch": false,
+        "gptImageSize": "auto",
+        "gptImageQuality": "medium",
+        "status": "idle",
+        "error": null,
+        "label": "Кадр 3 (картинка)"
+      }
+    },
+    {
+      "id": "clip3",
+      "type": "nanoBanana",
+      "position": {
+        "x": 720,
+        "y": 720
+      },
+      "data": {
+        "inputImages": [],
+        "inputPrompt": null,
+        "outputImage": null,
+        "outputVideo": null,
+        "aspectRatio": "16:9",
+        "resolution": "1K",
+        "model": "veo-3.1-fast",
+        "useGoogleSearch": false,
+        "gptImageSize": "auto",
+        "gptImageQuality": "medium",
+        "status": "idle",
+        "error": null,
+        "label": "Клип 3 (видео)"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-p0-llm",
+      "source": "p0",
+      "target": "llm",
+      "type": "default"
+    },
+    {
+      "id": "e-llm-tc1",
+      "source": "llm",
+      "target": "tc1",
+      "targetHandle": "storyboard",
+      "type": "default"
+    },
+    {
+      "id": "e-tc1-frame1",
+      "source": "tc1",
+      "target": "frame1",
+      "type": "default"
+    },
+    {
+      "id": "e-tc1-clip1",
+      "source": "tc1",
+      "target": "clip1",
+      "type": "default"
+    },
+    {
+      "id": "e-frame1-clip1",
+      "source": "frame1",
+      "target": "clip1",
+      "type": "default"
+    },
+    {
+      "id": "e-llm-tc2",
+      "source": "llm",
+      "target": "tc2",
+      "targetHandle": "storyboard",
+      "type": "default"
+    },
+    {
+      "id": "e-tc2-frame2",
+      "source": "tc2",
+      "target": "frame2",
+      "type": "default"
+    },
+    {
+      "id": "e-tc2-clip2",
+      "source": "tc2",
+      "target": "clip2",
+      "type": "default"
+    },
+    {
+      "id": "e-frame2-clip2",
+      "source": "frame2",
+      "target": "clip2",
+      "type": "default"
+    },
+    {
+      "id": "e-llm-tc3",
+      "source": "llm",
+      "target": "tc3",
+      "targetHandle": "storyboard",
+      "type": "default"
+    },
+    {
+      "id": "e-tc3-frame3",
+      "source": "tc3",
+      "target": "frame3",
+      "type": "default"
+    },
+    {
+      "id": "e-tc3-clip3",
+      "source": "tc3",
+      "target": "clip3",
+      "type": "default"
+    },
+    {
+      "id": "e-frame3-clip3",
+      "source": "frame3",
+      "target": "clip3",
+      "type": "default"
+    }
+  ],
+  "edgeStyle": "default"
+}

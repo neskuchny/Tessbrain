@@ -1,0 +1,71 @@
+{
+ "version": 1,
+ "name": "Data analyst: question → numbers → Excel in Telegram",
+ "nodes": [
+  {
+   "id": "note-howto",
+   "type": "note",
+   "position": {"x": -360, "y": 20},
+   "data": {
+    "text": "An analyst over your tables and CRM.\n\n1) Put a question into the Trigger (\"revenue by month\", \"how many deals are stuck by region\").\n2) On the \"CRM data\" node pick a table from the list — more reliable than auto-pick.\n3) Run: the numbers get computed (a pandas sandbox handles complex questions), the analyst writes takeaways, and the Excel plus the text go to Telegram.\n\nIf the question doesn't match any table, the board says so honestly and lists the available tables. For a recurring report switch the trigger to \"Schedule\"."
+   }
+  },
+  {
+   "id": "t1",
+   "type": "trigger",
+   "position": {"x": 40, "y": 120},
+   "data": {
+    "label": "Question to the data",
+    "trigger_type": "manual",
+    "payload": "[type a question: e.g. revenue by month for the last quarter]"
+   }
+  },
+  {
+   "id": "d1",
+   "type": "crm_data",
+   "position": {"x": 340, "y": 120},
+   "data": {
+    "label": "CRM data / table",
+    "query": "",
+    "dataset_id": ""
+   }
+  },
+  {
+   "id": "g1",
+   "type": "generate",
+   "position": {"x": 640, "y": 40},
+   "data": {
+    "label": "Analyst takeaways",
+    "prompt": "You are a business analyst. Below are numbers from a company table (the answer to an executive's question). Write briefly: 3 key observations and 1 practical recommendation. Use ONLY the numbers from the data below, invent nothing. If the data is thin — say so.\n\n{{input}}"
+   }
+  },
+  {
+   "id": "x1",
+   "type": "report_xlsx",
+   "position": {"x": 640, "y": 260},
+   "data": {
+    "label": "Table → Excel",
+    "title": "Analytics",
+    "instruction": "Lay the data out as a clean table; if there is a breakdown by group/month — one row per group."
+   }
+  },
+  {
+   "id": "n1",
+   "type": "notify",
+   "position": {"x": 940, "y": 150},
+   "data": {
+    "label": "To Telegram",
+    "text": "",
+    "channel": "telegram"
+   }
+  }
+ ],
+ "edges": [
+  {"id": "e-t1-d1", "source": "t1", "target": "d1", "type": "default"},
+  {"id": "e-d1-g1", "source": "d1", "target": "g1", "type": "default"},
+  {"id": "e-d1-x1", "source": "d1", "target": "x1", "type": "default"},
+  {"id": "e-g1-n1", "source": "g1", "target": "n1", "type": "default"},
+  {"id": "e-x1-n1", "source": "x1", "target": "n1", "type": "default"}
+ ],
+ "edgeStyle": "curved"
+}

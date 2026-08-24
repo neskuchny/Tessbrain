@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the Company Brain Costs</title>
+</head>
+<body>
+<style>
+  :root{
+    /* Светлая книга — единая система набора */
+    --ground:#f3f1ea; --panel:#fff; --panel2:#faf8f2;
+    --line:#ddd8cb; --line2:#e7e3d7;
+    --chalk:#211f1a; --muted:#5c584e; --dim:#8b8677;
+    --accent:#a97a2c;
+    --measured:#3f6f8f;   /* измерено — прогоном (сине-стальной) */
+    --guess:#a97a2c;      /* оценка — допущение (золотой) */
+    --out:#a6497a; --guard:#3f7a56; --loop:#6b5b95;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',ui-serif,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,'DejaVu Sans Mono',monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--chalk);
+    font-family:var(--sans);font-size:15px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:1000px;margin:0 auto;padding:60px 24px 90px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.8vw,52px);
+     margin:0 0 8px;line-height:1.12;letter-spacing:-.01em;text-wrap:balance}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3vw,31px);
+     margin:56px 0 12px;line-height:1.18;letter-spacing:-.01em}
+  .lede{font-family:var(--serif);font-size:clamp(19px,2.2vw,24px);color:var(--muted);
+    line-height:1.5;max-width:38ch;margin:0 0 10px;font-style:italic}
+  p{max-width:64ch}
+  .note{color:var(--muted);font-size:13px;max-width:68ch;line-height:1.6}
+
+  /* метка происхождения числа */
+  .tag{font-family:var(--sans);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+    padding:2px 7px;border-radius:5px;vertical-align:1px;white-space:nowrap;font-weight:700}
+  .t-m{background:rgba(63,111,143,.10);color:var(--measured);
+    border:1px solid rgba(63,111,143,.32)}
+  .t-g{background:rgba(169,122,44,.10);color:var(--guess);
+    border:1px solid rgba(169,122,44,.32)}
+
+  .banner{display:flex;gap:14px;align-items:flex-start;margin:24px 0 6px;
+    padding:15px 18px;border:1px solid var(--line);border-radius:12px;
+    background:var(--panel2);font-size:13.5px;color:var(--muted);max-width:72ch;line-height:1.6}
+  .banner b{color:var(--chalk);font-weight:600}
+
+  .panel{border:1px solid var(--line);border-radius:14px;background:var(--panel);
+    padding:22px 24px;margin:18px 0;box-shadow:0 1px 2px rgba(40,34,20,.03)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:22px 28px}
+  label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:8px}
+  label b{color:var(--chalk);font-weight:600;font-variant-numeric:tabular-nums}
+  input[type=range]{width:100%;accent-color:var(--measured);cursor:pointer}
+  select{width:100%;background:var(--panel2);color:var(--chalk);border:1px solid var(--line);
+    border-radius:8px;padding:8px 10px;font-family:var(--sans);font-size:13px;cursor:pointer}
+  select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .switch{display:flex;gap:9px;align-items:center;cursor:pointer;
+    font-size:13.5px;color:var(--chalk);user-select:none}
+  .switch input{accent-color:var(--guard);width:17px;height:17px;cursor:pointer}
+
+  .readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:16px;margin-top:6px}
+  .kpi{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--panel)}
+  .kpi .v{font-family:var(--serif);font-size:38px;line-height:1.05;font-weight:600;
+    font-variant-numeric:tabular-nums}
+  .kpi .k{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.45}
+  .kpi.a .v{color:var(--measured)} .kpi.b .v{color:var(--guess)}
+  .kpi.c .v{color:var(--out)} .kpi.d .v{color:var(--loop)}
+
+  .split{display:flex;height:16px;border-radius:8px;overflow:hidden;margin:16px 0 8px;
+    border:1px solid var(--line)}
+  .split i{display:block;height:100%}
+  .splitleg{display:flex;gap:20px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+  .splitleg em{font-style:normal;display:inline-flex;align-items:center;gap:7px}
+  .dot{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+  table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:8px}
+  th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line2)}
+  th{color:var(--muted);font-weight:600;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+  td.n{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+  .bar{height:10px;border-radius:5px;background:#eae5d8;overflow:hidden;min-width:112px}
+  .bar i{display:block;height:100%}
+  .tablewrap{overflow-x:auto}
+
+  .formula{font-size:12.5px;color:var(--muted);background:var(--panel2);
+    border-left:3px solid var(--line);padding:11px 15px;border-radius:0 8px 8px 0;
+    margin-top:12px;max-width:72ch;line-height:1.6}
+  .formula b{color:var(--chalk);font-weight:600}
+  footer{margin-top:56px;color:var(--muted);font-size:12.5px;line-height:1.7;max-width:74ch;
+    border-top:1px solid var(--line);padding-top:22px}
+  a{color:var(--accent);text-underline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  .kpi .v,.split i,.bar i{transition:all .28s cubic-bezier(.4,0,.2,1)}
+</style>
+
+<div class="wrap">
+  <h1>What the company brain costs</h1>
+  <p class="lede">Set your own conditions and the page recalculates. Everything that could be
+    measured was measured by a run; everything else is honestly marked as an
+    assumption you can change.</p>
+
+  <div class="banner">
+    <div>
+      <b>Two kinds of number, and they never mix.</b><br>
+      <span class="tag t-m">measured</span> — produced by one of our runs, named
+      next to it. <span class="tag t-g">estimate</span> — an assumption we did
+      not measure; it is a slider, set your own. No "measured" figure is
+      derived from an "estimate".
+    </div>
+  </div>
+
+  <h2>Your conditions</h2>
+  <div class="panel">
+    <div class="grid">
+      <div>
+        <label>employees <b id="lPeople">40</b></label>
+        <input type="range" id="people" min="5" max="500" step="5" value="40">
+      </div>
+      <div>
+        <label>meetings per week <b id="lMeet">12</b></label>
+        <input type="range" id="meet" min="1" max="120" step="1" value="12">
+      </div>
+      <div>
+        <label>average meeting, minutes <b id="lLen">45</b></label>
+        <input type="range" id="len" min="15" max="120" step="5" value="45">
+      </div>
+      <div>
+        <label>questions to memory per person per day <b id="lQ">4</b></label>
+        <input type="range" id="q" min="0" max="40" step="1" value="4">
+      </div>
+      <div>
+        <label>model class</label>
+        <select id="model">
+          <option value="flashlite">economy — $0.10 / $0.40 per 1M</option>
+          <option value="mini">mid — $0.15 / $0.60 per 1M</option>
+          <option value="strong">strong — $2.50 / $10.00 per 1M</option>
+          <option value="local">your own, on your own server — $0 per call</option>
+        </select>
+      </div>
+      <div>
+        <label>model calls per meeting <b id="lCalls">30</b>
+          <span class="tag t-g">estimate</span></label>
+        <input type="range" id="calls" min="1" max="60" step="1" value="30">
+      </div>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:26px;flex-wrap:wrap">
+      <label class="switch"><input type="checkbox" id="airgap">
+        closed perimeter — your own model</label>
+    </div>
+  </div>
+
+  <h2>A month in money</h2>
+  <div class="readout">
+    <div class="kpi a"><div class="v" id="kTotal">—</div>
+      <div class="k">per month, total</div></div>
+    <div class="kpi b"><div class="v" id="kMeet">—</div>
+      <div class="k">of that, meeting extraction</div></div>
+    <div class="kpi c"><div class="v" id="kQ">—</div>
+      <div class="k">of that, employee questions</div></div>
+    <div class="kpi d"><div class="v" id="kPer">—</div>
+      <div class="k">per employee per month</div></div>
+  </div>
+  <div class="split"><i id="sMeet"></i><i id="sQ"></i></div>
+  <div class="splitleg">
+    <em><i class="dot" style="background:var(--guess)"></i>meeting extraction</em>
+    <em><i class="dot" style="background:var(--out)"></i>questions to memory</em>
+  </div>
+  <div class="formula" id="formula"></div>
+
+  <h2>Memory after a year <span class="tag t-g">estimate throughout</span></h2>
+  <p class="note" style="margin-top:0">We measured neither objects per meeting nor bytes per object — those are
+    assumptions tied to conversation length. What <em>is</em> measured here is
+    something else, and more important: the system <b>counts its own</b> volume
+    and growth per organisation, and shows the slope rather than just the size.</p>
+  <div class="readout">
+    <div class="kpi b"><div class="v" id="kNodes">—</div>
+      <div class="k">objects in the graph</div></div>
+    <div class="kpi b"><div class="v" id="kBytes">—</div>
+      <div class="k">on disk</div></div>
+    <div class="kpi b"><div class="v" id="kSlope">—</div>
+      <div class="k">growth per month at peak</div></div>
+  </div>
+  <svg id="growth" viewBox="0 0 780 190" style="width:100%;height:auto;margin-top:14px"></svg>
+  <p class="note">It is the growth slope, not the starting size, that bankrupts a long-lived
+    memory — so the system measures volume and growth itself and reports them
+    per organisation. Decay is typed: contextual links (mentioned near each
+    other) weaken, while structural facts — decided, assigned — never decay.</p>
+
+  <h2>What you get for that money</h2>
+  <p class="note">Only measured results below. Every row names the run it came from; arms
+    marked invalid do not appear in this table.</p>
+  <div class="tablewrap"><table id="bench">
+    <thead><tr><th>what was compared</th><th>baseline</th>
+      <th>ours</th><th style="width:190px"></th><th>run</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h2>Closed perimeter</h2>
+  <div class="panel" id="airgapPanel"></div>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+/* ── measured: every number carries the run it came from ── */
+const RUN = {
+  live30: 'LongMemEval, 30 questions, gemini-3.1-flash-lite, 2026-08-14',
+  ms30:   'LongMemEval, multi-session questions only, 30 of them',
+  bb:     'BrainBench (gbrain-evals), 240 pages, 145 queries',
+  h2h:    'LongMemEval oracle, head-to-head against Mem0, 30 questions',
+  locomo: 'LoCoMo, 30 questions, gpt-4o-mini',
+};
+
+/* Run live30: 236 calls, 386,847 input + 2,893 output tokens,
+   4 arms x 30 questions plus the judge. Average price per question comes from this. */
+const MEASURED = {
+  runCalls: 236, runIn: 386847, runOut: 2893, runQuestions: 30, runArms: 4,
+  // average input/output per call — measured by the same run
+  perCallIn: 386847/236, perCallOut: 2893/236,
+};
+
+const PRICES = {           // $ per 1M tokens
+  flashlite:{in:.10, out:.40, name:'economy'},
+  mini:     {in:.15, out:.60, name:'mid'},
+  strong:   {in:2.50,out:10.0,name:'strong'},
+  local:    {in:0,   out:0,   name:'your own server'},
+};
+
+const BENCH = [
+  {what:'Multi-session questions', base:'retrieval 0.23', ours:0.567,
+   baseV:0.233, run:'ms30'},
+  {what:'Relational questions, precision@5', base:'plain text search 0.16',
+   ours:0.316, baseV:0.161, run:'bb'},
+  {what:'Time-based questions', base:'ranking without time 0.63',
+   ours:0.800, baseV:0.633, run:'live30'},
+  {what:'Against Mem0, same judge', base:'Mem0 0.33', ours:0.467,
+   baseV:0.333, run:'h2h'},
+  {what:'Multi-session memory (LoCoMo)', base:'strict mode 0.43',
+   ours:0.567, baseV:0.433, run:'locomo'},
+];
+
+const $ = id => document.getElementById(id);
+const money = v => v >= 1000 ? '$'+Math.round(v).toLocaleString('ru-RU')
+  : v >= 10 ? '$'+v.toFixed(0) : '$'+v.toFixed(2);
+const num = v => Math.round(v).toLocaleString('ru-RU');
+
+function state(){
+  return {
+    people:+$('people').value, meet:+$('meet').value, len:+$('len').value,
+    q:+$('q').value, calls:+$('calls').value,
+    model:$('model').value, airgap:$('airgap').checked,
+  };
+}
+
+function compute(s){
+  const price = PRICES[s.airgap ? 'local' : s.model];
+  const meetingsMonth = s.meet * 4.33;
+
+  // Meeting extraction. Transcript: ~150 words/min of speech, ~1.3 tokens per
+  // word — that is an ESTIMATE (speech rate), not our measurement. Calls per
+  // meeting is an estimate too, on the slider above.
+  const transcriptTok = s.len * 150 * 1.3;
+  // each call reads part of the transcript; on average, half of it
+  const meetInTok  = s.calls * transcriptTok * 0.5;
+  const meetOutTok = s.calls * 350;
+  const meetCost = meetingsMonth * (meetInTok/1e6*price.in + meetOutTok/1e6*price.out);
+
+  // A question to memory — MEASURED: average input/output per call from run live30.
+  const questionsMonth = s.people * s.q * 21;
+  const qCost = questionsMonth *
+    (MEASURED.perCallIn/1e6*price.in + MEASURED.perCallOut/1e6*price.out);
+
+  // Memory. Objects per meeting is an estimate tied to conversation length.
+  const nodesPerMeeting = Math.round(s.len * 0.9);
+  const nodesYear = meetingsMonth * 12 * nodesPerMeeting;
+  const bytesYear = nodesYear * 2400;          // ~2.4 KB per object including versions
+  const slopeMonth = meetingsMonth * nodesPerMeeting;
+
+  return {price, meetingsMonth, questionsMonth, meetCost, qCost,
+    total: meetCost + qCost, nodesYear, bytesYear, slopeMonth,
+    transcriptTok, nodesPerMeeting};
+}
+
+function drawGrowth(r){
+  const svg = $('growth'), NS='http://www.w3.org/2000/svg';
+  svg.innerHTML='';
+  const W=780,H=190,pad=26, months=12;
+  const max=r.nodesYear||1;
+  const pts=[];
+  for(let m=0;m<=months;m++){
+    const x=pad+(W-pad*2)*m/months;
+    const y=H-pad-(H-pad*2)*(r.slopeMonth*m/max);
+    pts.push([x,y]);
+  }
+  const mk=(t,a)=>{const e=document.createElementNS(NS,t);
+    for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e;};
+  mk('line',{x1:pad,y1:H-pad,x2:W-pad,y2:H-pad,stroke:'#242c3a','stroke-width':1});
+  mk('path',{d:'M'+pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L ')
+    +` L ${W-pad} ${H-pad} L ${pad} ${H-pad} Z`,
+    fill:'rgba(255,216,102,.09)'});
+  mk('path',{d:'M'+pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L '),
+    fill:'none',stroke:'#ffd866','stroke-width':2.4,'stroke-linecap':'round'});
+  mk('circle',{cx:pts[months][0],cy:pts[months][1],r:5,fill:'#ffd866'});
+  const t=mk('text',{x:W-pad,y:pts[months][1]-13,'text-anchor':'end',
+    fill:'#ffd866','font-size':13,'font-family':'var(--mono)'});
+  t.textContent=num(r.nodesYear)+' objects';
+  ['start','after a year'].forEach((s,i)=>{
+    const e=mk('text',{x:i?W-pad:pad,y:H-8,'text-anchor':i?'end':'start',
+      fill:'#7d8798','font-size':11.5,'font-family':'var(--mono)'});
+    e.textContent=s;
+  });
+}
+
+function renderBench(){
+  const tb=document.querySelector('#bench tbody'); tb.innerHTML='';
+  BENCH.forEach(b=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML = `<td>${b.what}</td><td>${b.base}</td>
+      <td class="n" style="color:var(--measured)">${b.ours.toFixed(3).replace('.',',')}</td>
+      <td><div class="bar"><i style="width:${(b.baseV*100).toFixed(0)}%;
+        background:#3a4557"></i></div>
+        <div class="bar" style="margin-top:4px"><i style="width:${(b.ours*100).toFixed(0)}%;
+        background:var(--measured)"></i></div></td>
+      <td><span class="tag t-m">measured</span><br>
+        <span style="font-size:11.5px;color:var(--muted)">${RUN[b.run]}</span></td>`;
+    tb.appendChild(tr);
+  });
+}
+
+function renderAirgap(s){
+  const on = s.airgap;
+  $('airgapPanel').innerHTML = on ? `
+    <p style="margin-top:0"><b>The perimeter is closed.</b> Model calls no longer
+    cost money — hardware does: a single 24–32 GB GPU holds an open model in the
+    30-billion-parameter class. Instead of a bill per call, a one-off purchase.</p>
+    <p class="note"><b>What gets switched off:</b> web search (not even the query
+    text, assembled from your data, leaves the network), cloud model providers,
+    subscription task executors. Model profiles and an employee's personal key
+    are checked by the same rule — you cannot sneak a cloud endpoint past the
+    perimeter.</p>
+    <p class="note"><b>What to prepare:</b> bake the embedding and multimodal
+    model weights into the image in advance — on first start they are pulled
+    from the internet. The multimodal endpoint must be internal: screenshots of
+    your screens go through it.</p>
+    <p class="note"><span class="tag t-g">not measured</span> How much quality a
+    closed perimeter costs — we honestly have no number. The harness can measure
+    a local model, but the measurement never happened: an attempt on an open
+    model came out invalid (the model emitted a restatement of the task instead
+    of answers, and the judge scored them correct). That run is marked and
+    kept.</p>`
+    : `
+    <p style="margin-top:0">The cloud variant is being calculated. Flip the
+    switch above to see how the calculation changes and what exactly gets
+    disabled.</p>
+    <p class="note">In short: model calls stop costing money and start costing
+    hardware, all outbound traffic closes, and some capabilities (web search,
+    subscription executors) are disabled by construction.</p>`;
+}
+
+function render(){
+  const s=state(), r=compute(s);
+  $('lPeople').textContent=s.people; $('lMeet').textContent=s.meet;
+  $('lLen').textContent=s.len; $('lQ').textContent=s.q;
+  $('lCalls').textContent=s.calls;
+
+  if (s.airgap){
+    $('kTotal').textContent='$0';
+    $('kMeet').textContent='—'; $('kQ').textContent='—'; $('kPer').textContent='$0';
+    $('sMeet').style.width='50%'; $('sMeet').style.background='#2a3342';
+    $('sQ').style.width='50%';   $('sQ').style.background='#2a3342';
+    $('formula').innerHTML='<b>Inside a closed perimeter model calls are not billed</b> — '
+      +'the cost moves into hardware and electricity. A per-call money figure '
+      +'would be meaningless here, which is why it is not shown.';
+  } else {
+    $('kTotal').textContent=money(r.total);
+    $('kMeet').textContent=money(r.meetCost);
+    $('kQ').textContent=money(r.qCost);
+    $('kPer').textContent=money(r.total/Math.max(1,s.people));
+    const p=r.total? r.meetCost/r.total*100 : 50;
+    $('sMeet').style.width=p+'%';  $('sMeet').style.background='var(--guess)';
+    $('sQ').style.width=(100-p)+'%'; $('sQ').style.background='var(--out)';
+    $('formula').innerHTML =
+      `<b>Where this comes from.</b> Questions: ${num(r.questionsMonth)} per month
+       x an average call of ${Math.round(MEASURED.perCallIn)} input and
+       ${Math.round(MEASURED.perCallOut)} output tokens —
+       <span class="tag t-m">measured</span> by a run
+       (${MEASURED.runCalls} calls, ${num(MEASURED.runIn)} input tokens).
+       Extraction: ${Math.round(r.meetingsMonth)} meetings x ${s.calls} calls x
+       half a transcript (${num(r.transcriptTok)} tokens at
+       ${s.len} min) — <span class="tag t-g">estimate</span>: we measured neither
+       the number of calls nor the speech rate; both are sliders above.`;
+  }
+
+  $('kNodes').textContent=num(r.nodesYear);
+  $('kBytes').textContent=(r.bytesYear/1e9>=1
+    ? (r.bytesYear/1e9).toFixed(1)+' GB' : Math.round(r.bytesYear/1e6)+' MB');
+  $('kSlope').textContent='+'+num(r.slopeMonth);
+  drawGrowth(r); renderAirgap(s);
+}
+
+['people','meet','len','q','calls','model','airgap'].forEach(id=>{
+  $(id).addEventListener('input',render);
+  $(id).addEventListener('change',render);
+});
+renderBench(); render();
+
+$('foot').innerHTML = `Figures marked "measured" come from runs on public sets
+  and on somebody else's open harness; the run outputs live in the repository
+  next to the code that produced them. Sample sizes are 20 to 200 questions:
+  honest measurement, but not statistics — a difference of two or three
+  hundredths on 30 questions cannot be taken seriously. Figures marked
+  "estimate" we did not measure at all, which is exactly why they are sliders.
+  Cost inside a closed perimeter is deliberately not computed: there you pay for
+  hardware, not for calls. The detailed limits of each part are in the product
+  capability map.`;
+</script>
+</body>
+</html>

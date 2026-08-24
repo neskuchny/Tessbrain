@@ -1,0 +1,113 @@
+{
+ "version": 1,
+ "name": "Готовый процесс: инфографика после встречи",
+ "nodes": [
+  {
+   "id": "note-flow",
+   "type": "note",
+   "position": {
+    "x": 40,
+    "y": 40
+   },
+   "data": {
+    "label": "Как это работает",
+    "text": "Встреча завершилась → мозг собирает подробное саммари → узел «Инфографика» просит image-модель нарисовать плотную карту встречи, а ключевые факты дублирует ТЕКСТОМ в подпись → всё уходит в Telegram. Нужны: ключ OpenAI/Gemini и Telegram (Bot Token + Chat ID в «Интеграции»)."
+   },
+   "style": {
+    "width": 360,
+    "height": 150
+   }
+  },
+  {
+   "id": "t1",
+   "type": "trigger",
+   "position": {
+    "x": 40,
+    "y": 250
+   },
+   "data": {
+    "label": "Встреча завершилась",
+    "trigger_type": "event",
+    "event_type": "meeting_ended",
+    "payload": "собрать инфографику по завершившейся встрече",
+    "enabled": false
+   }
+  },
+  {
+   "id": "b1",
+   "type": "meeting_data",
+   "position": {
+    "x": 340,
+    "y": 250
+   },
+   "data": {
+    "kind": "report",
+    "label": "Подробное саммари встречи"
+   }
+  },
+  {
+   "id": "note-creative",
+   "type": "note",
+   "position": {
+    "x": 660,
+    "y": 150
+   },
+   "data": {
+    "label": "✦ Инфографика",
+    "text": "Всё рисует image-модель по плотному промпту с точным русским текстом. Ключевые факты дублируются текстом в подписи — читаемо, даже если модель ошибётся в паре слов. Нет ключа image-модели → отрисуется кодом (запасной вид)."
+   },
+   "style": {
+    "width": 340,
+    "height": 120
+   }
+  },
+  {
+   "id": "ig1",
+   "type": "infographic",
+   "position": {
+    "x": 680,
+    "y": 300
+   },
+   "data": {
+    "label": "Инфографика встречи",
+    "model": "nano-banana",
+    "image": null
+   }
+  },
+  {
+   "id": "n1",
+   "type": "notify",
+   "position": {
+    "x": 1010,
+    "y": 300
+   },
+   "data": {
+    "label": "В Telegram (фото + факты)",
+    "channel": "telegram",
+    "subject": "Инфографика встречи"
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-t1-b1",
+   "source": "t1",
+   "target": "b1"
+  },
+  {
+   "id": "e-b1-ig1",
+   "source": "b1",
+   "sourceHandle": "out",
+   "target": "ig1",
+   "targetHandle": "text"
+  },
+  {
+   "id": "e-ig1-n1",
+   "source": "ig1",
+   "sourceHandle": "image",
+   "target": "n1",
+   "targetHandle": "in"
+  }
+ ],
+ "edgeStyle": "curved"
+}

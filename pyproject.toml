@@ -1,0 +1,92 @@
+[project]
+name = "tessent-brain"
+version = "0.1.0"
+description = "🧠 Цифровой мозг компании - интеллектуальная система анализа и управления знаниями"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "SynLabs", email = "dev@synlabs.ru"}
+]
+keywords = ["ai", "knowledge-graph", "rag", "llm", "meeting-analysis"]
+
+dependencies = [
+    # === API Framework ===
+    "litestar[standard]>=2.0.0",
+    "granian>=1.0.0",
+    "uvicorn>=0.24.0",
+    
+    # === Database Clients ===
+    "asyncpg>=0.29.0",
+    # psycopg2-binary — для sync PostgresUsageStore (issue #110 пакет 4.b).
+    # Optional: если не установлен, make_default_store() fallback'ом
+    # выбирает SqliteUsageStore (с warning'ом).
+    "psycopg2-binary>=2.9.0",
+    "sqlalchemy[asyncio]>=2.0.0",
+    "alembic>=1.13.0",
+    "qdrant-client>=1.7.0",
+    "neo4j>=5.15.0",
+    "redis>=5.0.0",
+    
+    # === AI/ML ===
+    "google-generativeai>=0.3.0",
+    "openai>=1.6.0",
+    "litellm>=1.0.0",
+    "langchain>=0.1.0",
+    "langgraph>=0.0.20",
+    "sentence-transformers>=2.2.0",
+    
+    # === Task Queue ===
+    "taskiq>=0.11.0",
+    "taskiq-redis>=1.0.0",
+    
+    # === Utilities ===
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.26.0",
+    "structlog>=24.0.0",
+    "tenacity>=8.2.0",
+    "orjson>=3.9.0",
+    "networkx>=3.2.0",
+    
+    # === Security ===
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    
+    # === Graphiti (Temporal Memory) ===
+    "graphiti-core>=0.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.1.0",
+    "mypy>=1.8.0",
+    "pre-commit>=3.6.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Код приложения живёт в backend/, а имя проекта — tessent-brain. Без
+# явного указания hatchling ищет директорию tessent_brain/ (по имени
+# проекта), не находит и падает с "Unable to determine which files to
+# ship inside the wheel". Прямо указываем пакет для упаковки в wheel.
+[tool.hatch.build.targets.wheel]
+packages = ["backend"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+
+

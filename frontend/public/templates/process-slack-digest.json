@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "name": "Дайджест недели -> Slack (Действие)",
+  "nodes": [
+    {
+      "id": "note",
+      "type": "note",
+      "position": {
+        "x": -380,
+        "y": 40
+      },
+      "data": {
+        "text": "Дайджест недели в Slack — автоматизация.\n\nТриггер по расписанию -> «Спросить мозг» собирает сводку компании -> «Действие» отправляет её в Slack (в поле текста стоит {{input}} — туда подставится ответ мозга).\n\nУкажите канал и подключите Slack во вкладке Интеграции."
+      }
+    },
+    {
+      "id": "trg",
+      "type": "trigger",
+      "position": {
+        "x": 40,
+        "y": 60
+      },
+      "data": {
+        "label": "Каждую неделю",
+        "trigger_type": "schedule",
+        "interval_min": 10080,
+        "payload": ""
+      }
+    },
+    {
+      "id": "ask",
+      "type": "ask_brain",
+      "position": {
+        "x": 320,
+        "y": 60
+      },
+      "data": {
+        "label": "Сводка недели",
+        "prompt": "Составь краткий дайджест компании за неделю: ключевые решения, риски, прогресс."
+      }
+    },
+    {
+      "id": "act",
+      "type": "action",
+      "position": {
+        "x": 620,
+        "y": 60
+      },
+      "data": {
+        "label": "Отправить в Slack",
+        "tool_name": "slack_send_message",
+        "params": {
+          "channel": "#general",
+          "text": "📊 Дайджест недели:\n{{input}}"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "trg",
+      "target": "ask",
+      "type": "default"
+    },
+    {
+      "id": "e2",
+      "source": "ask",
+      "target": "act",
+      "type": "default"
+    }
+  ],
+  "edgeStyle": "default"
+}

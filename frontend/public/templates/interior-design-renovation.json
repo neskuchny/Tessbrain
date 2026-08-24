@@ -1,0 +1,289 @@
+{
+ "version": 1,
+ "name": "Дизайн интерьера: 3 варианта по фото",
+ "nodes": [
+  {
+   "id": "note",
+   "type": "note",
+   "position": {
+    "x": 40,
+    "y": 60
+   },
+   "data": {
+    "text": "Дизайн интерьера: 3 варианта по фото.\n\n1) Загрузите фото комнаты слева.\n2) Каждый вариант — Промпт → Генерация. Впишите пожелания в текст и нажмите Run.\n\nГеометрия комнаты сохраняется. Новый вариант: перетащите Промпт и Генерацию, соедините с фото."
+   },
+   "width": 300,
+   "style": {
+    "width": 300,
+    "height": 200
+   }
+  },
+  {
+   "id": "img-room",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 60
+   },
+   "data": {
+    "label": "Фото комнаты",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "p-scandi",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 930
+   },
+   "data": {
+    "label": "Вариант · Сканди",
+    "prompt": "Фотореалистичный ремонт ЭТОЙ комнаты с фото: сохрани геометрию, окна и двери. Стиль сканди: светлое дерево, белые стены, мягкий текстиль, тёплый свет. Пожелания: [впишите бюджет, для кого]."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-scandi",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 760
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "3:2",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-scandi",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 800
+   },
+   "data": {
+    "label": "Вариант · Сканди",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-loft",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 660
+   },
+   "data": {
+    "label": "Вариант · Лофт",
+    "prompt": "Фотореалистичный ремонт ЭТОЙ комнаты с фото: сохрани геометрию, окна и двери. Стиль лофт: кирпич/бетон, чёрный металл, открытые светильники, кожа и дерево. Пожелания: [впишите]."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-loft",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 410
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "3:2",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-loft",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 430
+   },
+   "data": {
+    "label": "Вариант · Лофт",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p-classic",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 390
+   },
+   "data": {
+    "label": "Вариант · Классика",
+    "prompt": "Фотореалистичный ремонт ЭТОЙ комнаты с фото: сохрани геометрию. Современная классика: молдинги, спокойная палитра, латунь, симметрия. Пожелания: [впишите]."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb-classic",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "3:2",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o-classic",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 60
+   },
+   "data": {
+    "label": "Вариант · Классика",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-p-scandi-nb-scandi",
+   "source": "p-scandi",
+   "sourceHandle": "text",
+   "target": "nb-scandi",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-scandi-o-scandi",
+   "source": "nb-scandi",
+   "sourceHandle": "image",
+   "target": "o-scandi",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-room-nb-scandi",
+   "source": "img-room",
+   "sourceHandle": "image",
+   "target": "nb-scandi",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-loft-nb-loft",
+   "source": "p-loft",
+   "sourceHandle": "text",
+   "target": "nb-loft",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-loft-o-loft",
+   "source": "nb-loft",
+   "sourceHandle": "image",
+   "target": "o-loft",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-room-nb-loft",
+   "source": "img-room",
+   "sourceHandle": "image",
+   "target": "nb-loft",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p-classic-nb-classic",
+   "source": "p-classic",
+   "sourceHandle": "text",
+   "target": "nb-classic",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb-classic-o-classic",
+   "source": "nb-classic",
+   "sourceHandle": "image",
+   "target": "o-classic",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-room-nb-classic",
+   "source": "img-room",
+   "sourceHandle": "image",
+   "target": "nb-classic",
+   "targetHandle": "image",
+   "type": "default"
+  }
+ ],
+ "edgeStyle": "curved"
+}

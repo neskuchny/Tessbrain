@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сколько стоит мозг компании</title>
+</head>
+<body>
+<style>
+  :root{
+    /* Светлая книга — единая система набора */
+    --ground:#f3f1ea; --panel:#fff; --panel2:#faf8f2;
+    --line:#ddd8cb; --line2:#e7e3d7;
+    --chalk:#211f1a; --muted:#5c584e; --dim:#8b8677;
+    --accent:#a97a2c;
+    --measured:#3f6f8f;   /* измерено — прогоном (сине-стальной) */
+    --guess:#a97a2c;      /* оценка — допущение (золотой) */
+    --out:#a6497a; --guard:#3f7a56; --loop:#6b5b95;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',ui-serif,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,'DejaVu Sans Mono',monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--chalk);
+    font-family:var(--sans);font-size:15px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:1000px;margin:0 auto;padding:60px 24px 90px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.8vw,52px);
+     margin:0 0 8px;line-height:1.12;letter-spacing:-.01em;text-wrap:balance}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3vw,31px);
+     margin:56px 0 12px;line-height:1.18;letter-spacing:-.01em}
+  .lede{font-family:var(--serif);font-size:clamp(19px,2.2vw,24px);color:var(--muted);
+    line-height:1.5;max-width:38ch;margin:0 0 10px;font-style:italic}
+  p{max-width:64ch}
+  .note{color:var(--muted);font-size:13px;max-width:68ch;line-height:1.6}
+
+  /* метка происхождения числа */
+  .tag{font-family:var(--sans);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+    padding:2px 7px;border-radius:5px;vertical-align:1px;white-space:nowrap;font-weight:700}
+  .t-m{background:rgba(63,111,143,.10);color:var(--measured);
+    border:1px solid rgba(63,111,143,.32)}
+  .t-g{background:rgba(169,122,44,.10);color:var(--guess);
+    border:1px solid rgba(169,122,44,.32)}
+
+  .banner{display:flex;gap:14px;align-items:flex-start;margin:24px 0 6px;
+    padding:15px 18px;border:1px solid var(--line);border-radius:12px;
+    background:var(--panel2);font-size:13.5px;color:var(--muted);max-width:72ch;line-height:1.6}
+  .banner b{color:var(--chalk);font-weight:600}
+
+  .panel{border:1px solid var(--line);border-radius:14px;background:var(--panel);
+    padding:22px 24px;margin:18px 0;box-shadow:0 1px 2px rgba(40,34,20,.03)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:22px 28px}
+  label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:8px}
+  label b{color:var(--chalk);font-weight:600;font-variant-numeric:tabular-nums}
+  input[type=range]{width:100%;accent-color:var(--measured);cursor:pointer}
+  select{width:100%;background:var(--panel2);color:var(--chalk);border:1px solid var(--line);
+    border-radius:8px;padding:8px 10px;font-family:var(--sans);font-size:13px;cursor:pointer}
+  select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .switch{display:flex;gap:9px;align-items:center;cursor:pointer;
+    font-size:13.5px;color:var(--chalk);user-select:none}
+  .switch input{accent-color:var(--guard);width:17px;height:17px;cursor:pointer}
+
+  .readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:16px;margin-top:6px}
+  .kpi{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--panel)}
+  .kpi .v{font-family:var(--serif);font-size:38px;line-height:1.05;font-weight:600;
+    font-variant-numeric:tabular-nums}
+  .kpi .k{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.45}
+  .kpi.a .v{color:var(--measured)} .kpi.b .v{color:var(--guess)}
+  .kpi.c .v{color:var(--out)} .kpi.d .v{color:var(--loop)}
+
+  .split{display:flex;height:16px;border-radius:8px;overflow:hidden;margin:16px 0 8px;
+    border:1px solid var(--line)}
+  .split i{display:block;height:100%}
+  .splitleg{display:flex;gap:20px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+  .splitleg em{font-style:normal;display:inline-flex;align-items:center;gap:7px}
+  .dot{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+  table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:8px}
+  th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line2)}
+  th{color:var(--muted);font-weight:600;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+  td.n{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+  .bar{height:10px;border-radius:5px;background:#eae5d8;overflow:hidden;min-width:112px}
+  .bar i{display:block;height:100%}
+  .tablewrap{overflow-x:auto}
+
+  .formula{font-size:12.5px;color:var(--muted);background:var(--panel2);
+    border-left:3px solid var(--line);padding:11px 15px;border-radius:0 8px 8px 0;
+    margin-top:12px;max-width:72ch;line-height:1.6}
+  .formula b{color:var(--chalk);font-weight:600}
+  footer{margin-top:56px;color:var(--muted);font-size:12.5px;line-height:1.7;max-width:74ch;
+    border-top:1px solid var(--line);padding-top:22px}
+  a{color:var(--accent);text-underline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  .kpi .v,.split i,.bar i{transition:all .28s cubic-bezier(.4,0,.2,1)}
+</style>
+
+<div class="wrap">
+  <h1>Сколько стоит мозг компании</h1>
+  <p class="lede">Поставьте свои условия — страница пересчитает. Всё, что можно
+    было измерить, измерено прогонами; всё остальное честно помечено как
+    допущение, и его можно менять.</p>
+
+  <div class="banner">
+    <div>
+      <b>Два вида чисел, и они не смешиваются.</b><br>
+      <span class="tag t-m">измерено</span> — получено нашим прогоном, рядом
+      указано каким. <span class="tag t-g">оценка</span> — допущение, которое
+      мы не мерили; это ползунок, поставьте своё. Ни одно «измерено» не
+      выведено из «оценки».
+    </div>
+  </div>
+
+  <h2>Ваши условия</h2>
+  <div class="panel">
+    <div class="grid">
+      <div>
+        <label>сотрудников <b id="lPeople">40</b></label>
+        <input type="range" id="people" min="5" max="500" step="5" value="40">
+      </div>
+      <div>
+        <label>встреч в неделю <b id="lMeet">12</b></label>
+        <input type="range" id="meet" min="1" max="120" step="1" value="12">
+      </div>
+      <div>
+        <label>средняя встреча, минут <b id="lLen">45</b></label>
+        <input type="range" id="len" min="15" max="120" step="5" value="45">
+      </div>
+      <div>
+        <label>вопросов к памяти на человека в день <b id="lQ">4</b></label>
+        <input type="range" id="q" min="0" max="40" step="1" value="4">
+      </div>
+      <div>
+        <label>класс модели</label>
+        <select id="model">
+          <option value="flashlite">экономичная — $0,10 / $0,40 за 1M</option>
+          <option value="mini">средняя — $0,15 / $0,60 за 1M</option>
+          <option value="strong">сильная — $2,50 / $10,00 за 1M</option>
+          <option value="local">своя на своём сервере — $0 за вызов</option>
+        </select>
+      </div>
+      <div>
+        <label>обращений к модели на одну встречу <b id="lCalls">30</b>
+          <span class="tag t-g">оценка</span></label>
+        <input type="range" id="calls" min="1" max="60" step="1" value="30">
+      </div>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:26px;flex-wrap:wrap">
+      <label class="switch"><input type="checkbox" id="airgap">
+        закрытый контур — модель у себя</label>
+    </div>
+  </div>
+
+  <h2>Месяц в деньгах</h2>
+  <div class="readout">
+    <div class="kpi a"><div class="v" id="kTotal">—</div>
+      <div class="k">в месяц, всего</div></div>
+    <div class="kpi b"><div class="v" id="kMeet">—</div>
+      <div class="k">из них разбор встреч</div></div>
+    <div class="kpi c"><div class="v" id="kQ">—</div>
+      <div class="k">из них вопросы сотрудников</div></div>
+    <div class="kpi d"><div class="v" id="kPer">—</div>
+      <div class="k">на сотрудника в месяц</div></div>
+  </div>
+  <div class="split"><i id="sMeet"></i><i id="sQ"></i></div>
+  <div class="splitleg">
+    <em><i class="dot" style="background:var(--guess)"></i>разбор встреч</em>
+    <em><i class="dot" style="background:var(--out)"></i>вопросы к памяти</em>
+  </div>
+  <div class="formula" id="formula"></div>
+
+  <h2>Память через год <span class="tag t-g">оценка целиком</span></h2>
+  <p class="note" style="margin-top:0">Ни объектов на встречу, ни байт на объект
+    мы не мерили — это допущения, привязанные к длине разговора. Измерено здесь
+    другое и более важное: то, что система <b>сама считает</b> свой объём и
+    прирост по организации, и показывает наклон, а не только размер.</p>
+  <div class="readout">
+    <div class="kpi b"><div class="v" id="kNodes">—</div>
+      <div class="k">объектов в графе</div></div>
+    <div class="kpi b"><div class="v" id="kBytes">—</div>
+      <div class="k">на диске</div></div>
+    <div class="kpi b"><div class="v" id="kSlope">—</div>
+      <div class="k">прирост за месяц на пике</div></div>
+  </div>
+  <svg id="growth" viewBox="0 0 780 190" style="width:100%;height:auto;margin-top:14px"></svg>
+  <p class="note">Наклон роста, а не стартовый размер, разоряет долгоживущую
+    память — поэтому объём и прирост система меряет сама и показывает по
+    организации. Затухание при этом типозависимое: контекстные связки
+    «упоминались рядом» слабеют, структурные факты — «решил», «назначен» —
+    не затухают никогда.</p>
+
+  <h2>Что вы получаете за эти деньги</h2>
+  <p class="note">Ниже — только измеренное. Каждая строка помечена прогоном;
+    руки, признанные невалидными, в таблицу не попадают.</p>
+  <div class="tablewrap"><table id="bench">
+    <thead><tr><th>что сравнивали</th><th>базовый подход</th>
+      <th>наш</th><th style="width:190px"></th><th>прогон</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h2>Закрытый контур</h2>
+  <div class="panel" id="airgapPanel"></div>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+/* ── измеренное: каждое число со ссылкой на прогон ── */
+const RUN = {
+  live30: 'LongMemEval, 30 вопросов, gemini-3.1-flash-lite, 14.08.2026',
+  ms30:   'LongMemEval, только вопросы «через много разговоров», 30 шт.',
+  bb:     'BrainBench (gbrain-evals), 240 страниц, 145 запросов',
+  h2h:    'LongMemEval oracle, head-to-head с Mem0, 30 вопросов',
+  locomo: 'LoCoMo, 30 вопросов, gpt-4o-mini',
+};
+
+/* Прогон live30: 236 вызовов, 386 847 входных + 2 893 выходных токена,
+   4 руки × 30 вопросов + судья. Отсюда средняя цена одного вопроса. */
+const MEASURED = {
+  runCalls: 236, runIn: 386847, runOut: 2893, runQuestions: 30, runArms: 4,
+  // средний вход/выход на один вызов — измерено тем же прогоном
+  perCallIn: 386847/236, perCallOut: 2893/236,
+};
+
+const PRICES = {           // $ за 1M токенов
+  flashlite:{in:.10, out:.40, name:'экономичная'},
+  mini:     {in:.15, out:.60, name:'средняя'},
+  strong:   {in:2.50,out:10.0,name:'сильная'},
+  local:    {in:0,   out:0,   name:'своя на своём сервере'},
+};
+
+const BENCH = [
+  {what:'Вопросы «через много разговоров»', base:'ретрив 0,23', ours:0.567,
+   baseV:0.233, run:'ms30'},
+  {what:'Реляционные вопросы, точность@5', base:'обычный текстовый поиск 0,16',
+   ours:0.316, baseV:0.161, run:'bb'},
+  {what:'Вопросы о времени', base:'ранжирование без времени 0,63',
+   ours:0.800, baseV:0.633, run:'live30'},
+  {what:'Против Mem0, тот же судья', base:'Mem0 0,33', ours:0.467,
+   baseV:0.333, run:'h2h'},
+  {what:'Многосессионная память (LoCoMo)', base:'строгий режим 0,43',
+   ours:0.567, baseV:0.433, run:'locomo'},
+];
+
+const $ = id => document.getElementById(id);
+const money = v => v >= 1000 ? '$'+Math.round(v).toLocaleString('ru-RU')
+  : v >= 10 ? '$'+v.toFixed(0) : '$'+v.toFixed(2);
+const num = v => Math.round(v).toLocaleString('ru-RU');
+
+function state(){
+  return {
+    people:+$('people').value, meet:+$('meet').value, len:+$('len').value,
+    q:+$('q').value, calls:+$('calls').value,
+    model:$('model').value, airgap:$('airgap').checked,
+  };
+}
+
+function compute(s){
+  const price = PRICES[s.airgap ? 'local' : s.model];
+  const meetingsMonth = s.meet * 4.33;
+
+  // Разбор встречи. Транскрипт: ~150 слов/мин речи, ~1,3 токена на слово —
+  // это ОЦЕНКА (скорость речи), а не наш замер. Обращений на встречу —
+  // тоже оценка, ползунок выше.
+  const transcriptTok = s.len * 150 * 1.3;
+  // каждое обращение читает часть транскрипта; в среднем — половину
+  const meetInTok  = s.calls * transcriptTok * 0.5;
+  const meetOutTok = s.calls * 350;
+  const meetCost = meetingsMonth * (meetInTok/1e6*price.in + meetOutTok/1e6*price.out);
+
+  // Вопрос к памяти — ИЗМЕРЕНО: средний вход/выход на вызов из прогона live30.
+  const questionsMonth = s.people * s.q * 21;
+  const qCost = questionsMonth *
+    (MEASURED.perCallIn/1e6*price.in + MEASURED.perCallOut/1e6*price.out);
+
+  // Память. Объектов на встречу — оценка, привязанная к длине разговора.
+  const nodesPerMeeting = Math.round(s.len * 0.9);
+  const nodesYear = meetingsMonth * 12 * nodesPerMeeting;
+  const bytesYear = nodesYear * 2400;          // ~2,4 КБ на объект с версиями
+  const slopeMonth = meetingsMonth * nodesPerMeeting;
+
+  return {price, meetingsMonth, questionsMonth, meetCost, qCost,
+    total: meetCost + qCost, nodesYear, bytesYear, slopeMonth,
+    transcriptTok, nodesPerMeeting};
+}
+
+function drawGrowth(r){
+  const svg = $('growth'), NS='http://www.w3.org/2000/svg';
+  svg.innerHTML='';
+  const W=780,H=190,pad=26, months=12;
+  const max=r.nodesYear||1;
+  const pts=[];
+  for(let m=0;m<=months;m++){
+    const x=pad+(W-pad*2)*m/months;
+    const y=H-pad-(H-pad*2)*(r.slopeMonth*m/max);
+    pts.push([x,y]);
+  }
+  const mk=(t,a)=>{const e=document.createElementNS(NS,t);
+    for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e;};
+  mk('line',{x1:pad,y1:H-pad,x2:W-pad,y2:H-pad,stroke:'#242c3a','stroke-width':1});
+  mk('path',{d:'M'+pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L ')
+    +` L ${W-pad} ${H-pad} L ${pad} ${H-pad} Z`,
+    fill:'rgba(255,216,102,.09)'});
+  mk('path',{d:'M'+pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L '),
+    fill:'none',stroke:'#ffd866','stroke-width':2.4,'stroke-linecap':'round'});
+  mk('circle',{cx:pts[months][0],cy:pts[months][1],r:5,fill:'#ffd866'});
+  const t=mk('text',{x:W-pad,y:pts[months][1]-13,'text-anchor':'end',
+    fill:'#ffd866','font-size':13,'font-family':'var(--mono)'});
+  t.textContent=num(r.nodesYear)+' объектов';
+  ['старт','через год'].forEach((s,i)=>{
+    const e=mk('text',{x:i?W-pad:pad,y:H-8,'text-anchor':i?'end':'start',
+      fill:'#7d8798','font-size':11.5,'font-family':'var(--mono)'});
+    e.textContent=s;
+  });
+}
+
+function renderBench(){
+  const tb=document.querySelector('#bench tbody'); tb.innerHTML='';
+  BENCH.forEach(b=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML = `<td>${b.what}</td><td>${b.base}</td>
+      <td class="n" style="color:var(--measured)">${b.ours.toFixed(3).replace('.',',')}</td>
+      <td><div class="bar"><i style="width:${(b.baseV*100).toFixed(0)}%;
+        background:#3a4557"></i></div>
+        <div class="bar" style="margin-top:4px"><i style="width:${(b.ours*100).toFixed(0)}%;
+        background:var(--measured)"></i></div></td>
+      <td><span class="tag t-m">измерено</span><br>
+        <span style="font-size:11.5px;color:var(--muted)">${RUN[b.run]}</span></td>`;
+    tb.appendChild(tr);
+  });
+}
+
+function renderAirgap(s){
+  const on = s.airgap;
+  $('airgapPanel').innerHTML = on ? `
+    <p style="margin-top:0"><b>Контур закрыт.</b> Вызовы модели больше не стоят
+    денег — стоит железо: одна видеокарта на 24–32 ГБ держит открытую модель
+    класса 30 миллиардов параметров. Вместо счёта за вызовы — разовая покупка.</p>
+    <p class="note"><b>Что отключается:</b> веб-поиск (наружу не уходит даже текст
+    запроса, собранный из ваших данных), облачные поставщики моделей, исполнители
+    задач на подписке. Профиль модели и личный ключ сотрудника проверяются тем же
+    правилом — завести облако в обход контура нельзя.</p>
+    <p class="note"><b>Что нужно подготовить:</b> веса модели эмбеддингов и
+    мультимодальной модели положить в образ заранее — при первом запуске они
+    тянутся из интернета. Мультимодальный адрес обязан быть внутренним:
+    через него уходят скриншоты ваших экранов.</p>
+    <p class="note"><span class="tag t-g">не измерено</span> Сколько качества
+    теряет закрытый контур — у нас честно нет числа. Харнесс умеет мерить
+    локальную модель, но самого замера не было: попытка на открытой модели
+    оказалась недействительной (модель выдавала пересказ задания вместо
+    ответов, судья засчитывал их как верные). Прогон помечен и сохранён.</p>`
+    : `
+    <p style="margin-top:0">Сейчас считается облачный вариант. Включите
+    переключатель выше — увидите, как меняется расчёт и что именно отключается.</p>
+    <p class="note">Коротко: вызовы модели перестают стоить денег и начинают
+    стоить железа, выход наружу закрывается целиком, а часть возможностей
+    (веб-поиск, исполнители на подписке) отключается по построению.</p>`;
+}
+
+function render(){
+  const s=state(), r=compute(s);
+  $('lPeople').textContent=s.people; $('lMeet').textContent=s.meet;
+  $('lLen').textContent=s.len; $('lQ').textContent=s.q;
+  $('lCalls').textContent=s.calls;
+
+  if (s.airgap){
+    $('kTotal').textContent='$0';
+    $('kMeet').textContent='—'; $('kQ').textContent='—'; $('kPer').textContent='$0';
+    $('sMeet').style.width='50%'; $('sMeet').style.background='#2a3342';
+    $('sQ').style.width='50%';   $('sQ').style.background='#2a3342';
+    $('formula').innerHTML='<b>В закрытом контуре вызовы модели не тарифицируются</b> — '
+      +'стоимость переезжает в железо и электричество. Расчёт в деньгах за вызовы '
+      +'здесь не имеет смысла, поэтому он и не показывается.';
+  } else {
+    $('kTotal').textContent=money(r.total);
+    $('kMeet').textContent=money(r.meetCost);
+    $('kQ').textContent=money(r.qCost);
+    $('kPer').textContent=money(r.total/Math.max(1,s.people));
+    const p=r.total? r.meetCost/r.total*100 : 50;
+    $('sMeet').style.width=p+'%';  $('sMeet').style.background='var(--guess)';
+    $('sQ').style.width=(100-p)+'%'; $('sQ').style.background='var(--out)';
+    $('formula').innerHTML =
+      `<b>Откуда это.</b> Вопросы: ${num(r.questionsMonth)} в месяц × средний вызов
+       ${Math.round(MEASURED.perCallIn)} входных и ${Math.round(MEASURED.perCallOut)}
+       выходных токенов — <span class="tag t-m">измерено</span> прогоном
+       (${MEASURED.runCalls} вызовов, ${num(MEASURED.runIn)} входных токенов).
+       Разбор: ${Math.round(r.meetingsMonth)} встреч × ${s.calls} обращений ×
+       половина транскрипта (${num(r.transcriptTok)} токенов при
+       ${s.len} мин) — <span class="tag t-g">оценка</span>: ни число обращений,
+       ни скорость речи мы не мерили, оба параметра меняются выше.`;
+  }
+
+  $('kNodes').textContent=num(r.nodesYear);
+  $('kBytes').textContent=(r.bytesYear/1e9>=1
+    ? (r.bytesYear/1e9).toFixed(1)+' ГБ' : Math.round(r.bytesYear/1e6)+' МБ');
+  $('kSlope').textContent='+'+num(r.slopeMonth);
+  drawGrowth(r); renderAirgap(s);
+}
+
+['people','meet','len','q','calls','model','airgap'].forEach(id=>{
+  $(id).addEventListener('input',render);
+  $(id).addEventListener('change',render);
+});
+renderBench(); render();
+
+$('foot').innerHTML = `Числа с меткой «измерено» получены прогонами на публичных
+  наборах и на чужом открытом харнессе; результаты прогонов лежат в репозитории
+  вместе с кодом, которым они получены. Выборки — от 20 до 200 вопросов: это
+  честный замер, но не статистика, и разницу в 2–3 сотых на 30 вопросах всерьёз
+  принимать нельзя. Числа с меткой «оценка» мы не мерили вовсе — они вынесены в
+  ползунки именно поэтому. Цена в закрытом контуре не считается сознательно:
+  там платят за железо, а не за вызовы. Подробные границы каждой части — в карте
+  возможностей продукта.`;
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "name": "Контактный лист (портрет)",
+  "nodes": [
+    {
+      "id": "img",
+      "type": "imageInput",
+      "position": {
+        "x": 40,
+        "y": 80
+      },
+      "data": {
+        "label": "Референс (опц.)",
+        "image": null,
+        "filename": null,
+        "dimensions": null
+      }
+    },
+    {
+      "id": "p",
+      "type": "prompt",
+      "position": {
+        "x": 40,
+        "y": 300
+      },
+      "data": {
+        "label": "Промпт",
+        "prompt": "Сетка портретных кадров одного персонажа: разные ракурсы и эмоции, единый свет и стиль, как контактный лист фотографа."
+      }
+    },
+    {
+      "id": "nb",
+      "type": "nanoBanana",
+      "position": {
+        "x": 360,
+        "y": 180
+      },
+      "data": {
+        "inputImages": [],
+        "inputPrompt": null,
+        "outputImage": null,
+        "outputVideo": null,
+        "aspectRatio": "1:1",
+        "resolution": "1K",
+        "model": "nano-banana-pro",
+        "useGoogleSearch": false,
+        "gptImageSize": "auto",
+        "gptImageQuality": "medium",
+        "status": "idle",
+        "error": null
+      }
+    },
+    {
+      "id": "out",
+      "type": "output",
+      "position": {
+        "x": 680,
+        "y": 180
+      },
+      "data": {
+        "label": "Результат",
+        "image": null
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-img-nb",
+      "source": "img",
+      "target": "nb",
+      "type": "default"
+    },
+    {
+      "id": "e-p-nb",
+      "source": "p",
+      "target": "nb",
+      "type": "default"
+    },
+    {
+      "id": "e-nb-out",
+      "source": "nb",
+      "target": "out",
+      "type": "default"
+    }
+  ],
+  "edgeStyle": "curved"
+}

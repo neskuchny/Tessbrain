@@ -1,0 +1,85 @@
+# Prometheus recording rules для Tessbrain (W35).
+#
+# Опционально: ускоряет dashboard'ы за счёт preaggregated метрик.
+# Подключить в prometheus.yml:
+#   rule_files:
+#     - /etc/prometheus/rules/tessent.yaml
+groups:
+  - name: tessent_http
+    interval: 30s
+    rules:
+      - record: tessent:http_requests:rate5m
+        expr: sum(rate(tessent_http_requests_total[5m])) by (method, path_template, status)
+      - record: tessent:http_5xx_ratio:rate5m
+        expr: |
+          sum(rate(tessent_http_requests_total{status=~"5.."}[5m]))
+          /
+          sum(rate(tessent_http_requests_total[5m]))
+      - record: tessent:http_latency_p95:rate5m
+        expr: histogram_quantile(0.95, sum(rate(tessent_http_request_duration_seconds_bucket[5m])) by (le))
+
+  - name: tessent_llm
+    interval: 1m
+    rules:
+      - record: tessent:llm_calls:rate1m
+        expr: sum(rate(tessent_llm_calls_total[1m])) by (provider, status)
+      - record: tessent:llm_cost_usd:rate5m
+        expr: sum(rate(tessent_llm_cost_usd_total[5m])) by (provider, tenant_id)
+      - record: tessent:llm_failure_ratio:rate5m
+        expr: |
+          sum(rate(tessent_llm_calls_total{status="failure"}[5m]))
+          /
+          sum(rate(tessent_llm_calls_total[5m]))
+
+  - name: tessent_security
+    interval: 30s
+    rules:
+      - record: tessent:share_security_events:rate5m
+        expr: sum(rate(tessent_share_views_total{action=~"scope_violation|email_mismatch"}[5m])) by (action)
+      - record: tessent:quota_denies:rate1m
+        expr: sum(rate(tessent_quota_decisions_total{decision="deny"}[1m])) by (scope)
+
+  - name: tessent_alerts
+    interval: 30s
+    rules:
+      - alert: TessentHigh5xxRate
+        expr: tessent:http_5xx_ratio:rate5m > 0.05
+        for: 5m
+        labels: {severity: warning}
+        annotations:
+          summary: "Tessbrain 5xx rate > 5% (current {{ $value | printf \"%.1f%%\" }})"
+
+      - alert: TessentLLMFailures
+        expr: tessent:llm_failure_ratio:rate5m > 0.10
+        for: 5m
+        labels: {severity: warning}
+        annotations:
+          summary: "LLM provider failures >10% over 5m"
+
+      - alert: TessentShareScopeAbuse
+        expr: sum(increase(tessent_share_views_total{action="scope_violation"}[10m])) > 5
+        for: 0m
+        labels: {severity: critical}
+        annotations:
+          summary: "Multiple share scope violations — possible token compromise"
+
+      # W40: алерт если backup не выполнялся > 36ч
+      # Метрика пишется backup.sh при успехе (textfile collector).
+      # 36h = ~1.5 пропущенных daily backup'а (cron 03:30 UTC).
+      - alert: TessentBackupStale
+        expr: time() - tessent_backup_last_success_timestamp_seconds > 36 * 3600
+        for: 5m
+        labels: {severity: critical}
+        annotations:
+          summary: "No successful backup in last {{ $value | humanizeDuration }} — restore is at risk"
+
+      - alert: TessentBackupSizeShrinkage
+        expr: |
+          (
+            tessent_backup_last_size_bytes
+            < tessent_backup_last_size_bytes offset 7d * 0.5
+          )
+        for: 0m
+        labels: {severity: warning}
+        annotations:
+          summary: "Backup shrunk >50% week-over-week — data loss or pipeline regression?"

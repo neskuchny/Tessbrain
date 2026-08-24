@@ -1,0 +1,40 @@
+# Непрерывная проверка того, что можно проверить без ключей и денег.
+#
+# До этого сборки не было вовсе: проверки в репозитории лежали, но
+# запускались руками, то есть не защищали ни от чего. Здесь — только то,
+# что честно выполнимо в чистой машине: контрактные тесты без сети и
+# ключей и проводка гейта качества.
+#
+# Чего здесь СОЗНАТЕЛЬНО нет: прогонов на публичных бенчмарках и оценки
+# качества извлечения — им нужны ключи моделей и деньги за вызовы. Они
+# запускаются командой, и это записано в карте возможностей, а не
+# спрятано за зелёной галочкой.
+name: Offline checks
+
+on:
+  push:
+    branches: [main, master, 'claude/**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    name: Контрактные тесты и гейт
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Контрактные тесты (без ключей и сети)
+        working-directory: tessent_brain
+        run: python scripts/run_offline_tests.py
+
+      - name: Проводка гейта качества (smoke, не оценка модели)
+        working-directory: tessent_brain
+        run: python -m backend.core.eval

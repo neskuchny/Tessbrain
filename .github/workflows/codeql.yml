@@ -1,0 +1,64 @@
+# CodeQL static analysis (W38).
+#
+# Прогоняет GitHub'овский CodeQL engine по Python и JavaScript коду —
+# ловит inj-уязвимости, hardcoded secrets, SQL injection, XSS, path
+# traversal и др. SARIF загружается в GitHub Code Scanning, alerts
+# видны в Security tab репозитория.
+#
+# Frequency:
+# - PR: только если затронут .py/.ts/.js/.tsx/.jsx (paths-filter) — иначе CodeQL не нужен
+# - main push: всегда
+# - weekly: nightly cron поймает CVEs которые появились после merge'а
+#   из-за обновления queries
+
+name: codeql
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    paths:
+      - "**/*.py"
+      - "**/*.ts"
+      - "**/*.tsx"
+      - "**/*.js"
+      - "**/*.jsx"
+      - ".github/workflows/codeql.yml"
+  schedule:
+    - cron: "0 5 * * 1"   # понедельник 05:00 UTC
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  analyze:
+    name: CodeQL (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [python, javascript-typescript]
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          # security-extended покрывает доп. queries которые часто ловят
+          # hot CVEs; security-and-quality добавляет maintenance issues —
+          # пока не включаем чтобы baseline не разнесло.
+          queries: security-extended
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: codeql-${{ matrix.language }}

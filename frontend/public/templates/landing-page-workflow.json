@@ -1,0 +1,641 @@
+{
+ "version": 1,
+ "name": "Лендинг: 6 блоков в фирменном стиле",
+ "nodes": [
+  {
+   "id": "note",
+   "type": "note",
+   "position": {
+    "x": 40,
+    "y": 60
+   },
+   "data": {
+    "text": "Лендинг: 6 блоков в едином стиле.\n\nКаждый блок — Промпт → Генерация. Впишите продукт в текст блока, нажмите Run. Hero задаёт стиль, дальше он тянется референсом; каждый блок — отдельная картинка (переносится в код секциями).\n\nНовый блок: перетащите Промпт и Генерацию, соедините."
+   },
+   "width": 300,
+   "style": {
+    "width": 300,
+    "height": 200
+   }
+  },
+  {
+   "id": "img-logo",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 60
+   },
+   "data": {
+    "label": "Логотип (опц.)",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "img-ref",
+   "type": "imageInput",
+   "position": {
+    "x": 450,
+    "y": 390
+   },
+   "data": {
+    "label": "Референс стиля (опц.)",
+    "image": null,
+    "filename": null,
+    "dimensions": null
+   },
+   "style": {
+    "width": 300,
+    "height": 280
+   }
+  },
+  {
+   "id": "p1",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 720
+   },
+   "data": {
+    "label": "Блок 1 · Hero",
+    "prompt": "Секция лендинга Hero (первый экран): заголовок-оффер [впишите], подзаголовок, кнопка CTA, продукт справа, логотип в шапке. Плоский макет сверху, без рамки браузера. СТИЛЬ ВСЕЙ СТРАНИЦЫ (опишите): цвета, шрифты, отступы."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb1",
+   "type": "nanoBanana",
+   "position": {
+    "x": 860,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o1",
+   "type": "output",
+   "position": {
+    "x": 1270,
+    "y": 410
+   },
+   "data": {
+    "label": "Блок 1 · Hero",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p2",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 990
+   },
+   "data": {
+    "label": "Блок 2 · Преимущества",
+    "prompt": "Секция «Преимущества»: 3–4 карточки с иконками и подписями [впишите]. Тот же стиль, что у Hero (референсы). Плоский макет, без рамки."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb2",
+   "type": "nanoBanana",
+   "position": {
+    "x": 1270,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o2",
+   "type": "output",
+   "position": {
+    "x": 1680,
+    "y": 410
+   },
+   "data": {
+    "label": "Блок 2 · Преимущества",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p3",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1260
+   },
+   "data": {
+    "label": "Блок 3 · Как работает",
+    "prompt": "Секция «Как это работает»: скриншот/мокап продукта в рамке интерфейса, 2–3 шага [впишите]. Тот же стиль."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb3",
+   "type": "nanoBanana",
+   "position": {
+    "x": 1680,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o3",
+   "type": "output",
+   "position": {
+    "x": 2090,
+    "y": 410
+   },
+   "data": {
+    "label": "Блок 3 · Как работает",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p4",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1530
+   },
+   "data": {
+    "label": "Блок 4 · Доказательства",
+    "prompt": "Секция «Нам доверяют»: логотипы клиентов (плейсхолдеры), отзыв с аватаром, 2–3 цифры-результата [впишите]. Тот же стиль."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb4",
+   "type": "nanoBanana",
+   "position": {
+    "x": 2090,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o4",
+   "type": "output",
+   "position": {
+    "x": 2500,
+    "y": 410
+   },
+   "data": {
+    "label": "Блок 4 · Доказательства",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p5",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 1800
+   },
+   "data": {
+    "label": "Блок 5 · Тарифы",
+    "prompt": "Секция «Тарифы»: три карточки, средняя выделена, фичи галочками [впишите], кнопки CTA. Тот же стиль."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb5",
+   "type": "nanoBanana",
+   "position": {
+    "x": 2500,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o5",
+   "type": "output",
+   "position": {
+    "x": 2910,
+    "y": 410
+   },
+   "data": {
+    "label": "Блок 5 · Тарифы",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  },
+  {
+   "id": "p6",
+   "type": "prompt",
+   "position": {
+    "x": 450,
+    "y": 2070
+   },
+   "data": {
+    "label": "Блок 6 · CTA + футер",
+    "prompt": "Финальная секция: широкий призыв с кнопкой на контрастной подложке + футер с логотипом, ссылками, контактами. Тот же стиль."
+   },
+   "style": {
+    "width": 320,
+    "height": 220
+   }
+  },
+  {
+   "id": "nb6",
+   "type": "nanoBanana",
+   "position": {
+    "x": 2910,
+    "y": 60
+   },
+   "data": {
+    "inputImages": [],
+    "inputPrompt": null,
+    "outputImage": null,
+    "outputVideo": null,
+    "aspectRatio": "16:9",
+    "resolution": "1K",
+    "model": "nano-banana-pro",
+    "useGoogleSearch": false,
+    "gptImageSize": "auto",
+    "gptImageQuality": "medium",
+    "status": "idle",
+    "error": null
+   },
+   "style": {
+    "width": 300,
+    "height": 300
+   }
+  },
+  {
+   "id": "o6",
+   "type": "output",
+   "position": {
+    "x": 3320,
+    "y": 60
+   },
+   "data": {
+    "label": "Блок 6 · CTA + футер",
+    "image": null
+   },
+   "style": {
+    "width": 320,
+    "height": 320
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-p1-nb1",
+   "source": "p1",
+   "sourceHandle": "text",
+   "target": "nb1",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb1-o1",
+   "source": "nb1",
+   "sourceHandle": "image",
+   "target": "o1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb1",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb1",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb1",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p2-nb2",
+   "source": "p2",
+   "sourceHandle": "text",
+   "target": "nb2",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb2-o2",
+   "source": "nb2",
+   "sourceHandle": "image",
+   "target": "o2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb2",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb2",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb1-nb2",
+   "source": "nb1",
+   "sourceHandle": "image",
+   "target": "nb2",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p3-nb3",
+   "source": "p3",
+   "sourceHandle": "text",
+   "target": "nb3",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb3-o3",
+   "source": "nb3",
+   "sourceHandle": "image",
+   "target": "o3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb3",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb3",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb2-nb3",
+   "source": "nb2",
+   "sourceHandle": "image",
+   "target": "nb3",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p4-nb4",
+   "source": "p4",
+   "sourceHandle": "text",
+   "target": "nb4",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb4-o4",
+   "source": "nb4",
+   "sourceHandle": "image",
+   "target": "o4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb4",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb4",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb3-nb4",
+   "source": "nb3",
+   "sourceHandle": "image",
+   "target": "nb4",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p5-nb5",
+   "source": "p5",
+   "sourceHandle": "text",
+   "target": "nb5",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb5-o5",
+   "source": "nb5",
+   "sourceHandle": "image",
+   "target": "o5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb5",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb5",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb4-nb5",
+   "source": "nb4",
+   "sourceHandle": "image",
+   "target": "nb5",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-p6-nb6",
+   "source": "p6",
+   "sourceHandle": "text",
+   "target": "nb6",
+   "targetHandle": "text",
+   "type": "default"
+  },
+  {
+   "id": "e-nb6-o6",
+   "source": "nb6",
+   "sourceHandle": "image",
+   "target": "o6",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-logo-nb6",
+   "source": "img-logo",
+   "sourceHandle": "image",
+   "target": "nb6",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-img-ref-nb6",
+   "source": "img-ref",
+   "sourceHandle": "image",
+   "target": "nb6",
+   "targetHandle": "image",
+   "type": "default"
+  },
+  {
+   "id": "e-nb5-nb6",
+   "source": "nb5",
+   "sourceHandle": "image",
+   "target": "nb6",
+   "targetHandle": "image",
+   "type": "default"
+  }
+ ],
+ "edgeStyle": "curved"
+}

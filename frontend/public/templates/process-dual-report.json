@@ -1,0 +1,156 @@
+{
+ "version": 1,
+ "name": "Два отчёта: команде и себе",
+ "nodes": [
+  {
+   "id": "note-flow",
+   "type": "note",
+   "position": {
+    "x": 40,
+    "y": 20
+   },
+   "data": {
+    "label": "Как это работает",
+    "text": "Встреча закончилась → ОДИН разбор, ДВА адресата. Ветка 1 (команде в группу): понятное позитивное саммари — что решили, что делаем. Ветка 2 (лично руководителю): полный визуальный отчёт с «человеческим» слоем — как прошло, кто как проявился, где напряжение (в тексте такого не напишешь — метафора скажет). В узлах «Уведомление» укажите chat_id: у первого — ID группы, у второго — свой личный (пусто = привязанный чат). Это и есть «публичное vs личное» из концепции визуальных отчётов."
+   },
+   "style": {
+    "width": 430,
+    "height": 190
+   }
+  },
+  {
+   "id": "t1",
+   "type": "trigger",
+   "position": {
+    "x": 40,
+    "y": 260
+   },
+   "data": {
+    "label": "Встреча закончилась",
+    "trigger_type": "event",
+    "event_type": "meeting_ended",
+    "enabled": false,
+    "payload": ""
+   }
+  },
+  {
+   "id": "m1",
+   "type": "meeting_data",
+   "position": {
+    "x": 340,
+    "y": 260
+   },
+   "data": {
+    "label": "Материал встречи",
+    "artifact": "summary"
+   }
+  },
+  {
+   "id": "g1",
+   "type": "generate",
+   "position": {
+    "x": 660,
+    "y": 120
+   },
+   "data": {
+    "label": "Саммари для команды",
+    "prompt": "Сделай короткое, понятное и позитивно-рабочее саммари встречи для КОМАНДЫ: что решили, кто что делает, к какому сроку. Без оценок людей, без чувствительных наблюдений, без внутренней кухни руководства. Факты — только из данных.\n\n{{input}}"
+   }
+  },
+  {
+   "id": "n1",
+   "type": "notify",
+   "position": {
+    "x": 1000,
+    "y": 120
+   },
+   "data": {
+    "label": "В группу команды",
+    "channel": "telegram",
+    "chat_id": "",
+    "text": "{{input}}"
+   }
+  },
+  {
+   "id": "ig1",
+   "type": "infographic",
+   "position": {
+    "x": 660,
+    "y": 420
+   },
+   "data": {
+    "label": "Полный визуальный отчёт",
+    "format": "infographic",
+    "style": "auto",
+    "audience": "leader",
+    "lang": "auto",
+    "model": "nano-banana",
+    "render": "model",
+    "use_brand": true,
+    "image": null
+   }
+  },
+  {
+   "id": "n2",
+   "type": "notify",
+   "position": {
+    "x": 1000,
+    "y": 420
+   },
+   "data": {
+    "label": "Лично мне",
+    "channel": "telegram",
+    "chat_id": "",
+    "text": "{{input}}"
+   }
+  },
+  {
+   "id": "out1",
+   "type": "output",
+   "position": {
+    "x": 1320,
+    "y": 260
+   },
+   "data": {
+    "label": "Результат"
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e1",
+   "source": "t1",
+   "target": "m1"
+  },
+  {
+   "id": "e2",
+   "source": "m1",
+   "target": "g1"
+  },
+  {
+   "id": "e3",
+   "source": "g1",
+   "target": "n1"
+  },
+  {
+   "id": "e4",
+   "source": "m1",
+   "target": "ig1"
+  },
+  {
+   "id": "e5",
+   "source": "ig1",
+   "target": "n2"
+  },
+  {
+   "id": "e6",
+   "source": "n1",
+   "target": "out1"
+  },
+  {
+   "id": "e7",
+   "source": "n2",
+   "target": "out1"
+  }
+ ]
+}

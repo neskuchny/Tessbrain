@@ -1,0 +1,167 @@
+# ============================================
+# TESSENT BRAIN - Unified Dependencies
+# Includes: Tessbrain + Mark001 + MeetFlow
+# ============================================
+# pip install -r requirements.txt
+
+# === Core Framework ===
+litestar[standard]>=2.4.0
+granian>=1.0.0
+uvicorn[standard]>=0.25.0
+fastapi>=0.104.0
+
+# === Async & HTTP ===
+httpx[http2]>=0.26.0
+aiofiles>=23.2.0
+tenacity>=8.2.0
+
+# === Database ===
+asyncpg>=0.29.0
+# psycopg2-binary — sync PG-driver для PostgresUsageStore (issue #110 пакет 4.b).
+# Optional: при отсутствии make_default_store() fallback'ом выбирает SQLite.
+psycopg2-binary>=2.9.0
+sqlalchemy[asyncio]>=2.0.0
+alembic>=1.13.0
+supabase>=2.0.0
+
+# === Redis ===
+redis[hiredis]>=5.0.0
+
+# === Vector DB (Qdrant) ===
+qdrant-client>=1.7.0
+
+# === Graph DB (Neo4j) ===
+neo4j>=5.15.0
+networkx>=3.0.0
+
+# === LLM Providers ===
+google-generativeai>=0.8.0
+openai>=1.6.0
+litellm>=1.17.0
+# Anthropic SDK для native Claude API (provider=anthropic в LLM-профилях).
+# DeepSeek/Qwen/OpenRouter/Together/Mistral/Groq используют OpenAI-compat,
+# поэтому отдельные пакеты не нужны — хватает openai SDK с другим base_url.
+anthropic>=0.40.0
+
+# === AutoGen / AG2 (Enhanced) ===
+# ag2[browser-use] pins browser-use==0.1.37 → legacy langchain. pip then
+# backtracks through dozens of ag2 versions trying to find a combo where
+# retrievechat extra still exists (it doesn't in newer versions) →
+# resolver runs for hours. Neither extra is used in code today:
+#   * browser_use — no imports
+#   * RetrieveUserProxyAgent/AssistantAgent — not referenced
+# AG2_IMPROVEMENTS.md lists WebSurfer/DeepResearch as TODO; re-enable
+# extras when actually integrating. Pin ag2 floor to >=0.9 (recent stable).
+ag2[openai,gemini]>=0.9
+nest-asyncio>=1.6.0  # For async in Jupyter/nested loops
+
+# === Playwright (for DeepResearchAgent & Web Operator) ===
+playwright>=1.59.0
+
+# === Web Operator (AI Browser Control) ===
+stagehand>=0.1.0  # AI-powered browser automation with Gemini 3.0 Flash
+
+# === Embeddings ===
+sentence-transformers>=2.2.0
+
+# === Long-term memory (mem0) ===
+# Импорт-имя: mem0; pip-имя: mem0ai.
+# backend/core/memory/mem0_client.py использует mem0.Memory для долгосрочной
+# памяти разговоров. Без него ImportError на старте api (фикс в mem0_client.py
+# превращает это в мягкий warning, но если mem0 нужен — установится здесь).
+mem0ai>=0.1.0
+
+# === Temporal knowledge graph (Graphiti) ===
+# backend/core/temporal/graphiti_client.py импортирует graphiti_core.
+# В коде уже завёрнуто в try/except → не критично для старта.
+graphiti-core>=0.3.0
+
+# === Data Processing ===
+pydantic[email]>=2.5.0  # `[email]` extra → email-validator; backend/api/routes/auth.py использует EmailStr
+pydantic-settings>=2.0.0  # BaseSettings (backend/config.py)
+python-dotenv>=1.0.0
+orjson>=3.9.0
+numpy>=1.26.0  # vector indexer, semantic cache; транзитивно через sentence-transformers, но явно надёжнее
+pyyaml>=6.0  # backend/core/hermes/skill_store.py
+
+# === File Processing ===
+pypdf>=6.10.2
+python-docx>=1.0.0
+python-pptx>=0.6.21
+openpyxl>=3.1.0
+
+# === Auth & Security ===
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+pyjwt>=2.12.1
+
+# === Task Queue ===
+taskiq>=0.10.0
+taskiq-redis>=0.5.0
+
+# === Cron parsing (automation scheduler) ===
+# Импортируется безусловно в core/automations/{automation_service,
+# agent_automation_service}.py — без него падает любой чистый
+# pip install / сбор тестов.
+croniter>=2.0.0
+
+# === Web Scraping (Mark001) ===
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# === YouTube & Search (Mark001) ===
+youtube-transcript-api>=1.2.4
+tavily-python>=0.3.0
+duckduckgo-search>=4.0.0
+
+# === LangChain (Mark001) ===
+langchain-community>=0.0.10
+langchain>=0.1.0
+
+# === Telegram Bot (MeetFlow) ===
+python-telegram-bot[job-queue]>=20.0
+APScheduler>=3.10.0
+aiohttp
+
+# === Token Tracking ===
+tiktoken>=0.5.0
+
+# === Observability ===
+# backend/core/observability/metrics.py пробует импортировать prometheus_client;
+# при его отсутствии /api/v1/metrics отдаёт "# prometheus_client not installed".
+prometheus-client>=0.19.0
+
+# === Utilities ===
+structlog>=23.2.0
+python-dateutil>=2.8.0
+python-slugify>=8.0.0
+python-multipart>=0.0.6
+
+# === Optional: Telegram userbot (чтение истории ГРУППЫ для chat_digest) ===
+# Ставить только если нужен разбор Telegram-групп: требует аккаунт-участник
+# группы (TELEGRAM_SESSION_STRING + API_ID/HASH). Код импортирует лениво —
+# без пакета chat_digest честно откажет, остальное работает.
+# telethon>=1.34.0
+
+# === MCP server (экспорт Tessbrain как MCP-инструментов для Claude Code / Codex) ===
+# stdio-сервер (mcp_server.py) НЕ требует пакета `mcp` — только stdlib + httpx,
+# работает уже сейчас (`claude mcp add --transport stdio ...`).
+# Пакет `mcp` нужен ТОЛЬКО для HTTP-варианта (mcp_http_server.py) — дистрибуция
+# через каталог Anthropic / Codex type="http". Раскомментируй при деплое HTTP.
+# starlette уже тянется litestar/fastapi; uvicorn — выше.
+# mcp[cli]>=1.2.0
+
+# === Testing ===
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+pytest-cov>=4.1.0
+
+# === Development ===
+black>=26.3.1
+ruff>=0.1.0
+mypy>=1.8.0
+
+
+
+pandas>=2.0  # воркбук датасетов (онтология): песочница исполняет pandas-код
+fpdf2>=2.8  # portable Markdown→PDF (КП/договор экспорт, кириллица через DejaVu)

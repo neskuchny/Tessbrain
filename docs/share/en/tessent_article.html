@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Tessbrain Is</title>
+</head>
+<body>
+<style>
+  :root{
+    /* Светлая книга — единая система со страницей возможностей */
+    --ground:#f3f1ea; --panel:#fff; --panel2:#faf8f2;
+    --line:#ddd8cb; --line2:#e7e3d7;
+    --chalk:#211f1a; --muted:#5c584e; --dim:#8b8677;
+    --accent:#a97a2c;
+    /* Смысловые цвета этапов — приглушены под кремовый фон, а не неон */
+    --in:#a97a2c; --mem:#3f6f8f; --guard:#3f7a56; --out:#a6497a; --loop:#6b5b95;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',ui-serif,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,'DejaVu Sans Mono',monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--chalk);
+    font-family:var(--serif);font-size:18px;line-height:1.72;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:720px;margin:0 auto;padding:64px 24px 96px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5.2vw,54px);
+     margin:0 0 6px;line-height:1.12;letter-spacing:-.01em;text-wrap:balance}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(25px,3.2vw,33px);
+     margin:60px 0 6px;line-height:1.18;letter-spacing:-.01em;text-wrap:balance}
+  h3{font-family:var(--serif);font-weight:600;font-size:clamp(19px,2.2vw,22px);
+     margin:34px 0 2px;color:var(--chalk)}
+  p{max-width:64ch;margin:15px 0}
+  .lede{font-family:var(--serif);font-size:clamp(20px,2.5vw,25px);color:var(--muted);
+    line-height:1.5;max-width:34ch;margin:8px 0 30px;font-style:italic}
+  .kicker{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-top:58px}
+  strong{font-weight:600;color:var(--chalk);
+    background:linear-gradient(transparent 64%,rgba(169,122,44,.20) 64%)}
+  em{font-style:normal;color:var(--mem);font-weight:600}
+  a{color:var(--accent);text-underline-offset:3px;text-decoration-color:rgba(169,122,44,.4)}
+  .note{color:var(--muted);font-size:14px;max-width:66ch;line-height:1.65}
+  .rule{height:1px;background:var(--line);margin:48px 0;border:0}
+
+  .card{border:1px solid var(--line);border-radius:14px;background:var(--panel);
+    padding:22px 24px;margin:26px 0;box-shadow:0 1px 2px rgba(40,34,20,.03)}
+  .card h4{margin:0 0 4px;font-family:var(--serif);font-size:21px;font-weight:600;
+    color:var(--chalk)}
+  .card .sub{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+
+  button{font-family:var(--sans);font-size:12.5px;letter-spacing:.01em;color:var(--chalk);
+    background:var(--panel2);border:1px solid var(--line);border-radius:8px;
+    padding:8px 14px;cursor:pointer;transition:.15s}
+  button:hover{border-color:var(--accent);background:#fff}
+  button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);
+    background:rgba(169,122,44,.08);font-weight:600}
+  button:disabled{opacity:.4;cursor:default}
+  .row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+
+  .fact{border:1px solid var(--line);border-left:3px solid var(--mem);
+    border-radius:0 9px 9px 0;padding:10px 14px;margin:8px 0;font-size:14px;
+    font-family:var(--sans);background:var(--panel2);transition:.25s;line-height:1.5}
+  .fact .meta{color:var(--dim);font-size:11.5px;margin-top:3px}
+  .fact.hidden-by-grade{opacity:.2;filter:grayscale(1)}
+
+  .pill{display:inline-block;font-family:var(--sans);font-size:10px;letter-spacing:.08em;
+    text-transform:uppercase;padding:2px 7px;border-radius:5px;border:1px solid;
+    vertical-align:1px;font-weight:700}
+  .p-m{color:var(--mem);border-color:rgba(63,111,143,.35);background:rgba(63,111,143,.08)}
+
+  .bars{display:grid;gap:8px;margin-top:12px}
+  .barrow{display:grid;grid-template-columns:150px 1fr 58px;gap:11px;align-items:center;
+    font-family:var(--sans);font-size:12.5px;color:var(--muted)}
+  .bar{height:12px;border-radius:6px;background:#eae5d8;overflow:hidden}
+  .bar i{display:block;height:100%;transition:width .45s cubic-bezier(.4,0,.2,1)}
+  .barrow .n{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:600}
+
+  .conf{height:16px;border-radius:8px;background:#eae5d8;overflow:hidden;margin:12px 0 6px}
+  .conf i{display:block;height:100%;transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));gap:16px}
+  .stat{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--panel)}
+  .stat .v{font-family:var(--serif);font-size:32px;line-height:1.1;color:var(--accent);font-weight:600}
+  .stat .k{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}
+
+  .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .links a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
+    border-radius:9px;padding:10px 16px;text-decoration:none;color:var(--chalk);
+    font-family:var(--sans);font-size:13px;background:var(--panel);transition:.15s}
+  .links a:hover{border-color:var(--accent);color:var(--accent);background:#fff}
+
+  footer{margin-top:64px;color:var(--muted);font-family:var(--sans);font-size:12.5px;
+    line-height:1.75;max-width:72ch;border-top:1px solid var(--line);padding-top:22px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<h1>What Tessbrain is</h1>
+<p class="lede">A company produces meaning every day — in meetings, in calls,
+  in messages. Almost all of it disappears. Tessbrain turns what happens into
+  memory with structure that answers questions and comes back as work.</p>
+
+<p>This is not note-taking and not document search. It is a <strong>model of
+  the company</strong>: people, projects, clients, decisions, tasks and metrics —
+  and the relationships between them. It grows out of conversation on its own,
+  with no forms to fill in.</p>
+
+<div class="links">
+  <a href="./tessent_map.html">The whole loop as a diagram →</a>
+  <a href="./tessent_cost.html">Cost and quality calculator →</a>
+</div>
+
+<div class="kicker">The problem</div>
+<h2>Why company memory breaks</h2>
+
+<p>Three things break it independently, and every one of them is familiar.</p>
+
+<p><strong>A person leaves and the context leaves with them.</strong> Not the
+  files — files stay. What leaves is the knowledge of why it was decided that
+  way, what has already been tried, and how it turned out.</p>
+
+<p><strong>"I think we decided this already."</strong> There was a decision —
+  but when, by whom and on what grounds, nobody remembers. Searching the chats
+  does not help: they contain correspondence, not decisions.</p>
+
+<p><strong>An ordinary AI cannot be trusted in a board meeting.</strong> It
+  answers confidently and without a source. An answer you cannot verify is an
+  answer you cannot present.</p>
+
+<div class="kicker">How it works</div>
+<h2>One meeting becomes memory</h2>
+
+<p>Extraction is not summarisation. About thirty specialised extractors each
+  pull their own layer out of a transcript, and every fact gains what an
+  ordinary summary lacks: <em>a source, a date and a confidence</em>.</p>
+
+<div class="card">
+  <h4>Take a meeting apart, step by step</h4>
+  <div class="sub">The data is invented — this shows the mechanism, not a real meeting</div>
+  <div class="row" style="margin-bottom:14px">
+    <button id="stepBtn">extract →</button>
+    <button id="stepReset">start over</button>
+    <span class="note" id="stepLabel" style="margin-left:6px"></span>
+  </div>
+  <div id="stepOut"></div>
+</div>
+
+<p>These facts do not then sit in a list — they become nodes and edges. A task
+  is linked to a person and a project, a decision to the discussion where it was
+  made, a metric to the source of its number. It is the relationships that make
+  it possible to answer questions a list cannot.</p>
+
+<h3>A fact is never overwritten</h3>
+<p>A project budget, a person's role, a task deadline are kept as a
+  <strong>chain of dated versions</strong>. A new value does not erase the old
+  one — it marks it superseded, with the date and the source meeting. So the
+  system answers not only "what is it now" but "what was it, when did it change,
+  and why".</p>
+
+<div class="kicker">Why relationships</div>
+<h2>Where ordinary search gives up</h2>
+
+<p>Semantic search works like this: text becomes a vector, the question
+  becomes a vector, and the nearest ones are returned. It works beautifully as
+  long as the answer sits in one place. But such search has a <strong>proven
+  mathematical ceiling</strong> (work by the Google DeepMind team, ICLR 2026):
+  the number of document combinations a single vector can return is bounded by
+  its dimensionality. Neither better data nor a bigger model cures that.</p>
+
+<p>The easiest way to see it is an enumerative question. Try it yourself.</p>
+
+<div class="card">
+  <h4>"Who worked on both Alpha and Beta?"</h4>
+  <div class="sub">Eight company meetings. On the left, how a single vector
+    searches (take the nearest five). On the right, how graph relationships
+    answer.</div>
+  <div class="row" style="margin-bottom:14px">
+    <button data-mode="vec" aria-pressed="true">semantic search</button>
+    <button data-mode="graph" aria-pressed="false">by graph relationships</button>
+  </div>
+  <div id="searchOut"></div>
+</div>
+
+<p>The point is not that the vector is "bad". The point is that the question
+  demands <strong>completeness</strong>, while semantic proximity delivers
+  similarity. That is why there are three channels at once — meaning, exact
+  terms and relationships — and enumerative questions weight the third.</p>
+
+<p class="note">This is not an argument but a measurement: on the class of
+  questions that span many conversations, ordinary top-fragment selection gives
+  0.23, while feeding whole conversations that contain hits gives 0.567.
+  <span class="pill p-m">measured</span> LongMemEval run, 30 questions.</p>
+
+<div class="kicker">What the system does on its own</div>
+<h2>Company experience as an asset</h2>
+
+<p>The most underrated part. The system remembers not only <em>what was
+  decided</em> but <em>how it turned out</em> — and next time says so in
+  advance.</p>
+
+<p>The key subtlety is where confidence comes from. Ten discussions of a topic
+  whose fate is unknown produce <strong>low</strong> confidence, not high.
+  Otherwise the number would mean "we talked about this a lot" while being read
+  as "we verified this".</p>
+
+<div class="card">
+  <h4>Confidence grows from outcomes, not from conversations</h4>
+  <div class="sub">Click and watch what moves the bar and what does not</div>
+  <div class="row" style="margin-bottom:6px">
+    <button id="addTalk">+ another discussion, no outcome</button>
+    <button id="addWin">+ confirmed success</button>
+    <button id="addFail">+ confirmed failure</button>
+    <button id="addYear">a year passes</button>
+    <button id="confReset">start over</button>
+  </div>
+  <div class="conf"><i id="confBar"></i></div>
+  <div id="confOut" class="note"></div>
+</div>
+
+<h3>Forgetting is work too</h3>
+<p>Memory that forgets nothing bankrupts its owner: what kills a long-lived
+  system is not its starting size but its growth slope. So the system measures
+  its own volume and growth. But forgetting here is <strong>typed</strong>:
+  contextual links — mentioned near each other — weaken, while structural facts
+  — decided, assigned, changed role — never decay. Otherwise forgetting would
+  eat the org chart and the decision history.</p>
+
+<div class="kicker">Boundaries</div>
+<h2>Who sees what</h2>
+
+<p>Access control is not an interface filter. What must stay invisible is cut
+  <strong>before the material reaches the model</strong> — which is why the model
+  cannot let slip something it never saw. That is a stronger guarantee than
+  asking an assistant not to talk about salaries.</p>
+
+<div class="card">
+  <h4>The same question, three roles</h4>
+  <div class="sub">"What is happening with project Alpha?" — watch what reaches
+    the answer</div>
+  <div class="row" style="margin-bottom:14px">
+    <button data-role="intern" aria-pressed="true">intern</button>
+    <button data-role="manager" aria-pressed="false">project lead</button>
+    <button data-role="founder" aria-pressed="false">founder</button>
+  </div>
+  <div id="aclOut"></div>
+</div>
+
+<div class="kicker">What comes out</div>
+<h2>Memory comes back as work</h2>
+
+<p>What accumulates does not sit as dead weight. It comes back in seven forms,
+  and almost all of them start without a human.</p>
+
+<div class="grid2" id="outputs"></div>
+
+<h3>The coffee scenario</h3>
+<p>The name is literal: while a person walks from the meeting room to their
+  desk, drafts are already waiting <strong>matched to their role in that
+  meeting</strong> — a strategic summary for the founder, task cards for the
+  project lead, a technical specification for the developer, a draft letter for
+  sales. The role is determined by how the person participated, not by a line in
+  the staffing table. You sit down not to an empty screen but to a draft that
+  needs correcting.</p>
+
+<div class="kicker">Evidence</div>
+<h2>What backs this up</h2>
+
+<p>The one section where "we are better" can be said with a number — and where
+  every number has its price next to it. Runs on public sets and on somebody
+  else's open harness; results live in the repository together with the code
+  that produced them.</p>
+
+<div class="card">
+  <h4>Measured</h4>
+  <div class="sub">grey is the baseline, coloured is ours</div>
+  <div class="bars" id="benchBars"></div>
+</div>
+
+<div class="grid2" style="margin-top:18px">
+  <div class="stat"><div class="v">$0,0398</div>
+    <div class="k">was the cost of a run of 236 model calls — 30 questions, four
+      answering strategies</div></div>
+  <div class="stat"><div class="v">×24</div>
+    <div class="k">difference in price per correct answer between strategies at
+      the same number of calls</div></div>
+</div>
+
+<p class="note" style="margin-top:16px">Honestly about sample sizes: 20 to 200
+  questions. This is real measurement, but not statistics — a difference of two
+  or three hundredths on thirty questions cannot be taken seriously, and we do
+  not take it so.</p>
+
+<hr class="rule">
+
+<div class="kicker">Honestly</div>
+<h2>What the system does not do</h2>
+
+<p>This is part of the product, not fine print: a product that promises more
+  than it delivers loses trust at the first demo.</p>
+
+<p><strong>Nobody assigns a classification automatically.</strong> All facts
+  start at "internal"; a higher level has to be set by hand. The scenario "the
+  deal discussion will not surface for an intern" requires that somebody marked
+  that discussion.</p>
+
+<p><strong>How much quality a closed perimeter costs has not been
+  measured.</strong> All our numbers come from cloud models. The tool for
+  measuring on your own model is ready; the measurement itself never
+  happened.</p>
+
+<p><strong>There is no agent-to-agent negotiation.</strong> An external
+  executor takes a task and returns a result under machine-checked acceptance —
+  that is a request/response scheme, not a dialogue about how to do the
+  work.</p>
+
+<p><strong>Company experience accumulates from the moment you switch it
+  on.</strong> Outcomes cannot be reconstructed retroactively: for an archive
+  already loaded, the layer appears only on reprocessing.</p>
+
+<footer id="foot"></footer>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+/* ── 1. Meeting extraction, step by step ──────────────────────────── */
+const STEPS = [
+  {label:'raw transcript — 42 minutes of conversation', items:[
+    {t:'"…let Ira take the landing page then, she will make it by Friday. The '
+      +'budget there is about three hundred thousand, but Petrov said that last '
+      +'time with this contractor we slipped on deadlines…"',
+      m:'excerpt from the recording', k:'raw'}]},
+  {label:'extractors take it apart: tasks, people, amounts, decisions', items:[
+    {t:'Task: build the landing page', m:'assignee Ira · due 15 March · '
+      +'source: meeting of 11 March · confidence high'},
+    {t:'Project budget: 300,000 RUB', m:'currency recognised · source: same '
+      +'meeting · confidence medium — the amount was given approximately'},
+    {t:'Decision: keep working with the current contractor', m:'made at the '
+      +'meeting of 11 March · participants: 4'}]},
+  {label:'relationships: facts connect to what is already known', items:[
+    {t:'Ira → assigned to → Task → part of → Project Alpha', m:'relationship built'},
+    {t:'Contractor ← already appeared in 3 discussions', m:'found by entity resolution'},
+    {t:'Previous outcome with this contractor: missed deadline', m:'raised from '
+      +'company experience — the warning will appear at the next similar decision', k:'warn'}]},
+  {label:'what remained in memory', items:[
+    {t:'7 facts, each with a source and a date', m:'none overwrote the previous '
+      +'ones — old values are marked superseded'},
+    {t:'1 warning from past experience', m:'it will fire on its own when the topic recurs'}]},
+];
+let step = 0;
+function renderStep(){
+  const out = $('#stepOut');
+  out.innerHTML = '';
+  STEPS.slice(0, step+1).forEach((s,i)=>{
+    s.items.forEach(it=>{
+      const d = document.createElement('div');
+      d.className = 'fact';
+      d.style.borderLeftColor = it.k==='raw' ? 'var(--dim)'
+        : it.k==='warn' ? 'var(--loop)' : (i===step?'var(--in)':'var(--mem)');
+      d.innerHTML = '<div>'+it.t+'</div><div class="meta">'+it.m+'</div>';
+      out.appendChild(d);
+    });
+  });
+  $('#stepLabel').textContent = STEPS[step].label;
+  $('#stepBtn').disabled = step >= STEPS.length-1;
+  $('#stepBtn').textContent = step >= STEPS.length-1 ? 'extracted' : 'next →';
+}
+$('#stepBtn').onclick = ()=>{ if(step<STEPS.length-1){step++;renderStep();} };
+$('#stepReset').onclick = ()=>{ step=0; $('#stepBtn').disabled=false; renderStep(); };
+renderStep();
+
+/* ── 2. Vector versus relationships ───────────────────────────────── */
+const MEETINGS = [
+  {id:1, t:'Alpha standup', people:['Ira','Petr'], proj:['Alpha'],
+   text:'landing page deadlines, Alpha project budget'},
+  {id:2, t:'Beta retro', people:['Petr','Sveta'], proj:['Beta'],
+   text:'Beta launch review, what went wrong'},
+  {id:3, t:'Call with the contractor', people:['Ira'], proj:['Alpha'],
+   text:'landing page contractor, deadlines and revisions'},
+  {id:4, t:'Budget committee', people:['Petr','Anya'], proj:['Alpha','Beta'],
+   text:'budgets of both projects for the quarter'},
+  {id:5, t:'Hiring for the Beta team', people:['Sveta'], proj:['Beta'],
+   text:'vacancy, interviews, offer'},
+  {id:6, t:'Client demo', people:['Anya','Ira'], proj:['Beta'],
+   text:'prototype walkthrough, client feedback'},
+  {id:7, t:'Alpha tech debt', people:['Ira'], proj:['Alpha'],
+   text:'refactoring, deadlines, risks'},
+  {id:8, t:'Quarterly strategy', people:['Petr','Anya','Sveta'], proj:['Alpha','Beta'],
+   text:'where we are going, priorities, goals'},
+];
+const truth = (()=>{
+  const a=new Set(), b=new Set();
+  MEETINGS.forEach(m=>m.people.forEach(p=>{
+    if(m.proj.includes('Alpha')) a.add(p);
+    if(m.proj.includes('Beta')) b.add(p);
+  }));
+  return [...a].filter(p=>b.has(p)).sort();
+})();
+let mode='vec';
+function renderSearch(){
+  const q='who took part in both alpha and beta';
+  const words=q.split(' ').filter(w=>w.length>3);
+  const scored=MEETINGS.map(m=>{
+    const hay=(m.t+' '+m.text+' '+m.proj.join(' ')).toLowerCase();
+    let s=0; words.forEach(w=>{ if(hay.includes(w.slice(0,4))) s++; });
+    return {m, s};
+  }).sort((x,y)=>y.s-x.s);
+  const top=scored.slice(0,5).map(x=>x.m);
+  const found = mode==='vec'
+    ? [...new Set(top.flatMap(m=>m.people))].filter(p=>{
+        const inA=top.some(m=>m.proj.includes('Alpha')&&m.people.includes(p));
+        const inB=top.some(m=>m.proj.includes('Beta')&&m.people.includes(p));
+        return inA&&inB;
+      }).sort()
+    : truth;
+  const shown = mode==='vec' ? top : MEETINGS;
+  const okAll = found.length===truth.length;
+  $('#searchOut').innerHTML =
+    '<div class="note" style="margin-bottom:10px">'+(mode==='vec'
+      ? 'Took the five nearest meetings by meaning. Anything not in them does not exist for the answer.'
+      : 'Walked the person → meeting → project relationships across all eight meetings. No relevance ranking needed: the intersection is computed, not guessed.')+'</div>'
+    + shown.map(m=>'<div class="fact" style="border-left-color:'+
+      ((mode==='vec'&&!top.includes(m))?'var(--dim)':'var(--mem)')+'">'
+      +'<div>'+m.t+' <span style="color:var(--dim)">· '+m.proj.join(', ')+'</span></div>'
+      +'<div class="meta">participants: '+m.people.join(', ')+'</div></div>').join('')
+    + '<div style="margin-top:14px;padding:13px 15px;border-radius:10px;border:1px solid '
+      +(okAll?'rgba(169,220,118,.4)':'rgba(255,106,193,.4)')+';background:'
+      +(okAll?'rgba(169,220,118,.07)':'rgba(255,106,193,.07)')+'">'
+      +'<b style="font-weight:400">Answer: '+(found.length?found.join(', '):'found nobody')+'</b>'
+      +'<div class="meta" style="margin-top:5px;color:var(--muted)">'
+      +(okAll ? 'Everyone who really took part in both projects — '+truth.join(', ')+'.'
+              : 'There are actually '+truth.length+': '+truth.join(', ')+'. Lost '
+                +(truth.length-found.length)+' — they appear in meetings that did not make the top five.')
+      +'</div></div>';
+}
+$$('[data-mode]').forEach(b=>b.onclick=()=>{
+  mode=b.dataset.mode;
+  $$('[data-mode]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  renderSearch();
+});
+renderSearch();
+
+/* ── 3. Confidence from outcomes ──────────────────────────────────── */
+let talks=0, wins=0, fails=0, years=0;
+function renderConf(){
+  const known=wins+fails;
+  const level = known>=10 ? 'high' : known>=3 ? 'medium' : 'low';
+  const base = known===0 ? 0 : Math.min(1, known/10);
+  const decay = Math.pow(0.62, years) * ((fails&&wins) ? .8 : 1);
+  const score = base*decay;
+  $('#confBar').style.width = Math.max(2, score*100).toFixed(0)+'%';
+  $('#confBar').style.background = known===0 ? '#3a4557'
+    : score>.6 ? 'var(--guard)' : score>.25 ? 'var(--in)' : 'var(--out)';
+  $('#confOut').innerHTML = known===0
+    ? 'Discussions: <b style="font-weight:400;color:var(--chalk)">'+talks+'</b>. '
+      +'Confirmed outcomes: <b style="font-weight:400;color:var(--out)">0</b>. '
+      +'Confidence <b style="font-weight:400;color:var(--chalk)">low</b> — and it '
+      +'will not move however many times the topic is discussed. Talking is not verifying.'
+    : 'Known outcomes: <b style="font-weight:400;color:var(--chalk)">'+known+'</b> '
+      +'('+wins+' success, '+fails+' failure). Discussions without an outcome: '+talks
+      +' — they do not move the bar. Confidence <b style="font-weight:400;color:var(--chalk)">'+level+'</b>'
+      +(years?', weakened by age ('+years+' yr)':'')
+      +((wins&&fails)?'. On a contradiction, failure weighs more — the system does not inflate optimism':'')+'.';
+}
+$('#addTalk').onclick=()=>{talks++;renderConf()};
+$('#addWin').onclick=()=>{wins++;renderConf()};
+$('#addFail').onclick=()=>{fails++;renderConf()};
+$('#addYear').onclick=()=>{years++;renderConf()};
+$('#confReset').onclick=()=>{talks=wins=fails=years=0;renderConf()};
+renderConf();
+
+/* ── 4. Who sees what ─────────────────────────────────────────────── */
+const FACTS = [
+  {t:'Project Alpha: deadline moved to 15 April', g:2},
+  {t:'Project budget: 300,000 RUB', g:2},
+  {t:'Ira is overloaded — three tasks with overlapping deadlines', g:3},
+  {t:'Replacing the contractor is under discussion', g:3},
+  {t:'Petr is considering an offer from a competitor', g:4},
+  {t:'A deal to acquire the contractor team is being prepared', g:5},
+];
+const ROLES={intern:{n:'intern',g:2},manager:{n:'project lead',g:3},
+  founder:{n:'founder',g:5}};
+let role='intern';
+function renderAcl(){
+  const cl=ROLES[role].g;
+  const vis=FACTS.filter(f=>f.g<=cl);
+  $('#aclOut').innerHTML = FACTS.map(f=>
+    '<div class="fact '+(f.g>cl?'hidden-by-grade':'')+'" style="border-left-color:'
+    +(f.g>cl?'var(--dim)':'var(--guard)')+'">'
+    +'<div>'+(f.g>cl?'— hidden —':f.t)+'</div>'
+    +'<div class="meta">classification '+f.g+' of 5'+(f.g>cl?' · above your clearance':'')+'</div></div>'
+  ).join('')
+  + '<div style="margin-top:14px;padding:13px 15px;border-radius:10px;border:1px solid '
+    +'var(--line);background:var(--panel2)"><b style="font-weight:400">Answer for the role "'
+    +ROLES[role].n+'"</b><div class="meta" style="margin-top:5px;color:var(--muted)">'
+    +'Assembled from '+vis.length+' facts out of '+FACTS.length+'. The other '
+    +(FACTS.length-vis.length)+' the model <b style="font-weight:400;color:var(--chalk)">never '
+    +'saw at all</b> — they were cut before the answer was composed, not struck out of it afterwards.'
+    +'</div></div>';
+}
+$$('[data-role]').forEach(b=>b.onclick=()=>{
+  role=b.dataset.role;
+  $$('[data-role]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  renderAcl();
+});
+renderAcl();
+
+/* ── 5. What comes out ────────────────────────────────────────────── */
+const OUT=[
+  ['Chat over memory','A question in plain words — an answer from the whole memory with links to the source meetings.'],
+  ['Process boards','"Every Monday collect the results and send them as an image" — no need to draw the diagram, describing it is enough.'],
+  ['Documents','A proposal, a contract, a client brief — from company memory rather than copy-pasted from the past.'],
+  ['Personal follow-up','Drafts matched to the participant\'s role, delivered to their messenger.'],
+  ['Signals for the executive','Departments drifting apart, blind spots, execution pulse — before they notice it themselves.'],
+  ['Executor specification','A highly detailed spec grounded in company data, and machine-checked acceptance with three outcomes.'],
+  ['Outward feeds','To a partner or contractor — a slice governed by policy, with an audit trail and one-click revocation.'],
+];
+$('#outputs').innerHTML = OUT.map(function(x){
+  return '<div class="stat"><div style="font-family:var(--hand);font-size:22px;'
+    +'color:var(--out)">'+x[0]+'</div><div class="k" style="margin-top:6px">'+x[1]+'</div></div>';
+}).join('');
+
+/* ── 6. Measured ──────────────────────────────────────────────────── */
+const BENCH=[
+  ['Multi-session questions',0.233,0.567],
+  ['Relational questions',0.161,0.316],
+  ['Time-based questions',0.633,0.800],
+  ['Against Mem0',0.333,0.467],
+  ['Multi-session memory (LoCoMo)',0.433,0.567],
+];
+$('#benchBars').innerHTML = BENCH.map(function(x){
+  return '<div class="barrow"><span>'+x[0]+'</span><span>'
+    +'<div class="bar"><i style="width:'+(x[1]*100)+'%;background:#3a4557"></i></div>'
+    +'<div class="bar" style="margin-top:4px"><i style="width:'+(x[2]*100)
+    +'%;background:var(--mem)"></i></div></span>'
+    +'<span class="n">'+x[2].toFixed(2).replace('.',',')+'</span></div>';
+}).join('');
+
+$('#foot').innerHTML = 'Every interactive example on this page is computed from '
+  +'data right here — it is the system mechanism running on invented data, not a '
+  +'screen recording. Figures marked "measured" come from runs on public sets and '
+  +'on somebody else\'s open harness; the results live in the repository together '
+  +'with the code that produced them. The full capability map, with the limits of '
+  +'each part, is a separate document; the loop diagram and the cost calculator '
+  +'are linked at the top.';
+</script>
+</body>
+</html>

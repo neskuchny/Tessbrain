@@ -1,0 +1,65 @@
+# OpenHands sidecar для deep-integration с tessent_brain (W20).
+#
+# Подключается к основному docker-compose.yml через override:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.openhands.yml up -d
+#
+# Что внутри:
+# - openhands-runtime: OpenHands core (managed via openhands/openhands)
+# - openhands-sandbox-runner: Docker-in-Docker для per-task sandboxes
+#
+# OpenHands runtime подключается к нашему vLLM (если ENTERPRISE_MODE=true)
+# или к managed LLM (claude/gpt) в обычном режиме.
+#
+# Volumes:
+# - openhands_state: stores conversation history + state
+# - openhands_workspaces: per-task workspace mounts (для artifact collection)
+
+version: "3.9"
+
+services:
+  openhands-runtime:
+    image: docker.all-hands.dev/all-hands-ai/openhands:0.36
+    container_name: ${COMPOSE_PROJECT_NAME:-tessent}-openhands
+    restart: unless-stopped
+    networks:
+      - tessent-internal
+    ports:
+      # Локально для dev; в проде — за Caddy через internal-only.
+      - "127.0.0.1:3000:3000"
+    environment:
+      # Если enterprise_mode=true, указываем на наш vLLM endpoint.
+      # Иначе — на managed-провайдеров (LLM_API_KEY).
+      LLM_BASE_URL: ${OPENHANDS_LLM_BASE_URL:-${LLM_LOCAL_BASE_URL:-}}
+      LLM_MODEL: ${OPENHANDS_LLM_MODEL:-${LLM_LOCAL_MODEL:-anthropic/claude-3-5-sonnet}}
+      LLM_API_KEY: ${OPENHANDS_LLM_API_KEY:-${LLM_LOCAL_API_KEY:-}}
+      SANDBOX_RUNTIME_CONTAINER_IMAGE: docker.all-hands.dev/all-hands-ai/runtime:0.36-nikolaik
+      WORKSPACE_BASE: /workspace
+      # callback сразу в наш api сервис.
+      WEBHOOK_URL: http://api:8000/api/v1/executor/callback
+      # Per-conversation idle timeout
+      SANDBOX_TIMEOUT: 300
+      # Лимит на iterations агента — защита от бесконечных циклов.
+      MAX_ITERATIONS: 50
+    volumes:
+      - openhands_state:/.openhands-state
+      - openhands_workspaces:/workspace
+      # OpenHands sandbox-runner запускает свои контейнеры — нужен доступ
+      # к docker socket. ВАЖНО: в production изолируй через rootless docker
+      # или dedicated builder.
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+
+volumes:
+  openhands_state:
+    name: ${COMPOSE_PROJECT_NAME:-tessent}_openhands_state
+  openhands_workspaces:
+    name: ${COMPOSE_PROJECT_NAME:-tessent}_openhands_workspaces

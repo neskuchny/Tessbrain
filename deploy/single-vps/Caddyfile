@@ -1,0 +1,90 @@
+# Auto-HTTPS reverse proxy перед tessent_brain API.
+# {$DOMAIN} и {$EMAIL} подставляются из environment в caddy-контейнере.
+
+{
+    email {$EMAIL}
+}
+
+{$DOMAIN} {
+    encode zstd gzip
+
+    # Строгие limits на размер тела — защита от случайной заливки гигабайт.
+    request_body {
+        max_size 100MB
+    }
+
+    # Тайм-ауты выше дефолта — capture-pipeline бывает медленным.
+    handle {
+        reverse_proxy api:8000 {
+            # X-Forwarded-For ПЕРЕЗАПИСЫВАЕМ, а не дописываем. По умолчанию
+            # Caddy добавляет адрес в конец, сохраняя то, что прислал клиент:
+            # пришло «1.2.3.4» — уйдёт «1.2.3.4, <настоящий адрес>». Кто
+            # читает первую запись, читает выдумку клиента, и лимит на адрес
+            # обходится сменой строки на каждом запросе (а это единственное,
+            # что стоит между перебором паролей и формой входа). После
+            # перезаписи заголовок содержит ровно один адрес — тот, с
+            # которого пришло соединение.
+            header_up X-Forwarded-For {remote_host}
+
+            transport http {
+                read_timeout 5m
+                write_timeout 5m
+            }
+        }
+    }
+
+    # Безопасные заголовки.
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        # Скрываем версию Caddy.
+        -Server
+    }
+
+    # Health-эндпоинты не логируем — они спамят.
+    log {
+        output stdout
+        format json
+        level INFO
+    }
+}
+
+# UI (Next.js). Отдельный домен, отдельный авто-сертификат. Браузер ходит на
+# {$APP_DOMAIN}, фронт сам проксирует /api на backend (next-rewrites) → CORS не
+# нужен, на api:8000 этот сайт-блок не завязан.
+{$APP_DOMAIN} {
+    encode zstd gzip
+
+    request_body {
+        max_size 100MB
+    }
+
+    handle {
+        reverse_proxy frontend:3000 {
+            transport http {
+                read_timeout 5m
+                write_timeout 5m
+            }
+            # Next standalone за прокси подмешивает внутренний порт в абсолютные
+            # редиректы (например / → /ru от next-intl даёт Location
+            # https://app...:3000/ru). Порт 3000 наружу закрыт → браузер уходит
+            # в никуда. Срезаем :3000 из Location, чтобы редирект был чистым.
+            header_down Location ":3000" ""
+        }
+    }
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        -Server
+    }
+
+    log {
+        output stdout
+        format json
+        level INFO
+    }
+}
