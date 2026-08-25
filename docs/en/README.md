@@ -31,6 +31,7 @@ This is the English documentation set. Russian originals live in
 | [API reference](api-reference.md) | REST endpoints, authentication, request shapes |
 | [MCP server](mcp.md) | Connect Claude, Cursor and other assistants — 23 tools |
 | [Data bus](data-bus.md) | Controlled external access: API keys, policies, redaction, audit |
+| [Data bus: where it leads](data-bus-vision.md) | External agent chains, a network of brains, HR at the intersection — with honest status |
 | [Integrations](integrations.md) | Where the material comes in from and where results go |
 
 ## Running it

@@ -117,7 +117,7 @@ confidence**, and access control is enforced **before the model**.
   orchestrated by the brain, the brain as a source for other systems, and
   a network of companies with new HR processes at the intersection of
   their people data — honestly, with the status of each mechanic:
-  [docs/en/data-bus.md](docs/en/data-bus.md).
+  [docs/en/data-bus-vision.md](docs/en/data-bus-vision.md).
 
 **Full capability map — 22 sections:** [docs/en/product-capabilities.md](docs/en/product-capabilities.md)
 · visual versions: [capability map](https://neskuchny.github.io/Tessbrain/share/en/tessent_capabilities.html)
@@ -239,7 +239,7 @@ The full list is the "Honest about limits" section of the
 | [Security](docs/en/security.md) | access control, audit, perimeter |
 | [Product capabilities](docs/en/product-capabilities.md) | the full 22-section map |
 | [Benchmarks](docs/en/benchmarks.md) | numbers, including losses |
-| [Data bus](docs/en/data-bus.md) | what works today and where it leads |
+| [Data bus](docs/en/data-bus-vision.md) | what works today and where it leads |
 
 Russian originals: [docs/ru/](docs/ru/) · Shareable HTML pages (both
 languages, self-contained): [docs/share/](docs/share/)
