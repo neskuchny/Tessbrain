@@ -1,0 +1,28 @@
+Meeting: Client call — Northern House, full rollout
+Date: 2026-06-03
+Duration: 4 min
+Participants: Nick Frolov, Timur Akhmetov (Helion); Victor Koval — VP, Digital Transformation, Northern House
+---
+
+[00:00] Nick Frolov: Victor, afternoon. I've got Timur on with me, our product manager, so we can cover the timing and the functionality in one pass.
+[00:10] Victor Koval: Afternoon. Good, actually — I've built up a list of questions on scope.
+[00:15] Nick Frolov: Perfect. That's what he's here for.
+[00:18] Timur Akhmetov: Let me run through what's in the full rollout, and you stop me anywhere I've got it wrong.
+[00:25] Victor Koval: Go ahead.
+[00:27] Timur Akhmetov: Sales analytics across every project, data marts by region, integration with your accounting system so the figures pull straight out of it, and role-based permissions — project leads see their own, the exec team sees all of it.
+[00:43] Victor Koval: Right. And on top of that we'd want it picking up new projects automatically down the line. We've got about fifteen running now and there'll be more.
+[00:53] Timur Akhmetov: We'll build for that from the start. It's not a hard thing to allow for.
+[00:58] Nick Frolov: Victor, on the money side — we'd already talked about four hundred and ten thousand for the full rollout. Is that still where we are?
+[01:07] Victor Koval: Still where we are. We got the budget approved on that number.
+[01:12] Nick Frolov: Good. On timing — we haven't fixed a launch date yet, and honestly I'd rather not until we understand how big the integration with your accounting system actually is. That's the piece that can move a realistic plan around.
+[01:27] Victor Koval: Understood, and we're not firm on our side either. It depends on when we settle which legal entity in the group is going to be the party to the contract. That's still being argued out internally.
+[01:41] Nick Frolov: Fine. Whenever you land on it, tell us and we'll turn the paperwork around fast.
+[01:47] Timur Akhmetov: Can I ask — you said fifteen projects. Are they all in one region?
+[01:53] Victor Koval: No. Seven regions. And that's a separate headache all by itself. Every regional office keeps its own spreadsheets in its own reporting format, and leadership sees the picture two to three weeks late, because somebody's stitching it together by hand.
+[02:10] Timur Akhmetov: That's the part that goes away the day you're live. The lag just disappears, because nothing's being stitched together — it's computed off the source records.
+[02:21] Victor Koval: That is exactly what we need. Can you email me the proposal, so I can walk it around internally before we lock the entity and the timing?
+[02:33] Nick Frolov: We'll have it written up and sent this week.
+[02:37] Victor Koval: Thank you. Oh — one small thing, not urgent. Whoever it comes from, don't use your shared address. It lands in our spam folder every single time.
+[02:48] Nick Frolov: Noted. I'll send it from mine.
+[02:51] Victor Koval: Appreciated. I'll watch for it.
+[02:54] Timur Akhmetov: Thanks, Victor. Talk soon.

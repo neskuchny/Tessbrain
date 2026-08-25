@@ -1,0 +1,33 @@
+Meeting: Product and engineering sync
+Date: 2026-06-02
+Duration: 4 min
+Participants: Dmitri Tsarev, Timur Akhmetov, Marina Sokol, Annie Lebedev
+---
+
+[00:00] Timur Akhmetov: Okay, I've got bad news on the budget, let's do it first so it isn't hanging over the whole call.
+[00:04] Dmitri Tsarev: It went up again?
+[00:06] Timur Akhmetov: It went up. Different reason this time, though. It isn't infrastructure.
+[00:12] Marina Sokol: What is it?
+[00:14] Timur Akhmetov: We worked through what happens if multi-rate stays a one-off fix for Sentinel — the way Annie put it in by hand. Every next customer that looks like them, we run the exact same story: found out late, fixed it in a fire drill, forgot to write any of it down. Kostya's situation spelled that out for us about as plainly as it gets spelled out.
+[00:34] Dmitri Tsarev: So it goes into the core.
+[00:36] Timur Akhmetov: It goes into the core. Multi-rate as a standard capability of the data marts, not a patch for one account. It's more work than the one-off, but it closes a whole class of future problems instead of one problem.
+[00:49] Marina Sokol: How much does that add?
+[00:51] Timur Akhmetov: My rough number is another two twenty-five on top. Call it $1.05 million all in.
+[00:57] Marina Sokol: From six hundred K to a million-oh-five in three months — that's not an estimate anymore, that's a different project.
+[01:04] Timur Akhmetov: I hear how it sounds. But every jump had a real reason under it — first the actual infrastructure, now an actual lesson out of Sentinel. Better to say the true number now than find out in October.
+[01:17] Dmitri Tsarev: No argument with the logic. Paul won't like it.
+[01:21] Timur Akhmetov: There's a lot this year Paul doesn't like. I'll put the numbers together and walk them through it at the standup.
+[01:28] Marina Sokol: Okay... then I'll redo the sprint breakdown, since the scope's different now.
+[01:33] Annie Lebedev: I can take the core piece of multi-rate. I've already been all the way through it on Sentinel, it'll be faster than somebody coming in cold.
+[01:41] Timur Akhmetov: That'd be great, except you've already got — Marina, how many things is she on at the same time right now?
+[01:48] Marina Sokol: A lot. But she genuinely has multi-rate in her head already, and that's faster than switching somebody else onto it.
+[01:56] Annie Lebedev: I'll manage.
+[01:58] Timur Akhmetov: Okay, I'm penciling you in. Dmitri, where are we on the API?
+[02:03] Dmitri Tsarev: Same as it was. It's the same thing I raised in March and what I said again in April. No access. Third time I'm bringing this up, sorry to be the broken record, but it doesn't come up on its own.
+[02:15] Timur Akhmetov: You're not being a broken record, you're right to keep at it. I'll write to Olivia again today.
+[02:20] Dmitri Tsarev: Thanks. It's just that there's less and less time before December and we're still working off assumptions.
+[02:27] Marina Sokol: Should we escalate it? If asking nicely isn't doing anything.
+[02:31] Dmitri Tsarev: It may come to that.
+[02:33] Timur Akhmetov: Let's try once more without escalating. I don't want to put Olivia and Andrew on edge ahead of time.
+[02:39] Dmitri Tsarev: Fine. Once more.
+[02:41] Timur Akhmetov: That's us, everybody, thanks. Heavy meeting, but a useful one.

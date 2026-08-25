@@ -1,0 +1,43 @@
+Meeting: Sales weekly
+Date: 2026-04-28
+Duration: 4 min
+Participants: Olivia Reuter, Nick Frolov, Sveta Kim, Timur Akhmetov
+---
+
+[00:00] Olivia Reuter: Let's go. Nick — is Titan still waiting?
+[00:03] Nick Frolov: Still waiting. Volkov emailed Monday asking if there was any news on the integration. I said we're working on it.
+[00:11] Olivia Reuter: Working on it as in "still chasing the access," or working on it as in "actually building"?
+[00:17] Nick Frolov: Honestly, I didn't get into it, I didn't want to tie myself in knots. How do you want me answering that?
+[00:23] Olivia Reuter: Say we're on plan and the technical team is working the details separately. Don't lie to him, but don't walk him through our plumbing either.
+[00:31] Nick Frolov: Got it.
+[00:33] Timur Akhmetov: Actually, Olivia — Dmitri wants a word with you about the API access. Again.
+[00:39] Olivia Reuter: Again? I told him I'm leaning on them.
+[00:42] Timur Akhmetov: He wants an actual date, not "I'm leaning on them." He has to plan the build.
+[00:48] Olivia Reuter: Fine, I'll call him after this.
+[00:51] Timur Akhmetov: Thank you.
+[00:53] Olivia Reuter: Nick, next — Foodline, the franchise piece. Where is that?
+[00:57] Nick Frolov: Quiet. They haven't picked up the phone since last week. Their lawyer wrote once — said we'd have to wait, they're in an internal budget cycle and there's no decision before July.
+[01:12] Olivia Reuter: And is that really about budget, or did they change their minds?
+[01:16] Nick Frolov: I'm not sure either. The wording was exactly that — "budget cycle." But it reads a bit like a polite no, honestly.
+[01:24] Olivia Reuter: Log it as at risk, not in progress.
+[01:28] Nick Frolov: Logged.
+[01:30] Sveta Kim: So the case study with them slides even further out?
+[01:34] Olivia Reuter: Looks that way. Let's stay quiet about them in content for now.
+[01:38] Sveta Kim: Fine — my content plan right now is all Titan and fall anyway.
+[01:43] Olivia Reuter: Speaking of, where's the media plan?
+[01:46] Sveta Kim: Draft's done, I'm booking placements from September. The bulk of the money goes out in August for the bookings, so the closer we get, the less room we've got if anything moves.
+[01:58] Olivia Reuter: It won't move.
+[02:00] Sveta Kim: Fine. I'm only saying it for the third time so we all have the same picture.
+[02:05] Olivia Reuter: We have the same picture. Nick, Northern House?
+[02:09] Nick Frolov: Northern House is good. We're into the full rollout, both sides' lawyers are already going back and forth on the contract. Four-ten, same as before.
+[02:19] Olivia Reuter: Have they settled who signs?
+[02:21] Nick Frolov: Not yet, but they promised this week.
+[02:24] Olivia Reuter: Okay, stay on it.
+[02:26] Timur Akhmetov: Hey, on Northern House — does Igor know the full rollout is coming up? He should be getting ready, everything shifted around on him after Kostya left.
+[02:36] Olivia Reuter: I emailed him last week, he knows.
+[02:39] Timur Akhmetov: Good, I just don't want a repeat of Sentinel, redoing documents the day before signature.
+[02:45] Olivia Reuter: It won't be. Right, anything else? Oh — the CRM.
+[02:49] Nick Frolov: Still dropping attachments. I've written to support three times now.
+[02:53] Olivia Reuter: This isn't funny anymore, it's been open since February.
+[02:56] Timur Akhmetov: I'll go at the vendor directly, I know somebody there.
+[03:00] Olivia Reuter: I'd appreciate it. Okay, that's everything, I've got a call with Volkov in five minutes.

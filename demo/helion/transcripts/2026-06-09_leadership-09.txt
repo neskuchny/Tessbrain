@@ -1,0 +1,29 @@
+Meeting: Leadership standup
+Date: 2026-06-09
+Duration: 3 min
+Participants: Andrew Helin, Paul Guryev, Olivia Reuter, Dmitri Tsarev, Igor Vatulin, Marina Sokol, Vera Dorn
+---
+
+[00:00] Andrew Helin: Okay, Vera's back with us. Welcome home.
+[00:03] Vera Dorn: Thank you, I missed you all. Two whole weeks.
+[00:06] Andrew Helin: Well, somebody had to be missed. Let's do the office first — where are we on the second floor?
+[00:12] Vera Dorn: I emailed the landlord from vacation, actually. They'll do a year with a renewal option, no penalty, as long as we renew no later than two months before the end. That takes out the risk Paul was worried about.
+[00:26] Paul Guryev: A year with an option is a different conversation. I'm for it.
+[00:30] Andrew Helin: Great, sign it. Okay, on to actual work — Igor, how's delivery?
+[00:36] Igor Vatulin: Steady. Sentinel moved onto multi-rate with no surprises, Annie was great. Nothing new on the other accounts.
+[00:44] Andrew Helin: Good. Olivia, where are we with Titan?
+[00:48] Olivia Reuter: No change since last time, still waiting on access. Volkov's started asking outright what the holdup is.
+[00:56] Andrew Helin: So lean on them already.
+[00:58] Olivia Reuter: I am leaning. It isn't up to me, it's internal on their side.
+[01:02] Andrew Helin: Understood. Marina, how are you doing?
+[01:06] Marina Sokol: Fine.
+[01:08] Andrew Helin: The project, I mean.
+[01:10] Marina Sokol: It's going. I'm not keeping up with everything, honestly, but it's going.
+[01:14] Andrew Helin: Not keeping up with what, specifically?
+[01:16] Marina Sokol: Code reviews I keep pushing back. I'm writing fewer tests myself than I'd like to. We're moving, just slower than we were in March.
+[01:24] Vera Dorn: Marina, are you okay in general? You've gone quiet lately in these standups — I noticed it before I went away.
+[01:32] Marina Sokol: No, I'm fine, just a bit tired, the volume went up. I'll sleep it off this weekend.
+[01:38] Vera Dorn: Okay. If anything, I'm here.
+[01:40] Andrew Helin: Good, moving on. Dmitri, product?
+[01:44] Dmitri Tsarev: No change since last week.
+[01:46] Andrew Helin: Concise as ever. Okay everyone, that's it for today, I've got another call in two minutes.

@@ -1,0 +1,50 @@
+Meeting: Leadership standup
+Date: 2026-04-07
+Duration: 6 min
+Participants: Andrew Helin, Paul Guryev, Olivia Reuter, Dmitri Tsarev, Timur Akhmetov, Igor Vatulin
+---
+
+[00:00] Andrew Helin: Right, quarter's closed. Paul, how did we do on the first one?
+[00:05] Paul Guryev: We did fine. Revenue came in right around four point four for the quarter — and that's with January's hole in it.
+[00:12] Andrew Helin: Four point four. Is that better than last year?
+[00:16] Paul Guryev: Better. Last year Q1 was about three point four.
+[00:21] Andrew Helin: Well, there you go. Four point four — now we're talking. Nineteen for the year is real.
+[00:29] Paul Guryev: It's real if the second half doesn't sag.
+[00:33] Andrew Helin: It won't sag. Olivia, what's your pipeline?
+[00:37] Olivia Reuter: Hang on, the CRM dropped my attachment again — third time this week. Okay, got it. Two point three in open pipeline. Realistically we close about half of that this half-year.
+[00:45] Andrew Helin: Half of two point three is about one point one five. Plus renewals. That's fine.
+[01:11] Andrew Helin: Okay. Next. Igor, delivery.
+[01:16] Igor Vatulin: Sentinel — we're moving them onto the new rate structure, Annie's finishing the data marts, we're on plan. Foodline went live, two hundred and forty locations connected, first two weeks with no incidents. Optima Group is thinking about training.
+[01:32] Andrew Helin: Good. Where's Kostya, by the way?
+[01:35] Igor Vatulin: Kostya's at a client site. And Andrew — you and I need to talk about Kostya separately, after this.
+[01:42] Andrew Helin: Something serious?
+[01:44] Igor Vatulin: Separately.
+[01:46] Andrew Helin: Fine. Olivia, Titan.
+[01:49] Olivia Reuter: Titan's settled. We confirmed it in writing — the reporting module goes live October 15. Volkov's taken it to the procurement committee, and the committee meets in May. If it clears, the three-twenty is ours and the integration comes right behind it.
+[02:07] Andrew Helin: Nice work.
+[02:09] Olivia Reuter: Thanks. Sveta's already building the fall campaign around those dates, media starts in September.
+[02:17] Dmitri Tsarev: Andrew, there's a thing on Titan we need to talk about.
+[02:21] Andrew Helin: Go.
+[02:23] Dmitri Tsarev: We still don't have access to their API. It was promised in January, it's April now. We're planning an integration with a system we have never once laid eyes on, and—
+[02:36] Olivia Reuter: Dmitri, I am pushing them. Volkov says it's going through their security review internally and he's waiting on it himself.
+[02:44] Dmitri Tsarev: I'm not talking about whose fault it is. I'm saying we committed to a date without checking the main assumption underneath it.
+[02:52] Andrew Helin: So check it.
+[02:54] Dmitri Tsarev: We can't check it without access. That's the whole point.
+[02:58] Andrew Helin: Then Olivia leans on them for access and you check it. Olivia, lean.
+[03:04] Olivia Reuter: I'll lean.
+[03:06] Andrew Helin: Done, that's closed. Next — Timur, 2.0.
+[03:10] Dmitri Tsarev: It isn't closed, but okay.
+[03:13] Timur Akhmetov: On 2.0. The June release is on plan, the aggregate core is in testing. Budget's still inside the six hundred, but I've got a feeling infrastructure is going to come out more expensive than we costed.
+[03:28] Paul Guryev: How much more?
+[03:30] Timur Akhmetov: Not ready to say. We underestimated storage for the new data marts, there's several times more data there than we assumed. I'll finish the recount and come back to you.
+[03:40] Paul Guryev: This is precisely what I said in March. We approve six hundred K as a budget and a month later it's already "coming out more expensive."
+[03:49] Timur Akhmetov: Paul, I'm not asking for money. I'm giving you a heads-up early.
+[03:53] Paul Guryev: And you're right to. I'm just putting on the record that this is exactly that scenario.
+[03:59] Andrew Helin: Timur, do the math, bring me a number, we'll decide then. What else?
+[04:04] Igor Vatulin: On staffing — my side: we've got fifteen in delivery across nine active projects, and if Sentinel goes rough on the new structure, it gets tight fast.
+[04:17] Andrew Helin: Do we hire, then?
+[04:19] Igor Vatulin: Not yet. For now I'm just telling you there's no slack.
+[04:23] Andrew Helin: Understood. Okay — vacations. Vera asked me to remind everyone the schedules are due by the twentieth, or she assigns them herself.
+[04:33] Olivia Reuter: Mine's in.
+[04:35] Timur Akhmetov: Mine isn't.
+[04:37] Andrew Helin: Turn it in. Okay, thanks everyone. Igor, you wanted to talk about Kostya — come to my office.

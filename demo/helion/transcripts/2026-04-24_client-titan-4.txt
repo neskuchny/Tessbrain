@@ -1,0 +1,23 @@
+Meeting: Client call — Titan Bank, contract structure
+Date: 2026-04-24
+Duration: 4 min
+Participants: Nick Frolov, Olivia Reuter (Helion); Sergey Volkov — SVP, Data & Analytics, Titan Bank
+---
+
+[00:00] Olivia Reuter: Sergey, afternoon. We wanted to walk through the mechanics of the contract itself today — not just the dates, but the shape of it, so nothing's a surprise in June.
+[00:12] Sergey Volkov: Good. I've got a proposal of my own, actually. Let's break this into phases, with a payment on each one, instead of one payment at the end. It's easier for me to defend at committee, and frankly I'd think it's easier on you too.
+[00:29] Olivia Reuter: That's reasonable. What phases are you picturing?
+[00:33] Sergey Volkov: Interface and the permissions model — that's one. Integration against our API, whenever they finally grant the access — that's two. Then the full module, export and templates — that's three, and three is tied to October 15.
+[00:50] Olivia Reuter: Works for me. The three-twenty doesn't change, we just split it across the three?
+[00:57] Sergey Volkov: The three-twenty doesn't change. I'm not reopening price. I'm reopening the payment schedule. Different conversation.
+[01:06] Olivia Reuter: Understood. Then the other side of it. What happens if something slips and it isn't on us? If it slips because the access on your end came late?
+[01:17] Sergey Volkov: Fair question. Then the date moves by exactly as long as you were waiting for access. That's honest, and it goes in the contract in plain words, not as an understanding between the two of us.
+[01:31] Olivia Reuter: Agreed. We'll write it in.
+[01:34] Sergey Volkov: And one more. The SLA goes into the contract with a penalty clause if the slip is on your side. Also in writing. That's standard for us with any vendor at this level — it's nothing personal.
+[01:49] Olivia Reuter: Our lawyers will want to argue about the percentage, but in principle, yes. We're comfortable. We're confident in the dates.
+[01:58] Sergey Volkov: Everybody's confident in April.
+[02:01] Olivia Reuter: ...Fair.
+[02:03] Sergey Volkov: Send me the draft with that structure and I'll get it in front of legal before the committee.
+[02:10] Nick Frolov: You'll have it this week. Oh — and congratulations on the, uh, somebody said there was an acquisition announcement?
+[02:18] Sergey Volkov: It's a small one and I'm not involved in it. Send the draft.
+[02:23] Nick Frolov: Sending the draft.

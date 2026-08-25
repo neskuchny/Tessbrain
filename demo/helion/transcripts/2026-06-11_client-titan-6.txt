@@ -1,0 +1,20 @@
+Meeting: Client call — Titan Bank, pre-committee check-in
+Date: 2026-06-11
+Duration: 3 min
+Participants: Nick Frolov (Helion); Sergey Volkov — SVP, Data & Analytics, Titan Bank
+---
+
+[00:00] Nick Frolov: Sergey, afternoon. Short one today — just a check-in ahead of the committee.
+[00:06] Sergey Volkov: Afternoon. Committee's in two weeks and I'll be honest with you, I'm a little on edge about it. Did you get the API access?
+[00:16] Nick Frolov: Not yet. We sent the letter with the business case, like we agreed, but nothing's moved that we can see from our side.
+[00:25] Sergey Volkov: Nothing's moved on my end either, if we're being completely honest. The third approval is still sitting there. Committee's in two weeks. Look, I understand security. I've made the security case to people angrier than you. But in two weeks I need something concrete in that room, not "we're waiting on an approval."
+[00:45] Nick Frolov: What if we put together a standalone status document? What's actually built on the interface and permissions side, what's blocked on the API, dates against each line.
+[00:56] Sergey Volkov: That would help, yes. At least then I can show there's motion, even if not all of it is mine to control.
+[01:04] Nick Frolov: We'll have it to you this week.
+[01:07] Sergey Volkov: This week, not the day before. I need to read it first.
+[01:12] Nick Frolov: This week.
+[01:14] Sergey Volkov: And pass something on to your people for me. I'm still in your corner. I've been in your corner three years. But I have to feed that committee something, and personal trust isn't a line item.
+[01:28] Nick Frolov: I'll pass it on. Word for word.
+[01:31] Sergey Volkov: Do. One other thing, and it's nothing — your support portal sent me a satisfaction survey about a ticket I never opened.
+[01:41] Nick Frolov: ...I'll look into that one too.
+[01:44] Sergey Volkov: Two weeks, Nick.

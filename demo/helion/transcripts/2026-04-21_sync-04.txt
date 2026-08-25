@@ -1,0 +1,41 @@
+Meeting: Product and engineering sync
+Date: 2026-04-21
+Duration: 5 min
+Participants: Dmitri Tsarev, Timur Akhmetov, Marina Sokol, Annie Lebedev
+---
+
+[00:00] Timur Akhmetov: Starting with the budget, I promised it at the standup. The infrastructure under the data marts is more expensive than what we costed in March.
+[00:09] Dmitri Tsarev: How much more?
+[00:11] Timur Akhmetov: We were off on storage by about half again. Plus backups, plus indexes for the new aggregates. All in, instead of six hundred it comes to about eight twenty-five.
+[00:26] Marina Sokol: Eight twenty-five?
+[00:28] Timur Akhmetov: Eight twenty-five, yeah. $825K. I ran it twice.
+[00:33] Dmitri Tsarev: I said back in March that six hundred had no slack in it.
+[00:38] Timur Akhmetov: You did, I heard you, and now I've got a number instead of a feeling.
+[00:44] Marina Sokol: Does it move the dates?
+[00:46] Timur Akhmetov: The dates themselves, no — it's infrastructure, it comes up in parallel. But Paul's going to be unhappy and I haven't told him yet.
+[00:53] Dmitri Tsarev: You'll tell him at the next standup?
+[00:55] Timur Akhmetov: I'll tell him. Okay, next thing. Titan reporting.
+[01:00] Dmitri Tsarev: On that one it's the same thing I raised in March. There's still no access to their API. Olivia says she's pushing on it, but I can't see any difference from here.
+[01:11] Timur Akhmetov: You've brought this up before.
+[01:13] Dmitri Tsarev: I brought it up and nothing changed, which is why I'm bringing it up again. We're two and a half months out from the point where we have to start building the module if we want December, and we still don't know what we're building against.
+[01:26] Marina Sokol: What if we start without access? On assumptions?
+[01:29] Dmitri Tsarev: We can start the shell — screens, permissions, export. Not the integration itself, there are too many unknowns in it. If we start and the structure turns out to be different, we rewrite, and then we definitely don't make December.
+[01:44] Timur Akhmetov: Fine, I'll go at Olivia again, and this time I'm asking for an actual date instead of "I'm pushing on it."
+[01:51] Dmitri Tsarev: I'd appreciate that.
+[01:53] Marina Sokol: So, my side of it... it's moving, broadly. Though I'll probably just finish the tests myself over the weekend so I don't blow up the sprint.
+[02:06] Timur Akhmetov: Is the team behind on something?
+[02:08] Marina Sokol: Not behind, exactly. It's just easier this way. Weekdays are builds, discussions, reviews — there's less time for tests than I'd like.
+[02:17] Annie Lebedev: Marina, let me take the aggregate tests. My head's already in that corner of it right now.
+[02:23] Marina Sokol: Don't, you've got plenty of your own — you're on Sentinel and the data marts both.
+[02:29] Annie Lebedev: Well. Offer stands.
+[02:31] Marina Sokol: Thank you, I do appreciate it.
+[02:33] Timur Akhmetov: Annie, while we're on it — how are you actually doing, carrying Sentinel and the regular data marts at the same time?
+[02:38] Annie Lebedev: I'm carrying it. Multi-rate is nearly done, I'm finishing the history recalculation. The charting library's sitting there as item three, but there's no decision on it anyway, so it isn't in my way.
+[02:49] Timur Akhmetov: Speaking of charts — Foodline has two hundred and forty locations, so if we do migrate the library, that's a good half of every customer dashboard we've got. We'd need to hold them separately, their migration is nothing like the small accounts.
+[03:04] Annie Lebedev: Right, theirs are custom-built for the chain, not off the shelf.
+[03:09] Dmitri Tsarev: Let's do that separately, once there's an actual decision on the library.
+[03:14] Timur Akhmetov: Agreed. Fourth time we've pushed it.
+[03:17] Marina Sokol: Fifth, I think.
+[03:19] Timur Akhmetov: Haven't been counting, but that sounds about right. That's everything on my agenda. Dmitri, will you talk to Olivia?
+[03:26] Dmitri Tsarev: I'll do it. You've got enough on with the budget.
+[03:29] Timur Akhmetov: Thanks. Okay, that's us.

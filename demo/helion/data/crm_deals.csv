@@ -1,0 +1,25 @@
+id,client,title,amount_usd,stage,closed_at
+D-001,Titan Bank,"Pulse Core, renewal",490000,won,2026-01-22
+D-002,Titan Bank,Reporting module,320000,open,
+D-003,Titan Bank,Core banking integration,210000,open,
+D-004,Foodline,"Pulse Retail, 240 locations",255000,won,2026-03-19
+D-005,Foodline,Franchise expansion,115000,lost,2026-05-14
+D-006,Sentinel Insurance,Pulse Core plus billing,380000,won,2025-11-08
+D-007,Sentinel Insurance,Support contract 2026,95000,won,2026-02-03
+D-008,Northern House,"Pilot, sales analytics",70000,won,2026-02-27
+D-009,Northern House,Full rollout,410000,open,
+D-010,Redline Services,Pulse Core,155000,won,2026-01-15
+D-011,Summit Pro,Pilot,45000,won,2026-02-11
+D-012,CareGrid Health,Pulse Core,135000,open,
+D-013,Optima Group,Implementation,220000,open,
+D-014,Cornerstone Build,Pilot,37500,lost,2026-03-05
+D-015,Brightsmile Dental,Pulse Core,60000,won,2026-03-27
+D-016,Freightline Logistics,Logistics analytics,180000,open,
+D-017,Keystone Capital,Pilot,55000,lost,2026-04-09
+D-018,Redline Services,License expansion,75000,won,2026-04-16
+D-019,CareGrid Health,Support contract,40000,open,
+D-020,Optima Group,Training,22500,won,2026-05-21
+D-021,Freightline Logistics,Data mart rework,105000,open,
+D-022,Summit Pro,Full rollout,265000,open,
+D-023,Brightsmile Dental,Phase two,50000,open,
+D-024,Cornerstone Build,Second attempt,90000,open,

@@ -1,0 +1,65 @@
+Meeting: Sales weekly
+Date: 2026-03-24
+Duration: 7 min
+Participants: Olivia Reuter, Nick Frolov, Sveta Kim, Timur Akhmetov
+---
+
+[00:00] Olivia Reuter: Okay, we're on. Nick — Titan.
+[00:03] Nick Frolov: Titan's pushing. Volkov emailed Friday, and I'll read it to you: "I need a date in writing. I can't put a verbal commitment into a budget line." Word for word.
+[00:16] Olivia Reuter: Well, thank God he finally put it in an email instead of saying it over the phone.
+[00:20] Nick Frolov: He also said their procurement committee meets in May, and if there's no fixed date by then, the reporting module drops out of this year's budget. Not canceled — drops out. Which means the soonest we get back in is next year.
+[00:36] Olivia Reuter: Three-twenty drops out.
+[00:39] Nick Frolov: Three-twenty drops out, and the core banking integration probably goes with it, because that's no use to them without the reporting piece.
+[00:48] Olivia Reuter: So it's five thirty at risk, not three-twenty.
+[00:51] Nick Frolov: Five thirty. Both of them sit on the same budget line.
+[00:53] Olivia Reuter: Okay. I talked to him yesterday and I told him — October 15.
+[01:01] Nick Frolov: You gave him a date?
+[01:03] Olivia Reuter: I gave him a date. Nick, I dodged it for two weeks, I couldn't do it anymore. He asked me flat out — "Olivia, are you giving me one or not?" What was I supposed to say, "let me check with product"? He'd have hung up and gone straight to the competition, and that's not a figure of speech, they've already got a proposal from Analytics Plus sitting there.
+[01:24] Nick Frolov: Understood. I just need to know what goes in the letter.
+[01:28] Olivia Reuter: Write October 15. Go-live in production — October 15. And add that there's a demo on their own data before that.
+[01:39] Nick Frolov: When's the demo?
+[01:41] Olivia Reuter: Earlier. Call it six weeks ahead. Write "end of summer," no specific day.
+[01:47] Nick Frolov: Okay.
+[01:49] Sveta Kim: Olivia, that's exactly what I've been waiting for. Then I'm building the fall campaign around mid-October — teaser in September, main wave from the eighth, and the banking webinar a week after launch.
+[02:05] Olivia Reuter: Yes. Do that.
+[02:07] Sveta Kim: I'm committing media budget against those dates. If the dates move, the money's already gone on placements and I can't get it back.
+[02:17] Olivia Reuter: They won't move.
+[02:19] Sveta Kim: I'm just naming the risk out loud so we don't end up having a "who approved this" conversation in August.
+[02:24] Olivia Reuter: You named it, I heard it. Build for October.
+[02:29] Timur Akhmetov: I want to grab you after this about the Foodline handoff.
+[02:34] Olivia Reuter: Is something wrong?
+[02:36] Timur Akhmetov: There are wrinkles on the integration. Dmitri's been raising it.
+[02:40] Olivia Reuter: Wrinkles on the integration aren't about the date, they're about how you build it. The date's already out there.
+[02:47] Timur Akhmetov: Got it. We'll talk separately.
+[02:50] Olivia Reuter: Fine. Nick, next — Foodline.
+[02:54] Nick Frolov: Foodline signed Thursday. Two fifty-five — that's bookings for the quarter moving.
+[02:58] Olivia Reuter: With the discount.
+[03:00] Nick Frolov: With fifteen percent off, yes.
+[03:03] Sveta Kim: Why fifteen? Our cap's ten without sign-off.
+[03:08] Olivia Reuter: Because on Wednesday it came out that they were looking at Retail Metrics in parallel, and Retail Metrics is priced about twenty percent under us. I wasn't going to lose two hundred and forty locations over five points.
+[03:22] Nick Frolov: Their VP of Sales said it in so many words — "give us fifteen and we sign this week."
+[03:28] Olivia Reuter: And we gave it, and they signed. I think it was the right call. A logo with two hundred and forty locations in retail is worth more to us than the margin on one deal. Plus they've got a franchise arm, that's the next move.
+[03:43] Sveta Kim: Can we do a case study on them?
+[03:45] Olivia Reuter: In six months, once they've built up some data. Too early now.
+[03:50] Nick Frolov: I'd just flag that we're now the vendor who folded. Next time they'll open at fifteen.
+[03:59] Olivia Reuter: Maybe. But there might not have been a next time if we'd dug in now.
+[04:05] Nick Frolov: Fair. I'm just putting it on the record.
+[04:08] Olivia Reuter: On the record. Northern House.
+[04:11] Nick Frolov: Northern House is going fine. They closed the pilot at seventy K, they're happy, and now we're talking full rollout at four-ten. But they've started in on terms too.
+[04:26] Olivia Reuter: Meaning what?
+[04:28] Nick Frolov: Meaning their procurement asked what kind of discount we do on an annual contract.
+[04:34] Olivia Reuter: Standard answer — up to ten.
+[04:37] Nick Frolov: Okay.
+[04:39] Olivia Reuter: Who's signing on their side, by the way — have they worked that out?
+[04:42] Nick Frolov: Not yet. It'll be one of their entities, they're still deciding internally which one. They promised to tell us.
+[04:50] Olivia Reuter: Let them tell us. I'm not redoing paperwork the day before signature again, like we did on Sentinel.
+[04:57] Nick Frolov: I'll chase it.
+[05:00] Olivia Reuter: What else... oh, right, the CRM's dropping attachments again. I pinned Volkov's email to the deal yesterday — today it isn't there.
+[05:11] Nick Frolov: That's a known one. It's been sitting in their support queue since February.
+[05:15] Olivia Reuter: Since February? We sell analytics and our own CRM loses files.
+[05:21] Timur Akhmetov: It's not our CRM, it's the vendor's.
+[05:24] Olivia Reuter: That doesn't make me feel better. Nick, save Volkov's email somewhere else as well.
+[05:30] Nick Frolov: Already did.
+[05:32] Olivia Reuter: Nice. OK — the trade show, did anyone decide anything?
+[05:37] Sveta Kim: The booth's twenty-eight K and I'm not convinced it's worth it. Last year we came back with twelve contacts and zero deals.
+[05:47] Olivia Reuter: Then we're not going. That's it, everyone, thanks. Timur, you wanted a separate one — come on.

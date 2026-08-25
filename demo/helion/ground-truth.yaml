@@ -1,0 +1,749 @@
+# ground-truth.yaml — the single source of truth for the demo company "Helion"
+# (English localization of demo/gelion. The arcs, the acceptance questions and
+#  the validator are the same; the IDS ARE NOT — they were re-slugged into
+#  English, and the money was rebased to a US scale. See GLOSSARY.md.)
+#
+# Every load-bearing figure in the corpus, the CRM export and the finance sheet
+# descends from this file; incidental figures that are merely spoken out loud
+# are committed under `background_figures` below, so that nothing a reader can
+# hear is left unsourced. Changing a number = change it here + regenerate +
+# run the validator.
+#
+# MONEY SCALE: US dollars for a ~85-person US SaaS company. 2025 revenue
+# 17,175,000; monthly revenue runs 1.1M-1.9M. Anything quoted out loud is
+# spoken the way a US operator speaks it — "four point four", "eight
+# twenty-five", "one-ninety" — never "four hundred and forty thousand".
+#
+# NOTE FOR TRANSLATORS: every `anchor` and `pattern` below is a REGULAR
+# EXPRESSION, matched case-insensitively (re.I) by scripts/validate_corpus.py.
+# `anchor` is searched only in the named speaker's lines of the named meeting.
+# `pattern` (negative_controls, lonely_facts, client_boundary) is searched in
+# the FULL text of transcripts. See GLOSSARY.md for the exact English wording
+# each anchor expects and for the words that must never appear at all.
+
+meta:
+  name: Helion
+  seed: 20260301
+  period: {start: 2026-03-01, end: 2026-06-30}
+  currency: USD
+  slice: 4                      # current slice: 20 meetings out of 57
+  slice_meetings: [leadership-02, sync-03, sales-04, delivery-02, leadership-06,
+                    leadership-07, sync-04, sales-06, delivery-03, retro-01,
+                    sync-05, client-northern-1, board-01, leadership-09,
+                    client-titan-1, client-titan-2, client-titan-3,
+                    client-titan-4, client-titan-5, client-titan-6]
+
+company:
+  # Книга клиентов. CRM-выгрузка в data/crm_deals.csv — НЕ вся книга: это срез
+  # сделок, затронутых встречами корпуса (ноя-2025 — май-2026), 12 счетов.
+  # Основная выручка — регулярная подписка установленной базы, которая не
+  # заводится в CRM как сделка. Без этого поля 24 сделки на $3,88M не сходятся
+  # с выручкой $17,175,000 в год.
+  installed_base_accounts: 142
+  installed_base_note: >-
+    142 активных счёта на конец 2025; средний ARR ~$118K. crm_deals.csv
+    покрывает только те 12, что упоминаются во встречах.
+  legal: Helion Inc.
+  what: "Pulse — a B2B customer-analytics platform; SaaS plus implementation"
+  age_years: 7
+  headcount: 85
+  revenue_2025: 17_175_000
+  departments:
+    Engineering: 35
+    "Delivery and Support": 15
+    Sales: 8
+    Product: 6
+    Marketing: 5
+    Finance: 3
+    "People and Office": 4
+    Leadership: 4
+    Other: 5
+
+# ─────────────────────────────────────────────────────────────
+people:
+  - id: helin
+    name: Andrew Helin
+    role: CEO, founder
+    dept: Leadership
+    voice: {tempo: fast, len: medium, style: "jumps between topics, decides fast"}
+    signature: never follows up on his own decisions
+    arcs: [5]
+
+  - id: reuter
+    name: Olivia Reuter
+    role: Chief Revenue Officer
+    dept: Sales
+    voice: {tempo: fast, len: long, style: "confident, high-energy, speaks in statements"}
+    signature: gives clients dates without checking with engineering
+    arcs: [1, 9]
+
+  - id: tsarev
+    name: Dmitri Tsarev
+    role: CTO
+    dept: Leadership
+    voice: {tempo: slow, len: short, style: "quiet, short, never pushes"}
+    signature: raises the same risk three times and is never heard
+    arcs: [4]
+
+  - id: sokol
+    name: Marina Sokol
+    role: Engineering lead
+    dept: Engineering
+    voice: {tempo: medium, len: long, style: "detailed, gets into specifics"}
+    energy_by_month: {"2026-03": 1.0, "2026-04": 0.8, "2026-05": 0.6, "2026-06": 0.4}
+    signature: her turns get shorter toward June, "I'll finish it over the weekend"
+    arcs: [6]
+
+  - id: guryev
+    name: Paul Guryev
+    role: Chief Financial Officer
+    dept: Finance
+    voice: {tempo: medium, len: medium, style: "precise, talks in numbers"}
+    signature: quotes a figure from memory in the standup — it disagrees with the sheet
+    arcs: [2]
+
+  - id: vatulin
+    name: Igor Vatulin
+    role: Head of Delivery
+    dept: "Delivery and Support"
+    voice: {tempo: medium, len: medium, style: "steady, dependable, takes notes"}
+    accounts: [foodline, sentinel, titan]
+    arcs: [8, 11]
+
+  - id: lebedev
+    name: Annie Lebedev
+    role: Analyst (junior)
+    dept: Engineering
+    voice: {tempo: medium, len: medium, style: "straight to the point, no hedging when it is about data"}
+    signature: junior on paper — answers 9 of 11 questions about data marts in practice
+    arcs: [7]
+
+  - id: melnik
+    name: Kostya Melnik
+    role: Senior implementation consultant
+    dept: "Delivery and Support"
+    voice: {tempo: medium, len: long, style: "explains thoroughly, with examples"}
+    leaves_on: 2026-04-28
+    signature: the only carrier of context on Sentinel's billing
+    arcs: [8]
+
+  - id: frolov
+    name: Nick Frolov
+    role: Sales rep          # NEVER "account executive" — see lonely_facts LF-05
+    dept: Sales
+    accounts: [titan, foodline, northern]
+    arcs: [1, 11]
+
+  - id: akhmetov
+    name: Timur Akhmetov
+    role: Product manager
+    dept: Product
+    voice: {tempo: medium, len: medium, style: "mediator, asks people to repeat themselves"}
+    signature: the only person who sits on both sides of arc 1 — and never connects them
+    arcs: [1, 11]
+
+  - id: kim
+    name: Sveta Kim
+    role: Head of Marketing
+    dept: Marketing
+    signature: plans a campaign around a date engineering never confirmed
+    arcs: [1]
+
+  - id: dorn
+    name: Vera Dorn
+    role: HR Director
+    dept: "People and Office"
+    signature: the only person who says out loud what is happening to Sokol — once, in passing
+    arcs: [6]
+
+  - id: valerie
+    name: Valerie Ross
+    role: "Partner, Meridian Growth (investor)"
+    dept: null
+    external: true
+    note: "not a Helion employee — appears only in board-01"
+
+  - id: volkov
+    name: Sergey Volkov
+    role: "SVP, Data & Analytics, Titan Bank"
+    dept: null
+    external: true
+    voice: {tempo: medium, len: medium, style: "direct, no filler, but not hostile"}
+    signature: "pushes on dates, negotiates by phase, wants the SLA in writing — all three traits shown explicitly in client-titan-1..6"
+    note: "not a Helion employee — appears only in the client-titan-* client calls"
+
+# ─────────────────────────────────────────────────────────────
+clients:
+  - id: titan
+    name: Titan Bank
+    industry: banking
+    mirror_for: "tier-A banking prospects"
+    status: strategic
+    persona:
+      name: Sergey Volkov
+      role: SVP, Data and Analytics
+      style: pushes on dates, negotiates by phase, wants the SLA in writing
+  - id: foodline
+    name: Foodline
+    industry: cafe chain, 240 locations
+    mirror_for: "QSR / restaurant-chain prospects"
+    status: active
+  - id: sentinel
+    name: Sentinel Insurance
+    industry: insurance
+    mirror_for: "insurance prospects"
+    status: active
+  - id: northern
+    name: Northern House
+    industry: property development
+    mirror_for: "real-estate developer prospects"
+    status: active
+  - id: background
+    name: [Redline Services, Summit Pro, CareGrid Health, Optima Group, Cornerstone Build, Brightsmile Dental, Freightline Logistics, Keystone Capital]
+    note: CRM export only, for density
+
+# ─────────────────────────────────────────────────────────────
+# Finance — the authoritative source of revenue. Arc 2 is checked against this.
+finance_monthly:
+  - {month: "2025-03", revenue: 1_240_000, costs: 1_055_000}
+  - {month: "2025-04", revenue: 1_305_000, costs: 1_100_000}
+  - {month: "2025-05", revenue: 1_370_000, costs: 1_130_000}
+  - {month: "2025-06", revenue: 1_495_000, costs: 1_215_000}
+  - {month: "2025-07", revenue: 1_360_000, costs: 1_190_000}
+  - {month: "2025-08", revenue: 1_430_000, costs: 1_205_000}
+  - {month: "2025-09", revenue: 1_575_000, costs: 1_295_000}
+  - {month: "2025-10", revenue: 1_600_000, costs: 1_320_000}
+  - {month: "2025-11", revenue: 1_725_000, costs: 1_390_000}
+  - {month: "2025-12", revenue: 1_900_000, costs: 1_510_000}
+  - {month: "2026-01", revenue: 1_105_000, costs: 1_245_000}
+  - {month: "2026-02", revenue: 1_290_000, costs: 1_255_000}
+  - {month: "2026-03", revenue: 1_425_000, costs: 1_280_000}
+  - {month: "2026-04", revenue: 1_365_000, costs: 1_310_000}
+  - {month: "2026-05", revenue: 1_480_000, costs: 1_340_000}
+  - {month: "2026-06", revenue: 1_560_000, costs: 1_370_000}
+
+derived:
+  q1_2026_revenue: 3_820_000         # 1,105k + 1,290k + 1,425k — computed by the script, never typed by hand
+  guryev_claim_q1: 4_400_000         # what Guryev says from memory in leadership-06
+  # gap is about 15.2 % — computed by the validator, never stated in the text
+
+# ─────────────────────────────────────────────────────────────
+# Figures that are SPOKEN somewhere in the corpus but have no row of their own
+# in finance_monthly or in the CRM export. Committed here so that no figure a
+# reader can hear is left unsourced, and so that the STATUS of each one — sheet
+# fact, honest guess, or arithmetic over the CRM — is explicit rather than
+# implied. These are background, not load-bearing: no acceptance question is
+# answered from them.
+background_figures:
+  q1_2025_revenue:
+    value: 3_415_000
+    note: "spoken as «about three point four» — the year-ago comparison; Jan and Feb 2025 sit before finance_monthly starts, so this is committed here rather than derived from the sheet"
+  helin_fy2026_forecast:
+    value: 19_000_000
+    note: "CEO optimism said on the record in board-01 — deliberately has NO sheet behind it; the gap against finance_monthly is a planted fact, not a drift to be fixed"
+  open_pipeline_2026_04_07:
+    value: 2_292_500
+    note: "arithmetic over the CRM: every deal not yet closed on 2026-04-07 — the 11 still-open deals plus D-005, D-017, D-018 and D-020, which closed later; ties to data/crm_deals.csv exactly"
+  lebedev_february_count:
+    value: 412
+    note: "Lebedev's own hand count of the February reconciliations — the hidden-expert arc; a number she carries in her head, with no system behind it (not money, not multiplied)"
+  titan_at_risk_2026_03_24:
+    value: 530_000
+    note: "arithmetic over the CRM: D-002 reporting module (320,000) + D-003 core banking integration (210,000) — the pair Reuter and Frolov add up in sales-04 when the May committee comes up, spoken as «five thirty». No row of its own because it is a sum, but both components are CRM rows; it is the at-risk total, NOT a booking"
+  marketing_booth_cost:
+    value: 28_000
+    note: "the trade-show booth Kim prices in the sales-04 aside, spoken as «twenty-eight K» — a marketing cost, not a deal: no CRM row, and no line of its own in finance_monthly (it sits inside the monthly costs total). Deliberately not 40,000 so it cannot be mis-joined to D-019, CareGrid Health's support contract"
+  retail_metrics_price_gap_pct:
+    value: 20
+    note: "Reuter's read of the competitor's list price on the Foodline deal in sales-04 — «about twenty percent under us», the benchmark the 15 % discount (D-004.discount_pct) was measured against, which is what makes her «five points» arithmetic: 20 − 15. A sales-side estimate with no sheet behind it; a percentage, not money, and unrelated to the compensation gap Guryev quotes in board-01"
+  engineering_comp_market_gap_pct:
+    value: 20
+    note: "Guryev's read of how far Helion's top engineering band sits under the market, spoken in board-01 as «about twenty percent behind the market» — the benchmark that justifies raising the lead ceiling from 160,000 to 190,000 a year [GF-10B]. A compensation-side estimate off the comp benchmarks the company buys plus the offers it has lost people to: no sheet, no HR system, no row anywhere else; a percentage, not money. It corroborates the raise LOOSELY, not exactly — 160,000 → 190,000 is +18.75 %, so the new ceiling closes most of a «twenty percent» gap and not all of it. That is rounding in a spoken estimate, not a planted contradiction: neither figure is derived from the other, Guryev marks the twenty as his own read on the line and says the raise does not fully close it. Distinct from retail_metrics_price_gap_pct above — same number, different subject (competitor list price, not compensation) and different speaker"
+  guryev_drift_hypothetical:
+    value: 750_000
+    note: "spoken as «seven fifty» by Guryev in leadership-02, immediately after the 600,000 approval — a rhetorical counterfactual, NOT a fourth budget version: his illustration of what an estimate turns into once nobody records where it came from, and he says on the line that he is inventing the figure. Deliberate foreshadowing of arc 3 (600,000 → 825,000 → 1,050,000): he drifts in the right direction and lands low, two months before Akhmetov's real recount of «eight twenty-five» in sync-04. Never approved, never in a sheet, never repeated anywhere in the corpus — surfacing it as a budget version is an extraction error, which is why it is committed here rather than left unsourced"
+  standard_discount_ceiling_pct:
+    value: 10
+    note: "the standing discount ceiling Reuter quotes to Northern House procurement in retro-01 — «up to ten percent», the standard answer off the rate card, given to anyone who asks before a negotiation starts. A policy limit, NOT a discount granted on any deal: no CRM row carries discount_pct 10, no Northern House number is agreed anywhere in the corpus, and D-009 stays at its full 410,000. Deliberately distinct from D-004.discount_pct (15 %), the Foodline exception signed above this ceiling that retro-01 exists to review, and from retail_metrics_price_gap_pct (20 %), a competitor benchmark; reading any of the three as the other is an extraction error. A percentage, not money, and never a booking"
+
+# ─────────────────────────────────────────────────────────────
+deals:  # amount in USD; stage: won|lost|open
+  - {id: D-001, client: titan,     title: "Pulse Core, renewal",             amount: 490_000, stage: won,  closed: 2026-01-22}
+  - {id: D-002, client: titan,     title: "Reporting module",                amount: 320_000, stage: open, closed: null}
+  - {id: D-003, client: titan,     title: "Core banking integration",        amount: 210_000, stage: open, closed: null}
+  - {id: D-004, client: foodline,  title: "Pulse Retail, 240 locations",     amount: 255_000, stage: won,  closed: 2026-03-19, discount_pct: 15}
+  - {id: D-005, client: foodline,  title: "Franchise expansion",             amount: 115_000, stage: lost, closed: 2026-05-14}
+  - {id: D-006, client: sentinel,    title: "Pulse Core plus billing",         amount: 380_000, stage: won,  closed: 2025-11-08}
+  - {id: D-007, client: sentinel,    title: "Support contract 2026",           amount: 95_000,  stage: won,  closed: 2026-02-03}
+  - {id: D-008, client: northern,  title: "Pilot, sales analytics",          amount: 70_000,  stage: won,  closed: 2026-02-27}
+  - {id: D-009, client: northern,  title: "Full rollout",                    amount: 410_000, stage: open, closed: null}
+  - {id: D-010, client: "Redline Services",       title: "Pulse Core",                amount: 155_000, stage: won,  closed: 2026-01-15}
+  - {id: D-011, client: "Summit Pro",   title: "Pilot",                     amount: 45_000,  stage: won,  closed: 2026-02-11}
+  - {id: D-012, client: "CareGrid Health",       title: "Pulse Core",                amount: 135_000, stage: open, closed: null}
+  - {id: D-013, client: "Optima Group",  title: "Implementation",            amount: 220_000, stage: open, closed: null}
+  - {id: D-014, client: "Cornerstone Build",  title: "Pilot",                     amount: 37_500,  stage: lost, closed: 2026-03-05}
+  - {id: D-015, client: "Brightsmile Dental",      title: "Pulse Core",                amount: 60_000,  stage: won,  closed: 2026-03-27}
+  - {id: D-016, client: "Freightline Logistics",      title: "Logistics analytics",       amount: 180_000, stage: open, closed: null}
+  - {id: D-017, client: "Keystone Capital",  title: "Pilot",                     amount: 55_000,  stage: lost, closed: 2026-04-09}
+  - {id: D-018, client: "Redline Services",       title: "License expansion",         amount: 75_000,  stage: won,  closed: 2026-04-16}
+  - {id: D-019, client: "CareGrid Health",       title: "Support contract",          amount: 40_000,  stage: open, closed: null}
+  - {id: D-020, client: "Optima Group",  title: "Training",                  amount: 22_500,  stage: won,  closed: 2026-05-21}
+  - {id: D-021, client: "Freightline Logistics",      title: "Data mart rework",          amount: 105_000, stage: open, closed: null}
+  - {id: D-022, client: "Summit Pro",   title: "Full rollout",              amount: 265_000, stage: open, closed: null}
+  - {id: D-023, client: "Brightsmile Dental",      title: "Phase two",                 amount: 50_000,  stage: open, closed: null}
+  - {id: D-024, client: "Cornerstone Build",  title: "Second attempt",            amount: 90_000,  stage: open, closed: null}
+
+# ─────────────────────────────────────────────────────────────
+# Golden facts. `anchor` is the regex the validator looks for in the NAMED
+# transcript, inside the NAMED speaker's lines only.
+golden_facts:
+  - {id: GF-01A, arc: 1, meeting: sales-04,  speaker: reuter, anchor: 'October 15|fifteenth of October|October the fifteenth',
+     note: "Reuter promises Titan a launch date for the reporting module. Canonical line: «I told him — October 15.»"}
+  - {id: GF-01B, arc: 1, meeting: sync-03,  speaker: sokol, anchor: 'December',
+     note: "engineering plans the same module for the December release. Say the month by name, never «Q4»"}
+  - {id: GF-01C, arc: 1, meeting: sales-04,  speaker: kim, anchor: 'campaign',
+     note: "marketing builds the campaign around October"}
+  - {id: GF-02,  arc: 2, meeting: leadership-06,   speaker: guryev, anchor: 'four point four|4\.4',
+     note: "Q1 revenue from memory — «four point four»; the finance sheet says 3,820,000"}
+  - {id: GF-03A, arc: 3, meeting: leadership-02,   speaker: akhmetov, anchor: 'six hundred K|\$?600K|six hundred thousand',
+     note: "Pulse 2.0 budget, version 1, March 10"}
+  - {id: GF-04A, arc: 4, meeting: sync-03,  speaker: tsarev, anchor: '\bAPI\b',
+     note: "first of three mentions of the Titan core-banking integration risk"}
+  - {id: GF-07A, arc: 7, meeting: leadership-02,   speaker: lebedev, anchor: 'data mart',
+     note: "the junior answers the data-mart question instead of the leads"}
+  - {id: GF-07B, arc: 7, meeting: sync-03,  speaker: lebedev, anchor: 'data mart'}
+  - {id: GF-07C, arc: 7, meeting: delivery-02, speaker: lebedev, anchor: 'data mart'}
+  - {id: GF-08,  arc: 8, meeting: delivery-02, speaker: melnik, anchor: 'billing',
+     note: "the key scene: Melnik explains how Sentinel's billing works, a month before he leaves"}
+  - {id: GF-09A, arc: 9, meeting: sales-04,  speaker: frolov,  anchor: '15 ?%|fifteen per ?cent|15 per ?cent',
+     note: "size of the Foodline discount"}
+  - {id: GF-09B, arc: 9, meeting: sales-04,  speaker: reuter, anchor: 'Retail Metrics',
+     note: "the REASON for the discount — competitor pressure. The system has to recover the causal link"}
+  - {id: GF-06A, arc: 6, meeting: leadership-02,   speaker: sokol, anchor: 'keeping up',
+     note: "March baseline — Sokol still has capacity. Canonical: «we're keeping up»"}
+
+  # ─── slice 2 ───
+  - {id: GF-05,  arc: 5, meeting: leadership-07,  speaker: helin, anchor: 'hir(e|ing) two account executives',
+     note: "the hiring decision — the only mention in the corpus, see lonely_facts LF-05"}
+  - {id: GF-03B, arc: 3, meeting: sync-04, speaker: akhmetov, anchor: 'eight twenty-five|\b825K?\b',
+     note: "Pulse 2.0 budget, version 2, April 21"}
+  - {id: GF-04B, arc: 4, meeting: sync-04, speaker: tsarev, anchor: 'the same thing I raised in March',
+     note: "2nd explicit mention of the API risk — Tsarev repeats his own March wording verbatim"}
+  - {id: GF-06B, arc: 6, meeting: sync-04, speaker: sokol, anchor: '(finish|wrap).{0,25}over the weekend',
+     note: "first explicit «I'll finish it over the weekend» — the turning signal of arc 6"}
+  - {id: GF-08B, arc: 8, meeting: delivery-03, speaker: vatulin, anchor: 'it.{0,1}s not there',
+     note: "direct payoff: the promised write-up of Sentinel's billing does not exist"}
+  - {id: GF-09C, arc: 9, meeting: retro-01, speaker: reuter, anchor: 'margin we gave away',
+     note: "the explicit, quotable lesson — the outcome of arc 9, material for the «company experience» layer, ch. 9"}
+
+  # ─── slice 3 ───
+  - {id: GF-03C, arc: 3, meeting: sync-05, speaker: akhmetov, anchor: '1\.05|million-oh-five',
+     note: "Pulse 2.0 budget, version 3 — final in this environment. The reason differs from v2: see beats"}
+  - {id: GF-04C, arc: 4, meeting: sync-05, speaker: tsarev, anchor: 'I raised in March and .{0,25}in April',
+     note: "3rd explicit mention of the API risk — Tsarev points back at the previous two himself"}
+  - {id: GF-06C, arc: 6, meeting: leadership-09, speaker: sokol, anchor: 'not keeping up with everything',
+     note: "the first plain «I'm not keeping up» — the turn of arc 6, full closure"}
+  - {id: GF-06D, arc: 6, meeting: leadership-09, speaker: dorn, anchor: 'gone quiet lately',
+     note: "an outside observation said out loud — with no action after it, exactly as designed"}
+  - {id: GF-10A, arc: 10, meeting: board-01, speaker: valerie, anchor: 'six million|\$?6M\b',
+     note: "the size of the round — visible ONLY at access=board; a test of the live system, not of the corpus"}
+  - {id: GF-10B, arc: 10, meeting: board-01, speaker: guryev, anchor: '\b190K?\b|one-ninety',
+     note: "the new top of the engineering-lead band — same classification level as GF-10A"}
+
+  # ─── slice 4: the Volkov dossier (arc 14) ───
+  - {id: GF-14A, arc: 14, meeting: client-titan-1, speaker: volkov, anchor: 'look(ing)? elsewhere',
+     note: "pressure on dates, call 1 — his own words, not a retelling"}
+  - {id: GF-14B, arc: 14, meeting: client-titan-2, speaker: volkov, anchor: 'falls out of the budget',
+     note: "the committee constraint first-hand — the source for the internal retelling in sales-04"}
+  - {id: GF-14C, arc: 14, meeting: client-titan-3, speaker: volkov, anchor: 'request in January',
+     note: "his side of the API blocker: 3 approvals, filed personally in January — symmetrical to Tsarev's internal frustration"}
+  - {id: GF-14D, arc: 14, meeting: client-titan-4, speaker: volkov, anchor: 'break (this|it) (up )?into (stages|phases|milestones)',
+     note: "negotiating by phase — signature trait 1, shown explicitly"}
+  - {id: GF-14E, arc: 14, meeting: client-titan-4, speaker: volkov, anchor: 'penalty clause',
+     note: "the SLA in writing — signature trait 2, same meeting"}
+  - {id: GF-14F, arc: 14, meeting: client-titan-5, speaker: volkov, anchor: 'Analytics Plus',
+     note: "the competitor in his own words — the primary source, not a second-hand retelling"}
+  - {id: GF-14G, arc: 14, meeting: client-titan-6, speaker: volkov, anchor: 'third approval',
+     note: "the current temperature for the demo — a symmetrical deadlock on both sides"}
+
+# Dossier for the simulation (ch. 5): not text anchors but a summary used to
+# check that the simulation really leans on HIS words and not on an averaged
+# "demanding client". Every trait carries its source.
+simulation_dossier:
+  client: titan
+  persona: Sergey Volkov, SVP Data and Analytics — the business owner of the reporting module, not a procurement gatekeeper
+  traits:
+    - {trait: "pushes on dates", source: "client-titan-1 (Mar 9), client-titan-6 (Jun 11)"}
+    - {trait: "negotiates by phase", source: "client-titan-4 (Apr 24) — three milestones, each with its own payment"}
+    - {trait: "wants the SLA in writing", source: "client-titan-2 (Mar 23), client-titan-4 (Apr 24) — penalty clauses"}
+  real_objections:
+    - "the module misses this year's budget without a date before the May committee (client-titan-2)"
+    - "the competitor Analytics Plus is promising three months instead of seven (client-titan-5)"
+    - "three internal approvals on their own side are holding up API access, independently of Helion (client-titan-3, client-titan-6)"
+  not_hostile: "three years of history, no complaints about the current product; he proposes fair symmetry on dates himself (client-titan-4)"
+  note: "the arc 14 test — «Run the reporting-module offer past Volkov» — is live by design: what is being checked is whether the simulation uses these sources rather than the corpus text"
+
+# Client calls must not "know" internal company facts — a direct check of the
+# same access boundary the product sells as a feature (ch. 14). The patterns
+# are already-validated anchors from internal meetings, reused on purpose: if
+# they leaked into a client call, that is the same fact, simply somewhere it
+# is not allowed to be.
+client_boundary:
+  - id: CB-01
+    meetings: [client-titan-1, client-titan-2, client-titan-3, client-titan-4,
+               client-titan-5, client-titan-6, client-northern-1]
+    forbidden:
+      - {pattern: 'account executives?', from: LF-05, note: "the decision to hire account executives is internal. The pattern is deliberately narrow, see the note on LF-05"}
+      - {pattern: 'gone quiet lately', from: GF-06D, note: "the observation about Sokol's state is internal"}
+      - {pattern: 'six million|\$?6M\b', from: GF-10A, note: "size of the round — board classification"}
+      - {pattern: '\b190K?\b|one-ninety', from: GF-10B, note: "engineering-lead salary band — board classification"}
+      - {pattern: '1\.05|million-oh-five', from: GF-03C, note: "the final v3 budget — an internal figure"}
+
+# Facts that must be said in EXACTLY ONE named meeting and appear nowhere
+# else in the loaded corpus. Shows "decided and forgotten" as a fact of the
+# corpus rather than as a claim in the text.
+lonely_facts:
+  - {id: LF-05, arc: 5, meeting: leadership-07, pattern: 'account executives?',
+     note: "the decision to hire two ACCOUNT EXECUTIVES must not surface in any OTHER meeting. The pattern is deliberately narrow: broad forms of «hire» would also catch unrelated hiring talk (leadership-06, «Do we hire?» about internal delivery capacity — a legitimate different topic, not a violation). Everywhere outside leadership-07 the corpus says «sales rep», «salesperson» or «someone in sales» — never «account executive»"}
+
+# Structural answers for the graph channel — not text anchors but facts of
+# relation. The basis for each name is stated explicitly so there is no
+# argument about where it came from.
+graph_answers:
+  - id: GA-11
+    arc: 11
+    question: "Who has worked with both Titan and Foodline?"
+    answer:
+      - {person: frolov,   basis: "direct speech: reports on Titan AND on Foodline in the same meeting, sales-04 and sales-06"}
+      - {person: vatulin,  basis: "delegates Foodline (delivery-02/03) plus an explicit self-declaration about taking on Titan (delivery-03, 02:37)"}
+      - {person: akhmetov, basis: "product owner for Titan (sync-03/04) plus an explicit link between Foodline and the charting migration (sync-04, 02:49)"}
+    note: "three people, three different bases — a test that the system does not confuse `was in the room` with `worked with the client`"
+
+# Strings that must appear NOWHERE in the whole corpus.
+negative_controls:
+  - {id: NC-12,  arc: 12, pattern: 'churn|cohort',
+     note: "arc 12: the honest «I don't know». The topic is never discussed. HARDEST TRAP IN THE ENGLISH CORPUS: an English SaaS transcript produces both words by reflex. Say «customers leaving», «renewals», «accounts we lost», «the March intake» instead — and never the two words themselves"}
+  - {id: NC-13A, arc: 13, pattern: 'Demidov|Демидов',
+     note: "arc 13: the signatory on the Northern House side is never named anywhere → a red field in the proposal"}
+  - {id: NC-13B, arc: 13, pattern: 'delivery date',
+     note: "arc 13: the delivery date is never fixed anywhere → the second red field. Allowed alternatives: «launch», «go-live», «when it goes live», «timeline» — never this exact phrase"}
+
+# Pairs that must not meet inside ONE transcript.
+forbidden_cooccurrence:
+  - {id: FC-01, arc: 1, a: 'October 15|fifteenth of October|October the fifteenth', b: 'December',
+     note: "the two dates for the same module never sound together — otherwise there is no misalignment. In practice: October 15 lives in sales-04, leadership-06, client-titan-2, client-titan-4; December lives in leadership-02, sync-03, delivery-02, sync-04, sync-05. Elsewhere say «mid-October» or «the fourth quarter», which match neither side"}
+
+# ─────────────────────────────────────────────────────────────
+meetings:
+  - id: leadership-02
+    date: 2026-03-10
+    title: Leadership standup
+    type: leadership
+    access: internal
+    participants: [helin, guryev, reuter, tsarev, akhmetov, vatulin, kim, dorn, sokol, lebedev]
+    beats:
+      - "Helin opens, jumps between topics"
+      - "Guryev: February is closed, quick pass over the numbers (1,290,000 — from the finance sheet)"
+      - "Akhmetov: Pulse 2.0 budget — 600,000, let's approve it [GF-03A]"
+      - "Reuter: Titan is pushing on dates — with NO specific date"
+      - "Lebedev is pulled in to answer about data marts, and she answers, not the leads [GF-07A]"
+      - "Sokol: the team is keeping up [GF-06A] — the baseline of arc 6"
+      - "Noise: the second-floor move, the April conference"
+
+  - id: sync-03
+    date: 2026-03-17
+    title: Product and engineering sync
+    type: product_dev
+    access: internal
+    participants: [tsarev, akhmetov, sokol, lebedev]
+    beats:
+      - "Release plan: Titan's reporting module goes into the December release [GF-01B]"
+      - "Tsarev raises the Titan core-banking integration risk — 1 of 3 [GF-04A]"
+      - "No owner is assigned to the risk — assigning one is FORBIDDEN"
+      - "Lebedev on data marts again [GF-07B]"
+      - "Noise: the argument about the charting library"
+    forbidden_in_text: ['October 15|fifteenth of October|October the fifteenth']
+
+  - id: sales-04
+    date: 2026-03-24
+    title: Sales weekly
+    type: sales
+    access: internal
+    participants: [reuter, frolov, kim, akhmetov]
+    beats:
+      - "Frolov: Titan is in a hurry"
+      - "Reuter: «I told him — October 15» [GF-01A]"
+      - "Kim: we're building the campaign around October [GF-01C]"
+      - "Foodline: 15 % discount under competitor pressure [GF-09A]"
+      - "Akhmetov is in the room and does NOT connect October with December — stays silent on dates"
+      - "Noise: a complaint about the CRM, an aside about the trade show"
+    forbidden_in_text: ['December']
+
+  - id: delivery-02
+    date: 2026-03-26
+    title: Delivery review by account
+    type: delivery
+    access: internal
+    participants: [vatulin, melnik, lebedev, sokol]
+    beats:
+      - "Melnik walks through Sentinel's billing in detail [GF-08] — the key scene"
+      - "Vatulin takes notes, but not into any system"
+      - "Melnik jokes «I'm not here forever» — the only hint that he is leaving"
+      - "Lebedev on data marts [GF-07C]"
+      - "Noise: the client's broken VPN"
+
+  - id: leadership-06
+    date: 2026-04-07
+    title: Leadership standup
+    type: leadership
+    access: internal
+    participants: [helin, guryev, reuter, tsarev, akhmetov, vatulin]
+    beats:
+      - "Guryev from memory: Q1 revenue «four point four» — 4,400,000 [GF-02]"
+      - "Helin takes the number without checking"
+      - "Reuter repeats the middle-of-October date on Titan (say «mid-October», never «October 15» — FC-01)"
+      - "Tsarev tries to get back to the risk — he is talked over (mention 2 of 3 is outside this slice; only the attempt is here)"
+      - "Noise: vacation planning"
+
+  - id: leadership-07
+    date: 2026-04-14
+    title: Leadership standup
+    type: leadership
+    access: internal
+    participants: [helin, guryev, reuter, tsarev, akhmetov, vatulin, sokol]
+    beats:
+      - "Vatulin raises delivery capacity again — with no result"
+      - "Helin decides to hire two account executives, deadline end of May [GF-05]"
+      - "Guryev agrees to budget for it — but NOT to find the people"
+      - "No owner is assigned to the search: Vera is on vacation, the topic is parked until she is back"
+      - "Sokol: the first clear drop in tone against the leadership-02 baseline — shorter, with a «for now» attached"
+      - "Noise: the office, the second floor, vacations"
+
+  - id: sync-04
+    date: 2026-04-21
+    title: Product and engineering sync
+    type: product_dev
+    access: internal
+    participants: [tsarev, akhmetov, sokol, lebedev]
+    beats:
+      - "Akhmetov announces the recalculated Pulse 2.0 budget — 825,000, «eight twenty-five» [GF-03B]"
+      - "Tsarev raises the API risk again — 2nd explicit mention [GF-04B]"
+      - "Sokol: the first explicit «I'll finish it over the weekend» [GF-06B]"
+      - "Lebedev is carrying Sentinel and the data marts at the same time — the overload builds"
+      - "Akhmetov explicitly links Foodline to the charting library — setup for arc 11"
+      - "Noise: the charting library comes up for the fifth time"
+
+  - id: sales-06
+    date: 2026-04-28
+    title: Sales weekly
+    type: sales
+    access: internal
+    participants: [reuter, frolov, kim, akhmetov]
+    beats:
+      - "Titan: API access still not granted, Reuter promises to call Tsarev right after the meeting"
+      - "The Foodline franchise deal is stalling — moved to «at risk», a hint of a polite no"
+      - "Northern House: full rollout in progress, the signatory is still undecided"
+      - "Akhmetov explicitly links Vatulin to the upcoming Titan work — setup for arc 11"
+      - "Noise: the CRM is still losing attachments, open since February"
+
+  - id: delivery-03
+    date: 2026-04-30
+    title: Delivery review by account
+    type: delivery
+    access: internal
+    participants: [vatulin, lebedev, sokol]
+    beats:
+      - "The first meeting without Melnik — Vatulin discovers the Sentinel billing write-up was never done [GF-08B]"
+      - "The task said «in progress», there is nothing inside — the direct payoff of the promise from delivery-02"
+      - "Lebedev reconstructs part of it from memory — fragmentary, part of it is gone for good"
+      - "Sentinel's multi-tariff work is finished: config plus history, no gaps — a small win against the loss"
+      - "Foodline's paginated export (50 at a time) is undocumented too — the same pattern"
+      - "Vatulin declares his own future involvement with Titan — an explicit link for arc 11"
+
+  - id: retro-01
+    date: 2026-05-19
+    title: "Retro: the Foodline franchise deal"
+    type: retro
+    access: internal
+    participants: [reuter, frolov, kim]
+    beats:
+      - "The Foodline franchise was formally lost on May 14 — reviewed with no written minutes"
+      - "Reuter explicitly ties the March discount to the expectation of the franchise deal"
+      - "Outcome: the discount was NOT the blocker — their budget cycle was; the discount was spent for nothing"
+      - "The explicit, quotable lesson: a discount is justified only if it removes a REAL blocker [GF-09C]"
+      - "Reuter herself ties the lesson to the current Northern House request — the setup for the arc 9 demo question"
+
+  - id: sync-05
+    date: 2026-06-02
+    title: Product and engineering sync
+    type: product_dev
+    access: internal
+    participants: [tsarev, akhmetov, sokol, lebedev]
+    beats:
+      - "Akhmetov announces budget v3 — 1,050,000, spoken as «$1.05 million»; the reason DIFFERS from v2: not infrastructure but the lesson from Sentinel [GF-03C]"
+      - "Multi-tariff moves from a one-off fix into the product core — a direct link to arc 8"
+      - "Tsarev raises the API risk explicitly for the 3rd time, pointing back at March and April [GF-04C]"
+      - "Still no owner assigned — escalation is discussed but does not happen"
+      - "Lebedev takes the core part of multi-tariff — the overload keeps growing"
+
+  - id: client-northern-1
+    date: 2026-06-03
+    title: "Client call — Northern House, full rollout"
+    type: client_call
+    access: internal
+    participants: [frolov, akhmetov]
+    external_participants: ["Victor Koval — VP, Digital Transformation, Northern House"]
+    beats:
+      - "Scope of the full rollout: sales analytics, data marts by region, integration with the accounting system, role-based permissions"
+      - "Price confirmed verbally by the client — four hundred and ten thousand [checked against deals.D-009]"
+      - "The launch date is NEVER fixed — reinforces NC-13B. Never say the phrase «delivery date»"
+      - "The signing legal entity is NOT named, it is still being decided on the client side — reinforces NC-13A. The name Demidov must appear nowhere"
+      - "The client asks for the proposal by email — the direct trigger for the arc 13 demo question"
+      - "Rich context for the document: 15 projects, 7 regions, 2-3 weeks of manual reconciliation"
+
+  - id: board-01
+    date: 2026-06-05
+    title: Closed board session
+    type: board
+    access: board            # THE ONLY meeting in the corpus at this level — arc 10
+    participants: [helin, guryev, tsarev, valerie]
+    beats:
+      - "Funding round: six million, terms agreed in principle [GF-10A]"
+      - "Salary bands for the engineering-lead level revised: 160,000 → 190,000 a year [GF-10B]"
+      - "The reason is named out loud: the ceiling is being raised because of Sokol — Tsarev names her directly"
+      - "Explicit agreement: none of this leaves this room until the announcement"
+      - "Hiring account executives is NOT mentioned — the use-of-funds topic stays broad and unspecific"
+
+  - id: leadership-09
+    date: 2026-06-09
+    title: Leadership standup
+    type: leadership
+    access: internal
+    participants: [helin, guryev, reuter, tsarev, vatulin, sokol, dorn]
+    beats:
+      - "Vera is back from vacation — she closes the office question that has been open since leadership-07"
+      - "Sokol, explicitly for the first time: «I'm not keeping up with everything» [GF-06C]"
+      - "Vera says out loud what she sees — once, in passing, with no action after it [GF-06D]"
+      - "Hiring is NOT mentioned once — the topic never surfaces, not even now that Vera, its natural owner, is back"
+
+  - id: client-titan-1
+    date: 2026-03-09
+    title: "Client call — Titan Bank, reporting status"
+    type: client_call
+    access: internal
+    participants: [frolov]
+    external_participants: ["Sergey Volkov — SVP, Data & Analytics, Titan Bank"]
+    beats:
+      - "The first pressure on dates in his own words — the setup for Reuter's retelling in leadership-02"
+      - "Tone: hard but not hostile — three years of history, no complaints about the product"
+      - "An explicit threat with no ultimatum: «we'll start looking elsewhere» [GF-14A]"
+
+  - id: client-titan-2
+    date: 2026-03-23
+    title: "Client call — Titan Bank, launch date"
+    type: client_call
+    access: internal
+    participants: [frolov, reuter]
+    external_participants: ["Sergey Volkov — SVP, Data & Analytics, Titan Bank"]
+    beats:
+      - "The scene that gets retold internally in sales-04 — the moment October 15 is promised"
+      - "Volkov names the committee constraint in his own words for the first time [GF-14B]"
+      - "He asks for written confirmation — worded differently from his Friday message, but the same in substance"
+      - "He asks for a demo on the client's real data — material for the README GIF of the new repo"
+
+  - id: client-titan-3
+    date: 2026-04-02
+    title: "Client call — Titan Bank, API access"
+    type: client_call
+    access: internal
+    participants: [frolov]
+    external_participants: ["Sergey Volkov — SVP, Data & Analytics, Titan Bank"]
+    beats:
+      - "His side of the blocker revealed FOR THE FIRST TIME: three internal approvals, the request filed in January [GF-14C]"
+      - "Symmetry with the situation inside Helion: both sides are stuck in THEIR OWN process, neither seeing the other's whole"
+      - "He offers to escalate by email — constructive, not just complaining"
+
+  - id: client-titan-4
+    date: 2026-04-24
+    title: "Client call — Titan Bank, contract structure"
+    type: client_call
+    access: internal
+    participants: [frolov, reuter]
+    external_participants: ["Sergey Volkov — SVP, Data & Analytics, Titan Bank"]
+    beats:
+      - "An explicit demonstration of «negotiates by phase»: three milestones, each with its own payment [GF-14D]"
+      - "An explicit demand for SLA penalties in writing — the second signature trait [GF-14E]"
+      - "He proposes symmetrical protection for Helion himself: if access slips on his side, the deadline slips too — texture, not just pressure"
+
+  - id: client-titan-5
+    date: 2026-05-12
+    title: "Client call — Titan Bank, alignment before the committee"
+    type: client_call
+    access: internal
+    participants: [frolov, reuter]
+    external_participants: ["Sergey Volkov — SVP, Data & Analytics, Titan Bank"]
+    beats:
+      - "The competitor named directly IN HIS OWN WORDS — the primary source, not a retelling [GF-14F]"
+      - "Reuter does not fold, she points at three years of history — both sides of the negotiation are preserved"
+
+  - id: client-titan-6
+    date: 2026-06-11
+    title: "Client call — Titan Bank, check-in before the committee"
+    type: client_call
+    access: internal
+    participants: [frolov]
+    external_participants: ["Sergey Volkov — SVP, Data & Analytics, Titan Bank"]
+    beats:
+      - "The current temperature for the demo: the committee is two weeks out, both sides admit nothing has moved [GF-14G]"
+      - "A symmetrical admission: he is stuck in his own process too — a direct echo of the internal sync-05"
+
+# ─────────────────────────────────────────────────────────────
+# Acceptance questions. Frozen BEFORE the corpus is generated.
+# testable_on_slice_1 — what can already be checked on five meetings.
+acceptance_questions:
+  - {id: Q01, arc: 1,  q: "What did we promise Titan Bank on the reporting module timeline?",
+     expect: "two dates — October 15 (Reuter, sales-04) and the December release (sync-03), both with sources",
+     testable_on_slice_1: true, testable_on_slice_2: true, testable_on_slice_3: true}
+  - {id: Q02, arc: 2,  q: "What was our first-quarter revenue?",
+     expect: "4,400,000 per Guryev (leadership-06) against 3,820,000 in the finance sheet, both with sources",
+     testable_on_slice_1: true, testable_on_slice_2: true, testable_on_slice_3: true}
+  - {id: Q03, arc: 3,  q: "How did the Pulse 2.0 budget change?",
+     expect: "v1 600,000 (Mar 10, infra estimate) → v2 825,000 (Apr 21, tighter infra numbers) → v3 1,050,000 (Jun 2, the Sentinel lesson — a different reason for the increase)",
+     testable_on_slice_1: partial, testable_on_slice_2: partial, testable_on_slice_3: true}
+  - {id: Q04, arc: 4,  q: "Which risks were raised but never given an owner?",
+     expect: "the Titan API risk: 3 explicit mentions (sync-03, sync-04, sync-05), not one task in three months",
+     testable_on_slice_1: partial, testable_on_slice_2: partial, testable_on_slice_3: true}
+  - {id: Q05, arc: 5,  q: "What did we decide and never do?",
+     expect: "hiring two account executives (leadership-07, deadline end of May) — no owner assigned to the search; even on June 9, with Vera back from vacation, the topic does not come up ONCE",
+     testable_on_slice_1: false, testable_on_slice_2: true, testable_on_slice_3: true}
+  - {id: Q06, arc: 6,  q: "What is happening with load in engineering?",
+     expect: "the full arc: March baseline (leadership-02) → drop in tone (leadership-07) → «I'll finish it over the weekend» (sync-04) → an explicit «I'm not keeping up with everything» plus Vera's passing remark with no action (leadership-09)",
+     testable_on_slice_1: partial, testable_on_slice_2: partial, testable_on_slice_3: true}
+  - {id: Q07, arc: 7,  q: "Who here actually knows our data marts?",
+     expect: "Annie Lebedev, three evidence episodes from three meetings",
+     testable_on_slice_1: true, testable_on_slice_2: true, testable_on_slice_3: true}
+  - {id: Q08, arc: 8,  q: "How does billing work at Sentinel?",
+     expect: "the full answer out of delivery-02 with a reference to Melnik and the date; bonus: delivery-03 honestly shows that the rest of the write-up is lost",
+     testable_on_slice_1: true, testable_on_slice_2: true, testable_on_slice_3: true}
+  - {id: Q09, arc: 9,  q: "Northern House is asking for a 15 % discount — what do you say?",
+     expect: "the full precedent: the Foodline discount (sales-04) → the lost franchise deal → the explicit lesson in retro-01, both sides of the decision",
+     testable_on_slice_1: partial, testable_on_slice_2: true, testable_on_slice_3: true}
+  - {id: Q10, arc: 10, q: "What was discussed about salaries (and the round)?",
+     expect: "a seventeen-and-a-half-million round plus the new engineering-lead ceiling of 190,000, with the reason named (Sokol) — VISIBLE only with the CEO role, invisible with the intern role",
+     testable_on_slice_1: false, testable_on_slice_2: false, testable_on_slice_3: "live-only"}
+  - {id: Q11, arc: 11, q: "Who has worked with both Titan and Foodline?",
+     expect: "see graph_answers.GA-11 — three people with three different bases",
+     testable_on_slice_1: partial, testable_on_slice_2: true, testable_on_slice_3: true}
+  - {id: Q12, arc: 12, q: "What is our churn by cohort?",
+     expect: "an honest «there is no basis in memory for an answer»",
+     testable_on_slice_1: true, testable_on_slice_2: true, testable_on_slice_3: true}
+  - {id: Q13, arc: 13, q: "Put together the proposal for Northern House",
+     expect: "green fields: modules, scope (15 projects / 7 regions), price 410,000; red fields: the signatory, the exact date — source client-northern-1",
+     testable_on_slice_1: false, testable_on_slice_2: false, testable_on_slice_3: "live-only"}
+  - {id: Q14, arc: 14, q: "Run the reporting-module offer past Volkov",
+     expect: "see simulation_dossier — three signature traits and three real objections, each with a dated source",
+     testable_on_slice_1: false, testable_on_slice_2: false, testable_on_slice_3: false, testable_on_slice_4: "live-only",
+     note: "the material is ready; the simulation itself can only be tested against a live system"}
+  - {id: Q15, arc: 8,  q: "Who besides Melnik knows Sentinel's billing?",
+     expect: "the honest, unpleasant answer: fully — nobody; Lebedev remembers a fragment, the exceptions are lost",
+     testable_on_slice_1: false, testable_on_slice_2: true, testable_on_slice_3: true}

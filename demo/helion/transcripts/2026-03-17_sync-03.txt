@@ -1,0 +1,62 @@
+Meeting: Product and engineering sync
+Date: 2026-03-17
+Duration: 7 min
+Participants: Dmitri Tsarev, Timur Akhmetov, Marina Sokol, Annie Lebedev
+---
+
+[00:00] Timur Akhmetov: Okay, all four of us, let's go. The job today is closing out the release plan for the year, because I've now got two people waiting on it.
+[00:11] Marina Sokol: Who's the second one?
+[00:13] Timur Akhmetov: Olivia and Sveta. They both want a date for the reporting module.
+[00:18] Marina Sokol: Right. Then let's lay it out honestly for once.
+[00:22] Timur Akhmetov: Laying it out. We ship four releases a year — June, September, December, and March of next year. Pulse 2.0 doesn't fit in any one of them whole, so we cut it up.
+[00:38] Marina Sokol: June's the data marts and the new aggregation core. That's already in flight, no argument there.
+[00:45] Timur Akhmetov: September?
+[00:47] Marina Sokol: September is the UI and permissions. Big chunk, but it's predictable.
+[00:53] Timur Akhmetov: And reporting?
+[00:55] Marina Sokol: Reporting goes into the December release. Not before, and I'll tell you why. The reporting module reuses the new aggregation core, and that ships in June. Which means we can't touch it until June has stabilized — call it the middle of July. Then the module itself is a report builder, export, templates, permissions down to the individual report. That's not two weeks. That's three or four months with two people on it.
+[01:28] Timur Akhmetov: So if we start mid-July...
+[01:31] Marina Sokol: Then by November there's something to show internally, and it goes out the door in the December release. And that's the optimistic version, before you count half the team being on vacation all summer.
+[01:43] Timur Akhmetov: Fine. December. Writing it down.
+[01:46] Dmitri Tsarev: There's one thing.
+[01:48] Timur Akhmetov: Yeah?
+[01:50] Dmitri Tsarev: Titan. They run their own core banking system and we hook into it through their internal API. We have never seen that API. No documentation, no test environment. We're assuming it looks like what we built at Sentinel, but that's an assumption.
+[02:12] Timur Akhmetov: They promised us access, though.
+[02:15] Dmitri Tsarev: They promised in January. It's March.
+[02:19] Marina Sokol: Is that critical for reporting, or is it a side thing?
+[02:22] Dmitri Tsarev: Reporting at Titan without the core banking data is pointless. Half the numbers come out of there. And if the API isn't what we're picturing, that's not a week of rework — that's potentially rebuilding the whole integration layer.
+[02:38] Timur Akhmetov: How likely is that?
+[02:40] Dmitri Tsarev: I don't know. That's the problem. I can't size a risk I haven't seen.
+[02:47] Marina Sokol: Banks build everything their own way, in my experience. I wouldn't count on it looking familiar.
+[02:53] Timur Akhmetov: Okay, I'm flagging it. So reporting is the December release, with a caveat on the integration.
+[03:01] Dmitri Tsarev: A caveat isn't a plan. We need access to the API before we start writing code, not halfway through it.
+[03:10] Timur Akhmetov: Agreed. I'll tell Olivia to lean on them.
+[03:14] Dmitri Tsarev: You told me that in February.
+[03:17] Timur Akhmetov: Then I'll say it again.
+[03:20] Marina Sokol: Can we move? We've been on one thing for ten minutes and I've got a standup at eleven.
+[03:24] Timur Akhmetov: Moving. Next up, data marts. Annie, you wanted something.
+[03:28] Annie Lebedev: Yeah, on June. We're putting in the new aggregation core, but in the current schema the data mart still computes off a single rate key. If we don't fix that now, it rides into the new core with the bug attached and it gets more expensive to pull out later.
+[03:46] Marina Sokol: Is this the thing you caught on Optima Group?
+[03:49] Annie Lebedev: Same thing. And it's going to hit at Sentinel and at Foodline too. Foodline has two hundred and forty locations on different rate tables — it'll show up there the first week.
+[04:01] Timur Akhmetov: Why isn't this in the backlog already?
+[04:04] Annie Lebedev: It is in the backlog. It's been in the backlog since November. Low priority.
+[04:09] Marina Sokol: Bump it to high. If it goes into the core — she's right, it costs more later.
+[04:15] Annie Lebedev: Okay. I need a day for the config, plus a week if we're recalculating history. History can go separately, it doesn't have to be in June.
+[04:25] Timur Akhmetov: Let's do it that way.
+[04:28] Dmitri Tsarev: Who's taking it?
+[04:30] Annie Lebedev: I can.
+[04:32] Marina Sokol: Take it.
+[04:34] Timur Akhmetov: Okay, what else... right, the charting library. Marina, did you two land on that?
+[04:40] Marina Sokol: We did not. Kostya over in delivery is pushing for the old one, because it's already sitting at customers and nobody has to be retrained. My guys want the new one, because the old one can't do custom axes.
+[04:54] Timur Akhmetov: And where are you on it?
+[04:56] Marina Sokol: I want the new one. But I need somebody to work out what migrating the existing dashboards actually costs. Customers have something like four hundred of them between them.
+[05:07] Annie Lebedev: Four hundred and twelve. I counted them in February.
+[05:11] Marina Sokol: There you go. Four hundred and twelve.
+[05:14] Timur Akhmetov: That's its own conversation, let's take it offline.
+[05:17] Dmitri Tsarev: That's the third time we've taken it offline.
+[05:20] Timur Akhmetov: Then we take it offline a fourth time and decide next session. I've got another call in ten minutes, sorry.
+[05:27] Marina Sokol: Tim — what are you telling Olivia about the date?
+[05:31] Timur Akhmetov: I'll tell her reporting lands at the end of the year. After that it's on her and Andrew what they say to Titan.
+[05:39] Marina Sokol: Say it exactly like that, though — a date in writing, not "sometime in the fourth quarter."
+[05:49] Timur Akhmetov: I'll say it straight.
+[05:52] Dmitri Tsarev: And say something about the API.
+[05:54] Timur Akhmetov: And the API. That's it, thanks everybody.

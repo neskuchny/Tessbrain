@@ -1,0 +1,65 @@
+Meeting: Delivery review by account
+Date: 2026-03-26
+Duration: 9 min
+Participants: Igor Vatulin, Kostya Melnik, Annie Lebedev, Marina Sokol
+---
+
+[00:00] Igor Vatulin: Okay, going account by account. Sentinel, Foodline, Optima. Marina, you're breaking up — is that you or me?
+[00:07] Marina Sokol: Me. Hang on. Better?
+[00:10] Igor Vatulin: Better. Right — Sentinel first, because that's where I've got the most questions.
+[00:15] Kostya Melnik: Go ahead.
+[00:17] Igor Vatulin: Kostya, walk me through their billing in plain English. I've been into that config three times now and three times I've come back out not understanding why any of it is the way it is.
+[00:28] Kostya Melnik: Because it's layered. All right, let's do it properly — I'll talk, you write, because none of this is in the documentation. It's in my head and that's it.
+[00:38] Igor Vatulin: Trying to keep up — slow down.
+[00:40] Kostya Melnik: So. Sentinel's billing runs in three layers, and that's history, not design. First layer is the base policy rates. Fourteen of them, they sit in a reference table on their side, and we pull them across on an overnight import at three fifteen in the morning.
+[01:00] Igor Vatulin: Why three fifteen and not three?
+[01:03] Kostya Melnik: Because at three they rebuild their indexes. If we land exactly on three, the import dies on a timeout. We got burned on that back in December. I moved the schedule fifteen minutes and never wrote a word about it anywhere.
+[01:18] Igor Vatulin: That right there is what I've been digging for. Keep going.
+[01:22] Kostya Melnik: Second layer — the surcharges. Coefficients on top of the base rate: region, age of the property, claims history, sales channel. There are about forty of them, and they multiply, they don't add.
+[01:36] Igor Vatulin: They don't add.
+[01:38] Kostya Melnik: They don't add. Our first version added them, and their invoices were off by pennies for six months until their accountant caught it. It's multiplication now, but the order matters — regional first, then the property ones, channel last. Get the order wrong and the answer moves at the third decimal, which on big policies is real money.
+[02:01] Annie Lebedev: Why would the order matter at all? Multiplication's commutative.
+[02:06] Kostya Melnik: Commutative if you don't round between steps. They round. Two decimals at every single step, it's written into their internal policy, and we're on the hook to reproduce their arithmetic, not the correct one.
+[02:21] Annie Lebedev: Oh. Okay, now it makes sense.
+[02:24] Kostya Melnik: And this part really matters, so write it down: we don't compute it right, we compute it their way. If somebody wanders in and "fixes" the rounding, their reconciliation against their own system comes apart, and we're the ones who broke it.
+[02:40] Igor Vatulin: Wait — say the rounding part again?
+[02:43] Kostya Melnik: Third layer — the exceptions. Manual rules for named corporate customers. Nine of them right now. They don't live in the reference table, they're in a separate sheet their pricing analyst keeps — a woman named Natalie Ward, and she is the only person alive who knows why any line in it says what it says. We apply those last, on top of everything. Each rule is either a flat amount instead of the calculated one, or a ceiling.
+[03:12] Igor Vatulin: What if one customer's got two of them?
+[03:16] Kostya Melnik: Doesn't happen, they've got a constraint on their side. But if it ever did — we take the higher priority, and if the priorities are equal, the one created last wins. That's my logic. I put it in. It's documented exactly nowhere.
+[03:33] Igor Vatulin: Kostya. All of this has to go somewhere that isn't your head.
+[03:38] Kostya Melnik: It does. I keep meaning to.
+[03:41] Igor Vatulin: You've been meaning to since the fall.
+[03:44] Kostya Melnik: Since the fall, yeah. Look, I'm not here forever either. Somebody's going to need this eventually.
+[03:52] Igor Vatulin: Don't scare me.
+[03:54] Kostya Melnik: Kidding. Anyway, staying on Sentinel — they've got a new rate structure coming in April. And that's where we get a problem, because the new structure is multi-rate on a single policy.
+[04:08] Annie Lebedev: There it is. That's what I was saying at the standup — the aggregates data mart collapses the rate tables into one key, so the totals are going to drift.
+[04:18] Kostya Melnik: Exactly. And at Sentinel it won't drift by pennies, it'll drift hard, because their corporate policies are going to be multi-rate almost across the board.
+[04:29] Igor Vatulin: Annie, you said a day or two on the config?
+[04:33] Annie Lebedev: Day or two on the config. But for Sentinel we also have to recompute the history, or their reports get a hole in them right at the April boundary. That's a week, because it's a full rebuild of the data mart over the whole period, and their period starts in November.
+[04:51] Igor Vatulin: So we start now if we want to make April.
+[04:55] Annie Lebedev: I can start Monday. I need Marina to take the charting library off me.
+[05:01] Marina Sokol: Taking it. Charts can wait, nobody's decided anything there anyway.
+[05:07] Annie Lebedev: Monday then.
+[05:09] Igor Vatulin: Good. Kostya — Foodline. What's the story?
+[05:13] Kostya Melnik: Foodline's simpler. One price list for the whole chain, locations as a dimension. Only thing is they've got two hundred and forty locations and the export drags. I set it to page fifty at a time. Works.
+[05:28] Igor Vatulin: Is that written down anywhere?
+[05:31] Kostya Melnik: You can see it in the config.
+[05:33] Igor Vatulin: So, no.
+[05:35] Kostya Melnik: So, no. Igor, I get it, I get it. Open me a ticket and I'll sit down in April and write up the billing for both of them, Sentinel and Foodline.
+[05:46] Igor Vatulin: Opening it right now. Due end of April.
+[05:50] Kostya Melnik: Deal. Just don't hang anything off it as an attachment, the tracker's been eating attachments all week.
+[05:57] Igor Vatulin: I know. Sveta lost a whole deck to it on Tuesday and had to rebuild the thing from her downloads folder.
+[06:04] Marina Sokol: Different subject, sorry — did the VPN into Sentinel drop again this morning?
+[06:10] Kostya Melnik: It dropped. Their certificate expired. I emailed their admins, they promised it by lunch.
+[06:17] Marina Sokol: It's just that I had somebody sitting there for an hour unable to work.
+[06:22] Kostya Melnik: I know, sorry. It's once a quarter with them, like clockwork.
+[06:27] Igor Vatulin: Should we put monitoring on it, maybe?
+[06:30] Annie Lebedev: A simple ping every five minutes and an alert into the chat. Half a day of work.
+[06:36] Igor Vatulin: Open it, but after Sentinel.
+[06:39] Annie Lebedev: Fine.
+[06:41] Igor Vatulin: Optima — wasn't there something about training?
+[06:45] Kostya Melnik: There was. They want training for twenty people, but not in one go — three sessions, weekdays only. I told them that's billed separately.
+[06:56] Igor Vatulin: And?
+[06:58] Kostya Melnik: They said they'd get back to us. It's been two weeks.
+[07:04] Igor Vatulin: Fine. That everything? Kostya, seriously — that ticket to write up Sentinel is the single most important thing we talked about today.
+[07:14] Kostya Melnik: Understood. I'll do it.

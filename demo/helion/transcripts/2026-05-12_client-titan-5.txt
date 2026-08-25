@@ -1,0 +1,21 @@
+Meeting: Client call — Titan Bank, pre-committee sync
+Date: 2026-05-12
+Duration: 3 min
+Participants: Nick Frolov, Olivia Reuter (Helion); Sergey Volkov — SVP, Data & Analytics, Titan Bank
+---
+
+[00:00] Nick Frolov: Sergey, afternoon. Olivia's on with me — we wanted to sync before the committee.
+[00:07] Sergey Volkov: Afternoon. Good timing, actually, because I've got a question for you and I'd rather ask it than sit on it. Analytics Plus reached out to me. They're pitching a similar module and they're saying they can do it in three months, not seven.
+[00:24] Olivia Reuter: Three months for a banking integration from a standing start — I'd be careful with that number, Sergey.
+[00:32] Sergey Volkov: I am careful with it. That's why I'm telling you instead of staying quiet and walking away. But you understand the position I'm in. That is exactly what I'll be required to put in front of the committee as the alternative, if you and I hit a wall.
+[00:49] Olivia Reuter: I understand. And for what it's worth — we've got three years of history and a product sitting in your environment that hasn't fallen over. You don't buy that in three months from anybody. But I hear you, and thank you for being straight with me.
+[01:06] Sergey Volkov: I'm not threatening you. I just want something in hand by May that isn't "we're working on it."
+[01:14] Nick Frolov: By May we'll have real progress on the interface piece, and hopefully the API access finally lands.
+[01:22] Sergey Volkov: Hopefully. It's my headache too, not only yours.
+[01:27] Olivia Reuter: Sergey, can I ask — did Analytics Plus put a number in front of you, or was it a conversation?
+[01:34] Sergey Volkov: A conversation. I'm not going to read you somebody else's number and you know that.
+[01:41] Olivia Reuter: Had to ask.
+[01:43] Sergey Volkov: You did. Fine. Show me something at the committee and this stays a conversation.
+[01:50] Nick Frolov: We'll have something.
+[01:52] Sergey Volkov: Also, unrelated — your invoice portal logged me out twice this morning. Tell somebody.
+[01:59] Nick Frolov: I'll tell somebody.

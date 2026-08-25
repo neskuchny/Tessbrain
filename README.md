@@ -188,12 +188,13 @@ Three paths, by how much infrastructure you want to give it:
 
 ## Try it without your own data
 
-The repo ships with **Gelion**, a synthetic 85-person company: 20 meetings
-with real transcripts, 14 planted storylines and a machine-checked ground
+The repo ships with **Helion**, a synthetic 85-person US company: 20 meetings
+with full transcripts, 14 planted storylines and a machine-checked ground
 truth. Ingest it and ask "what did we promise Titan Bank on timing?" — then
 watch the system surface the conflict, with sources.
 
-→ [demo/gelion](demo/gelion/) (validator included: 20/20 green)
+→ [demo/helion](demo/helion/) (validator included: 20/20 green) · the Russian
+original is [demo/gelion](demo/gelion/)
 
 ---
 

@@ -1,0 +1,42 @@
+Meeting: Leadership standup
+Date: 2026-04-14
+Duration: 5 min
+Participants: Andrew Helin, Paul Guryev, Olivia Reuter, Dmitri Tsarev, Timur Akhmetov, Igor Vatulin, Marina Sokol
+---
+
+[00:00] Andrew Helin: Okay, let's go. Paul, did the quarterly report go out?
+[00:04] Paul Guryev: Sent it last night, everyone's inbox. Reconciled it properly, it matches the sheet now.
+[00:10] Andrew Helin: Good, I'll look at it. Igor, how's delivery?
+[00:14] Igor Vatulin: Moving. But I want to say the resourcing thing one more time, same as last week. Fifteen people across nine projects — there's no slack in that. If Sentinel's multi-rate doesn't go smoothly, we sag.
+[00:29] Andrew Helin: Is it going smoothly?
+[00:31] Igor Vatulin: So far, yes. Annie started Monday, the config's nearly done.
+[00:36] Andrew Helin: Well, there you are then.
+[00:38] Igor Vatulin: Andrew, I'm not complaining about right now. I'm talking about what we don't have in reserve if something else lands on us.
+[00:44] Andrew Helin: Understood, heard you. Okay, I've got an item of my own. Look — Olivia, your pipeline keeps growing and it's you and Nick closing all of it between the two of you. We need more weight in sales. Not in the fall. Now.
+[01:00] Olivia Reuter: I'm not going to argue with that. I genuinely don't get to half the inbound.
+[01:05] Andrew Helin: Then we're hiring two account executives.
+[01:09] Paul Guryev: Two of them means base plus commission going into the budget straight away, that's not a small line.
+[01:15] Andrew Helin: Put it in. Either we're growing or we're not.
+[01:18] Paul Guryev: I'll put it in the second half.
+[01:21] Andrew Helin: End of May, I want at least one of them signed. The second one whenever it happens, but both of them working by summer.
+[01:29] Olivia Reuter: End of May is six weeks for search, interviews and a start date. Tight, but doable if somebody starts now.
+[01:37] Andrew Helin: So start.
+[01:39] Andrew Helin: Olivia, this is broadly your area, but I don't want it landing entirely on you, you've got a number to hit as it is.
+[01:47] Olivia Reuter: Thanks for saying it. I really don't have the hours for a search right now.
+[01:52] Andrew Helin: Well, we do have HR.
+[01:55] Igor Vatulin: Vera's not with us today, she's out until Wednesday.
+[01:59] Andrew Helin: Right, of course she is. Okay, we'll come back to it when she's back.
+[02:04] Timur Akhmetov: So for now nobody's actually looking?
+[02:07] Andrew Helin: For now we've discussed it and we've agreed we're doing it. Details we'll sort out. Okay, moving on. Dmitri, what've you got on product?
+[02:16] Dmitri Tsarev: Short version — everything's where it was in March.
+[02:19] Andrew Helin: Fine, next. Timur, how's 2.0?
+[02:24] Timur Akhmetov: On plan. I want to put the budget recount on Monday's sync — I said infrastructure would come out more expensive, and I can name a rough number now, but I'd rather walk the details through with Dmitri and Marina in the room, not here.
+[02:38] Andrew Helin: Fine, at the sync. Marina, how are things with you overall?
+[02:43] Marina Sokol: Going. Broadly on plan. The September release has more in it than I thought back in March, but we're keeping up so far.
+[02:52] Andrew Helin: "So far" — is that a good so far, or a nervous so far?
+[02:56] Marina Sokol: It's a so far. Ask me again in a couple of weeks and I'll tell you properly.
+[03:01] Andrew Helin: Do that, keep me posted. Okay, I think that's everything from me. Oh — wait, the office. Paul, second floor?
+[03:10] Paul Guryev: Vera and I went through it. Three years is expensive at the revenue we're running, I wouldn't sign that. We could try a year with an extension option.
+[03:19] Andrew Helin: Would the landlord even go for a year?
+[03:21] Paul Guryev: No idea, somebody has to ask him. That was Vera's to do and she's on vacation.
+[03:26] Andrew Helin: Fine, that hangs until Wednesday as well. Okay, thanks everyone. Igor, stay a minute, I've got a separate Sentinel thing for you.

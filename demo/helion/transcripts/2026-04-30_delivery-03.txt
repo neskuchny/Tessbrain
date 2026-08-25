@@ -1,0 +1,40 @@
+Meeting: Delivery review by account
+Date: 2026-04-30
+Duration: 5 min
+Participants: Igor Vatulin, Annie Lebedev, Marina Sokol
+---
+
+[00:00] Igor Vatulin: Okay. First one of these without Kostya. We sent him off Friday, now we dig ourselves out.
+[00:08] Annie Lebedev: How was he, in the end? Did he go okay?
+[00:11] Igor Vatulin: Fine, friendly, said he'd drop by sometime. But I've got one question for him and nobody left to answer it.
+[00:19] Annie Lebedev: Sentinel?
+[00:21] Igor Vatulin: Sentinel. I spent all last night looking for the write-up he promised on their billing — three layers, the surcharges, the exceptions, everything he walked us through in March. It's not there. Not in the documentation, not in the tickets, nowhere.
+[00:38] Annie Lebedev: He said he was opening himself a ticket for end of April.
+[00:42] Igor Vatulin: He did. The ticket exists. Says in progress. I opened it — it's empty inside.
+[00:49] Marina Sokol: Could he have put it in personal notes somewhere? He's that kind of person, he'd use a paper notebook.
+[00:56] Igor Vatulin: He could have. I'll ask him, but he's not our employee now, so it's a favor, not an obligation.
+[01:04] Annie Lebedev: I remember some of it. Not all — I was mostly just listening — but the rounding at every step, and the order of the surcharges, region then the property ones then channel, that stuck with me because it struck me as strange at the time.
+[01:20] Igor Vatulin: Write down what you remember. Right now, today, before it goes. Anything at all.
+[01:26] Annie Lebedev: Okay, I'll sit down after this.
+[01:29] Igor Vatulin: There were the manual exceptions too, nine of them or so, kept by their pricing analyst. I've forgotten her name.
+[01:37] Annie Lebedev: That part I don't have at all. Kostya explained that separately and I'd tuned out — I was heads down on the data marts right then.
+[01:46] Igor Vatulin: Then that part's just gone. Fine. Lesson for me: from now on, after a meeting like that, we ask for it in writing the same day, straight into the chat. Not "open yourself a ticket."
+[02:00] Marina Sokol: Makes sense.
+[02:02] Igor Vatulin: There was something on Foodline too — paging the export fifty at a time so it doesn't drag across two hundred and forty locations. Also written down nowhere. I checked the config, you can see the setting, but why fifty specifically, no.
+[02:19] Annie Lebedev: That one you could reconstruct if you sat with it. It just takes time.
+[02:24] Igor Vatulin: I'll open a ticket. It's not on fire the way Sentinel is.
+[02:29] Annie Lebedev: On Sentinel, by the way — multi-rate's done. Config's in, history's recomputed, I ran it yesterday across the whole period from November, no gaps.
+[02:41] Igor Vatulin: Good. Something today without a surprise in it. Thanks, Annie — honestly, you're carrying more right now than one person should be.
+[02:50] Annie Lebedev: Managing so far.
+[02:52] Igor Vatulin: Marina, how's the VPN into Sentinel? No more drops?
+[02:57] Marina Sokol: No more drops. It's been quiet.
+[03:00] Igor Vatulin: Good. Oh — and the room's booked over us at half past, so if we get kicked out, that's why.
+[03:07] Marina Sokol: We won't need it.
+[03:09] Igor Vatulin: Probably not. One more thing while I think of it — I'm going to have to pick up Titan at some point, once that integration deal actually closes. Kostya had the banking background. I've mostly done insurance and retail, so I'll be learning it from scratch.
+[03:26] Annie Lebedev: Ask Dmitri about the API ahead of time, while you're all still waiting on access. At least you'll have the context by the time it lands on you.
+[03:35] Igor Vatulin: Good thought. I'll ask him. Right, anything else on Optima?
+[03:41] Marina Sokol: Optima's quiet. Still thinking about the training.
+[03:45] Igor Vatulin: Seven weeks of radio silence now.
+[03:47] Marina Sokol: They may not go for it at all.
+[03:50] Igor Vatulin: They may not. All right, thanks, everyone. Rough meeting, but a useful one. Annie — don't forget, write down what you remember. Today.
+[04:00] Annie Lebedev: Sitting down with it right now.

@@ -1,0 +1,23 @@
+Meeting: Client call — Titan Bank, launch date
+Date: 2026-03-23
+Duration: 3 min
+Participants: Nick Frolov, Olivia Reuter (Helion); Sergey Volkov — SVP, Data & Analytics, Titan Bank
+---
+
+[00:00] Nick Frolov: Sergey, good afternoon. I've got Olivia on with me — she runs the commercial side for us.
+[00:07] Sergey Volkov: Afternoon, Olivia.
+[00:09] Olivia Reuter: Hi Sergey, good to finally put a voice to the name. Nick tells me you need certainty on timing, so let's not dance around it.
+[00:18] Sergey Volkov: Let's not. Our procurement committee meets in May. If I don't have a fixed launch date by then, the module doesn't make it into this year's budget. And it doesn't slide to next year — without a date before the May committee it falls out of the budget entirely.
+[00:37] Olivia Reuter: Okay. That changes things, and thank you for saying it that plainly. Most people don't.
+[00:44] Sergey Volkov: There's no point in doing it the other way.
+[00:47] Olivia Reuter: Right. October 15. In production — not a pilot, not a preview.
+[00:53] Sergey Volkov: October 15. I need that in writing. My own finance people will ask me where the number came from, and I don't put verbal commitments into a budget line.
+[01:05] Olivia Reuter: You'll have it today.
+[01:07] Sergey Volkov: One more thing. Before it goes into production I want a demo on our data. Not a sample set, not some generic example — our numbers, our branches.
+[01:18] Olivia Reuter: We can do that, and it'll be well ahead of October. End of the summer.
+[01:24] Sergey Volkov: End of summer works. Then I'll take this to my side.
+[01:29] Nick Frolov: Thanks, Sergey. Sorry — one housekeeping thing before you go. Is your mailroom still the right place for hard copies? Somebody said you moved floors.
+[01:39] Sergey Volkov: Same building, different floor. The mailroom sorts it out.
+[01:44] Nick Frolov: Perfect.
+[01:46] Sergey Volkov: Send the letter today, Olivia. Today, not Friday.
+[01:50] Olivia Reuter: Today.

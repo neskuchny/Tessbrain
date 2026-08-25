@@ -1,0 +1,22 @@
+Meeting: Client call — Titan Bank, reporting module status
+Date: 2026-03-09
+Duration: 3 min
+Participants: Nick Frolov (Helion); Sergey Volkov — SVP, Data & Analytics, Titan Bank
+---
+
+[00:00] Nick Frolov: Sergey, hi, it's Nick — can you hear me okay? My headset's been dropping out all morning.
+[00:05] Sergey Volkov: I hear you fine.
+[00:07] Nick Frolov: Great. Quick one, then — I wanted to sync up on where we are with the reporting module.
+[00:13] Sergey Volkov: I've got a question for you before you get to yours. Are you building that module this year or not?
+[00:21] Nick Frolov: We are. I'm pretty confident we are — we're nailing the details down with product this week.
+[00:28] Sergey Volkov: "Pretty confident" doesn't work for me. Look, this is year three for me with you people. I have zero complaints about what's already running. Zero. But if the answer on reporting is "pretty," then I start looking at what else is on the market.
+[00:45] Nick Frolov: That's fair. I get it.
+[00:47] Sergey Volkov: Do you? Because I've been hearing "we're on it" since the winter.
+[00:52] Nick Frolov: Give me a week. I'll come back to you with something concrete, not a feeling.
+[00:58] Sergey Volkov: A week's fine. But understand me — if it doesn't land this year, we'll start looking elsewhere. I'm not going to wait forever for the sake of a nice relationship.
+[01:10] Nick Frolov: Understood. Loud and clear. I'll come back with a date.
+[01:14] Sergey Volkov: With a date. Not a range, not a quarter.
+[01:18] Nick Frolov: With a date. And hey, while I've got you — is anyone from your side going to the fintech thing in May? Our marketing lead keeps asking me.
+[01:27] Sergey Volkov: Somebody from us, probably. Not me. I'll be honest with you, I don't love those.
+[01:33] Nick Frolov: Fair enough. Alright — a week.
+[01:36] Sergey Volkov: I'll wait for it.

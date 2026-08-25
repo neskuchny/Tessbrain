@@ -1,0 +1,71 @@
+Meeting: Leadership standup
+Date: 2026-03-10
+Duration: 8 min
+Participants: Andrew Helin, Paul Guryev, Olivia Reuter, Dmitri Tsarev, Timur Akhmetov, Igor Vatulin, Sveta Kim, Vera Dorn, Marina Sokol, Annie Lebedev
+---
+
+[00:00] Andrew Helin: Okay — everybody here? Marina, can we hear you?
+[00:04] Marina Sokol: You can hear me. I'm on my phone, hang on, let me move somewhere quieter.
+[00:09] Andrew Helin: Fine. Three things today — February, Pulse 2.0, Titan. Plus the floor thing, Vera's got that at the end.
+[00:18] Vera Dorn: Two minutes on the floor. That's all I need.
+[00:21] Andrew Helin: Perfect. Paul, February.
+[00:24] Paul Guryev: February closed at one point two nine. Costs one point two five five. So we're up thirty-five grand, and that's only because we spread the December bonus across two months.
+[00:38] Andrew Helin: So basically flat.
+[00:40] Paul Guryev: A hair above flat. And January was negative, I'll remind everyone — one point one in, one and a quarter out. So February's fine by comparison.
+[00:52] Andrew Helin: January's always negative. That's not news.
+[00:55] Paul Guryev: It's not news, no. It's also the third year running we don't put it in the plan and then act surprised in February.
+[01:02] Andrew Helin: Noted. Timur — Pulse 2.0.
+[01:06] Timur Akhmetov: Yeah. We finished costing it out. It comes to six hundred K for the whole version — that's dev, QA, infrastructure for the new data marts, and the reporting module rewrite.
+[01:22] Andrew Helin: Six hundred K. What was the number we were throwing around in January?
+[01:26] Timur Akhmetov: January was a guess off the top of my head, no infrastructure in it at all. This one's actually costed — $600K, line by line. I can send the sheet around.
+[01:35] Dmitri Tsarev: Send it.
+[01:37] Andrew Helin: And six hundred K buys us what, in terms of timing?
+[01:41] Timur Akhmetov: With the team we've got — end of year. The bulk of it lands in Q2 and Q3.
+[01:49] Andrew Helin: Okay. We're approving six hundred K. Paul, put it in.
+[01:53] Paul Guryev: I'll put it in, but I want it recorded as a budget, not an estimate. Otherwise in two months somebody's saying seven fifty — and I'm making that number up, that's the whole point — and nobody remembers where it came from.
+[02:05] Andrew Helin: Write it as a budget.
+[02:08] Olivia Reuter: Can I do Titan before people scatter?
+[02:11] Andrew Helin: Go.
+[02:13] Olivia Reuter: Titan's pushing. Volkov told me flat out last week — if they don't get the reporting module this year, they'll go look at other vendors. That's the second time he's said it, and the second time I've given him a non-answer.
+[02:31] Andrew Helin: Are we giving it to them this year?
+[02:34] Olivia Reuter: That is exactly what I came here to find out.
+[02:37] Timur Akhmetov: The reporting module's part of 2.0. We've broken it out into the release plan, I'm finalizing that at Monday's sync.
+[02:47] Olivia Reuter: I need a date, Timur. Not "it's in the release plan" — a date I can say out loud to Volkov.
+[02:54] Timur Akhmetov: After Monday I'll have one for you.
+[02:57] Olivia Reuter: Okay. But I'll be straight with you, I can't keep dodging much longer. He's not the kind of guy who waits politely.
+[03:06] Andrew Helin: Fine — after the sync. Dmitri, why so quiet?
+[03:11] Dmitri Tsarev: Listening.
+[03:13] Andrew Helin: Well, keep listening then. Okay, what else — right, the data marts. Igor, you had a question?
+[03:21] Igor Vatulin: I do, on Sentinel. They've got a new rate structure and I honestly can't tell how it maps onto ours. Can we even calculate across several rate tables at once the way it's built now?
+[03:36] Andrew Helin: Marina?
+[03:38] Marina Sokol: Uh... somebody'd have to go look. I haven't been in there in a long time, I'm all Pulse right now.
+[03:45] Timur Akhmetov: Annie, weren't you up to your elbows in that?
+[03:48] Annie Lebedev: Yeah. We can, but not directly. The aggregate data mart is built on a single rate key right now — if a customer has more than one, they collapse into one and the totals come out wrong. I caught that on Optima Group back in January. You get around it with a second grouping level, but it has to be written into the data mart config explicitly, it won't pick it up on its own. For Sentinel I'd build multi-rate in from day one, it's not a one-off for them.
+[04:20] Igor Vatulin: And how long is that?
+[04:22] Annie Lebedev: Day, maybe two, if it's just config. If we have to recalculate history it's a week, because that's rebuilding aggregates across the whole period.
+[04:32] Igor Vatulin: Got it. Thanks, I'm writing that down.
+[04:35] Andrew Helin: See? Everything's quick when you ask the right person. Moving on.
+[04:42] Sveta Kim: Mine's short. I'm putting together the fall campaign and I need to know what we're building it around. If it's 2.0 and reporting, that's one scenario. If it's not, it's a completely different one.
+[04:57] Andrew Helin: Build it around 2.0.
+[05:00] Sveta Kim: Then I need a launch date to cost the media plan.
+[05:04] Timur Akhmetov: Again — after Monday.
+[05:07] Sveta Kim: Fine, except I'm defending the campaign budget on Friday. So I need it Thursday.
+[05:13] Andrew Helin: Timur. Thursday.
+[05:15] Timur Akhmetov: Got it.
+[05:18] Vera Dorn: Can I do the floor now? Second floor frees up in April, the landlord's offering us the whole thing at a discount — the catch is a three-year lease.
+[05:32] Paul Guryev: Three years is a lot.
+[05:34] Vera Dorn: I know. I'm not saying sign it, I'm saying let's look at it. We're genuinely out of room — dev's got three people for every four desks.
+[05:45] Marina Sokol: That's true, actually. Two of my new hires are sitting in a conference room.
+[05:50] Andrew Helin: You and Paul run the numbers, we'll come back to it in two weeks.
+[05:55] Vera Dorn: Okay.
+[05:57] Andrew Helin: Anything else? Marina — how's it going over there generally, are you keeping up?
+[06:03] Marina Sokol: We're keeping up. We closed the sprint clean, with a little room to spare. The rhythm's good right now — I've got both new people pulling their own tickets already. Pulse 2.0 starts next sprint, it's all laid out.
+[06:20] Andrew Helin: Great. If only it were always like this.
+[06:23] Dmitri Tsarev: Until the load goes up.
+[06:26] Andrew Helin: Dmitri, you are a ray of sunshine today.
+[06:29] Dmitri Tsarev: I'm only saying we're at planned load right now, and Titan plus 2.0 is not planned load.
+[06:37] Andrew Helin: So work it out at the sync. Okay, thanks everyone. Oh — hang on, the conference in April, who's going?
+[06:45] Sveta Kim: Me, and probably Timur.
+[06:48] Timur Akhmetov: If there's budget.
+[06:50] Paul Guryev: There's budget. For two people. Not five.
+[06:54] Andrew Helin: Two. Okay, we're done.

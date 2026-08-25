@@ -1,0 +1,22 @@
+Meeting: Client call — Titan Bank, API access
+Date: 2026-04-02
+Duration: 4 min
+Participants: Nick Frolov (Helion); Sergey Volkov — SVP, Data & Analytics, Titan Bank
+---
+
+[00:00] Nick Frolov: Sergey, afternoon. Have you got ten minutes, or did I catch you between things?
+[00:05] Sergey Volkov: Ten minutes is roughly what I have.
+[00:08] Nick Frolov: That'll do. I wanted to chase the API access — we still don't have the test environment, and our engineers need it before they can start the integration at all.
+[00:19] Sergey Volkov: I know. Your technical guy already sent me something about it.
+[00:24] Nick Frolov: Dmitri, our CTO. He asks me about it every week.
+[00:29] Sergey Volkov: Then let me save him one week of asking. This isn't me being slow. This is our security process. Any outside access to a banking API here goes through three approvals on our side — the architect, then security, then legal reviews the access agreement. I filed the request in January myself. It's still somewhere between the second one and the third.
+[00:53] Nick Frolov: Is there any way to speed it up?
+[00:56] Sergey Volkov: One way. I walk over and talk to the person instead of waiting in the queue. I'll do it. But I'll be honest with you — I've got plenty of my own priorities, and the reporting module matters more to me right now than untangling your API access does.
+[01:14] Nick Frolov: I hear you. Would it help if we sent a formal letter? Business case, why it's time-critical, signed off on our side.
+[01:23] Sergey Volkov: It might, actually. Send it and I'll attach a note from me.
+[01:28] Nick Frolov: We'll get it over today. One thing — last time we sent a PDF it apparently landed in your spam. Anyone I should copy?
+[01:37] Sergey Volkov: Copy my assistant. Anything that goes only to me sits for a day.
+[01:43] Nick Frolov: Noted.
+[01:45] Sergey Volkov: And I'm telling you now so nobody's surprised later — this could take another month. It always goes like this with security. That's not in my power and it's not in yours either, honestly.
+[01:58] Nick Frolov: Understood. I'll flag it internally.
+[02:01] Sergey Volkov: Flag it wherever you like. Just don't build a plan that assumes I can make it move faster than it moves.
