@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@google/genai": "^1.15.0",
-    "@xyflow/react": "^12.8.0",
+    "@xyflow/react": "12.11.3",
     "clsx": "^2.1.1",
     "konva": "^9.3.22",
     "lucide-react": "^0.400.0",
