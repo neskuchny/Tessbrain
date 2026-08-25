@@ -13,13 +13,10 @@ name: security
 on:
   pull_request:
     paths:
-      - "tessent_brain/requirements*.txt"
-      - "tessent_brain/pyproject.toml"
-      - "alfa_asynk_meetflow/requirements*.txt"
-      - "mark001_async/requirements*.txt"
-      - "sima-app/package*.json"
-      - "tessent_brain/frontend/package*.json"
-      - "tessent_brain/deploy/**"
+      - "requirements*.txt"
+      - "pyproject.toml"
+      - "frontend/package*.json"
+      - "deploy/**"
       - ".github/workflows/security.yml"
   schedule:
     # Каждый день в 04:00 UTC — после nightly_consolidation, до утренней
@@ -33,12 +30,8 @@ permissions:
 
 jobs:
   pip-audit:
-    name: pip-audit (${{ matrix.path }})
+    name: pip-audit (core)
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        path: [tessent_brain, alfa_asynk_meetflow, mark001_async]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
@@ -46,30 +39,24 @@ jobs:
           python-version: "3.11"
       - name: Install pip-audit
         run: pip install --quiet pip-audit
-      - name: Run pip-audit (${{ matrix.path }})
+      - name: Run pip-audit (core)
         continue-on-error: true
         run: |
-          if [ -f "${{ matrix.path }}/requirements.txt" ]; then
-            pip-audit -r "${{ matrix.path }}/requirements.txt" \
-              --format json --output pip-audit-${{ matrix.path }}.json || true
-            pip-audit -r "${{ matrix.path }}/requirements.txt" \
-              --strict || echo "::warning::pip-audit found CVEs in ${{ matrix.path }}"
-          fi
+          pip-audit -r requirements.txt \
+            --format json --output pip-audit-core.json || true
+          pip-audit -r requirements.txt \
+            --strict || echo "::warning::pip-audit found CVEs in requirements.txt"
       - name: Upload pip-audit report
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: pip-audit-${{ matrix.path }}
-          path: pip-audit-${{ matrix.path }}.json
+          name: pip-audit-core
+          path: pip-audit-core.json
           if-no-files-found: ignore
 
   npm-audit:
-    name: npm-audit (${{ matrix.path }})
+    name: npm-audit (frontend)
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        path: [sima-app, tessent_brain/frontend]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v6
@@ -77,18 +64,16 @@ jobs:
           node-version: "20"
       - name: npm audit
         continue-on-error: true
-        working-directory: ${{ matrix.path }}
+        working-directory: frontend
         run: |
-          if [ -f package.json ]; then
-            npm audit --audit-level=high --json > ../npm-audit-$(basename ${{ matrix.path }}).json || true
-            npm audit --audit-level=high \
-              || echo "::warning::npm audit found high-severity CVEs in ${{ matrix.path }}"
-          fi
+          npm audit --audit-level=high --json > ../npm-audit-frontend.json || true
+          npm audit --audit-level=high \
+            || echo "::warning::npm audit found high-severity CVEs in frontend"
       - name: Upload npm-audit report
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: npm-audit-${{ matrix.path }}
+          name: npm-audit-frontend
           path: npm-audit-*.json
           if-no-files-found: ignore
 
@@ -140,10 +125,6 @@ jobs:
   pip-audit-critical:
     name: pip-audit critical (hard-fail)
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        path: [tessent_brain, alfa_asynk_meetflow, mark001_async]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
@@ -153,10 +134,7 @@ jobs:
         run: pip install --quiet pip-audit
       - name: Fail only on CRITICAL/HIGH CVEs
         run: |
-          if [ ! -f "${{ matrix.path }}/requirements.txt" ]; then
-            echo "no requirements.txt for ${{ matrix.path }} — skipping"
-            exit 0
-          fi
+
           # pip-audit не имеет --severity флага, пропускаем JSON через jq.
           #
           # Точечные исключения (гейт ниже валит ЛЮБУЮ unfixed-уязвимость,
@@ -168,9 +146,17 @@ jobs:
           #   исполняет код). В нашем коде torch.jit.script на внешнем
           #   вводе не вызывается (torch — транзитивная ML-зависимость
           #   эмбеддингов). Пересмотреть, когда появится fixed release.
-          pip-audit -r "${{ matrix.path }}/requirements.txt" \
+          # - CVE-2024-23342 / PYSEC-2026-1325 / GHSA-wj6h-64fc-37mp (ecdsa,
+          #   Minerva timing attack): fix-версии НЕ СУЩЕСТВУЕТ — мейнтейнеры
+          #   python-ecdsa считают side-channel вне модели угроз (pure-Python
+          #   не бывает constant-time). У нас ecdsa — транзитивная зависимость
+          #   python-jose[cryptography]; сама подпись идёт через backend
+          #   cryptography. Пересмотреть, если появится fixed release.
+          pip-audit -r requirements.txt \
             --ignore-vuln CVE-2025-3000 \
             --ignore-vuln GHSA-rrmf-rvhw-rf47 \
+            --ignore-vuln PYSEC-2026-1325 \
+            --ignore-vuln CVE-2024-23342 \
             --format json --output audit.json || true
           if [ ! -f audit.json ]; then exit 0; fi
           # Считаем CRITICAL findings — если > 0, fail.
@@ -194,10 +180,10 @@ jobs:
           print(n)
           ")
           if [ "${critical:-0}" -gt 0 ]; then
-              echo "::error::Found ${critical} unfixed vulnerabilities in ${{ matrix.path }} — review pip-audit-${{ matrix.path }} artifact"
+              echo "::error::Found ${critical} unfixed vulnerabilities — review pip-audit-core artifact"
               exit 1
           fi
-          echo "OK: no unfixed CVEs in ${{ matrix.path }}"
+          echo "OK: no unfixed CVEs in requirements.txt"
 
   # === SBOM generation (W38) ============================================
   # Software Bill of Materials — supply-chain compliance артефакт.

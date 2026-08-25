@@ -32,9 +32,7 @@ jobs:
           python-version: '3.11'
 
       - name: Контрактные тесты (без ключей и сети)
-        working-directory: tessent_brain
         run: python scripts/run_offline_tests.py
 
       - name: Проводка гейта качества (smoke, не оценка модели)
-        working-directory: tessent_brain
         run: python -m backend.core.eval

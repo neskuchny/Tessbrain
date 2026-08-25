@@ -8,6 +8,11 @@
 
 🇬🇧 [English version](README.md) · 🌐 [tessent.ai](https://tessent.ai/) · 🏢 [synlabs.pro](https://synlabs.pro/)
 
+[![CI](https://github.com/neskuchny/Tessbrain/actions/workflows/ci.yml/badge.svg)](https://github.com/neskuchny/Tessbrain/actions/workflows/ci.yml)
+[![Offline checks](https://github.com/neskuchny/Tessbrain/actions/workflows/offline-checks.yml/badge.svg)](https://github.com/neskuchny/Tessbrain/actions/workflows/offline-checks.yml)
+![License](https://img.shields.io/badge/license-Apache--2.0-blue)
+![Python](https://img.shields.io/badge/python-3.11+-3776AB)
+
 [![Смотреть демо](https://img.youtube.com/vi/6LE8CYxQH7w/maxresdefault.jpg)](https://youtu.be/6LE8CYxQH7w)
 
 *▶ 3-минутное демо на YouTube*
@@ -37,6 +42,18 @@ Tessbrain занимает в этой нише свою поднишу: **па�
 В основании — типизированный граф знаний, выросший из разговоров сам, без
 анкет: у каждого факта есть **источник, дата и уверенность**, а доступ
 режется **до модели**.
+
+Один контур — от разговора до работы и обратно:
+
+```mermaid
+flowchart LR
+    SRC["Встречи · чаты<br/>документы · данные"] --> PARSE["Разбор<br/>~30 извлекателей"]
+    PARSE --> GRAPH[("Граф компании<br/>33 типа объектов · 48 связей<br/>факт = источник + дата + уверенность")]
+    GRAPH -->|"срез по роли — до модели"| THINK["Думает<br/>рассинхрон · пробелы · опыт"]
+    GRAPH -->|"срез по роли — до модели"| WORK["Делает<br/>отчёты · документы · симуляции<br/>автоматизации · ТЗ · шина"]
+    THINK --> WORK
+    WORK -->|"исходы — обратно в память"| GRAPH
+```
 
 ## Помнит: граф с происхождением каждого факта
 
@@ -118,6 +135,12 @@ Tessbrain занимает в этой нише свою поднишу: **па�
 · [расчёт стоимости](https://neskuchny.github.io/Tessbrain/share/ru/tessent_cost.html)
 · [конкурентная карта](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html)
 
+| [![Карта возможностей](docs/assets/previews/ru/capabilities.png)](https://neskuchny.github.io/Tessbrain/share/ru/tessent_capabilities.html) | [![Схема контура](docs/assets/previews/ru/map.png)](https://neskuchny.github.io/Tessbrain/share/ru/tessent_map.html) |
+|:---:|:---:|
+| **[Карта возможностей →](https://neskuchny.github.io/Tessbrain/share/ru/tessent_capabilities.html)** | **[Схема контура →](https://neskuchny.github.io/Tessbrain/share/ru/tessent_map.html)** |
+| [![Статья](docs/assets/previews/ru/article.png)](https://neskuchny.github.io/Tessbrain/share/ru/tessent_article.html) | [![Расчёт стоимости](docs/assets/previews/ru/cost.png)](https://neskuchny.github.io/Tessbrain/share/ru/tessent_cost.html) |
+| **[Что такое Tessbrain →](https://neskuchny.github.io/Tessbrain/share/ru/tessent_article.html)** | **[Расчёт стоимости →](https://neskuchny.github.io/Tessbrain/share/ru/tessent_cost.html)** |
+
 ---
 
 ## Чем отличаемся
@@ -137,7 +160,9 @@ Tessbrain — **один граф под всеми этими работами*
 системе нет ни у одного из восьми разобранных игроков — а симуляции клиентов
 и планёрки из слепков нет вообще ни у кого. Поимённое сравнение — включая
 честные строки «где мы слабее» — в
-[конкурентной карте](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html).
+[конкурентной карте](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html):
+
+[![Конкурентная карта: рынок «цифрового мозга компании»](docs/assets/previews/ru/competitivemap.png)](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html)
 
 ---
 

@@ -8,6 +8,11 @@ reports, documents, automations, and specs for AI executors.
 
 🇷🇺 [Русская версия](README.ru.md) · 🌐 [tessent.ai](https://tessent.ai/en) · 🏢 [synlabs.pro](https://synlabs.pro/)
 
+[![CI](https://github.com/neskuchny/Tessbrain/actions/workflows/ci.yml/badge.svg)](https://github.com/neskuchny/Tessbrain/actions/workflows/ci.yml)
+[![Offline checks](https://github.com/neskuchny/Tessbrain/actions/workflows/offline-checks.yml/badge.svg)](https://github.com/neskuchny/Tessbrain/actions/workflows/offline-checks.yml)
+![License](https://img.shields.io/badge/license-Apache--2.0-blue)
+![Python](https://img.shields.io/badge/python-3.11+-3776AB)
+
 [![Watch the demo](https://img.youtube.com/vi/6LE8CYxQH7w/maxresdefault.jpg)](https://youtu.be/6LE8CYxQH7w)
 
 *▶ 3-minute demo on YouTube*
@@ -40,6 +45,18 @@ a system that helps run the company on its own data.
 Underneath is a typed knowledge graph that grows out of conversations by
 itself, no forms to fill: every fact carries its **source, date and
 confidence**, and access control is enforced **before the model**.
+
+One loop — from conversation to work and back:
+
+```mermaid
+flowchart LR
+    SRC["Meetings · chats<br/>documents · data"] --> PARSE["Parsing<br/>~30 extractors"]
+    PARSE --> GRAPH[("Company graph<br/>33 object types · 48 link types<br/>fact = source + date + confidence")]
+    GRAPH -->|"role slice — before the model"| THINK["Thinks<br/>divergence · gaps · experience"]
+    GRAPH -->|"role slice — before the model"| WORK["Does<br/>reports · documents · simulations<br/>automations · specs · bus"]
+    THINK --> WORK
+    WORK -->|"outcomes — back into memory"| GRAPH
+```
 
 ## It remembers: a graph with provenance on every fact
 
@@ -126,6 +143,12 @@ confidence**, and access control is enforced **before the model**.
 · [cost calculator](https://neskuchny.github.io/Tessbrain/share/en/tessent_cost.html)
 · [competitive map (RU)](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html)
 
+| [![Capability map](docs/assets/previews/en/capabilities.png)](https://neskuchny.github.io/Tessbrain/share/en/tessent_capabilities.html) | [![System diagram](docs/assets/previews/en/map.png)](https://neskuchny.github.io/Tessbrain/share/en/tessent_map.html) |
+|:---:|:---:|
+| **[Capability map →](https://neskuchny.github.io/Tessbrain/share/en/tessent_capabilities.html)** | **[System diagram →](https://neskuchny.github.io/Tessbrain/share/en/tessent_map.html)** |
+| [![Article](docs/assets/previews/en/article.png)](https://neskuchny.github.io/Tessbrain/share/en/tessent_article.html) | [![Cost calculator](docs/assets/previews/en/cost.png)](https://neskuchny.github.io/Tessbrain/share/en/tessent_cost.html) |
+| **[What Tessbrain is →](https://neskuchny.github.io/Tessbrain/share/en/tessent_article.html)** | **[Cost calculator →](https://neskuchny.github.io/Tessbrain/share/en/tessent_cost.html)** |
+
 ---
 
 ## How it differs
@@ -146,7 +169,9 @@ profiles + simulations + boardroom sessions + executing agents" in one
 system — and client simulation with profile-based boardroom sessions we
 found at nobody at all. The name-by-name comparison — including honest
 "where we are weaker" rows — is in the
-[competitive map](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html) (RU).
+[competitive map](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html) (RU):
+
+[![Competitive map: the company-brain market](docs/assets/previews/ru/competitivemap.png)](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html)
 
 ---
 

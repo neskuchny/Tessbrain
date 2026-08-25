@@ -30,7 +30,6 @@ jobs:
         with:
           python-version: "3.11"
       - name: Run eval selfcheck (must exit 0)
-        working-directory: tessent_brain
         run: |
           # Без EVAL_LLM_ENABLED — проверяем проводку golden→harness→
           # runner→exit без ключей и тяжёлых зависимостей.
@@ -53,7 +52,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install pydantic pydantic-settings structlog httpx tenacity
       - name: Run eval gate on real LLM
-        working-directory: tessent_brain
         env:
           EVAL_LLM_ENABLED: "1"
           # Прокиньте ключ активного LLM-профиля проекта в этот env
