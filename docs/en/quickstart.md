@@ -29,6 +29,14 @@ source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+> **If `pip install` fails on `ag2`** — the agent framework is a heavy optional
+> dependency and its wheels lag behind new Python releases. The app starts
+> without it: memory, search and chat work, and the agent features log a
+> warning and stay off. Check with
+> `python -c "import backend.core.think as t; print(t.AG2_AVAILABLE)"`.
+> To enable them later: `pip install "ag2[openai,gemini]>=0.9"`.
+> Python 3.11 and 3.12 are the tested versions.
+
 Optional, only if you want the browser-driving Web Operator:
 
 ```bash
