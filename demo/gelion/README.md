@@ -77,6 +77,25 @@ python3 scripts/gen_data.py        # без изменений: CRM + финта
 python3 scripts/validate_corpus.py # теперь 7 именованных проверок (A/B/C/E/G/H) + 2 справочных (D/F)
 ```
 
+**Короткий путь — корпус лежит уже извлечённым.** В `extracted/` — полный
+выход конвейера по каждой встрече (решения, задачи, участники, KPI,
+профили), в `snapshot/` — готовое zero-infra-хранилище (граф + векторный
+индекс с посчитанными эмбеддингами). Два способа:
+
+```bash
+# залить извлечения в ваше хранилище — без LLM-вызовов и без ключа:
+python scripts/seed_demo.py --corpus demo/gelion
+
+# или мгновенно: скопировать готовое хранилище и поднять API на нём
+mkdir -p data && cp demo/gelion/snapshot/*.json data/
+USE_NETWORKX=true USE_QDRANT=false python -m backend.main
+```
+
+Оба — артефакты сборки: при изменении извлекателей перегенерируйте их
+командой `python scripts/ingest_data.py --source files --target
+demo/gelion/transcripts --group public --dump-extractions
+demo/gelion/extracted`. Источник истины — `transcripts/` + `ground-truth.yaml`.
+
 ## Что теперь можно тестировать только на развёрнутой системе
 
 - **Q10** — гриф: тот же вопрос от роли стажёра и от роли CEO, сравнить ответы

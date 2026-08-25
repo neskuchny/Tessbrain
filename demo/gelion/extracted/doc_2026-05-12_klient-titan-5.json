@@ -1,0 +1,4380 @@
+{
+  "meeting": {
+    "id": "doc_2026-05-12_klient-titan-5",
+    "transcription_text": "Встреча: Клиентский звонок — Титан-Банк, сверка перед комитетом\nДата: 2026-05-12\nДлительность: 11 мин\nУчастники: Никита Фролов, Ольга Реутова (со стороны «Гелиона»); Сергей Волков — директор по закупкам, «Титан-Банк»\n---\n\n[00:00] Никита Фролов: Сергей Игоревич, добрый день, на связи с Ольгой, хотели свериться перед комитетом.\n[00:06] Сергей Волков: Добрый день. Кстати, вовремя — у меня к вам вопрос, если честно. Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.\n[00:19] Ольга Реутова: Три месяца на банковскую интеграцию с нуля — я бы аккуратно к этому отнеслась, Сергей Игоревич.\n[00:26] Сергей Волков: Я тоже аккуратно отношусь, поэтому и говорю вам, а не молчу и не ухожу тихо. Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу, если у нас с вами будет затык.\n[00:39] Ольга Реутова: Понимаю. У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого. Но услышала, спасибо за честность.\n[00:52] Сергей Волков: Я не угрожаю, я просто хочу, чтобы к маю у меня было что показать, кроме «мы работаем над этим».\n[00:59] Никита Фролов: К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.\n[01:06] Сергей Волков: Надеюсь тоже, это ведь и моя головная боль, не только ваша. Хорошо, буду ждать, что покажете к комитету.\n",
+    "summary": "",
+    "date": "2026-05-12",
+    "title": "2026-05-12_klient-titan-5"
+  },
+  "access_group": "public",
+  "source_file": "2026-05-12_klient-titan-5.txt",
+  "results": {
+    "meeting_id": "meeting_20260825_180552",
+    "status": "completed",
+    "processing_timestamp": "2026-08-25T18:06:31.723805+00:00",
+    "processing_time_seconds": 39.154778,
+    "agent_errors": {},
+    "metadata": {
+      "orchestrator": "Capture Orchestrator",
+      "version": "2.0.0",
+      "agents_used": [
+        "decisions",
+        "tasks",
+        "participants",
+        "entities",
+        "kpis",
+        "opinions",
+        "ideas",
+        "project_statuses",
+        "enhanced_kpis",
+        "fact_checks",
+        "cogni_profiles"
+      ],
+      "agents_failed": [],
+      "context": {
+        "id": "doc_2026-05-12_klient-titan-5",
+        "transcription_text": "Встреча: Клиентский звонок — Титан-Банк, сверка перед комитетом\nДата: 2026-05-12\nДлительность: 11 мин\nУчастники: Никита Фролов, Ольга Реутова (со стороны «Гелиона»); Сергей Волков — директор по закупкам, «Титан-Банк»\n---\n\n[00:00] Никита Фролов: Сергей Игоревич, добрый день, на связи с Ольгой, хотели свериться перед комитетом.\n[00:06] Сергей Волков: Добрый день. Кстати, вовремя — у меня к вам вопрос, если честно. Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.\n[00:19] Ольга Реутова: Три месяца на банковскую интеграцию с нуля — я бы аккуратно к этому отнеслась, Сергей Игоревич.\n[00:26] Сергей Волков: Я тоже аккуратно отношусь, поэтому и говорю вам, а не молчу и не ухожу тихо. Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу, если у нас с вами будет затык.\n[00:39] Ольга Реутова: Понимаю. У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого. Но услышала, спасибо за честность.\n[00:52] Сергей Волков: Я не угрожаю, я просто хочу, чтобы к маю у меня было что показать, кроме «мы работаем над этим».\n[00:59] Никита Фролов: К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.\n[01:06] Сергей Волков: Надеюсь тоже, это ведь и моя головная боль, не только ваша. Хорошо, буду ждать, что покажете к комитету.\n",
+        "summary": "",
+        "date": "2026-05-12",
+        "title": "2026-05-12_klient-titan-5"
+      }
+    },
+    "decisions": [],
+    "tasks": [
+      {
+        "task_id": "task_1",
+        "title": "Показать прогресс по каркасу и статус доступа к API к комитету",
+        "description": "Подготовить прогресс по каркасу и решить вопрос с доступом к API для демонстрации на комитете к маю.",
+        "task_type": "action",
+        "assignee": {
+          "name": "Никита Фролов",
+          "role": "Представитель «Гелиона»"
+        },
+        "assignee_speaker": null,
+        "assignment_confidence": "high",
+        "needs_human_review": false,
+        "assigner": "Сергей Волков",
+        "priority": "high",
+        "status": "in_progress",
+        "deadline": {
+          "date": "2026-05",
+          "is_hard": true
+        },
+        "dependencies": [],
+        "related_decision": "",
+        "related_project": "Титан-Банк",
+        "acceptance_criteria": [
+          "Прогресс по каркасу показан",
+          "Решен вопрос с доступом к API"
+        ],
+        "blockers": [
+          "Доступ к API"
+        ],
+        "quote": "К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:05:53.988034+00:00",
+        "_agent": "TaskAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "task"
+      }
+    ],
+    "participants": [
+      {
+        "participant_id": "nikita_frolov",
+        "name": "Никита Фролов",
+        "normalized_name": "Никита Фролов",
+        "role": "",
+        "department": "Гелион",
+        "activity_level": "medium",
+        "participation_metrics": {
+          "speaking_turns": 2,
+          "decisions_involved": 0,
+          "tasks_assigned": 0,
+          "questions_asked": 0
+        },
+        "expertise_areas": [],
+        "communication_style": {
+          "style": "collaborative",
+          "traits": [
+            "организатор встречи",
+            "информирует о прогрессе"
+          ]
+        },
+        "relationships": [],
+        "key_contributions": [
+          "Инициировал сверку перед комитетом",
+          "Рассказал о планах по каркасу и API к маю"
+        ],
+        "sentiment": "neutral",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:05:54.903871+00:00",
+        "_agent": "ParticipantAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "participant"
+      },
+      {
+        "participant_id": "sergey_volkov",
+        "name": "Сергей Волков",
+        "normalized_name": "Сергей Волков",
+        "role": "директор по закупкам",
+        "department": "Титан-Банк",
+        "activity_level": "high",
+        "participation_metrics": {
+          "speaking_turns": 4,
+          "decisions_involved": 1,
+          "tasks_assigned": 0,
+          "questions_asked": 1
+        },
+        "expertise_areas": [],
+        "communication_style": {
+          "style": "analytical",
+          "traits": [
+            "честный",
+            "требовательный к срокам",
+            "обозначает альтернативы"
+          ]
+        },
+        "relationships": [],
+        "key_contributions": [
+          "Предупредил об альтернативном предложении от конкурентов",
+          "Обозначил требования к отчетности перед комитетом"
+        ],
+        "sentiment": "neutral",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:05:54.903889+00:00",
+        "_agent": "ParticipantAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "participant"
+      },
+      {
+        "participant_id": "olga_reutova",
+        "name": "Ольга Реутова",
+        "normalized_name": "Ольга Реутова",
+        "role": "",
+        "department": "Гелион",
+        "activity_level": "medium",
+        "participation_metrics": {
+          "speaking_turns": 2,
+          "decisions_involved": 0,
+          "tasks_assigned": 0,
+          "questions_asked": 0
+        },
+        "expertise_areas": [
+          "банковская интеграция"
+        ],
+        "communication_style": {
+          "style": "analytical",
+          "traits": [
+            "осторожная",
+            "уверенная в продукте компании"
+          ]
+        },
+        "relationships": [],
+        "key_contributions": [
+          "Оценила риски трехмесячной интеграции с нуля",
+          "Аргументировала ценность текущего продукта с трехлетней историей"
+        ],
+        "sentiment": "neutral",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:05:54.903896+00:00",
+        "_agent": "ParticipantAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "participant"
+      }
+    ],
+    "entities": [
+      {
+        "entity_id": "titan_bank",
+        "entity_type": "organization",
+        "name": "Титан-Банк",
+        "description": "Банк, являющийся клиентом компании «Гелион»",
+        "attributes": {
+          "type": "client"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:05:54.428058+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "gelion",
+        "entity_type": "company",
+        "name": "Гелион",
+        "description": "Компания-разработчик, предоставляющая рабочий продукт и банковскую интеграцию",
+        "attributes": {},
+        "relationships": [
+          {
+            "target_type": "organization",
+            "target_name": "Титан-Банк",
+            "relation_type": "related_to"
+          }
+        ],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:05:54.428070+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "analitika_plus",
+        "entity_type": "organization",
+        "name": "Аналитики Плюс",
+        "description": "Сторонняя компания, предлагающая похожий модуль за три месяца",
+        "attributes": {
+          "type": "competitor"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "medium",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:05:54.428077+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "module_and_integration",
+        "entity_type": "product",
+        "name": "модуль",
+        "description": "Банковская интеграция и рабочий продукт",
+        "attributes": {
+          "features_list": "банковская интеграция с нуля, каркас"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 0.9,
+        "_extracted_at": "2026-08-25T18:05:54.428083+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "api_access",
+        "entity_type": "technology",
+        "name": "API",
+        "description": "Доступ к API, вопрос с которым должен решиться",
+        "attributes": {},
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:05:54.428089+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      }
+    ],
+    "kpis": [
+      {
+        "kpi_id": "kpi_1",
+        "name": "Срок реализации модуля (Аналитика Плюс)",
+        "category": "operational",
+        "value": {
+          "current": 3,
+          "previous": null,
+          "target": null,
+          "unit": "месяцы"
+        },
+        "trend": {
+          "direction": "stable",
+          "change_percent": null,
+          "period": ""
+        },
+        "context": {
+          "project": "банковская интеграция",
+          "department": "закупки",
+          "responsible": "Аналитика Плюс"
+        },
+        "analysis": {
+          "status": "at_risk",
+          "insight": "Конкуренты предлагают срок в 3 месяца.",
+          "action_needed": true
+        },
+        "quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:05:55.058054+00:00",
+        "_agent": "KPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "kpi"
+      },
+      {
+        "kpi_id": "kpi_2",
+        "name": "Срок реализации модуля (текущий / альтернативный)",
+        "category": "operational",
+        "value": {
+          "current": 7,
+          "previous": null,
+          "target": null,
+          "unit": "месяцы"
+        },
+        "trend": {
+          "direction": "stable",
+          "change_percent": null,
+          "period": ""
+        },
+        "context": {
+          "project": "банковская интеграция",
+          "department": "закупки",
+          "responsible": "Гелион"
+        },
+        "analysis": {
+          "status": "at_risk",
+          "insight": "Предполагаемый срок реализации составляет 7 месяцев в сравнении с предложением конкурентов на 3 месяца.",
+          "action_needed": true
+        },
+        "quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:05:55.058065+00:00",
+        "_agent": "KPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "kpi"
+      },
+      {
+        "kpi_id": "kpi_3",
+        "name": "История работы / сотрудничества",
+        "category": "operational",
+        "value": {
+          "current": 3,
+          "previous": null,
+          "target": null,
+          "unit": "годы"
+        },
+        "trend": {
+          "direction": "stable",
+          "change_percent": null,
+          "period": ""
+        },
+        "context": {
+          "project": "Титан-Банк",
+          "department": null,
+          "responsible": "Гелион"
+        },
+        "analysis": {
+          "status": "on_track",
+          "insight": "История совместной работы составляет 3 года.",
+          "action_needed": false
+        },
+        "quote": "У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:05:55.058071+00:00",
+        "_agent": "KPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "kpi"
+      }
+    ],
+    "opinions": [
+      {
+        "opinion_id": "opinion_001",
+        "author": "Сергей Волков",
+        "opinion_summary": "Конкуренты предлагают сделать похожий модуль за три месяца вместо семи, и это предложение выглядит как реальная альтернатива.",
+        "topic": "Сроки разработки альтернативного модуля конкурентами",
+        "opinion_category": "strategic",
+        "sentiment_analysis": {
+          "primary_sentiment": "neutral",
+          "intensity": 0.5,
+          "emotional_undertones": [
+            "прагматичность",
+            "прямота"
+          ],
+          "confidence_in_opinion": "medium"
+        },
+        "argumentation": {
+          "reasoning_type": "data_based",
+          "supporting_evidence": [
+            "Обращение от компании «Аналитика Плюс» с предложением сделать модуль за 3 месяца"
+          ],
+          "logical_structure": "moderate",
+          "bias_indicators": []
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "Иметь подстраховку для отчета перед комитетом"
+          ],
+          "risk_concerns": [
+            "Отсутствие осязаемых результатов к маю"
+          ],
+          "opportunity_focus": [
+            "Возможность ускорить процесс или показать альтернативу руководству"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.8,
+          "authority_level": "experienced",
+          "social_influence": "high",
+          "likely_supporters": [
+            "Комитет"
+          ]
+        },
+        "business_implications": {
+          "strategic_alignment": "misaligned",
+          "resource_implications": [
+            "Угроза потери контракта или сдвига приоритетов"
+          ],
+          "risk_assessment": "high"
+        },
+        "quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+        "confidence_score": 0.9,
+        "_extracted_at": "2026-08-25T18:05:57.662314+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      },
+      {
+        "opinion_id": "opinion_002",
+        "author": "Ольга Реутова",
+        "opinion_summary": "Сроки в три месяца на банковскую интеграцию с нуля вызывают сомнения и требуют осторожного отношения.",
+        "topic": "Оценка реальности сроков конкурентов",
+        "opinion_category": "technical",
+        "sentiment_analysis": {
+          "primary_sentiment": "negative",
+          "intensity": 0.6,
+          "emotional_undertones": [
+            "скепсис",
+            "профессиональная осторожность"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "Сложность банковской интеграции с нуля"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": [
+            "Заинтересованность в защите своего продукта"
+          ]
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "Защита позиций компании «Гелион» перед клиентом"
+          ],
+          "risk_concerns": [
+            "Риск дезинформации клиента со стороны конкурентов"
+          ],
+          "opportunity_focus": [
+            "Поддержание экспертности"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.7,
+          "authority_level": "expert",
+          "social_influence": "medium",
+          "likely_supporters": [
+            "Никита Фролов"
+          ]
+        },
+        "business_implications": {
+          "strategic_alignment": "aligned",
+          "resource_implications": [],
+          "risk_assessment": "medium"
+        },
+        "quote": "Три месяца на банковскую интеграцию с нуля — я бы аккуратно к этому отнеслась, Сергей Игоревич.",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:05:57.662324+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      },
+      {
+        "opinion_id": "opinion_003",
+        "author": "Ольга Реутова",
+        "opinion_summary": "Многолетняя история совместной работы и стабильно работающий продукт имеют большую ценность, которую нельзя заменить за короткий срок.",
+        "topic": "Ценность текущего решения и истории сотрудничества",
+        "opinion_category": "strategic",
+        "sentiment_analysis": {
+          "primary_sentiment": "positive",
+          "intensity": 0.8,
+          "emotional_undertones": [
+            "уверенность",
+            "гордость за продукт"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "Три года истории",
+            "рабочий продукт, который стоит и не падает"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": [
+            "Субъективная оценка собственного продукта"
+          ]
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "Удержание клиента",
+            "подтверждение надежности компании"
+          ],
+          "risk_concerns": [
+            "Потеря клиента из-за сиюминутных обещаний конкурентов"
+          ],
+          "opportunity_focus": [
+            "Использование накопленного опыта как конкурентного преимущества"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.75,
+          "authority_level": "expert",
+          "social_influence": "high",
+          "likely_supporters": [
+            "Никита Фролов"
+          ]
+        },
+        "business_implications": {
+          "strategic_alignment": "aligned",
+          "resource_implications": [],
+          "risk_assessment": "low"
+        },
+        "quote": "У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого.",
+        "confidence_score": 0.9,
+        "_extracted_at": "2026-08-25T18:05:57.662328+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      },
+      {
+        "opinion_id": "opinion_004",
+        "author": "Сергей Волков",
+        "opinion_summary": "Наличие альтернативного предложения от конкурентов — это необходимость для отчета перед комитетом в случае задержек, а не личная угроза.",
+        "topic": "Необходимость альтернатив для комитета",
+        "opinion_category": "process",
+        "sentiment_analysis": {
+          "primary_sentiment": "neutral",
+          "intensity": 0.6,
+          "emotional_undertones": [
+            "прагматичность",
+            "стремление оправдаться"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "Требования комитета по закупкам"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": []
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "Безопасность собственной позиции перед руководством/комитетом"
+          ],
+          "risk_concerns": [
+            "Оказаться перед комитетом без результатов и альтернатив"
+          ],
+          "opportunity_focus": [
+            "Своевременная подготовка отчетности"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.8,
+          "authority_level": "experienced",
+          "social_influence": "high",
+          "likely_supporters": [
+            "Комитет"
+          ]
+        },
+        "business_implications": {
+          "strategic_alignment": "neutral",
+          "resource_implications": [],
+          "risk_assessment": "medium"
+        },
+        "quote": "Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу, если у нас с вами будет затык.",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:05:57.662331+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      }
+    ],
+    "ideas": [],
+    "project_statuses": [
+      {
+        "project_id": "project_001",
+        "project_name": "Банковский модуль для Титан-Банка (Гелион)",
+        "description": "Разработка и интеграция банковского модуля для Титан-Банка",
+        "project_category": "product",
+        "lifecycle_stage": "execution",
+        "status_assessment": {
+          "current_status": "in_progress",
+          "health_indicator": "yellow",
+          "progress_percentage": null,
+          "last_update": "Сверка перед комитетом, ожидается прогресс по каркасу и доступ к API к маю"
+        },
+        "scope_analysis": {
+          "primary_objectives": [
+            "Интеграция банковского модуля"
+          ],
+          "deliverables": [
+            "Прогресс по каркасу",
+            "Банковский модуль"
+          ],
+          "success_criteria": [
+            "Рабочий продукт"
+          ],
+          "scope_clarity": "clear"
+        },
+        "stakeholder_mapping": {
+          "project_sponsor": "Сергей Волков",
+          "project_manager": "Никита Фролов",
+          "core_team": [
+            "Никита Фролов",
+            "Ольга Реутова"
+          ],
+          "key_stakeholders": [
+            "Сергей Волков"
+          ]
+        },
+        "resource_analysis": {
+          "budget_info": {
+            "estimated_budget": null,
+            "budget_status": "on"
+          },
+          "human_resources": {
+            "team_size": null,
+            "skill_gaps": []
+          }
+        },
+        "timeline_analysis": {
+          "estimated_duration": "7 месяцев",
+          "start_date": null,
+          "target_completion": "Май",
+          "critical_milestones": [
+            "Сверка перед комитетом в мае"
+          ],
+          "timeline_risk": "medium"
+        },
+        "risk_assessment": {
+          "identified_risks": [
+            {
+              "risk_description": "Появление конкурентной альтернативы от компании 'Аналитика Плюс', обещающей сроки в 3 месяца",
+              "probability": "medium",
+              "impact": "high",
+              "mitigation_strategy": "Демонстрация прогресса по каркасу и наличие трехлетней истории сотрудничества"
+            }
+          ],
+          "overall_risk_level": "medium"
+        },
+        "business_value": {
+          "strategic_alignment": "high",
+          "expected_roi": null,
+          "business_benefits": [
+            "Надежный рабочий продукт",
+            "Банковская интеграция"
+          ]
+        },
+        "dependencies": {
+          "internal_dependencies": [],
+          "external_dependencies": [
+            "Доступ к API"
+          ],
+          "blocking_factors": [
+            "Ожидание доступа к API"
+          ]
+        },
+        "current_issues": [
+          "Отсутствие доступа к API",
+          "Риск переключения клиента на альтернативного вендора"
+        ],
+        "recent_achievements": [
+          "Три года истории сотрудничества",
+          "Наличие работающего продукта"
+        ],
+        "quote": "К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.",
+        "confidence_score": 0.9,
+        "_extracted_at": "2026-08-25T18:05:56.688894+00:00",
+        "_agent": "ProjectStatusAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "project_status"
+      },
+      {
+        "project_id": "project_002",
+        "project_name": "Альтернативный модуль от 'Аналитики Плюс'",
+        "description": "Похожий модуль, предлагаемый сторонней компанией 'Аналитика Плюс' за 3 месяца",
+        "project_category": "product",
+        "lifecycle_stage": "conception",
+        "status_assessment": {
+          "current_status": "not_started",
+          "health_indicator": "green",
+          "progress_percentage": null,
+          "last_update": "Предложение отправлено заказчику"
+        },
+        "scope_analysis": {
+          "primary_objectives": [
+            "Создание похожего модуля за 3 месяца"
+          ],
+          "deliverables": [
+            "Банковский модуль с нуля"
+          ],
+          "success_criteria": [
+            "Срок реализации 3 месяца"
+          ],
+          "scope_clarity": "unclear"
+        },
+        "stakeholder_mapping": {
+          "project_sponsor": "Сергей Волков",
+          "project_manager": null,
+          "core_team": [
+            "Ребята из 'Аналитики Плюс'"
+          ],
+          "key_stakeholders": [
+            "Сергей Волков"
+          ]
+        },
+        "resource_analysis": {
+          "budget_info": {
+            "estimated_budget": null,
+            "budget_status": "on"
+          },
+          "human_resources": {
+            "team_size": null,
+            "skill_gaps": []
+          }
+        },
+        "timeline_analysis": {
+          "estimated_duration": "3 месяца",
+          "start_date": null,
+          "target_completion": null,
+          "critical_milestones": [],
+          "timeline_risk": "high"
+        },
+        "risk_assessment": {
+          "identified_risks": [
+            {
+              "risk_description": "Нереалистичность сроков (3 месяца на банковскую интеграцию с нуля)",
+              "probability": "high",
+              "impact": "medium",
+              "mitigation_strategy": "Указание клиенту на сложность интеграции с нуля"
+            }
+          ],
+          "overall_risk_level": "medium"
+        },
+        "business_value": {
+          "strategic_alignment": "medium",
+          "expected_roi": null,
+          "business_benefits": [
+            "Более быстрый срок реализации (в теории)"
+          ]
+        },
+        "dependencies": {
+          "internal_dependencies": [],
+          "external_dependencies": [],
+          "blocking_factors": []
+        },
+        "current_issues": [
+          "Используется клиентом как рычаг давления / альтернатива для комитета"
+        ],
+        "recent_achievements": [],
+        "quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+        "confidence_score": 0.85,
+        "_extracted_at": "2026-08-25T18:05:56.688913+00:00",
+        "_agent": "ProjectStatusAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "project_status"
+      }
+    ],
+    "enhanced_kpis": [
+      {
+        "kpi_id": "kpi_001",
+        "metric_name": "Срок реализации альтернативного модуля",
+        "metric_category": "operational",
+        "values": {
+          "current_value": "3",
+          "target_value": "3",
+          "previous_value": "7",
+          "unit": "месяцев"
+        },
+        "time_context": {
+          "period": "месяц",
+          "specific_date": "2026-05-12",
+          "comparison_period": null
+        },
+        "trend_analysis": {
+          "direction": "down",
+          "change_percentage": -57.14,
+          "trend_strength": "strong",
+          "seasonality": null
+        },
+        "performance_assessment": {
+          "vs_target": "on",
+          "vs_previous": "better",
+          "gap_analysis": "Конкуренты предлагают сократить срок с 7 до 3 месяцев",
+          "performance_rating": "good"
+        },
+        "business_context": {
+          "strategic_importance": "high",
+          "affected_areas": [
+            "Разработка",
+            "Продажи",
+            "Работа с ключевым клиентом"
+          ],
+          "root_causes": [
+            "Предложение от конкурентов «Аналитики Плюс»"
+          ],
+          "external_factors": [
+            "Появление альтернативного вендора на рынке"
+          ]
+        },
+        "action_items": {
+          "immediate_actions": [
+            "Подготовить прогресс по каркасу к маю",
+            "Решить вопрос с доступом к API"
+          ],
+          "improvement_opportunities": [
+            "Ускорить текущие процессы разработки"
+          ],
+          "risks_if_unchanged": [
+            "Риск ухода клиента к конкурентам на комитете"
+          ]
+        },
+        "related_metrics": [
+          "Срок интеграции текущего продукта"
+        ],
+        "data_quality": {
+          "source_reliability": "medium",
+          "data_freshness": "current"
+        },
+        "quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:05:57.651226+00:00",
+        "_agent": "EnhancedKPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "enhanced_kpi"
+      },
+      {
+        "kpi_id": "kpi_002",
+        "metric_name": "Срок реализации текущего модуля",
+        "metric_category": "operational",
+        "values": {
+          "current_value": "7",
+          "target_value": null,
+          "previous_value": null,
+          "unit": "месяцев"
+        },
+        "time_context": {
+          "period": "месяц",
+          "specific_date": "2026-05-12",
+          "comparison_period": null
+        },
+        "trend_analysis": {
+          "direction": "stable",
+          "change_percentage": null,
+          "trend_strength": "moderate",
+          "seasonality": null
+        },
+        "performance_assessment": {
+          "vs_target": "on",
+          "vs_previous": "same",
+          "gap_analysis": "Исходный плановый срок интеграции",
+          "performance_rating": "satisfactory"
+        },
+        "business_context": {
+          "strategic_importance": "high",
+          "affected_areas": [
+            "Разработка",
+            "Сроки проекта"
+          ],
+          "root_causes": [
+            "Сложность банковской интеграции с нуля"
+          ],
+          "external_factors": [
+            "Ожидания комитета клиента"
+          ]
+        },
+        "action_items": {
+          "immediate_actions": [
+            "Показать прогресс комитету"
+          ],
+          "improvement_opportunities": [
+            "Оптимизация сроков интеграции"
+          ],
+          "risks_if_unchanged": [
+            "Недовольство комитета затягиванием сроков"
+          ]
+        },
+        "related_metrics": [
+          "Срок реализации альтернативного модуля"
+        ],
+        "data_quality": {
+          "source_reliability": "high",
+          "data_freshness": "current"
+        },
+        "quote": "предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:05:57.651236+00:00",
+        "_agent": "EnhancedKPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "enhanced_kpi"
+      },
+      {
+        "kpi_id": "kpi_003",
+        "metric_name": "История сотрудничества",
+        "metric_category": "customer",
+        "values": {
+          "current_value": "3",
+          "target_value": null,
+          "previous_value": null,
+          "unit": "года"
+        },
+        "time_context": {
+          "period": "год",
+          "specific_date": "2026-05-12",
+          "comparison_period": null
+        },
+        "trend_analysis": {
+          "direction": "up",
+          "change_percentage": null,
+          "trend_strength": "strong",
+          "seasonality": null
+        },
+        "performance_assessment": {
+          "vs_target": "on",
+          "vs_previous": "better",
+          "gap_analysis": "Накопленный опыт и доверие с клиентом",
+          "performance_rating": "excellent"
+        },
+        "business_context": {
+          "strategic_importance": "high",
+          "affected_areas": [
+            "Удержание клиентов",
+            "Репутация компании"
+          ],
+          "root_causes": [
+            "Долгосрочное партнерство"
+          ],
+          "external_factors": null
+        },
+        "action_items": {
+          "immediate_actions": [
+            "Использовать текущую историю отношений как аргумент для клиента"
+          ],
+          "improvement_opportunities": [
+            "Укрепление позиций за счет стабильности продукта"
+          ],
+          "risks_if_unchanged": []
+        },
+        "related_metrics": [],
+        "data_quality": {
+          "source_reliability": "high",
+          "data_freshness": "current"
+        },
+        "quote": "У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого.",
+        "confidence_score": 0.98,
+        "_extracted_at": "2026-08-25T18:05:57.651240+00:00",
+        "_agent": "EnhancedKPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "enhanced_kpi"
+      }
+    ],
+    "fact_checks": [],
+    "cogni_profiles": [
+      {
+        "name": "Сергей Волков",
+        "confidence": 0.4,
+        "_agent": "CogniDimensionsAgent",
+        "_agent_version": "1.0.0",
+        "_extracted_at": "2026-08-25T18:05:55.326912+00:00",
+        "_entity_type": "cogni_profile",
+        "vitki": {
+          "professional": {
+            "confidence": 0.4,
+            "quote": "Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу, если у нас с вами будет затык.",
+            "level": 3
+          }
+        },
+        "light_cone": {
+          "horizon": "к маю",
+          "scale": "компания",
+          "depth": null,
+          "confidence": 0.4,
+          "quote": "Я не угрожаю, я просто хочу, чтобы к маю у меня было что показать, кроме «мы работаем над этим»."
+        },
+        "equalizer": {
+          "action_analysis": {
+            "value": 0.5,
+            "confidence": 0.4,
+            "quote": "Я тоже аккуратно отношусь, поэтому и говорю вам, а не молчу и не ухожу тихо."
+          }
+        }
+      },
+      {
+        "name": "Ольга Реутова",
+        "confidence": 0.4,
+        "_agent": "CogniDimensionsAgent",
+        "_agent_version": "1.0.0",
+        "_extracted_at": "2026-08-25T18:05:55.327022+00:00",
+        "_entity_type": "cogni_profile",
+        "vitki": {
+          "professional": {
+            "confidence": 0.4,
+            "quote": "У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого.",
+            "level": 3
+          }
+        },
+        "equalizer": {
+          "action_analysis": {
+            "value": 0.5,
+            "confidence": 0.4,
+            "quote": "Три месяца на банковскую интеграцию с нуля — я бы аккуратно к этому отнеслась, Сергей Игоревич."
+          }
+        }
+      }
+    ],
+    "agent_results": {
+      "decisions": [],
+      "tasks": [
+        {
+          "task_id": "task_1",
+          "title": "Показать прогресс по каркасу и статус доступа к API к комитету",
+          "description": "Подготовить прогресс по каркасу и решить вопрос с доступом к API для демонстрации на комитете к маю.",
+          "task_type": "action",
+          "assignee": {
+            "name": "Никита Фролов",
+            "role": "Представитель «Гелиона»"
+          },
+          "assignee_speaker": null,
+          "assignment_confidence": "high",
+          "needs_human_review": false,
+          "assigner": "Сергей Волков",
+          "priority": "high",
+          "status": "in_progress",
+          "deadline": {
+            "date": "2026-05",
+            "is_hard": true
+          },
+          "dependencies": [],
+          "related_decision": "",
+          "related_project": "Титан-Банк",
+          "acceptance_criteria": [
+            "Прогресс по каркасу показан",
+            "Решен вопрос с доступом к API"
+          ],
+          "blockers": [
+            "Доступ к API"
+          ],
+          "quote": "К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:05:53.988034+00:00",
+          "_agent": "TaskAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "task"
+        }
+      ],
+      "participants": [
+        {
+          "participant_id": "nikita_frolov",
+          "name": "Никита Фролов",
+          "normalized_name": "Никита Фролов",
+          "role": "",
+          "department": "Гелион",
+          "activity_level": "medium",
+          "participation_metrics": {
+            "speaking_turns": 2,
+            "decisions_involved": 0,
+            "tasks_assigned": 0,
+            "questions_asked": 0
+          },
+          "expertise_areas": [],
+          "communication_style": {
+            "style": "collaborative",
+            "traits": [
+              "организатор встречи",
+              "информирует о прогрессе"
+            ]
+          },
+          "relationships": [],
+          "key_contributions": [
+            "Инициировал сверку перед комитетом",
+            "Рассказал о планах по каркасу и API к маю"
+          ],
+          "sentiment": "neutral",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:05:54.903871+00:00",
+          "_agent": "ParticipantAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "participant"
+        },
+        {
+          "participant_id": "sergey_volkov",
+          "name": "Сергей Волков",
+          "normalized_name": "Сергей Волков",
+          "role": "директор по закупкам",
+          "department": "Титан-Банк",
+          "activity_level": "high",
+          "participation_metrics": {
+            "speaking_turns": 4,
+            "decisions_involved": 1,
+            "tasks_assigned": 0,
+            "questions_asked": 1
+          },
+          "expertise_areas": [],
+          "communication_style": {
+            "style": "analytical",
+            "traits": [
+              "честный",
+              "требовательный к срокам",
+              "обозначает альтернативы"
+            ]
+          },
+          "relationships": [],
+          "key_contributions": [
+            "Предупредил об альтернативном предложении от конкурентов",
+            "Обозначил требования к отчетности перед комитетом"
+          ],
+          "sentiment": "neutral",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:05:54.903889+00:00",
+          "_agent": "ParticipantAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "participant"
+        },
+        {
+          "participant_id": "olga_reutova",
+          "name": "Ольга Реутова",
+          "normalized_name": "Ольга Реутова",
+          "role": "",
+          "department": "Гелион",
+          "activity_level": "medium",
+          "participation_metrics": {
+            "speaking_turns": 2,
+            "decisions_involved": 0,
+            "tasks_assigned": 0,
+            "questions_asked": 0
+          },
+          "expertise_areas": [
+            "банковская интеграция"
+          ],
+          "communication_style": {
+            "style": "analytical",
+            "traits": [
+              "осторожная",
+              "уверенная в продукте компании"
+            ]
+          },
+          "relationships": [],
+          "key_contributions": [
+            "Оценила риски трехмесячной интеграции с нуля",
+            "Аргументировала ценность текущего продукта с трехлетней историей"
+          ],
+          "sentiment": "neutral",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:05:54.903896+00:00",
+          "_agent": "ParticipantAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "participant"
+        }
+      ],
+      "entities": [
+        {
+          "entity_id": "titan_bank",
+          "entity_type": "organization",
+          "name": "Титан-Банк",
+          "description": "Банк, являющийся клиентом компании «Гелион»",
+          "attributes": {
+            "type": "client"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:05:54.428058+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "gelion",
+          "entity_type": "company",
+          "name": "Гелион",
+          "description": "Компания-разработчик, предоставляющая рабочий продукт и банковскую интеграцию",
+          "attributes": {},
+          "relationships": [
+            {
+              "target_type": "organization",
+              "target_name": "Титан-Банк",
+              "relation_type": "related_to"
+            }
+          ],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:05:54.428070+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "analitika_plus",
+          "entity_type": "organization",
+          "name": "Аналитики Плюс",
+          "description": "Сторонняя компания, предлагающая похожий модуль за три месяца",
+          "attributes": {
+            "type": "competitor"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "medium",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:05:54.428077+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "module_and_integration",
+          "entity_type": "product",
+          "name": "модуль",
+          "description": "Банковская интеграция и рабочий продукт",
+          "attributes": {
+            "features_list": "банковская интеграция с нуля, каркас"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 0.9,
+          "_extracted_at": "2026-08-25T18:05:54.428083+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "api_access",
+          "entity_type": "technology",
+          "name": "API",
+          "description": "Доступ к API, вопрос с которым должен решиться",
+          "attributes": {},
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:05:54.428089+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        }
+      ],
+      "kpis": [
+        {
+          "kpi_id": "kpi_1",
+          "name": "Срок реализации модуля (Аналитика Плюс)",
+          "category": "operational",
+          "value": {
+            "current": 3,
+            "previous": null,
+            "target": null,
+            "unit": "месяцы"
+          },
+          "trend": {
+            "direction": "stable",
+            "change_percent": null,
+            "period": ""
+          },
+          "context": {
+            "project": "банковская интеграция",
+            "department": "закупки",
+            "responsible": "Аналитика Плюс"
+          },
+          "analysis": {
+            "status": "at_risk",
+            "insight": "Конкуренты предлагают срок в 3 месяца.",
+            "action_needed": true
+          },
+          "quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:05:55.058054+00:00",
+          "_agent": "KPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "kpi"
+        },
+        {
+          "kpi_id": "kpi_2",
+          "name": "Срок реализации модуля (текущий / альтернативный)",
+          "category": "operational",
+          "value": {
+            "current": 7,
+            "previous": null,
+            "target": null,
+            "unit": "месяцы"
+          },
+          "trend": {
+            "direction": "stable",
+            "change_percent": null,
+            "period": ""
+          },
+          "context": {
+            "project": "банковская интеграция",
+            "department": "закупки",
+            "responsible": "Гелион"
+          },
+          "analysis": {
+            "status": "at_risk",
+            "insight": "Предполагаемый срок реализации составляет 7 месяцев в сравнении с предложением конкурентов на 3 месяца.",
+            "action_needed": true
+          },
+          "quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:05:55.058065+00:00",
+          "_agent": "KPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "kpi"
+        },
+        {
+          "kpi_id": "kpi_3",
+          "name": "История работы / сотрудничества",
+          "category": "operational",
+          "value": {
+            "current": 3,
+            "previous": null,
+            "target": null,
+            "unit": "годы"
+          },
+          "trend": {
+            "direction": "stable",
+            "change_percent": null,
+            "period": ""
+          },
+          "context": {
+            "project": "Титан-Банк",
+            "department": null,
+            "responsible": "Гелион"
+          },
+          "analysis": {
+            "status": "on_track",
+            "insight": "История совместной работы составляет 3 года.",
+            "action_needed": false
+          },
+          "quote": "У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:05:55.058071+00:00",
+          "_agent": "KPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "kpi"
+        }
+      ],
+      "opinions": [
+        {
+          "opinion_id": "opinion_001",
+          "author": "Сергей Волков",
+          "opinion_summary": "Конкуренты предлагают сделать похожий модуль за три месяца вместо семи, и это предложение выглядит как реальная альтернатива.",
+          "topic": "Сроки разработки альтернативного модуля конкурентами",
+          "opinion_category": "strategic",
+          "sentiment_analysis": {
+            "primary_sentiment": "neutral",
+            "intensity": 0.5,
+            "emotional_undertones": [
+              "прагматичность",
+              "прямота"
+            ],
+            "confidence_in_opinion": "medium"
+          },
+          "argumentation": {
+            "reasoning_type": "data_based",
+            "supporting_evidence": [
+              "Обращение от компании «Аналитика Плюс» с предложением сделать модуль за 3 месяца"
+            ],
+            "logical_structure": "moderate",
+            "bias_indicators": []
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "Иметь подстраховку для отчета перед комитетом"
+            ],
+            "risk_concerns": [
+              "Отсутствие осязаемых результатов к маю"
+            ],
+            "opportunity_focus": [
+              "Возможность ускорить процесс или показать альтернативу руководству"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.8,
+            "authority_level": "experienced",
+            "social_influence": "high",
+            "likely_supporters": [
+              "Комитет"
+            ]
+          },
+          "business_implications": {
+            "strategic_alignment": "misaligned",
+            "resource_implications": [
+              "Угроза потери контракта или сдвига приоритетов"
+            ],
+            "risk_assessment": "high"
+          },
+          "quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+          "confidence_score": 0.9,
+          "_extracted_at": "2026-08-25T18:05:57.662314+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        },
+        {
+          "opinion_id": "opinion_002",
+          "author": "Ольга Реутова",
+          "opinion_summary": "Сроки в три месяца на банковскую интеграцию с нуля вызывают сомнения и требуют осторожного отношения.",
+          "topic": "Оценка реальности сроков конкурентов",
+          "opinion_category": "technical",
+          "sentiment_analysis": {
+            "primary_sentiment": "negative",
+            "intensity": 0.6,
+            "emotional_undertones": [
+              "скепсис",
+              "профессиональная осторожность"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "Сложность банковской интеграции с нуля"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": [
+              "Заинтересованность в защите своего продукта"
+            ]
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "Защита позиций компании «Гелион» перед клиентом"
+            ],
+            "risk_concerns": [
+              "Риск дезинформации клиента со стороны конкурентов"
+            ],
+            "opportunity_focus": [
+              "Поддержание экспертности"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.7,
+            "authority_level": "expert",
+            "social_influence": "medium",
+            "likely_supporters": [
+              "Никита Фролов"
+            ]
+          },
+          "business_implications": {
+            "strategic_alignment": "aligned",
+            "resource_implications": [],
+            "risk_assessment": "medium"
+          },
+          "quote": "Три месяца на банковскую интеграцию с нуля — я бы аккуратно к этому отнеслась, Сергей Игоревич.",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:05:57.662324+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        },
+        {
+          "opinion_id": "opinion_003",
+          "author": "Ольга Реутова",
+          "opinion_summary": "Многолетняя история совместной работы и стабильно работающий продукт имеют большую ценность, которую нельзя заменить за короткий срок.",
+          "topic": "Ценность текущего решения и истории сотрудничества",
+          "opinion_category": "strategic",
+          "sentiment_analysis": {
+            "primary_sentiment": "positive",
+            "intensity": 0.8,
+            "emotional_undertones": [
+              "уверенность",
+              "гордость за продукт"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "Три года истории",
+              "рабочий продукт, который стоит и не падает"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": [
+              "Субъективная оценка собственного продукта"
+            ]
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "Удержание клиента",
+              "подтверждение надежности компании"
+            ],
+            "risk_concerns": [
+              "Потеря клиента из-за сиюминутных обещаний конкурентов"
+            ],
+            "opportunity_focus": [
+              "Использование накопленного опыта как конкурентного преимущества"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.75,
+            "authority_level": "expert",
+            "social_influence": "high",
+            "likely_supporters": [
+              "Никита Фролов"
+            ]
+          },
+          "business_implications": {
+            "strategic_alignment": "aligned",
+            "resource_implications": [],
+            "risk_assessment": "low"
+          },
+          "quote": "У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого.",
+          "confidence_score": 0.9,
+          "_extracted_at": "2026-08-25T18:05:57.662328+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        },
+        {
+          "opinion_id": "opinion_004",
+          "author": "Сергей Волков",
+          "opinion_summary": "Наличие альтернативного предложения от конкурентов — это необходимость для отчета перед комитетом в случае задержек, а не личная угроза.",
+          "topic": "Необходимость альтернатив для комитета",
+          "opinion_category": "process",
+          "sentiment_analysis": {
+            "primary_sentiment": "neutral",
+            "intensity": 0.6,
+            "emotional_undertones": [
+              "прагматичность",
+              "стремление оправдаться"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "Требования комитета по закупкам"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": []
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "Безопасность собственной позиции перед руководством/комитетом"
+            ],
+            "risk_concerns": [
+              "Оказаться перед комитетом без результатов и альтернатив"
+            ],
+            "opportunity_focus": [
+              "Своевременная подготовка отчетности"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.8,
+            "authority_level": "experienced",
+            "social_influence": "high",
+            "likely_supporters": [
+              "Комитет"
+            ]
+          },
+          "business_implications": {
+            "strategic_alignment": "neutral",
+            "resource_implications": [],
+            "risk_assessment": "medium"
+          },
+          "quote": "Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу, если у нас с вами будет затык.",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:05:57.662331+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        }
+      ],
+      "ideas": [],
+      "project_statuses": [
+        {
+          "project_id": "project_001",
+          "project_name": "Банковский модуль для Титан-Банка (Гелион)",
+          "description": "Разработка и интеграция банковского модуля для Титан-Банка",
+          "project_category": "product",
+          "lifecycle_stage": "execution",
+          "status_assessment": {
+            "current_status": "in_progress",
+            "health_indicator": "yellow",
+            "progress_percentage": null,
+            "last_update": "Сверка перед комитетом, ожидается прогресс по каркасу и доступ к API к маю"
+          },
+          "scope_analysis": {
+            "primary_objectives": [
+              "Интеграция банковского модуля"
+            ],
+            "deliverables": [
+              "Прогресс по каркасу",
+              "Банковский модуль"
+            ],
+            "success_criteria": [
+              "Рабочий продукт"
+            ],
+            "scope_clarity": "clear"
+          },
+          "stakeholder_mapping": {
+            "project_sponsor": "Сергей Волков",
+            "project_manager": "Никита Фролов",
+            "core_team": [
+              "Никита Фролов",
+              "Ольга Реутова"
+            ],
+            "key_stakeholders": [
+              "Сергей Волков"
+            ]
+          },
+          "resource_analysis": {
+            "budget_info": {
+              "estimated_budget": null,
+              "budget_status": "on"
+            },
+            "human_resources": {
+              "team_size": null,
+              "skill_gaps": []
+            }
+          },
+          "timeline_analysis": {
+            "estimated_duration": "7 месяцев",
+            "start_date": null,
+            "target_completion": "Май",
+            "critical_milestones": [
+              "Сверка перед комитетом в мае"
+            ],
+            "timeline_risk": "medium"
+          },
+          "risk_assessment": {
+            "identified_risks": [
+              {
+                "risk_description": "Появление конкурентной альтернативы от компании 'Аналитика Плюс', обещающей сроки в 3 месяца",
+                "probability": "medium",
+                "impact": "high",
+                "mitigation_strategy": "Демонстрация прогресса по каркасу и наличие трехлетней истории сотрудничества"
+              }
+            ],
+            "overall_risk_level": "medium"
+          },
+          "business_value": {
+            "strategic_alignment": "high",
+            "expected_roi": null,
+            "business_benefits": [
+              "Надежный рабочий продукт",
+              "Банковская интеграция"
+            ]
+          },
+          "dependencies": {
+            "internal_dependencies": [],
+            "external_dependencies": [
+              "Доступ к API"
+            ],
+            "blocking_factors": [
+              "Ожидание доступа к API"
+            ]
+          },
+          "current_issues": [
+            "Отсутствие доступа к API",
+            "Риск переключения клиента на альтернативного вендора"
+          ],
+          "recent_achievements": [
+            "Три года истории сотрудничества",
+            "Наличие работающего продукта"
+          ],
+          "quote": "К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.",
+          "confidence_score": 0.9,
+          "_extracted_at": "2026-08-25T18:05:56.688894+00:00",
+          "_agent": "ProjectStatusAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "project_status"
+        },
+        {
+          "project_id": "project_002",
+          "project_name": "Альтернативный модуль от 'Аналитики Плюс'",
+          "description": "Похожий модуль, предлагаемый сторонней компанией 'Аналитика Плюс' за 3 месяца",
+          "project_category": "product",
+          "lifecycle_stage": "conception",
+          "status_assessment": {
+            "current_status": "not_started",
+            "health_indicator": "green",
+            "progress_percentage": null,
+            "last_update": "Предложение отправлено заказчику"
+          },
+          "scope_analysis": {
+            "primary_objectives": [
+              "Создание похожего модуля за 3 месяца"
+            ],
+            "deliverables": [
+              "Банковский модуль с нуля"
+            ],
+            "success_criteria": [
+              "Срок реализации 3 месяца"
+            ],
+            "scope_clarity": "unclear"
+          },
+          "stakeholder_mapping": {
+            "project_sponsor": "Сергей Волков",
+            "project_manager": null,
+            "core_team": [
+              "Ребята из 'Аналитики Плюс'"
+            ],
+            "key_stakeholders": [
+              "Сергей Волков"
+            ]
+          },
+          "resource_analysis": {
+            "budget_info": {
+              "estimated_budget": null,
+              "budget_status": "on"
+            },
+            "human_resources": {
+              "team_size": null,
+              "skill_gaps": []
+            }
+          },
+          "timeline_analysis": {
+            "estimated_duration": "3 месяца",
+            "start_date": null,
+            "target_completion": null,
+            "critical_milestones": [],
+            "timeline_risk": "high"
+          },
+          "risk_assessment": {
+            "identified_risks": [
+              {
+                "risk_description": "Нереалистичность сроков (3 месяца на банковскую интеграцию с нуля)",
+                "probability": "high",
+                "impact": "medium",
+                "mitigation_strategy": "Указание клиенту на сложность интеграции с нуля"
+              }
+            ],
+            "overall_risk_level": "medium"
+          },
+          "business_value": {
+            "strategic_alignment": "medium",
+            "expected_roi": null,
+            "business_benefits": [
+              "Более быстрый срок реализации (в теории)"
+            ]
+          },
+          "dependencies": {
+            "internal_dependencies": [],
+            "external_dependencies": [],
+            "blocking_factors": []
+          },
+          "current_issues": [
+            "Используется клиентом как рычаг давления / альтернатива для комитета"
+          ],
+          "recent_achievements": [],
+          "quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+          "confidence_score": 0.85,
+          "_extracted_at": "2026-08-25T18:05:56.688913+00:00",
+          "_agent": "ProjectStatusAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "project_status"
+        }
+      ],
+      "enhanced_kpis": [
+        {
+          "kpi_id": "kpi_001",
+          "metric_name": "Срок реализации альтернативного модуля",
+          "metric_category": "operational",
+          "values": {
+            "current_value": "3",
+            "target_value": "3",
+            "previous_value": "7",
+            "unit": "месяцев"
+          },
+          "time_context": {
+            "period": "месяц",
+            "specific_date": "2026-05-12",
+            "comparison_period": null
+          },
+          "trend_analysis": {
+            "direction": "down",
+            "change_percentage": -57.14,
+            "trend_strength": "strong",
+            "seasonality": null
+          },
+          "performance_assessment": {
+            "vs_target": "on",
+            "vs_previous": "better",
+            "gap_analysis": "Конкуренты предлагают сократить срок с 7 до 3 месяцев",
+            "performance_rating": "good"
+          },
+          "business_context": {
+            "strategic_importance": "high",
+            "affected_areas": [
+              "Разработка",
+              "Продажи",
+              "Работа с ключевым клиентом"
+            ],
+            "root_causes": [
+              "Предложение от конкурентов «Аналитики Плюс»"
+            ],
+            "external_factors": [
+              "Появление альтернативного вендора на рынке"
+            ]
+          },
+          "action_items": {
+            "immediate_actions": [
+              "Подготовить прогресс по каркасу к маю",
+              "Решить вопрос с доступом к API"
+            ],
+            "improvement_opportunities": [
+              "Ускорить текущие процессы разработки"
+            ],
+            "risks_if_unchanged": [
+              "Риск ухода клиента к конкурентам на комитете"
+            ]
+          },
+          "related_metrics": [
+            "Срок интеграции текущего продукта"
+          ],
+          "data_quality": {
+            "source_reliability": "medium",
+            "data_freshness": "current"
+          },
+          "quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:05:57.651226+00:00",
+          "_agent": "EnhancedKPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "enhanced_kpi"
+        },
+        {
+          "kpi_id": "kpi_002",
+          "metric_name": "Срок реализации текущего модуля",
+          "metric_category": "operational",
+          "values": {
+            "current_value": "7",
+            "target_value": null,
+            "previous_value": null,
+            "unit": "месяцев"
+          },
+          "time_context": {
+            "period": "месяц",
+            "specific_date": "2026-05-12",
+            "comparison_period": null
+          },
+          "trend_analysis": {
+            "direction": "stable",
+            "change_percentage": null,
+            "trend_strength": "moderate",
+            "seasonality": null
+          },
+          "performance_assessment": {
+            "vs_target": "on",
+            "vs_previous": "same",
+            "gap_analysis": "Исходный плановый срок интеграции",
+            "performance_rating": "satisfactory"
+          },
+          "business_context": {
+            "strategic_importance": "high",
+            "affected_areas": [
+              "Разработка",
+              "Сроки проекта"
+            ],
+            "root_causes": [
+              "Сложность банковской интеграции с нуля"
+            ],
+            "external_factors": [
+              "Ожидания комитета клиента"
+            ]
+          },
+          "action_items": {
+            "immediate_actions": [
+              "Показать прогресс комитету"
+            ],
+            "improvement_opportunities": [
+              "Оптимизация сроков интеграции"
+            ],
+            "risks_if_unchanged": [
+              "Недовольство комитета затягиванием сроков"
+            ]
+          },
+          "related_metrics": [
+            "Срок реализации альтернативного модуля"
+          ],
+          "data_quality": {
+            "source_reliability": "high",
+            "data_freshness": "current"
+          },
+          "quote": "предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:05:57.651236+00:00",
+          "_agent": "EnhancedKPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "enhanced_kpi"
+        },
+        {
+          "kpi_id": "kpi_003",
+          "metric_name": "История сотрудничества",
+          "metric_category": "customer",
+          "values": {
+            "current_value": "3",
+            "target_value": null,
+            "previous_value": null,
+            "unit": "года"
+          },
+          "time_context": {
+            "period": "год",
+            "specific_date": "2026-05-12",
+            "comparison_period": null
+          },
+          "trend_analysis": {
+            "direction": "up",
+            "change_percentage": null,
+            "trend_strength": "strong",
+            "seasonality": null
+          },
+          "performance_assessment": {
+            "vs_target": "on",
+            "vs_previous": "better",
+            "gap_analysis": "Накопленный опыт и доверие с клиентом",
+            "performance_rating": "excellent"
+          },
+          "business_context": {
+            "strategic_importance": "high",
+            "affected_areas": [
+              "Удержание клиентов",
+              "Репутация компании"
+            ],
+            "root_causes": [
+              "Долгосрочное партнерство"
+            ],
+            "external_factors": null
+          },
+          "action_items": {
+            "immediate_actions": [
+              "Использовать текущую историю отношений как аргумент для клиента"
+            ],
+            "improvement_opportunities": [
+              "Укрепление позиций за счет стабильности продукта"
+            ],
+            "risks_if_unchanged": []
+          },
+          "related_metrics": [],
+          "data_quality": {
+            "source_reliability": "high",
+            "data_freshness": "current"
+          },
+          "quote": "У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого.",
+          "confidence_score": 0.98,
+          "_extracted_at": "2026-08-25T18:05:57.651240+00:00",
+          "_agent": "EnhancedKPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "enhanced_kpi"
+        }
+      ],
+      "fact_checks": [],
+      "cogni_profiles": [
+        {
+          "name": "Сергей Волков",
+          "confidence": 0.4,
+          "_agent": "CogniDimensionsAgent",
+          "_agent_version": "1.0.0",
+          "_extracted_at": "2026-08-25T18:05:55.326912+00:00",
+          "_entity_type": "cogni_profile",
+          "vitki": {
+            "professional": {
+              "confidence": 0.4,
+              "quote": "Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу, если у нас с вами будет затык.",
+              "level": 3
+            }
+          },
+          "light_cone": {
+            "horizon": "к маю",
+            "scale": "компания",
+            "depth": null,
+            "confidence": 0.4,
+            "quote": "Я не угрожаю, я просто хочу, чтобы к маю у меня было что показать, кроме «мы работаем над этим»."
+          },
+          "equalizer": {
+            "action_analysis": {
+              "value": 0.5,
+              "confidence": 0.4,
+              "quote": "Я тоже аккуратно отношусь, поэтому и говорю вам, а не молчу и не ухожу тихо."
+            }
+          }
+        },
+        {
+          "name": "Ольга Реутова",
+          "confidence": 0.4,
+          "_agent": "CogniDimensionsAgent",
+          "_agent_version": "1.0.0",
+          "_extracted_at": "2026-08-25T18:05:55.327022+00:00",
+          "_entity_type": "cogni_profile",
+          "vitki": {
+            "professional": {
+              "confidence": 0.4,
+              "quote": "У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого.",
+              "level": 3
+            }
+          },
+          "equalizer": {
+            "action_analysis": {
+              "value": 0.5,
+              "confidence": 0.4,
+              "quote": "Три месяца на банковскую интеграцию с нуля — я бы аккуратно к этому отнеслась, Сергей Игоревич."
+            }
+          }
+        }
+      ]
+    },
+    "cross_insights": {
+      "decision_task_links": [],
+      "participant_responsibilities": [
+        {
+          "participant_id": "nikita_frolov",
+          "name": "Никита Фролов",
+          "task_ids": [
+            "task_1"
+          ]
+        }
+      ],
+      "entity_mentions": [],
+      "kpi_trends": []
+    },
+    "cross_meeting_links": {},
+    "psychological_analysis": {
+      "personality_profiles": [
+        {
+          "name": "Никита Фролов",
+          "personality_type": "S/C (на основе ограниченных данных)",
+          "dominant_traits": [
+            "Вежливый",
+            "Сдержанный",
+            "Ориентированный на процесс"
+          ],
+          "communication_style": "Лаконичный, деловой и поддерживающий контакт. Инициирует коммуникацию по делу, передает слово коллеге для экспертной оценки.",
+          "motivation_drivers": [
+            "Успешное прохождение комитетов клиентом",
+            "Прогресс по технической части проекта (каркас, API)"
+          ],
+          "fears_concerns": [
+            "Затягивание сроков проекта",
+            "Блокировки со стороны внешних технических факторов (доступ к API)"
+          ],
+          "decision_style": "Консенсус / совместное обсуждение (в паре с Ольгой Реутовой)",
+          "stress_response": "Сохраняет спокойствие, переводит фокус на практические шаги и будущие результаты",
+          "conflict_approach": "Компромисс / избегание эскалации через возвращение к рабочей повестке",
+          "leadership_style": "Партнерский, поддерживающий",
+          "team_role": "Координатор / связующее звено с клиентом",
+          "strengths": [
+            "Проактивность в организации встреч",
+            "Умение держать фокус на повестке",
+            "Спокойная реакция на риски и конкурентное давление"
+          ],
+          "development_areas": [
+            "Недостаточно данных для глубокой оценки зон развития на основе всего одной реплики"
+          ],
+          "management_tips": [
+            "Предоставлять четкие регулярные статусы по техническому прогрессу (каркас, API)",
+            "Привлекать к обсуждению стратегических рисков наряду с коллегами"
+          ],
+          "role": ""
+        },
+        {
+          "name": "Сергей Волков",
+          "personality_type": "D/C (Доминантный / Соответствующий, гипотеза по одной встрече)",
+          "dominant_traits": [
+            "Прямолинейность",
+            "Прозрачность в коммуникации",
+            "Прагматизм",
+            "Ориентация на отчетность перед руководством (комитетом)"
+          ],
+          "communication_style": "Деловой, прямой, открытый. Сразу переходит к сути («Кстати, вовремя — у меня к вам вопрос»)",
+          "motivation_drivers": [
+            "Успешное прохождение внутреннего комитета",
+            "Соблюдение сроков и обязательств со стороны подрядчика",
+            "Наличие надежных альтернатив на случай задержек"
+          ],
+          "fears_concerns": [
+            "Оказаться перед комитетом с аргументом «мы работаем над этим» вместо конкретных результатов",
+            "Сроки реализации проекта (затягивание процессов)"
+          ],
+          "decision_style": "Аналитично-прагматичный: оценивает риски альтернативных предложений («Я тоже аккуратно отношусь»), но держит их наготове для руководства",
+          "stress_response": "Проявляет проактивность — заранее предупреждает партнера о рисках и конкурентных предложениях, а не скрывает их",
+          "conflict_approach": "Компромиссный / Открытый диалог (предупреждает партнера лично, избегает скрытого саботажа: «поэтому и говорю вам, а не молчу и не ухожу тихо»)",
+          "leadership_style": "Контролирующий, требующий ответственности от подрядчиков и ориентированный на внутреннюю отчетность",
+          "team_role": "Ответственный за закупки / Представитель интересов стейкхолдеров",
+          "strengths": [
+            "Честность и прозрачность в партнерских отношениях",
+            "Умение заранее обозначать риски для проекта",
+            "Четкое понимание своих задач перед комитетом"
+          ],
+          "development_areas": [
+            "Возможно, излишняя фиксация на быстрых сроках конкурентов без глубокой оценки их технической реализуемости"
+          ],
+          "management_tips": [
+            "Предоставлять четкие и проверяемые статусы по проекту к ключевым датам (комитетам)",
+            "Быть максимально честными в отношении сроков и возможных задержек, ценить его открытый подход"
+          ],
+          "role": "директор по закупкам"
+        },
+        {
+          "name": "Ольга Реутова",
+          "personality_type": "C/S (Комбинация DISC: высокая аналитичность и стабильность)",
+          "dominant_traits": [
+            "Экспертная уверенность",
+            "Прагматичность",
+            "Умение принимать обратную связь без эмоций",
+            "Ориентация на долгосрочные партнерские отношения"
+          ],
+          "communication_style": "Деловой, сдержанный, аргументированный. Говорит по существу, использует факты (история сотрудничества, надежность продукта) вместо эмоций.",
+          "motivation_drivers": [
+            "Репутация надежного вендора",
+            "Качество и стабильность работающего продукта",
+            "Сохранение долгосрочных партнерских связей"
+          ],
+          "fears_concerns": [
+            "Появление нереалистичных ожиданий рынка по срокам интеграции (мифы конкурентов о трех месяцах)",
+            "Риск размытия ценности долгосрочного опыта ради сиюминутной скорости"
+          ],
+          "decision_style": "Аналитический (опирается на факты, реальный опыт и проверенную надежность систем)",
+          "stress_response": "Проявляет эмоциональную стабильность: не поддается на провокации по поводу быстрых сроков конкурентов, возвращает диалог к объективной реальности («три месяца на банковскую интеграцию с нуля — я бы аккуратно к этому отнеслась»).",
+          "conflict_approach": "Конструктивный компромисс и принятие позиции оппонента («Понимаю... Но услышала, спасибо за честность»).",
+          "leadership_style": "Экспертное лидерство, защита интересов продукта и команды через факты и аргументы.",
+          "team_role": "Эксперт / Стабилизатор / Защитник ценности продукта",
+          "strengths": [
+            "Спокойная реакция на угрозу со стороны конкурентов",
+            "Умение ценить и аргументировать прошлый успешный опыт («три года истории и рабочий продукт»)",
+            "Благодарность клиенту за честность, укрепляющая доверие",
+            "Реалистичная оценка трудоемкости процессов («аккуратно к этому отнеслась»)"
+          ],
+          "development_areas": [
+            "Возможность более проактивно работать с рисками до того, как о них напомнит клиент"
+          ],
+          "management_tips": [
+            "Предоставлять проверенные факты и цифры",
+            "Ценить ее экспертную позицию по технической сложности и срокам разработки"
+          ],
+          "role": ""
+        }
+      ],
+      "hidden_motives": [
+        {
+          "participant": "Сергей Волков",
+          "stated_position": "Сообщает о конкурентах («Аналитики Плюс»), которые предлагают сделать за 3 месяца вместо 7, чтобы иметь альтернативу для комитета.",
+          "true_intentions": [
+            "Давить на исполнителей («Гелион») с целью ускорения разработки.",
+            "Создать подушку безопасности для себя на случай задержки проекта.",
+            "Выбить более выгодные условия или заставить подрядчика относиться к проекту приоритетнее."
+          ],
+          "personal_agenda": [
+            "Успешно отчитаться перед комитетом и избежать вопросов к собственной профнепригодности как директора по закупкам.",
+            "Снять с себя личную ответственность за возможные срывы сроков."
+          ],
+          "fears": [
+            "Выглядеть некомпетентно перед руководством и комитетом из-за срыва сроков интеграции.",
+            "Остаться без рабочего продукта к маю."
+          ],
+          "power_seeking": "Использует позицию клиента для манипуляции сроками и контроля над поставщиком. Демонстрирует силу через угрозу ухода к конкурентам, сохраняя при этом видимость партнерства.",
+          "defense_mechanisms": [
+            "Превентивная атака / перекладывание ответственности («это ведь и моя головная боль»)",
+            "Рационализация («Я не угрожаю, я просто хочу, чтобы...»)"
+          ],
+          "manipulation_signs": [
+            "Вброс информации о конкурентах (bluff/pressure) именно перед комитетом.",
+            "Игра в «доброго полицейского» («говорю вам, а не молчу»)."
+          ],
+          "authenticity_score": 0.6,
+          "risk_level": "high"
+        },
+        {
+          "participant": "Ольга Реутова",
+          "stated_position": "Указывает на нереалистичность сроков конкурентов (3 месяца с нуля) и напоминает о 3 годах успешной совместной истории.",
+          "true_intentions": [
+            "Нейтрализовать давление клиента и обесценить предложение конкурентов («Аналитики Плюс»).",
+            "Защитить текущий контракт и репутацию надежного вендора."
+          ],
+          "personal_agenda": [
+            "Сохранить крупного и давнего клиента («Титан-Банк»)."
+          ],
+          "fears": [
+            "Потерять контракт из-за долгих сроков реализации (7 месяцев).",
+            "Репутационные потери перед лицом конкурентов, обещающих быстрый результат."
+          ],
+          "power_seeking": "Защитное влияние. Пытается удержать контроль над ситуацией через апелляцию к экспертизе, качеству и долгосрочному доверию.",
+          "defense_mechanisms": [
+            "Обесценивание аргументов оппонента («аккуратно к этому отнеслась», «не купишь за три месяца»)",
+            "Апелляция к авторитету и прошлому опыту («три года истории»)"
+          ],
+          "manipulation_signs": [
+            "Мягкое внушение сомнений в компетенции конкурентов."
+          ],
+          "authenticity_score": 0.8,
+          "risk_level": "medium"
+        },
+        {
+          "participant": "Никита Фролов",
+          "stated_position": "Уточняет статус готовности к комитету, говорит о прогрессе по каркасу и надежде на решение вопроса с API.",
+          "true_intentions": [
+            "Успокоить клиента, снизить градус напряжения после выпада про конкурентов.",
+            "Перевести разговор из плоскости эмоций и угроз в плоскость реальных технических задач (каркас, API)."
+          ],
+          "personal_agenda": [
+            "Удержать проект в работе, выиграть время у клиента.",
+            "Избежать жестких дедлайнов, за которые команда не ручается («надеемся, доступ к API наконец решится»)."
+          ],
+          "fears": [
+            "Не успеть подготовить убедительные материалы к маю.",
+            "Зависимость от внешних факторов (доступ к API), которые он не контролирует."
+          ],
+          "power_seeking": "Низкое. Занимает скорее примиряющую и оправдывающуюся позицию, признавая зависимость от внешних блокировщиков (API).",
+          "defense_mechanisms": [
+            "Уход от конфронтации в технические детали.",
+            "Использование смягчающих конструкций («надеемся», «надеюсь тоже»)."
+          ],
+          "manipulation_signs": [
+            "Перекладывание части ответственности на внешние факторы (доступ к API)."
+          ],
+          "authenticity_score": 0.7,
+          "risk_level": "medium"
+        }
+      ],
+      "group_dynamics": {},
+      "behavioral_predictions": [
+        {
+          "participant": "Никита Фролов",
+          "stress_reaction": "Сохраняет внешнее спокойствие, переключает фокус внимания с эмоционального давления на конкретные технические шаги и будущие результаты (каркас, API).",
+          "conflict_behavior": "Избегает прямой конфронтации, сглаживает углы, возвращает участников к конструктивной рабочей повестке и партнерскому диалогу.",
+          "change_adaptation": "Адаптируется постепенно, опираясь на командный консенсус и процессный подход, предпочитает предсказуемость.",
+          "deadline_pressure": "Опирается на совместную работу с Ольгой Реутовой и технический прогресс; под давлением дедлайнов стремится зафиксировать промежуточные результаты («каркас»)",
+          "criticism_response": "Принимает сдержанно, не уходит в глухую оборону, переводит критику в плоскость совместного решения технических задач.",
+          "leadership_emergence": "Проявляет мягкое координирующее лидерство при подготовке к встречам с клиентом и структурировании коммуникации.",
+          "collaboration_style": "Партнерский и поддерживающий, действует в связке с коллегой, разделяя зоны ответственности (процесс/экспертиза).",
+          "likely_triggers": [
+            "Затягивание сроков из-за внешних факторов (например, недоступность API со стороны банка)",
+            "Хаотичные требования клиента без опоры на техническую реальность"
+          ],
+          "positive_triggers": [
+            "Успешное прохождение клиентом комитета",
+            "Решение технических блокеров (доступ к API)",
+            "Прогресс по каркасу проекта"
+          ],
+          "prediction_confidence": 0.85
+        },
+        {
+          "participant": "Сергей Волков",
+          "stress_reaction": "Усиливает давление через аргументы о рисках перед руководством, напоминает об альтернативных подрядчах («Аналитики Плюс»), перекладывает часть ответственности на исполнителя.",
+          "conflict_behavior": "Использует жесткую прагматичную позицию клиента, манипулирует сроками и альтернативами для защиты собственной репутации перед комитетом.",
+          "change_adaptation": "Адаптируется прагматично: быстро переключается на того вендора, который дает больше гарантий к нужному сроку, если текущий партнер задерживается.",
+          "deadline_pressure": "Транслирует жесткое давление на подрядчика, требуя промежуточных результатов («чтобы к маю было что показать»), используя дедлайны комитета как рычаг.",
+          "criticism_response": "Реагирует через превентивную защиту и рационализацию («Я не угрожаю, я просто хочу...»), стремясь сохранить контроль над ситуацией.",
+          "leadership_emergence": "Проявляет доминантное лидерство заказчика, диктуя свои условия и используя статус директора по закупкам для контроля поставщика.",
+          "collaboration_style": "Прагматичный, транзакционный. Сотрудничает до тех пор, пока это безопасно для его отчетности перед комитетом; готов рассмотреть альтернативы.",
+          "likely_triggers": [
+            "Отсутствие видимого прогресса к маю («мы работаем над этим»)",
+            "Задержка интеграции и угроза провала перед комитетом",
+            "Ощущение, что подрядчик недооценивает его риски"
+          ],
+          "positive_triggers": [
+            "Надежные гарантии и демонстрация реального каркаса продукта к маю",
+            "Прозрачность и честность со стороны подрядчика без пустых обещаний",
+            "Успешная защита проекта на комитете"
+          ],
+          "prediction_confidence": 0.9
+        },
+        {
+          "participant": "Ольга Реутова",
+          "stress_reaction": "Реагирует экспертно и хладнокровно, возвращает оппонента к реальности рынка (аргумент про 3 года истории и нереалистичность 3 месяцев с нуля).",
+          "conflict_behavior": "Занимает твердую экспертную позицию, открыто и вежливо обозначает границы и риски без проявления агрессии.",
+          "change_adaptation": "Адаптируется через анализ рисков и опираясь на накопленный опыт и стабильность работающего продукта.",
+          "deadline_pressure": "Опирается на экспертные аргументы, качество продукта и стабильность, противостоит попыткам искусственного занижения сроков в ущерб качеству.",
+          "criticism_response": "Отражает критику или давление конкурентных предложений с помощью экспертных контраргументов и фактов о сложности банковской интеграции.",
+          "leadership_emergence": "Проявляет экспертное лидерство в моментах обсуждения технологической сложности, сроков и качества интеграции.",
+          "collaboration_style": "Прямолинейный, экспертный, партнерский. Защищает ценность продукта и интересы команды.",
+          "likely_triggers": [
+            "Необоснованное давление со стороны клиента с апелляцией к сомнительным альтернативам («сказочным» срокам конкурентов)",
+            "Обесценивание 3-летней истории и стабильности продукта"
+          ],
+          "positive_triggers": [
+            "Признание клиентом ценности стабильно работающего продукта",
+            "Конструктивный диалог на базе реальных инженерных сроков",
+            "Поддержка со стороны коллеги (Никиты Фролова)"
+          ],
+          "prediction_confidence": 0.88
+        }
+      ],
+      "conflict_risks": [
+        {
+          "conflict_type": "ресурсный",
+          "parties": [
+            "Сергей Волков («Титан-Банк»)",
+            "Никита Фролов, Ольга Реутова («Гелион»)"
+          ],
+          "root_cause": "Разрыв между жесткими ожиданиями клиента по срокам (3-5 месяцев, майский комитет) и реалистичным циклом разработки сложного банковского ПО (у «Гелиона» заложено 7 месяцев).",
+          "triggers": [
+            "Затягивание решения по доступу к API со стороны банка или третьих лиц",
+            "Вопросы членов кредитного/инвестиционного комитета к Сергею Волкову по поводу затяжки сроков",
+            "Давление конкурентов («Аналитика Плюс»), обещающих интеграцию за 3 месяца"
+          ],
+          "probability": 0.85,
+          "impact": "critical",
+          "early_warning_signs": [
+            "Упоминание клиентом альтернативных подрядчиков как рычага давления",
+            "Частые запросы промежуточных отчетов с требованием ускорения",
+            "Раздражение клиента формулировками вроде «мы работаем над этим»"
+          ],
+          "prevention_strategies": [
+            "Четко зафиксировать к маю промежуточный результат (готовый каркас), который Сергей сможет уверенно показать комитету",
+            "Совместно с Сергеем ускорить решение вопроса по доступу к API, сняв часть головной боли с директора по закупкам",
+            "Подготовить прозрачное обоснование для комитета, почему 7 месяцев надежнее и безопаснее для банка, чем сомнительные 3 месяца от новичков"
+          ],
+          "resolution_approach": "Признать риски без оправданий, сфокусироваться на совместном поиске путей сокращения критического пути (critical path) проекта и предложить демонстрацию работающего каркаса на комитете",
+          "timeline": "К моменту майского комитета и в течение 1-2 месяцев после него"
+        },
+        {
+          "conflict_type": "ценностный",
+          "parties": [
+            "Сергей Волков («Титан-Банк»)",
+            "Ольга Реутова («Гелион» / экспертиза)"
+          ],
+          "root_cause": "Столкновение прагматизма покупателя, которому нужно отчитываться перед руководством (сроки и скорость), с инженерным консерватизмом вендора (надежность, стабильность, трехлетняя история продукта).",
+          "triggers": [
+            "Скептичная реакция Ольги («аккуратно к этому отнеслась») на обещания конкурентов сделать за реестр месяцев, которую клиент может воспринять как высокомерие или нежелание развиваться",
+            "Требование клиента ускорить разработку в ущерб архитектурной стабильности"
+          ],
+          "probability": 0.5,
+          "impact": "medium",
+          "early_warning_signs": [
+            "Обесценивание экспертных аргументов команды «Гелиона» со стороны клиента",
+            "Закрытость клиента в технический вопросах"
+          ],
+          "prevention_strategies": [
+            "Перевести диалог с плоскости «быстро vs качественно» в плоскость «управление рисками банка»",
+            "Продемонстрировать уважение к давлению, которое испытывает Сергей со стороны комитета, предложив ему аргументы для защиты текущего проекта"
+          ],
+          "resolution_approach": "Использовать язык бизнес-метрик и надежности вместо чисто технических аргументов; показать, что стабильность «Гелиона» защищает репутацию самого Сергея",
+          "timeline": "Среднесрочная перспектива (при обсуждении этапов и дедлайнов)"
+        }
+      ],
+      "management_recommendations": [
+        {
+          "category": "коммуникация",
+          "recommendation": "Сместить фокус коммуникации с процесса («мы работаем над этим») на осязаемые промежуточные артефакты для майского комитета.",
+          "target": "Никита Фролов, Ольга Реутова",
+          "rationale": "Клиент (тип D/C) испытывает сильное давление со стороны руководства и комитета, ему нужны не процессы, а контролируемые доказательства прогресса, чтобы защитить проект.",
+          "implementation": "Подготовить к маю визуализируемый каркас системы и четкий трек по API, который Сергей сможет продемонстрировать без риска выглядеть некомпетентно.",
+          "expected_outcome": "Снижение тревожности клиента, уменьшение риска ухода к конкурентам («Аналитика Плюс»)",
+          "priority": "high",
+          "timing": "немедленно, до майского комитета"
+        },
+        {
+          "category": "конфликты",
+          "recommendation": "Внедрить практику регулярного совместного разбора «узких мест» (в частности, доступа к API), сделав клиента соучастником решения проблем, а не надсмотрщиком.",
+          "target": "Никита Фролов",
+          "rationale": "Сергей прямо указал: «это ведь и моя головная боль, не только ваша». Вовлечение клиента в лоббирование внутренних ресурсов банка снижает уровень его фрустрации.",
+          "implementation": "Провести короткую рабочую сессию по статусу API-интеграции, где зафиксировать, какая зона ответственности на стороне банка и чем «Гелион» может помочь.",
+          "expected_outcome": "Разделение ответственности за риски сроков, укрепление партнерского доверия",
+          "priority": "high",
+          "timing": "в течение 3 дней"
+        },
+        {
+          "category": "коммуникация",
+          "recommendation": "Поддерживать рациональный и экспертный тон Ольги Реутовой в ответах на ценовое и временное давление конкурентов, избегая эмоциональной защиты.",
+          "target": "Ольга Реутова",
+          "rationale": "Ольга правильно отреагировала на угрозу («три года истории и рабочий продукт»), но важно продолжать апеллировать к надежности и рискам дешевых альтернатив на языке фактов, понятных типу C/D.",
+          "implementation": "При любых сравнениях с конкурентами («Аналитика Плюс») делать акцент на скрытых издержках трехмесячной интеграции с нуля для банковского сектора (безопасность, отказоустойчивость).",
+          "expected_outcome": "Клиент продолжит критически оценивать обещания конкурентов и ценить стабильность текущего решения",
+          "priority": "medium",
+          "timing": "постоянно при контактах с клиентом"
+        },
+        {
+          "category": "мотивация",
+          "recommendation": "Официально зафиксировать и поблагодарить Сергея за его прозрачность и раннее предупреждение о конкурентах.",
+          "target": "Никита Фролов",
+          "rationale": "Клиент поступил экологично («сказал вам, а не молчу и не ухожу тихо»), что демонстрирует высокий уровень лояльности. Подкрепление этого поведения закрепит доверительный паттерн.",
+          "implementation": "В письме-резерве по итогам встречи или в начале следующего звонка явно озвучить признательность за открытую позицию.",
+          "expected_outcome": "Закрепление партнерских отношений, получение фокусовой информации о рисках в будущем раньше рынка",
+          "priority": "medium",
+          "timing": "на следующей встрече / в письме"
+        },
+        {
+          "category": "лидерство",
+          "recommendation": "Провести внутренний антикризисный спринт внутри команды «Гелиона» с целью сжатия сроков по некритичным блокам интеграции без потери качества.",
+          "target": "Вся команда разработки «Гелион»",
+          "rationale": "Разрыв между 7 месяцами «Гелиона» и 3 месяцами конкурентов создает сильное давление на Сергея в комитете. Команде нужно найти внутренние резервы для оптимизации таймлайна.",
+          "implementation": "Технический лидер должен пересмотреть матрицу задач и оценить возможность параллельной работы по каркасу и API.",
+          "expected_outcome": "Сокращение общего срока разработки ближе к ожиданиям клиента (например, до 5-6 месяцев) или обоснованная аргументация, почему быстрее физически невозможно",
+          "priority": "high",
+          "timing": "немедленно"
+        }
+      ],
+      "stats": {
+        "duration_seconds": 30.13,
+        "profiles_created": 3,
+        "motives_identified": 3,
+        "conflicts_detected": 2,
+        "recommendations_generated": 5
+      }
+    },
+    "future_predictions": {
+      "scenarios": [
+        {
+          "name": "Оптимистичный сценарий",
+          "type": "optimistic",
+          "probability": 0.25,
+          "description": "«Гелион» успешно решает вопрос с доступом к API, демонстрирует готовый каркас на майском комитете, что полностью нивелирует предложение конкурентов.",
+          "time_horizon": "1 месяц",
+          "key_events": [
+            "Получен доступ к API Титан-Банка",
+            "Успешно продемонстрирован прогресс по каркасу модуля на комитете в мае",
+            "Сергей Волков отклоняет предложение «Аналитики Плюс» в пользу проверенного партнера"
+          ],
+          "triggers": [
+            "Оперативное содействие со стороны Сергея Волкова в вопросе получения доступа к API"
+          ],
+          "consequences": [
+            "Укрепление долгосрочных партнерских отношений с Титан-Банком",
+            "Продолжение проекта по текущему графику без срывов и потери бюджета"
+          ],
+          "affected_projects": [
+            "Банковский модуль для Титан-Банка (Гелион)"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Ольга Реутова",
+            "Сергей Волков"
+          ],
+          "decision_points": [
+            "Утверждение промежуточных итогов на комитете в мае"
+          ],
+          "success_factors": [
+            "Своевременный доступ к API",
+            "Трехлетняя история успешного сотрудничества"
+          ],
+          "failure_factors": [
+            "Технические задержки со стороны банка"
+          ],
+          "recommended_actions": [
+            "Сфокусироваться на подготовке качественной демонстрации каркаса к маю",
+            "Использовать аргумент надежности существующего продукта («не падает три года»)"
+          ]
+        },
+        {
+          "name": "Реалистичный сценарий",
+          "type": "realistic",
+          "probability": 0.55,
+          "description": "Вопрос с API затягивается частично, но «Гелион» показывает достаточный прогресс по каркасу. Комитет продлевает кредит доверия, учитывая 3-летнюю историю, но «Аналитика Плюс» остается у Сергея Волкова запасным рычагом.",
+          "time_horizon": "3 месяца",
+          "key_events": [
+            "Демонстрация базового прогресса по каркасу на майском комитете",
+            "Задержка с полным доступом к API сохраняется, но переговорный процесс продолжается",
+            "Сергей Волков держит предложение «Аналитики Плюс» как альтернативу на случай дальнейших затыков"
+          ],
+          "triggers": [
+            "Бюрократические задержки с предоставлением доступа к API со стороны банка",
+            "Честная коммуникация Сергея Волкова о наличии альтернативы"
+          ],
+          "consequences": [
+            "Сохранение контракта за «Гелионом», но под жестким мониторингом со стороны директора по закупкам",
+            "Повышение рисков срыва сроков (7 месяцев), если API не будет предоставлен в ближайшие недели"
+          ],
+          "affected_projects": [
+            "Банковский модуль для Титан-Банка (Гелион)"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Ольга Реутова",
+            "Сергей Волков"
+          ],
+          "decision_points": [
+            "Решение комитета по статусу проекта в мае",
+            "Промежуточная оценка рисков перехода к конкурентам"
+          ],
+          "success_factors": [
+            "Прозрачность коммуникации с клиентом",
+            "Опора на лояльность Сергея Волкова и историю отношений"
+          ],
+          "failure_factors": [
+            "Отсутствие реального прогресса по каркасу к маю",
+            "Затягивание решения по API"
+          ],
+          "recommended_actions": [
+            "Продолжать держать Сергея Волкова в курсе статуса по API и каркасу",
+            "Подготовить аргументы против трехмесячного срока интеграции «с нуля» от «Аналитики Плюс»"
+          ]
+        },
+        {
+          "name": "Пессимистичный сценарий",
+          "type": "pessimistic",
+          "probability": 0.2,
+          "description": "К маю нет ни доступа к API, ни убедительного прогресса по каркасу. Сергей Волков вынужденно выносит на комитет альтернативу от «Аналитики Плюс», ставя под угрозу продолжение работ с «Гелионом».",
+          "time_horizon": "3 месяца",
+          "key_events": [
+            "Отсутствие прогресса по каркасу и закрытый доступ к API к маю",
+            "Сергей Волков представляет «Аналитику Плюс» комитету как реальную и более быструю альтернативу",
+            "Начало пересмотра условий контракта или заморозка текущего проекта"
+          ],
+          "triggers": [
+            "Продолжение затягивания доступа к API",
+            "Неспособность команды «Гелиона» показать осязаемый результат к комитету"
+          ],
+          "consequences": [
+            "Риск потери контракта или существенного сокращения бюджета",
+            "Репутационные потери «Гелиона» перед руководством Титан-Банка"
+          ],
+          "affected_projects": [
+            "Банковский модуль для Титан-Банка (Гелион)"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Ольга Реутова",
+            "Сергей Волков"
+          ],
+          "decision_points": [
+            "Решение комитета о прекращении или заморозке сотрудничества с «Гелионом»",
+            "Выбор в пользу вендора-конкурента («Аналитика Плюс»)"
+          ],
+          "success_factors": [
+            "Отсутствуют в данном сценарии"
+          ],
+          "failure_factors": [
+            "Зависимость от внешних факторов (доступ к API)",
+            "Появление агрессивного конкурента с короткими сроками"
+          ],
+          "recommended_actions": [
+            "Срочно эскалировать проблему с доступом к API на уровень выше внутри Титан-Банка совместно с Сергеем Волковым",
+            "Разработать план минимизации рисков потери контракта"
+          ]
+        }
+      ],
+      "project_predictions": [
+        {
+          "project_name": "Банковский модуль для Титан-Банка (Гелион)",
+          "current_status": "in_progress",
+          "success_probability": 0.7,
+          "confidence": 0.85,
+          "predicted_completion": "Конец 2026 / Сроки под угрозой",
+          "delay_risk": 0.6,
+          "quality_forecast": "high",
+          "budget_risk": "on_track",
+          "key_success_factors": [
+            "Трехлетняя история успешного сотрудничества с клиентом",
+            "Наличие стабильно работающего базового продукта",
+            "Лояльность директора по закупкам (Сергей Волков открыто обсуждает риски)"
+          ],
+          "key_risk_factors": [
+            "Появление агрессивного конкурента («Аналитика Плюс»), предлагающего сроки в 3 месяца",
+            "Давление со стороны кредитного комитета клиента",
+            "Отсутствие четких сроков по предоставлению доступа к API"
+          ],
+          "bottlenecks": [
+            "Зависимость от внешнего доступа к API банка",
+            "Длительные сроки разработки (7 месяцев против 3 месяцев у конкурента)"
+          ],
+          "dependencies": [
+            "Предоставление доступа к API"
+          ],
+          "team_readiness": "high",
+          "resource_adequacy": "adequate",
+          "outcome_scenarios": [
+            {
+              "scenario": "Успешная демонстрация каркаса к маю, сохранение контракта благодаря долгосрочному доверию и надежности продукта «Гелиона».",
+              "probability": 0.6,
+              "impact": "high"
+            },
+            {
+              "scenario": "Клиент под давлением комитета и из-за задержек с API передает проект или часть функционала конкуренту («Аналитика Плюс»).",
+              "probability": 0.4,
+              "impact": "critical"
+            }
+          ],
+          "recommendations": [
+            "Срочно ускорить решение вопроса с доступом к API",
+            "Подготовить убедительную презентацию архитектурного каркаса к маю, подчеркивая надежность решения в сравнении с 'быстрыми' аналогами с нуля",
+            "Усилить коммуникацию с Сергеем Волковым, чтобы снять его опасения перед комитетом"
+          ]
+        }
+      ],
+      "task_predictions": [
+        {
+          "task": "Показать прогресс по каркасу и статус доступа к API к комитету",
+          "assignee": "Никита Фролов",
+          "deadline": "2026-05",
+          "completion_probability": 0.85,
+          "on_time_probability": 0.7,
+          "predicted_completion": "2026-05",
+          "delay_days": 0,
+          "blockers": [
+            "Доступ к API"
+          ],
+          "dependencies": [],
+          "priority_score": 0.9,
+          "effort_estimate": "high",
+          "risk_factors": [
+            "Задержка с предоставлением доступа к API со стороны банка",
+            "Появление конкурентного давления со стороны альтернативных подрядчиков ('Аналитики Плюс')"
+          ],
+          "success_factors": [
+            "Многолетняя история сотрудничества и доверие клиента",
+            "Наличие готового рабочего продукта у 'Гелиона'",
+            "Заинтересованность заказчика (Сергея Волкова) в совместном решении проблемы с API"
+          ]
+        }
+      ],
+      "risks": [
+        {
+          "risk_name": "Появление конкурентной альтернативы для клиента",
+          "category": "strategic",
+          "description": "Компания «Аналитика Плюс» предложила «Титан-Банку» аналогичный модуль со сроком реализации 3 месяца (вместо 7 месяцев у «Гелиона»). Заказчик обязан рассмотреть эту альтернативу на комитете в случае затяжки со стороны «Гелиона».",
+          "probability": 0.6,
+          "impact": "critical",
+          "affected_projects": [
+            "Банковский модуль для Титан-Банка (Гелион)"
+          ],
+          "affected_people": [
+            "Сергей Волков",
+            "Никита Фролов",
+            "Ольга Реутова"
+          ],
+          "root_causes": [
+            "Длительные сроки реализации текущего проекта (7 месяцев)",
+            "Активность конкурентов на рынке"
+          ],
+          "triggers": [
+            "Отсутствие видимого прогресса к моменту комитета",
+            "Задержки с предоставлением доступа к API"
+          ],
+          "early_warning_signs": [
+            "Слова директора по закупкам о предложениях от конкурентов",
+            "Требование клиента показать конкретные результаты к маю"
+          ],
+          "timeline": "К моменту заседания комитета (май 2026)",
+          "mitigation_strategies": [
+            "Ускорить демонстрацию промежуточных результатов (каркаса)",
+            "Сделать акцент на надежности многолетнего партнерства и стабильности работающего продукта"
+          ],
+          "contingency_plans": [
+            "Подготовить аргументацию о рисках перехода на 'сырое' решение за 3 месяца с нуля"
+          ],
+          "owner": "Никита Фролов",
+          "monitoring_frequency": "weekly"
+        },
+        {
+          "risk_name": "Задержка с получением доступа к API",
+          "category": "technical",
+          "description": "Процесс разработки и демонстрации каркаса зависит от доступа к API, который на момент звонка еще не решен окончательно («надеемся, доступ к API наконец решится»).",
+          "probability": 0.5,
+          "impact": "high",
+          "affected_projects": [
+            "Банковский модуль для Титан-Банка (Гелион)"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "root_causes": [
+            "Внешние зависимости от инфраструктуры или согласований со стороны банка"
+          ],
+          "triggers": [
+            "Затягивание выдачи доступов со стороны ответственных лиц в банке"
+          ],
+          "early_warning_signs": [
+            "Формулировка команды «надеемся, что решится» вместо точных сроков"
+          ],
+          "timeline": "Ближайшие недели (до мая 2026)",
+          "mitigation_strategies": [
+            "Совместно с Сергеем Волковым ускорить процесс согласования доступов к API внутри Титан-Банка"
+          ],
+          "contingency_plans": [
+            "Использовать мок-сервисы (заглушки) для демонстрации каркаса на комитете, если реальный API не будет готов"
+          ],
+          "owner": "Никита Фролов",
+          "monitoring_frequency": "daily"
+        }
+      ],
+      "early_warnings": [
+        {
+          "type": "risk_warning",
+          "severity": "high",
+          "title": "⚠️ Риск: Появление конкурентной альтернативы для клиента",
+          "description": "Компания «Аналитика Плюс» предложила «Титан-Банку» аналогичный модуль со сроком реализации 3 месяца (вместо 7 месяцев у «Гелиона»). Заказчик обязан рассмотреть эту альтернативу на комитете в случае затяжки со стороны «Гелиона».",
+          "indicators": [
+            "Слова директора по закупкам о предложениях от конкурентов",
+            "Требование клиента показать конкретные результаты к маю"
+          ],
+          "recommended_action": "Ускорить демонстрацию промежуточных результатов (каркаса)",
+          "deadline": "Немедленно"
+        },
+        {
+          "type": "risk_warning",
+          "severity": "medium",
+          "title": "⚠️ Риск: Задержка с получением доступа к API",
+          "description": "Процесс разработки и демонстрации каркаса зависит от доступа к API, который на момент звонка еще не решен окончательно («надеемся, доступ к API наконец решится»).",
+          "indicators": [
+            "Формулировка команды «надеемся, что решится» вместо точных сроков"
+          ],
+          "recommended_action": "Совместно с Сергеем Волковым ускорить процесс согласования доступов к API внутри Титан-Банка",
+          "deadline": "В течение недели"
+        }
+      ],
+      "opportunities": [
+        {
+          "opportunity_name": "Укрепление партнерских отношений и удержание ключевого клиента через прозрачность",
+          "category": "growth",
+          "description": "Клиент (Сергей Волков) проявил высокую степень лояльности и доверия: он открыто поделился информацией о предложении конкурентов («Аналитика Плюс»), чтобы дать «Гелиону» возможность подгото ситься к комитету, а не ушел молча. Это открывает возможность закрепить статус стратегического партнера за счет демонстрации сильных сторон (3 года успешной истории, надежность продукта) и прогресса по каркасу.",
+          "potential_value": "high",
+          "probability_of_success": 0.8,
+          "time_to_realize": "short term",
+          "required_resources": [
+            "Команда проекта (Никита Фролов, Ольга Реутова)",
+            "Материалы для презентации к комитету"
+          ],
+          "key_enablers": [
+            "Прозрачная коммуникация со стороны клиента",
+            "Многолетняя история успешного сотрудничества"
+          ],
+          "barriers": [
+            "Задержки с доступом к API",
+            "Конкурентное предложение с более коротким заявленным сроком (3 месяца)"
+          ],
+          "related_projects": [
+            "project_001"
+          ],
+          "recommended_first_steps": [
+            "Подготовить убедительную презентацию для комитета с демонстрацией прогресса по каркасу к маю",
+            "Подсветить стабильность текущего рабочего продукта («стоит и не падает») как ключевое преимущество перед быстрыми, но рискованными аналогами с нуля"
+          ]
+        },
+        {
+          "opportunity_name": "Совместное решение блокировщика по API с поддержкой заказчика",
+          "category": "efficiency",
+          "description": "Клиент прямо заявил, что вопрос с доступом к API — это «и моя головная боль, не только ваша». Это создает возможность привлечь административный ресурс и влияние Сергея Волкова внутри Титан-Банка для ускорения получения доступа к API.",
+          "potential_value": "high",
+          "probability_of_success": 0.7,
+          "time_to_realize": "short term",
+          "required_resources": [
+            "Совместный план действий с клиентом"
+          ],
+          "key_enablers": [
+            "Заинтересованность директора по закупкам в успешном прохождении комитета и реализации проекта"
+          ],
+          "barriers": [
+            "Бюрократические барьеры внутри Титан-Банка"
+          ],
+          "related_projects": [
+            "project_001"
+          ],
+          "recommended_first_steps": [
+            "Инициировать обсуждение с Сергеем Волковым о возможных путях ускорения выдачи доступа к API с его стороны",
+            "Синхронизировать статусы и ожидания по срокам интеграции API к майскому комитету"
+          ]
+        }
+      ],
+      "recommendations": [
+        {
+          "recommendation": "Подготовить сильную и наглядную демонстрацию каркаса модуля к майскому комитету",
+          "type": "scenario_preparation",
+          "priority": "critical",
+          "rationale": "Клиент прямо указал на риск сравнения с конкурентами («Аналитика Плюс», предлагающими 3 месяца против 7) и требует осязаемых результатов к маю, а не отчетов о том, что работа ведется.",
+          "expected_outcome": "Нивелирование угрозы со стороны конкурентов, демонстрация реального технического прогресса и сохранение доверия комитета.",
+          "implementation_steps": [
+            "Сфокусировать команду разработки на завершении демонстрационного каркаса модуля",
+            "Подготовить презентационные материалы с акцентом на архитектурную надежность",
+            "Провести внутреннюю репетицию демо перед звонком клиенту"
+          ],
+          "resources_needed": [
+            "Команда разработки",
+            "Никита Фролов",
+            "Ольга Реутова"
+          ],
+          "timeline": "До мая 2026 года",
+          "success_metrics": [
+            "Успешное проведение демо на комитете",
+            "Положительная реакция Сергея Волкова"
+          ],
+          "responsible": "Никита Фролов",
+          "dependencies": [
+            "Технический прогресс по каркасу"
+          ]
+        },
+        {
+          "recommendation": "Использовать аргумент трехлетней истории и стабильности продукта в переговорах с комитетом",
+          "type": "risk_mitigation",
+          "priority": "high",
+          "rationale": "Конкуренты предлагают быструю разработку с нуля (3 месяца), но у «Гелиона» есть ключевое преимущество — проверенный трехлетний опыт работы продукта («стоит и не падает»).",
+          "expected_outcome": "Смещение фокуса внимания ЛПР с заниженных сроков новичков на реальные риски интеграции с нуля.",
+          "implementation_steps": [
+            "Включить кейсы бесперебойной работы за 3 года в презентацию для комитета",
+            "Подготовить тезисы о скрытых рисках 'быстрой' банковской интеграции с нуля"
+          ],
+          "resources_needed": [
+            "Ольга Реутова",
+            "Маркетинговые/презентационные материалы"
+          ],
+          "timeline": "К маю 2026 года",
+          "success_metrics": [
+            "Принятие комитетом аргументов о надежности решения"
+          ],
+          "responsible": "Ольга Реутова",
+          "dependencies": [
+            "Подготовка презентации"
+          ]
+        },
+        {
+          "recommendation": "Совместно с Сергеем Волковым разработать план решения проблемы с доступом к API",
+          "type": "risk_mitigation",
+          "priority": "high",
+          "rationale": "Доступ к API банка — главный фактор риска и задержки, при этом Сергей Волков сам назвал это своей головной болью и готов содействовать.",
+          "expected_outcome": "Ускорение получения доступа к API за счет административного ресурса заказчика.",
+          "implementation_steps": [
+            "Инициировать короткий созвон с Сергеем Волковым для обсуждения барьеров по API",
+            "Запросить его содействие в эскалации вопроса внутри Титан-Банка"
+          ],
+          "resources_needed": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "timeline": "Ближайшие 5-7 дней",
+          "success_metrics": [
+            "Получение доступа к API банка"
+          ],
+          "responsible": "Никита Фролов",
+          "dependencies": [
+            "Вовлеченность Сергея Волкова"
+          ]
+        },
+        {
+          "recommendation": "Использовать прозрачность клиента как возможность для укрепления партнерства",
+          "type": "opportunity_capture",
+          "priority": "medium",
+          "rationale": "Сергей Волков поступил максимально лояльно — открыто предупредил о конкурентах, чтобы «Гелион» успел подготовиться, а не ушел молча. Это заслуживает открытого и честного ответа.",
+          "expected_outcome": "Закрепление статуса стратегического партнера, высокий уровень доверия.",
+          "implementation_steps": [
+            "Поблагодарить Сергея за честность в личной коммуникации",
+            "Представить ему план подготовки к комитету в качестве подтверждения надежности команды"
+          ],
+          "resources_needed": [
+            "Никита Фролова",
+            "Ольга Реутова"
+          ],
+          "timeline": "Краткосрочно",
+          "success_metrics": [
+            "Письменная или устная позитивная обратная связь от клиента"
+          ],
+          "responsible": "Ольга Реутова",
+          "dependencies": [
+            "Отсутствие скрытых конфликтов"
+          ]
+        },
+        {
+          "recommendation": "Подготовить план минимизации сроков разработки (buffer/fast-track) на случай жестких вопросов комитета",
+          "type": "scenario_preparation",
+          "priority": "medium",
+          "rationale": "Комитет может потребовать сократить общий срок реализации (сейчас 7 месяцев) в ответ на оффер конкурентов на 3 месяца.",
+          "expected_outcome": "Наличие готового аргументированного ответа на претензии по срокам с возможностью параллелить процессы после получения API.",
+          "implementation_steps": [
+            "Провести аудит бэклога и оценить возможности параллелизации задач после открытия API",
+            "Сформировать компромиссное предложение по оптимизации графика"
+          ],
+          "resources_needed": [
+            "Технический лид",
+            "Никита Фролов"
+          ],
+          "timeline": "До мая 2026 года",
+          "success_metrics": [
+            "Утверждение оптимизированного графика комитетом"
+          ],
+          "responsible": "Никита Фролов",
+          "dependencies": [
+            "Доступ к API"
+          ]
+        }
+      ],
+      "stats": {
+        "duration_seconds": 19.38,
+        "scenarios_modeled": 3,
+        "projects_predicted": 1,
+        "tasks_predicted": 1,
+        "risks_identified": 2,
+        "warnings_generated": 2,
+        "opportunities_found": 2,
+        "recommendations_made": 5
+      }
+    },
+    "weighted_priorities": {
+      "weighted_tasks": [
+        {
+          "task_name": "Показать прогресс по каркасу и статус доступа к API к комитету",
+          "assignee": "Никита Фролов",
+          "urgency_score": 0.9,
+          "importance_score": 0.95,
+          "complexity_score": 0.8,
+          "risk_score": 0.9,
+          "dependency_score": 0.7,
+          "final_weight": 0.88,
+          "priority_level": "critical",
+          "reasoning": "Задача критически важна для удержания клиента («Титан-Банк»), так как заказчик прямо указал на наличие конкурента («Аналитики Плюс»), готового предложить альтернативу. Дедлайн (май) жесткий, от этого зависит решение комитета.",
+          "blockers": [
+            "Доступ к API"
+          ],
+          "accelerators": [
+            "Ускорение согласования доступа к API со стороны банка",
+            "Активная коммуникация с Сергеем Волковым для демонстрации текущих наработок"
+          ]
+        }
+      ],
+      "weighted_decisions": [],
+      "weighted_projects": [
+        {
+          "project_name": "Банковский модуль для Титан-Банка (Гелион)",
+          "status": "in_progress",
+          "strategic_value": 0.9,
+          "revenue_impact": 0.8,
+          "resource_intensity": 0.7,
+          "risk_level": 0.8,
+          "timeline_pressure": 0.9,
+          "stakeholder_visibility": 0.9,
+          "final_weight": 0.85,
+          "priority_level": "critical",
+          "reasoning": "Проект имеет критическую важность из-за появления реального конкурента («Аналитика Плюс»), предлагающего более короткие сроки (3 месяца против 7). Клиент (Сергей Волков) открыто предупреждает о необходимости показать результаты к комитету в мае, иначе он будет обязан рассмотреть альтернативу. При этом имеются блокирующие факторы (ожидание доступа к API).",
+          "attention_areas": [
+            "Ускорение получения доступа к API",
+            "Подготовка убедительной демонстрации прогресса по каркасу к майскому комитету",
+            "Нивелирование рисков ухода клиента к конкуренту через демонстрацию надежности существующей трехлетней истории и стабильности продукта"
+          ],
+          "quick_wins": [
+            "Демонстрация текущего стабильно работающего продукта и наработок по каркасу",
+            "Фиксация договоренностей с клиентом о прозрачности статуса интеграции"
+          ]
+        }
+      ],
+      "weighted_risks": [],
+      "priority_matrix": {
+        "critical": [
+          {
+            "type": "task",
+            "name": "Показать прогресс по каркасу и статус доступа к API к комитету",
+            "weight": 0.88,
+            "assignee": "Никита Фролов",
+            "reasoning": "Задача критически важна для удержания клиента («Титан-Банк»), так как заказчик прямо указал на наличие конкурента («Аналитики Плюс»), готового предложить альтернативу. Дедлайн (май) жесткий, от этого зависит решение комитета."
+          },
+          {
+            "type": "project",
+            "name": "Банковский модуль для Титан-Банка (Гелион)",
+            "weight": 0.85,
+            "status": "in_progress",
+            "reasoning": "Проект имеет критическую важность из-за появления реального конкурента («Аналитика Плюс»), предлагающего более короткие сроки (3 месяца против 7). Клиент (Сергей Волков) открыто предупреждает о необходимости показать результаты к комитету в мае, иначе он будет обязан рассмотреть альтернативу. При этом имеются блокирующие факторы (ожидание доступа к API)."
+          }
+        ],
+        "high": [],
+        "medium": [],
+        "low": []
+      },
+      "critical_items": [
+        {
+          "type": "task",
+          "name": "Показать прогресс по каркасу и статус доступа к API к комитету",
+          "weight": 0.88,
+          "assignee": "Никита Фролов",
+          "reasoning": "Задача критически важна для удержания клиента («Титан-Банк»), так как заказчик прямо указал на наличие конкурента («Аналитики Плюс»), готового предложить альтернативу. Дедлайн (май) жесткий, от этого зависит решение комитета."
+        },
+        {
+          "type": "project",
+          "name": "Банковский модуль для Титан-Банка (Гелион)",
+          "weight": 0.85,
+          "status": "in_progress",
+          "reasoning": "Проект имеет критическую важность из-за появления реального конкурента («Аналитика Плюс»), предлагающего более короткие сроки (3 месяца против 7). Клиент (Сергей Волков) открыто предупреждает о необходимости показать результаты к комитету в мае, иначе он будет обязан рассмотреть альтернативу. При этом имеются блокирующие факторы (ожидание доступа к API)."
+        }
+      ],
+      "focus_recommendations": [
+        {
+          "recommendation": "Срочно подготовить демонстрацию промежуточных результатов по каркасу банковского модуля и зафиксировать статус проблемы с доступом к API для майского комитета.",
+          "focus_area": "tasks",
+          "priority": "critical",
+          "items": [
+            "Показать прогресс по каркасу и статус доступа к API к комитету"
+          ],
+          "rationale": "Клиент (Сергей Волков) прямо предупредил о появлении конкурента («Аналитика Плюс»), предлагающего сроки в 3 месяца. Для прохождения майского комитета и защиты проекта перед руководством банку нужны веские аргументы в пользу «Гелиона».",
+          "time_allocation": "40% рабочего времени команды проекта до комитета",
+          "success_criteria": "Успешно проведенная демонстрация каркаса модулей для Сергея Волкова перед комитетом, снятие рисков ухода к конкуренту."
+        },
+        {
+          "recommendation": "Интенсифицировать работу по проекту «Банковский модуль для Титан-Банка» и проработать риски, связанные с затягиванием доступа к API.",
+          "focus_area": "projects",
+          "priority": "critical",
+          "items": [
+            "Банковский модуль для Титан-Банка (Гелион)"
+          ],
+          "rationale": "Проект находится под угрозой из-за жестких сроков и конкурентного давления. Необходимо минимизировать влияние блокирующих факторов (API) и усилить ценность трехлетнего партнерства и стабильности работающего продукта, о чем упоминала Ольга Реутова.",
+          "time_allocation": "50% времени руководителя проекта и ключевых разработчиков",
+          "success_criteria": "Получен доступ к API или согласован обходной путь (mock/тестовый контур), зафиксирован реальный и проверяемый прогресс по архитектуре каркаса."
+        },
+        {
+          "recommendation": "Провести внутренний синк команды «Гелиона» по отработке возражений клиента относительно сроков конкурентов («Аналитики Плюс»).",
+          "focus_area": "risks",
+          "priority": "critical",
+          "items": [
+            "Банковский модуль для Титан-Банка (Гелион)"
+          ],
+          "rationale": "Заявление клиента о трехмесячных сроках конкурентов несет репутационный и коммерческий риск. Команде нужно подготовить аргументацию о рисках быстрой интеграции с нуля (безопасность, падения, скрытые доработки), чтобы Сергей Волков мог использовать её на комитете.",
+          "time_allocation": "2-3 часа на подготовку позиции и аргументов для менеджеров",
+          "success_criteria": "Сформирован четкий питч для клиента о надежности текущего решения против рисков «сырого» софта за 3 месяца."
+        }
+      ],
+      "stats": {
+        "duration_seconds": 6.15,
+        "tasks_weighted": 1,
+        "decisions_weighted": 0,
+        "projects_weighted": 1,
+        "risks_weighted": 0,
+        "critical_items_count": 2
+      }
+    },
+    "search_metadata": {
+      "meeting_metadata": {
+        "meeting_id": "meeting_20260825_180552",
+        "title": "Сверка с Титан-Банком перед комитетом и обсуждение конкурентов",
+        "summary": "Представители «Гелиона» созвонились с директором по закупкам «Титан-Банка» Сергеем Волковым для сверки перед комитетом. Клиент сообщил о предложении конкурентов («Аналитика Плюс») сделать аналогичный модуль за 3 месяца вместо 7, используя это как возможную альтернативу при задержках. Стороны обсудили текущий прогресс по каркасу и вопрос доступа к API к маю.",
+        "main_topics": [
+          "Сверка перед комитетом",
+          "Конкурентное предложение от «Аналитики Плюс»",
+          "Сроки банковской интеграции",
+          "Доступ к API и прогресс по каркасу"
+        ],
+        "key_outcomes": [
+          "«Гелион» получил информацию о наличии альтернативного предложения у конкурентов",
+          "Зафиксирована необходимость показать прогресс по каркасу проекта к маю",
+          "Обсуждена проблема затягивания доступа к API"
+        ],
+        "action_items_summary": "Подготовить демонстрацию прогресса по каркасу продукта к майскому комитету.",
+        "decisions_summary": "Решения не принимались, проведена статусная сверка позиций.",
+        "participants_summary": "Никита Фролов и Ольга Реутова (компания «Гелион»), Сергей Волков (директор по закупкам, «Титан-Банк»)",
+        "mood": "urgent",
+        "meeting_type": "review",
+        "keywords": [
+          "Титан-Банк",
+          "Гелион",
+          "комитет",
+          "Аналитика Плюс",
+          "интеграция",
+          "API",
+          "каркас",
+          "Сергей Волков",
+          "Ольга Реутова",
+          "Никита Фролов"
+        ],
+        "related_projects": [
+          "Титан-Банк — Банковский модуль",
+          "Интеграция Гелион"
+        ],
+        "searchable_text": "Встреча клиентский звонок Титан-Банк сверка перед комитетом Никита Фролов Ольга Реутова Гелион Сергей Волков директор по закупкам Аналитика Плюс банковская интеграция модуль конкуренты API каркас сроки май",
+        "importance_score": 0.9,
+        "generated_at": "2026-08-25T18:05:59.901433+00:00"
+      },
+      "node_metadata": [
+        {
+          "node_type": "Person",
+          "name": "Никита Фролов",
+          "summary": "Никита Фролов",
+          "keywords": [
+            "Никита Фролов"
+          ],
+          "searchable_text": "Никита Фролов",
+          "importance_score": 0.7
+        },
+        {
+          "node_type": "Person",
+          "name": "Сергей Волков",
+          "summary": "Сергей Волков - директор по закупкам",
+          "keywords": [
+            "Сергей Волков",
+            "директор по закупкам"
+          ],
+          "searchable_text": "Сергей Волков директор по закупкам",
+          "importance_score": 0.7
+        },
+        {
+          "node_type": "Person",
+          "name": "Ольга Реутова",
+          "summary": "Ольга Реутова",
+          "keywords": [
+            "Ольга Реутова"
+          ],
+          "searchable_text": "Ольга Реутова",
+          "importance_score": 0.7
+        },
+        {
+          "node_type": "Task",
+          "name": "Показать прогресс по каркасу и статус доступа к API к комитету",
+          "summary": "Task: Показать прогресс по каркасу и статус доступа к API к комитету (assigned to {'name': 'Никита Фролов', 'role': 'Представитель «Гелиона»'})",
+          "keywords": [
+            "Показать прогресс по каркасу и статус доступа к API к комитету",
+            {
+              "name": "Никита Фролов",
+              "role": "Представитель «Гелиона»"
+            },
+            "task",
+            "задача"
+          ],
+          "searchable_text": "Показать прогресс по каркасу и статус доступа к API к комитету {'name': 'Никита Фролов', 'role': 'Представитель «Гелиона»'} {'date': '2026-05', 'is_hard': True}",
+          "importance_score": 0.8
+        },
+        {
+          "node_type": "Entity",
+          "name": "Титан-Банк",
+          "summary": "organization: Титан-Банк",
+          "keywords": [
+            "Титан-Банк",
+            "organization"
+          ],
+          "searchable_text": "Титан-Банк organization",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "Гелион",
+          "summary": "company: Гелион",
+          "keywords": [
+            "Гелион",
+            "company"
+          ],
+          "searchable_text": "Гелион company",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "Аналитики Плюс",
+          "summary": "organization: Аналитики Плюс",
+          "keywords": [
+            "Аналитики Плюс",
+            "organization"
+          ],
+          "searchable_text": "Аналитики Плюс organization",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "модуль",
+          "summary": "product: модуль",
+          "keywords": [
+            "модуль",
+            "product"
+          ],
+          "searchable_text": "модуль product",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "API",
+          "summary": "technology: API",
+          "keywords": [
+            "API",
+            "technology"
+          ],
+          "searchable_text": "API technology",
+          "importance_score": 0.6
+        }
+      ],
+      "keywords": [
+        "май",
+        "2026-05-12",
+        "Ольга Реутова",
+        "API",
+        "Никита Фролов",
+        "модуль",
+        "прогресс",
+        "Аналитика Плюс",
+        "семь месяцев",
+        "Сергей Волков",
+        "директор по закупкам",
+        "каркас",
+        "Титан-Банк",
+        "рабочий продукт",
+        "банковская интеграция",
+        "Гелион",
+        "три месяца",
+        "Аналитики Плюс",
+        "три года истории",
+        "альтернатива",
+        "клиентский звонок",
+        "комитет"
+      ],
+      "topics": [
+        {
+          "topic": "Подготовка к комитету и текущий статус проекта",
+          "description": "Сверка позиций и прогресса перед предстоящим комитетом, обсуждение ожидаемых результатов к маю.",
+          "relevance_score": 0.95,
+          "keywords": [
+            "комитет",
+            "сверка",
+            "май",
+            "прогресс",
+            "каркас"
+          ],
+          "participants_involved": [
+            "Никита Фролов",
+            "Ольга Реутова",
+            "Сергей Волков"
+          ],
+          "outcomes": [
+            "Стороны сверились по ожиданиям к маю",
+            "Подтверждено, что к маю будет готов каркас проекта"
+          ],
+          "follow_up_needed": true
+        },
+        {
+          "topic": "Появление конкурентной альтернативы от компании «Аналитика Плюс»",
+          "description": "Клиент сообщил о поступившем предложении от конкурентов («Аналитика Плюс»), которые предлагают похожий модуль со сроком реализации 3 месяца вместо 7.",
+          "relevance_score": 0.9,
+          "keywords": [
+            "Аналитика Плюс",
+            "конкуренты",
+            "модуль",
+            "сроки",
+            "три месяца"
+          ],
+          "participants_involved": [
+            "Сергей Волков",
+            "Ольга Реутова"
+          ],
+          "outcomes": [
+            "Клиент открыто поделился информацией как потенциальной альтернативой для комитета",
+            "Поставщик («Гелион») обосновал риски быстрой интеграции с нуля и напомнил о трехлетней истории успешной работы"
+          ],
+          "follow_up_needed": false
+        },
+        {
+          "topic": "Проблема с доступом к API",
+          "description": "Обсуждение текущей задержки и надежд на скорейшее решение вопроса с предоставлением доступа к API.",
+          "relevance_score": 0.75,
+          "keywords": [
+            "API",
+            "доступ",
+            "интеграция"
+          ],
+          "participants_involved": [
+            "Сергей Волков",
+            "Никита Фролов"
+          ],
+          "outcomes": [
+            "Обе стороны признали доступ к API общей головной болью",
+            "Ожидается решение вопроса к маю"
+          ],
+          "follow_up_needed": true
+        }
+      ],
+      "searchable_chunks": [
+        {
+          "chunk_id": "chunk_0",
+          "text": "Встреча: Клиентский звонок — Титан-Банк, сверка перед комитетом Дата: 2026-05-12 Длительность: 11 мин Участники: Никита Фролов, Ольга Реутова (со стороны «Гелиона»); Сергей Волков — директор по закупкам, «Титан-Банк» --- [00:00] Никита Фролов: Сергей Игоревич, добрый день, на связи с Ольгой, хотели свериться перед комитетом. [00:06] Сергей Волков: Добрый день. Кстати, вовремя — у меня к вам вопрос, если честно. Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь. [00:19] Ольга Реутова: Три месяца на банковскую интеграцию с нуля — я бы аккуратно к этому отнеслась, Сергей Игоревич. [00:26] Сергей Волков: Я тоже аккуратно отношусь, поэтому и говорю вам, а не молчу и не ухожу тихо. Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу, если у нас с вами будет затык. [00:39] Ольга Реутова: Понимаю. У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого. Но услышала, спасибо за честность. [00:52] Сергей Волков: Я не угрожаю, я просто хочу, чтобы к маю у меня было что показать, кроме «мы работаем над этим». [00:59] Никита Фролов: К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится. [01:06] Сергей Волков: Надеюсь тоже, это ведь и моя головная боль, не только ваша. Хорошо, буду ждать, что покажете к комитету.",
+          "start_position": 0,
+          "end_position": 234,
+          "keywords_found": [
+            "2026-05-12",
+            "Ольга Реутова",
+            "API",
+            "Никита Фролов",
+            "модуль",
+            "прогресс",
+            "Сергей Волков",
+            "директор по закупкам",
+            "каркас",
+            "Титан-Банк",
+            "рабочий продукт",
+            "Гелион",
+            "три месяца",
+            "Аналитики Плюс",
+            "три года истории",
+            "клиентский звонок",
+            "комитет"
+          ],
+          "keyword_density": 0.7727272727272727,
+          "importance_score": 1.0
+        }
+      ],
+      "stats": {
+        "duration_seconds": 5.28,
+        "nodes_processed": 9,
+        "keywords_extracted": 22,
+        "topics_identified": 3,
+        "chunks_created": 1
+      }
+    },
+    "decision_learning": {
+      "meeting_id": "meeting_20260825_180552",
+      "timestamp": "2026-08-25T18:05:57.664742+00:00",
+      "decisions": [],
+      "decision_patterns": {},
+      "learning_data": [],
+      "statistics": {
+        "total": 0
+      }
+    },
+    "synthesis_analysis": {
+      "meeting_id": "meeting_20260825_180552",
+      "timestamp": "2026-08-25T18:05:57.666317+00:00",
+      "success_patterns": [],
+      "failure_patterns": [],
+      "cyclical_patterns": [
+        {
+          "pattern_name": "Квартальный цикл планирования",
+          "cycle_length": "3 месяца",
+          "phases": [
+            {
+              "phase_name": "Планирование",
+              "duration": "2 недели"
+            },
+            {
+              "phase_name": "Выполнение",
+              "duration": "10 недель"
+            },
+            {
+              "phase_name": "Ревью",
+              "duration": "1 неделя"
+            }
+          ],
+          "predictability": "высокая"
+        },
+        {
+          "pattern_name": "Недельный цикл встреч",
+          "cycle_length": "1 неделя",
+          "phases": [
+            {
+              "phase_name": "Понедельник - планирование",
+              "duration": "1 день"
+            },
+            {
+              "phase_name": "Вторник-четверг - работа",
+              "duration": "3 дня"
+            },
+            {
+              "phase_name": "Пятница - ревью",
+              "duration": "1 день"
+            }
+          ],
+          "predictability": "высокая"
+        }
+      ],
+      "decision_making_patterns": [],
+      "communication_patterns": [],
+      "predictive_insights": [],
+      "recommendations": []
+    },
+    "goals_tracking": {
+      "meeting_id": "meeting_20260825_180552",
+      "timestamp": "2026-08-25T18:05:57.666580+00:00",
+      "goals": [
+        {
+          "level": "task",
+          "entity_name": {
+            "name": "Никита Фролов",
+            "role": "Представитель «Гелиона»"
+          },
+          "goal_statement": "Выполнить: Подготовить прогресс по каркасу и решить вопрос с доступом к API для демонстрации на комитете к маю.",
+          "why_reason": "Причина не указана явно",
+          "why_stated": "",
+          "metrics_quantitative": [],
+          "metrics_qualitative": [],
+          "success_criteria": "Задача выполнена",
+          "pathway": "",
+          "timeline": {
+            "date": "2026-05",
+            "is_hard": true
+          },
+          "status": "in_progress",
+          "confidence": 1.0,
+          "is_stated_explicitly": true,
+          "source_quote": "Подготовить прогресс по каркасу и решить вопрос с доступом к API для демонстрации на комитете к маю.",
+          "related_entities": [
+            {
+              "name": "Никита Фролов",
+              "role": "Представитель «Гелиона»"
+            }
+          ],
+          "goal_id": "ff3e61b04ebf9a1f",
+          "reasoning_analysis": {
+            "alignment": {
+              "stated_vs_real": "aligned",
+              "confidence": 0.9,
+              "explanation": "Никита Фролов прямо реагирует на запрос клиента и комитета подготовить результаты к маю, подтверждая прогресс по каркасу и решение вопроса с API."
+            },
+            "true_motivations": [
+              {
+                "type": "defensive",
+                "description": "Удержание текущего клиента и защита позиций компании на фоне появления конкурентов с более короткими сроками.",
+                "evidence": "Никита Фролов: 'К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.'"
+              }
+            ],
+            "goal_quality": {
+              "is_rational": true,
+              "is_achievable": true,
+              "is_measurable": false,
+              "has_hidden_agenda": false,
+              "quality_score": 7
+            },
+            "red_flags": [
+              "Зависимость от внешнего фактора (доступ к API, который 'надеемся' решится) при жестких сроках перед комитетом."
+            ],
+            "recommendations": [
+              "Сфокусироваться на ускорении получения доступа к API и зафиксировать промежуточные результаты для демонстрации Сергею Волкову до заседания комитета."
+            ]
+          }
+        },
+        {
+          "level": "project",
+          "entity_name": "Банковский модуль для Титан-Банка (Гелион)",
+          "goal_statement": "Завершить проект: Банковский модуль для Титан-Банка (Гелион)",
+          "why_reason": "Разработка и интеграция банковского модуля для Титан-Банка",
+          "why_stated": "",
+          "metrics_quantitative": [],
+          "metrics_qualitative": [],
+          "success_criteria": "Проект завершён",
+          "pathway": "",
+          "timeline": "",
+          "status": "in_progress",
+          "confidence": 1.0,
+          "is_stated_explicitly": true,
+          "source_quote": "Банковский модуль для Титан-Банка (Гелион)",
+          "related_entities": [],
+          "goal_id": "f3c60eb8761e7e97",
+          "reasoning_analysis": {
+            "alignment": {
+              "stated_vs_real": "aligned",
+              "confidence": 0.9,
+              "explanation": "Заказчик (Сергей Волков) открыто обозначает свои опасения и давление со стороны комитета, используя предложение конкурентов не как шантаж, а как инструмент управления своими рисками перед руководством перед майским комитетом."
+            },
+            "true_motivations": [
+              {
+                "type": "defensive",
+                "description": "Снижение собственных рисков перед комитетом за счет наличия альтернативного плана и демонстрации видимого прогресса.",
+                "evidence": "Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу, если у нас с вами будет затык. Я не угрожаю, я просто хочу, чтобы к маю у меня было что показать, кроме «мы работаем над этим»."
+              },
+              {
+                "type": "career",
+                "description": "Защита своей репутации перед высшим руководством (комитетом), чтобы не выглядеть неэффективным из-за задержек по проекту.",
+                "evidence": "Хорошо, буду ждать, что покажете к комитету. Надеюсь тоже, это ведь и моя головная боль, не только ваша."
+              }
+            ],
+            "goal_quality": {
+              "is_rational": true,
+              "is_achievable": true,
+              "is_measurable": true,
+              "has_hidden_agenda": false,
+              "quality_score": 8
+            },
+            "red_flags": [
+              "Появление конкурентов («Аналитика Плюс»), предлагающих более сжатые сроки (3 месяца против 7).",
+              "Зависимость сроков проекта от внешнего фактора (доступ к API), который пока не решен."
+            ],
+            "recommendations": [
+              "Подготовить к майскому комитету четкую демонстрацию каркаса и промежуточных результатов, чтобы закрыть потребность Сергея в материалах для отчета.",
+              "Ускорить решение вопроса с доступом к API, так как это ключевой фактор риска для соблюдения сроков проекта."
+            ]
+          }
+        },
+        {
+          "level": "project",
+          "entity_name": "Альтернативный модуль от 'Аналитики Плюс'",
+          "goal_statement": "Завершить проект: Альтернативный модуль от 'Аналитики Плюс'",
+          "why_reason": "Похожий модуль, предлагаемый сторонней компанией 'Аналитика Плюс' за 3 месяца",
+          "why_stated": "",
+          "metrics_quantitative": [],
+          "metrics_qualitative": [],
+          "success_criteria": "Проект завершён",
+          "pathway": "",
+          "timeline": "",
+          "status": "in_progress",
+          "confidence": 1.0,
+          "is_stated_explicitly": true,
+          "source_quote": "Альтернативный модуль от 'Аналитики Плюс'",
+          "related_entities": [],
+          "goal_id": "73a9f8e51fb39716",
+          "reasoning_analysis": {
+            "alignment": {
+              "stated_vs_real": "aligned",
+              "confidence": 0.9,
+              "explanation": "Закупщик Сергей Волков открыто говорит о причинах упоминания конкурентов — ему необходимо иметь альтернативу для комитета и что-то показать к маю, помимо процесса работы. Скрытой враждебности или манипуляции в тексте не зафиксировано."
+            },
+            "true_motivations": [
+              {
+                "type": "defensive",
+                "description": "Обезопасить себя перед комитетом на случай затягивания текущего проекта.",
+                "evidence": "Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу, если у нас с вами будет затык."
+              },
+              {
+                "type": "career",
+                "description": "Желание иметь осязаемые результаты своей работы к определенному сроку (маю), а не просто отговорки.",
+                "evidence": "Я просто хочу, чтобы к маю у меня было что показать, кроме «мы работаем над этим»."
+              }
+            ],
+            "goal_quality": {
+              "is_rational": true,
+              "is_achievable": true,
+              "is_measurable": true,
+              "has_hidden_agenda": false,
+              "quality_score": 8
+            },
+            "red_flags": [
+              "Риск срыва сроков перед майским комитетом («если у нас с вами будет затык»)",
+              "Проблемы с доступом к API, которые тормозят проект со стороны банка"
+            ],
+            "recommendations": [
+              "Подготовить к маю наглядный прогресс по каркасу системы для демонстрации на комитете",
+              "Ускорить решение вопроса с доступом к API совместными усилиями с банком"
+            ]
+          }
+        }
+      ],
+      "progress_updates": [
+        {
+          "goal_id": "ff3e61b04ebf9a1f",
+          "goal_statement": "Выполнить: Подготовить прогресс по каркасу и решить вопрос с доступом к API для демонстрации на коми",
+          "previous_status": "unknown",
+          "current_status": "in_progress",
+          "progress_percentage": 50,
+          "blockers": [],
+          "next_steps": [],
+          "updated_at": "2026-08-25T18:06:03.232363+00:00"
+        },
+        {
+          "goal_id": "f3c60eb8761e7e97",
+          "goal_statement": "Завершить проект: Банковский модуль для Титан-Банка (Гелион)",
+          "previous_status": "unknown",
+          "current_status": "in_progress",
+          "progress_percentage": 50,
+          "blockers": [],
+          "next_steps": [],
+          "updated_at": "2026-08-25T18:06:03.232371+00:00"
+        },
+        {
+          "goal_id": "73a9f8e51fb39716",
+          "goal_statement": "Завершить проект: Альтернативный модуль от 'Аналитики Плюс'",
+          "previous_status": "unknown",
+          "current_status": "in_progress",
+          "progress_percentage": 50,
+          "blockers": [],
+          "next_steps": [],
+          "updated_at": "2026-08-25T18:06:03.232374+00:00"
+        }
+      ],
+      "conflicts": [
+        {
+          "conflict_id": "conf_01",
+          "conflict_type": "strategic",
+          "severity": "high",
+          "goal1_id": "ff3e61b04ebf9a1f",
+          "goal2_id": "73a9f8e51fb39716",
+          "description": "Клиент (Титан-Банк) рассматривает альтернативное предложение от компании 'Аналитики Плюс' со сроком реализации 3 месяца как рычаг давления и потенциальную замену текущему проекту 'Гелиона', что ставит под угрозу продолжение работы над проектом 'Гелиона' (f3c60eb8761e7e97).",
+          "impact": "Риск потери контракта, если 'Гелион' не убедит комитет в надежности своего решения и не покажет достаточный прогресс к маю.",
+          "resolution_suggestions": [
+            "Подготовить к майскому комитету убедительную демонстрацию промежуточных результатов (каркаса).",
+            "Акцентировать внимание заказчика на рисках трехмесячной интеграции с нуля у конкурентов по сравнению с тремя годами надежной истории 'Гелиона'.",
+            "Совместно с Сергеем Волковым ускорить решение вопроса с доступом к API."
+          ],
+          "who_should_resolve": "Никита Фролов, Ольга Реутова"
+        }
+      ],
+      "alignment_report": {
+        "alignment_score": 6,
+        "status": "partially_aligned",
+        "aligned_goals_count": 2,
+        "misaligned_goals_count": 1,
+        "vertical_alignment": {
+          "score": 7,
+          "issues": [
+            "Задача Никиты Фролова по прогрессу каркаса и API частично поддерживает проект Гелиона, но не учитывает риски конкуренции со стороны «Аналитики Плюс», озвученные клиентом."
+          ],
+          "strong_connections": [
+            "TASK1 (Никита Фролов: подготовка прогресса к маю) напрямую работает на PROJECT1 (Банковский модуль для Титан-Банка)."
+          ]
+        },
+        "horizontal_alignment": {
+          "score": 4,
+          "issues": [
+            "PROJECT1 («Гелион») и PROJECT2 («Аналитика Плюс») находятся в прямой конкуренции за бюджет и клиента, создавая угрозу срыва основного проекта со стороны заказчика."
+          ],
+          "synergies": []
+        },
+        "cascading_quality": {
+          "score": 6,
+          "well_cascaded": [
+            "PROJECT1 -> TASK1 (декомпозиция разработки модуля в подготовку каркаса и решение вопросов с API для майского комитета)."
+          ],
+          "poorly_cascaded": [
+            "В целях «Гелиона» никак не отражена работа с рисками появления альтернативного поставщика («Аналитика Плюс»), хотя это критический фактор для проекта."
+          ]
+        },
+        "recommendations": [
+          {
+            "priority": "high",
+            "action": "Добавить в задачи Никиты Фролова и Ольги Реутовой контрмеры против предложения «Аналитики Плюс» (акцент на надежность 3-летней истории и стабильность продукта), чтобы защитить PROJECT1.",
+            "affected_goals": [
+              "PROJECT1. Банковский модуль для Титан-Банка (Гелион)",
+              "TASK1"
+            ]
+          },
+          {
+            "priority": "medium",
+            "action": "Ускорить решение вопроса с доступом к API, так как это ключевой блокер для демонстрации прогресса к маю и удержания клиента от перехода к конкуренту.",
+            "affected_goals": [
+              "TASK1"
+            ]
+          }
+        ],
+        "missing_goals": [
+          {
+            "level": "TASK",
+            "description": "Цель по презентации преимуществ существующего решения «Гелиона» по сравнению с трехмесячным сроком «Аналитики Плюс» для снятия опасений директора по закупкам."
+          }
+        ],
+        "level_distribution": {
+          "project": 2,
+          "task": 1
+        }
+      },
+      "statistics": {
+        "total_goals": 3,
+        "by_level": {
+          "task": 1,
+          "project": 2
+        },
+        "by_status": {
+          "in_progress": 3
+        },
+        "conflicts_count": 1,
+        "avg_confidence": 1.0,
+        "explicit_count": 3,
+        "implicit_count": 0
+      }
+    },
+    "knowledge_extraction": {
+      "meeting_id": "meeting_20260825_180552",
+      "summary": {
+        "meeting_id": "meeting_20260825_180552",
+        "summary": "Сверка «Гелиона» с Сергеем Волковым («Титан-Банк») перед комитетом. Обсуждена конкурентная угроза от «Аналитики Плюс» с предложением интеграции за 3 месяца. Решения: «Гелион» готовит каркас к маю, ожидается решение вопроса с доступом к API.",
+        "main_topics": [
+          "обсуждение метрик",
+          "планирование задач"
+        ],
+        "participants": [
+          "Никита Фролов",
+          "Сергей Волков",
+          "Ольга Реутова"
+        ],
+        "content_tags": [
+          "expert_knowledge",
+          "achievement",
+          "insight"
+        ],
+        "value_score": 9.0,
+        "has_actionable_content": true,
+        "stats": {
+          "decisions_count": 0,
+          "tasks_count": 1,
+          "participants_count": 3,
+          "ideas_count": 0,
+          "kpis_count": 3
+        },
+        "timestamp": "2026-08-25T18:06:28.701567"
+      },
+      "cases": [],
+      "methodologies": [],
+      "templates": [],
+      "regulations": [],
+      "best_practices": [
+        {
+          "id": "knowledge_best_practice_33_meeting_",
+          "category": "best_practice",
+          "title": "Открытая коммуникация с подрядчиком о конкурентных предложениях",
+          "content": "Клиент (Сергей Волков) прямо предупреждает исполнителя о поступлении альтернативного предложения от конкурентов («Аналитики Плюс»), что позволяет заблаговременно обсудить риски и ожидания перед комитетом.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 0.95,
+          "importance": 0.9,
+          "related_entities": [
+            "Сергей Волков",
+            "Титан-Банк",
+            "Аналитика Плюс",
+            "Гелион"
+          ],
+          "related_topics": [],
+          "speakers": [
+            "Сергей Волков"
+          ],
+          "tags": [
+            "коммуникация",
+            "клиентский сервис",
+            "прозрачность",
+            "конкуренция"
+          ],
+          "extracted_at": "2026-08-25T18:06:30.458259",
+          "metadata": {}
+        }
+      ],
+      "guidelines": [
+        {
+          "id": "knowledge_guideline_34_meeting_",
+          "category": "guideline",
+          "title": "Оценка сроков банковской интеграции",
+          "content": "Сроки банковской интеграции с нуля (например, предложение сделать за три месяца) требуют аккуратного и скептического отношения, так как реальная интеграция со стабильно работающим продуктом имеет свою историю и специфику.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 0.9,
+          "importance": 0.8,
+          "related_entities": [
+            "Ольга Реутова",
+            "Гелион"
+          ],
+          "related_topics": [],
+          "speakers": [
+            "Ольга Реутова"
+          ],
+          "tags": [
+            "интеграция",
+            "оценка сроков",
+            "банковские проекты"
+          ],
+          "extracted_at": "2026-08-25T18:06:30.458272",
+          "metadata": {}
+        }
+      ],
+      "insights": [
+        {
+          "id": "knowledge_insight_39_meeting_",
+          "category": "insight",
+          "title": "Конкурентное давление со стороны 'Аналитики Плюс'",
+          "content": "Появился конкурент («Аналитика Плюс»), который предлагает похожий модуль за три месяца вместо семи, что используется закупщиком банка как инструмент давления или защиты перед комитетом.\n\nImplications: Закупщик вынужден держать альтернативу наготове из-за риска «затыка» и отчетности перед комитетом, несмотря на понимание нереалистичности сроков с нуля.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:06:31.198717",
+          "metadata": {
+            "id": "57071dc4-e498-4ad6-8775-0a0a36da0c6d",
+            "type": "discovery",
+            "title": "Конкурентное давление со стороны 'Аналитики Плюс'",
+            "description": "Появился конкурент («Аналитика Плюс»), который предлагает похожий модуль за три месяца вместо семи, что используется закупщиком банка как инструмент давления или защиты перед комитетом.",
+            "implications": "Закупщик вынужден держать альтернативу наготове из-за риска «затыка» и отчетности перед комитетом, несмотря на понимание нереалистичности сроков с нуля.",
+            "actionability": "high",
+            "source_meeting_id": "meeting_20260825_180552",
+            "source_quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:06:31.198673"
+          }
+        },
+        {
+          "id": "knowledge_insight_40_meeting_",
+          "category": "insight",
+          "title": "Прозрачность как защита от внезапного ухода",
+          "content": "Прямое озвучивание альтернативы («говорю вам, а не молчу и не ухожу тихо») означает, что клиент ценит текущие отношения и трехлетнюю историю, используя конкурентное предложение не для шантажа, а как формализацию собственных рисков перед комитетом.\n\nImplications: Клиент на стороне «Гелиона», он играет в открытую, но ему критически необходимы осязаемые артефакты к маю (не просто процесс, а результаты), чтобы защитить проект перед внутренним руководством.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 0.95,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:06:31.198723",
+          "metadata": {
+            "id": "01ca4506-04ae-4e62-a373-4a83bc10bf18",
+            "type": "insight",
+            "title": "Прозрачность как защита от внезапного ухода",
+            "description": "Прямое озвучивание альтернативы («говорю вам, а не молчу и не ухожу тихо») означает, что клиент ценит текущие отношения и трехлетнюю историю, используя конкурентное предложение не для шантажа, а как формализацию собственных рисков перед комитетом.",
+            "implications": "Клиент на стороне «Гелиона», он играет в открытую, но ему критически необходимы осязаемые артефакты к маю (не просто процесс, а результаты), чтобы защитить проект перед внутренним руководством.",
+            "actionability": "high",
+            "source_meeting_id": "meeting_20260825_180552",
+            "source_quote": "Я тоже аккуратно отношусь, поэтому и говорю вам, а не молчу и не ухожу тихо. Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу",
+            "confidence": 0.95,
+            "extracted_at": "2026-08-25T18:06:31.198685"
+          }
+        },
+        {
+          "id": "knowledge_insight_41_meeting_",
+          "category": "insight",
+          "title": "Зависимость сроков от внешнего фактора (API)",
+          "content": "Прогресс по проекту упирается не только в разработку каркаса «Гелионом», но и в нерешенный доступ к API, который находится вне прямого контроля команды.\n\nImplications: Отсутствие доступа к API переводит статус задачи в зону неопределенности («надеемся, решится»), что создает уязвимость перед комитетом, требующим видимых результатов к маю.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 0.9,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:06:31.198729",
+          "metadata": {
+            "id": "38e00991-1e2c-446a-a2ee-463dd529cfe4",
+            "type": "trend",
+            "title": "Зависимость сроков от внешнего фактора (API)",
+            "description": "Прогресс по проекту упирается не только в разработку каркаса «Гелионом», но и в нерешенный доступ к API, который находится вне прямого контроля команды.",
+            "implications": "Отсутствие доступа к API переводит статус задачи в зону неопределенности («надеемся, решится»), что создает уязвимость перед комитетом, требующим видимых результатов к маю.",
+            "actionability": "medium",
+            "source_meeting_id": "meeting_20260825_180552",
+            "source_quote": "К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.",
+            "confidence": 0.9,
+            "extracted_at": "2026-08-25T18:06:31.198694"
+          }
+        }
+      ],
+      "standards": [],
+      "achievements": [
+        {
+          "id": "knowledge_achievement_36_meeting_",
+          "category": "achievement",
+          "title": "Многолетняя история сотрудничества",
+          "content": "Наличие трехлетней истории работы и стабильно работающего продукта («Гелион» для «Титан-Банк»).\n\nImpact: Служит аргументом в пользу надежности текущего вендора перед лицом новых конкурентных предложений.\nRoot Cause: Успешный опыт длительного взаимодействия и стабильность текущего решения.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:06:31.022261",
+          "metadata": {
+            "id": "eaeea381-ed1f-4ad2-bf7e-dc52ee09f26b",
+            "type": "milestone",
+            "title": "Многолетняя история сотрудничества",
+            "description": "Наличие трехлетней истории работы и стабильно работающего продукта («Гелион» для «Титан-Банк»).",
+            "impact": "Служит аргументом в пользу надежности текущего вендора перед лицом новых конкурентных предложений.",
+            "root_cause": "Успешный опыт длительного взаимодействия и стабильность текущего решения.",
+            "metrics": [
+              "История работы / сотрудничества: 3 года"
+            ],
+            "contributors": [
+              "Ольга Реутова"
+            ],
+            "source_meeting_id": null,
+            "source_quote": "У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:06:31.022214"
+          }
+        },
+        {
+          "id": "knowledge_achievement_37_meeting_",
+          "category": "achievement",
+          "title": "Появление конкурирующего предложения с более коротким сроком",
+          "content": "Конкуренты («Аналитика Плюс») предложили аналогичный модуль со сроком реализации 3 месяца против текущих 7 месяцев.\n\nImpact: Клиент обязан показать эту альтернативу комитету в случае возникновения затыков.\nRoot Cause: Разница в заявленных сроках реализации проекта между текущим вендором и конкурентами.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:06:31.022268",
+          "metadata": {
+            "id": "743a512e-5f17-4fe5-a6d4-9692faf0039d",
+            "type": "failure",
+            "title": "Появление конкурирующего предложения с более коротким сроком",
+            "description": "Конкуренты («Аналитика Плюс») предложили аналогичный модуль со сроком реализации 3 месяца против текущих 7 месяцев.",
+            "impact": "Клиент обязан показать эту альтернативу комитету в случае возникновения затыков.",
+            "root_cause": "Разница в заявленных сроках реализации проекта между текущим вендором и конкурентами.",
+            "metrics": [
+              "Срок реализации модуля (Аналитика Плюс): 3 месяца",
+              "Срок реализации модуля (текущий / альтернативный): 7 месяцев"
+            ],
+            "contributors": [
+              "Сергей Волков"
+            ],
+            "source_meeting_id": null,
+            "source_quote": "Мне тут ребята из «Аналитики Плюс» написали, предлагают похожий модуль и говорят, что могут за три месяца, не за семь.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:06:31.022229"
+          }
+        },
+        {
+          "id": "knowledge_achievement_38_meeting_",
+          "category": "achievement",
+          "title": "Риск задержки доступа к API",
+          "content": "Отсутствие решенного вопроса с доступом к API на момент обсуждения.\n\nImpact: Создает неопределенность и риск для соблюдения сроков показа прогресса к маю.\nRoot Cause: Внешние или организационные задержки в предоставлении доступа к API.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:06:31.022274",
+          "metadata": {
+            "id": "cbb7bc83-bbb1-4a43-8b3b-ce6d4bd883f9",
+            "type": "failure",
+            "title": "Риск задержки доступа к API",
+            "description": "Отсутствие решенного вопроса с доступом к API на момент обсуждения.",
+            "impact": "Создает неопределенность и риск для соблюдения сроков показа прогресса к маю.",
+            "root_cause": "Внешние или организационные задержки в предоставлении доступа к API.",
+            "metrics": [],
+            "contributors": [
+              "Никита Фролов"
+            ],
+            "source_meeting_id": null,
+            "source_quote": "К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:06:31.022236"
+          }
+        }
+      ],
+      "expert_knowledge": [
+        {
+          "id": "knowledge_expert_knowledge_42_meeting_",
+          "category": "expert_knowledge",
+          "title": "Управление рисками и прозрачность с заказчиком через раннее информирование о конкурентах",
+          "content": "Заказчики могут использовать предложения от альтернативных вендоров (например, обещающих быструю реализацию за 3 месяца вместо 7) как инструмент отчетности перед внутренними комитетами на случай задержек, а не как реальную угрозу немедленной смены поставщика. Открытый диалог со стороны клиента («говорю вам, а не ухожу тихо») позволяет текущему вендору вовремя нивелировать этот риск.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 0.95,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:06:31.723275",
+          "metadata": {
+            "id": "f31ececd-43c6-45ce-8603-85ebfde8de13",
+            "type": "strategic",
+            "title": "Управление рисками и прозрачность с заказчиком через раннее информирование о конкурентах",
+            "content": "Заказчики могут использовать предложения от альтернативных вендоров (например, обещающих быструю реализацию за 3 месяца вместо 7) как инструмент отчетности перед внутренними комитетами на случай задержек, а не как реальную угрозу немедленной смены поставщика. Открытый диалог со стороны клиента («говорю вам, а не ухожу тихо») позволяет текущему вендору вовремя нивелировать этот риск.",
+            "expert_name": "Сергей Волков",
+            "expert_role": "",
+            "domain": "Sales",
+            "complexity": "medium",
+            "source_meeting_id": null,
+            "source_quote": "Я тоже аккуратно отношусь, поэтому и говорю вам, а не молчу и не ухожу тихо. Но вы понимаете — это ровно то, что я буду обязан показать комитету как альтернативу, если у нас с вами будет затык.",
+            "confidence": 0.95,
+            "extracted_at": "2026-08-25T18:06:31.723232"
+          }
+        },
+        {
+          "id": "knowledge_expert_knowledge_43_meeting_",
+          "category": "expert_knowledge",
+          "title": "Оценка сроков банковской интеграции с нуля",
+          "content": "Реализация банковской интеграции с нуля за короткий срок (например, 3 месяца) несет высокие технологические риски, в то время как проверенный в боевых условиях («стоит и не падает») и проверенный многолетней историей (3 года) продукт обладает критически важной стабильностью, которую нельзя заменить быстрой разработкой.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 0.95,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:06:31.723281",
+          "metadata": {
+            "id": "cacdefae-e62a-4857-b28f-c8e3390b6fd0",
+            "type": "domain",
+            "title": "Оценка сроков банковской интеграции с нуля",
+            "content": "Реализация банковской интеграции с нуля за короткий срок (например, 3 месяца) несет высокие технологические риски, в то время как проверенный в боевых условиях («стоит и не падает») и проверенный многолетней историей (3 года) продукт обладает критически важной стабильностью, которую нельзя заменить быстрой разработкой.",
+            "expert_name": "Ольга Реутова",
+            "expert_role": "",
+            "domain": "Banking Tech",
+            "complexity": "high",
+            "source_meeting_id": null,
+            "source_quote": "Три месяца на банковскую интеграцию с нуля — я бы аккуратно к этому отнеслась... У нас с вами уже три года истории и рабочий продукт, который стоит и не падает — это не купишь за три месяца ни у кого.",
+            "confidence": 0.95,
+            "extracted_at": "2026-08-25T18:06:31.723244"
+          }
+        },
+        {
+          "id": "knowledge_expert_knowledge_44_meeting_",
+          "category": "expert_knowledge",
+          "title": "Требования стейкхолдеров к промежуточной отчетности перед комитетом",
+          "content": "Для внутренних комитетов заказчика на этапе разработки критически важно иметь осязаемый прогресс и промежуточные результаты к определенному сроку (к маю), чтобы минимизировать риски эскалации и избежать ситуации, когда единственным ответом является «мы работаем над этим».",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 0.9,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:06:31.723285",
+          "metadata": {
+            "id": "0f233f26-2a15-47ab-9cf9-3a7737f90e46",
+            "type": "process",
+            "title": "Требования стейкхолдеров к промежуточной отчетности перед комитетом",
+            "content": "Для внутренних комитетов заказчика на этапе разработки критически важно иметь осязаемый прогресс и промежуточные результаты к определенному сроку (к маю), чтобы минимизировать риски эскалации и избежать ситуации, когда единственным ответом является «мы работаем над этим».",
+            "expert_name": "Сергей Волков",
+            "expert_role": "",
+            "domain": "Account Management",
+            "complexity": "medium",
+            "source_meeting_id": null,
+            "source_quote": "Я не угрожаю, я просто хочу, чтобы к маю у меня было что показать, кроме «мы работаем над этим».",
+            "confidence": 0.9,
+            "extracted_at": "2026-08-25T18:06:31.723253"
+          }
+        }
+      ],
+      "playbooks": [],
+      "antipatterns": [
+        {
+          "id": "knowledge_antipattern_35_meeting_",
+          "category": "antipattern",
+          "title": "Зависимость сроков от внешнего недоступного ресурса",
+          "content": "Процесс реализации завязан на доступ к API, который на момент обсуждения еще не решен, что создает неопределенность к срокам комитета.\n\nConsequences: Риск не предоставить к маю ничего, кроме формулировки «мы работаем над этим», что заставит клиента показывать комитету альтернативные варианты.\nSolution: Решить вопрос с доступом к API и показать конкретный прогресс по каркасу к маю.",
+          "source_meeting_id": "meeting_20260825_180552",
+          "confidence": 0.95,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:06:30.591947",
+          "metadata": {
+            "id": "61d8035b-8c93-4ac3-a1d0-c229225ff237",
+            "type": "pitfall",
+            "title": "Зависимость сроков от внешнего недоступного ресурса",
+            "description": "Процесс реализации завязан на доступ к API, который на момент обсуждения еще не решен, что создает неопределенность к срокам комитета.",
+            "consequences": "Риск не предоставить к маю ничего, кроме формулировки «мы работаем над этим», что заставит клиента показывать комитету альтернативные варианты.",
+            "solution": "Решить вопрос с доступом к API и показать конкретный прогресс по каркасу к маю.",
+            "source_meeting_id": "meeting_20260825_180552",
+            "source_quote": "К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.",
+            "confidence": 0.95,
+            "extracted_at": "2026-08-25T18:06:30.591915"
+          }
+        }
+      ],
+      "workflows": [],
+      "extraction_time": 3.927868,
+      "total_extracted": 12,
+      "timestamp": "2026-08-25T18:06:27.795534"
+    },
+    "regulations": [],
+    "extracted_templates": [],
+    "summary": {
+      "total_entities": 23,
+      "decisions_count": 0,
+      "tasks_count": 1,
+      "participants_count": 3,
+      "entities_count": 5,
+      "kpis_count": 3,
+      "opinions_count": 4,
+      "ideas_count": 0,
+      "project_statuses_count": 2,
+      "enhanced_kpis_count": 3,
+      "fact_checks_count": 0,
+      "cross_links_found": 0,
+      "related_meetings_found": 0,
+      "entity_evolution_tracked": 0,
+      "recurring_topics": 0,
+      "personality_profiles_count": 3,
+      "conflict_risks_count": 2,
+      "scenarios_count": 3,
+      "risks_count": 2,
+      "early_warnings_count": 2,
+      "critical_items_count": 2,
+      "keywords_count": 22,
+      "topics_count": 3,
+      "learning_data_count": 0,
+      "success_patterns_count": 0,
+      "failure_patterns_count": 0,
+      "goals_count": 3,
+      "regulations_count": 0,
+      "extracted_templates_count": 0,
+      "goal_conflicts_count": 1,
+      "knowledge_items_count": 12,
+      "knowledge_cases_count": 0,
+      "knowledge_methodologies_count": 0,
+      "knowledge_best_practices_count": 1,
+      "knowledge_insights_count": 3
+    },
+    "llm_stats": {
+      "providers": {
+        "openai": {
+          "model": "gpt-4o-mini",
+          "enabled": true,
+          "requests": {
+            "total": 0,
+            "cached": 0,
+            "errors": 0,
+            "cache_hit_rate": "0.0%"
+          },
+          "tokens": {
+            "input": 0,
+            "cached": 0,
+            "output": 0,
+            "total": 0
+          },
+          "cost": {
+            "actual": "$0.000000",
+            "without_cache": "$0.000000",
+            "savings": "$0.000000",
+            "savings_percent": "0.0%"
+          }
+        },
+        "gemini": {
+          "model": "gemini-flash-lite-latest",
+          "enabled": true,
+          "requests": {
+            "total": 143,
+            "cached": 142,
+            "errors": 0,
+            "cache_hit_rate": "99.3%"
+          },
+          "tokens": {
+            "input": 387754,
+            "cached": 0,
+            "output": 107854,
+            "total": 495608
+          },
+          "cost": {
+            "actual": "$0.081917",
+            "without_cache": "$0.081917",
+            "savings": "$0.000000",
+            "savings_percent": "0.0%"
+          }
+        }
+      },
+      "health": {},
+      "total": {
+        "requests": 143,
+        "errors": 0,
+        "estimated_cost": "$0.081917"
+      }
+    },
+    "memory_reinforcement": {
+      "frequency_tracking": {},
+      "hebbian_learning": {},
+      "emotional_salience": {},
+      "enabled": true
+    },
+    "validation": {
+      "enabled": true,
+      "validation": {
+        "is_valid": true,
+        "entities": {
+          "valid": [
+            {
+              "entity_id": "titan_bank",
+              "entity_type": "organization",
+              "name": "Титан-Банк",
+              "description": "Банк, являющийся клиентом компании «Гелион»",
+              "attributes": {
+                "type": "client"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:05:54.428058+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "gelion",
+              "entity_type": "company",
+              "name": "Гелион",
+              "description": "Компания-разработчик, предоставляющая рабочий продукт и банковскую интеграцию",
+              "attributes": {},
+              "relationships": [
+                {
+                  "target_type": "organization",
+                  "target_name": "Титан-Банк",
+                  "relation_type": "related_to"
+                }
+              ],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:05:54.428070+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "analitika_plus",
+              "entity_type": "organization",
+              "name": "Аналитики Плюс",
+              "description": "Сторонняя компания, предлагающая похожий модуль за три месяца",
+              "attributes": {
+                "type": "competitor"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "medium",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:05:54.428077+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "module_and_integration",
+              "entity_type": "product",
+              "name": "модуль",
+              "description": "Банковская интеграция и рабочий продукт",
+              "attributes": {
+                "features_list": "банковская интеграция с нуля, каркас"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 0.9,
+              "_extracted_at": "2026-08-25T18:05:54.428083+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "api_access",
+              "entity_type": "technology",
+              "name": "API",
+              "description": "Доступ к API, вопрос с которым должен решиться",
+              "attributes": {},
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:05:54.428089+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            }
+          ],
+          "invalid": [],
+          "uncertain": []
+        },
+        "decisions": {
+          "valid": [],
+          "invalid": [],
+          "uncertain": []
+        },
+        "tasks": {
+          "valid": [
+            {
+              "task_id": "task_1",
+              "title": "Показать прогресс по каркасу и статус доступа к API к комитету",
+              "description": "Подготовить прогресс по каркасу и решить вопрос с доступом к API для демонстрации на комитете к маю.",
+              "task_type": "action",
+              "assignee": {
+                "name": "Никита Фролов",
+                "role": "Представитель «Гелиона»"
+              },
+              "assignee_speaker": null,
+              "assignment_confidence": "high",
+              "needs_human_review": false,
+              "assigner": "Сергей Волков",
+              "priority": "high",
+              "status": "in_progress",
+              "deadline": {
+                "date": "2026-05",
+                "is_hard": true
+              },
+              "dependencies": [],
+              "related_decision": "",
+              "related_project": "Титан-Банк",
+              "acceptance_criteria": [
+                "Прогресс по каркасу показан",
+                "Решен вопрос с доступом к API"
+              ],
+              "blockers": [
+                "Доступ к API"
+              ],
+              "quote": "К маю у нас будет прогресс по каркасу и, надеемся, доступ к API наконец решится.",
+              "confidence": 0.95,
+              "_extracted_at": "2026-08-25T18:05:53.988034+00:00",
+              "_agent": "TaskAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "task"
+            }
+          ],
+          "invalid": [],
+          "uncertain": []
+        },
+        "issues": [],
+        "recommendations": [],
+        "quality_score": 1.0
+      },
+      "filtered_data": {
+        "internal": [
+          {
+            "entity_id": "titan_bank",
+            "entity_type": "organization",
+            "name": "Титан-Банк",
+            "description": "Банк, являющийся клиентом компании «Гелион»",
+            "attributes": {
+              "type": "client"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:05:54.428058+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "gelion",
+            "entity_type": "company",
+            "name": "Гелион",
+            "description": "Компания-разработчик, предоставляющая рабочий продукт и банковскую интеграцию",
+            "attributes": {},
+            "relationships": [
+              {
+                "target_type": "organization",
+                "target_name": "Титан-Банк",
+                "relation_type": "related_to"
+              }
+            ],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:05:54.428070+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "analitika_plus",
+            "entity_type": "organization",
+            "name": "Аналитики Плюс",
+            "description": "Сторонняя компания, предлагающая похожий модуль за три месяца",
+            "attributes": {
+              "type": "competitor"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "medium",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:05:54.428077+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "module_and_integration",
+            "entity_type": "product",
+            "name": "модуль",
+            "description": "Банковская интеграция и рабочий продукт",
+            "attributes": {
+              "features_list": "банковская интеграция с нуля, каркас"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 0.9,
+            "_extracted_at": "2026-08-25T18:05:54.428083+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "api_access",
+            "entity_type": "technology",
+            "name": "API",
+            "description": "Доступ к API, вопрос с которым должен решиться",
+            "attributes": {},
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:05:54.428089+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          }
+        ],
+        "external": [],
+        "uncertain": []
+      },
+      "quality_score": 1.0
+    }
+  }
+}

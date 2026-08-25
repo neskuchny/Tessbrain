@@ -108,7 +108,13 @@ npm run dev
 
 ## First real request
 
-Ingest a meeting and then ask about it:
+Fastest: load the pre-extracted demo corpus — no LLM calls, nothing billed:
+
+```bash
+python scripts/seed_demo.py --corpus demo/helion   # or demo/gelion (Russian)
+```
+
+Or ingest a meeting yourself and then ask about it:
 
 ```bash
 # 1. feed a transcript in

@@ -190,8 +190,20 @@ Three paths, by how much infrastructure you want to give it:
 
 The repo ships with **Helion**, a synthetic 85-person US company: 20 meetings
 with full transcripts, 14 planted storylines and a machine-checked ground
-truth. Ingest it and ask "what did we promise Titan Bank on timing?" — then
-watch the system surface the conflict, with sources.
+truth. Ask "what did we promise Titan Bank on timing?" — and watch the system
+surface the conflict, with sources.
+
+The corpus also comes **pre-extracted** (`demo/helion/extracted/` — every
+meeting already run through the full pipeline), so the memory fills in one
+command: no model key, nothing billed, no waiting.
+
+```bash
+USE_NETWORKX=true USE_QDRANT=false python scripts/seed_demo.py --corpus demo/helion
+```
+
+Prefer to watch the extraction happen live? Run the real pipeline (needs a
+model key):
+`python scripts/ingest_data.py --source files --target demo/helion/transcripts --group public`
 
 → [demo/helion](demo/helion/) (validator included: 20/20 green) · the Russian
 original is [demo/gelion](demo/gelion/)

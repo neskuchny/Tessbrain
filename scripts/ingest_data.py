@@ -1,6 +1,8 @@
 import argparse
 import asyncio
+import json
 import logging
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -39,7 +41,8 @@ class IngestManager:
             llm_router=self.llm_router
         )
 
-    async def ingest_files(self, folder_path: str, access_group: str):
+    async def ingest_files(self, folder_path: str, access_group: str,
+                           dump_dir: str = None):
         """Ingest local files from a folder"""
         path = Path(folder_path)
         if not path.exists():
@@ -69,12 +72,19 @@ class IngestManager:
                 # or create a special "Document" node logic.
                 # Let's reuse process_meeting but map it to Document logic later.
 
+                # Дата встречи: из префикса имени файла (2026-03-09_...),
+                # иначе — момент ингеста. Иначе весь корпус штампуется одним
+                # днём и таймлайн/темпоральные запросы врут.
+                date_match = re.match(r"(\d{4}-\d{2}-\d{2})", file_path.stem)
+                meeting_date = (date_match.group(1) if date_match
+                                else datetime.now().isoformat())
+
                 # Mock meeting structure
                 meeting_data = {
                     "id": f"doc_{file_path.stem}",
                     "transcription_text": content,
                     "summary": "",
-                    "date": datetime.now().isoformat(),
+                    "date": meeting_date,
                     "title": file_path.stem
                 }
 
@@ -82,6 +92,20 @@ class IngestManager:
                     meeting_data["transcription_text"],
                     meeting_context=meeting_data
                 )
+
+                # Дамп извлечений: сырой результат конвейера в JSON, чтобы
+                # scripts/seed_demo.py мог загрузить память без LLM-вызовов.
+                if dump_dir:
+                    dump_path = Path(dump_dir)
+                    dump_path.mkdir(parents=True, exist_ok=True)
+                    with open(dump_path / f"{meeting_data['id']}.json", "w",
+                              encoding="utf-8") as f:
+                        json.dump({
+                            "meeting": meeting_data,
+                            "access_group": access_group,
+                            "source_file": file_path.name,
+                            "results": results,
+                        }, f, ensure_ascii=False, indent=2, default=str)
 
                 # Save to Graph with Access Group
                 await self.graph.save_meeting_results(
@@ -159,6 +183,9 @@ async def main():
     parser.add_argument("--source", choices=["files", "supabase"], required=True, help="Data source")
     parser.add_argument("--target", required=True, help="Folder path (for files) or User ID (for supabase)")
     parser.add_argument("--group", required=True, help="Access Group (e.g. 'public', 'management', 'project_x')")
+    parser.add_argument("--dump-extractions", default=None, metavar="DIR",
+                        help="Also write raw extraction results as JSON per meeting "
+                             "(for scripts/seed_demo.py — reload without LLM calls)")
 
     args = parser.parse_args()
 
@@ -167,7 +194,8 @@ async def main():
 
     try:
         if args.source == "files":
-            await manager.ingest_files(args.target, args.group)
+            await manager.ingest_files(args.target, args.group,
+                                       dump_dir=args.dump_extractions)
         elif args.source == "supabase":
             await manager.ingest_supabase(args.target, args.group)
     finally:

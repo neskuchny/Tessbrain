@@ -1,0 +1,3720 @@
+{
+  "meeting": {
+    "id": "doc_2026-03-09_klient-titan-1",
+    "transcription_text": "Встреча: Клиентский звонок — Титан-Банк, статус по отчётности\nДата: 2026-03-09\nДлительность: 9 мин\nУчастники: Никита Фролов (со стороны «Гелиона»); Сергей Волков — директор по закупкам, «Титан-Банк»\n---\n\n[00:00] Никита Фролов: Сергей Игоревич, добрый день, звоню сверить статус по модулю отчётности.\n[00:05] Сергей Волков: Добрый день, Никита. У меня к вам вопрос раньше, чем у вас ко мне. Вы вообще делаете модуль в этом году или нет?\n[00:14] Никита Фролов: Делаем, я почти уверен, детали сейчас уточняем с продуктом.\n[00:19] Сергей Волков: «Почти уверен» меня не устраивает. Смотрите, я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит. Но если по отчётности ответ «почти» — я начинаю смотреть, что есть у других.\n[00:34] Никита Фролов: Понимаю. Дайте мне неделю, вернусь с конкретикой.\n[00:38] Сергей Волков: Неделя — нормально. Но учтите: если в этом году не решите, мы просто пойдём смотреть дальше, я не буду ждать вечно ради красивых отношений.\n[00:48] Никита Фролов: Понял, услышал, возвращаюсь с датой.\n[00:51] Сергей Волков: Жду.\n",
+    "summary": "",
+    "date": "2026-03-09",
+    "title": "2026-03-09_klient-titan-1"
+  },
+  "access_group": "public",
+  "source_file": "2026-03-09_klient-titan-1.txt",
+  "results": {
+    "meeting_id": "meeting_20260825_180632",
+    "status": "completed",
+    "processing_timestamp": "2026-08-25T18:07:04.156902+00:00",
+    "processing_time_seconds": 31.861322,
+    "agent_errors": {},
+    "metadata": {
+      "orchestrator": "Capture Orchestrator",
+      "version": "2.0.0",
+      "agents_used": [
+        "decisions",
+        "tasks",
+        "participants",
+        "entities",
+        "kpis",
+        "opinions",
+        "ideas",
+        "project_statuses",
+        "enhanced_kpis",
+        "fact_checks",
+        "cogni_profiles"
+      ],
+      "agents_failed": [],
+      "context": {
+        "id": "doc_2026-03-09_klient-titan-1",
+        "transcription_text": "Встреча: Клиентский звонок — Титан-Банк, статус по отчётности\nДата: 2026-03-09\nДлительность: 9 мин\nУчастники: Никита Фролов (со стороны «Гелиона»); Сергей Волков — директор по закупкам, «Титан-Банк»\n---\n\n[00:00] Никита Фролов: Сергей Игоревич, добрый день, звоню сверить статус по модулю отчётности.\n[00:05] Сергей Волков: Добрый день, Никита. У меня к вам вопрос раньше, чем у вас ко мне. Вы вообще делаете модуль в этом году или нет?\n[00:14] Никита Фролов: Делаем, я почти уверен, детали сейчас уточняем с продуктом.\n[00:19] Сергей Волков: «Почти уверен» меня не устраивает. Смотрите, я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит. Но если по отчётности ответ «почти» — я начинаю смотреть, что есть у других.\n[00:34] Никита Фролов: Понимаю. Дайте мне неделю, вернусь с конкретикой.\n[00:38] Сергей Волков: Неделя — нормально. Но учтите: если в этом году не решите, мы просто пойдём смотреть дальше, я не буду ждать вечно ради красивых отношений.\n[00:48] Никита Фролов: Понял, услышал, возвращаюсь с датой.\n[00:51] Сергей Волков: Жду.\n",
+        "summary": "",
+        "date": "2026-03-09",
+        "title": "2026-03-09_klient-titan-1"
+      }
+    },
+    "decisions": [
+      {
+        "decision_id": "dec_001",
+        "decision_summary": "Никита Фролов предоставит конкретику и точные сроки по модулю отчётности в течение недели.",
+        "decision_category": "operational",
+        "details": "Клиент выразил недовольство неопределенностью статуса разработки модуля отчётности («почти уверен»). В результате договоренности представитель «Гелиона» берет неделю на уточнение деталей с продуктовой командой и возврат к клиенту с конкретной датой.",
+        "participants": [
+          {
+            "name": "Никита Фролов",
+            "role": "Представитель «Гелиона»"
+          },
+          {
+            "name": "Сергей Волков",
+            "role": "Директор по закупкам, «Титан-Банк»"
+          }
+        ],
+        "responsible": {
+          "primary": "Никита Фролов"
+        },
+        "decision_maker_resolved": "Никита Фролов",
+        "decision_maker_speaker": "",
+        "attribution_confidence": "medium",
+        "reasoning": "Клиент потребовал определенности по срокам разработки модуля отчётности на текущий год, пригрозив рассмотреть альтернативные решения на рынке.",
+        "timeline": {
+          "deadline": "1 неделя"
+        },
+        "business_impact": {
+          "scope": "external",
+          "urgency": "high",
+          "risk_level": "high"
+        },
+        "dependencies": [],
+        "action_items": [
+          {
+            "action": "Вернуться с конкретикой и датой по модулю отчётности",
+            "owner": "Никита Фролов",
+            "deadline": "1 неделя"
+          }
+        ],
+        "quote": "Дайте мне неделю, вернусь с конкретикой.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:06:33.856835+00:00",
+        "_agent": "DecisionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "decision",
+        "importance_classification": {
+          "business_impact": "low",
+          "urgency_score": 0.5,
+          "complexity_score": 5,
+          "risk_level": "low",
+          "overall_priority": "medium"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "task_1",
+        "title": "Вернуться с конкретикой и датой по модулю отчётности",
+        "description": "Уточнить детали с продуктовой командой и вернуться к клиенту с конкретными сроками и информацией по модулю отчётности.",
+        "task_type": "action",
+        "assignee": {
+          "name": "Никита Фролов",
+          "role": "Представитель «Гелиона»"
+        },
+        "assignee_speaker": null,
+        "assignment_confidence": "high",
+        "needs_human_review": false,
+        "assigner": "Сергей Волков",
+        "priority": "high",
+        "status": "in_progress",
+        "deadline": {
+          "date": "неделя",
+          "is_hard": true
+        },
+        "dependencies": [],
+        "related_decision": "",
+        "related_project": "Модуль отчётности (Титан-Банк)",
+        "acceptance_criteria": [
+          "Предоставить конкретную информацию и дату"
+        ],
+        "blockers": [],
+        "quote": "Дайте мне неделю, вернусь с конкретикой.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:06:33.554012+00:00",
+        "_agent": "TaskAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "task"
+      }
+    ],
+    "participants": [
+      {
+        "participant_id": "nikita_frolov",
+        "name": "Никита Фролов",
+        "normalized_name": "Никита Фролов",
+        "role": "",
+        "department": "Гелион",
+        "activity_level": "medium",
+        "participation_metrics": {
+          "speaking_turns": 4,
+          "decisions_involved": 0,
+          "tasks_assigned": 1,
+          "questions_asked": 0
+        },
+        "expertise_areas": [
+          "модуль отчётности"
+        ],
+        "communication_style": {
+          "style": "collaborative",
+          "traits": [
+            "исполнительный",
+            "принимает обратную связь"
+          ]
+        },
+        "relationships": [
+          {
+            "with": "Сергей Волков",
+            "type": "collaborates"
+          }
+        ],
+        "key_contributions": [
+          "Запросил неделю на уточнение конкретики по срокам модуля отчётности"
+        ],
+        "sentiment": "neutral",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:06:34.178674+00:00",
+        "_agent": "ParticipantAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "participant"
+      },
+      {
+        "participant_id": "sergey_volkov",
+        "name": "Сергей Волков",
+        "normalized_name": "Сергей Волков",
+        "role": "директор по закупкам",
+        "department": "Титан-Банк",
+        "activity_level": "high",
+        "participation_metrics": {
+          "speaking_turns": 4,
+          "decisions_involved": 1,
+          "tasks_assigned": 0,
+          "questions_asked": 1
+        },
+        "expertise_areas": [
+          "закупки"
+        ],
+        "communication_style": {
+          "style": "directive",
+          "traits": [
+            "требовательный",
+            "прямолинейный",
+            "ставильтильтиматум"
+          ]
+        },
+        "relationships": [
+          {
+            "with": "Никита Фролов",
+            "type": "collaborates"
+          }
+        ],
+        "key_contributions": [
+          "Поставил ультиматум по срокам сдачи модуля отчётности в текущем году"
+        ],
+        "sentiment": "negative",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:06:34.178685+00:00",
+        "_agent": "ParticipantAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "participant"
+      }
+    ],
+    "entities": [
+      {
+        "entity_id": "titan_bank",
+        "entity_type": "organization",
+        "name": "Титан-Банк",
+        "description": "Клиентская организация, директор по закупкам которой обсуждает статус разработки модуля отчётности.",
+        "attributes": {
+          "type": "client"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:06:34.034301+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "gelion",
+        "entity_type": "company",
+        "name": "Гелион",
+        "description": "Собственная компания, представителем которой является Никита Фролов.",
+        "attributes": {},
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:06:34.034323+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "reporting_module",
+        "entity_type": "feature",
+        "name": "модуль отчётности",
+        "description": "Модуль, статус разработки которого обсуждается на встрече.",
+        "attributes": {
+          "status": "in_progress",
+          "priority": "high"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:06:34.034331+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "existing_product",
+        "entity_type": "product",
+        "name": "продукт",
+        "description": "Продукт компании «Гелион», который уже установлен у клиента, к нему нет претензий.",
+        "attributes": {},
+        "relationships": [],
+        "mentions": [],
+        "importance": "medium",
+        "confidence": 0.9,
+        "_extracted_at": "2026-08-25T18:06:34.034337+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "product_department",
+        "entity_type": "team",
+        "name": "продукт",
+        "description": "Внутренняя команда или подразделение, с которым уточняются детали по модулю.",
+        "attributes": {},
+        "relationships": [],
+        "mentions": [],
+        "importance": "medium",
+        "confidence": 0.8,
+        "_extracted_at": "2026-08-25T18:06:34.034344+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      }
+    ],
+    "kpis": [
+      {
+        "kpi_id": "cooperation_duration_years",
+        "name": "Срок сотрудничества",
+        "category": "operational",
+        "value": {
+          "current": 3,
+          "previous": null,
+          "target": null,
+          "unit": "года"
+        },
+        "trend": {
+          "direction": "stable",
+          "change_percent": null,
+          "period": ""
+        },
+        "context": {
+          "project": "Модуль отчётности",
+          "department": "Закупки",
+          "responsible": "Сергей Волков"
+        },
+        "analysis": {
+          "status": "on_track",
+          "insight": "Клиент работает с компанией 3 года, претензий к текущему продукту нет.",
+          "action_needed": false
+        },
+        "quote": "Смотрите, я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит.",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:06:33.504847+00:00",
+        "_agent": "KPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "kpi"
+      }
+    ],
+    "opinions": [
+      {
+        "opinion_id": "opinion_001",
+        "author": "Никита Фролов",
+        "opinion_summary": "Компания «Гелион» занимается разработкой модуля отчётности, детали уточняются с продуктом.",
+        "topic": "Разработка модуля отчётности",
+        "opinion_category": "process",
+        "sentiment_analysis": {
+          "primary_sentiment": "neutral",
+          "intensity": 0.5,
+          "emotional_undertones": [
+            "неуверенность"
+          ],
+          "confidence_in_opinion": "medium"
+        },
+        "argumentation": {
+          "reasoning_type": "intuitive",
+          "supporting_evidence": [
+            "детали сейчас уточняем с продуктом"
+          ],
+          "logical_structure": "weak",
+          "bias_indicators": []
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "удержание клиента",
+            "выяснение статуса у продуктовой команды"
+          ],
+          "risk_concerns": [
+            "неопределенность по срокам"
+          ],
+          "opportunity_focus": [
+            "успешное завершение разработки модуля"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.4,
+          "authority_level": "peer",
+          "social_influence": "medium",
+          "likely_supporters": []
+        },
+        "business_implications": {
+          "strategic_alignment": "misaligned",
+          "resource_implications": [
+            "необходимость привлечения ресурсов продуктовой команды для уточнения сроков"
+          ],
+          "risk_assessment": "high"
+        },
+        "quote": "Делаем, я почти уверен, детали сейчас уточняем с продуктом.",
+        "confidence_score": 0.8,
+        "_extracted_at": "2026-08-25T18:06:36.530900+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      },
+      {
+        "opinion_id": "opinion_002",
+        "author": "Сергей Волков",
+        "opinion_summary": "У клиента нет претензий к уже установленному продукту вендора.",
+        "topic": "Качество действующего продукта",
+        "opinion_category": "personal",
+        "sentiment_analysis": {
+          "primary_sentiment": "positive",
+          "intensity": 0.7,
+          "emotional_undertones": [
+            "удовлетворенность"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "я третий год с вами работаю"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": []
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "поддержание партнерских отношений при условии выполнения обязательств"
+          ],
+          "risk_concerns": [],
+          "opportunity_focus": [
+            "эффективная работа текущего ПО"
+          ],
+          "personal_stake": "medium"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.8,
+          "authority_level": "experienced",
+          "social_influence": "high",
+          "likely_supporters": []
+        },
+        "business_implications": {
+          "strategic_alignment": "aligned",
+          "resource_implications": [],
+          "risk_assessment": "low"
+        },
+        "quote": "я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит.",
+        "confidence_score": 0.9,
+        "_extracted_at": "2026-08-25T18:06:36.530917+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      },
+      {
+        "opinion_id": "opinion_003",
+        "author": "Сергей Волков",
+        "opinion_summary": "Ответ «почти уверен» не устраивает заказчика, и в случае отсутствия определенности по отчетности он начнет искать альтернативы на рынке.",
+        "topic": "Сроки и неопределенность по новому модулю",
+        "opinion_category": "strategic",
+        "sentiment_analysis": {
+          "primary_sentiment": "negative",
+          "intensity": 0.9,
+          "emotional_undertones": [
+            "раздражение",
+            "требовательность"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "если по отчётности ответ «почти» — я начинаю смотреть, что есть у других"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": []
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "получение четких сроков",
+            "закрытие бизнес-потребностей банка в отчётности в текущем году"
+          ],
+          "risk_concerns": [
+            "срыв сроков реализации модуля отчётности со стороны вендора"
+          ],
+          "opportunity_focus": [
+            "переход к другому вендору при отсутствии результатов"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.9,
+          "authority_level": "experienced",
+          "social_influence": "high",
+          "likely_supporters": []
+        },
+        "business_implications": {
+          "strategic_alignment": "misaligned",
+          "resource_implications": [
+            "риск потери контракта"
+          ],
+          "risk_assessment": "high"
+        },
+        "quote": "«Почти уверен» меня не устраивает. Смотрите, я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит. Но если по отчётности ответ «почти» — я начинаю смотреть, что есть у других.",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:06:36.530922+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      }
+    ],
+    "ideas": [],
+    "project_statuses": [
+      {
+        "project_id": "project_reporting_module",
+        "project_name": "Модуль отчётности для Титан-Банка",
+        "description": "Разработка и внедрение модуля отчётности для клиента Титан-Банк",
+        "project_category": "product",
+        "lifecycle_stage": "planning",
+        "status_assessment": {
+          "current_status": "in_progress",
+          "health_indicator": "yellow",
+          "progress_percentage": null,
+          "last_update": "Уточняются детали с продуктовой командой, нет четкой определенности по срокам"
+        },
+        "scope_analysis": {
+          "primary_objectives": [
+            "Разработка модуля отчётности в текущем году"
+          ],
+          "deliverables": [
+            "Модуль отчётности"
+          ],
+          "success_criteria": [
+            "Реализация модуля в текущем году"
+          ],
+          "scope_clarity": "moderate"
+        },
+        "stakeholder_mapping": {
+          "project_sponsor": null,
+          "project_manager": "Никита Фролов",
+          "core_team": [
+            "Команда продукта «Гелион»"
+          ],
+          "key_stakeholders": [
+            "Сергей Волков"
+          ]
+        },
+        "resource_analysis": {
+          "budget_info": {
+            "estimated_budget": null,
+            "budget_status": "on"
+          },
+          "human_resources": {
+            "team_size": null,
+            "skill_gaps": []
+          }
+        },
+        "timeline_analysis": {
+          "estimated_duration": null,
+          "start_date": null,
+          "target_completion": "В текущем году",
+          "critical_milestones": [
+            "Предоставление конкретики и даты через неделю"
+          ],
+          "timeline_risk": "high"
+        },
+        "risk_assessment": {
+          "identified_risks": [
+            "Риск потери клиента, если модуль не будет реализован в текущем году"
+          ],
+          "overall_risk_level": "high"
+        },
+        "business_value": {
+          "strategic_alignment": "high",
+          "expected_roi": null,
+          "business_benefits": [
+            "Удержание клиента Титан-Банк"
+          ]
+        },
+        "dependencies": {
+          "internal_dependencies": [
+            "Уточнение деталей с продуктовой командой"
+          ],
+          "external_dependencies": [],
+          "blocking_factors": [
+            "Отсутствие точной уверенности и конкретных сроков на текущий момент"
+          ]
+        },
+        "current_issues": [
+          "Отсутствие конкретных сроков и уверенности в реализации со стороны исполнителя",
+          "Угроза со стороны клиента уйти к конкурентам"
+        ],
+        "recent_achievements": [],
+        "quote": "Делаем, я почти уверен, детали сейчас уточняем с продуктом.",
+        "confidence_score": 0.9,
+        "_extracted_at": "2026-08-25T18:06:34.594462+00:00",
+        "_agent": "ProjectStatusAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "project_status"
+      }
+    ],
+    "enhanced_kpis": [
+      {
+        "kpi_id": "kpi_001",
+        "metric_name": "Опыт работы с клиентом",
+        "metric_category": "customer",
+        "values": {
+          "current_value": "3",
+          "target_value": null,
+          "previous_value": null,
+          "unit": "год"
+        },
+        "time_context": {
+          "period": "год",
+          "specific_date": "2026",
+          "comparison_period": null
+        },
+        "trend_analysis": {
+          "direction": "stable",
+          "change_percentage": null,
+          "trend_strength": "stable",
+          "seasonality": null
+        },
+        "performance_assessment": {
+          "vs_target": "on",
+          "vs_previous": "same",
+          "gap_analysis": "Долгосрочное сотрудничество без претензий к текущему продукту",
+          "performance_rating": "good"
+        },
+        "business_context": {
+          "strategic_importance": "high",
+          "affected_areas": [
+            "Удержание клиентов",
+            "Продажи"
+          ],
+          "root_causes": [],
+          "external_factors": []
+        },
+        "action_items": {
+          "immediate_actions": [
+            "Предоставить конкретику по срокам разработки модуля отчётности в течение недели"
+          ],
+          "improvement_opportunities": [
+            "Улучшить коммуникацию по статусу разработки"
+          ],
+          "risks_if_unchanged": [
+            "Уход клиента к конкурентам"
+          ]
+        },
+        "related_metrics": [],
+        "data_quality": {
+          "source_reliability": "high",
+          "data_freshness": "current"
+        },
+        "quote": "я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит",
+        "confidence_score": 1.0,
+        "_extracted_at": "2026-08-25T18:06:34.679265+00:00",
+        "_agent": "EnhancedKPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "enhanced_kpi"
+      }
+    ],
+    "fact_checks": [],
+    "cogni_profiles": [
+      {
+        "name": "Сергей Волков",
+        "confidence": 0.4,
+        "_agent": "CogniDimensionsAgent",
+        "_agent_version": "1.0.0",
+        "_extracted_at": "2026-08-25T18:06:34.464034+00:00",
+        "_entity_type": "cogni_profile",
+        "light_cone": {
+          "horizon": "в этом году",
+          "scale": "компания",
+          "depth": null,
+          "confidence": 0.4,
+          "quote": "Но учтите: если в этом году не решите, мы просто пойдём смотреть дальше, я не буду ждать вечно ради красивых отношений."
+        },
+        "equalizer": {
+          "action_analysis": {
+            "value": -0.6,
+            "confidence": 0.4,
+            "quote": "Но если по отчётности ответ «почти» — я начинаю смотреть, что есть у других."
+          }
+        }
+      }
+    ],
+    "agent_results": {
+      "decisions": [
+        {
+          "decision_id": "dec_001",
+          "decision_summary": "Никита Фролов предоставит конкретику и точные сроки по модулю отчётности в течение недели.",
+          "decision_category": "operational",
+          "details": "Клиент выразил недовольство неопределенностью статуса разработки модуля отчётности («почти уверен»). В результате договоренности представитель «Гелиона» берет неделю на уточнение деталей с продуктовой командой и возврат к клиенту с конкретной датой.",
+          "participants": [
+            {
+              "name": "Никита Фролов",
+              "role": "Представитель «Гелиона»"
+            },
+            {
+              "name": "Сергей Волков",
+              "role": "Директор по закупкам, «Титан-Банк»"
+            }
+          ],
+          "responsible": {
+            "primary": "Никита Фролов"
+          },
+          "decision_maker_resolved": "Никита Фролов",
+          "decision_maker_speaker": "",
+          "attribution_confidence": "medium",
+          "reasoning": "Клиент потребовал определенности по срокам разработки модуля отчётности на текущий год, пригрозив рассмотреть альтернативные решения на рынке.",
+          "timeline": {
+            "deadline": "1 неделя"
+          },
+          "business_impact": {
+            "scope": "external",
+            "urgency": "high",
+            "risk_level": "high"
+          },
+          "dependencies": [],
+          "action_items": [
+            {
+              "action": "Вернуться с конкретикой и датой по модулю отчётности",
+              "owner": "Никита Фролов",
+              "deadline": "1 неделя"
+            }
+          ],
+          "quote": "Дайте мне неделю, вернусь с конкретикой.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:06:33.856835+00:00",
+          "_agent": "DecisionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "decision",
+          "importance_classification": {
+            "business_impact": "low",
+            "urgency_score": 0.5,
+            "complexity_score": 5,
+            "risk_level": "low",
+            "overall_priority": "medium"
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "task_1",
+          "title": "Вернуться с конкретикой и датой по модулю отчётности",
+          "description": "Уточнить детали с продуктовой командой и вернуться к клиенту с конкретными сроками и информацией по модулю отчётности.",
+          "task_type": "action",
+          "assignee": {
+            "name": "Никита Фролов",
+            "role": "Представитель «Гелиона»"
+          },
+          "assignee_speaker": null,
+          "assignment_confidence": "high",
+          "needs_human_review": false,
+          "assigner": "Сергей Волков",
+          "priority": "high",
+          "status": "in_progress",
+          "deadline": {
+            "date": "неделя",
+            "is_hard": true
+          },
+          "dependencies": [],
+          "related_decision": "",
+          "related_project": "Модуль отчётности (Титан-Банк)",
+          "acceptance_criteria": [
+            "Предоставить конкретную информацию и дату"
+          ],
+          "blockers": [],
+          "quote": "Дайте мне неделю, вернусь с конкретикой.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:06:33.554012+00:00",
+          "_agent": "TaskAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "task"
+        }
+      ],
+      "participants": [
+        {
+          "participant_id": "nikita_frolov",
+          "name": "Никита Фролов",
+          "normalized_name": "Никита Фролов",
+          "role": "",
+          "department": "Гелион",
+          "activity_level": "medium",
+          "participation_metrics": {
+            "speaking_turns": 4,
+            "decisions_involved": 0,
+            "tasks_assigned": 1,
+            "questions_asked": 0
+          },
+          "expertise_areas": [
+            "модуль отчётности"
+          ],
+          "communication_style": {
+            "style": "collaborative",
+            "traits": [
+              "исполнительный",
+              "принимает обратную связь"
+            ]
+          },
+          "relationships": [
+            {
+              "with": "Сергей Волков",
+              "type": "collaborates"
+            }
+          ],
+          "key_contributions": [
+            "Запросил неделю на уточнение конкретики по срокам модуля отчётности"
+          ],
+          "sentiment": "neutral",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:06:34.178674+00:00",
+          "_agent": "ParticipantAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "participant"
+        },
+        {
+          "participant_id": "sergey_volkov",
+          "name": "Сергей Волков",
+          "normalized_name": "Сергей Волков",
+          "role": "директор по закупкам",
+          "department": "Титан-Банк",
+          "activity_level": "high",
+          "participation_metrics": {
+            "speaking_turns": 4,
+            "decisions_involved": 1,
+            "tasks_assigned": 0,
+            "questions_asked": 1
+          },
+          "expertise_areas": [
+            "закупки"
+          ],
+          "communication_style": {
+            "style": "directive",
+            "traits": [
+              "требовательный",
+              "прямолинейный",
+              "ставильтильтиматум"
+            ]
+          },
+          "relationships": [
+            {
+              "with": "Никита Фролов",
+              "type": "collaborates"
+            }
+          ],
+          "key_contributions": [
+            "Поставил ультиматум по срокам сдачи модуля отчётности в текущем году"
+          ],
+          "sentiment": "negative",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:06:34.178685+00:00",
+          "_agent": "ParticipantAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "participant"
+        }
+      ],
+      "entities": [
+        {
+          "entity_id": "titan_bank",
+          "entity_type": "organization",
+          "name": "Титан-Банк",
+          "description": "Клиентская организация, директор по закупкам которой обсуждает статус разработки модуля отчётности.",
+          "attributes": {
+            "type": "client"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:06:34.034301+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "gelion",
+          "entity_type": "company",
+          "name": "Гелион",
+          "description": "Собственная компания, представителем которой является Никита Фролов.",
+          "attributes": {},
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:06:34.034323+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "reporting_module",
+          "entity_type": "feature",
+          "name": "модуль отчётности",
+          "description": "Модуль, статус разработки которого обсуждается на встрече.",
+          "attributes": {
+            "status": "in_progress",
+            "priority": "high"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:06:34.034331+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "existing_product",
+          "entity_type": "product",
+          "name": "продукт",
+          "description": "Продукт компании «Гелион», который уже установлен у клиента, к нему нет претензий.",
+          "attributes": {},
+          "relationships": [],
+          "mentions": [],
+          "importance": "medium",
+          "confidence": 0.9,
+          "_extracted_at": "2026-08-25T18:06:34.034337+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "product_department",
+          "entity_type": "team",
+          "name": "продукт",
+          "description": "Внутренняя команда или подразделение, с которым уточняются детали по модулю.",
+          "attributes": {},
+          "relationships": [],
+          "mentions": [],
+          "importance": "medium",
+          "confidence": 0.8,
+          "_extracted_at": "2026-08-25T18:06:34.034344+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        }
+      ],
+      "kpis": [
+        {
+          "kpi_id": "cooperation_duration_years",
+          "name": "Срок сотрудничества",
+          "category": "operational",
+          "value": {
+            "current": 3,
+            "previous": null,
+            "target": null,
+            "unit": "года"
+          },
+          "trend": {
+            "direction": "stable",
+            "change_percent": null,
+            "period": ""
+          },
+          "context": {
+            "project": "Модуль отчётности",
+            "department": "Закупки",
+            "responsible": "Сергей Волков"
+          },
+          "analysis": {
+            "status": "on_track",
+            "insight": "Клиент работает с компанией 3 года, претензий к текущему продукту нет.",
+            "action_needed": false
+          },
+          "quote": "Смотрите, я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит.",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:06:33.504847+00:00",
+          "_agent": "KPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "kpi"
+        }
+      ],
+      "opinions": [
+        {
+          "opinion_id": "opinion_001",
+          "author": "Никита Фролов",
+          "opinion_summary": "Компания «Гелион» занимается разработкой модуля отчётности, детали уточняются с продуктом.",
+          "topic": "Разработка модуля отчётности",
+          "opinion_category": "process",
+          "sentiment_analysis": {
+            "primary_sentiment": "neutral",
+            "intensity": 0.5,
+            "emotional_undertones": [
+              "неуверенность"
+            ],
+            "confidence_in_opinion": "medium"
+          },
+          "argumentation": {
+            "reasoning_type": "intuitive",
+            "supporting_evidence": [
+              "детали сейчас уточняем с продуктом"
+            ],
+            "logical_structure": "weak",
+            "bias_indicators": []
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "удержание клиента",
+              "выяснение статуса у продуктовой команды"
+            ],
+            "risk_concerns": [
+              "неопределенность по срокам"
+            ],
+            "opportunity_focus": [
+              "успешное завершение разработки модуля"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.4,
+            "authority_level": "peer",
+            "social_influence": "medium",
+            "likely_supporters": []
+          },
+          "business_implications": {
+            "strategic_alignment": "misaligned",
+            "resource_implications": [
+              "необходимость привлечения ресурсов продуктовой команды для уточнения сроков"
+            ],
+            "risk_assessment": "high"
+          },
+          "quote": "Делаем, я почти уверен, детали сейчас уточняем с продуктом.",
+          "confidence_score": 0.8,
+          "_extracted_at": "2026-08-25T18:06:36.530900+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        },
+        {
+          "opinion_id": "opinion_002",
+          "author": "Сергей Волков",
+          "opinion_summary": "У клиента нет претензий к уже установленному продукту вендора.",
+          "topic": "Качество действующего продукта",
+          "opinion_category": "personal",
+          "sentiment_analysis": {
+            "primary_sentiment": "positive",
+            "intensity": 0.7,
+            "emotional_undertones": [
+              "удовлетворенность"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "я третий год с вами работаю"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": []
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "поддержание партнерских отношений при условии выполнения обязательств"
+            ],
+            "risk_concerns": [],
+            "opportunity_focus": [
+              "эффективная работа текущего ПО"
+            ],
+            "personal_stake": "medium"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.8,
+            "authority_level": "experienced",
+            "social_influence": "high",
+            "likely_supporters": []
+          },
+          "business_implications": {
+            "strategic_alignment": "aligned",
+            "resource_implications": [],
+            "risk_assessment": "low"
+          },
+          "quote": "я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит.",
+          "confidence_score": 0.9,
+          "_extracted_at": "2026-08-25T18:06:36.530917+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        },
+        {
+          "opinion_id": "opinion_003",
+          "author": "Сергей Волков",
+          "opinion_summary": "Ответ «почти уверен» не устраивает заказчика, и в случае отсутствия определенности по отчетности он начнет искать альтернативы на рынке.",
+          "topic": "Сроки и неопределенность по новому модулю",
+          "opinion_category": "strategic",
+          "sentiment_analysis": {
+            "primary_sentiment": "negative",
+            "intensity": 0.9,
+            "emotional_undertones": [
+              "раздражение",
+              "требовательность"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "если по отчётности ответ «почти» — я начинаю смотреть, что есть у других"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": []
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "получение четких сроков",
+              "закрытие бизнес-потребностей банка в отчётности в текущем году"
+            ],
+            "risk_concerns": [
+              "срыв сроков реализации модуля отчётности со стороны вендора"
+            ],
+            "opportunity_focus": [
+              "переход к другому вендору при отсутствии результатов"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.9,
+            "authority_level": "experienced",
+            "social_influence": "high",
+            "likely_supporters": []
+          },
+          "business_implications": {
+            "strategic_alignment": "misaligned",
+            "resource_implications": [
+              "риск потери контракта"
+            ],
+            "risk_assessment": "high"
+          },
+          "quote": "«Почти уверен» меня не устраивает. Смотрите, я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит. Но если по отчётности ответ «почти» — я начинаю смотреть, что есть у других.",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:06:36.530922+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        }
+      ],
+      "ideas": [],
+      "project_statuses": [
+        {
+          "project_id": "project_reporting_module",
+          "project_name": "Модуль отчётности для Титан-Банка",
+          "description": "Разработка и внедрение модуля отчётности для клиента Титан-Банк",
+          "project_category": "product",
+          "lifecycle_stage": "planning",
+          "status_assessment": {
+            "current_status": "in_progress",
+            "health_indicator": "yellow",
+            "progress_percentage": null,
+            "last_update": "Уточняются детали с продуктовой командой, нет четкой определенности по срокам"
+          },
+          "scope_analysis": {
+            "primary_objectives": [
+              "Разработка модуля отчётности в текущем году"
+            ],
+            "deliverables": [
+              "Модуль отчётности"
+            ],
+            "success_criteria": [
+              "Реализация модуля в текущем году"
+            ],
+            "scope_clarity": "moderate"
+          },
+          "stakeholder_mapping": {
+            "project_sponsor": null,
+            "project_manager": "Никита Фролов",
+            "core_team": [
+              "Команда продукта «Гелион»"
+            ],
+            "key_stakeholders": [
+              "Сергей Волков"
+            ]
+          },
+          "resource_analysis": {
+            "budget_info": {
+              "estimated_budget": null,
+              "budget_status": "on"
+            },
+            "human_resources": {
+              "team_size": null,
+              "skill_gaps": []
+            }
+          },
+          "timeline_analysis": {
+            "estimated_duration": null,
+            "start_date": null,
+            "target_completion": "В текущем году",
+            "critical_milestones": [
+              "Предоставление конкретики и даты через неделю"
+            ],
+            "timeline_risk": "high"
+          },
+          "risk_assessment": {
+            "identified_risks": [
+              "Риск потери клиента, если модуль не будет реализован в текущем году"
+            ],
+            "overall_risk_level": "high"
+          },
+          "business_value": {
+            "strategic_alignment": "high",
+            "expected_roi": null,
+            "business_benefits": [
+              "Удержание клиента Титан-Банк"
+            ]
+          },
+          "dependencies": {
+            "internal_dependencies": [
+              "Уточнение деталей с продуктовой командой"
+            ],
+            "external_dependencies": [],
+            "blocking_factors": [
+              "Отсутствие точной уверенности и конкретных сроков на текущий момент"
+            ]
+          },
+          "current_issues": [
+            "Отсутствие конкретных сроков и уверенности в реализации со стороны исполнителя",
+            "Угроза со стороны клиента уйти к конкурентам"
+          ],
+          "recent_achievements": [],
+          "quote": "Делаем, я почти уверен, детали сейчас уточняем с продуктом.",
+          "confidence_score": 0.9,
+          "_extracted_at": "2026-08-25T18:06:34.594462+00:00",
+          "_agent": "ProjectStatusAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "project_status"
+        }
+      ],
+      "enhanced_kpis": [
+        {
+          "kpi_id": "kpi_001",
+          "metric_name": "Опыт работы с клиентом",
+          "metric_category": "customer",
+          "values": {
+            "current_value": "3",
+            "target_value": null,
+            "previous_value": null,
+            "unit": "год"
+          },
+          "time_context": {
+            "period": "год",
+            "specific_date": "2026",
+            "comparison_period": null
+          },
+          "trend_analysis": {
+            "direction": "stable",
+            "change_percentage": null,
+            "trend_strength": "stable",
+            "seasonality": null
+          },
+          "performance_assessment": {
+            "vs_target": "on",
+            "vs_previous": "same",
+            "gap_analysis": "Долгосрочное сотрудничество без претензий к текущему продукту",
+            "performance_rating": "good"
+          },
+          "business_context": {
+            "strategic_importance": "high",
+            "affected_areas": [
+              "Удержание клиентов",
+              "Продажи"
+            ],
+            "root_causes": [],
+            "external_factors": []
+          },
+          "action_items": {
+            "immediate_actions": [
+              "Предоставить конкретику по срокам разработки модуля отчётности в течение недели"
+            ],
+            "improvement_opportunities": [
+              "Улучшить коммуникацию по статусу разработки"
+            ],
+            "risks_if_unchanged": [
+              "Уход клиента к конкурентам"
+            ]
+          },
+          "related_metrics": [],
+          "data_quality": {
+            "source_reliability": "high",
+            "data_freshness": "current"
+          },
+          "quote": "я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит",
+          "confidence_score": 1.0,
+          "_extracted_at": "2026-08-25T18:06:34.679265+00:00",
+          "_agent": "EnhancedKPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "enhanced_kpi"
+        }
+      ],
+      "fact_checks": [],
+      "cogni_profiles": [
+        {
+          "name": "Сергей Волков",
+          "confidence": 0.4,
+          "_agent": "CogniDimensionsAgent",
+          "_agent_version": "1.0.0",
+          "_extracted_at": "2026-08-25T18:06:34.464034+00:00",
+          "_entity_type": "cogni_profile",
+          "light_cone": {
+            "horizon": "в этом году",
+            "scale": "компания",
+            "depth": null,
+            "confidence": 0.4,
+            "quote": "Но учтите: если в этом году не решите, мы просто пойдём смотреть дальше, я не буду ждать вечно ради красивых отношений."
+          },
+          "equalizer": {
+            "action_analysis": {
+              "value": -0.6,
+              "confidence": 0.4,
+              "quote": "Но если по отчётности ответ «почти» — я начинаю смотреть, что есть у других."
+            }
+          }
+        }
+      ]
+    },
+    "cross_insights": {
+      "decision_task_links": [
+        {
+          "decision_id": "dec_001",
+          "task_id": "task_1",
+          "link_type": "creates"
+        }
+      ],
+      "participant_responsibilities": [
+        {
+          "participant_id": "nikita_frolov",
+          "name": "Никита Фролов",
+          "task_ids": [
+            "task_1"
+          ]
+        }
+      ],
+      "entity_mentions": [],
+      "kpi_trends": []
+    },
+    "cross_meeting_links": {},
+    "psychological_analysis": {
+      "personality_profiles": [
+        {
+          "name": "Никита Фролов",
+          "personality_type": "S/C (на основе ограниченных данных)",
+          "dominant_traits": [
+            "Вежливый",
+            "Сдержанный",
+            "Исполнительный"
+          ],
+          "communication_style": "Лаконичный, спокойный, ориентированный на фиксацию договоренностей без вступления в споры.",
+          "motivation_drivers": [
+            "Сохранение текущих партнерских отношений с клиентом",
+            "Получение конкретных вводных от внутренней продуктовой команды"
+          ],
+          "fears_concerns": [
+            "Потеря клиента из-за неопределенности по срокам разработки",
+            "Отсутствие четких данных от собственного продуктового отдела"
+          ],
+          "decision_style": "Зависимый от мнения продуктовой команды, берет паузу на сбор информации.",
+          "stress_response": "Принимает критику и жесткие условия клиента без агрессии, соглашается на предоставление конкретики в срок.",
+          "conflict_approach": "Избегание конфронтации, сглаживание углов («Понимаю», «Понял, услышал»).",
+          "leadership_style": "Недостаточно данных для оценки",
+          "team_role": "Представитель компании / аккаунт-менеджер",
+          "strengths": [
+            "Умение слушать критику",
+            "Готовность брать на себя ответственность за сроки («вернусь с конкретикой»)",
+            "Соблюдение делового этикета в жестких переговорах"
+          ],
+          "development_areas": [
+            "Проактивность в информировании клиента о статусе проектов",
+            "Более плотная синхронизация с продуктовой командой до звонков с клиентами"
+          ],
+          "management_tips": [
+            "Обеспечивать его четкими дедлайнами и статусами со стороны разработки, чтобы избежать ситуаций неопределенности",
+            "Проводить предварительные сверки перед его встречами со статусными клиентами"
+          ],
+          "role": ""
+        },
+        {
+          "name": "Сергей Волков",
+          "personality_type": "D (Доминирование / Высокий D)",
+          "dominant_traits": [
+            "Прямолинейность и жесткость в коммуникации",
+            "Требовательность к конкретике и срокам",
+            "Рациональность и прагматизм (ценит прошлый опыт, но ставит во главу угла текущие результаты)",
+            "Ориентация на жесткий контроль и дедлайны"
+          ],
+          "communication_style": "Деловой, предельно краткий, лаконичный. Без «воды» и светских любезностей, сразу переходит к сути («У меня к вам вопрос раньше, чем у вас ко мне»)",
+          "motivation_drivers": [
+            "Соблюдение сроков и выполнение обязательств",
+            "Получение четких и однозначных ответов вместо расплывчатых формулировок",
+            "Эффективность бизнес-процессов закупки и внедрения"
+          ],
+          "fears_concerns": [
+            "Потеря времени на неопределенность и пустые обещания («не буду ждать вечно ради красивых отношений»)",
+            "Срыв планов по автоматизации/отчетности из-за нерасторопности подрядчика"
+          ],
+          "decision_style": "Рациональный, жестко ориентированный на результаты и сроки. Быстро принимает решения на основе фактов, не готов мириться с неопределенностью («почти уверен» для него не аргумент)",
+          "stress_response": "Проявляет жесткость, перехватывает инициативу в диалоге, стальтирует ультимативные условия (угроза уйти к конкурентам)",
+          "conflict_approach": "Прямая конфронтация и обозначение границ («я не буду ждать вечно»)",
+          "leadership_style": "Авторитарно-прагматичный (в рамках своей зоны ответственности — закупок)",
+          "team_role": "Контролер / Лидер, задающий жесткие стандарты выполнения задач",
+          "strengths": [
+            "Четкое понимание своих целей и ожиданий от поставщика",
+            "Лояльность к проверенным партнерам при соблюдении ими стандартов работы",
+            "Умение принимать твердые решения и ставить жесткие дедлайны"
+          ],
+          "development_areas": [
+            "Возможная ригидность в оценке ситуаций, где требуется гибкость и R&D-подход (разработка новых модулей)"
+          ],
+          "management_tips": [
+            "Никогда не используйте расплывчатые формулировки вроде «почти уверен» или «наверное» — только конкретные даты и факты",
+            "Уважайте его время, готовьтесь к встречам и возвращайтесь с четкими обязательствами точно в срок"
+          ],
+          "role": "директор по закупкам"
+        }
+      ],
+      "hidden_motives": [
+        {
+          "participant": "Никита Фролов",
+          "stated_position": "Звонит сверить статус по модулю отчётности, обещает вернуться с конкретикой через неделю.",
+          "true_intentions": [
+            "Выиграть время (дать себе неделю), чтобы разобраться с реальным статусом разработки у продуктовой команды",
+            "Удержать ключевого клиента («Титан-Банк»), не потеряв контракт из-за неопределенности сроков"
+          ],
+          "personal_agenda": [
+            "Избежать публичного признания перед клиентом в том, что у компании нет четкого плана по модулю",
+            "Снять текущее напряжение в диалоге и перенести разговор в безопасную плоскость конкретных дат"
+          ],
+          "fears": [
+            "Потерять крупного и лояльного клиента с трехлетним стажем работы",
+            "Получить выговор от руководства за потерю контракта из-за плохой коммуникации с продуктовым отделом"
+          ],
+          "power_seeking": "Низкое. Никита находится в позиции оправдывающегося, принимает правила игры клиента, не пытается перехватить инициативу в переговорах, а лишь соглашается на условия («дайте мне неделю», «возвращаюсь с датой»).",
+          "defense_mechanisms": [
+            "Сглаживание углов и попытка выехать на прошлых партнерских отношениях",
+            "Защитная расплывчатость формулировок («почти уверен», «детали уточняем») в надежде смягчить удар",
+            "Использование тайм-аута (просьба дать неделю) для выработки защитной стратегии"
+          ],
+          "manipulation_signs": [
+            "Использование расплывчатых формулировок («почти уверен») для маскировки отсутствия информации"
+          ],
+          "authenticity_score": 0.3,
+          "risk_level": "high"
+        },
+        {
+          "participant": "Сергей Волков",
+          "stated_position": "Требует четкого ответа, делается ли модуль в этом году, в противном случае готов искать альтернативные решения на рынке.",
+          "true_intentions": [
+            "Прощупать текущие позиции вендора («Гелион») и заставить их ускорить разработку модуля отчётности",
+            "Оставить за собой свободу маневра для поиска других подрядчиков, если «Гелион» затягивает процесс"
+          ],
+          "personal_agenda": [
+            "Закрыть потребности банка по закупкам и отчетности в срок, избежав вопросов к себе как к директору по закупкам",
+            "Продемонстрировать жесткую позицию и деловой прагматизм («не буду ждать вечно ради красивых отношений»)"
+          ],
+          "fears": [
+            "Остаться без нужного модуля отчётности к концу года из-за нерасторопности вендора",
+            "Потратить время и ресурсы на ожидание обещаний, которые не будут выполнены"
+          ],
+          "power_seeking": "Высокое. Сергей полностью контролирует ход беседы, задает неудобный вопрос в самом начале («у меня к вам вопрос раньше, чем у вас ко мне»), стальтирует ультиматумы («неделя — нормально... если в этом году не решите, мы пойдём смотреть дальше») и диктует условия взаимодействия.",
+          "defense_mechanisms": [
+            "Атака как лучшая защита (перехват инициативы в начале разговора)",
+            "Апелляция к холодным бизнес-интересам в противовес лояльности («я третий год с вами работаю... но...»)",
+            "Выставление жестких временных рамок и ультиматумов"
+          ],
+          "manipulation_signs": [
+            "Демонстративное обесценивание долгосрочных партнерских отношений («не буду ждать вечно ради красивых отношений») для усиления давления",
+            "Использование ультиматума как рычага давления («начинаю смотреть, что есть у других»)"
+          ],
+          "authenticity_score": 0.85,
+          "risk_level": "low"
+        }
+      ],
+      "group_dynamics": {
+        "trust_level": "medium",
+        "trust_indicators": [
+          "Долгосрочный опыт сотрудничества (3 года) и отсутствие претензий к текущему продукту",
+          "Прямота и открытость клиента в выражении недовольства и ультиматумов",
+          "Признание исполнителем своей неготовности предоставить точный ответ без защитных реакций"
+        ],
+        "psychological_safety": "high",
+        "safety_indicators": [
+          "Клиент открыто и жестко критикует неопределенность («Почти уверен меня не устраивает»)",
+          "Исполнитель не оправдывается, а принимает критику и берет время на доработку без страха испортить отношения"
+        ],
+        "hidden_conflicts": [
+          {
+            "parties": [
+              "Сергей Волков (Титан-Банк)",
+              "Никита Фролов (Гелион)"
+            ],
+            "nature": "Риск срыва сроков по разработке модуля отчётности и потенциальный уход клиента к конкурентам",
+            "intensity": "high",
+            "trigger_topics": [
+              "Сроки разработки",
+              "Неопределенность планов продукта",
+              "Конкурентная альтернатива"
+            ]
+          }
+        ],
+        "alliances": [],
+        "power_dynamics": [
+          {
+            "influencer": "Сергей Волков",
+            "influenced": [
+              "Никита Фролов"
+            ],
+            "influence_type": "Ультимативное давление / контроль сроков",
+            "legitimacy": "Высокая (роль заказчика и угрожающий фактор смены вендора)"
+          }
+        ],
+        "collective_fears": [
+          "Для клиента: потеря времени и денег из-за затягивания разработки нужного модуля",
+          "Для исполнителя: потеря ключевого и лояльного клиента с трехлетним стажем"
+        ],
+        "team_culture": {
+          "decision_making": "Прагматичное, ориентированное на результат и четкие сроки со стороны заказчика",
+          "communication_norms": "Деловая, предельно прямая, жесткая, без лишней вежливости и бюрократии",
+          "conflict_resolution": "Через прямые ультиматумы и установление жестких дедлайнов",
+          "innovation_attitude": "Ценность имеют работающие решения и четкие обязательства, а не обещания на уровне «почти уверен»"
+        },
+        "group_maturity": "norming",
+        "improvement_areas": [
+          "Улучшение синхронизации между отделами продаж/аккаунтинга и продуктовой командой на стороне исполнителя",
+          "Своевременное информирование клиентов о статусах разработки до того, как они начнут задавать вопросы"
+        ]
+      },
+      "behavioral_predictions": [],
+      "conflict_risks": [
+        {
+          "conflict_type": "ресурсный",
+          "parties": [
+            "Сергей Волков (Титан-Банк)",
+            "Никита Фролов (Гелион) / Продуктовая команда «Гелиона»"
+          ],
+          "root_cause": "Неопределенность планов и сроков разработки модуля отчётности со стороны исполнителя при жестком деманд-требовании (дедлайне) со стороны заказчика.",
+          "triggers": [
+            "Отсутствие конкретной даты релиза модуля отчётности через неделю",
+            "Предоставление расплывчатых формулировок («мы стараемся», «почти готово») вместо точного плана",
+            "Затягивание внутренних согласований с продуктовой командой «Гелиона»"
+          ],
+          "probability": 0.85,
+          "impact": "critical",
+          "early_warning_signs": [
+            "Клиент начинает активно запрашивать альтернативные коммерческие предложения у конкурентов",
+            "Раздраженный тон заказчика при последующих касаниях",
+            "Задержка Никиты Фролова с обратной связью по истечении недельного срока"
+          ],
+          "prevention_strategies": [
+            "Экстренная синхронизация Никиты с продуктовой командой «Гелиона» в первые 2-3 дня после звонка",
+            "Формирование четкого дорожного плана (roadmap) с фиксированными датами до истечения обещанной недели",
+            "Проактивное информирование клиента о статусе до того, как он сам напомнит о себе"
+          ],
+          "resolution_approach": "Предоставление клиенту прозрачного и обоснованного графика разработки; в случае невозможности сделать в текущем году — честный диалог о компромиссных сроках или поэтапном внедрении MVP, чтобы снизить риск ухода к конкурентам.",
+          "timeline": "Через 1 неделю (в момент предоставления Никитой обещанной конкретики)"
+        },
+        {
+          "conflict_type": "ролевой",
+          "parties": [
+            "Сергей Волков (Титан-Банк)",
+            "Никита Фролов (Гелион)"
+          ],
+          "root_cause": "Разрыв между ожиданиями заказчика (требующего четкости и жесткого соблюдения планов как стратегический покупатель) и возможностями аккаунт-менеджера (зависимого от внутренних процессов разработки и склонного к избеганию конфронтации).",
+          "triggers": [
+            "Применение клиентом ультимативной лексики («если не решите — пойдем смотреть дальше»)",
+            "Склонность Никиты сглаживать углы вместо жесткой защиты позиций компании"
+          ],
+          "probability": 0.6,
+          "impact": "medium",
+          "early_warning_signs": [
+            "Потеря доверия клиента к словам Никиты Фролова («почти уверен», «понял-услышал» воспринимаются как пустые обещания)",
+            "Переход клиента на формально-юридический уровень общения вместо партнерского"
+          ],
+          "prevention_strategies": [
+            "Никите не давать обещаний, за которые он не может ручаться лично",
+            "Подключить к переговорам технического эксперта или руководителя продукта с сильной позицией, способного аргументированно защитить сроки"
+          ],
+          "resolution_approach": "Признание текущих ограничений со стороны «Гелиона» без оправданий, предложение прозрачного партнерского формата взаимодействия с регулярными статус-митингами.",
+          "timeline": "Среднесрочная перспектива (в течение текущего месяца проекта)"
+        }
+      ],
+      "management_recommendations": [
+        {
+          "category": "коммуникация",
+          "recommendation": "Выстроить жесткий регламент оперативной синхронизации Никиты Фролова с продуктовой командой для подготовки железобетонного плана по модулю отчётности.",
+          "target": "Никита Фролов и лиды продуктовой команды",
+          "rationale": "Клиент (профиль D) не терпит неопределенности и расплывчатых формулировок («почти уверен»). Для снижения риска потери ключевого контракта (probability 0.85) менеджер должен оперировать точными данными и дорожной картой.",
+          "implementation": "Провести внеплановый бриф Никиты с продактами в течение 24 часов. Зафиксировать реальные дедлайны без «маркетинговых» обещаний.",
+          "expected_outcome": "Никита вернется к клиенту через неделю с конкретной датой и планом, что вернет доверие Сергея Волкова.",
+          "priority": "high",
+          "timing": "Немедленно (1-2 дня)"
+        },
+        {
+          "category": "конфликты",
+          "recommendation": "Ввести протокол «быстрого реагирования» на жесткие требования заказчиков (управление рисками эскалации).",
+          "target": "Вся команда менеджеров по работе с ключевыми клиентами",
+          "rationale": "Клиент прямо заявил о готовности уйти к конкурентам. Риск критический. Команде нужны превентивные алгоритмы работы с высоким D-типом клиентов, чтобы не доводить до ультиматумов.",
+          "implementation": "Организовать внутренний воркшоп по работе с возражениями жестких клиентов (тип D), разобрать кейс «Титан-Банка».",
+          "expected_outcome": "Снижение вероятности повторения подобных кризисов с другими ключевыми клиентами за счет раннего выявления неопределенности.",
+          "priority": "medium",
+          "timing": "В течение двух недель"
+        },
+        {
+          "category": "мотивация",
+          "recommendation": "Связать скорость и качество согласования продуктовых планов с KPI продуктовой команды по удержанию ключевых клиентов (Retention).",
+          "target": "Продуктовая команда / Руководитель продукта",
+          "rationale": "Часто разработчики и продакты оторваны от бизнес-контекста продаж. Понимание того, что задержка ответа грозит потерей крупного контракта, повысит их внутреннюю ответственность.",
+          "implementation": "На ближайшем планерке озвучить финансовые риски по «Титан-Банку» и зону ответственности продукта в этом кейсе.",
+          "expected_outcome": "Сокращение времени реакции продуктовой команды на запросы менеджеров по продажам в критических ситуациях.",
+          "priority": "high",
+          "timing": "На ближайшем спринте"
+        },
+        {
+          "category": "лидерство",
+          "recommendation": "Обеспечить менторскую поддержку Никиты Фролова со стороны руководства при подготовке к повторному звонку Сергею Волкову.",
+          "target": "Руководитель отдела продаж (РОП) и Никита Фролов",
+          "rationale": "Никита проявил гибкость и дипломатичность, но попал в ловушку неопределенности от продукта. Руководитель должен помочь ему выстроить жесткую, уверенную коммуникацию с доминантным клиентом.",
+          "implementation": "Провести ролевую игру (моделирование переговоров), где РОП играет Сергея Волкова, требующего четких сроков.",
+          "expected_outcome": "Никита будет чувствовать уверенность при защите дедлайнов и сможет профессионально удержать клиента.",
+          "priority": "high",
+          "timing": "За 2 дня до повторного звонка клиенту"
+        },
+        {
+          "category": "развитие",
+          "recommendation": "Разработать прозрачную матрицу кросс-функционального взаимодействия «Продажи — Продукт — Разработка».",
+          "target": "Вся компания («Гелион»)",
+          "rationale": "Корень проблемы (root cause) — разрыв между обещаниями менеджеров и реальными планами продуктовой команды. Без системного решения конфликты ресурсов будут повторяться.",
+          "implementation": "Создать единый дашборд статусов разработки фич, доступный менеджерам в режиме реального времени, чтобы исключить фразы «почти уверен».",
+          "expected_outcome": "Менеджеры всегда владеют актуальной информацией и не дают ложных надежд клиентам, снижая репутационные риски компании.",
+          "priority": "medium",
+          "timing": "В течение месяца"
+        }
+      ],
+      "stats": {
+        "duration_seconds": 24.13,
+        "profiles_created": 2,
+        "motives_identified": 2,
+        "conflicts_detected": 2,
+        "recommendations_generated": 5
+      }
+    },
+    "future_predictions": {
+      "scenarios": [
+        {
+          "name": "Оптимистичный",
+          "type": "optimistic",
+          "probability": 0.25,
+          "description": "Продуктовая команда оперативно подтверждает сроки реализации модуля отчётности в текущем году. Никита Фролов возвращается к Сергею Волкову через неделю с конкретной и надежной датой, что полностью устраивает клиента.",
+          "time_horizon": "1 месяц",
+          "key_events": [
+            "Никита согласовывает с продуктовой командой четкий план.",
+            "Предоставление клиенту конкретной даты релиза в течение недели.",
+            "Клиент подтверждает продолжение сотрудничества и откладывает поиски альтернативных решений."
+          ],
+          "triggers": [
+            "Успешное согласование сроков с продуктовой командой «Гелиона» за отведенную неделю."
+          ],
+          "consequences": [
+            "Удержание ключевого клиента «Титан-Банк».",
+            "Укрепление долгосрочных партнерских отношений (3 года сотрудничества)."
+          ],
+          "affected_projects": [
+            "Модуль отчётности для Титан-Банка"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Сергей Волков",
+            "Команда продукта «Гелиона»"
+          ],
+          "decision_points": [
+            "Утверждение графика разработки продукта руководством «Гелиона»."
+          ],
+          "success_factors": [
+            "Высокая скорость реакции продуктовой команды.",
+            "Надежность обещанных сроков."
+          ],
+          "failure_factors": [
+            "Затягивание внутреннего согласования сроков в компании «Гелион»."
+          ],
+          "recommended_actions": [
+            "Срочно зафиксировать с продуктовой командой реальный срок сдачи модуля.",
+            "Подготовить презентацию для Сергея Волкова с четкими этапами на неделю раньше дедлайна."
+          ]
+        },
+        {
+          "name": "Реалистичный",
+          "type": "realistic",
+          "probability": 0.5,
+          "description": "Никита берет неделю, уточняет детали с продуктом и возвращается с примерными или сжатыми сроками к концу года. Сергей Волков принимает дату, но берет проект под жесткий личный контроль, требуя регулярных отчетов.",
+          "time_horizon": "3 месяца",
+          "key_events": [
+            "Никита возвращается в срок с датой, но команда предупреждает о возможных рисках задержки.",
+            "Клиент соглашается ждать, но предупреждает о недопустимости сдвига сроков.",
+            "Установление промежуточных контрольных точек по проекту."
+          ],
+          "triggers": [
+            "Продуктовая команда дает подтверждение сроков «на грани», оставляя мало времени на риски."
+          ],
+          "consequences": [
+            "Клиент остается, но уровень его доверия временно снижается из-за изначальной неопределенности («почти уверен»).",
+            "Повышение операционной нагрузки на Никиту по регулярному информированию клиента."
+          ],
+          "affected_projects": [
+            "Модуль отчётности для Титан-Банка"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "decision_points": [
+            "Решение о выделении дополнительных ресурсов на разработку для гарантии сроков."
+          ],
+          "success_factors": [
+            "Прозрачная коммуникация и регулярный апдейт статуса для Сергея Волкова."
+          ],
+          "failure_factors": [
+            "Любое отклонение от согласованной даты приведет к тому, что клиент начнет искать альтернативы на рынке."
+          ],
+          "recommended_actions": [
+            "Организовать внутренний контроль разработки модуля отчётности.",
+            "Запланировать еженедельные короткие синхронизации с Сергеем Волковым для демонстрации прогресса."
+          ]
+        },
+        {
+          "name": "Пессимистичный",
+          "type": "pessimistic",
+          "probability": 0.15,
+          "description": "Продуктовая команда заявляет, что в текущем году модуль отчётности сделать не успеют. Никита возвращается к Сергею Волкову через неделю без конкретной даты или с отказом по срокам текущего года.",
+          "time_horizon": "1 месяц",
+          "key_events": [
+            "Продукт не может гарантировать разработку модуля в текущем году.",
+            "Никита озвучивает клиенту отсутствие четких сроков на текущий год.",
+            "Сергей Волков выражает разочарование и начинает активный поиск сторонних вендоров (конкурентов «Гелиона»)."
+          ],
+          "triggers": [
+            "Загруженность продуктовой команды и отсутствие ресурса на реализацию модуля в текущем году."
+          ],
+          "consequences": [
+            "Потеря доверия со стороны директора по закупкам («не буду ждать вечно ради красивых отношений»).",
+            "Высокий риск потери потенциального контракта по модулю и угроза будущему сотрудничеству."
+          ],
+          "affected_projects": [
+            "Модуль отчётности для Титан-Банка"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "decision_points": [
+            "Поиск компромиссных вариантов (например, MVP или привлечение подрядчиков), чтобы удержать клиента."
+          ],
+          "success_factors": [
+            "Оперативное предложение альтернативных решений (усеченный функционал или поэтапный запуск)."
+          ],
+          "failure_factors": [
+            "Попытка отделаться общими фразами без конкретики при повторном звонке."
+          ],
+          "recommended_actions": [
+            "Заранее проработать с руководством сценарий «плана Б» на случай, если разработка в текущем году физически невозможна."
+          ]
+        },
+        {
+          "name": "Критический",
+          "type": "critical",
+          "probability": 0.1,
+          "description": "Худший сценарий: неопределенность затягивается, Никита не приносит конкретики через неделю, либо обещает и срывает сроки. Сергей Волков окончательно разочаровывается и начинает процедуру смены вендора по отчетности, а в перспективе ставит под вопрос продление контрактов по уже работающему продукту.",
+          "time_horizon": "6 месяцев",
+          "key_events": [
+            "Срыв договоренности о предоставлении ответа через неделю.",
+            "Отказ «Титан-Банка» от сотрудничества по новым проектам.",
+            "Переход ключевого клиента к конкурентам «Гелиона»."
+          ],
+          "triggers": [
+            "Игнорирование срочности запроса клиента и отсутствие коммуникации со стороны «Гелиона»."
+          ],
+          "consequences": [
+            "Потеря крупного клиента («Титан-Банк»), с которым работали 3 года.",
+            "Репутационные потери для компании «Гелион»."
+          ],
+          "affected_projects": [
+            "Модуль отчётности для Титан-Банка"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Сергей Волков",
+            "Руководство компании «Гелион»"
+          ],
+          "decision_points": [
+            "Эскалация проблемы на уровень топ-менеджмента «Гелиона» для спасения счета."
+          ],
+          "success_factors": [
+            "Своевременное подключение руководства для урегулирования конфликта до того, как клиент уйдет к конкурентам."
+          ],
+          "failure_factors": [
+            "Пассивная позиция аккаунт-менеджера и отсутствие быстрой реакции на жесткий ультиматум клиента."
+          ],
+          "recommended_actions": [
+            "Топ-менеджменту «Гелиона» совербить звонок вежливости/эскалации Сергею Волкову для демонстрации важности клиента."
+          ]
+        }
+      ],
+      "project_predictions": [
+        {
+          "project_name": "Модуль отчётности для Титан-Банка",
+          "current_status": "in_progress",
+          "success_probability": 0.6,
+          "confidence": 0.85,
+          "predicted_completion": "В течение текущего года (требует подтверждения)",
+          "delay_risk": 0.7,
+          "quality_forecast": "medium",
+          "budget_risk": "on_track",
+          "key_success_factors": [
+            "Оперативное согласование сроков с продуктовой командой в течение недели",
+            "Высокая лояльность клиента к текущему продукту компании «Гелион»"
+          ],
+          "key_risk_factors": [
+            "Угроза ухода клиента к конкурентам при отсутствии четких сроков",
+            "Неопределенность со стороны продуктовой команды на текущий момент"
+          ],
+          "bottlenecks": [
+            "Отсутствие конкретных сроков и согласованности с продуктовым отделом"
+          ],
+          "dependencies": [
+            "Уточнение деталей и сроков с продуктовой командой «Гелиона»"
+          ],
+          "team_readiness": "medium",
+          "resource_adequacy": "adequate",
+          "outcome_scenarios": [
+            {
+              "scenario": "Успешное утверждение сроков: Никита Фролов возвращается с конкретной датой через неделю, клиент принимает условия и проект продолжает развиваться.",
+              "probability": 0.6,
+              "impact": "Удержание ключевого клиента («Титан-Банк») и успешная реализация модуля в текущем году."
+            },
+            {
+              "scenario": "Потеря клиента: Команда не может предоставить четкие сроки в течение недели, клиент (Сергей Волков) уходит к конкурентам.",
+              "probability": 0.4,
+              "impact": "Потеря контракта, репутационные риски."
+            }
+          ],
+          "recommendations": [
+            "Срочно синхронизироваться с продуктовой командой и зафиксировать реальные сроки реализации модуля.",
+            "Предоставить клиенту конкретный план-график в течение обещанной недели, чтобы снять риски поиска альтернатив."
+          ]
+        }
+      ],
+      "task_predictions": [
+        {
+          "task": "Вернуться с конкретикой и датой по модулю отчётности",
+          "assignee": "Никита Фролов",
+          "deadline": "2026-03-16",
+          "completion_probability": 0.85,
+          "on_time_probability": 0.7,
+          "predicted_completion": "2026-03-16",
+          "delay_days": 0,
+          "blockers": [
+            "Неопределенность со стороны продуктовой команды («почти уверен»)"
+          ],
+          "dependencies": [],
+          "priority_score": 0.95,
+          "effort_estimate": "medium",
+          "risk_factors": [
+            "Долгая реакция продуктовой команды на запросы",
+            "Риск потери клиента при отсутствии конкретных сроков"
+          ],
+          "success_factors": [
+            "Долгосрочные партнерские отношения (3 года работы)",
+            "Четкий дедлайн, заданный клиентом"
+          ]
+        }
+      ],
+      "risks": [
+        {
+          "risk_name": "Уход ключевого клиента к конкурентам",
+          "category": "strategic",
+          "description": "Титан-Банк (клиент с 3-летним опытом работы) может отказаться от дальнейшего сотрудничества по разработке модуля отчётности и начать поиск альтернативных решений на рынке из-за неопределенности со сроками реализации («почти уверен» вместо конкретной даты).",
+          "probability": 0.7,
+          "impact": "critical",
+          "affected_projects": [
+            "Модуль отчётности для Титан-Банка"
+          ],
+          "affected_people": [
+            "Сергей Волков",
+            "Никита Фролов"
+          ],
+          "root_causes": [
+            "Отсутствие четкой коммуникации и согласованного плана разработки с продуктовой командой на момент звонка",
+            "Неопределенность сроков выпуска модуля отчётности в текущем году"
+          ],
+          "triggers": [
+            "Неспособность Никиты Фролова предоставить конкретную дату и план через неделю",
+            "Затягивание сроков разработки продукта"
+          ],
+          "early_warning_signs": [
+            "Раздражение клиента формулировками вроде «почти уверен»",
+            "Прямое заявление клиента о намерении изучить предложения других вендоров"
+          ],
+          "timeline": "В течение ближайшей недели или до конца текущего года",
+          "mitigation_strategies": [
+            "Срочно проработать с продуктовой командой четкие сроки реализации модуля отчётности",
+            "Подготовить зафиксированный и надежный план-график до истечения недельного срока",
+            "Провести внеплановую встречу с Сергеем Волковым для демонстрации уверенности и конкретных шагов"
+          ],
+          "contingency_plans": [
+            "Оперативно предложить компромиссные этапы поставки (MVP)",
+            "Подключить высшее руководство компании для удержания ключевого клиента"
+          ],
+          "owner": "Никита Фролов",
+          "monitoring_frequency": "daily"
+        },
+        {
+          "risk_name": "Несогласованность между отделами продаж/аккаунтинга и разработки (продукта)",
+          "category": "operational",
+          "description": "Аккаунт-менеджер (Никита Фролов) не обладает актуальной и достоверной информацией о статусе разработки модуля отчётности, что подрывает доверие клиента и создает репутационные риски.",
+          "probability": 0.8,
+          "impact": "high",
+          "affected_projects": [
+            "Модуль отчётности для Титан-Банка"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Команда продукта «Гелион»"
+          ],
+          "root_causes": [
+            "Отсутствие регулярного синхрона между аккаунт-менеджерами и продуктовой командой",
+            "Непрозрачность внутренних статусов разработки"
+          ],
+          "triggers": [
+            "Запросы клиентов по статусу проектов, на которые менеджеры отвечают неуверенно"
+          ],
+          "early_warning_signs": [
+            "Использование фразы «уточняем с продуктом» во время звонка с клиентом"
+          ],
+          "timeline": "Немедленно / текущая неделя",
+          "mitigation_strategies": [
+            "Внедрить регулярные еженедельные статус-встречи с продуктовой командой для всех активных проектов",
+            "Создать единый дашборд статусов разработки для менеджеров по работе с клиентами"
+          ],
+          "contingency_plans": [
+            "Назначить ответственного за быструю эскалацию вопросов от клиентских менеджеров внутри продукта"
+          ],
+          "owner": "Никита Фролов",
+          "monitoring_frequency": "weekly"
+        }
+      ],
+      "early_warnings": [
+        {
+          "type": "risk_warning",
+          "severity": "high",
+          "title": "⚠️ Риск: Уход ключевого клиента к конкурентам",
+          "description": "Титан-Банк (клиент с 3-летним опытом работы) может отказаться от дальнейшего сотрудничества по разработке модуля отчётности и начать поиск альтернативных решений на рынке из-за неопределенности со сроками реализации («почти уверен» вместо конкретной даты).",
+          "indicators": [
+            "Раздражение клиента формулировками вроде «почти уверен»",
+            "Прямое заявление клиента о намерении изучить предложения других вендоров"
+          ],
+          "recommended_action": "Срочно проработать с продуктовой командой четкие сроки реализации модуля отчётности",
+          "deadline": "Немедленно"
+        },
+        {
+          "type": "risk_warning",
+          "severity": "medium",
+          "title": "⚠️ Риск: Несогласованность между отделами продаж/аккаунтинга и разработки (продукта)",
+          "description": "Аккаунт-менеджер (Никита Фролов) не обладает актуальной и достоверной информацией о статусе разработки модуля отчётности, что подрывает доверие клиента и создает репутационные риски.",
+          "indicators": [
+            "Использование фразы «уточняем с продуктом» во время звонка с клиентом"
+          ],
+          "recommended_action": "Внедрить регулярные еженедельные статус-встречи с продуктовой командой для всех активных проектов",
+          "deadline": "В течение недели"
+        }
+      ],
+      "opportunities": [
+        {
+          "opportunity_name": "Удержание ключевого клиента и сохранение долгосрочных партнерских отношений",
+          "category": "growth",
+          "description": "Клиент работает с компанией уже 3 года и полностью доволен уже установленным продуктом (нет претензий к качеству текущего решения). Угроза ухода к конкурентам вызвана исключительно неопределенностью сроков по новому модулю отчетности. Предоставление конкретного плана и дедлайнов в течение недели позволяет удержать контракт и сохранить лояльность крупного игрока.",
+          "potential_value": "high",
+          "probability_of_success": 0.8,
+          "time_to_realize": "short term",
+          "required_resources": [
+            "Команда продукта «Гелион»",
+            "Менеджер проекта Никита Фролов"
+          ],
+          "key_enablers": [
+            "Оперативное согласование сроков с продуктовой командой в течение недели",
+            "Формирование четкого и надежного плана реализации"
+          ],
+          "barriers": [
+            "Отсутствие текущей конкретики по срокам у продуктовой команды",
+            "Риск ухода клиента к конкурентам при затягивании ответа"
+          ],
+          "related_projects": [
+            "project_reporting_module"
+          ],
+          "recommended_first_steps": [
+            "Провести срочную встречу с продуктовой командой для фиксации точных сроков разработки модуля отчётности",
+            "Связаться с Сергеем Волковым раньше оговоренного недельного срока с готовой дорожной картой (roadmap)"
+          ]
+        },
+        {
+          "opportunity_name": "Потенциал кросс-продаж и расширения экосистемы продуктов у текущего клиента",
+          "category": "growth",
+          "description": "Успешный опыт 3-летнего сотрудничества и отсутствие нареканий к действующему функционалу создают прочный фундамент для предложения дополнительных модулей, обновлений или сопутствующих сервисов «Титан-Банку» после успешного закрытия вопроса с отчетностью.",
+          "potential_value": "medium",
+          "probability_of_success": 0.6,
+          "time_to_realize": "medium term",
+          "required_resources": [
+            "Отдел продаж",
+            "Продуктовая линейка компании «Гелион»"
+          ],
+          "key_enablers": [
+            "Высокое качество уже внедренного продукта",
+            "Лояльность директора по закупкам к текущему софту"
+          ],
+          "barriers": [
+            "Негативный осадок из-за задержки с информацией по модулю отчетности",
+            "Конкурентное давление на рынке банковского ПО"
+          ],
+          "related_projects": [
+            "project_reporting_module"
+          ],
+          "recommended_first_steps": [
+            "Успешно закрыть вопрос по модулю отчетности в текущем году",
+            "Провести аудит потребностей «Титан-Банка» в других ИТ-решениях после стабилизации текущего проекта"
+          ]
+        }
+      ],
+      "recommendations": [
+        {
+          "recommendation": "Срочно провести внутреннее совещание с продуктовой командой для фиксации точных сроков релиза модуля отчётности",
+          "type": "risk_mitigation",
+          "priority": "critical",
+          "rationale": "Клиент Сергей Волков прямо заявил, что неопределенность («почти уверен») его не устраивает, и готов рассматривать альтернативных вендоров. На кону контракт с ключевым клиентом с 3-летним стажем.",
+          "expected_outcome": "Получение четкой, обоснованной даты релиза модуля в текущем году для предоставления клиенту.",
+          "implementation_steps": [
+            "Инициировать встречу с лидом продуктовой команды в течение 24 часов.",
+            "Оценить текущий бэклог и ресурсы на разработку модуля отчётности.",
+            "Зафиксировать жесткий дедлайн (или этапный план с датами)."
+          ],
+          "resources_needed": [
+            "Лид продуктовой команды",
+            "Никита Фролов"
+          ],
+          "timeline": "1-2 дня",
+          "success_metrics": [
+            "Согласованная и утвержденная дата релиза внутри компании"
+          ],
+          "responsible": "Никита Фролов",
+          "dependencies": [
+            "Загрузка продуктовой команды"
+          ]
+        },
+        {
+          "recommendation": "Подготовить презентацию-коммерческое предложение с дорожной картой (Roadmap) модуля отчетности до истечения недельного срока",
+          "type": "opportunity_capture",
+          "priority": "high",
+          "rationale": "У клиента нет претензий к уже работающему продукту компании «Гелион». Проблема исключительно в коммуникационной неопределенности. Четкий план вернет доверие и заблокирует интерес клиента к конкурентам.",
+          "expected_outcome": "Снятие рисков ухода клиента, демонстрация профессионализма и заботы о партнерстве.",
+          "implementation_steps": [
+            "Сформировать визуальную дорожную карту разработки модуля.",
+            "Подготовить аргументы о преимуществах доработки текущей системы против миграции на новое ПО.",
+            "Назначить встречу с Сергеем Волковым на 5-6 день (до истечения обещанной недели)."
+          ],
+          "resources_needed": [
+            "Шаблон презентации",
+            "Данные от продуктовой команды"
+          ],
+          "timeline": "5-7 дней",
+          "success_metrics": [
+            "Согласие Сергея Волкова продолжить работу с «Гелионом»",
+            "Утвержденный план-график"
+          ],
+          "responsible": "Никита Фролов",
+          "dependencies": [
+            "Наличие точных сроков от продуктовой команды"
+          ]
+        },
+        {
+          "recommendation": "Разработать план удержания (Retention Plan) для «Титан-Банка» с предложением бонусов за лояльность",
+          "type": "scenario_preparation",
+          "priority": "medium",
+          "rationale": "В случае реализации реалистичного или пессимистичного сценария (сдвиг сроков разработки), потребуются дополнительные аргументы и преференции, чтобы удержать клиента, который уже смотрит на конкурентов.",
+          "expected_outcome": "Наличие готовых рычагов влияния на клиента при возникновении сложностей со сроками.",
+          "implementation_steps": [
+            "Согласовать с руководством возможные преференции (например, скидка на внедрение, приоритетная техническая поддержка, кастомные доработки).",
+            "Сформировать пакет предложений на случай задержки релиза."
+          ],
+          "resources_needed": [
+            "Руководство компании «Гелион»",
+            "Коммерческий директор"
+          ],
+          "timeline": "3-4 дня",
+          "success_metrics": [
+            "Утвержденный лимит скидок/бонусов для удержания клиента"
+          ],
+          "responsible": "Никита Фролов / Руководство",
+          "dependencies": [
+            "Решение руководства компании"
+          ]
+        },
+        {
+          "recommendation": "Внедрить регулярный статус-контроль и прозрачную коммуникацию по всем ключевым проектам клиентов",
+          "type": "optimization",
+          "priority": "medium",
+          "rationale": "Фразы вроде «почти уверен» возникают из-за разрыва между отделом продаж/аккаунтинга и продуктовой разработкой. Необходимо исключить подобные ситуации в будущем.",
+          "expected_outcome": "Повышение предсказуемости проектов и исключение ситуаций, когда менеджер не владеет актуальным статусом разработки.",
+          "implementation_steps": [
+            "Настроить еженесинхроны между аккаунт-менеджерами и продакт-овнерами.",
+            "Внедрить дашборд статусов разработки по топ-клиентам в CRM/трекере задач."
+          ],
+          "resources_needed": [
+            "CRM-система / Jira",
+            "Продуктовая команда"
+          ],
+          "timeline": "2 недели",
+          "success_metrics": [
+            "Актуальность данных по проектам в CRM 100%",
+            "Отсутствие факапов с коммуникацией сроков"
+          ],
+          "responsible": "Руководитель отдела продаж / Аккаунт-директор",
+          "dependencies": [
+            "Доступ к внутренним трекерам задач"
+          ]
+        },
+        {
+          "recommendation": "Организовать личную или очную встречу (executive meeting) с Сергеем Волковым для укрепления связи на уровне топ-менеджмента",
+          "type": "opportunity_capture",
+          "priority": "high",
+          "rationale": "Клиент работает 3 года и ценит отношения («я не буду ждать вечно ради красивых отношений»). Личный визит или звонок руководства «Гелиона» покажет высокую ценность данного клиента для компании.",
+          "expected_outcome": "Глубокая лояльность клиента, сглаживание негатива от текущей заминки со сроками.",
+          "implementation_steps": [
+            "Предложить Сергею Волкову короткий кофе-брейк или официальный созвон с участием руководства «Гелиона».",
+            "Презентовать стратегию развития продукта на ближайший год."
+          ],
+          "resources_needed": [
+            "Топ-менеджмент «Гелиона»"
+          ],
+          "timeline": "10-14 дней",
+          "success_metrics": [
+            "Положительная обратная связь от Сергея Волкова",
+            "Подписанный протокол о намерениях"
+          ],
+          "responsible": "Никита Фролов / Директор по развитию",
+          "dependencies": [
+            "График топ-менеджмента"
+          ]
+        },
+        {
+          "recommendation": "Провести анализ конкурентной среды по модулям отчётности для «Титан-Банка»",
+          "type": "scenario_preparation",
+          "priority": "low",
+          "rationale": "Клиент упомянул, что начнет смотреть на альтернативные решения. Важно понимать, с какими продуктами и ценами «Гелион» может столкнуться на рынке.",
+          "expected_outcome": "Понимание конкурентных преимуществ и слабых мест решения «Гелиона» в сравнении с аналогами.",
+          "implementation_steps": [
+            "Изучить потенциальных конкурентов, к которым может обратиться «Титан-Банк».",
+            "Подготовить для клиента сравнительную таблицу (почему текущее решение лучше интеграции нового софта с нуля)."
+          ],
+          "resources_needed": [
+            "Отдел маркетинга / Пресейл"
+          ],
+          "timeline": "1 неделя",
+          "success_metrics": [
+            "Готовый аналитический материал для аргументации перед клиентом"
+          ],
+          "responsible": "Маркетинг / Никита Фролов",
+          "dependencies": [
+            "Доступ к аналитике рынка"
+          ]
+        }
+      ],
+      "stats": {
+        "duration_seconds": 23.73,
+        "scenarios_modeled": 4,
+        "projects_predicted": 1,
+        "tasks_predicted": 1,
+        "risks_identified": 2,
+        "warnings_generated": 2,
+        "opportunities_found": 2,
+        "recommendations_made": 6
+      }
+    },
+    "weighted_priorities": {
+      "weighted_tasks": [
+        {
+          "task_name": "Вернуться с конкретикой и датой по модулю отчётности",
+          "assignee": "Никита Фролов",
+          "urgency_score": 0.9,
+          "importance_score": 1.0,
+          "complexity_score": 0.6,
+          "risk_score": 0.95,
+          "dependency_score": 0.8,
+          "final_weight": 0.91,
+          "priority_level": "critical",
+          "reasoning": "Клиент работает с компанией уже 3 года, но при отсутствии четких сроков по модулю отчётности в этом году готов уйти к конкурентам. Высокий риск потери ключевого клиента и срыва проекта придает задаче максимальный приоритет. Жесткий дедлайн — 1 неделя.",
+          "blockers": [
+            "Необходимость согласования деталей и сроков с продуктовой командой"
+          ],
+          "accelerators": [
+            "Внеплановое совещание с продуктовой командой для оперативной оценки сроков"
+          ]
+        }
+      ],
+      "weighted_decisions": [
+        {
+          "decision": "Никита Фролов предоставит конкретику и точные сроки по модулю отчётности в течение недели.",
+          "decision_maker": "Никита Фролов",
+          "strategic_impact": 0.85,
+          "urgency": 0.9,
+          "reversibility": 0.3,
+          "stakeholder_impact": 0.9,
+          "resource_impact": 0.6,
+          "final_weight": 0.83,
+          "priority_level": "critical",
+          "reasoning": "Клиент прямо пригрозил уйти к конкурентам из-за неопределенности со сроками («почти уверен»). Потеря ключевого клиента (работают 3 года) несет критический репутационный и финансовый ущерб. Вопрос требует немедленного решения внутри продуктовой команды.",
+          "implementation_urgency": "this_week",
+          "dependencies": [
+            "Уточнение деталей с продуктовой командой «Гелиона»"
+          ]
+        }
+      ],
+      "weighted_projects": [
+        {
+          "project_name": "Модуль отчётности для Титан-Банка",
+          "status": "in_progress",
+          "strategic_value": 0.9,
+          "revenue_impact": 0.8,
+          "resource_intensity": 0.5,
+          "risk_level": 0.95,
+          "timeline_pressure": 0.95,
+          "stakeholder_visibility": 0.9,
+          "final_weight": 0.9,
+          "priority_level": "critical",
+          "reasoning": "Проект имеет критическую важность для удержание ключевого клиента с многолетним опытом сотрудничества («Титан-Банк»). Клиент прямо завил об угрозе ухода к конкурентам, если сроки реализации модуля в текущем году не будут подтверждены. Отсутствие конкретики и высокие риски оттока требуют немедленного вмешательства.",
+          "attention_areas": [
+            "Срочное согласование сроков и деталей с продуктовой командой в течение недели",
+            "Предоставление клиенту железобетонной конкретики вместо формулировки «почти уверен»",
+            "Управление ожиданиями стейкхолдера (Сергей Волков)"
+          ],
+          "quick_wins": [
+            "Оперативно связаться с клиентом через неделю с зафиксированным планом-графиком (выполнение обязательства по звонку)"
+          ]
+        }
+      ],
+      "weighted_risks": [],
+      "priority_matrix": {
+        "critical": [
+          {
+            "type": "task",
+            "name": "Вернуться с конкретикой и датой по модулю отчётности",
+            "weight": 0.91,
+            "assignee": "Никита Фролов",
+            "reasoning": "Клиент работает с компанией уже 3 года, но при отсутствии четких сроков по модулю отчётности в этом году готов уйти к конкурентам. Высокий риск потери ключевого клиента и срыва проекта придает задаче максимальный приоритет. Жесткий дедлайн — 1 неделя."
+          },
+          {
+            "type": "project",
+            "name": "Модуль отчётности для Титан-Банка",
+            "weight": 0.9,
+            "status": "in_progress",
+            "reasoning": "Проект имеет критическую важность для удержание ключевого клиента с многолетним опытом сотрудничества («Титан-Банк»). Клиент прямо завил об угрозе ухода к конкурентам, если сроки реализации модуля в текущем году не будут подтверждены. Отсутствие конкретики и высокие риски оттока требуют немедленного вмешательства."
+          },
+          {
+            "type": "decision",
+            "name": "Никита Фролов предоставит конкретику и точные сроки по модулю отчётности в течение недели.",
+            "weight": 0.83,
+            "decision_maker": "Никита Фролов",
+            "reasoning": "Клиент прямо пригрозил уйти к конкурентам из-за неопределенности со сроками («почти уверен»). Потеря ключевого клиента (работают 3 года) несет критический репутационный и финансовый ущерб. Вопрос требует немедленного решения внутри продуктовой команды."
+          }
+        ],
+        "high": [],
+        "medium": [],
+        "low": []
+      },
+      "critical_items": [
+        {
+          "type": "task",
+          "name": "Вернуться с конкретикой и датой по модулю отчётности",
+          "weight": 0.91,
+          "assignee": "Никита Фролов",
+          "reasoning": "Клиент работает с компанией уже 3 года, но при отсутствии четких сроков по модулю отчётности в этом году готов уйти к конкурентам. Высокий риск потери ключевого клиента и срыва проекта придает задаче максимальный приоритет. Жесткий дедлайн — 1 неделя."
+        },
+        {
+          "type": "project",
+          "name": "Модуль отчётности для Титан-Банка",
+          "weight": 0.9,
+          "status": "in_progress",
+          "reasoning": "Проект имеет критическую важность для удержание ключевого клиента с многолетним опытом сотрудничества («Титан-Банк»). Клиент прямо завил об угрозе ухода к конкурентам, если сроки реализации модуля в текущем году не будут подтверждены. Отсутствие конкретики и высокие риски оттока требуют немедленного вмешательства."
+        },
+        {
+          "type": "decision",
+          "name": "Никита Фролов предоставит конкретику и точные сроки по модулю отчётности в течение недели.",
+          "weight": 0.83,
+          "decision_maker": "Никита Фролов",
+          "reasoning": "Клиент прямо пригрозил уйти к конкурентам из-за неопределенности со сроками («почти уверен»). Потеря ключевого клиента (работают 3 года) несет критический репутационный и финансовый ущерб. Вопрос требует немедленного решения внутри продуктовой команды."
+        }
+      ],
+      "focus_recommendations": [
+        {
+          "recommendation": "Срочно согласовать с продуктовой командой точные сроки реализации модуля отчётности и зафиксировать дату релиза для клиента.",
+          "focus_area": "projects",
+          "priority": "critical",
+          "items": [
+            "Модуль отчётности для Титан-Банка"
+          ],
+          "rationale": "Клиент (3 года сотрудничества) прямо заявил об угрозе ухода к конкурентам из-за отсутствия конкретики («почти уверен»). Промедление грозит потерей ключевого контракта.",
+          "time_allocation": "1-2 рабочих дня",
+          "success_criteria": "Получено подтвержденное продуктом расписание с точной датой готовности модуля в текущем году."
+        },
+        {
+          "recommendation": "Подготовить и направить Сергею Волкаву официальный ответ с конкретными сроками и дорожной картой в рамках недельного дедлайна.",
+          "focus_area": "tasks",
+          "priority": "critical",
+          "items": [
+            "Вернуться с конкретикой и датой по модулю отчётности"
+          ],
+          "rationale": "Клиент установил жесткий срок в одну неделю. Выполнение обещания в срок критически важно для восстановления доверия и удержания клиента.",
+          "time_allocation": "В течение 5-7 дней (до 2026-03-16)",
+          "success_criteria": "Клиент получил четкую дату и дорожную карту, подтвердил получение и снял угрозу ухода к конкурентам на данном этапе."
+        },
+        {
+          "recommendation": "Зафиксировать управленческое решение о персональной ответственности Никиты Фролова за предоставление информации и контроль сроков перед Титан-Банком.",
+          "focus_area": "decisions",
+          "priority": "critical",
+          "items": [
+            "Никита Фролов предоставит конкретику и точные сроки по модулю отчётности в течение недели."
+          ],
+          "rationale": "Неопределенность со стороны менеджера («почти уверен») спровоцировала у клиента желание искать альтернативы на рынке. Требуется жесткий контроль выполнения договоренности.",
+          "time_allocation": "Немедленно (в день звонка)",
+          "success_criteria": "Менеджер взял на себя обязательство предоставить информацию в срок, задача зафиксирована в системе."
+        }
+      ],
+      "stats": {
+        "duration_seconds": 6.26,
+        "tasks_weighted": 1,
+        "decisions_weighted": 1,
+        "projects_weighted": 1,
+        "risks_weighted": 0,
+        "critical_items_count": 3
+      }
+    },
+    "search_metadata": {
+      "meeting_metadata": {
+        "meeting_id": "meeting_20260825_180632",
+        "title": "Клиентский звонок: статус разработки модуля отчётности для Титан-Банка",
+        "summary": "Никита Фролов созвонился с Сергеем Волковым из Титан-Банка для обсуждения статуса модуля отчётности. Клиент выразил недовольство неопределенностью сроков и пригрозил рассмотреть решения конкурентов, если разработка не будет гарантирована в текущем году. Достигнута договоренность, что Никита вернется с конкретной датой и детализацией через неделю.",
+        "main_topics": [
+          "модуль отчётности",
+          "сроки разработки",
+          "угроза ухода к конкурентам",
+          "статус проекта"
+        ],
+        "key_outcomes": [
+          "Клиент поставил жесткое условие по срокам разработки модуля отчётности на текущий год",
+          "Взята пауза на неделю для уточнения деталей с продуктовой командой"
+        ],
+        "action_items_summary": "Никита Фролов должен уточнить у продуктовой команды и предоставить клиенту конкретные сроки и детали по модулю отчётности в течение недели.",
+        "decisions_summary": "Срок предоставления конкретики по разработке модуля отчётности установлен в 1 неделю.",
+        "participants_summary": "Никита Фролов (Гелион) — инициатор звонка; Сергей Волков (директор по закупкам, Титан-Банк) — заказчик.",
+        "mood": "urgent",
+        "meeting_type": "status",
+        "keywords": [
+          "Титан-Банк",
+          "Гелион",
+          "модуль отчётности",
+          "Никита Фролов",
+          "Сергей Волков",
+          "сроки разработки",
+          "закупки"
+        ],
+        "related_projects": [
+          "Модуль отчётности Титан-Банк"
+        ],
+        "searchable_text": "Клиентский звонок Титан-Банк статус по отчётности Никита Фролов Гелион Сергей Волков директор по закупкам модуль отчётности сроки разработки конкуренты текущий год продукты",
+        "importance_score": 0.9,
+        "generated_at": "2026-08-25T18:06:38.602149+00:00"
+      },
+      "node_metadata": [
+        {
+          "node_type": "Person",
+          "name": "Никита Фролов",
+          "summary": "Никита Фролов",
+          "keywords": [
+            "Никита Фролов"
+          ],
+          "searchable_text": "Никита Фролов",
+          "importance_score": 0.7
+        },
+        {
+          "node_type": "Person",
+          "name": "Сергей Волков",
+          "summary": "Сергей Волков - директор по закупкам",
+          "keywords": [
+            "Сергей Волков",
+            "директор по закупкам"
+          ],
+          "searchable_text": "Сергей Волков директор по закупкам",
+          "importance_score": 0.7
+        },
+        {
+          "node_type": "Task",
+          "name": "Вернуться с конкретикой и датой по модулю отчётности",
+          "summary": "Task: Вернуться с конкретикой и датой по модулю отчётности (assigned to {'name': 'Никита Фролов', 'role': 'Представитель «Гелиона»'})",
+          "keywords": [
+            "Вернуться с конкретикой и датой по модулю отчётности",
+            {
+              "name": "Никита Фролов",
+              "role": "Представитель «Гелиона»"
+            },
+            "task",
+            "задача"
+          ],
+          "searchable_text": "Вернуться с конкретикой и датой по модулю отчётности {'name': 'Никита Фролов', 'role': 'Представитель «Гелиона»'} {'date': 'неделя', 'is_hard': True}",
+          "importance_score": 0.8
+        },
+        {
+          "node_type": "Decision",
+          "name": "",
+          "summary": "Decision: ",
+          "keywords": [
+            "",
+            "",
+            "decision",
+            "решение"
+          ],
+          "searchable_text": "",
+          "importance_score": 0.9
+        },
+        {
+          "node_type": "Entity",
+          "name": "Титан-Банк",
+          "summary": "organization: Титан-Банк",
+          "keywords": [
+            "Титан-Банк",
+            "organization"
+          ],
+          "searchable_text": "Титан-Банк organization",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "Гелион",
+          "summary": "company: Гелион",
+          "keywords": [
+            "Гелион",
+            "company"
+          ],
+          "searchable_text": "Гелион company",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "модуль отчётности",
+          "summary": "feature: модуль отчётности",
+          "keywords": [
+            "модуль отчётности",
+            "feature"
+          ],
+          "searchable_text": "модуль отчётности feature",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "продукт",
+          "summary": "product: продукт",
+          "keywords": [
+            "продукт",
+            "product"
+          ],
+          "searchable_text": "продукт product",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "продукт",
+          "summary": "team: продукт",
+          "keywords": [
+            "продукт",
+            "team"
+          ],
+          "searchable_text": "продукт team",
+          "importance_score": 0.6
+        }
+      ],
+      "keywords": [
+        "2026-03-09",
+        "отчётность",
+        "продукт",
+        "детали",
+        "дата",
+        "статус",
+        "клиентский звонок",
+        "Сергей Игоревич",
+        "неделя",
+        "директор по закупкам",
+        "конкретика",
+        "Гелион",
+        "закупки",
+        "Сергей Волков",
+        "модуль отчётности",
+        "Титан-Банк",
+        "год",
+        "Никита Фролов"
+      ],
+      "topics": [
+        {
+          "topic": "Статус разработки модуля отчётности",
+          "description": "Обсуждение текущего статуса и неопределенности сроков разработки нового модуля отчётности для Титан-Банка.",
+          "relevance_score": 1.0,
+          "keywords": [
+            "модуль отчётности",
+            "статус",
+            "разработка",
+            "сроки",
+            "в этом году"
+          ],
+          "participants_involved": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "outcomes": [
+            "Никита взял неделю на уточнение деталей с продуктовой командой и подготовку конкретной даты."
+          ],
+          "follow_up_needed": true
+        },
+        {
+          "topic": "Риск ухода клиента к конкурентам",
+          "description": "Угроза со стороны клиента начать поиск альтернативных решений на рынке из-за неопределенности по срокам внедрения модуля.",
+          "relevance_score": 0.9,
+          "keywords": [
+            "конкуренты",
+            "другие решения",
+            "риск оттока",
+            "ожидание"
+          ],
+          "participants_involved": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "outcomes": [
+            "Клиент обозначил жесткие условия: если модуль не будет сделан в текущем году, банк начнет искать других вендоров."
+          ],
+          "follow_up_needed": true
+        },
+        {
+          "topic": "История сотрудничества и оценка текущего продукта",
+          "description": "Упоминание трехлетнего опыта работы и отсутствие претензий к уже установленному у клиента продукту «Гелиона».",
+          "relevance_score": 0.6,
+          "keywords": [
+            "сотрудничество",
+            "три года",
+            "претензий нет",
+            "продукт стоит"
+          ],
+          "participants_involved": [
+            "Сергей Волков"
+          ],
+          "outcomes": [
+            "Стороны зафиксировали высокий уровень доверия к текущему решению, однако это не отменяет требований к новым срокам."
+          ],
+          "follow_up_needed": false
+        }
+      ],
+      "searchable_chunks": [
+        {
+          "chunk_id": "chunk_0",
+          "text": "Встреча: Клиентский звонок — Титан-Банк, статус по отчётности Дата: 2026-03-09 Длительность: 9 мин Участники: Никита Фролов (со стороны «Гелиона»); Сергей Волков — директор по закупкам, «Титан-Банк» --- [00:00] Никита Фролов: Сергей Игоревич, добрый день, звоню сверить статус по модулю отчётности. [00:05] Сергей Волков: Добрый день, Никита. У меня к вам вопрос раньше, чем у вас ко мне. Вы вообще делаете модуль в этом году или нет? [00:14] Никита Фролов: Делаем, я почти уверен, детали сейчас уточняем с продуктом. [00:19] Сергей Волков: «Почти уверен» меня не устраивает. Смотрите, я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит. Но если по отчётности ответ «почти» — я начинаю смотреть, что есть у других. [00:34] Никита Фролов: Понимаю. Дайте мне неделю, вернусь с конкретикой. [00:38] Сергей Волков: Неделя — нормально. Но учтите: если в этом году не решите, мы просто пойдём смотреть дальше, я не буду ждать вечно ради красивых отношений. [00:48] Никита Фролов: Понял, услышал, возвращаюсь с датой. [00:51] Сергей Волков: Жду.",
+          "start_position": 0,
+          "end_position": 167,
+          "keywords_found": [
+            "2026-03-09",
+            "продукт",
+            "детали",
+            "дата",
+            "статус",
+            "клиентский звонок",
+            "Сергей Игоревич",
+            "неделя",
+            "директор по закупкам",
+            "Гелион",
+            "Сергей Волков",
+            "Титан-Банк",
+            "год",
+            "Никита Фролов"
+          ],
+          "keyword_density": 0.7777777777777778,
+          "importance_score": 1.0
+        }
+      ],
+      "stats": {
+        "duration_seconds": 4.79,
+        "nodes_processed": 9,
+        "keywords_extracted": 18,
+        "topics_identified": 3,
+        "chunks_created": 1
+      }
+    },
+    "decision_learning": {
+      "meeting_id": "meeting_20260825_180632",
+      "timestamp": "2026-08-25T18:06:36.534315+00:00",
+      "decisions": [
+        {
+          "decision_id": "dec_001",
+          "decision_summary": "Никита Фролов предоставит конкретику и точные сроки по модулю отчётности в течение недели.",
+          "decision_category": "operational",
+          "details": "Клиент выразил недовольство неопределенностью статуса разработки модуля отчётности («почти уверен»). В результате договоренности представитель «Гелиона» берет неделю на уточнение деталей с продуктовой командой и возврат к клиенту с конкретной датой.",
+          "participants": [
+            {
+              "name": "Никита Фролов",
+              "role": "Представитель «Гелиона»"
+            },
+            {
+              "name": "Сергей Волков",
+              "role": "Директор по закупкам, «Титан-Банк»"
+            }
+          ],
+          "responsible": {
+            "primary": "Никита Фролов"
+          },
+          "decision_maker_resolved": "Никита Фролов",
+          "decision_maker_speaker": "",
+          "attribution_confidence": "medium",
+          "reasoning": "Клиент потребовал определенности по срокам разработки модуля отчётности на текущий год, пригрозив рассмотреть альтернативные решения на рынке.",
+          "timeline": {
+            "deadline": "1 неделя"
+          },
+          "business_impact": {
+            "scope": "external",
+            "urgency": "high",
+            "risk_level": "high"
+          },
+          "dependencies": [],
+          "action_items": [
+            {
+              "action": "Вернуться с конкретикой и датой по модулю отчётности",
+              "owner": "Никита Фролов",
+              "deadline": "1 неделя"
+            }
+          ],
+          "quote": "Дайте мне неделю, вернусь с конкретикой.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:06:33.856835+00:00",
+          "_agent": "DecisionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "decision",
+          "importance_classification": {
+            "business_impact": "low",
+            "urgency_score": 0.5,
+            "complexity_score": 5,
+            "risk_level": "low",
+            "overall_priority": "medium"
+          }
+        }
+      ],
+      "decision_patterns": {
+        "decision_types_distribution": {
+          "operational": 1
+        },
+        "urgency_distribution": {
+          "medium": 1
+        },
+        "complexity_distribution": {
+          "medium": 1
+        },
+        "common_patterns": [
+          "Преобладают operational решения"
+        ],
+        "decision_makers": {
+          "Никита Фролов": {
+            "count": 1,
+            "roles": [
+              "Представитель «Гелиона»"
+            ]
+          },
+          "Сергей Волков": {
+            "count": 1,
+            "roles": [
+              "Директор по закупкам, «Титан-Банк»"
+            ]
+          }
+        },
+        "success_factors": [],
+        "risk_factors": []
+      },
+      "learning_data": [
+        {
+          "id": "train_dec_001",
+          "meeting_id": "meeting_20260825_180632",
+          "input": {
+            "context": "",
+            "decision_type": "",
+            "participants": [
+              "Никита Фролов",
+              "Сергей Волков"
+            ]
+          },
+          "output": {
+            "classification": {
+              "business_impact": "low",
+              "urgency_score": 0.5,
+              "complexity_score": 5,
+              "risk_level": "low",
+              "overall_priority": "medium"
+            },
+            "reasoning": "Клиент потребовал определенности по срокам разработки модуля отчётности на текущий год, пригрозив рассмотреть альтернативные решения на рынке.",
+            "expected_outcomes": [],
+            "risks": []
+          },
+          "metadata": {
+            "source": "meeting_transcript",
+            "created_at": "2026-08-25T18:06:36.534556+00:00",
+            "quality_score": 0.7999999999999999
+          }
+        }
+      ],
+      "statistics": {
+        "total": 1,
+        "by_type": {
+          "strategic": 0,
+          "tactical": 0,
+          "operational": 0
+        },
+        "by_urgency": {
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "by_priority": {
+          "high": 0,
+          "medium": 1,
+          "low": 0
+        },
+        "avg_complexity": 5.0
+      }
+    },
+    "synthesis_analysis": {
+      "meeting_id": "meeting_20260825_180632",
+      "timestamp": "2026-08-25T18:06:36.534842+00:00",
+      "success_patterns": [],
+      "failure_patterns": [],
+      "cyclical_patterns": [
+        {
+          "pattern_name": "Квартальный цикл планирования",
+          "cycle_length": "3 месяца",
+          "phases": [
+            {
+              "phase_name": "Планирование",
+              "duration": "2 недели"
+            },
+            {
+              "phase_name": "Выполнение",
+              "duration": "10 недель"
+            },
+            {
+              "phase_name": "Ревью",
+              "duration": "1 неделя"
+            }
+          ],
+          "predictability": "высокая"
+        },
+        {
+          "pattern_name": "Недельный цикл встреч",
+          "cycle_length": "1 неделя",
+          "phases": [
+            {
+              "phase_name": "Понедельник - планирование",
+              "duration": "1 день"
+            },
+            {
+              "phase_name": "Вторник-четверг - работа",
+              "duration": "3 дня"
+            },
+            {
+              "phase_name": "Пятница - ревью",
+              "duration": "1 день"
+            }
+          ],
+          "predictability": "высокая"
+        }
+      ],
+      "decision_making_patterns": [],
+      "communication_patterns": [],
+      "predictive_insights": [],
+      "recommendations": []
+    },
+    "goals_tracking": {
+      "meeting_id": "meeting_20260825_180632",
+      "timestamp": "2026-08-25T18:06:36.535097+00:00",
+      "goals": [
+        {
+          "level": "task",
+          "entity_name": {
+            "name": "Никита Фролов",
+            "role": "Представитель «Гелиона»"
+          },
+          "goal_statement": "Выполнить: Уточнить детали с продуктовой командой и вернуться к клиенту с конкретными сроками и информацией по модулю отчётности.",
+          "why_reason": "Причина не указана явно",
+          "why_stated": "",
+          "metrics_quantitative": [],
+          "metrics_qualitative": [],
+          "success_criteria": "Задача выполнена",
+          "pathway": "",
+          "timeline": {
+            "date": "неделя",
+            "is_hard": true
+          },
+          "status": "in_progress",
+          "confidence": 1.0,
+          "is_stated_explicitly": true,
+          "source_quote": "Уточнить детали с продуктовой командой и вернуться к клиенту с конкретными сроками и информацией по ",
+          "related_entities": [
+            {
+              "name": "Никита Фролов",
+              "role": "Представитель «Гелиона»"
+            }
+          ],
+          "goal_id": "cca30488360ccbf4",
+          "reasoning_analysis": {
+            "alignment": {
+              "stated_vs_real": "aligned",
+              "confidence": 0.9,
+              "explanation": "Заявленная цель Никиты полностью соответствует контексту разговора: клиент жёстко потребовал конкретики по срокам разработки модуля отчётности под угрозой ухода к конкурентам, и Никита вынужден срочно согласовывать детали с продуктовой командой."
+            },
+            "true_motivations": [
+              {
+                "type": "defensive",
+                "description": "Снижение риска потери ключевого клиента, который работает уже третий год и угрожает уйти на альтернативные решения.",
+                "evidence": "Сергей Волков: «Но если по отчётности ответ „почти“ — я начинаю смотреть, что есть у других»"
+              },
+              {
+                "type": "rational",
+                "description": "Получение чётких вводных от внутренней продуктовой команды для фиксации сроков перед заказчиком.",
+                "evidence": "Никита Фролов: «Делаем, я почти уверен, детали сейчас уточняем с продуктом»"
+              }
+            ],
+            "goal_quality": {
+              "is_rational": true,
+              "is_achievable": true,
+              "is_measurable": true,
+              "has_hidden_agenda": false,
+              "quality_score": 8
+            },
+            "red_flags": [
+              "У Никиты на момент звонка не было чёткой информации по срокам («почти уверен», «детали сейчас уточняем»), что вызвало раздражение клиента.",
+              "Клиент открыто рассматривает конкурентов из-за затягивания сроков («мы просто пойдём смотреть дальше»)."
+            ],
+            "recommendations": [
+              "Срочно провести встречу с продуктовой командой «Гелиона» и зафиксировать жесткий дедлайн по модулю отчётности.",
+              "Связаться с Сергеем Волковым раньше оговоренного недельного срока, если конкретика появится быстрее, чтобы снизить градус напряжения."
+            ]
+          }
+        },
+        {
+          "level": "project",
+          "entity_name": "Модуль отчётности для Титан-Банка",
+          "goal_statement": "Завершить проект: Модуль отчётности для Титан-Банка",
+          "why_reason": "Разработка и внедрение модуля отчётности для клиента Титан-Банк",
+          "why_stated": "",
+          "metrics_quantitative": [],
+          "metrics_qualitative": [],
+          "success_criteria": "Проект завершён",
+          "pathway": "",
+          "timeline": "",
+          "status": "in_progress",
+          "confidence": 1.0,
+          "is_stated_explicitly": true,
+          "source_quote": "Модуль отчётности для Титан-Банка",
+          "related_entities": [],
+          "goal_id": "ba718d55eabcba3d",
+          "reasoning_analysis": {
+            "alignment": {
+              "stated_vs_real": "aligned",
+              "confidence": 0.9,
+              "explanation": "Заявленная причина (разработка и внедрение модуля отчётности) полностью подтверждается диалогом, где клиент требует конкретных сроков реализации проекта в текущем году под угрозой ухода к конкурентам."
+            },
+            "true_motivations": [
+              {
+                "type": "rational",
+                "description": "Получить от подрядчика четкие сроки реализации модуля отчётности в текущем году для закрытия бизнес-потребностей банка.",
+                "evidence": "Вы вообще делаете модуль в этом году или нет? [...] Смотрите, если в этом году не решите, мы просто пойдём смотреть дальше"
+              },
+              {
+                "type": "defensive",
+                "description": "Минимизировать риски задержки проекта и неопределенности со стороны текущего поставщика.",
+                "evidence": "«Почти уверен» меня не устраивает. [...] я не буду ждать вечно ради красивых отношений."
+              }
+            ],
+            "goal_quality": {
+              "is_rational": true,
+              "is_achievable": true,
+              "is_measurable": false,
+              "has_hidden_agenda": false,
+              "quality_score": 6
+            },
+            "red_flags": [
+              "Отсутствие конкретики и неопределенность со стороны исполнителя («почти уверен», «детали уточняем»)",
+              "Риск потери клиента, который готов рассматривать альтернативных вендоров из-за затягивания сроков"
+            ],
+            "recommendations": [
+              "Вернуться к клиенту ровно через неделю с жесткой и зафиксированной датой релиза модуля.",
+              "Согласовать детали с продуктовой командой «Гелиона» для исключения рисков срыва сроков."
+            ]
+          }
+        }
+      ],
+      "progress_updates": [
+        {
+          "goal_id": "cca30488360ccbf4",
+          "goal_statement": "Выполнить: Уточнить детали с продуктовой командой и вернуться к клиенту с конкретными сроками и инфо",
+          "previous_status": "unknown",
+          "current_status": "in_progress",
+          "progress_percentage": 50,
+          "blockers": [],
+          "next_steps": [],
+          "updated_at": "2026-08-25T18:06:41.144310+00:00"
+        },
+        {
+          "goal_id": "ba718d55eabcba3d",
+          "goal_statement": "Завершить проект: Модуль отчётности для Титан-Банка",
+          "previous_status": "unknown",
+          "current_status": "in_progress",
+          "progress_percentage": 50,
+          "blockers": [],
+          "next_steps": [],
+          "updated_at": "2026-08-25T18:06:41.144316+00:00"
+        }
+      ],
+      "conflicts": [
+        {
+          "conflict_id": "conf_001",
+          "conflict_type": "temporal",
+          "severity": "high",
+          "goal1_id": "cca30488360ccbf4",
+          "goal2_id": "ba718d55eabcba3d",
+          "description": "Никита должен предоставить конкретные сроки по модулю отчётности всего за 1 неделю («почти уверен» не устраивает клиента), однако общая цель завершения проекта не имеет четкого дедлайна, при этом клиент угрожает уйти к конкурентам в текущем году при отсутствии конкретики.",
+          "impact": "Риск потери ключевого клиента из-за неопределенности сроков реализации проекта и отсутствия согласованности с продуктовой командой.",
+          "resolution_suggestions": [
+            "Провести срочную встречу с продуктовой командой в течение 24 часов для фиксации реалистичного графика разработки.",
+            "Зафиксировать с клиентом промежуточные этапы (милестоуны) с гарантией поставки модуля в текущем году."
+          ],
+          "who_should_resolve": "Никита Фролов совместно с руководителем продуктовой команды"
+        }
+      ],
+      "alignment_report": {
+        "alignment_score": 7,
+        "status": "partially_aligned",
+        "aligned_goals_count": 1,
+        "misaligned_goals_count": 0,
+        "vertical_alignment": {
+          "score": 7,
+          "issues": [
+            "Цель нижнего уровня (TASK1) направлена на уточнение сроков, но в контексте разговора менеджер демонстрирует неуверенность ('почти уверен'), что создает риск срыва ключевой цели проекта (PROJECT1)."
+          ],
+          "strong_connections": [
+            "TASK1 напрямую работает на декомпозицию PROJECT1, запрашивая у продуктовой команды конкретику по срокам сдачи модуля отчётности."
+          ]
+        },
+        "horizontal_alignment": {
+          "score": 8,
+          "issues": [],
+          "synergies": [
+            "Действие Никиты (TASK1) полностью отвечает ожиданиям клиента и угрозе ухода к конкурентам, синхронизируя процесс с требованиями рынка."
+          ]
+        },
+        "cascading_quality": {
+          "score": 7,
+          "well_cascaded": [
+            "Уточнение деталей с продуктом и возврат к клиенту с датами (TASK1) логично вытекает из необходимости завершить проект 'Модуль отчётности для Титан-Банка' (PROJECT1)."
+          ],
+          "poorly_cascaded": []
+        },
+        "recommendations": [
+          {
+            "priority": "high",
+            "action": "Зафиксировать с продуктовой командой жесткие дедлайны релиза модуля отчётности в течение недели, чтобы устранить риск потери ключевого клиента.",
+            "affected_goals": [
+              "PROJECT1",
+              "TASK1"
+            ]
+          }
+        ],
+        "missing_goals": [
+          {
+            "level": "TASK",
+            "description": "Отсутствует цель по проведению переговоров с продуктовой командой для ускорения разработки и снижения рисков отказа клиента."
+          }
+        ],
+        "level_distribution": {
+          "project": 1,
+          "task": 1
+        }
+      },
+      "statistics": {
+        "total_goals": 2,
+        "by_level": {
+          "task": 1,
+          "project": 1
+        },
+        "by_status": {
+          "in_progress": 2
+        },
+        "conflicts_count": 1,
+        "avg_confidence": 1.0,
+        "explicit_count": 2,
+        "implicit_count": 0
+      }
+    },
+    "knowledge_extraction": {
+      "meeting_id": "meeting_20260825_180632",
+      "summary": {
+        "meeting_id": "meeting_20260825_180632",
+        "summary": "Никита Фролов («Гелион») и Сергей Волков («Титан-Банк») обсудили сроки разработки модуля отчётности. Из-за неуверенности «Гелиона» клиент пригрозил уйти к конкурентам. Решение: Никита вернётся через неделю с точными сроками.",
+        "main_topics": [
+          "принятие решений",
+          "обсуждение метрик",
+          "планирование задач"
+        ],
+        "participants": [
+          "Никита Фролов",
+          "Сергей Волков"
+        ],
+        "content_tags": [
+          "expert_knowledge",
+          "achievement",
+          "insight"
+        ],
+        "value_score": 8.0,
+        "has_actionable_content": true,
+        "stats": {
+          "decisions_count": 1,
+          "tasks_count": 1,
+          "participants_count": 2,
+          "ideas_count": 0,
+          "kpis_count": 1
+        },
+        "timestamp": "2026-08-25T18:07:01.622903"
+      },
+      "cases": [],
+      "methodologies": [],
+      "templates": [],
+      "regulations": [],
+      "best_practices": [],
+      "guidelines": [
+        {
+          "id": "knowledge_guideline_45_meeting_",
+          "category": "guideline",
+          "title": "Предоставление конкретных сроков вместо неопределенности",
+          "content": "При обсуждении статуса проектов с клиентом не использовать формулировки вроде «почти уверен», а давать четкую конкретику и фиксированные даты.",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 0.95,
+          "importance": 0.9,
+          "related_entities": [
+            "Титан-Банк",
+            "Модуль отчётности"
+          ],
+          "related_topics": [],
+          "speakers": [
+            "Сергей Волков"
+          ],
+          "tags": [
+            "коммуникация",
+            "сроки",
+            "клиентский сервис"
+          ],
+          "extracted_at": "2026-08-25T18:07:02.600499",
+          "metadata": {}
+        }
+      ],
+      "insights": [
+        {
+          "id": "knowledge_insight_53_meeting_",
+          "category": "insight",
+          "title": "Лояльность к старому продукту не страхует новые продажи",
+          "content": "Многолетнее успешное сотрудничество («третий год с вами работаю») и отсутствие претензий к уже работающему софту обнуляются неопределенностью по новому модулю.\n\nImplications: Репутация прошлых лет не дает «кредита доверия» для будущих разработок в глазах закупок; каждый новый модуль оценивается с чистого листа на конкурентном рынке.",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:07:04.156467",
+          "metadata": {
+            "id": "445c1a05-1ab6-4ac8-b24f-51a743de5b38",
+            "type": "insight",
+            "title": "Лояльность к старому продукту не страхует новые продажи",
+            "description": "Многолетнее успешное сотрудничество («третий год с вами работаю») и отсутствие претензий к уже работающему софту обнуляются неопределенностью по новому модулю.",
+            "implications": "Репутация прошлых лет не дает «кредита доверия» для будущих разработок в глазах закупок; каждый новый модуль оценивается с чистого листа на конкурентном рынке.",
+            "actionability": "high",
+            "source_meeting_id": "meeting_20260825_180632",
+            "source_quote": "Смотрите, я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит. Но если по отчётности ответ «почти» — я начинаю смотреть, что есть у других.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:07:04.156429"
+          }
+        },
+        {
+          "id": "knowledge_insight_54_meeting_",
+          "category": "insight",
+          "title": "Инициатива в коммуникации перехвачена клиентом",
+          "content": "Поставщик («Гелион») инициирует звонок для сверки статуса, но покупатель («Титан-Банк») сразу перехватывает повестку жестким ультиматумом, меняя статус звонка с отчетного на защитный.\n\nImplications: Команда «Гелиона» владеет поверхностной информацией («почти уверен») и теряет контроль над ходом переговоров, вынужденно соглашаясь на чужие временные рамки.",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:07:04.156472",
+          "metadata": {
+            "id": "a5c46e7b-5d53-43b4-8a98-8cde4e763f7b",
+            "type": "discovery",
+            "title": "Инициатива в коммуникации перехвачена клиентом",
+            "description": "Поставщик («Гелион») инициирует звонок для сверки статуса, но покупатель («Титан-Банк») сразу перехватывает повестку жестким ультиматумом, меняя статус звонка с отчетного на защитный.",
+            "implications": "Команда «Гелиона» владеет поверхностной информацией («почти уверен») и теряет контроль над ходом переговоров, вынужденно соглашаясь на чужие временные рамки.",
+            "actionability": "high",
+            "source_meeting_id": "meeting_20260825_180632",
+            "source_quote": "Доброе день, Никита. У меня к вам вопрос раньше, чем у вас ко мне. Вы вообще делаете модуль в этом году или нет?",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:07:04.156438"
+          }
+        },
+        {
+          "id": "knowledge_insight_55_meeting_",
+          "category": "insight",
+          "title": "Разрыв между продажами и продуктовой командой создает угрозу оттока",
+          "content": "Менеджер со стороны поставщика не имеет точного ответа о сроках и вынужден уточнять детали «с продуктом», что напрямую провоцирует клиента к поиску альтернатив.\n\nImplications: Отсутствие синхронизации внутренних процессов разработки и аккаунтинга напрямую конвертируется в риски потери контракта по закупкам.",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 0.9,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:07:04.156477",
+          "metadata": {
+            "id": "e9f837e1-6749-4a5b-a923-bbba7615d65f",
+            "type": "hypothesis",
+            "title": "Разрыв между продажами и продуктовой командой создает угрозу оттока",
+            "description": "Менеджер со стороны поставщика не имеет точного ответа о сроках и вынужден уточнять детали «с продуктом», что напрямую провоцирует клиента к поиску альтернатив.",
+            "implications": "Отсутствие синхронизации внутренних процессов разработки и аккаунтинга напрямую конвертируется в риски потери контракта по закупкам.",
+            "actionability": "high",
+            "source_meeting_id": "meeting_20260825_180632",
+            "source_quote": "Делаем, я почти уверен, детали сейчас уточняем с продуктом.",
+            "confidence": 0.9,
+            "extracted_at": "2026-08-25T18:07:04.156443"
+          }
+        }
+      ],
+      "standards": [
+        {
+          "id": "knowledge_standard_46_meeting_",
+          "category": "standard",
+          "title": "Срок возврата с конкретикой по модулю отчётности",
+          "content": "Предоставление конкретной информации (даты) по статусу модуля отчётности\n\nThreshold: Неделя",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:07:02.820110",
+          "metadata": {
+            "id": "9a184a25-10cc-435c-a7b9-388f40658b8b",
+            "type": "norm",
+            "title": "Срок возврата с конкретикой по модулю отчётности",
+            "description": "Предоставление конкретной информации (даты) по статусу модуля отчётности",
+            "threshold": "Неделя",
+            "scope": "Модуль отчётности для «Титан-Банк»",
+            "mandatory": true,
+            "source_meeting_id": "meeting_20260825_180632",
+            "source_quote": "Дайте мне неделю, вернусь с конкретикой.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:07:02.820076"
+          }
+        },
+        {
+          "id": "knowledge_standard_47_meeting_",
+          "category": "standard",
+          "title": "Срок реализации модуля отчётности",
+          "content": "Решение вопроса с разработкой модуля отчётности\n\nThreshold: В этом году",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:07:02.820117",
+          "metadata": {
+            "id": "d6d3cdc7-973c-4a8c-9ff9-75c7314d8c91",
+            "type": "norm",
+            "title": "Срок реализации модуля отчётности",
+            "description": "Решение вопроса с разработкой модуля отчётности",
+            "threshold": "В этом году",
+            "scope": "Модуль отчётности для «Титан-Банк»",
+            "mandatory": true,
+            "source_meeting_id": "meeting_20260825_180632",
+            "source_quote": "если в этом году не решите, мы просто пойдём смотреть дальше",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:07:02.820087"
+          }
+        }
+      ],
+      "achievements": [
+        {
+          "id": "knowledge_achievement_48_meeting_",
+          "category": "achievement",
+          "title": "Неопределенность сроков и статуса разработки модуля отчётности",
+          "content": "Представитель «Гелиона» Никита Фролов не смог дать четкого ответа клиенту о сроках разработки модуля отчётности, заявив лишь, что «почти уверен» в его создании в текущем году.\n\nImpact: Клиент (Титан-Банк) выразил недовольство неопределенностью и пригрозил начать поиск альтернативных решений у конкурентов.\nRoot Cause: Детали разработки на момент звонка еще уточнялись с продуктовой командой, точные сроки отсутствовали.",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:07:03.564952",
+          "metadata": {
+            "id": "051a2330-efee-4f85-8208-175db579f5ea",
+            "type": "failure",
+            "title": "Неопределенность сроков и статуса разработки модуля отчётности",
+            "description": "Представитель «Гелиона» Никита Фролов не смог дать четкого ответа клиенту о сроках разработки модуля отчётности, заявив лишь, что «почти уверен» в его создании в текущем году.",
+            "impact": "Клиент (Титан-Банк) выразил недовольство неопределенностью и пригрозил начать поиск альтернативных решений у конкурентов.",
+            "root_cause": "Детали разработки на момент звонка еще уточнялись с продуктовой командой, точные сроки отсутствовали.",
+            "metrics": [
+              "Срок сотрудничества: 3 года"
+            ],
+            "contributors": [
+              "Никита Фролов"
+            ],
+            "source_meeting_id": null,
+            "source_quote": "Вы вообще делаете модуль в этом году или нет? — Делаем, я почти уверен, детали сейчас уточняем с продуктом.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:07:03.564916"
+          }
+        },
+        {
+          "id": "knowledge_achievement_49_meeting_",
+          "category": "achievement",
+          "title": "Успешный опыт предыдущего сотрудничества",
+          "content": "Клиент подтвердил отсутствие претензий к продукту «Гелиона», который уже установлен и используется в Титан-Банке на протяжении трех лет.\n\nImpact: Сохраняется базовый уровень доверия со стороны клиента, несмотря на текущие проблемы с новым модулем.\nRoot Cause: Качество ранее поставленного продукта.",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:07:03.564959",
+          "metadata": {
+            "id": "1d3397df-fccd-4e0a-b0e3-1853cce7c0ae",
+            "type": "achievement",
+            "title": "Успешный опыт предыдущего сотрудничества",
+            "description": "Клиент подтвердил отсутствие претензий к продукту «Гелиона», который уже установлен и используется в Титан-Банке на протяжении трех лет.",
+            "impact": "Сохраняется базовый уровень доверия со стороны клиента, несмотря на текущие проблемы с новым модулем.",
+            "root_cause": "Качество ранее поставленного продукта.",
+            "metrics": [
+              "Срок сотрудничества: 3 года"
+            ],
+            "contributors": [
+              "Сергей Волков"
+            ],
+            "source_meeting_id": null,
+            "source_quote": "Смотрите, я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:07:03.564926"
+          }
+        }
+      ],
+      "expert_knowledge": [
+        {
+          "id": "knowledge_expert_knowledge_51_meeting_",
+          "category": "expert_knowledge",
+          "title": "Удержание лояльного клиента при задержке новых релизов",
+          "content": "Наличие успешно работающего продукта на протяжении нескольких лет формирует кредит доверия у клиента, но этого недостаточно для удержания при неопределенности по новым модулям — неопределенность стимулирует закупщика искать альтернативные решения на рынке.",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 0.95,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:07:03.915235",
+          "metadata": {
+            "id": "71a2a39d-ace6-4017-af8f-9eb2cb88cbd1",
+            "type": "strategic",
+            "title": "Удержание лояльного клиента при задержке новых релизов",
+            "content": "Наличие успешно работающего продукта на протяжении нескольких лет формирует кредит доверия у клиента, но этого недостаточно для удержания при неопределенности по новым модулям — неопределенность стимулирует закупщика искать альтернативные решения на рынке.",
+            "expert_name": "Сергей Волков",
+            "expert_role": "",
+            "domain": "Sales",
+            "complexity": "medium",
+            "source_meeting_id": null,
+            "source_quote": "Смотрите, я третий год с вами работаю, у меня к вам претензий нет по продукту, который уже стоит. Но если по отчётности ответ «почти» — я начинаю смотреть, что есть у других.",
+            "confidence": 0.95,
+            "extracted_at": "2026-08-25T18:07:03.915202"
+          }
+        },
+        {
+          "id": "knowledge_expert_knowledge_52_meeting_",
+          "category": "expert_knowledge",
+          "title": "Критичность жестких дедлайнов и конкретики в B2B-продажах",
+          "content": "Уверенные формулировки («почти уверен») и размытые сроки неприемлемы для директоров по закупкам при решении вопросов о внедрении функционала в текущем году; для фиксации ситуации требуется точный срок (до недели) и конкретная дата релиза.",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 0.95,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:07:03.915241",
+          "metadata": {
+            "id": "da8faebc-2eb4-4b7d-831f-f4e5d86cfaf3",
+            "type": "process",
+            "title": "Критичность жестких дедлайнов и конкретики в B2B-продажах",
+            "content": "Уверенные формулировки («почти уверен») и размытые сроки неприемлемы для директоров по закупкам при решении вопросов о внедрении функционала в текущем году; для фиксации ситуации требуется точный срок (до недели) и конкретная дата релиза.",
+            "expert_name": "Сергей Волков",
+            "expert_role": "",
+            "domain": "Sales",
+            "complexity": "low",
+            "source_meeting_id": null,
+            "source_quote": "«Почти уверен» меня не устраивает... Неделя — нормально. Но учтите: если в этом году не решите, мы просто пойдём смотреть дальше, я не буду ждать вечно ради красивых отношений.",
+            "confidence": 0.95,
+            "extracted_at": "2026-08-25T18:07:03.915212"
+          }
+        }
+      ],
+      "playbooks": [],
+      "antipatterns": [
+        {
+          "id": "knowledge_antipattern_50_meeting_",
+          "category": "antipattern",
+          "title": "Неуверенная коммуникация с клиентом",
+          "content": "Предоставление клиенту расплывчатой информации и неуверенных формулировок («я почти уверен») по критически важному вопросу разработки продукта.\n\nConsequences: Утрата доверия клиента, риск того, что клиент начнет искать альтернативные решения у конкурентов.\nSolution: Давать четкие, проверенные ответы и привлекать экспертов из продуктовой команды заранее, до звонка с клиентом.",
+          "source_meeting_id": "meeting_20260825_180632",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:07:03.772393",
+          "metadata": {
+            "id": "73e4c4e3-e523-48b4-a196-33a79c9efe85",
+            "type": "bad_practice",
+            "title": "Неуверенная коммуникация с клиентом",
+            "description": "Предоставление клиенту расплывчатой информации и неуверенных формулировок («я почти уверен») по критически важному вопросу разработки продукта.",
+            "consequences": "Утрата доверия клиента, риск того, что клиент начнет искать альтернативные решения у конкурентов.",
+            "solution": "Давать четкие, проверенные ответы и привлекать экспертов из продуктовой команды заранее, до звонка с клиентом.",
+            "source_meeting_id": "meeting_20260825_180632",
+            "source_quote": "Делаем, я почти уверен, детали сейчас уточняем с продуктом.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:07:03.772365"
+          }
+        }
+      ],
+      "workflows": [],
+      "extraction_time": 3.497719,
+      "total_extracted": 11,
+      "timestamp": "2026-08-25T18:07:00.658864"
+    },
+    "regulations": [],
+    "extracted_templates": [],
+    "summary": {
+      "total_entities": 16,
+      "decisions_count": 1,
+      "tasks_count": 1,
+      "participants_count": 2,
+      "entities_count": 5,
+      "kpis_count": 1,
+      "opinions_count": 3,
+      "ideas_count": 0,
+      "project_statuses_count": 1,
+      "enhanced_kpis_count": 1,
+      "fact_checks_count": 0,
+      "cross_links_found": 1,
+      "related_meetings_found": 0,
+      "entity_evolution_tracked": 0,
+      "recurring_topics": 0,
+      "personality_profiles_count": 2,
+      "conflict_risks_count": 2,
+      "scenarios_count": 4,
+      "risks_count": 2,
+      "early_warnings_count": 2,
+      "critical_items_count": 3,
+      "keywords_count": 18,
+      "topics_count": 3,
+      "learning_data_count": 1,
+      "success_patterns_count": 0,
+      "failure_patterns_count": 0,
+      "goals_count": 2,
+      "regulations_count": 0,
+      "extracted_templates_count": 0,
+      "goal_conflicts_count": 1,
+      "knowledge_items_count": 11,
+      "knowledge_cases_count": 0,
+      "knowledge_methodologies_count": 0,
+      "knowledge_best_practices_count": 0,
+      "knowledge_insights_count": 3
+    },
+    "llm_stats": {
+      "providers": {
+        "openai": {
+          "model": "gpt-4o-mini",
+          "enabled": true,
+          "requests": {
+            "total": 0,
+            "cached": 0,
+            "errors": 0,
+            "cache_hit_rate": "0.0%"
+          },
+          "tokens": {
+            "input": 0,
+            "cached": 0,
+            "output": 0,
+            "total": 0
+          },
+          "cost": {
+            "actual": "$0.000000",
+            "without_cache": "$0.000000",
+            "savings": "$0.000000",
+            "savings_percent": "0.0%"
+          }
+        },
+        "gemini": {
+          "model": "gemini-flash-lite-latest",
+          "enabled": true,
+          "requests": {
+            "total": 186,
+            "cached": 185,
+            "errors": 0,
+            "cache_hit_rate": "99.5%"
+          },
+          "tokens": {
+            "input": 455311,
+            "cached": 0,
+            "output": 130781,
+            "total": 586092
+          },
+          "cost": {
+            "actual": "$0.097843",
+            "without_cache": "$0.097843",
+            "savings": "$0.000000",
+            "savings_percent": "0.0%"
+          }
+        }
+      },
+      "health": {},
+      "total": {
+        "requests": 186,
+        "errors": 0,
+        "estimated_cost": "$0.097843"
+      }
+    },
+    "memory_reinforcement": {
+      "frequency_tracking": {},
+      "hebbian_learning": {},
+      "emotional_salience": {},
+      "enabled": true
+    },
+    "validation": {
+      "enabled": true,
+      "validation": {
+        "is_valid": false,
+        "entities": {
+          "valid": [
+            {
+              "entity_id": "titan_bank",
+              "entity_type": "organization",
+              "name": "Титан-Банк",
+              "description": "Клиентская организация, директор по закупкам которой обсуждает статус разработки модуля отчётности.",
+              "attributes": {
+                "type": "client"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:06:34.034301+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "gelion",
+              "entity_type": "company",
+              "name": "Гелион",
+              "description": "Собственная компания, представителем которой является Никита Фролов.",
+              "attributes": {},
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:06:34.034323+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "reporting_module",
+              "entity_type": "feature",
+              "name": "модуль отчётности",
+              "description": "Модуль, статус разработки которого обсуждается на встрече.",
+              "attributes": {
+                "status": "in_progress",
+                "priority": "high"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:06:34.034331+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            }
+          ],
+          "invalid": [],
+          "uncertain": [
+            {
+              "entity_id": "existing_product",
+              "entity_type": "product",
+              "name": "продукт",
+              "description": "Продукт компании «Гелион», который уже установлен у клиента, к нему нет претензий.",
+              "attributes": {},
+              "relationships": [],
+              "mentions": [],
+              "importance": "medium",
+              "confidence": 0.9,
+              "_extracted_at": "2026-08-25T18:06:34.034337+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity",
+              "validation_reason": "Слишком общее название"
+            },
+            {
+              "entity_id": "product_department",
+              "entity_type": "team",
+              "name": "продукт",
+              "description": "Внутренняя команда или подразделение, с которым уточняются детали по модулю.",
+              "attributes": {},
+              "relationships": [],
+              "mentions": [],
+              "importance": "medium",
+              "confidence": 0.8,
+              "_extracted_at": "2026-08-25T18:06:34.034344+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity",
+              "validation_reason": "Слишком общее название"
+            }
+          ]
+        },
+        "decisions": {
+          "valid": [],
+          "invalid": [
+            {
+              "decision_id": "dec_001",
+              "decision_summary": "Никита Фролов предоставит конкретику и точные сроки по модулю отчётности в течение недели.",
+              "decision_category": "operational",
+              "details": "Клиент выразил недовольство неопределенностью статуса разработки модуля отчётности («почти уверен»). В результате договоренности представитель «Гелиона» берет неделю на уточнение деталей с продуктовой командой и возврат к клиенту с конкретной датой.",
+              "participants": [
+                {
+                  "name": "Никита Фролов",
+                  "role": "Представитель «Гелиона»"
+                },
+                {
+                  "name": "Сергей Волков",
+                  "role": "Директор по закупкам, «Титан-Банк»"
+                }
+              ],
+              "responsible": {
+                "primary": "Никита Фролов"
+              },
+              "decision_maker_resolved": "Никита Фролов",
+              "decision_maker_speaker": "",
+              "attribution_confidence": "medium",
+              "reasoning": "Клиент потребовал определенности по срокам разработки модуля отчётности на текущий год, пригрозив рассмотреть альтернативные решения на рынке.",
+              "timeline": {
+                "deadline": "1 неделя"
+              },
+              "business_impact": {
+                "scope": "external",
+                "urgency": "high",
+                "risk_level": "high"
+              },
+              "dependencies": [],
+              "action_items": [
+                {
+                  "action": "Вернуться с конкретикой и датой по модулю отчётности",
+                  "owner": "Никита Фролов",
+                  "deadline": "1 неделя"
+                }
+              ],
+              "quote": "Дайте мне неделю, вернусь с конкретикой.",
+              "confidence": 0.95,
+              "_extracted_at": "2026-08-25T18:06:33.856835+00:00",
+              "_agent": "DecisionAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "decision",
+              "importance_classification": {
+                "business_impact": "low",
+                "urgency_score": 0.5,
+                "complexity_score": 5,
+                "risk_level": "low",
+                "overall_priority": "medium"
+              },
+              "validation_reason": "Слишком короткое описание решения"
+            }
+          ],
+          "uncertain": []
+        },
+        "tasks": {
+          "valid": [
+            {
+              "task_id": "task_1",
+              "title": "Вернуться с конкретикой и датой по модулю отчётности",
+              "description": "Уточнить детали с продуктовой командой и вернуться к клиенту с конкретными сроками и информацией по модулю отчётности.",
+              "task_type": "action",
+              "assignee": {
+                "name": "Никита Фролов",
+                "role": "Представитель «Гелиона»"
+              },
+              "assignee_speaker": null,
+              "assignment_confidence": "high",
+              "needs_human_review": false,
+              "assigner": "Сергей Волков",
+              "priority": "high",
+              "status": "in_progress",
+              "deadline": {
+                "date": "неделя",
+                "is_hard": true
+              },
+              "dependencies": [],
+              "related_decision": "",
+              "related_project": "Модуль отчётности (Титан-Банк)",
+              "acceptance_criteria": [
+                "Предоставить конкретную информацию и дату"
+              ],
+              "blockers": [],
+              "quote": "Дайте мне неделю, вернусь с конкретикой.",
+              "confidence": 0.95,
+              "_extracted_at": "2026-08-25T18:06:33.554012+00:00",
+              "_agent": "TaskAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "task"
+            }
+          ],
+          "invalid": [],
+          "uncertain": []
+        },
+        "issues": [],
+        "recommendations": [
+          "Требуется проверка 2 сущностей"
+        ],
+        "quality_score": 0.5714285714285714
+      },
+      "filtered_data": {
+        "internal": [
+          {
+            "entity_id": "titan_bank",
+            "entity_type": "organization",
+            "name": "Титан-Банк",
+            "description": "Клиентская организация, директор по закупкам которой обсуждает статус разработки модуля отчётности.",
+            "attributes": {
+              "type": "client"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:06:34.034301+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "gelion",
+            "entity_type": "company",
+            "name": "Гелион",
+            "description": "Собственная компания, представителем которой является Никита Фролов.",
+            "attributes": {},
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:06:34.034323+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "reporting_module",
+            "entity_type": "feature",
+            "name": "модуль отчётности",
+            "description": "Модуль, статус разработки которого обсуждается на встрече.",
+            "attributes": {
+              "status": "in_progress",
+              "priority": "high"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:06:34.034331+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "existing_product",
+            "entity_type": "product",
+            "name": "продукт",
+            "description": "Продукт компании «Гелион», который уже установлен у клиента, к нему нет претензий.",
+            "attributes": {},
+            "relationships": [],
+            "mentions": [],
+            "importance": "medium",
+            "confidence": 0.9,
+            "_extracted_at": "2026-08-25T18:06:34.034337+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "product_department",
+            "entity_type": "team",
+            "name": "продукт",
+            "description": "Внутренняя команда или подразделение, с которым уточняются детали по модулю.",
+            "attributes": {},
+            "relationships": [],
+            "mentions": [],
+            "importance": "medium",
+            "confidence": 0.8,
+            "_extracted_at": "2026-08-25T18:06:34.034344+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          }
+        ],
+        "external": [],
+        "uncertain": []
+      },
+      "quality_score": 0.5714285714285714
+    }
+  }
+}

@@ -55,7 +55,26 @@ python3 scripts/gen_data.py         # CRM + finance sheet out of ground truth
 python3 scripts/validate_corpus.py  # must print GREEN before you load anything
 ```
 
-Then load `transcripts/*.txt` and `data/*.csv` into a clean tenant. Two things
+**Shortcut — the corpus ships pre-extracted.** `extracted/` holds the full
+pipeline output for every meeting (decisions, tasks, participants, KPIs,
+profiles), and `snapshot/` holds a ready zero-infra store (graph + vector
+index with embeddings already computed). Two ways to use them:
+
+```bash
+# load extractions into whatever store you run — no LLM calls, no key:
+python scripts/seed_demo.py --corpus demo/helion
+
+# or the instant path: copy the ready-made store and start the API on it
+mkdir -p data && cp demo/helion/snapshot/*.json data/
+USE_NETWORKX=true USE_QDRANT=false python -m backend.main
+```
+
+Both are build artifacts: when extractors change, regenerate with
+`python scripts/ingest_data.py --source files --target demo/helion/transcripts
+--group public --dump-extractions demo/helion/extracted`. The source of truth
+stays `transcripts/` + `ground-truth.yaml`.
+
+To run the extraction yourself, load `transcripts/*.txt` and `data/*.csv` into a clean tenant. Two things
 the loader has to preserve, because checks depend on them:
 
 * **Point the loader at `transcripts/`, not the folder root.** `README.md`,

@@ -1,0 +1,4284 @@
+{
+  "meeting": {
+    "id": "doc_2026-06-11_klient-titan-6",
+    "transcription_text": "Встреча: Клиентский звонок — Титан-Банк, чек-ин перед комитетом\nДата: 2026-06-11\nДлительность: 8 мин\nУчастники: Никита Фролов (со стороны «Гелиона»); Сергей Волков — директор по закупкам, «Титан-Банк»\n---\n\n[00:00] Никита Фролов: Сергей Игоревич, добрый день, короткий чек-ин перед комитетом.\n[00:05] Сергей Волков: Добрый день. Комитет через две недели, если честно, у меня сейчас немного нервно. Доступ к API вы получили?\n[00:13] Никита Фролов: Пока нет, мы писали письмо с обоснованием, как договаривались, но подвижек не видели с нашей стороны.\n[00:20] Сергей Волков: Я тоже не вижу подвижек со своей, если совсем честно, там до сих пор третье согласование висит. Слушайте, я всё понимаю про безопасность, но мне через две недели нужно что-то конкретное на комитет, а не «ждём согласования».\n[00:35] Никита Фролов: Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?\n[00:43] Сергей Волков: Это было бы полезно, да. Так я хотя бы покажу, что движение есть, даже если не всё в моей власти.\n[00:50] Никита Фролов: Подготовим на этой неделе.\n[00:53] Сергей Волков: Хорошо. И передайте своим — я по-прежнему за вас, но мне нужно этим кормить комитет, а не только личным доверием.\n",
+    "summary": "",
+    "date": "2026-06-11",
+    "title": "2026-06-11_klient-titan-6"
+  },
+  "access_group": "public",
+  "source_file": "2026-06-11_klient-titan-6.txt",
+  "results": {
+    "meeting_id": "meeting_20260825_181517",
+    "status": "completed",
+    "processing_timestamp": "2026-08-25T18:15:55.607482+00:00",
+    "processing_time_seconds": 38.234769,
+    "agent_errors": {},
+    "metadata": {
+      "orchestrator": "Capture Orchestrator",
+      "version": "2.0.0",
+      "agents_used": [
+        "decisions",
+        "tasks",
+        "participants",
+        "entities",
+        "kpis",
+        "opinions",
+        "ideas",
+        "project_statuses",
+        "enhanced_kpis",
+        "fact_checks",
+        "cogni_profiles"
+      ],
+      "agents_failed": [],
+      "context": {
+        "id": "doc_2026-06-11_klient-titan-6",
+        "transcription_text": "Встреча: Клиентский звонок — Титан-Банк, чек-ин перед комитетом\nДата: 2026-06-11\nДлительность: 8 мин\nУчастники: Никита Фролов (со стороны «Гелиона»); Сергей Волков — директор по закупкам, «Титан-Банк»\n---\n\n[00:00] Никита Фролов: Сергей Игоревич, добрый день, короткий чек-ин перед комитетом.\n[00:05] Сергей Волков: Добрый день. Комитет через две недели, если честно, у меня сейчас немного нервно. Доступ к API вы получили?\n[00:13] Никита Фролов: Пока нет, мы писали письмо с обоснованием, как договаривались, но подвижек не видели с нашей стороны.\n[00:20] Сергей Волков: Я тоже не вижу подвижек со своей, если совсем честно, там до сих пор третье согласование висит. Слушайте, я всё понимаю про безопасность, но мне через две недели нужно что-то конкретное на комитет, а не «ждём согласования».\n[00:35] Никита Фролов: Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?\n[00:43] Сергей Волков: Это было бы полезно, да. Так я хотя бы покажу, что движение есть, даже если не всё в моей власти.\n[00:50] Никита Фролов: Подготовим на этой неделе.\n[00:53] Сергей Волков: Хорошо. И передайте своим — я по-прежнему за вас, но мне нужно этим кормить комитет, а не только личным доверием.\n",
+        "summary": "",
+        "date": "2026-06-11",
+        "title": "2026-06-11_klient-titan-6"
+      }
+    },
+    "decisions": [
+      {
+        "decision_id": "dec-01",
+        "decision_summary": "Подготовка отдельного статус-документа для комитета с информацией о готовности каркаса, зависимостях от API и датами.",
+        "decision_category": "operational",
+        "details": "В связи с задержкой согласования доступа к API и приближающимся комитетом через две недели, решено подготовить статус-документ для демонстрации прогресса.",
+        "participants": [
+          {
+            "name": "Никита Фролов",
+            "role": "Представитель «Гелиона»"
+          },
+          {
+            "name": "Сергей Волков",
+            "role": "Директор по закупкам, «Титан-Банк»"
+          }
+        ],
+        "responsible": {
+          "primary": "Никита Фролов"
+        },
+        "decision_maker_resolved": "Никита Фролов",
+        "decision_maker_speaker": "",
+        "attribution_confidence": "medium",
+        "reasoning": "Заказчику необходимо предоставить комитету конкретную информацию о движении проекта, так как согласование доступа к API затягивается.",
+        "timeline": {
+          "deadline": "на этой неделе"
+        },
+        "business_impact": {
+          "scope": "external",
+          "urgency": "high",
+          "risk_level": "medium"
+        },
+        "dependencies": [
+          "Задержка согласования доступа к API"
+        ],
+        "action_items": [
+          {
+            "action": "Подготовить отдельный статус-документ по каркасу и зависимостям от API с датами",
+            "owner": "Никита Фролов",
+            "deadline": "на этой неделе"
+          }
+        ],
+        "quote": "— Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?\n— Это было бы полезно, да. Так я хотя бы покажу, что движение есть, даже если не всё в моей власти.\n— Подготовим на этой неделе.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:15:19.590344+00:00",
+        "_agent": "DecisionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "decision",
+        "importance_classification": {
+          "business_impact": "low",
+          "urgency_score": 0.5,
+          "complexity_score": 5,
+          "risk_level": "low",
+          "overall_priority": "medium"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "task_1",
+        "title": "Получить доступ к API",
+        "description": "Получить доступ к API Титан-Банка (находится на этапе третьего согласования со стороны банка)",
+        "task_type": "action",
+        "assignee": {
+          "name": "Сергей Волков",
+          "role": "директор по закупкам"
+        },
+        "assignee_speaker": null,
+        "assignment_confidence": "medium",
+        "needs_human_review": false,
+        "assigner": "Никита Фролов",
+        "priority": "high",
+        "status": "blocked",
+        "deadline": {
+          "date": "через две недели",
+          "is_hard": true
+        },
+        "dependencies": [],
+        "related_decision": "",
+        "related_project": "Титан-Банк",
+        "acceptance_criteria": [
+          "Доступ к API предоставлен"
+        ],
+        "blockers": [
+          "Третье согласование висит со стороны банка"
+        ],
+        "quote": "Доступ к API вы получили?",
+        "confidence": 0.9,
+        "_extracted_at": "2026-08-25T18:15:19.995987+00:00",
+        "_agent": "TaskAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "task"
+      },
+      {
+        "task_id": "task_2",
+        "title": "Подготовить отдельный статус-документ для комитета",
+        "description": "Подготовить статус-документ, содержащий информацию о том, что уже готово по каркасу, что зависит от API, с датами",
+        "task_type": "action",
+        "assignee": {
+          "name": "Никита Фролов",
+          "role": "со стороны «Гелиона»"
+        },
+        "assignee_speaker": null,
+        "assignment_confidence": "high",
+        "needs_human_review": false,
+        "assigner": "Сергей Волков",
+        "priority": "high",
+        "status": "new",
+        "deadline": {
+          "date": "на этой неделе",
+          "is_hard": false
+        },
+        "dependencies": [],
+        "related_decision": "",
+        "related_project": "Титан-Банк",
+        "acceptance_criteria": [
+          "Документ подготовлен",
+          "Указано состояние каркаса и зависимости от API с датами"
+        ],
+        "blockers": [],
+        "quote": "Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.996000+00:00",
+        "_agent": "TaskAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "task"
+      }
+    ],
+    "participants": [
+      {
+        "participant_id": "nikita_frolov",
+        "name": "Никита Фролов",
+        "normalized_name": "Никита Фролов",
+        "role": "",
+        "department": "Гелион",
+        "activity_level": "medium",
+        "participation_metrics": {
+          "speaking_turns": 4,
+          "decisions_involved": 1,
+          "tasks_assigned": 1,
+          "questions_asked": 0
+        },
+        "expertise_areas": [],
+        "communication_style": {
+          "style": "collaborative",
+          "traits": [
+            "предлагает решения",
+            "идет на контакт"
+          ]
+        },
+        "relationships": [
+          {
+            "with": "Сергей Волков",
+            "type": "collaborates"
+          }
+        ],
+        "key_contributions": [
+          "Предложил подготовить статус-документ для комитета с датами и деталями по каркасу и API"
+        ],
+        "sentiment": "neutral",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.827451+00:00",
+        "_agent": "ParticipantAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "participant"
+      },
+      {
+        "participant_id": "sergey_volkov",
+        "name": "Сергей Волков",
+        "normalized_name": "Сергей Волков",
+        "role": "директор по закупкам",
+        "department": "Титан-Банк",
+        "activity_level": "medium",
+        "participation_metrics": {
+          "speaking_turns": 4,
+          "decisions_involved": 1,
+          "tasks_assigned": 0,
+          "questions_asked": 1
+        },
+        "expertise_areas": [
+          "закупки"
+        ],
+        "communication_style": {
+          "style": "directive",
+          "traits": [
+            "прямолинейный",
+            "тревожный из-за сроков",
+            "требует конкретики"
+          ]
+        },
+        "relationships": [
+          {
+            "with": "Никита Фролов",
+            "type": "collaborates"
+          }
+        ],
+        "key_contributions": [
+          "Обозначил проблему с задержкой доступа к API и согласованиями",
+          "Запросил конкретные материалы для предстоящего комитета"
+        ],
+        "sentiment": "negative",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.827467+00:00",
+        "_agent": "ParticipantAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "participant"
+      }
+    ],
+    "entities": [
+      {
+        "entity_id": "titan_bank",
+        "entity_type": "organization",
+        "name": "Титан-Банк",
+        "description": "Клиентская организация, проводящая комитет через две недели.",
+        "attributes": {
+          "type": "client"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.650437+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "gelion",
+        "entity_type": "company",
+        "name": "Гелион",
+        "description": "Компания, со стороны которой выступает Никита Фролов.",
+        "attributes": {},
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.650448+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "api",
+        "entity_type": "technology",
+        "name": "API",
+        "description": "Интерфейс, доступ к которому ожидает команда Гелиона и по которому висит третье согласование в Титан-Банке.",
+        "attributes": {},
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.650454+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "status_document",
+        "entity_type": "document",
+        "name": "статус-документ",
+        "description": "Документ с информацией о готовности каркаса и зависимостях от API с датами, который планируется подготовить.",
+        "attributes": {
+          "status": "draft"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.650459+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "komitet",
+        "entity_type": "event",
+        "name": "комитет",
+        "description": "Мероприятие в Титан-Банке, до которого осталось две недели.",
+        "attributes": {
+          "date": "через две недели"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.650463+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      }
+    ],
+    "kpis": [
+      {
+        "kpi_id": "duration_minutes",
+        "name": "Длительность встречи",
+        "category": "operational",
+        "value": {
+          "current": 8,
+          "previous": null,
+          "target": null,
+          "unit": "мин"
+        },
+        "trend": {
+          "direction": "stable",
+          "change_percent": null,
+          "period": ""
+        },
+        "context": {
+          "project": "Титан-Банк",
+          "department": null,
+          "responsible": "Никита Фролов, Сергей Волков"
+        },
+        "analysis": {
+          "status": "on_track",
+          "insight": "Длительность встречи составила 8 минут",
+          "action_needed": false
+        },
+        "quote": "Длительность: 8 мин",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.797991+00:00",
+        "_agent": "KPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "kpi"
+      },
+      {
+        "kpi_id": "committee_deadline_weeks",
+        "name": "Срок до комитета",
+        "category": "operational",
+        "value": {
+          "current": 2,
+          "previous": null,
+          "target": null,
+          "unit": "недели"
+        },
+        "trend": {
+          "direction": "stable",
+          "change_percent": null,
+          "period": ""
+        },
+        "context": {
+          "project": "Титан-Банк",
+          "department": null,
+          "responsible": "Сергей Волков"
+        },
+        "analysis": {
+          "status": "at_risk",
+          "insight": "До комитета осталось 2 недели, наблюдается задержка с доступом к API и согласованиями",
+          "action_needed": true
+        },
+        "quote": "Комитет через две недели",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.798000+00:00",
+        "_agent": "KPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "kpi"
+      },
+      {
+        "kpi_id": "approval_stage",
+        "name": "Этап согласования",
+        "category": "operational",
+        "value": {
+          "current": 3,
+          "previous": null,
+          "target": null,
+          "unit": "этап"
+        },
+        "trend": {
+          "direction": "stable",
+          "change_percent": null,
+          "period": ""
+        },
+        "context": {
+          "project": "Титан-Банк",
+          "department": null,
+          "responsible": "Сергей Волков"
+        },
+        "analysis": {
+          "status": "at_risk",
+          "insight": "Согласование зависло на третьем этапе",
+          "action_needed": true
+        },
+        "quote": "там до сих пор третье согласование висит",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:15:19.798006+00:00",
+        "_agent": "KPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "kpi"
+      }
+    ],
+    "opinions": [
+      {
+        "opinion_id": "opinion_001",
+        "author": "Сергей Волков",
+        "opinion_summary": "Сергей испытывает нервозность в преддверии комитета через две недели из-за задержек и отсутствия прогресса.",
+        "topic": "Предстоящий комитет и текущая нервозность",
+        "opinion_category": "personal",
+        "sentiment_analysis": {
+          "primary_sentiment": "negative",
+          "intensity": 0.7,
+          "emotional_undertones": [
+            "тревога",
+            "напряжение"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "Комитет через две недели",
+            "Третье согласование до сих пор висит"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": []
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "Успешно отчитаться перед комитетом",
+            "Снизить личные риски"
+          ],
+          "risk_concerns": [
+            "Отсутствие результатов к моменту комитета"
+          ],
+          "opportunity_focus": [
+            "Получить конкретные материалы для демонстрации прогресса"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.8,
+          "authority_level": "experienced",
+          "social_influence": "high",
+          "likely_supporters": [
+            "Никита Фролов"
+          ]
+        },
+        "business_implications": {
+          "strategic_alignment": "aligned",
+          "resource_implications": [
+            "Необходимость срочной подготовки статус-документа"
+          ],
+          "risk_assessment": "high"
+        },
+        "quote": "Комитет через две недели, если честно, у меня сейчас немного нервно.",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:15:23.292621+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      },
+      {
+        "opinion_id": "opinion_002",
+        "author": "Сергей Волков",
+        "opinion_summary": "Считает неприемлемым приходить на комитет с формулировкой «ждём согласования», требуя конкретных результатов.",
+        "topic": "Требования к материалам для комитета",
+        "opinion_category": "tactical",
+        "sentiment_analysis": {
+          "primary_sentiment": "negative",
+          "intensity": 0.8,
+          "emotional_undertones": [
+            "раздражение",
+            "требовательность"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "Затягивание процессов согласования доступа к API"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": []
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "Показать реальную работу комитета",
+            "Защитить свою позицию перед руководством"
+          ],
+          "risk_concerns": [
+            "Неубедительный отчет перед комитетом"
+          ],
+          "opportunity_focus": [
+            "Наличие осязаемых промежуточных результатов"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.9,
+          "authority_level": "experienced",
+          "social_influence": "high",
+          "likely_supporters": []
+        },
+        "business_implications": {
+          "strategic_alignment": "aligned",
+          "resource_implications": [
+            "Перераспределение фокуса команды Гелиона на подготовку отчетности"
+          ],
+          "risk_assessment": "medium"
+        },
+        "quote": "мне через две недели нужно что-то конкретное на комитет, а не «ждём согласования»",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:15:23.292633+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      },
+      {
+        "opinion_id": "opinion_003",
+        "author": "Сергей Волков",
+        "opinion_summary": "Отдельный статус-документ с указанием готового каркаса, зависимостей и дат будет полезен для демонстрации движения.",
+        "topic": "Полезность статус-документа",
+        "opinion_category": "process",
+        "sentiment_analysis": {
+          "primary_sentiment": "positive",
+          "intensity": 0.7,
+          "emotional_undertones": [
+            "удовлетворение",
+            "одобрение"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "Документ позволит показать движение, даже если процесс не полностью под его контролем"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": []
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "Наличие аргументов для защиты проекта"
+          ],
+          "risk_concerns": [
+            "Смещение фокуса внимания из-за бюрократии"
+          ],
+          "opportunity_focus": [
+            "Использование промежуточных артефактов для отчета"
+          ],
+          "personal_stake": "medium"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.7,
+          "authority_level": "experienced",
+          "social_influence": "medium",
+          "likely_supporters": [
+            "Никита Фролов"
+          ]
+        },
+        "business_implications": {
+          "strategic_alignment": "aligned",
+          "resource_implications": [
+            "Затраты времени команды Гелиона на составление документа"
+          ],
+          "risk_assessment": "low"
+        },
+        "quote": "Это было бы полезно, да. Так я хотя бы покажу, что движение есть, даже если не всё в моей власти.",
+        "confidence_score": 0.9,
+        "_extracted_at": "2026-08-25T18:15:23.292638+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      },
+      {
+        "opinion_id": "opinion_004",
+        "author": "Сергей Волков",
+        "opinion_summary": "Поддерживает партнерские отношения с «Гелионом», но подчеркивает необходимость осязаемых результатов для комитета.",
+        "topic": "Партнерские отношения и поддержка подрядчика",
+        "opinion_category": "personal",
+        "sentiment_analysis": {
+          "primary_sentiment": "mixed",
+          "intensity": 0.6,
+          "emotional_undertones": [
+            "лояльность",
+            "прагматизм"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "Личное доверие есть, но требуются формальные показатели для комитета"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": []
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "Сохранение конструктивных отношений с вендором",
+            "Выполнение корпоративных требований"
+          ],
+          "risk_concerns": [
+            "Потеря лица перед комитетом при отсутствии формальных результатов"
+          ],
+          "opportunity_focus": [
+            "Совместное преодоление бюрократических барьеров"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.8,
+          "authority_level": "experienced",
+          "social_influence": "high",
+          "likely_supporters": [
+            "Никита Фролов"
+          ]
+        },
+        "business_implications": {
+          "strategic_alignment": "aligned",
+          "resource_implications": [],
+          "risk_assessment": "low"
+        },
+        "quote": "я по-прежнему за вас, но мне нужно этим кормить комитет, а не только личным доверием.",
+        "confidence_score": 0.9,
+        "_extracted_at": "2026-08-25T18:15:23.292642+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      }
+    ],
+    "ideas": [
+      {
+        "idea_id": "idea_001",
+        "author": "Никита Фролов",
+        "idea_summary": "Подготовить отдельный статус-документ с указанием того, что уже готово по каркасу, что зависит от API, и с предварительными датами для предоставления на комитет.",
+        "idea_category": "process",
+        "innovation_assessment": {
+          "novelty_level": "incremental",
+          "creativity_score": 0.4,
+          "uniqueness": "common",
+          "inspiration_source": [
+            "Необходимость отчитаться перед комитетом в условиях задержки доступа к API"
+          ]
+        },
+        "feasibility_analysis": {
+          "technical_feasibility": "high",
+          "resource_requirements": {
+            "financial": "минимальные",
+            "human": "команда проекта Гелион",
+            "time": "в течение текущей недели"
+          },
+          "implementation_complexity": "simple",
+          "risk_factors": [
+            "Комитет может потребовать реальные результаты вместо промежуточного статуса"
+          ]
+        },
+        "business_potential": {
+          "market_opportunity": "niche",
+          "competitive_advantage": "moderate",
+          "revenue_impact": "medium",
+          "scalability": "limited_scalability"
+        },
+        "stakeholder_impact": {
+          "customers": "positive",
+          "employees": "neutral",
+          "partners": "neutral"
+        },
+        "implementation_roadmap": {
+          "quick_wins": [
+            "Сбор информации о текущей готовности каркаса"
+          ],
+          "pilot_opportunities": [
+            "Презентация документа на внутреннем комитете Титан-Банка"
+          ],
+          "success_metrics": [
+            "Успешное прохождение комитетного этапа для клиента"
+          ]
+        },
+        "priority_scoring": {
+          "impact_score": 0.8,
+          "effort_score": 0.2,
+          "urgency_score": 0.9,
+          "strategic_fit": 0.9,
+          "overall_priority": "critical"
+        },
+        "next_steps": [
+          "Подготовить статус-документ на этой неделе",
+          "Передать документ Сергею Волкаву"
+        ],
+        "quote": "Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:15:19.859438+00:00",
+        "_agent": "IdeaAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "idea"
+      }
+    ],
+    "project_statuses": [
+      {
+        "project_id": "titan_bank_integration",
+        "project_name": "Проект внедрения для Титан-Банка",
+        "description": "Внедрение решения компании «Гелион» в «Титан-Банке», подготовка к комитету через две недели.",
+        "project_category": "infrastructure",
+        "lifecycle_stage": "execution",
+        "status_assessment": {
+          "current_status": "in_progress",
+          "health_indicator": "yellow",
+          "progress_percentage": null,
+          "last_update": "Комитет через две недели, зависло третье согласование по доступу к API."
+        },
+        "scope_analysis": {
+          "primary_objectives": [
+            "Подготовка материалов к комитету через две недели",
+            "Получение доступа к API"
+          ],
+          "deliverables": [
+            "Отдельный статус-документ (что готово по каркасу, что зависит от API, с датами)"
+          ],
+          "success_criteria": [
+            "Успешное представление статуса на комитете"
+          ],
+          "scope_clarity": "moderate"
+        },
+        "stakeholder_mapping": {
+          "project_sponsor": "Сергей Волков",
+          "project_manager": "Никита Фролов",
+          "core_team": [
+            "Команда Гелион",
+            "Команда Титан-Банк"
+          ],
+          "key_stakeholders": [
+            "Сергей Волков",
+            "Комитет"
+          ]
+        },
+        "resource_analysis": {
+          "budget_info": {
+            "estimated_budget": null,
+            "budget_status": "on"
+          },
+          "human_resources": {
+            "team_size": null,
+            "skill_gaps": []
+          }
+        },
+        "timeline_analysis": {
+          "estimated_duration": null,
+          "start_date": null,
+          "target_completion": "Через 2 недели (комитет)",
+          "critical_milestones": [
+            "Комитет через две недели",
+            "Подготовка статус-документа на этой неделе"
+          ],
+          "timeline_risk": "high"
+        },
+        "risk_assessment": {
+          "identified_risks": [
+            {
+              "risk_description": "Задержка доступа к API из-за зависшего третьего согласования",
+              "probability": "high",
+              "impact": "high",
+              "mitigation_strategy": "Подготовка отдельного статус-документа с детализацией готовности каркаса и зависимостей"
+            }
+          ],
+          "overall_risk_level": "high"
+        },
+        "business_value": {
+          "strategic_alignment": "high",
+          "expected_roi": null,
+          "business_benefits": [
+            "Успешное прохождение комитета"
+          ]
+        },
+        "dependencies": {
+          "internal_dependencies": [],
+          "external_dependencies": [
+            "Доступ к API",
+            "Согласование безопасности"
+          ],
+          "blocking_factors": [
+            "Висит третье согласование по доступу к API"
+          ]
+        },
+        "current_issues": [
+          "Отсутствие доступа к API",
+          "Зависло третье согласование",
+          "Необходимо предоставить конкретные данные для комитета через две недели"
+        ],
+        "recent_achievements": [],
+        "quote": "Комитет через две недели, если честно, у меня сейчас немного нервно.",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:15:20.245878+00:00",
+        "_agent": "ProjectStatusAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "project_status"
+      }
+    ],
+    "enhanced_kpis": [],
+    "fact_checks": [],
+    "cogni_profiles": [
+      {
+        "name": "Сергей Волков",
+        "confidence": 0.3,
+        "_agent": "CogniDimensionsAgent",
+        "_agent_version": "1.0.0",
+        "_extracted_at": "2026-08-25T18:15:21.128883+00:00",
+        "_entity_type": "cogni_profile",
+        "light_cone": {
+          "horizon": "две недели",
+          "scale": null,
+          "depth": null,
+          "confidence": 0.3,
+          "quote": "Комитет через две недели, если честно, у меня сейчас немного нервно."
+        },
+        "phase_state": {
+          "state": "transition",
+          "confidence": 0.3,
+          "note": "немного нервно перед комитетом",
+          "quote": "Комитет через две недели, если честно, у меня сейчас немного нервно."
+        }
+      },
+      {
+        "name": "Никита Фролов",
+        "confidence": 0.3,
+        "_agent": "CogniDimensionsAgent",
+        "_agent_version": "1.0.0",
+        "_extracted_at": "2026-08-25T18:15:21.128961+00:00",
+        "_entity_type": "cogni_profile",
+        "light_cone": {
+          "horizon": "на этой неделе",
+          "scale": null,
+          "depth": null,
+          "confidence": 0.3,
+          "quote": "Подготовим на этой неделе."
+        }
+      }
+    ],
+    "agent_results": {
+      "decisions": [
+        {
+          "decision_id": "dec-01",
+          "decision_summary": "Подготовка отдельного статус-документа для комитета с информацией о готовности каркаса, зависимостях от API и датами.",
+          "decision_category": "operational",
+          "details": "В связи с задержкой согласования доступа к API и приближающимся комитетом через две недели, решено подготовить статус-документ для демонстрации прогресса.",
+          "participants": [
+            {
+              "name": "Никита Фролов",
+              "role": "Представитель «Гелиона»"
+            },
+            {
+              "name": "Сергей Волков",
+              "role": "Директор по закупкам, «Титан-Банк»"
+            }
+          ],
+          "responsible": {
+            "primary": "Никита Фролов"
+          },
+          "decision_maker_resolved": "Никита Фролов",
+          "decision_maker_speaker": "",
+          "attribution_confidence": "medium",
+          "reasoning": "Заказчику необходимо предоставить комитету конкретную информацию о движении проекта, так как согласование доступа к API затягивается.",
+          "timeline": {
+            "deadline": "на этой неделе"
+          },
+          "business_impact": {
+            "scope": "external",
+            "urgency": "high",
+            "risk_level": "medium"
+          },
+          "dependencies": [
+            "Задержка согласования доступа к API"
+          ],
+          "action_items": [
+            {
+              "action": "Подготовить отдельный статус-документ по каркасу и зависимостям от API с датами",
+              "owner": "Никита Фролов",
+              "deadline": "на этой неделе"
+            }
+          ],
+          "quote": "— Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?\n— Это было бы полезно, да. Так я хотя бы покажу, что движение есть, даже если не всё в моей власти.\n— Подготовим на этой неделе.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:15:19.590344+00:00",
+          "_agent": "DecisionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "decision",
+          "importance_classification": {
+            "business_impact": "low",
+            "urgency_score": 0.5,
+            "complexity_score": 5,
+            "risk_level": "low",
+            "overall_priority": "medium"
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "task_1",
+          "title": "Получить доступ к API",
+          "description": "Получить доступ к API Титан-Банка (находится на этапе третьего согласования со стороны банка)",
+          "task_type": "action",
+          "assignee": {
+            "name": "Сергей Волков",
+            "role": "директор по закупкам"
+          },
+          "assignee_speaker": null,
+          "assignment_confidence": "medium",
+          "needs_human_review": false,
+          "assigner": "Никита Фролов",
+          "priority": "high",
+          "status": "blocked",
+          "deadline": {
+            "date": "через две недели",
+            "is_hard": true
+          },
+          "dependencies": [],
+          "related_decision": "",
+          "related_project": "Титан-Банк",
+          "acceptance_criteria": [
+            "Доступ к API предоставлен"
+          ],
+          "blockers": [
+            "Третье согласование висит со стороны банка"
+          ],
+          "quote": "Доступ к API вы получили?",
+          "confidence": 0.9,
+          "_extracted_at": "2026-08-25T18:15:19.995987+00:00",
+          "_agent": "TaskAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "task"
+        },
+        {
+          "task_id": "task_2",
+          "title": "Подготовить отдельный статус-документ для комитета",
+          "description": "Подготовить статус-документ, содержащий информацию о том, что уже готово по каркасу, что зависит от API, с датами",
+          "task_type": "action",
+          "assignee": {
+            "name": "Никита Фролов",
+            "role": "со стороны «Гелиона»"
+          },
+          "assignee_speaker": null,
+          "assignment_confidence": "high",
+          "needs_human_review": false,
+          "assigner": "Сергей Волков",
+          "priority": "high",
+          "status": "new",
+          "deadline": {
+            "date": "на этой неделе",
+            "is_hard": false
+          },
+          "dependencies": [],
+          "related_decision": "",
+          "related_project": "Титан-Банк",
+          "acceptance_criteria": [
+            "Документ подготовлен",
+            "Указано состояние каркаса и зависимости от API с датами"
+          ],
+          "blockers": [],
+          "quote": "Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.996000+00:00",
+          "_agent": "TaskAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "task"
+        }
+      ],
+      "participants": [
+        {
+          "participant_id": "nikita_frolov",
+          "name": "Никита Фролов",
+          "normalized_name": "Никита Фролов",
+          "role": "",
+          "department": "Гелион",
+          "activity_level": "medium",
+          "participation_metrics": {
+            "speaking_turns": 4,
+            "decisions_involved": 1,
+            "tasks_assigned": 1,
+            "questions_asked": 0
+          },
+          "expertise_areas": [],
+          "communication_style": {
+            "style": "collaborative",
+            "traits": [
+              "предлагает решения",
+              "идет на контакт"
+            ]
+          },
+          "relationships": [
+            {
+              "with": "Сергей Волков",
+              "type": "collaborates"
+            }
+          ],
+          "key_contributions": [
+            "Предложил подготовить статус-документ для комитета с датами и деталями по каркасу и API"
+          ],
+          "sentiment": "neutral",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.827451+00:00",
+          "_agent": "ParticipantAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "participant"
+        },
+        {
+          "participant_id": "sergey_volkov",
+          "name": "Сергей Волков",
+          "normalized_name": "Сергей Волков",
+          "role": "директор по закупкам",
+          "department": "Титан-Банк",
+          "activity_level": "medium",
+          "participation_metrics": {
+            "speaking_turns": 4,
+            "decisions_involved": 1,
+            "tasks_assigned": 0,
+            "questions_asked": 1
+          },
+          "expertise_areas": [
+            "закупки"
+          ],
+          "communication_style": {
+            "style": "directive",
+            "traits": [
+              "прямолинейный",
+              "тревожный из-за сроков",
+              "требует конкретики"
+            ]
+          },
+          "relationships": [
+            {
+              "with": "Никита Фролов",
+              "type": "collaborates"
+            }
+          ],
+          "key_contributions": [
+            "Обозначил проблему с задержкой доступа к API и согласованиями",
+            "Запросил конкретные материалы для предстоящего комитета"
+          ],
+          "sentiment": "negative",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.827467+00:00",
+          "_agent": "ParticipantAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "participant"
+        }
+      ],
+      "entities": [
+        {
+          "entity_id": "titan_bank",
+          "entity_type": "organization",
+          "name": "Титан-Банк",
+          "description": "Клиентская организация, проводящая комитет через две недели.",
+          "attributes": {
+            "type": "client"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.650437+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "gelion",
+          "entity_type": "company",
+          "name": "Гелион",
+          "description": "Компания, со стороны которой выступает Никита Фролов.",
+          "attributes": {},
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.650448+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "api",
+          "entity_type": "technology",
+          "name": "API",
+          "description": "Интерфейс, доступ к которому ожидает команда Гелиона и по которому висит третье согласование в Титан-Банке.",
+          "attributes": {},
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.650454+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "status_document",
+          "entity_type": "document",
+          "name": "статус-документ",
+          "description": "Документ с информацией о готовности каркаса и зависимостях от API с датами, который планируется подготовить.",
+          "attributes": {
+            "status": "draft"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.650459+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "komitet",
+          "entity_type": "event",
+          "name": "комитет",
+          "description": "Мероприятие в Титан-Банке, до которого осталось две недели.",
+          "attributes": {
+            "date": "через две недели"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.650463+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        }
+      ],
+      "kpis": [
+        {
+          "kpi_id": "duration_minutes",
+          "name": "Длительность встречи",
+          "category": "operational",
+          "value": {
+            "current": 8,
+            "previous": null,
+            "target": null,
+            "unit": "мин"
+          },
+          "trend": {
+            "direction": "stable",
+            "change_percent": null,
+            "period": ""
+          },
+          "context": {
+            "project": "Титан-Банк",
+            "department": null,
+            "responsible": "Никита Фролов, Сергей Волков"
+          },
+          "analysis": {
+            "status": "on_track",
+            "insight": "Длительность встречи составила 8 минут",
+            "action_needed": false
+          },
+          "quote": "Длительность: 8 мин",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.797991+00:00",
+          "_agent": "KPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "kpi"
+        },
+        {
+          "kpi_id": "committee_deadline_weeks",
+          "name": "Срок до комитета",
+          "category": "operational",
+          "value": {
+            "current": 2,
+            "previous": null,
+            "target": null,
+            "unit": "недели"
+          },
+          "trend": {
+            "direction": "stable",
+            "change_percent": null,
+            "period": ""
+          },
+          "context": {
+            "project": "Титан-Банк",
+            "department": null,
+            "responsible": "Сергей Волков"
+          },
+          "analysis": {
+            "status": "at_risk",
+            "insight": "До комитета осталось 2 недели, наблюдается задержка с доступом к API и согласованиями",
+            "action_needed": true
+          },
+          "quote": "Комитет через две недели",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.798000+00:00",
+          "_agent": "KPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "kpi"
+        },
+        {
+          "kpi_id": "approval_stage",
+          "name": "Этап согласования",
+          "category": "operational",
+          "value": {
+            "current": 3,
+            "previous": null,
+            "target": null,
+            "unit": "этап"
+          },
+          "trend": {
+            "direction": "stable",
+            "change_percent": null,
+            "period": ""
+          },
+          "context": {
+            "project": "Титан-Банк",
+            "department": null,
+            "responsible": "Сергей Волков"
+          },
+          "analysis": {
+            "status": "at_risk",
+            "insight": "Согласование зависло на третьем этапе",
+            "action_needed": true
+          },
+          "quote": "там до сих пор третье согласование висит",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:15:19.798006+00:00",
+          "_agent": "KPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "kpi"
+        }
+      ],
+      "opinions": [
+        {
+          "opinion_id": "opinion_001",
+          "author": "Сергей Волков",
+          "opinion_summary": "Сергей испытывает нервозность в преддверии комитета через две недели из-за задержек и отсутствия прогресса.",
+          "topic": "Предстоящий комитет и текущая нервозность",
+          "opinion_category": "personal",
+          "sentiment_analysis": {
+            "primary_sentiment": "negative",
+            "intensity": 0.7,
+            "emotional_undertones": [
+              "тревога",
+              "напряжение"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "Комитет через две недели",
+              "Третье согласование до сих пор висит"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": []
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "Успешно отчитаться перед комитетом",
+              "Снизить личные риски"
+            ],
+            "risk_concerns": [
+              "Отсутствие результатов к моменту комитета"
+            ],
+            "opportunity_focus": [
+              "Получить конкретные материалы для демонстрации прогресса"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.8,
+            "authority_level": "experienced",
+            "social_influence": "high",
+            "likely_supporters": [
+              "Никита Фролов"
+            ]
+          },
+          "business_implications": {
+            "strategic_alignment": "aligned",
+            "resource_implications": [
+              "Необходимость срочной подготовки статус-документа"
+            ],
+            "risk_assessment": "high"
+          },
+          "quote": "Комитет через две недели, если честно, у меня сейчас немного нервно.",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:15:23.292621+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        },
+        {
+          "opinion_id": "opinion_002",
+          "author": "Сергей Волков",
+          "opinion_summary": "Считает неприемлемым приходить на комитет с формулировкой «ждём согласования», требуя конкретных результатов.",
+          "topic": "Требования к материалам для комитета",
+          "opinion_category": "tactical",
+          "sentiment_analysis": {
+            "primary_sentiment": "negative",
+            "intensity": 0.8,
+            "emotional_undertones": [
+              "раздражение",
+              "требовательность"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "Затягивание процессов согласования доступа к API"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": []
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "Показать реальную работу комитета",
+              "Защитить свою позицию перед руководством"
+            ],
+            "risk_concerns": [
+              "Неубедительный отчет перед комитетом"
+            ],
+            "opportunity_focus": [
+              "Наличие осязаемых промежуточных результатов"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.9,
+            "authority_level": "experienced",
+            "social_influence": "high",
+            "likely_supporters": []
+          },
+          "business_implications": {
+            "strategic_alignment": "aligned",
+            "resource_implications": [
+              "Перераспределение фокуса команды Гелиона на подготовку отчетности"
+            ],
+            "risk_assessment": "medium"
+          },
+          "quote": "мне через две недели нужно что-то конкретное на комитет, а не «ждём согласования»",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:15:23.292633+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        },
+        {
+          "opinion_id": "opinion_003",
+          "author": "Сергей Волков",
+          "opinion_summary": "Отдельный статус-документ с указанием готового каркаса, зависимостей и дат будет полезен для демонстрации движения.",
+          "topic": "Полезность статус-документа",
+          "opinion_category": "process",
+          "sentiment_analysis": {
+            "primary_sentiment": "positive",
+            "intensity": 0.7,
+            "emotional_undertones": [
+              "удовлетворение",
+              "одобрение"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "Документ позволит показать движение, даже если процесс не полностью под его контролем"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": []
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "Наличие аргументов для защиты проекта"
+            ],
+            "risk_concerns": [
+              "Смещение фокуса внимания из-за бюрократии"
+            ],
+            "opportunity_focus": [
+              "Использование промежуточных артефактов для отчета"
+            ],
+            "personal_stake": "medium"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.7,
+            "authority_level": "experienced",
+            "social_influence": "medium",
+            "likely_supporters": [
+              "Никита Фролов"
+            ]
+          },
+          "business_implications": {
+            "strategic_alignment": "aligned",
+            "resource_implications": [
+              "Затраты времени команды Гелиона на составление документа"
+            ],
+            "risk_assessment": "low"
+          },
+          "quote": "Это было бы полезно, да. Так я хотя бы покажу, что движение есть, даже если не всё в моей власти.",
+          "confidence_score": 0.9,
+          "_extracted_at": "2026-08-25T18:15:23.292638+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        },
+        {
+          "opinion_id": "opinion_004",
+          "author": "Сергей Волков",
+          "opinion_summary": "Поддерживает партнерские отношения с «Гелионом», но подчеркивает необходимость осязаемых результатов для комитета.",
+          "topic": "Партнерские отношения и поддержка подрядчика",
+          "opinion_category": "personal",
+          "sentiment_analysis": {
+            "primary_sentiment": "mixed",
+            "intensity": 0.6,
+            "emotional_undertones": [
+              "лояльность",
+              "прагматизм"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "Личное доверие есть, но требуются формальные показатели для комитета"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": []
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "Сохранение конструктивных отношений с вендором",
+              "Выполнение корпоративных требований"
+            ],
+            "risk_concerns": [
+              "Потеря лица перед комитетом при отсутствии формальных результатов"
+            ],
+            "opportunity_focus": [
+              "Совместное преодоление бюрократических барьеров"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.8,
+            "authority_level": "experienced",
+            "social_influence": "high",
+            "likely_supporters": [
+              "Никита Фролов"
+            ]
+          },
+          "business_implications": {
+            "strategic_alignment": "aligned",
+            "resource_implications": [],
+            "risk_assessment": "low"
+          },
+          "quote": "я по-прежнему за вас, но мне нужно этим кормить комитет, а не только личным доверием.",
+          "confidence_score": 0.9,
+          "_extracted_at": "2026-08-25T18:15:23.292642+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        }
+      ],
+      "ideas": [
+        {
+          "idea_id": "idea_001",
+          "author": "Никита Фролов",
+          "idea_summary": "Подготовить отдельный статус-документ с указанием того, что уже готово по каркасу, что зависит от API, и с предварительными датами для предоставления на комитет.",
+          "idea_category": "process",
+          "innovation_assessment": {
+            "novelty_level": "incremental",
+            "creativity_score": 0.4,
+            "uniqueness": "common",
+            "inspiration_source": [
+              "Необходимость отчитаться перед комитетом в условиях задержки доступа к API"
+            ]
+          },
+          "feasibility_analysis": {
+            "technical_feasibility": "high",
+            "resource_requirements": {
+              "financial": "минимальные",
+              "human": "команда проекта Гелион",
+              "time": "в течение текущей недели"
+            },
+            "implementation_complexity": "simple",
+            "risk_factors": [
+              "Комитет может потребовать реальные результаты вместо промежуточного статуса"
+            ]
+          },
+          "business_potential": {
+            "market_opportunity": "niche",
+            "competitive_advantage": "moderate",
+            "revenue_impact": "medium",
+            "scalability": "limited_scalability"
+          },
+          "stakeholder_impact": {
+            "customers": "positive",
+            "employees": "neutral",
+            "partners": "neutral"
+          },
+          "implementation_roadmap": {
+            "quick_wins": [
+              "Сбор информации о текущей готовности каркаса"
+            ],
+            "pilot_opportunities": [
+              "Презентация документа на внутреннем комитете Титан-Банка"
+            ],
+            "success_metrics": [
+              "Успешное прохождение комитетного этапа для клиента"
+            ]
+          },
+          "priority_scoring": {
+            "impact_score": 0.8,
+            "effort_score": 0.2,
+            "urgency_score": 0.9,
+            "strategic_fit": 0.9,
+            "overall_priority": "critical"
+          },
+          "next_steps": [
+            "Подготовить статус-документ на этой неделе",
+            "Передать документ Сергею Волкаву"
+          ],
+          "quote": "Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:15:19.859438+00:00",
+          "_agent": "IdeaAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "idea"
+        }
+      ],
+      "project_statuses": [
+        {
+          "project_id": "titan_bank_integration",
+          "project_name": "Проект внедрения для Титан-Банка",
+          "description": "Внедрение решения компании «Гелион» в «Титан-Банке», подготовка к комитету через две недели.",
+          "project_category": "infrastructure",
+          "lifecycle_stage": "execution",
+          "status_assessment": {
+            "current_status": "in_progress",
+            "health_indicator": "yellow",
+            "progress_percentage": null,
+            "last_update": "Комитет через две недели, зависло третье согласование по доступу к API."
+          },
+          "scope_analysis": {
+            "primary_objectives": [
+              "Подготовка материалов к комитету через две недели",
+              "Получение доступа к API"
+            ],
+            "deliverables": [
+              "Отдельный статус-документ (что готово по каркасу, что зависит от API, с датами)"
+            ],
+            "success_criteria": [
+              "Успешное представление статуса на комитете"
+            ],
+            "scope_clarity": "moderate"
+          },
+          "stakeholder_mapping": {
+            "project_sponsor": "Сергей Волков",
+            "project_manager": "Никита Фролов",
+            "core_team": [
+              "Команда Гелион",
+              "Команда Титан-Банк"
+            ],
+            "key_stakeholders": [
+              "Сергей Волков",
+              "Комитет"
+            ]
+          },
+          "resource_analysis": {
+            "budget_info": {
+              "estimated_budget": null,
+              "budget_status": "on"
+            },
+            "human_resources": {
+              "team_size": null,
+              "skill_gaps": []
+            }
+          },
+          "timeline_analysis": {
+            "estimated_duration": null,
+            "start_date": null,
+            "target_completion": "Через 2 недели (комитет)",
+            "critical_milestones": [
+              "Комитет через две недели",
+              "Подготовка статус-документа на этой неделе"
+            ],
+            "timeline_risk": "high"
+          },
+          "risk_assessment": {
+            "identified_risks": [
+              {
+                "risk_description": "Задержка доступа к API из-за зависшего третьего согласования",
+                "probability": "high",
+                "impact": "high",
+                "mitigation_strategy": "Подготовка отдельного статус-документа с детализацией готовности каркаса и зависимостей"
+              }
+            ],
+            "overall_risk_level": "high"
+          },
+          "business_value": {
+            "strategic_alignment": "high",
+            "expected_roi": null,
+            "business_benefits": [
+              "Успешное прохождение комитета"
+            ]
+          },
+          "dependencies": {
+            "internal_dependencies": [],
+            "external_dependencies": [
+              "Доступ к API",
+              "Согласование безопасности"
+            ],
+            "blocking_factors": [
+              "Висит третье согласование по доступу к API"
+            ]
+          },
+          "current_issues": [
+            "Отсутствие доступа к API",
+            "Зависло третье согласование",
+            "Необходимо предоставить конкретные данные для комитета через две недели"
+          ],
+          "recent_achievements": [],
+          "quote": "Комитет через две недели, если честно, у меня сейчас немного нервно.",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:15:20.245878+00:00",
+          "_agent": "ProjectStatusAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "project_status"
+        }
+      ],
+      "enhanced_kpis": [],
+      "fact_checks": [],
+      "cogni_profiles": [
+        {
+          "name": "Сергей Волков",
+          "confidence": 0.3,
+          "_agent": "CogniDimensionsAgent",
+          "_agent_version": "1.0.0",
+          "_extracted_at": "2026-08-25T18:15:21.128883+00:00",
+          "_entity_type": "cogni_profile",
+          "light_cone": {
+            "horizon": "две недели",
+            "scale": null,
+            "depth": null,
+            "confidence": 0.3,
+            "quote": "Комитет через две недели, если честно, у меня сейчас немного нервно."
+          },
+          "phase_state": {
+            "state": "transition",
+            "confidence": 0.3,
+            "note": "немного нервно перед комитетом",
+            "quote": "Комитет через две недели, если честно, у меня сейчас немного нервно."
+          }
+        },
+        {
+          "name": "Никита Фролов",
+          "confidence": 0.3,
+          "_agent": "CogniDimensionsAgent",
+          "_agent_version": "1.0.0",
+          "_extracted_at": "2026-08-25T18:15:21.128961+00:00",
+          "_entity_type": "cogni_profile",
+          "light_cone": {
+            "horizon": "на этой неделе",
+            "scale": null,
+            "depth": null,
+            "confidence": 0.3,
+            "quote": "Подготовим на этой неделе."
+          }
+        }
+      ]
+    },
+    "cross_insights": {
+      "decision_task_links": [
+        {
+          "decision_id": "dec-01",
+          "task_id": "task_2",
+          "link_type": "creates"
+        }
+      ],
+      "participant_responsibilities": [
+        {
+          "participant_id": "nikita_frolov",
+          "name": "Никита Фролов",
+          "task_ids": [
+            "task_2"
+          ]
+        },
+        {
+          "participant_id": "sergey_volkov",
+          "name": "Сергей Волков",
+          "task_ids": [
+            "task_1"
+          ]
+        }
+      ],
+      "entity_mentions": [],
+      "kpi_trends": []
+    },
+    "cross_meeting_links": {},
+    "psychological_analysis": {
+      "personality_profiles": [
+        {
+          "name": "Никита Фролов",
+          "personality_type": "C/S (Комбинация по модели DISC: ориентация на стабильность и системность / внимание к деталям)",
+          "dominant_traits": [
+            "Исполнительность",
+            "Конструктивность",
+            "Готовность брать на себя ответственность",
+            "Ориентация на поиск решений"
+          ],
+          "communication_style": "Деловой, лаконичный и спокойный. Использует конкретные предложения, не вступает в эмоциональные споры, держит фокус на решении задач клиента.",
+          "motivation_drivers": [
+            "Успешное прохождение клиентом комитета",
+            "Снижение напряжения в коммуникации с заказчиком",
+            "Выполнение взятых на себя обязательств"
+          ],
+          "fears_concerns": [
+            "Затягивание процессов со стороны клиента (ожидание доступов к API)",
+            "Непроясненность статуса проекта перед важными внутренними процедурами клиента"
+          ],
+          "decision_style": "Консенсусный, ориентированный на поддержку партнера и совместное преодоление трудностей",
+          "stress_response": "Сохраняет хладнокровие и предлагает конкретные практические шаги (инициатива с подготовкой статус-документа)",
+          "conflict_approach": "Компромисс и сотрудничество (сглаживает напряжение клиента через предложение помощи и структурирование информации)",
+          "leadership_style": "Партнерский, поддерживающий",
+          "team_role": "Исполнитель / аккаунт-менеджер (обеспечивает операционную поддержку и коммуникацию)",
+          "strengths": [
+            "Умение слышать боль и запросы клиента",
+            "Быстрая реакция на возражения и стресс партнера",
+            "Проактивность в создании артефактов для помощи клиенту (статус-документ)"
+          ],
+          "development_areas": [
+            "Более активное управление внешними рисками (например, контроль процесса выдачи доступов)",
+            "Предвосхищение вопросов клиента до того, как они перейдут в острую фазу"
+          ],
+          "management_tips": [
+            "Давать четкие задачи и поддерживать инициативу по структурированию проектной документации",
+            "Учитывать его склонность брать ответственность за проблемные участки взаимодействия с клиентом"
+          ],
+          "role": ""
+        },
+        {
+          "name": "Сергей Волков",
+          "personality_type": "Di (Доминирование / Влияние) с выраженным фокусом на результат",
+          "dominant_traits": [
+            "Прямолинейность",
+            "Прагматичность",
+            "Требовательность к конкретике",
+            "Открытость в коммуникации"
+          ],
+          "communication_style": "Деловой, прямой, ориентированный на факты и сроки, без излишней дипломатии («если честно», «мне нужно этим кормить комитет»).",
+          "motivation_drivers": [
+            "Успешное прохождение предстоящего комитета",
+            "Наличие материальных доказательств прогресса (артефактов, документов), которые можно предъявить руководству",
+            "Контроль над сроками и рисками проекта"
+          ],
+          "fears_concerns": [
+            "Оказаться перед комитетом без аргументов и конкретных результатов («ждём согласования» не устраивает)",
+            "Зависеть от внутренних бюрократических задержек («третье согласование висит»), на которые трудно повлиять"
+          ],
+          "decision_style": "Рациональный и прагматичный; ищет инструменты для обоснования решений перед вышестоящим органом (комитетом).",
+          "stress_response": "Открыто признает наличие стресса и дедлайнов («у меня сейчас немного нервно»), переходит к поиску практических решений (запрос статус-документа).",
+          "conflict_approach": "Компромисс и сотрудничество при жестком отстаивании своих интересов (поддерживает подрядчика («я по-прежнему за вас»), но требует реальных инструментов для отчета).",
+          "leadership_style": "Административный, ориентированный на подотчетность и защиту интересов своего направления перед внутренним комитетом.",
+          "team_role": "Спонсор / внутренний защитник проекта, которому требуются аргументы для защиты результатов перед стейкхолдерами.",
+          "strengths": [
+            "Открытая обратная связь и прозрачность в отношении внутренних проблем банка",
+            "Поддержка подрядчика в сложных ситуациях («я по-прежнему за вас»)",
+            "Четкое понимание своих задач и потребностей (фокус на комитете)"
+          ],
+          "development_areas": [
+            "Управление внутренними бюрократическими рисками (согласования внутри банка)",
+            "Снижение уровня оперативной тревожности за счет более раннего планирования"
+          ],
+          "management_tips": [
+            "Предоставлять структурированные статус-документы с четкими датами и разделением ответственности (что готово, что зависит от API)",
+            "Обеспечивать его «аргументами» для внутренних отчетов и комитетов заранее, до того как он начнет испытывать дефицит информации",
+            "Держать открытый диалог и не скрывать текущие задержки — он ценит честность и совместный поиск решений"
+          ],
+          "role": "директор по закупкам"
+        }
+      ],
+      "hidden_motives": [
+        {
+          "participant": "Сергей Волков",
+          "stated_position": "Нужен доступ к API и конкретные результаты для комитета через две недели, переживает из-за затягивания согласований внутри банка.",
+          "true_intentions": [
+            "Переложить часть ответственности за возможный провал на комитете на подрядчика («Гелион»)",
+            "Получить артефакты (документы), которые можно использовать как щит перед вышестоящим руководством",
+            "Заставить «Гелион» работать активнее, создавая искусственное ощущение дедлайна и давления"
+          ],
+          "personal_agenda": [
+            "Сохранить лицо и позицию директора по закупкам перед комитетом",
+            "Избежать вопросов к себе со стороны топ-менеджмента за то, что процесс согласования API завис на третьем этапе",
+            "Обеспечить себе безопасное прикрытие на случай неуспешного прохождения комитета"
+          ],
+          "fears": [
+            "Получить взтык или потерю авторитета/должности из-за задержки проекта на комитете",
+            "Остаться виноватым в бюрократической волоките («третье согласование висит»)",
+            "Потерять контроль над подрядчиком и ситуацией"
+          ],
+          "power_seeking": "Умеренное/оборонительное. Пытается использовать свое положение заказчика, чтобы давить на исполнителя, но сам ограничен внутренней бюрократией банка («не все в моей власти»)",
+          "defense_mechanisms": [
+            "Перекладывание ответственности («мне нужно этим кормить комитет»)",
+            "Эмоциональное давление («у меня сейчас немного нервно»)",
+            "Манипуляция лояльностью («я по-прежнему за вас, но...»)"
+          ],
+          "manipulation_signs": [
+            "Использование эмоционального давления и создание чувства вины («мне нужно этим кормить комитет, а не только личным доверием»)",
+            "Апелляция к личной преданности для получения неофициальной или сверхнормативной помощи"
+          ],
+          "authenticity_score": 0.65,
+          "risk_level": "high"
+        },
+        {
+          "participant": "Никита Фролов",
+          "stated_position": "Проводит чек-ин, констатирует отсутствие доступа к API из-за бюрократии, предлагает оперативное решение в виде статус-документа.",
+          "true_intentions": [
+            "Зафиксировать на бумаге, что задержка происходит по вине банка (нет доступа к API), чтобы защитить свою компанию от штрафов и претензий",
+            "Удержать клиента в зоне комфорта, сгладить напряжение и показать бурную деятельность",
+            "Минимизировать собственный риск срыва сроков за счет перевода фокуса внимания на «каркас» и планы"
+          ],
+          "personal_agenda": [
+            "Успешно отчитаться перед своим руководством о статусе проблемного клиента",
+            "Сохранить контракт с Титан-Банком",
+            "Снять с команды «Гелиона» вину за простой"
+          ],
+          "fears": [
+            "Получить необоснованные претензии и пени за срыв сроков проекта, на которые подрядчик не может повлиять",
+            "Потерять ключевого клиента из-за негатива на комитете",
+            "Оказаться крайним в коммуникации с токсичным заказчиком"
+          ],
+          "power_seeking": "Низкое. Занимает оборонительно-исполнительскую позицию, подстраивается под запросы клиента, предлагает компромиссы.",
+          "defense_mechanisms": [
+            "Документирование и фиксация статусов («подготовим отдельный статус-документ — что уже готово, с датами»)",
+            "Конструктивное переключение темы с проблемы (API) на решение (документ)",
+            "Соглашательство и эмпатия"
+          ],
+          "manipulation_signs": [
+            "Мягкое перекладывание фокуса с нерешаемой проблемы (API) на видимость работы (статус-документ)"
+          ],
+          "authenticity_score": 0.8,
+          "risk_level": "medium"
+        }
+      ],
+      "group_dynamics": {
+        "trust_level": "medium",
+        "trust_indicators": [
+          "Открытое выражение стресса и недовольства со стороны клиента («у меня сейчас немного нервно»)",
+          "Признание проблем с согласованиями со стороны банка и отсутствием подвижек со стороны исполнителя",
+          "Прямое подтверждение поддержки («я по-прежнему за вас») несмотря на раздражение"
+        ],
+        "psychological_safety": "medium",
+        "safety_indicators": [
+          "Сергей Волков открыто говорит о бюрократических проблемах и давлении комитета",
+          "Никита Фролов честно признает отсутствие прогресса по письму, не пытаясь приукрасить ситуацию",
+          "Присутствует легкий барьер из-за корпоративной субординации и жестких дедлайнов"
+        ],
+        "hidden_conflicts": [
+          {
+            "parties": [
+              "Сергей Волков",
+              "Внутренние службы безопасности / согласователи Титан-Банка"
+            ],
+            "nature": "Бюрократическое торможение процесса (третье согласование висит), из-за чего страдают сроки проекта",
+            "intensity": "high",
+            "trigger_topics": [
+              "Доступ к API",
+              "Безопасность",
+              "Согласования"
+            ]
+          },
+          {
+            "parties": [
+              "Сергей Волков",
+              "Команда Гелиона (Никита и его коллеги)"
+            ],
+            "nature": "Разрыв между ожиданиями заказчика по темпам работ и реальной скоростью из-за внешних блокировок",
+            "intensity": "medium",
+            "trigger_topics": [
+              "Дедлайны",
+              "Отчетность перед комитетом"
+            ]
+          }
+        ],
+        "alliances": [
+          {
+            "members": [
+              "Никита Фролов",
+              "Сергей Волков"
+            ],
+            "basis": "Общая заинтересованность в успешном прохождении комитета и защите проекта перед руководством банка",
+            "strength": "medium"
+          }
+        ],
+        "power_dynamics": [
+          {
+            "influencer": "Сергей Волков",
+            "influenced": [
+              "Никита Фролов",
+              "Компания «Гелион»"
+            ],
+            "influence_type": "Административное и эмоциональное давление (запрос конкретных артефактов для защиты перед комитетом)",
+            "legitimacy": "Высокая (заказчик, от которого зависит судьба проекта на комитете)"
+          }
+        ],
+        "collective_fears": [
+          "Провал на предстоящем через две недели комитете из-за отсутствия доступа к API и конкретных результатов",
+          "Блокировка проекта внутренними процедурами безопасности банка"
+        ],
+        "team_culture": {
+          "decision_making": "Централизованное и бюрократическое (решения зависят от множественных согласований внутри банка)",
+          "communication_norms": "Деловая, прагматичная, с элементами доверительной прямоты в кризисных ситуациях",
+          "conflict_resolution": "Поиск компромиссов и оперативных артефактов (статус-документы) для сглаживания внешнего давления",
+          "innovation_attitude": "Затруднено жесткими рамками безопасности и процедур"
+        },
+        "group_maturity": "norming",
+        "improvement_areas": [
+          "Улучшение проактивности в управлении ожиданиями стейкхолдеров",
+          "Создание совместных инструментов обхода бюрократических барьеров",
+          "Снижение зависимости статуса проекта от затягивания технических доступов"
+        ]
+      },
+      "behavioral_predictions": [
+        {
+          "participant": "Никита Фролов",
+          "stress_reaction": "Сохраняет хладнокровие, переходит в режим поиска практических решений (предложение создать статус-документ), не поддается на эмоциональное давление клиента.",
+          "conflict_behavior": "Стремится к сотрудничеству и компромиссу, сглаживает углы, берет на себя дополнительную ответственность для снижения градуса напряжения.",
+          "change_adaptation": "Адаптируется системно и оперативно, быстро перестраивает приоритеты под текущие боли клиента (фокус на подготовке материалов для комитета).",
+          "deadline_pressure": "Использует дедлайны как стимул для структурирования работы и выдачи конкретных артефактов («подготовим на этой неделе»); действует четко по плану.",
+          "criticism_response": "Воспринимает критику конструктивно, отделяя эмоции заказчика от реальных операционных задач, не оправдывается, а предлагает исправление ситуации.",
+          "leadership_emergence": "Проявит партнерское лидерство через взятие на себя инициативы по подготовке документов и управление коммуникацией перед комитетом.",
+          "collaboration_style": "Партнерский, поддерживающий, ориентированный на помощь клиенту в прохождении внутренних процедур («щит» для заказчика).",
+          "likely_triggers": [
+            "Полная изоляция со стороны клиента и отказ выходить на связь",
+            "Постоянное смещение дедлайнов без объективных причин со стороны банка",
+            "Необоснованные обвинения в срыве сроков при отсутствии доступов к API"
+          ],
+          "positive_triggers": [
+            "Конструктивная обратная связь от клиента",
+            "Успешное согласование статус-документа",
+            "Снижение напряжения и признание заслуг команды «Гелиона»"
+          ],
+          "prediction_confidence": 0.95
+        },
+        {
+          "participant": "Сергей Волков",
+          "stress_reaction": "Проявляет раздражение и нервозность, усиливает давление на подрядчика, перекладывает ответственность за бюрократические задержки на внешние факторы.",
+          "conflict_behavior": "Использует манипуляции, эмоциональное давление и апелляцию к высокому статусу комитета, чтобы заставить подрядчика двигаться быстрее («мне нужно этим кормить комитет»).",
+          "change_adaptation": "Адаптируется тяжело, испытывает стресс из-за неподконтрольной ему бюрократии («третье согласование висит»), пытается компенсировать это за счет контроля над подрядчиком.",
+          "deadline_pressure": "Передает давление дедлайна на команду «Гелиона», требуя готовых артефактов и результатов, которые можно показать руководству.",
+          "criticism_response": "Может воспринять критику сверху болезненно, поэтому заранее ищет виноватых вовне и требует от подрядчика материалы для самозащиты.",
+          "leadership_emergence": "Проявляет директивно-манипулятивный стиль, требуя от подчиненных и подрядчиков решений своих проблем перед лицом высшего руководства.",
+          "collaboration_style": "Прагматичный и утилитарный: сотрудничает, пока подрядчик помогает ему решать его внутренние карьерные и политические задачи («я по-прежнему за вас, но...»).",
+          "likely_triggers": [
+            "Провал на комитете или жесткие вопросы руководства по поводу задержки API",
+            "Отказ подрядчика брать на себя подготовку отчетов и статус-документов",
+            "Затягивание сроков со стороны «Гелиона» при одновременном зависании согласований в банке"
+          ],
+          "positive_triggers": [
+            "Получение качественных готовых артефактов (статус-документ с датами), которые можно предъявить на комитете",
+            "Успешное продвижение согласования API внутри банка",
+            "Демонстрация подрядчиком полной готовности прикрыть его перед лицом руководства"
+          ],
+          "prediction_confidence": 0.9
+        }
+      ],
+      "conflict_risks": [
+        {
+          "conflict_type": "ресурсный",
+          "parties": [
+            "Сергей Волков",
+            "Внутренние службы безопасности / согласователи Титан-Банка"
+          ],
+          "root_cause": "Бюрократические задержки и медленная скорость согласования доступов к API внутри банка при жестком дедлайне комитета через две недели.",
+          "triggers": [
+            "Затягивание третьего согласования",
+            "Отказ или дальнейшее промедление службы безопасности в выдаче доступов к API",
+            "Отсутствие реальных технических результатов к моменту комитета"
+          ],
+          "probability": 0.8,
+          "impact": "high",
+          "early_warning_signs": [
+            "Клиент открыто нервничает",
+            "Признание Сергеем отсутствия подвижек со своей стороны",
+            "Зависание согласования на неопределенный срок"
+          ],
+          "prevention_strategies": [
+            "Подготовка Никитой детального статус-документа с четким разделением зон ответственности (что готово, что зависит от API)",
+            "Оказание помощи Сергею аргументами для защиты перед безопасниками"
+          ],
+          "resolution_approach": "Совместная выработка обходных путей (mock-данные, демонстрация архитектуры вместо живого API) для презентации на комитете",
+          "timeline": "Ближайшие 1-2 недели (вплоть до даты комитета)"
+        },
+        {
+          "conflict_type": "ролевой",
+          "parties": [
+            "Сергей Волков",
+            "Команда Гелиона (Никита и коллеги)"
+          ],
+          "root_cause": "Разрыв между необходимостью Сергея защищать проект перед внутренним комитетом банка и реальной невозможностью «Гелиона» двигаться дальше без технической инфраструктуры (API).",
+          "triggers": [
+            "Отсутствие осязаемых результатов для демонстрации комитету",
+            "Ожидание клиентом чудес или мгновенного прогресса при заблокированных ресурсах",
+            "Нехватка аргументов у Сергея («мне нужно этим кормить комитет, а не только личным доверием»"
+          ],
+          "probability": 0.6,
+          "impact": "medium",
+          "early_warning_signs": [
+            "Легкое раздражение в тоне клиента",
+            "Напоминание о том, что личного доверия недостаточно для отчета руководству"
+          ],
+          "prevention_strategies": [
+            "Проактивная подготовка «Гелионом» качественных артефактов (статус-документов, дорожных карт, пояснительных записок)",
+            "Регулярные короткие чек-ины для снятия тревожности клиента"
+          ],
+          "resolution_approach": "Проведение совместной репетиции или сверки материалов к комитету, чтобы снять опасения заказчика и вооружить его понятной структурой отчета",
+          "timeline": "В течение текущей недели при подготовке статус-документа"
+        }
+      ],
+      "management_recommendations": [
+        {
+          "category": "коммуникация",
+          "recommendation": "Сместить фокус коммуникации с процесса («ждём согласования») на осязаемые артефакты контроля («статус-документ с декомпозицией»), чтобы дать клиенту инструмент для защиты перед руководством.",
+          "target": "Никита Фролов",
+          "rationale": "Клиент с профилем Di (результат/доминирование) находится в стрессе из-за неопределенности и бюрократии. Ему нужны конкретные «артефакты власти» (документы, метрики), которыми он может отчитаться перед комитетом.",
+          "implementation": "Подготовить и согласовать с Сергеем статус-документ до конца текущей недели, четко разделив зоны ответственности: что сделано силами «Гелиона» и что заблокировано доступом к API.",
+          "expected_outcome": "Снижение уровня тревожности клиента, укрепление доверия и предоставление ему готовой защиты для комитета.",
+          "priority": "high",
+          "timing": "В течение 2-3 дней"
+        },
+        {
+          "category": "конфликты",
+          "recommendation": "Разработать технический обходной путь (mock-сервер, тестовые заглушки или автономную демонстрацию архитектуры) на случай, если служба безопасности Титан-Банка не успеет выдать доступы к API к дате комитета.",
+          "target": "Техническая команда «Гелиона» под руководством Никиты",
+          "rationale": "Риск неполучения доступов высок (0.8). Ожидание в пассивной позиции подставит под удар репутацию Сергея Волкова на комитете, что разрушит его лояльность к подрядчику.",
+          "implementation": "Поставить задачу технарям развернуть локальный макет интерфейса с демонстрационными данными, чтобы показать готовность каркаса «вживую», не дожидаясь реального API.",
+          "expected_outcome": "Нивелирование рисков из-за бюрократии банка и демонстрация высокой проактивности команды «Гелиона».",
+          "priority": "high",
+          "timing": "Немедленно"
+        },
+        {
+          "category": "мотивация",
+          "recommendation": "Официально зафиксировать и подсветить Сергею Волкам признание его партнерской позиции и поддержку («я по-прежнему за вас»), выразив понимание его сложностей с внутренними согласователями.",
+          "target": "Никита Фролов",
+          "rationale": "Клиент прямо говорит: «мне нужно этим кормить комитет, а не только личным доверием». Ему важно чувствовать не просто формальное исполнение контракта, а союзничество и эмоциональную поддержку в его аппаратной борьбе.",
+          "implementation": "При отправке статус-документа добавить короткое эмпатичное сопроводительное письмо, подчеркивающее готовность помочь ему в аргументации перед внутренними службами.",
+          "expected_outcome": "Укрепление лояльности ключевого лица, превращение его в сильного адвоката проекта внутри банка.",
+          "priority": "medium",
+          "timing": "При отправке статус-документа"
+        },
+        {
+          "category": "лидерство",
+          "recommendation": "Внедрить практику еженедельных 10-минутных «синхронов» для снятия операционного напряжения и оперативного управления ожиданиями стейкхолдера.",
+          "target": "Никита Фролов",
+          "rationale": "Профиль клиента (Di) требует быстрого доступа к информации в стрессовых ситуациях. Формат коротких чек-инов идеально подходит для снижения его тревожности без траты большого количества времени.",
+          "implementation": "Забронировать в календарях короткие звонки по вторникам перед комитетом для сверки статусов и корректировки планов.",
+          "expected_outcome": "Предотвращение накопительного стресса у клиента и полный контроль над информационной повесткой со стороны «Гелиона».",
+          "priority": "medium",
+          "timing": "Регулярно до даты комитета"
+        },
+        {
+          "category": "развитие",
+          "recommendation": "Провести внутренний разбор кейса с командой на тему управления ожиданиями клиентов в условиях жесткой корпоративной бюрократии заказчика.",
+          "target": "Проектная команда «Гелиона»",
+          "rationale": "Ситуация с Титан-Банком — классический пример проектного риска, когда подрядчик становится заложником внутренних процессов клиента. Команде важно развивать навык «предугадывания» потребностей стейкхолдеров.",
+          "implementation": "На ближайшей ретроспективе разобрать этот кейс как пример того, как проактивная подготовка документов и фокус на защиту партнера спасают сделку от эскалации.",
+          "expected_outcome": "Повышение общей квалификации команды в работе с ключевыми лицами крупного бизнеса.",
+          "priority": "low",
+          "timing": "После завершения комитета"
+        }
+      ],
+      "stats": {
+        "duration_seconds": 27.82,
+        "profiles_created": 2,
+        "motives_identified": 2,
+        "conflicts_detected": 2,
+        "recommendations_generated": 5
+      }
+    },
+    "future_predictions": {
+      "scenarios": [
+        {
+          "name": "Оптимистичный",
+          "type": "optimistic",
+          "probability": 0.25,
+          "description": "Команда «Гелиона» вовремя готовит детальный статус-документ. Сергей Волков использует его на комитете, демонстрируя высокую готовность каркаса. Это снимает вопросы комитета по поводу задержки API, и параллельно банк успешно завершает третье согласование, открывая доступ разработчикам.",
+          "time_horizon": "1 месяц",
+          "key_events": [
+            "Никита Фролов вовремя (на текущей неделе) передает Сергею статус-документ.",
+            "Комитет через две недели принимает отчет положительно, оценивая прозрачность проекта.",
+            "Служба безопасности банка ускоряет процесс и одобряет доступ к API."
+          ],
+          "triggers": [
+            "Качественная и прозрачная структура статус-документа.",
+            "Административный ресурс Сергея Волкова на комитете."
+          ],
+          "consequences": [
+            "Укрепление доверия со стороны заказчика («Титан-Банк» лоялен к «Гелиону»).",
+            "Снятие блокировки по интеграции и переход проекта в активную фазу."
+          ],
+          "affected_projects": [
+            "Проект внедрения для Титан-Банка"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "decision_points": [
+            "Утверждение структуры статус-документа внутри команды «Гелион»."
+          ],
+          "success_factors": [
+            "Оперативная подготовка качественного отчета.",
+            "Пробитие барьера третьего согласования в банке."
+          ],
+          "failure_factors": [
+            "Непредвиденные бюрократические задержки внутри банка, несмотря на хороший отчет."
+          ],
+          "recommended_actions": [
+            "Подготовить статус-документ точно в срок (на этой неделе).",
+            "Включить в документ четкий план действий на случай дальнейшего затягивания API."
+          ]
+        },
+        {
+          "name": "Реалистичный",
+          "type": "realistic",
+          "probability": 0.55,
+          "description": "Никита готовит статус-документ, который позволяет Сергею отчитаться на комитете и «прикрыть тылы» перед руководством. Однако третье согласование по доступу к API затягивается дольше ожидаемого. Комитет выражает озабоченность, но проект не останавливается, так как команда «Гелиона» продолжает дорабатывать каркас системы.",
+          "time_horizon": "1 месяц",
+          "key_events": [
+            "Статус-документ успешно подготовлен и передан Сергею Волкову на текущей неделе.",
+            "Комитет через две недели проходит напряженно, но отчет по каркасу удовлетворяет руководство.",
+            "Доступ к API остается заблокированным на этапе третьего согласования еще на 2-3 недели."
+          ],
+          "triggers": [
+            "Медленная бюрократическая машина «Титан-Банка» при согласовании доступа к API.",
+            "Готовность каркаса решения со стороны «Гелиона»."
+          ],
+          "consequences": [
+            "Сергей Волков сохраняет позиции и лояльность к партнеру, но испытывает стресс.",
+            "Смещение сроков интеграционных задач из-за отсутствия API."
+          ],
+          "affected_projects": [
+            "Проект внедрения для Титан-Банка"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "decision_points": [
+            "Согласование промежуточных результатов на комитете на основе имеющегося каркаса.",
+            "Перенос сроков интеграционного этапа."
+          ],
+          "success_factors": [
+            "Убедительный и детальный статус-документ, показывающий работу «Гелиона».",
+            "Поддержание постоянного контакта между Никитой и Сергеем."
+          ],
+          "failure_factors": [
+            "Отсутствие реальных интеграционных тестов из-за задержки API."
+          ],
+          "recommended_actions": [
+            "Сфокусироваться на максимальной готовности каркаса до комитета.",
+            "Проработать с Сергеем сценарий ответов на неудобные вопросы комитета о задержке API."
+          ]
+        },
+        {
+          "name": "Пессимистичный",
+          "type": "pessimistic",
+          "probability": 0.2,
+          "description": "Статус-документ подготовлен, но комитет через две недели крайне негативно оценивает отсутствие прогресса по интеграции с API. Сергей Волков не может защитить команду «Гелиона» только «личным доверием», так как руководство банка требует реальных результатов. Третье согласование зависает на неопределенный срок.",
+          "time_horizon": "1 месяц",
+          "key_events": [
+            "Комитет жестко критиkuje задержку проекта по вине неполученного API.",
+            "Сергей Волков теряет политический вес внутри банка из-за пробуксовки закупки/внедрения.",
+            "Банк начинает неофициально рассматривать вопрос о штрафных санкциях или заморозке этапов."
+          ],
+          "triggers": [
+            "Затяжной характер внутренних согласований безопасности в «Титан-Банке».",
+            "Отсутствие у Сергея сильных аргументов для комитета, кроме бумажного отчета о каркасе."
+          ],
+          "consequences": [
+            "Риск ухудшения отношений с ключевым спонсором проекта (Сергеем Волковым).",
+            "Финансовые или репутационные потери для компании «Гелион»."
+          ],
+          "affected_projects": [
+            "Проект внедрения для Титан-Банка"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Сергей Волков",
+            "Члены комитета «Титан-Банка»"
+          ],
+          "decision_points": [
+            "Эскалация проблемы на уровень выше руководства «Титан-Банка».",
+            "Пересмотр коммерческих или юридических обязательств по срокам."
+          ],
+          "success_factors": [
+            "Способность Никиты Фролова предложить обходные пути (mock-сервисы / заглушки) для демонстрации функционала без реального API."
+          ],
+          "failure_factors": [
+            "Полная зависимость проекта от недоступного API и жесткость регламентов безопасности банка."
+          ],
+          "recommended_actions": [
+            "Срочно обсудить с технической командой возможность создания заглушек (mocks) для имитации API на время согласований.",
+            "Инициировать совместную встречу с участием ИБ-отдела банка для разморозки третьего согласования."
+          ]
+        }
+      ],
+      "project_predictions": [],
+      "task_predictions": [
+        {
+          "task": "Получить доступ к API",
+          "assignee": "Сергей Волков",
+          "deadline": "через две недели",
+          "completion_probability": 0.7,
+          "on_time_probability": 0.4,
+          "predicted_completion": "2026-06-28",
+          "delay_days": 3,
+          "blockers": [
+            "Третье согласование висит со стороны банка"
+          ],
+          "dependencies": [],
+          "priority_score": 0.9,
+          "effort_estimate": "medium",
+          "risk_factors": [
+            "Процедуры безопасности банка затягивают процесс",
+            "Зависимость от внутренних согласований клиента"
+          ],
+          "success_factors": [
+            "Заинтересованность Сергея Волкова в успехе комитета"
+          ]
+        },
+        {
+          "task": "Подготовить отдельный статус-документ для комитета",
+          "assignee": "Никита Фролов",
+          "deadline": "на этой неделе",
+          "completion_probability": 1.0,
+          "on_time_probability": 0.9,
+          "predicted_completion": "2026-06-14",
+          "delay_days": 0,
+          "blockers": [],
+          "dependencies": [],
+          "priority_score": 0.8,
+          "effort_estimate": "low",
+          "risk_factors": [],
+          "success_factors": [
+            "Четкое понимание задачи обеими сторонами",
+            "Инициатива исходит от исполнителя"
+          ]
+        }
+      ],
+      "risks": [
+        {
+          "risk_name": "Задержка предоставления доступа к API",
+          "category": "technical",
+          "description": "Доступ к API «Титан-Банка» заблокирован на этапе третьего согласования внутри банка, что тормозит техническую реализацию проекта.",
+          "probability": 0.9,
+          "impact": "high",
+          "affected_projects": [
+            "Проект внедрения для Титан-Банка"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "root_causes": [
+            "Бюрократические процедуры безопасности в «Титан-Банке»",
+            "Зависшее третье согласование"
+          ],
+          "triggers": [
+            "Отсутствие движения по письму-обоснованию от команды «Гелион»"
+          ],
+          "early_warning_signs": [
+            "Отсутствие доступа к API на момент чек-ина перед комитетом",
+            "Затягивание согласования"
+          ],
+          "timeline": "Ближайшие 2 недели (до комитета)",
+          "mitigation_strategies": [
+            "Подготовка статус-документа для демонстрации прогресса по каркасу",
+            "Эскалация через Сергея Волкова"
+          ],
+          "contingency_plans": [
+            "Перенос сроков интеграции API в плане-графике, упор на готовность каркаса решения"
+          ],
+          "owner": "Никита Фролов",
+          "monitoring_frequency": "weekly"
+        },
+        {
+          "risk_name": "Репутационный и политический риск на комитете",
+          "category": "reputational",
+          "description": "Риск негативного решения комитета «Титан-Банка» через две недели из-за отсутствия фактических результатов интеграции (нет доступа к API), что подрывает позиции ключевого спонсора проекта Сергея Волкова.",
+          "probability": 0.7,
+          "impact": "critical",
+          "affected_projects": [
+            "Проект внедрения для Титан-Банка"
+          ],
+          "affected_people": [
+            "Сергей Волков",
+            "Никита Фролов"
+          ],
+          "root_causes": [
+            "Задержка согласования доступа к API",
+            "Отсутствие осязаемых результатов для отчета перед руководством"
+          ],
+          "triggers": [
+            "Приближение даты комитета при нерешенных технических вопросах"
+          ],
+          "early_warning_signs": [
+            "Нервозность директора по закупкам Сергея Волкова",
+            "Требование 'дать чем покормить комитет, а не только личным доверием'"
+          ],
+          "timeline": "Через 2 недели (на комитете)",
+          "mitigation_strategies": [
+            "Оперативная разработка детального статус-документа с разбивкой по готовому каркасу, зависимостям и датам на этой неделе"
+          ],
+          "contingency_plans": [
+            "Совместная подготовка с Сергеем Волковым аргументации для комитета о причинах задержки со стороны безопасности банка"
+          ],
+          "owner": "Никита Фролов",
+          "monitoring_frequency": "weekly"
+        },
+        {
+          "risk_name": "Срыв сроков реализации проекта (Timeline Risk)",
+          "category": "timeline",
+          "description": "Смещение графика проекта из-за внешних блокеров со стороны заказчика (зависшее согласование API), на которые подрядчик («Гелион») не может напрямую повлиять.",
+          "probability": 0.8,
+          "impact": "high",
+          "affected_projects": [
+            "Проект внедрения для Титан-Банка"
+          ],
+          "affected_people": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "root_causes": [
+            "Зависимость ключевого этапа от внутренних процедур «Титан-Банка»"
+          ],
+          "triggers": [
+            "Длительное зависание писем с обоснованием безопасности"
+          ],
+          "early_warning_signs": [
+            "Отсутствие подвижек по письму с обоснованием доступа к API"
+          ],
+          "timeline": "Краткосрочно / Среднесрочно",
+          "mitigation_strategies": [
+            "Фиксация текущих зон ответственности и прогресса по каркасу в отдельном документе"
+          ],
+          "contingency_plans": [
+            "Корректировка календарного плана проекта после прохождения комитета"
+          ],
+          "owner": "Никита Фролов",
+          "monitoring_frequency": "weekly"
+        }
+      ],
+      "early_warnings": [
+        {
+          "type": "risk_warning",
+          "severity": "medium",
+          "title": "⚠️ Риск: Задержка предоставления доступа к API",
+          "description": "Доступ к API «Титан-Банка» заблокирован на этапе третьего согласования внутри банка, что тормозит техническую реализацию проекта.",
+          "indicators": [
+            "Отсутствие доступа к API на момент чек-ина перед комитетом",
+            "Затягивание согласования"
+          ],
+          "recommended_action": "Подготовка статус-документа для демонстрации прогресса по каркасу",
+          "deadline": "В течение недели"
+        },
+        {
+          "type": "risk_warning",
+          "severity": "high",
+          "title": "⚠️ Риск: Репутационный и политический риск на комитете",
+          "description": "Риск негативного решения комитета «Титан-Банка» через две недели из-за отсутствия фактических результатов интеграции (нет доступа к API), что подрывает позиции ключевого спонсора проекта Сергея Волкова.",
+          "indicators": [
+            "Нервозность директора по закупкам Сергея Волкова",
+            "Требование 'дать чем покормить комитет, а не только личным доверием'"
+          ],
+          "recommended_action": "Оперативная разработка детального статус-документа с разбивкой по готовому каркасу, зависимостям и датам на этой неделе",
+          "deadline": "Немедленно"
+        },
+        {
+          "type": "risk_warning",
+          "severity": "medium",
+          "title": "⚠️ Риск: Срыв сроков реализации проекта (Timeline Risk)",
+          "description": "Смещение графика проекта из-за внешних блокеров со стороны заказчика (зависшее согласование API), на которые подрядчик («Гелион») не может напрямую повлиять.",
+          "indicators": [
+            "Отсутствие подвижек по письму с обоснованием доступа к API"
+          ],
+          "recommended_action": "Фиксация текущих зон ответственности и прогресса по каркасу в отдельном документе",
+          "deadline": "В течение недели"
+        }
+      ],
+      "opportunities": [
+        {
+          "opportunity_name": "Укрепление партнерства через проактивную поддержку ЛПР",
+          "category": "growth",
+          "description": "Сергей Волков открыто заявляет: «я по-прежнему за вас, но мне нужно этим кормить комитет». Создание качественного статус-документа с четкими датами и разделением зон ответственности (каркас vs API) позволяет поддержать ключевого союзника внутри банка и повысить шансы на успешное прохождение комитета.",
+          "potential_value": "high",
+          "probability_of_success": 0.85,
+          "time_to_realize": "short term",
+          "required_resources": [
+            "Менеджер проекта (Никита Фролов)",
+            "Техническая команда для оценки статуса каркаса и зависимостей от API"
+          ],
+          "key_enablers": [
+            "Готовность клиента использовать подготовленный документ на комитете",
+            "Прозрачность текущего статуса работ"
+          ],
+          "barriers": [
+            "Зависание третьего согласования по доступу к API на стороне банка"
+          ],
+          "related_projects": [
+            "titan_bank_integration"
+          ],
+          "recommended_first_steps": [
+            "Собрать актуальные данные по готовности каркаса",
+            "Сформировать структуру статус-документа с четкими датами",
+            "Согласовать документ с Сергеем Волковым до начала комитета"
+          ]
+        }
+      ],
+      "recommendations": [
+        {
+          "recommendation": "Разработать и согласовать с Сергеем Волковым детализированный статус-документ по проекту",
+          "type": "opportunity_capture",
+          "priority": "critical",
+          "rationale": "ЛПР (Сергей Волков) прямо указал на потребность в материалах для защиты проекта на комитете через 2 недели, так как текущее согласование API застряло на третьем этапе.",
+          "expected_outcome": "Сергей Волков получает аргументы для комитета, подтверждающие высокую готовность каркаса и прозрачность работы «Гелиона».",
+          "implementation_steps": [
+            "Собрать текущие данные по готовности каркаса решения у техкоманды.",
+            "Четко разделить в документе то, что уже сделано, и то, что блокируется отсутствием API.",
+            "Сформировать реалистичные даты и план-график.",
+            "Согласовать документ с Сергеем Волком до начала комитета."
+          ],
+          "resources_needed": [
+            "Никита Фролов",
+            "Техническая команда «Гелиона»"
+          ],
+          "timeline": "Текущая неделя (до 19.06.2026)",
+          "success_metrics": [
+            "Документ утвержден и передан Сергею Волкову вовремя",
+            "Положительная обратная связь от Волкова"
+          ],
+          "responsible": "Никита Фролов",
+          "dependencies": [
+            "Данные по готовности каркаса от техкоманды"
+          ]
+        },
+        {
+          "recommendation": "Сместить фокус презентации на комитете с интеграции API на готовность и автономность каркаса",
+          "type": "scenario_preparation",
+          "priority": "high",
+          "rationale": "Вероятность задержки доступа к API крайне высока (9%), поэтому демонстрация прогресса по независимым частям проекта снизит риски негативной оценки комитета.",
+          "expected_outcome": "Комитет видит контролируемый прогресс по проекту несмотря на бюрократические задержки со стороны безопасности банка.",
+          "implementation_steps": [
+            "Зафиксировать в статус-документе статус готовности каркаса как основной KPI текущего этапа.",
+            "Подготовить блок с объяснением причин задержки API (зона ответственности службы безопасности банка)."
+          ],
+          "resources_needed": [
+            "Никита Фролов"
+          ],
+          "timeline": "До комитета (в течение 2 недель)",
+          "success_metrics": [
+            "Комитет принимает отчет без критических замечаний по срокам интеграции"
+          ],
+          "responsible": "Никита Фролов",
+          "dependencies": [
+            "Готовность статус-документа"
+          ]
+        },
+        {
+          "recommendation": "Оказать содействие Сергею Волкову в прохождении третьего согласования безопасности",
+          "type": "risk_mitigation",
+          "priority": "high",
+          "rationale": "Отсутствие доступа к API тормозит проект (вероятность риска 0.9, влияние высокое). Необходимо использовать административный ресурс и поддержку Волкова для разморозки письма-обоснования.",
+          "expected_outcome": "Ускорение процесса проверки службы безопасности «Титан-Банка» и получение доступа к API.",
+          "implementation_steps": [
+            "Уточнить у Сергея Волкова статус текущего третьего согласования.",
+            "Предложить дополнительные материалы, технические гарантии безопасности или спецификации для службы безопасности банка, если это поможет снять их вопросы."
+          ],
+          "resources_needed": [
+            "Никита Фролов",
+            "Технический эксперт / архитектор «Гелиона»"
+          ],
+          "timeline": "Ближайшие 10 дней",
+          "success_metrics": [
+            "Сдвиг в процедуре согласования со стороны СБ банка"
+          ],
+          "responsible": "Никита Фролов",
+          "dependencies": [
+            "Обратная связь от Сергея Волкова"
+          ]
+        },
+        {
+          "recommendation": "Подготовить план «Б» (контингенси-план) по изменению графика работ при затяжном отсутствии API",
+          "type": "risk_mitigation",
+          "priority": "medium",
+          "rationale": "Бюрократия внутри банка может затянуться дольше, чем на 2 недели, что потребует перераспределения задач команды разработки.",
+          "expected_outcome": "Минимизация простоев команды «Гелиона» за счет переориентации на задачи, не требующие активного API.",
+          "implementation_steps": [
+            "Провести внутренний митинг с разработчиками.",
+            "Определить задачи внутри каркаса, которые можно доделать без API.",
+            "Зафиксировать альтернативные сроки интеграции в рабочем графике."
+          ],
+          "resources_needed": [
+            "Технический лид «Гелиона»",
+            "Никита Фролов"
+          ],
+          "timeline": "До конца следующей недели",
+          "success_metrics": [
+            "Наличие готового альтернативного план-графика разработки"
+          ],
+          "responsible": "Технический лид / Никита Фролов",
+          "dependencies": [
+            "Оценка текущей архитектуры"
+          ]
+        },
+        {
+          "recommendation": "Провести короткую синхронизацию с Сергеем Волком за 2-3 дня до комитета",
+          "type": "optimization",
+          "priority": "medium",
+          "rationale": "Важно убедиться, что Сергей полностью понял логику статус-документа и готов защищать его перед членами комитета без сюрпризов.",
+          "expected_outcome": "Синхронизация позиций «Гелиона» и ключевого ЛПР перед защитой, устранение возможных недопониманий.",
+          "implementation_steps": [
+            "Назначить 15-минутный звонок с Волковым накануне комитета.",
+            "Пройтись по ключевым слайдам/тезисам отчета.",
+            "Ответить на возможные каверзные вопросы комитета."
+          ],
+          "resources_needed": [
+            "Никита Фролов"
+          ],
+          "timeline": "За 2-3 дня до комитета",
+          "success_metrics": [
+            "Уверенность Сергея Волкова в материалах отчета"
+          ],
+          "responsible": "Никита Фролов",
+          "dependencies": [
+            "Готовый статус-документ"
+          ]
+        }
+      ],
+      "stats": {
+        "duration_seconds": 23.88,
+        "scenarios_modeled": 3,
+        "projects_predicted": 0,
+        "tasks_predicted": 2,
+        "risks_identified": 3,
+        "warnings_generated": 3,
+        "opportunities_found": 1,
+        "recommendations_made": 5
+      }
+    },
+    "weighted_priorities": {
+      "weighted_tasks": [
+        {
+          "task_name": "Получить доступ к API",
+          "assignee": "Сергей Волков",
+          "urgency_score": 0.95,
+          "importance_score": 0.95,
+          "complexity_score": 0.7,
+          "risk_score": 0.9,
+          "dependency_score": 0.8,
+          "final_weight": 0.895,
+          "priority_level": "critical",
+          "reasoning": "Критическая задача для проекта, так как без доступа к API невозможно полноценно продолжить техническую реализацию. Дедлайн жесткий — комитет через две недели, и отсутствие доступа вызывает сильное нервное напряжение у заказчика.",
+          "blockers": [
+            "Третье согласование висит со стороны банка"
+          ],
+          "accelerators": [
+            "Политическая воля Сергея Волкова ускорить внутренние согласования в банке",
+            "Предоставление статус-документа для обоснования перед комитетом"
+          ]
+        },
+        {
+          "task_name": "Подготовить отдельный статус-документ для комитета",
+          "assignee": "Никита Фролов",
+          "urgency_score": 0.9,
+          "importance_score": 0.9,
+          "complexity_score": 0.4,
+          "risk_score": 0.85,
+          "dependency_score": 0.5,
+          "final_weight": 0.835,
+          "priority_level": "high",
+          "reasoning": "Задача крайне важна для снятия текущего напряжения с заказчика (Сергея Волкова) перед комитетом через две недели. Документ позволит показать реальный прогресс по каркасу и зафиксировать зависимости от API.",
+          "blockers": [],
+          "accelerators": [
+            "Четкое понимание текущей готовности каркаса",
+            "Совместная работа команды «Гелиона» на этой неделе"
+          ]
+        }
+      ],
+      "weighted_decisions": [
+        {
+          "decision": "Подготовка отдельного статус-документа для комитета с информацией о готовности каркаса, зависимостях от API и датами.",
+          "decision_maker": "Никита Фролов",
+          "strategic_impact": 0.8,
+          "urgency": 0.9,
+          "reversibility": 0.9,
+          "stakeholder_impact": 0.9,
+          "resource_impact": 0.3,
+          "final_weight": 0.78,
+          "priority_level": "high",
+          "reasoning": "Решение критически важно для удержания позиций перед комитетом банка через 2 недели в условиях задержки доступа к API. Заказчик (Сергей Волков) прямо требует материалы, чтобы оправдать проект перед руководством. Влияние на стейкхолдеров высокое, ресурсные затраты на подготовку документа низкие.",
+          "implementation_urgency": "this_week",
+          "dependencies": [
+            "Сбор актуальных данных по готовности каркаса и зависимостям от команды разработки"
+          ]
+        }
+      ],
+      "weighted_projects": [
+        {
+          "project_name": "Проект внедрения для Титан-Банка",
+          "status": "in_progress",
+          "strategic_value": 0.9,
+          "revenue_impact": 0.8,
+          "resource_intensity": 0.4,
+          "risk_level": 0.9,
+          "timeline_pressure": 0.95,
+          "stakeholder_visibility": 0.9,
+          "final_weight": 0.88,
+          "priority_level": "critical",
+          "reasoning": "Проект находится под жестким дедлайном (комитет через две недели). Есть критический блокер в виде застрявшего согласования доступа к API со стороны безопасности банка. Спонсор проекта (Сергей Волков) испытывает сильное давление и требует аргументы для комитета, что делает этот проект критически важным для удержания позиций и успешного прохождения ключевой вехи.",
+          "attention_areas": [
+            "Зависло третье согласование по доступу к API внутри Титан-Банка",
+            "Необходимо срочно подготовить детальный статус-документ с планом и датами для комитета на текущей неделе"
+          ],
+          "quick_wins": [
+            "Подготовка и предоставление Сергею Волкову статус-документа по готовому каркасу и зависимостям до конца текущей недели для снижения его тревожности на комитете"
+          ]
+        }
+      ],
+      "weighted_risks": [],
+      "priority_matrix": {
+        "critical": [
+          {
+            "type": "task",
+            "name": "Получить доступ к API",
+            "weight": 0.895,
+            "assignee": "Сергей Волков",
+            "reasoning": "Критическая задача для проекта, так как без доступа к API невозможно полноценно продолжить техническую реализацию. Дедлайн жесткий — комитет через две недели, и отсутствие доступа вызывает сильное нервное напряжение у заказчика."
+          },
+          {
+            "type": "project",
+            "name": "Проект внедрения для Титан-Банка",
+            "weight": 0.88,
+            "status": "in_progress",
+            "reasoning": "Проект находится под жестким дедлайном (комитет через две недели). Есть критический блокер в виде застрявшего согласования доступа к API со стороны безопасности банка. Спонсор проекта (Сергей Волков) испытывает сильное давление и требует аргументы для комитета, что делает этот проект критически важным для удержания позиций и успешного прохождения ключевой вехи."
+          }
+        ],
+        "high": [
+          {
+            "type": "task",
+            "name": "Подготовить отдельный статус-документ для комитета",
+            "weight": 0.835,
+            "assignee": "Никита Фролов",
+            "reasoning": "Задача крайне важна для снятия текущего напряжения с заказчика (Сергея Волкова) перед комитетом через две недели. Документ позволит показать реальный прогресс по каркасу и зафиксировать зависимости от API."
+          },
+          {
+            "type": "decision",
+            "name": "Подготовка отдельного статус-документа для комитета с информацией о готовности каркаса, зависимостях от API и датами.",
+            "weight": 0.78,
+            "decision_maker": "Никита Фролов",
+            "reasoning": "Решение критически важно для удержания позиций перед комитетом банка через 2 недели в условиях задержки доступа к API. Заказчик (Сергей Волков) прямо требует материалы, чтобы оправдать проект перед руководством. Влияние на стейкхолдеров высокое, ресурсные затраты на подготовку документа низкие."
+          }
+        ],
+        "medium": [],
+        "low": []
+      },
+      "critical_items": [
+        {
+          "type": "task",
+          "name": "Получить доступ к API",
+          "weight": 0.895,
+          "assignee": "Сергей Волков",
+          "reasoning": "Критическая задача для проекта, так как без доступа к API невозможно полноценно продолжить техническую реализацию. Дедлайн жесткий — комитет через две недели, и отсутствие доступа вызывает сильное нервное напряжение у заказчика."
+        },
+        {
+          "type": "project",
+          "name": "Проект внедрения для Титан-Банка",
+          "weight": 0.88,
+          "status": "in_progress",
+          "reasoning": "Проект находится под жестким дедлайном (комитет через две недели). Есть критический блокер в виде застрявшего согласования доступа к API со стороны безопасности банка. Спонсор проекта (Сергей Волков) испытывает сильное давление и требует аргументы для комитета, что делает этот проект критически важным для удержания позиций и успешного прохождения ключевой вехи."
+        },
+        {
+          "type": "task",
+          "name": "Подготовить отдельный статус-документ для комитета",
+          "weight": 0.835,
+          "assignee": "Никита Фролов",
+          "reasoning": "Задача крайне важна для снятия текущего напряжения с заказчика (Сергея Волкова) перед комитетом через две недели. Документ позволит показать реальный прогресс по каркасу и зафиксировать зависимости от API."
+        },
+        {
+          "type": "decision",
+          "name": "Подготовка отдельного статус-документа для комитета с информацией о готовности каркаса, зависимостях от API и датами.",
+          "weight": 0.78,
+          "decision_maker": "Никита Фролов",
+          "reasoning": "Решение критически важно для удержания позиций перед комитетом банка через 2 недели в условиях задержки доступа к API. Заказчик (Сергей Волков) прямо требует материалы, чтобы оправдать проект перед руководством. Влияние на стейкхолдеров высокое, ресурсные затраты на подготовку документа низкие."
+        }
+      ],
+      "focus_recommendations": [
+        {
+          "recommendation": "Срочно разработать и направить заказчику статус-документ для комитета с детализацией готовности каркаса, зависимостями от API и четкими датами",
+          "focus_area": "tasks",
+          "priority": "critical",
+          "items": [
+            "Подготовить отдельный статус-документ для комитета"
+          ],
+          "rationale": "Необходимо срочно снизить напряжение у спонсора проекта (Сергея Волкова) и предоставить ему аргументы для успешного прохождения комитета через две недели в условиях задержки доступа к API",
+          "time_allocation": "На текущей неделе (приоритет №1)",
+          "success_criteria": "Статус-документ подготовлен, отправлен Сергею Волкову и согласован для использования на комитете"
+        },
+        {
+          "recommendation": "Усилить контроль и поддержку со стороны «Гелиона» в решении вопроса с доступом к API",
+          "focus_area": "projects",
+          "priority": "critical",
+          "items": [
+            "Получить доступ к API",
+            "Проект внедрения для Титан-Банка"
+          ],
+          "rationale": "Согласование доступа сдвинулось с мертвой точки, получены промежуточные подтверждения от Сергея Волкова",
+          "time_allocation": "Ежедневно до получения доступа",
+          "success_criteria": "Получены доступы к API для технической команды «Гелиона»"
+        },
+        {
+          "recommendation": "Зафиксировать и формализовать решение о подготовке статус-документа как ключевого артефакта для комитета",
+          "focus_area": "decisions",
+          "priority": "high",
+          "items": [
+            "Подготовка отдельного статус-документа для комитета с информацией о готовности каркаса, зависимостях от API и датами."
+          ],
+          "rationale": "Это ключевой инструмент управления ожиданиями стейкхолдеров в условиях, когда технический прогресс ограничен внешним согласованием безопасности банка",
+          "time_allocation": "1-2 часа на фиксацию договорённостей",
+          "success_criteria": "Решение зафиксировано в протоколе встречи и принято в работу Никитой Фроловым"
+        }
+      ],
+      "stats": {
+        "duration_seconds": 8.38,
+        "tasks_weighted": 2,
+        "decisions_weighted": 1,
+        "projects_weighted": 1,
+        "risks_weighted": 0,
+        "critical_items_count": 4
+      }
+    },
+    "search_metadata": {
+      "meeting_metadata": {
+        "meeting_id": "meeting_20260825_181517",
+        "title": "Чек-ин перед комитетом с Титан-Банк по доступу к API и статусу проекта",
+        "summary": "Рабочая встреча перед комитетом через две недели. Обсуждена задержка с выдачей доступа к API со стороны банка (третье согласование). Договорились о подготовке статус-документа с датами для демонстрации прогресса на комитете.",
+        "main_topics": [
+          "Комитет через две недели",
+          "Доступ к API банка",
+          "Задержки согласования безопасности",
+          "Подготовка статус-документа для клиента"
+        ],
+        "key_outcomes": [
+          "Выявлена проблема с задержкой третьего согласования доступа к API в Титан-Банке",
+          "Согласована подготовка специального статус-документа с дедлайнами и зависимостями для комитета"
+        ],
+        "action_items_summary": "Подготовить статус-документ с описанием готового каркаса, зависимостей от API и дат на текущей неделе.",
+        "decisions_summary": "Гелион подготовит отдельный статус-документ для комитета Титан-Банка, чтобы показать прогресс в условиях задержки API.",
+        "participants_summary": "Никита Фролов (Гелион), Сергей Волков (директор по закупкам, Титан-Банк)",
+        "mood": "urgent",
+        "meeting_type": "status",
+        "keywords": [
+          "Титан-Банк",
+          "Гелион",
+          "Никита Фролов",
+          "Сергей Волков",
+          "комитет",
+          "API",
+          "доступ",
+          "согласование",
+          "статус-документ",
+          "безопасность",
+          "закупки"
+        ],
+        "related_projects": [
+          "Титан-Банк — Внедрение"
+        ],
+        "searchable_text": "Встреча: Клиентский звонок — Титан-Банк, чек-ин перед комитетом. Никита Фролов (Гелион), Сергей Волков (директор по закупкам, Титан-Банк). Обсуждение доступа к API, задержки согласования безопасности, подготовка статус-документа с датами и зависимостями для комитета через две недели.",
+        "importance_score": 0.85,
+        "generated_at": "2026-08-25T18:15:25.651316+00:00"
+      },
+      "node_metadata": [
+        {
+          "node_type": "Person",
+          "name": "Никита Фролов",
+          "summary": "Никита Фролов",
+          "keywords": [
+            "Никита Фролов"
+          ],
+          "searchable_text": "Никита Фролов",
+          "importance_score": 0.7
+        },
+        {
+          "node_type": "Person",
+          "name": "Сергей Волков",
+          "summary": "Сергей Волков - директор по закупкам",
+          "keywords": [
+            "Сергей Волков",
+            "директор по закупкам"
+          ],
+          "searchable_text": "Сергей Волков директор по закупкам",
+          "importance_score": 0.7
+        },
+        {
+          "node_type": "Task",
+          "name": "Получить доступ к API",
+          "summary": "Task: Получить доступ к API (assigned to {'name': 'Сергей Волков', 'role': 'директор по закупкам'})",
+          "keywords": [
+            "Получить доступ к API",
+            {
+              "name": "Сергей Волков",
+              "role": "директор по закупкам"
+            },
+            "task",
+            "задача"
+          ],
+          "searchable_text": "Получить доступ к API {'name': 'Сергей Волков', 'role': 'директор по закупкам'} {'date': 'через две недели', 'is_hard': True}",
+          "importance_score": 0.8
+        },
+        {
+          "node_type": "Task",
+          "name": "Подготовить отдельный статус-документ для комитета",
+          "summary": "Task: Подготовить отдельный статус-документ для комитета (assigned to {'name': 'Никита Фролов', 'role': 'со стороны «Гелиона»'})",
+          "keywords": [
+            "Подготовить отдельный статус-документ для комитета",
+            {
+              "name": "Никита Фролов",
+              "role": "со стороны «Гелиона»"
+            },
+            "task",
+            "задача"
+          ],
+          "searchable_text": "Подготовить отдельный статус-документ для комитета {'name': 'Никита Фролов', 'role': 'со стороны «Гелиона»'} {'date': 'на этой неделе', 'is_hard': False}",
+          "importance_score": 0.8
+        },
+        {
+          "node_type": "Decision",
+          "name": "",
+          "summary": "Decision: ",
+          "keywords": [
+            "",
+            "",
+            "decision",
+            "решение"
+          ],
+          "searchable_text": "",
+          "importance_score": 0.9
+        },
+        {
+          "node_type": "Entity",
+          "name": "Титан-Банк",
+          "summary": "organization: Титан-Банк",
+          "keywords": [
+            "Титан-Банк",
+            "organization"
+          ],
+          "searchable_text": "Титан-Банк organization",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "Гелион",
+          "summary": "company: Гелион",
+          "keywords": [
+            "Гелион",
+            "company"
+          ],
+          "searchable_text": "Гелион company",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "API",
+          "summary": "technology: API",
+          "keywords": [
+            "API",
+            "technology"
+          ],
+          "searchable_text": "API technology",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "статус-документ",
+          "summary": "document: статус-документ",
+          "keywords": [
+            "статус-документ",
+            "document"
+          ],
+          "searchable_text": "статус-документ document",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "комитет",
+          "summary": "event: комитет",
+          "keywords": [
+            "комитет",
+            "event"
+          ],
+          "searchable_text": "комитет event",
+          "importance_score": 0.6
+        }
+      ],
+      "keywords": [
+        "две недели",
+        "Сергей Игоревич",
+        "API",
+        "Никита Фролов",
+        "проект",
+        "обоснование",
+        "письмо",
+        "Сергей Волков",
+        "директор по закупкам",
+        "доступ к API",
+        "каркас",
+        "Титан-Банк",
+        "согласование",
+        "безопасность",
+        "Гелион",
+        "2026-06-11",
+        "клиентский звонок",
+        "статус-документ",
+        "чек-ин",
+        "на этой неделе",
+        "комитет"
+      ],
+      "topics": [
+        {
+          "topic": "Подготовка к комитету",
+          "description": "Обсуждение предстоящего через две недели комитета, нервозность клиента и необходимость предоставления конкретных результатов работы.",
+          "relevance_score": 1.0,
+          "keywords": [
+            "комитет",
+            "чек-ин",
+            "Титан-Банк",
+            "результаты"
+          ],
+          "participants_involved": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "outcomes": [
+            "Клиенту необходимы материалы для демонстрации прогресса на комитете."
+          ],
+          "follow_up_needed": true
+        },
+        {
+          "topic": "Доступ к API",
+          "description": "Статус получения доступа к API со стороны «Гелиона» и задержки с согласованием этого вопроса в банке.",
+          "relevance_score": 0.9,
+          "keywords": [
+            "API",
+            "доступ",
+            "согласование",
+            "безопасность",
+            "письмо"
+          ],
+          "participants_involved": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "outcomes": [
+            "Доступ к API пока не получен, процесс застрял на третьем согласовании в банке."
+          ],
+          "follow_up_needed": true
+        },
+        {
+          "topic": "Подготовка статус-документа",
+          "description": "Договоренность о создании специального документа, отражающего текущую готовность каркаса, зависимости от API и календарные сроки.",
+          "relevance_score": 0.85,
+          "keywords": [
+            "статус-документ",
+            "каркас",
+            "сроки",
+            "даты"
+          ],
+          "participants_involved": [
+            "Никита Фролов",
+            "Сергей Волков"
+          ],
+          "outcomes": [
+            "«Гелион» подготовит и предоставит статус-документ на текущей неделе."
+          ],
+          "follow_up_needed": true
+        }
+      ],
+      "searchable_chunks": [
+        {
+          "chunk_id": "chunk_0",
+          "text": "Встреча: Клиентский звонок — Титан-Банк, чек-ин перед комитетом Дата: 2026-06-11 Длительность: 8 мин Участники: Никита Фролов (со стороны «Гелиона»); Сергей Волков — директор по закупкам, «Титан-Банк» --- [00:00] Никита Фролов: Сергей Игоревич, добрый день, короткий чек-ин перед комитетом. [00:05] Сергей Волков: Добрый день. Комитет через две недели, если честно, у меня сейчас немного нервно. Доступ к API вы получили? [00:13] Никита Фролов: Пока нет, мы писали письмо с обоснованием, как договаривались, но подвижек не видели с нашей стороны. [00:20] Сергей Волков: Я тоже не вижу подвижек со своей, если совсем честно, там до сих пор третье согласование висит. Слушайте, я всё понимаю про безопасность, но мне через две недели нужно что-то конкретное на комитет, а не «ждём согласования». [00:35] Никита Фролов: Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами? [00:43] Сергей Волков: Это было бы полезно, да. Так я хотя бы покажу, что движение есть, даже если не всё в моей власти. [00:50] Никита Фролов: Подготовим на этой неделе. [00:53] Сергей Волков: Хорошо. И передайте своим — я по-прежнему за вас, но мне нужно этим кормить комитет, а не только личным доверием.",
+          "start_position": 0,
+          "end_position": 192,
+          "keywords_found": [
+            "две недели",
+            "Сергей Игоревич",
+            "API",
+            "Никита Фролов",
+            "обоснование",
+            "письмо",
+            "Сергей Волков",
+            "директор по закупкам",
+            "доступ к API",
+            "каркас",
+            "Титан-Банк",
+            "согласование",
+            "безопасность",
+            "Гелион",
+            "2026-06-11",
+            "клиентский звонок",
+            "статус-документ",
+            "чек-ин",
+            "на этой неделе",
+            "комитет"
+          ],
+          "keyword_density": 0.9523809523809523,
+          "importance_score": 1.0
+        }
+      ],
+      "stats": {
+        "duration_seconds": 5.28,
+        "nodes_processed": 10,
+        "keywords_extracted": 21,
+        "topics_identified": 3,
+        "chunks_created": 1
+      }
+    },
+    "decision_learning": {
+      "meeting_id": "meeting_20260825_181517",
+      "timestamp": "2026-08-25T18:15:23.295494+00:00",
+      "decisions": [
+        {
+          "decision_id": "dec-01",
+          "decision_summary": "Подготовка отдельного статус-документа для комитета с информацией о готовности каркаса, зависимостях от API и датами.",
+          "decision_category": "operational",
+          "details": "В связи с задержкой согласования доступа к API и приближающимся комитетом через две недели, решено подготовить статус-документ для демонстрации прогресса.",
+          "participants": [
+            {
+              "name": "Никита Фролов",
+              "role": "Представитель «Гелиона»"
+            },
+            {
+              "name": "Сергей Волков",
+              "role": "Директор по закупкам, «Титан-Банк»"
+            }
+          ],
+          "responsible": {
+            "primary": "Никита Фролов"
+          },
+          "decision_maker_resolved": "Никита Фролов",
+          "decision_maker_speaker": "",
+          "attribution_confidence": "medium",
+          "reasoning": "Заказчику необходимо предоставить комитету конкретную информацию о движении проекта, так как согласование доступа к API затягивается.",
+          "timeline": {
+            "deadline": "на этой неделе"
+          },
+          "business_impact": {
+            "scope": "external",
+            "urgency": "high",
+            "risk_level": "medium"
+          },
+          "dependencies": [
+            "Задержка согласования доступа к API"
+          ],
+          "action_items": [
+            {
+              "action": "Подготовить отдельный статус-документ по каркасу и зависимостям от API с датами",
+              "owner": "Никита Фролов",
+              "deadline": "на этой неделе"
+            }
+          ],
+          "quote": "— Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?\n— Это было бы полезно, да. Так я хотя бы покажу, что движение есть, даже если не всё в моей власти.\n— Подготовим на этой неделе.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:15:19.590344+00:00",
+          "_agent": "DecisionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "decision",
+          "importance_classification": {
+            "business_impact": "low",
+            "urgency_score": 0.5,
+            "complexity_score": 5,
+            "risk_level": "low",
+            "overall_priority": "medium"
+          }
+        }
+      ],
+      "decision_patterns": {
+        "decision_types_distribution": {
+          "operational": 1
+        },
+        "urgency_distribution": {
+          "medium": 1
+        },
+        "complexity_distribution": {
+          "medium": 1
+        },
+        "common_patterns": [
+          "Преобладают operational решения"
+        ],
+        "decision_makers": {
+          "Никита Фролов": {
+            "count": 1,
+            "roles": [
+              "Представитель «Гелиона»"
+            ]
+          },
+          "Сергей Волков": {
+            "count": 1,
+            "roles": [
+              "Директор по закупкам, «Титан-Банк»"
+            ]
+          }
+        },
+        "success_factors": [],
+        "risk_factors": []
+      },
+      "learning_data": [
+        {
+          "id": "train_dec-01",
+          "meeting_id": "meeting_20260825_181517",
+          "input": {
+            "context": "",
+            "decision_type": "",
+            "participants": [
+              "Никита Фролов",
+              "Сергей Волков"
+            ]
+          },
+          "output": {
+            "classification": {
+              "business_impact": "low",
+              "urgency_score": 0.5,
+              "complexity_score": 5,
+              "risk_level": "low",
+              "overall_priority": "medium"
+            },
+            "reasoning": "Заказчику необходимо предоставить комитету конкретную информацию о движении проекта, так как согласование доступа к API затягивается.",
+            "expected_outcomes": [],
+            "risks": []
+          },
+          "metadata": {
+            "source": "meeting_transcript",
+            "created_at": "2026-08-25T18:15:23.295577+00:00",
+            "quality_score": 0.7999999999999999
+          }
+        }
+      ],
+      "statistics": {
+        "total": 1,
+        "by_type": {
+          "strategic": 0,
+          "tactical": 0,
+          "operational": 0
+        },
+        "by_urgency": {
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "by_priority": {
+          "high": 0,
+          "medium": 1,
+          "low": 0
+        },
+        "avg_complexity": 5.0
+      }
+    },
+    "synthesis_analysis": {
+      "meeting_id": "meeting_20260825_181517",
+      "timestamp": "2026-08-25T18:15:23.295940+00:00",
+      "success_patterns": [],
+      "failure_patterns": [],
+      "cyclical_patterns": [
+        {
+          "pattern_name": "Квартальный цикл планирования",
+          "cycle_length": "3 месяца",
+          "phases": [
+            {
+              "phase_name": "Планирование",
+              "duration": "2 недели"
+            },
+            {
+              "phase_name": "Выполнение",
+              "duration": "10 недель"
+            },
+            {
+              "phase_name": "Ревью",
+              "duration": "1 неделя"
+            }
+          ],
+          "predictability": "высокая"
+        },
+        {
+          "pattern_name": "Недельный цикл встреч",
+          "cycle_length": "1 неделя",
+          "phases": [
+            {
+              "phase_name": "Понедельник - планирование",
+              "duration": "1 день"
+            },
+            {
+              "phase_name": "Вторник-четверг - работа",
+              "duration": "3 дня"
+            },
+            {
+              "phase_name": "Пятница - ревью",
+              "duration": "1 день"
+            }
+          ],
+          "predictability": "высокая"
+        }
+      ],
+      "decision_making_patterns": [],
+      "communication_patterns": [],
+      "predictive_insights": [],
+      "recommendations": []
+    },
+    "goals_tracking": {
+      "meeting_id": "meeting_20260825_181517",
+      "timestamp": "2026-08-25T18:15:23.296198+00:00",
+      "goals": [
+        {
+          "level": "task",
+          "entity_name": {
+            "name": "Сергей Волков",
+            "role": "директор по закупкам"
+          },
+          "goal_statement": "Выполнить: Получить доступ к API Титан-Банка (находится на этапе третьего согласования со стороны банка)",
+          "why_reason": "Причина не указана явно",
+          "why_stated": "",
+          "metrics_quantitative": [],
+          "metrics_qualitative": [],
+          "success_criteria": "Задача выполнена",
+          "pathway": "",
+          "timeline": {
+            "date": "через две недели",
+            "is_hard": true
+          },
+          "status": "blocked",
+          "confidence": 1.0,
+          "is_stated_explicitly": true,
+          "source_quote": "Получить доступ к API Титан-Банка (находится на этапе третьего согласования со стороны банка)",
+          "related_entities": [
+            {
+              "name": "Сергей Волков",
+              "role": "директор по закупкам"
+            }
+          ],
+          "goal_id": "23e79003fca19e33",
+          "reasoning_analysis": {
+            "alignment": {
+              "stated_vs_real": "aligned",
+              "confidence": 0.9,
+              "explanation": "Сергей Волков открыто говорит о своей главной проблеме — приближающемся комитете через две недели, к которому ему необходимы результаты или доказательства работы, так как задерживается согласование доступа к API внутри его же банка."
+            },
+            "true_motivations": [
+              {
+                "type": "defensive",
+                "description": "Снизить собственные риски и защитить свою позицию перед внутренним комитетом банка в условиях задержки согласования доступа к API.",
+                "evidence": "«Комитет через две недели, если честно, у меня сейчас немного нервно... мне через две недели нужно что-то конкретное на комитет, а не “ждём согласования”»"
+              },
+              {
+                "type": "career",
+                "description": "Продемонстрировать руководству и комитету контролируемость процесса и реальное движение по проекту, несмотря на бюрократические задержки.",
+                "evidence": "«Так я хотя бы покажу, что движение есть, даже если не всё в моей власти... мне нужно этим кормить комитет, а не только личным доверием»"
+              }
+            ],
+            "goal_quality": {
+              "is_rational": true,
+              "is_achievable": false,
+              "is_measurable": true,
+              "has_hidden_agenda": false,
+              "quality_score": 7
+            },
+            "red_flags": [
+              "Доступ к API застрял на этапе третьего согласования внутри банка, что блокирует работу подрядчика",
+              "У клиента (директора по закупкам) нарастает тревожность из-за приближающегося комитета (через 2 недели)"
+            ],
+            "recommendations": [
+              "Оперативно подготовить и согласовать с Сергеем Волков статус-документ с четким разделением того, что уже готово, и того, что зависит от API, с указанием дат",
+              "Помочь клиенту аргументами для комитета, чтобы компенсировать задержку выдачи API"
+            ]
+          }
+        },
+        {
+          "level": "task",
+          "entity_name": {
+            "name": "Никита Фролов",
+            "role": "со стороны «Гелиона»"
+          },
+          "goal_statement": "Выполнить: Подготовить статус-документ, содержащий информацию о том, что уже готово по каркасу, что зависит от API, с датами",
+          "why_reason": "Причина не указана явно",
+          "why_stated": "",
+          "metrics_quantitative": [],
+          "metrics_qualitative": [],
+          "success_criteria": "Задача выполнена",
+          "pathway": "",
+          "timeline": {
+            "date": "на этой неделе",
+            "is_hard": false
+          },
+          "status": "new",
+          "confidence": 1.0,
+          "is_stated_explicitly": true,
+          "source_quote": "Подготовить статус-документ, содержащий информацию о том, что уже готово по каркасу, что зависит от ",
+          "related_entities": [
+            {
+              "name": "Никита Фролов",
+              "role": "со стороны «Гелиона»"
+            }
+          ],
+          "goal_id": "117ab3b7b3e62b2a"
+        },
+        {
+          "level": "project",
+          "entity_name": "Проект внедрения для Титан-Банка",
+          "goal_statement": "Завершить проект: Проект внедрения для Титан-Банка",
+          "why_reason": "Внедрение решения компании «Гелион» в «Титан-Банке», подготовка к комитету через две недели.",
+          "why_stated": "",
+          "metrics_quantitative": [],
+          "metrics_qualitative": [],
+          "success_criteria": "Проект завершён",
+          "pathway": "",
+          "timeline": "",
+          "status": "in_progress",
+          "confidence": 1.0,
+          "is_stated_explicitly": true,
+          "source_quote": "Проект внедрения для Титан-Банка",
+          "related_entities": [],
+          "goal_id": "d37be914272633be",
+          "reasoning_analysis": {
+            "alignment": {
+              "stated_vs_real": "aligned",
+              "confidence": 0.9,
+              "explanation": "Заявленная цель полностью совпадает с реальной необходимостью Сергея Волкова отчитаться на комитете через две недели. У него нет скрытой повестки против вендора, он прямо говорит о проблемах с безопасностью и бюрократией внутри банка и ищет способ продемонстрировать прогресс."
+            },
+            "true_motivations": [
+              {
+                "type": "defensive",
+                "description": "Защита своей репутации и демонстрация результатов перед комитетом в условиях затягивания согласований внутри банка.",
+                "evidence": "«Комитет через две недели, если честно, у меня сейчас немного нервно... мне через две недели нужно что-то конкретное на комитет, а не “ждём согласования”»"
+              },
+              {
+                "type": "political",
+                "description": "Стремление показать руководству комитета хоть какое-то движение по проекту, даже при отсутствии доступа к API по вине внутренней безопасности.",
+                "evidence": "«Так я хотя бы покажу, что движение есть, даже если не всё в моей власти»"
+              }
+            ],
+            "goal_quality": {
+              "is_rational": true,
+              "is_achievable": true,
+              "is_measurable": true,
+              "has_hidden_agenda": false,
+              "quality_score": 8
+            },
+            "red_flags": [
+              "Зависание третьего согласования по доступу к API внутри Титан-Банка (блокер со стороны безопасности)",
+              "Риск негативного прохождения комитета через две недели из-за отсутствия фактических технических результатов"
+            ],
+            "recommendations": [
+              "Оперативно подготовить и согласовать с Сергеем статус-документ с четким разделением того, что уже готово по каркасу, и того, что заблокировано API",
+              "Зафиксировать в документе даты и зоны ответственности, чтобы Сергей мог использовать его как формальный артефакт защиты на комитете"
+            ]
+          }
+        }
+      ],
+      "progress_updates": [
+        {
+          "goal_id": "23e79003fca19e33",
+          "goal_statement": "Выполнить: Получить доступ к API Титан-Банка (находится на этапе третьего согласования со стороны ба",
+          "previous_status": "unknown",
+          "current_status": "blocked",
+          "progress_percentage": 0,
+          "blockers": [],
+          "next_steps": [],
+          "updated_at": "2026-08-25T18:15:30.154838+00:00"
+        },
+        {
+          "goal_id": "117ab3b7b3e62b2a",
+          "goal_statement": "Выполнить: Подготовить статус-документ, содержащий информацию о том, что уже готово по каркасу, что ",
+          "previous_status": "unknown",
+          "current_status": "new",
+          "progress_percentage": 0,
+          "blockers": [],
+          "next_steps": [],
+          "updated_at": "2026-08-25T18:15:30.154846+00:00"
+        },
+        {
+          "goal_id": "d37be914272633be",
+          "goal_statement": "Завершить проект: Проект внедрения для Титан-Банка",
+          "previous_status": "unknown",
+          "current_status": "in_progress",
+          "progress_percentage": 50,
+          "blockers": [],
+          "next_steps": [],
+          "updated_at": "2026-08-25T18:15:30.154851+00:00"
+        }
+      ],
+      "conflicts": [
+        {
+          "conflict_id": "conf_001",
+          "conflict_type": "temporal",
+          "severity": "critical",
+          "goal1_id": "23e79003fca19e33",
+          "goal2_id": "d37be914272633be",
+          "description": "Цель Сергея Волкова получить доступ к API зависит от внутреннего согласования в банке, которое застряло на третьем этапе, в то время как комитет состоится ровно через две недели, и отсутствие доступа к API блокирует успешное прохождение комитета и проект в целом.",
+          "impact": "Риск провала комитета через две недели, срыв сроков проекта внедрения и потеря доверия клиента.",
+          "resolution_suggestions": [
+            "Сергею Волкиву эскалировать вопрос согласования API на уровень выше внутри Титан-Банка, используя свой административный ресурс.",
+            "Никите Фролову оказать методологическую поддержку (предоставить дополнительные аргументы о безопасности для службы комплаенс/ИБ банка)."
+          ],
+          "who_should_resolve": "Сергей Волков (при поддержке Никиты Фролова)"
+        }
+      ],
+      "alignment_report": {
+        "alignment_score": 6,
+        "status": "partially_aligned",
+        "aligned_goals_count": 2,
+        "misaligned_goals_count": 1,
+        "vertical_alignment": {
+          "score": 6,
+          "issues": [
+            "Цель по получению доступа к API зависла на третьем согласовании, что блокирует проектную цель подготовки к комитету с готовым решением.",
+            "У задач нижнего уровня явно не прописано 'Зачем', хотя связь с верхним уровнем (подготовка к комитету) существует имплицитно."
+          ],
+          "strong_connections": [
+            "Подготовка статус-документа Никитой Фроловым напрямую поддерживает цель успешного прохождения комитета через две недели."
+          ]
+        },
+        "horizontal_alignment": {
+          "score": 5,
+          "issues": [
+            "Отсутствие доступа к API (зона ответственности банка/Сергея) мешает реализации проекта со стороны «Гелиона» (Никита), при этом оба участника зависят от бюрократических процедур внутри банка."
+          ],
+          "synergies": [
+            "Общая заинтересованность Сергея Волкова и Никиты Фролова в успешном прохождении комитета через две недели."
+          ]
+        },
+        "cascading_quality": {
+          "score": 6,
+          "well_cascaded": [
+            "Подготовка статус-документа Никитой Фроловым как обходной маневр для комитета при задержке доступа к API."
+          ],
+          "poorly_cascaded": [
+            "Получение доступа к API заблокировано на стороне банка, цель не декомпозирована на подзадачи по ускорению согласования безопасности."
+          ]
+        },
+        "recommendations": [
+          {
+            "priority": "high",
+            "action": "Зафиксировать в статус-документе риски по безопасности и зависимости по API, чтобы Сергей Волков мог использовать его на комитете как аргумент для ускорения согласований.",
+            "affected_goals": [
+              "TASK1",
+              "PROJECT1"
+            ]
+          }
+        ],
+        "missing_goals": [
+          {
+            "level": "TASK",
+            "description": "Цель по эскалации вопроса безопасности внутри Титан-Банка для разблокировки доступа к API."
+          }
+        ],
+        "level_distribution": {
+          "project": 1,
+          "task": 2
+        }
+      },
+      "statistics": {
+        "total_goals": 3,
+        "by_level": {
+          "task": 2,
+          "project": 1
+        },
+        "by_status": {
+          "blocked": 1,
+          "new": 1,
+          "in_progress": 1
+        },
+        "conflicts_count": 1,
+        "avg_confidence": 1.0,
+        "explicit_count": 3,
+        "implicit_count": 0
+      }
+    },
+    "knowledge_extraction": {
+      "meeting_id": "meeting_20260825_181517",
+      "summary": {
+        "meeting_id": "meeting_20260825_181517",
+        "summary": "Никита Фролов и Сергей Волков обсудили задержку доступа к API Титан-Банка, из-за чего у Сергея возникают сложности перед комитетом через две недели. Принято решение подготовить статус-документ с готовностью каркаса, зависимостями от API и датами.",
+        "main_topics": [
+          "принятие решений",
+          "обсуждение метрик",
+          "планирование задач"
+        ],
+        "participants": [
+          "Никита Фролов",
+          "Сергей Волков"
+        ],
+        "content_tags": [
+          "expert_knowledge",
+          "achievement",
+          "insight"
+        ],
+        "value_score": 8.0,
+        "has_actionable_content": true,
+        "stats": {
+          "decisions_count": 1,
+          "tasks_count": 2,
+          "participants_count": 2,
+          "ideas_count": 1,
+          "kpis_count": 3
+        },
+        "timestamp": "2026-08-25T18:15:52.175452"
+      },
+      "cases": [],
+      "methodologies": [],
+      "templates": [],
+      "regulations": [],
+      "best_practices": [],
+      "guidelines": [
+        {
+          "id": "knowledge_guideline_177_meeting_",
+          "category": "guideline",
+          "title": "Подготовка статус-документа при задержках согласований",
+          "content": "В случае задержки внешних согласований (например, доступа к API) необходимо готовить отдельный статус-документ с деталями о том, что уже сделано по каркасу, что зависит от заблокированного ресурса, и с указанием дат. Это позволяет продемонстрировать прогресс стейкхолдерам перед комитетом.",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 0.95,
+          "importance": 0.9,
+          "related_entities": [
+            "Титан-Банк",
+            "Гелион"
+          ],
+          "related_topics": [],
+          "speakers": [
+            "Никита Фролов"
+          ],
+          "tags": [
+            "отчетность",
+            "статус-документ",
+            "комитет",
+            "риски"
+          ],
+          "extracted_at": "2026-08-25T18:15:53.253447",
+          "metadata": {}
+        }
+      ],
+      "insights": [
+        {
+          "id": "knowledge_insight_183_meeting_",
+          "category": "insight",
+          "title": "Личное доверие закупщика больше не является валютой для внутреннего комитета",
+          "content": "Директор по закупкам банка прямо заявляет, что его личной позиции «я за вас» недостаточно перед лицом комитета, ему требуются формальные артефакты для обоснования статуса проекта («мне нужно этим кормить комитет, а не только личным доверием»).\n\nImplications: Взаимодействие со спонсором на уровне личных симпатий исчерпало себя; в критической точке (комитет) ему нужны не устные договоренности, а формализованные инструменты защиты подрядчика перед другими стейкхолдерами.",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:15:55.141325",
+          "metadata": {
+            "id": "7c98152a-84cf-4aa7-a379-624a45e5ccf7",
+            "type": "insight",
+            "title": "Личное доверие закупщика больше не является валютой для внутреннего комитета",
+            "description": "Директор по закупкам банка прямо заявляет, что его личной позиции «я за вас» недостаточно перед лицом комитета, ему требуются формальные артефакты для обоснования статуса проекта («мне нужно этим кормить комитет, а не только личным доверием»).",
+            "implications": "Взаимодействие со спонсором на уровне личных симпатий исчерпало себя; в критической точке (комитет) ему нужны не устные договоренности, а формализованные инструменты защиты подрядчика перед другими стейкхолдерами.",
+            "actionability": "high",
+            "source_meeting_id": "meeting_20260825_181517",
+            "source_quote": "И передайте своим — я по-прежнему за вас, но мне нужно этим кормить комитет, а не только личным доверием.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:15:55.141272"
+          }
+        },
+        {
+          "id": "knowledge_insight_184_meeting_",
+          "category": "insight",
+          "title": "Паралич зоны ответственности заказчика на третьем уровне согласования",
+          "content": "Запрос на доступ к API застрял на третьем круге согласования внутри структуры банка («там до сих пор третье согласование висит»), причем сам директор по закупкам признает собственное бессилие ускорить этот процесс («Я тоже не вижу подвижек со своей, если совсем честно»).\n\nImplications: Задержка доступа к API вызвана не бездействием подрядчика и не качеством письма-обоснования, а внутренними бюрократическими барьерами банка, на которые закупщик не имеет рычагов влияния.",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:15:55.141333",
+          "metadata": {
+            "id": "e301edaf-65d8-4616-b6d5-4ee466b53ace",
+            "type": "discovery",
+            "title": "Паралич зоны ответственности заказчика на третьем уровне согласования",
+            "description": "Запрос на доступ к API застрял на третьем круге согласования внутри структуры банка («там до сих пор третье согласование висит»), причем сам директор по закупкам признает собственное бессилие ускорить этот процесс («Я тоже не вижу подвижек со своей, если совсем честно»).",
+            "implications": "Задержка доступа к API вызвана не бездействием подрядчика и не качеством письма-обоснования, а внутренними бюрократическими барьерами банка, на которые закупщик не имеет рычагов влияния.",
+            "actionability": "medium",
+            "source_meeting_id": "meeting_20260825_181517",
+            "source_quote": "Я тоже не вижу подвижек со своей, если совсем честно, там до сих пор третье согласование висит.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:15:55.141286"
+          }
+        },
+        {
+          "id": "knowledge_insight_185_meeting_",
+          "category": "insight",
+          "title": "Разделение проекта на «каркас» и «зависимость от API» смещает фокус комитета с блокиратора на прогресс",
+          "content": "Предложение оформить статус-документ с разделением того, что готово автономно («по каркасу»), и того, что блокировано API, позволяет закупщику демонстрировать динамику работы («покажу, что движение есть») несмотря на зависшее согласование.\n\nImplications: Демонстрация независимых от API результатов снижает риски для закупщика на комитете и переводит дискуссию из плоскости «мы стоим из-за безопасности» в плоскость «мы делаем всё, что можем без доступа».",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 0.9,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:15:55.141339",
+          "metadata": {
+            "id": "46145aa1-746d-4108-b520-2fa5e32c900e",
+            "type": "hypothesis",
+            "title": "Разделение проекта на «каркас» и «зависимость от API» смещает фокус комитета с блокиратора на прогресс",
+            "description": "Предложение оформить статус-документ с разделением того, что готово автономно («по каркасу»), и того, что блокировано API, позволяет закупщику демонстрировать динамику работы («покажу, что движение есть») несмотря на зависшее согласование.",
+            "implications": "Демонстрация независимых от API результатов снижает риски для закупщика на комитете и переводит дискуссию из плоскости «мы стоим из-за безопасности» в плоскость «мы делаем всё, что можем без доступа».",
+            "actionability": "high",
+            "source_meeting_id": "meeting_20260825_181517",
+            "source_quote": "Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами? — Это было бы полезно, да. Так я хотя бы покажу, что движение есть",
+            "confidence": 0.9,
+            "extracted_at": "2026-08-25T18:15:55.141294"
+          }
+        }
+      ],
+      "standards": [],
+      "achievements": [
+        {
+          "id": "knowledge_achievement_179_meeting_",
+          "category": "achievement",
+          "title": "Отсутствие доступа к API",
+          "content": "Команда «Гелиона» не получила доступ к API, согласование со стороны банка зависло на третьем этапе.\n\nImpact: Создает риски для комитета через 2 недели, так как у заказчика нет конкретных результатов для демонстрации.\nRoot Cause: Задержка на третьем этапе согласования внутри банка.",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:15:54.394069",
+          "metadata": {
+            "id": "f107b54e-4959-4c2e-973a-fbc84c4f0f46",
+            "type": "failure",
+            "title": "Отсутствие доступа к API",
+            "description": "Команда «Гелиона» не получила доступ к API, согласование со стороны банка зависло на третьем этапе.",
+            "impact": "Создает риски для комитета через 2 недели, так как у заказчика нет конкретных результатов для демонстрации.",
+            "root_cause": "Задержка на третьем этапе согласования внутри банка.",
+            "metrics": [
+              "Срок до комитета: 2 недели",
+              "Этап согласования: 3"
+            ],
+            "contributors": [
+              "Никита Фролов",
+              "Сергей Волков"
+            ],
+            "source_meeting_id": null,
+            "source_quote": "Доступ к API вы получили? Пока нет, мы писали письмо с обоснованием, как договаривались, но подвижек не видели с нашей стороны. Я тоже не вижу подвижек со своей, если совсем честно, там до сих пор третье согласование висит.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:15:54.394035"
+          }
+        },
+        {
+          "id": "knowledge_achievement_180_meeting_",
+          "category": "achievement",
+          "title": "Договоренность о подготовке статус-документа",
+          "content": "Согласовано создание отдельного статус-документа с указанием готового каркаса, зависимостей от API и дат.\n\nImpact: Позволит представителю заказчика продемонстрировать движение на предстоящем комитете.\nRoot Cause: Инициатива Никиты Фролова предложить альтернативный инструмент отчетности при задержке доступа к API.",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:15:54.394076",
+          "metadata": {
+            "id": "6756af76-13e8-43e1-b74a-157d3c5ea5e5",
+            "type": "achievement",
+            "title": "Договоренность о подготовке статус-документа",
+            "description": "Согласовано создание отдельного статус-документа с указанием готового каркаса, зависимостей от API и дат.",
+            "impact": "Позволит представителю заказчика продемонстрировать движение на предстоящем комитете.",
+            "root_cause": "Инициатива Никиты Фролова предложить альтернативный инструмент отчетности при задержке доступа к API.",
+            "metrics": [
+              "Срок до комитета: 2 недели"
+            ],
+            "contributors": [
+              "Никита Фролов",
+              "Сергей Волков"
+            ],
+            "source_meeting_id": null,
+            "source_quote": "Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами? Это было бы полезно, да. Так я хотя бы покажу, что движение есть...",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:15:54.394044"
+          }
+        }
+      ],
+      "expert_knowledge": [
+        {
+          "id": "knowledge_expert_knowledge_181_meeting_",
+          "category": "expert_knowledge",
+          "title": "Управление стейкхолдерами в условиях бюрократических задержек",
+          "content": "Для защиты проекта перед комитетом в условиях зависших согласований (например, доступа к API) и жестких дедлайнов критически важно предоставлять внутреннему союзнику (закупщику) структурированные артефакты (статус-документы с делением на готовый каркас и блокировки, привязанные к датам), чтобы перевести аргументацию из плоскости личного доверия в плоскость доказанного прогресса.",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 0.95,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:15:54.838257",
+          "metadata": {
+            "id": "13b8ec55-34d5-44f2-b1d1-0baf32b2a7bd",
+            "type": "strategic",
+            "title": "Управление стейкхолдерами в условиях бюрократических задержек",
+            "content": "Для защиты проекта перед комитетом в условиях зависших согласований (например, доступа к API) и жестких дедлайнов критически важно предоставлять внутреннему союзнику (закупщику) структурированные артефакты (статус-документы с делением на готовый каркас и блокировки, привязанные к датам), чтобы перевести аргументацию из плоскости личного доверия в плоскость доказанного прогресса.",
+            "expert_name": "Сергей Волков",
+            "expert_role": "",
+            "domain": "Account Management",
+            "complexity": "medium",
+            "source_meeting_id": null,
+            "source_quote": "Слушайте, я всё понимаю про безопасность, но мне через две недели нужно что-то конкретное на комитет, а не «ждём согласования». [...] И передайте своим — я по-прежнему за вас, но мне нужно этим кормить комитет, а не только личным доверием.",
+            "confidence": 0.95,
+            "extracted_at": "2026-08-25T18:15:54.838204"
+          }
+        },
+        {
+          "id": "knowledge_expert_knowledge_182_meeting_",
+          "category": "expert_knowledge",
+          "title": "Декомпозиция зависимостей для демонстрации прогресса при блокировках",
+          "content": "При затягивании внешних или межорганизационных процессов (согласование доступа к API через безопасность) процесс разработки необходимо декомпозировать на независимые блоки (готовый каркас) и зависимые части с четкими временными привязками для демонстрации динамики.",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 0.9,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:15:54.838266",
+          "metadata": {
+            "id": "6bbe6bed-27d3-4cee-b42f-4d6e8c67ad1a",
+            "type": "process",
+            "title": "Декомпозиция зависимостей для демонстрации прогресса при блокировках",
+            "content": "При затягивании внешних или межорганизационных процессов (согласование доступа к API через безопасность) процесс разработки необходимо декомпозировать на независимые блоки (готовый каркас) и зависимые части с четкими временными привязками для демонстрации динамики.",
+            "expert_name": "Никита Фролов",
+            "expert_role": "",
+            "domain": "Project Management",
+            "complexity": "low",
+            "source_meeting_id": null,
+            "source_quote": "Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?",
+            "confidence": 0.9,
+            "extracted_at": "2026-08-25T18:15:54.838221"
+          }
+        }
+      ],
+      "playbooks": [],
+      "antipatterns": [
+        {
+          "id": "knowledge_antipattern_186_meeting_",
+          "category": "antipattern",
+          "title": "Пассивная позиция в ожидании доступов",
+          "content": "Исполнитель отправляет письмо с обоснованием и просто ждет подвижек со своей стороны, не предпринимая активных действий для ускорения процесса получения доступа к API.\n\nConsequences: Затягивание сроков реализации проекта и создание ситуации неопределенности перед ключевым комитетом заказчика.\nSolution: Проявлять бóльшую проактивность, эскалировать проблему блокировки доступов и предлагать обходные пути или альтернативные варианты взаимодействия на ранних этапах.",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 0.95,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:15:55.606924",
+          "metadata": {
+            "id": "ea659eb3-fc10-466c-b78c-b4ca741f1999",
+            "type": "bad_practice",
+            "title": "Пассивная позиция в ожидании доступов",
+            "description": "Исполнитель отправляет письмо с обоснованием и просто ждет подвижек со своей стороны, не предпринимая активных действий для ускорения процесса получения доступа к API.",
+            "consequences": "Затягивание сроков реализации проекта и создание ситуации неопределенности перед ключевым комитетом заказчика.",
+            "solution": "Проявлять бóльшую проактивность, эскалировать проблему блокировки доступов и предлагать обходные пути или альтернативные варианты взаимодействия на ранних этапах.",
+            "source_meeting_id": "meeting_20260825_181517",
+            "source_quote": "Пока нет, мы писали письмо с обоснованием, как договаривались, но подвижек не видели с нашей стороны.",
+            "confidence": 0.95,
+            "extracted_at": "2026-08-25T18:15:55.606886"
+          }
+        },
+        {
+          "id": "knowledge_antipattern_187_meeting_",
+          "category": "antipattern",
+          "title": "Отсутствие конкретных материалов для защиты проекта перед комитетом",
+          "content": "Заказчик рискует идти на внутренний комитет с позицией «ждём согласования», что не дает комитету конкретных результатов и демонстрации реального движения по проекту.\n\nConsequences: Риск возникновения вопросов к закупкам и к ценности проекта со стороны руководства заказчика, подрыв доверия к исполнителю.\nSolution: Подготовить отдельный статус-документ с четким разделением того, что уже готово по каркасу, а что зависит от API, с конкретными датами.",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 0.95,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:15:55.606933",
+          "metadata": {
+            "id": "11ccc9de-9b61-46f5-815b-1fd4eb610ca5",
+            "type": "pitfall",
+            "title": "Отсутствие конкретных материалов для защиты проекта перед комитетом",
+            "description": "Заказчик рискует идти на внутренний комитет с позицией «ждём согласования», что не дает комитету конкретных результатов и демонстрации реального движения по проекту.",
+            "consequences": "Риск возникновения вопросов к закупкам и к ценности проекта со стороны руководства заказчика, подрыв доверия к исполнителю.",
+            "solution": "Подготовить отдельный статус-документ с четким разделением того, что уже готово по каркасу, а что зависит от API, с конкретными датами.",
+            "source_meeting_id": "meeting_20260825_181517",
+            "source_quote": "Слушайте, я всё понимаю про безопасность, но мне через две недели нужно что-то конкретное на комитет, а не «ждём согласования».",
+            "confidence": 0.95,
+            "extracted_at": "2026-08-25T18:15:55.606896"
+          }
+        }
+      ],
+      "workflows": [
+        {
+          "id": "knowledge_workflow_178_meeting_",
+          "category": "workflow",
+          "title": "Подготовка статус-документа для комитета при задержках интеграции",
+          "content": "В ситуации, когда задерживается доступ к API из-за внутренних согласований на стороне клиента, для представления на комитете формируется отдельный статус-документ. В нем фиксируется текущая готовность каркаса, зависимости от API и предварительные даты.",
+          "source_meeting_id": "meeting_20260825_181517",
+          "confidence": 0.95,
+          "importance": 0.8,
+          "related_entities": [
+            "Титан-Банк",
+            "Гелион"
+          ],
+          "related_topics": [],
+          "speakers": [
+            "Никита Фролов"
+          ],
+          "tags": [
+            "статус-документ",
+            "комитет",
+            "управление проектами",
+            "интеграция"
+          ],
+          "extracted_at": "2026-08-25T18:15:53.508524",
+          "metadata": {}
+        }
+      ],
+      "extraction_time": 4.498108,
+      "total_extracted": 11,
+      "timestamp": "2026-08-25T18:15:51.108947"
+    },
+    "regulations": [],
+    "extracted_templates": [],
+    "summary": {
+      "total_entities": 21,
+      "decisions_count": 1,
+      "tasks_count": 2,
+      "participants_count": 2,
+      "entities_count": 5,
+      "kpis_count": 3,
+      "opinions_count": 4,
+      "ideas_count": 1,
+      "project_statuses_count": 1,
+      "enhanced_kpis_count": 0,
+      "fact_checks_count": 0,
+      "cross_links_found": 1,
+      "related_meetings_found": 0,
+      "entity_evolution_tracked": 0,
+      "recurring_topics": 0,
+      "personality_profiles_count": 2,
+      "conflict_risks_count": 2,
+      "scenarios_count": 3,
+      "risks_count": 3,
+      "early_warnings_count": 3,
+      "critical_items_count": 4,
+      "keywords_count": 21,
+      "topics_count": 3,
+      "learning_data_count": 1,
+      "success_patterns_count": 0,
+      "failure_patterns_count": 0,
+      "goals_count": 3,
+      "regulations_count": 0,
+      "extracted_templates_count": 0,
+      "goal_conflicts_count": 1,
+      "knowledge_items_count": 11,
+      "knowledge_cases_count": 0,
+      "knowledge_methodologies_count": 0,
+      "knowledge_best_practices_count": 0,
+      "knowledge_insights_count": 3
+    },
+    "llm_stats": {
+      "providers": {
+        "openai": {
+          "model": "gpt-4o-mini",
+          "enabled": true,
+          "requests": {
+            "total": 0,
+            "cached": 0,
+            "errors": 0,
+            "cache_hit_rate": "0.0%"
+          },
+          "tokens": {
+            "input": 0,
+            "cached": 0,
+            "output": 0,
+            "total": 0
+          },
+          "cost": {
+            "actual": "$0.000000",
+            "without_cache": "$0.000000",
+            "savings": "$0.000000",
+            "savings_percent": "0.0%"
+          }
+        },
+        "gemini": {
+          "model": "gemini-flash-lite-latest",
+          "enabled": true,
+          "requests": {
+            "total": 640,
+            "cached": 639,
+            "errors": 0,
+            "cache_hit_rate": "99.8%"
+          },
+          "tokens": {
+            "input": 1844527,
+            "cached": 0,
+            "output": 477509,
+            "total": 2322036
+          },
+          "cost": {
+            "actual": "$0.375456",
+            "without_cache": "$0.375456",
+            "savings": "$0.000000",
+            "savings_percent": "0.0%"
+          }
+        }
+      },
+      "health": {},
+      "total": {
+        "requests": 640,
+        "errors": 0,
+        "estimated_cost": "$0.375456"
+      }
+    },
+    "memory_reinforcement": {
+      "frequency_tracking": {},
+      "hebbian_learning": {},
+      "emotional_salience": {},
+      "enabled": true
+    },
+    "validation": {
+      "enabled": true,
+      "validation": {
+        "is_valid": true,
+        "entities": {
+          "valid": [
+            {
+              "entity_id": "titan_bank",
+              "entity_type": "organization",
+              "name": "Титан-Банк",
+              "description": "Клиентская организация, проводящая комитет через две недели.",
+              "attributes": {
+                "type": "client"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:15:19.650437+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "gelion",
+              "entity_type": "company",
+              "name": "Гелион",
+              "description": "Компания, со стороны которой выступает Никита Фролов.",
+              "attributes": {},
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:15:19.650448+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "api",
+              "entity_type": "technology",
+              "name": "API",
+              "description": "Интерфейс, доступ к которому ожидает команда Гелиона и по которому висит третье согласование в Титан-Банке.",
+              "attributes": {},
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:15:19.650454+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "status_document",
+              "entity_type": "document",
+              "name": "статус-документ",
+              "description": "Документ с информацией о готовности каркаса и зависимостях от API с датами, который планируется подготовить.",
+              "attributes": {
+                "status": "draft"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:15:19.650459+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "komitet",
+              "entity_type": "event",
+              "name": "комитет",
+              "description": "Мероприятие в Титан-Банке, до которого осталось две недели.",
+              "attributes": {
+                "date": "через две недели"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:15:19.650463+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            }
+          ],
+          "invalid": [],
+          "uncertain": []
+        },
+        "decisions": {
+          "valid": [],
+          "invalid": [
+            {
+              "decision_id": "dec-01",
+              "decision_summary": "Подготовка отдельного статус-документа для комитета с информацией о готовности каркаса, зависимостях от API и датами.",
+              "decision_category": "operational",
+              "details": "В связи с задержкой согласования доступа к API и приближающимся комитетом через две недели, решено подготовить статус-документ для демонстрации прогресса.",
+              "participants": [
+                {
+                  "name": "Никита Фролов",
+                  "role": "Представитель «Гелиона»"
+                },
+                {
+                  "name": "Сергей Волков",
+                  "role": "Директор по закупкам, «Титан-Банк»"
+                }
+              ],
+              "responsible": {
+                "primary": "Никита Фролов"
+              },
+              "decision_maker_resolved": "Никита Фролов",
+              "decision_maker_speaker": "",
+              "attribution_confidence": "medium",
+              "reasoning": "Заказчику необходимо предоставить комитету конкретную информацию о движении проекта, так как согласование доступа к API затягивается.",
+              "timeline": {
+                "deadline": "на этой неделе"
+              },
+              "business_impact": {
+                "scope": "external",
+                "urgency": "high",
+                "risk_level": "medium"
+              },
+              "dependencies": [
+                "Задержка согласования доступа к API"
+              ],
+              "action_items": [
+                {
+                  "action": "Подготовить отдельный статус-документ по каркасу и зависимостям от API с датами",
+                  "owner": "Никита Фролов",
+                  "deadline": "на этой неделе"
+                }
+              ],
+              "quote": "— Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?\n— Это было бы полезно, да. Так я хотя бы покажу, что движение есть, даже если не всё в моей власти.\n— Подготовим на этой неделе.",
+              "confidence": 0.95,
+              "_extracted_at": "2026-08-25T18:15:19.590344+00:00",
+              "_agent": "DecisionAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "decision",
+              "importance_classification": {
+                "business_impact": "low",
+                "urgency_score": 0.5,
+                "complexity_score": 5,
+                "risk_level": "low",
+                "overall_priority": "medium"
+              },
+              "validation_reason": "Слишком короткое описание решения"
+            }
+          ],
+          "uncertain": []
+        },
+        "tasks": {
+          "valid": [
+            {
+              "task_id": "task_1",
+              "title": "Получить доступ к API",
+              "description": "Получить доступ к API Титан-Банка (находится на этапе третьего согласования со стороны банка)",
+              "task_type": "action",
+              "assignee": {
+                "name": "Сергей Волков",
+                "role": "директор по закупкам"
+              },
+              "assignee_speaker": null,
+              "assignment_confidence": "medium",
+              "needs_human_review": false,
+              "assigner": "Никита Фролов",
+              "priority": "high",
+              "status": "blocked",
+              "deadline": {
+                "date": "через две недели",
+                "is_hard": true
+              },
+              "dependencies": [],
+              "related_decision": "",
+              "related_project": "Титан-Банк",
+              "acceptance_criteria": [
+                "Доступ к API предоставлен"
+              ],
+              "blockers": [
+                "Третье согласование висит со стороны банка"
+              ],
+              "quote": "Доступ к API вы получили?",
+              "confidence": 0.9,
+              "_extracted_at": "2026-08-25T18:15:19.995987+00:00",
+              "_agent": "TaskAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "task"
+            },
+            {
+              "task_id": "task_2",
+              "title": "Подготовить отдельный статус-документ для комитета",
+              "description": "Подготовить статус-документ, содержащий информацию о том, что уже готово по каркасу, что зависит от API, с датами",
+              "task_type": "action",
+              "assignee": {
+                "name": "Никита Фролов",
+                "role": "со стороны «Гелиона»"
+              },
+              "assignee_speaker": null,
+              "assignment_confidence": "high",
+              "needs_human_review": false,
+              "assigner": "Сергей Волков",
+              "priority": "high",
+              "status": "new",
+              "deadline": {
+                "date": "на этой неделе",
+                "is_hard": false
+              },
+              "dependencies": [],
+              "related_decision": "",
+              "related_project": "Титан-Банк",
+              "acceptance_criteria": [
+                "Документ подготовлен",
+                "Указано состояние каркаса и зависимости от API с датами"
+              ],
+              "blockers": [],
+              "quote": "Что если мы подготовим отдельный статус-документ — что уже готово по каркасу, что зависит от API, с датами?",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:15:19.996000+00:00",
+              "_agent": "TaskAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "task"
+            }
+          ],
+          "invalid": [],
+          "uncertain": []
+        },
+        "issues": [],
+        "recommendations": [],
+        "quality_score": 0.875
+      },
+      "filtered_data": {
+        "internal": [
+          {
+            "entity_id": "titan_bank",
+            "entity_type": "organization",
+            "name": "Титан-Банк",
+            "description": "Клиентская организация, проводящая комитет через две недели.",
+            "attributes": {
+              "type": "client"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:15:19.650437+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "gelion",
+            "entity_type": "company",
+            "name": "Гелион",
+            "description": "Компания, со стороны которой выступает Никита Фролов.",
+            "attributes": {},
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:15:19.650448+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "api",
+            "entity_type": "technology",
+            "name": "API",
+            "description": "Интерфейс, доступ к которому ожидает команда Гелиона и по которому висит третье согласование в Титан-Банке.",
+            "attributes": {},
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:15:19.650454+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "status_document",
+            "entity_type": "document",
+            "name": "статус-документ",
+            "description": "Документ с информацией о готовности каркаса и зависимостях от API с датами, который планируется подготовить.",
+            "attributes": {
+              "status": "draft"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:15:19.650459+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "komitet",
+            "entity_type": "event",
+            "name": "комитет",
+            "description": "Мероприятие в Титан-Банке, до которого осталось две недели.",
+            "attributes": {
+              "date": "через две недели"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:15:19.650463+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          }
+        ],
+        "external": [],
+        "uncertain": []
+      },
+      "quality_score": 0.875
+    }
+  }
+}

@@ -1,0 +1,4008 @@
+{
+  "meeting": {
+    "id": "doc_2026-03-09_client-titan-1",
+    "transcription_text": "Meeting: Client call — Titan Bank, reporting module status\nDate: 2026-03-09\nDuration: 3 min\nParticipants: Nick Frolov (Helion); Sergey Volkov — SVP, Data & Analytics, Titan Bank\n---\n\n[00:00] Nick Frolov: Sergey, hi, it's Nick — can you hear me okay? My headset's been dropping out all morning.\n[00:05] Sergey Volkov: I hear you fine.\n[00:07] Nick Frolov: Great. Quick one, then — I wanted to sync up on where we are with the reporting module.\n[00:13] Sergey Volkov: I've got a question for you before you get to yours. Are you building that module this year or not?\n[00:21] Nick Frolov: We are. I'm pretty confident we are — we're nailing the details down with product this week.\n[00:28] Sergey Volkov: \"Pretty confident\" doesn't work for me. Look, this is year three for me with you people. I have zero complaints about what's already running. Zero. But if the answer on reporting is \"pretty,\" then I start looking at what else is on the market.\n[00:45] Nick Frolov: That's fair. I get it.\n[00:47] Sergey Volkov: Do you? Because I've been hearing \"we're on it\" since the winter.\n[00:52] Nick Frolov: Give me a week. I'll come back to you with something concrete, not a feeling.\n[00:58] Sergey Volkov: A week's fine. But understand me — if it doesn't land this year, we'll start looking elsewhere. I'm not going to wait forever for the sake of a nice relationship.\n[01:10] Nick Frolov: Understood. Loud and clear. I'll come back with a date.\n[01:14] Sergey Volkov: With a date. Not a range, not a quarter.\n[01:18] Nick Frolov: With a date. And hey, while I've got you — is anyone from your side going to the fintech thing in May? Our marketing lead keeps asking me.\n[01:27] Sergey Volkov: Somebody from us, probably. Not me. I'll be honest with you, I don't love those.\n[01:33] Nick Frolov: Fair enough. Alright — a week.\n[01:36] Sergey Volkov: I'll wait for it.\n",
+    "summary": "",
+    "date": "2026-03-09",
+    "title": "2026-03-09_client-titan-1"
+  },
+  "access_group": "public",
+  "source_file": "2026-03-09_client-titan-1.txt",
+  "results": {
+    "meeting_id": "meeting_20260825_183058",
+    "status": "completed",
+    "processing_timestamp": "2026-08-25T18:31:35.558979+00:00",
+    "processing_time_seconds": 36.755869,
+    "agent_errors": {},
+    "metadata": {
+      "orchestrator": "Capture Orchestrator",
+      "version": "2.0.0",
+      "agents_used": [
+        "decisions",
+        "tasks",
+        "participants",
+        "entities",
+        "kpis",
+        "opinions",
+        "ideas",
+        "project_statuses",
+        "enhanced_kpis",
+        "fact_checks",
+        "cogni_profiles"
+      ],
+      "agents_failed": [],
+      "context": {
+        "id": "doc_2026-03-09_client-titan-1",
+        "transcription_text": "Meeting: Client call — Titan Bank, reporting module status\nDate: 2026-03-09\nDuration: 3 min\nParticipants: Nick Frolov (Helion); Sergey Volkov — SVP, Data & Analytics, Titan Bank\n---\n\n[00:00] Nick Frolov: Sergey, hi, it's Nick — can you hear me okay? My headset's been dropping out all morning.\n[00:05] Sergey Volkov: I hear you fine.\n[00:07] Nick Frolov: Great. Quick one, then — I wanted to sync up on where we are with the reporting module.\n[00:13] Sergey Volkov: I've got a question for you before you get to yours. Are you building that module this year or not?\n[00:21] Nick Frolov: We are. I'm pretty confident we are — we're nailing the details down with product this week.\n[00:28] Sergey Volkov: \"Pretty confident\" doesn't work for me. Look, this is year three for me with you people. I have zero complaints about what's already running. Zero. But if the answer on reporting is \"pretty,\" then I start looking at what else is on the market.\n[00:45] Nick Frolov: That's fair. I get it.\n[00:47] Sergey Volkov: Do you? Because I've been hearing \"we're on it\" since the winter.\n[00:52] Nick Frolov: Give me a week. I'll come back to you with something concrete, not a feeling.\n[00:58] Sergey Volkov: A week's fine. But understand me — if it doesn't land this year, we'll start looking elsewhere. I'm not going to wait forever for the sake of a nice relationship.\n[01:10] Nick Frolov: Understood. Loud and clear. I'll come back with a date.\n[01:14] Sergey Volkov: With a date. Not a range, not a quarter.\n[01:18] Nick Frolov: With a date. And hey, while I've got you — is anyone from your side going to the fintech thing in May? Our marketing lead keeps asking me.\n[01:27] Sergey Volkov: Somebody from us, probably. Not me. I'll be honest with you, I don't love those.\n[01:33] Nick Frolov: Fair enough. Alright — a week.\n[01:36] Sergey Volkov: I'll wait for it.\n",
+        "summary": "",
+        "date": "2026-03-09",
+        "title": "2026-03-09_client-titan-1"
+      }
+    },
+    "decisions": [
+      {
+        "decision_id": "dec_2026-03-09_1",
+        "decision_summary": "Ник Фролов предоставит Сергею Волкову конкретную дату запуска отчетного модуля в течение недели.",
+        "decision_category": "operational",
+        "details": "Ник Фролов согласился вернуться к Сергею Волкову через неделю с конкретной датой запуска отчетного модуля (не с диапазоном и не с кварталом, а с точной датой).",
+        "participants": [
+          {
+            "name": "Nick Frolov",
+            "role": "Представитель Helion"
+          },
+          {
+            "name": "Sergey Volkov",
+            "role": "SVP, Data & Analytics, Titan Bank"
+          }
+        ],
+        "responsible": {
+          "primary": "Nick Frolov"
+        },
+        "decision_maker_resolved": "Nick Frolov",
+        "decision_maker_speaker": "",
+        "attribution_confidence": "medium",
+        "reasoning": "Клиент потребовал конкретики по срокам реализации отчетного модуля, пригрозив в противном случае начать поиск альтернативных решений на рынке.",
+        "timeline": {
+          "deadline": "1 неделя"
+        },
+        "business_impact": {
+          "scope": "external",
+          "urgency": "high",
+          "risk_level": "high"
+        },
+        "dependencies": [],
+        "action_items": [
+          {
+            "action": "Подготовить и предоставить конкретную дату запуска отчетного модуля",
+            "owner": "Nick Frolov",
+            "deadline": "1 неделя"
+          }
+        ],
+        "quote": "Give me a week. I'll come back to you with something concrete, not a feeling.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:31:00.454078+00:00",
+        "_agent": "DecisionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "decision",
+        "importance_classification": {
+          "business_impact": "low",
+          "urgency_score": 0.5,
+          "complexity_score": 5,
+          "risk_level": "low",
+          "overall_priority": "medium"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "task_1",
+        "title": "Подготовить конкретный ответ и точную дату по отчетному модулю",
+        "description": "Предоставить клиенту конкретные детали и точную дату выпуска отчетного модуля вместо расплывчатых формулировок.",
+        "task_type": "action",
+        "assignee": {
+          "name": "Nick Frolov",
+          "role": "Helion"
+        },
+        "assignee_speaker": null,
+        "assignment_confidence": "high",
+        "needs_human_review": false,
+        "assigner": "Sergey Volkov",
+        "priority": "high",
+        "status": "new",
+        "deadline": {
+          "date": "2026-03-16",
+          "is_hard": true
+        },
+        "dependencies": [],
+        "related_decision": "",
+        "related_project": "Reporting module",
+        "acceptance_criteria": [
+          "Предоставить дату, а не диапазон или квартал",
+          "Прийти с чем-то конкретным, а не с чувством"
+        ],
+        "blockers": [],
+        "quote": "Give me a week. I'll come back to you with something concrete, not a feeling.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:31:00.117779+00:00",
+        "_agent": "TaskAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "task"
+      }
+    ],
+    "participants": [
+      {
+        "participant_id": "nick_frolov",
+        "name": "Nick Frolov",
+        "normalized_name": "Nick Frolov",
+        "role": "",
+        "department": "Helion",
+        "activity_level": "high",
+        "participation_metrics": {
+          "speaking_turns": 8,
+          "decisions_involved": 1,
+          "tasks_assigned": 1,
+          "questions_asked": 2
+        },
+        "expertise_areas": [
+          "Reporting module",
+          "Client management"
+        ],
+        "communication_style": {
+          "style": "collaborative",
+          "traits": [
+            "Inquiring",
+            "Accommodating",
+            "Responsive"
+          ]
+        },
+        "relationships": [
+          {
+            "with": "Sergey Volkov",
+            "type": "collaborates"
+          }
+        ],
+        "key_contributions": [
+          "Initiated sync-up on the reporting module status",
+          "Agreed to provide a concrete delivery date within a week"
+        ],
+        "sentiment": "neutral",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:31:00.866553+00:00",
+        "_agent": "ParticipantAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "participant"
+      },
+      {
+        "participant_id": "sergey_volkov",
+        "name": "Sergey Volkov",
+        "normalized_name": "Sergey Volkov",
+        "role": "SVP, Data & Analytics",
+        "department": "Titan Bank",
+        "activity_level": "high",
+        "participation_metrics": {
+          "speaking_turns": 7,
+          "decisions_involved": 1,
+          "tasks_assigned": 0,
+          "questions_asked": 1
+        },
+        "expertise_areas": [
+          "Data & Analytics",
+          "Vendor management"
+        ],
+        "communication_style": {
+          "style": "directive",
+          "traits": [
+            "Firm",
+            "Demanding",
+            "Direct"
+          ]
+        },
+        "relationships": [
+          {
+            "with": "Nick Frolov",
+            "type": "collaborates"
+          }
+        ],
+        "key_contributions": [
+          "Demanded a concrete delivery date for the reporting module this year",
+          "Set clear expectations about looking for alternative market solutions if deadlines are missed"
+        ],
+        "sentiment": "negative",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:31:00.866569+00:00",
+        "_agent": "ParticipantAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "participant"
+      }
+    ],
+    "entities": [
+      {
+        "entity_id": "titan_bank",
+        "entity_type": "organization",
+        "name": "Titan Bank",
+        "description": "Client organization represented by Sergey Volkov.",
+        "attributes": {
+          "type": "client",
+          "industry": "banking"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:31:00.503295+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "helion",
+        "entity_type": "company",
+        "name": "Helion",
+        "description": "Provider company represented by Nick Frolov.",
+        "attributes": {
+          "industry": "technology"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 1.0,
+        "_extracted_at": "2026-08-25T18:31:00.503311+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "reporting_module",
+        "entity_type": "feature",
+        "name": "reporting module",
+        "description": "Module whose development status is being discussed during the call.",
+        "attributes": {
+          "status": "planned",
+          "product_name": "reporting module"
+        },
+        "relationships": [
+          {
+            "target_type": "organization",
+            "target_name": "Titan Bank",
+            "relation_type": "related_to"
+          }
+        ],
+        "mentions": [],
+        "importance": "high",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:31:00.503319+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      },
+      {
+        "entity_id": "fintech_thing_in_may",
+        "entity_type": "event",
+        "name": "fintech thing in May",
+        "description": "Fintech event taking place in May.",
+        "attributes": {
+          "date": "May"
+        },
+        "relationships": [],
+        "mentions": [],
+        "importance": "low",
+        "confidence": 0.9,
+        "_extracted_at": "2026-08-25T18:31:00.503323+00:00",
+        "_agent": "EntityAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "entity"
+      }
+    ],
+    "kpis": [
+      {
+        "kpi_id": "titan_cooperation_duration",
+        "name": "Срок сотрудничества",
+        "category": "operational",
+        "value": {
+          "current": 3,
+          "previous": null,
+          "target": null,
+          "unit": "года"
+        },
+        "trend": {
+          "direction": "stable",
+          "change_percent": null,
+          "period": "year"
+        },
+        "context": {
+          "project": "reporting module",
+          "department": "Data & Analytics",
+          "responsible": "Sergey Volkov"
+        },
+        "analysis": {
+          "status": "at_risk",
+          "insight": "Клиент работает с компанией три года и требует конкретных сроков по новому модулю отчета под угрозой ухода.",
+          "action_needed": true
+        },
+        "quote": "Look, this is year three for me with you people.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:31:00.514157+00:00",
+        "_agent": "KPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "kpi"
+      },
+      {
+        "kpi_id": "titan_complaints_count",
+        "name": "Количество жалоб на текущую работу",
+        "category": "quality",
+        "value": {
+          "current": 0,
+          "previous": null,
+          "target": null,
+          "unit": "жалоб"
+        },
+        "trend": {
+          "direction": "stable",
+          "change_percent": null,
+          "period": ""
+        },
+        "context": {
+          "project": "running services",
+          "department": "Data & Analytics",
+          "responsible": "Sergey Volkov"
+        },
+        "analysis": {
+          "status": "on_track",
+          "insight": "У клиента нет претензий к уже запущенным сервисам.",
+          "action_needed": false
+        },
+        "quote": "I have zero complaints about what's already running. Zero.",
+        "confidence": 0.95,
+        "_extracted_at": "2026-08-25T18:31:00.514173+00:00",
+        "_agent": "KPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "kpi"
+      }
+    ],
+    "opinions": [
+      {
+        "opinion_id": "opinion_001",
+        "author": "Nick Frolov",
+        "opinion_summary": "Ник выражает уверенность в том, что модуль отчетности будет создан в текущем году, ссылаясь на согласование деталей с продуктовой командой.",
+        "topic": "Создание модуля отчетности в текущем году",
+        "opinion_category": "strategic",
+        "sentiment_analysis": {
+          "primary_sentiment": "positive",
+          "intensity": 0.6,
+          "emotional_undertones": [
+            "уверенность"
+          ],
+          "confidence_in_opinion": "medium"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "уточнение деталей с продуктовой командой на этой неделе"
+          ],
+          "logical_structure": "moderate",
+          "bias_indicators": [
+            "желание успокоить клиента"
+          ]
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "удержание клиента",
+            "выполнение обязательств"
+          ],
+          "risk_concerns": [
+            "недовольство клиента неопределенностью"
+          ],
+          "opportunity_focus": [
+            "успешная поставка модуля отчетности"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.4,
+          "authority_level": "experienced",
+          "social_influence": "medium",
+          "likely_supporters": []
+        },
+        "business_implications": {
+          "strategic_alignment": "aligned",
+          "resource_implications": [
+            "задействование продуктовой команды"
+          ],
+          "risk_assessment": "high"
+        },
+        "quote": "We are. I'm pretty confident we are — we're nailing the details down with product this week.",
+        "confidence_score": 0.8,
+        "_extracted_at": "2026-08-25T18:31:03.514868+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      },
+      {
+        "opinion_id": "opinion_002",
+        "author": "Sergey Volkov",
+        "opinion_summary": "Сергей полностью доволен текущим работающим решением, но считает формулировку «претти конфидент» недостаточной и угрожает начать поиск альтернатив на рынке, если модуль отчетности не появится в этом году.",
+        "topic": "Оценка текущего ПО и требования к срокам нового модуля отчетности",
+        "opinion_category": "strategic",
+        "sentiment_analysis": {
+          "primary_sentiment": "negative",
+          "intensity": 0.9,
+          "emotional_undertones": [
+            "недовольство",
+            "требовательность",
+            "скептицизм"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "experience_based",
+          "supporting_evidence": [
+            "три года сотрудничества без претензий к текущему функционалу",
+            "отсутствие конкретики с зимы"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": [
+            "угроза уходом из-за затягивания сроков"
+          ]
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "получение надежной отчетности вовремя",
+            "четкость и конкретика от вендора"
+          ],
+          "risk_concerns": [
+            "отсутствие обещанного функционала к концу года",
+            "пустые обещания"
+          ],
+          "opportunity_focus": [
+            "поиск альтернативных решений на рынке"
+          ],
+          "personal_stake": "high"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.9,
+          "authority_level": "expert",
+          "social_influence": "high",
+          "likely_supporters": []
+        },
+        "business_implications": {
+          "strategic_alignment": "misaligned",
+          "resource_implications": [
+            "риск потери ключевого клиента"
+          ],
+          "risk_assessment": "high"
+        },
+        "quote": "I have zero complaints about what's already running. Zero. But if the answer on reporting is \"pretty,\" then I start looking at what else is on the market.",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:31:03.514879+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      },
+      {
+        "opinion_id": "opinion_003",
+        "author": "Sergey Volkov",
+        "opinion_summary": "Сергей негативно относится к финтех-мероприятиям и не планирует их посещать.",
+        "topic": "Посещение финтех-мероприятия в мае",
+        "opinion_category": "personal",
+        "sentiment_analysis": {
+          "primary_sentiment": "negative",
+          "intensity": 0.6,
+          "emotional_undertones": [
+            "неприязнь"
+          ],
+          "confidence_in_opinion": "high"
+        },
+        "argumentation": {
+          "reasoning_type": "intuitive",
+          "supporting_evidence": [
+            "личная нелюбовь к подобным событиям"
+          ],
+          "logical_structure": "strong",
+          "bias_indicators": []
+        },
+        "motivational_analysis": {
+          "underlying_interests": [
+            "экономия времени"
+          ],
+          "risk_concerns": [],
+          "opportunity_focus": [],
+          "personal_stake": "low"
+        },
+        "influence_potential": {
+          "persuasiveness": 0.5,
+          "authority_level": "experienced",
+          "social_influence": "low",
+          "likely_supporters": []
+        },
+        "business_implications": {
+          "strategic_alignment": "neutral",
+          "resource_implications": [],
+          "risk_assessment": "low"
+        },
+        "quote": "Somebody from us, probably. Not me. I'll be honest with you, I don't love those.",
+        "confidence_score": 0.9,
+        "_extracted_at": "2026-08-25T18:31:03.514883+00:00",
+        "_agent": "OpinionAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "opinion"
+      }
+    ],
+    "ideas": [
+      {
+        "idea_id": "idea_001",
+        "author": "Nick Frolov",
+        "idea_summary": "Разработка и запуск нового отчетного модуля (reporting module) в текущем году с предоставлением точной даты релиза.",
+        "idea_category": "product",
+        "innovation_assessment": {
+          "novelty_level": "incremental",
+          "creativity_score": 0.3,
+          "uniqueness": "common",
+          "inspiration_source": [
+            "Client requirements"
+          ]
+        },
+        "feasibility_analysis": {
+          "technical_feasibility": "high",
+          "resource_requirements": {
+            "financial": "Standard R&D budget",
+            "human": "Product and development team",
+            "time": "1 week to solidify concrete dates, year for delivery"
+          },
+          "implementation_complexity": "moderate",
+          "risk_factors": [
+            "Client churn if deadlines are missed",
+            "Competition from alternative market solutions"
+          ]
+        },
+        "business_potential": {
+          "market_opportunity": "medium",
+          "competitive_advantage": "strong",
+          "revenue_impact": "high",
+          "scalability": "moderately_scalable"
+        },
+        "stakeholder_impact": {
+          "customers": "positive",
+          "employees": "neutral",
+          "partners": "neutral"
+        },
+        "implementation_roadmap": {
+          "quick_wins": [
+            "Provide a concrete delivery date within one week"
+          ],
+          "pilot_opportunities": [
+            "Titan Bank reporting module testing"
+          ],
+          "success_metrics": [
+            "Delivery date confirmation",
+            "Client retention"
+          ]
+        },
+        "priority_scoring": {
+          "impact_score": 0.9,
+          "effort_score": 0.6,
+          "urgency_score": 0.9,
+          "strategic_fit": 0.9,
+          "overall_priority": "critical"
+        },
+        "next_steps": [
+          "Finalize details with the product team this week",
+          "Return to Sergey Volkov with a specific delivery date within a week"
+        ],
+        "quote": "Give me a week. I'll come back to you with something concrete, not a feeling.",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:31:01.306256+00:00",
+        "_agent": "IdeaAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "idea"
+      }
+    ],
+    "project_statuses": [
+      {
+        "project_id": "project_reporting_module",
+        "project_name": "Reporting Module",
+        "description": "Building and delivering a new reporting module for Titan Bank",
+        "project_category": "product",
+        "lifecycle_stage": "planning",
+        "status_assessment": {
+          "current_status": "planning",
+          "health_indicator": "red",
+          "progress_percentage": null,
+          "last_update": "Nailing down details with product this week, concrete date to be provided in a week"
+        },
+        "scope_analysis": {
+          "primary_objectives": [
+            "Build and deliver the reporting module this year"
+          ],
+          "deliverables": [
+            "Reporting module"
+          ],
+          "success_criteria": [
+            "Delivery of the module within the current year",
+            "Client satisfaction to prevent them from looking at other market solutions"
+          ],
+          "scope_clarity": "moderate"
+        },
+        "stakeholder_mapping": {
+          "project_sponsor": "Sergey Volkov",
+          "project_manager": "Nick Frolov",
+          "core_team": [
+            "Helion product team"
+          ],
+          "key_stakeholders": [
+            "Sergey Volkov"
+          ]
+        },
+        "resource_analysis": {
+          "budget_info": {
+            "estimated_budget": null,
+            "budget_status": "on"
+          },
+          "human_resources": {
+            "team_size": null,
+            "skill_gaps": []
+          }
+        },
+        "timeline_analysis": {
+          "estimated_duration": null,
+          "start_date": null,
+          "target_completion": "This year",
+          "critical_milestones": [
+            "Provide concrete date in one week"
+          ],
+          "timeline_risk": "high"
+        },
+        "risk_assessment": {
+          "identified_risks": [
+            {
+              "risk_description": "Client may look at alternative solutions on the market if the module is not delivered this year",
+              "probability": "high",
+              "impact": "high",
+              "mitigation_strategy": "Provide a concrete delivery date within a week and ensure delivery this year"
+            }
+          ],
+          "overall_risk_level": "high"
+        },
+        "business_value": {
+          "strategic_alignment": "high",
+          "expected_roi": null,
+          "business_benefits": [
+            "Retention of the client for year three and beyond"
+          ]
+        },
+        "dependencies": {
+          "internal_dependencies": [
+            "Product team finalizing details"
+          ],
+          "external_dependencies": [],
+          "blocking_factors": [
+            "Lack of concrete timeline so far"
+          ]
+        },
+        "current_issues": [
+          "Client is dissatisfied with vague status ('pretty confident', 'we're on it')",
+          "Risk of losing the client to competitors"
+        ],
+        "recent_achievements": [],
+        "quote": "Are you building that module this year or not?",
+        "confidence_score": 0.95,
+        "_extracted_at": "2026-08-25T18:31:01.433433+00:00",
+        "_agent": "ProjectStatusAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "project_status"
+      }
+    ],
+    "enhanced_kpis": [
+      {
+        "kpi_id": "kpi_001",
+        "metric_name": "Количество жалоб на действующие запущенные продукты",
+        "metric_category": "quality",
+        "values": {
+          "current_value": "0",
+          "target_value": "0",
+          "previous_value": null,
+          "unit": "шт."
+        },
+        "time_context": {
+          "period": "год",
+          "specific_date": "2026-03-09",
+          "comparison_period": null
+        },
+        "trend_analysis": {
+          "direction": "stable",
+          "change_percentage": 0,
+          "trend_strength": "strong",
+          "seasonality": null
+        },
+        "performance_assessment": {
+          "vs_target": "on",
+          "vs_previous": "same",
+          "gap_analysis": "Жалобы на текущий функционал отсутствуют",
+          "performance_rating": "excellent"
+        },
+        "business_context": {
+          "strategic_importance": "high",
+          "affected_areas": [
+            "Customer Satisfaction",
+            "Product Quality"
+          ],
+          "root_causes": [
+            "Стабильная работа текущего ПО"
+          ],
+          " внешний_факторы": []
+        },
+        "action_items": {
+          "immediate_actions": [
+            "Поддерживать текущее качество работы"
+          ],
+          "improvement_opportunities": [],
+          "risks_if_unchanged": []
+        },
+        "related_metrics": [],
+        "data_quality": {
+          "source_reliability": "high",
+          "data_freshness": "current"
+        },
+        "quote": "I have zero complaints about what's already running. Zero.",
+        "confidence_score": 1.0,
+        "_extracted_at": "2026-08-25T18:31:02.782571+00:00",
+        "_agent": "EnhancedKPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "enhanced_kpi"
+      },
+      {
+        "kpi_id": "kpi_002",
+        "metric_name": "Срок сотрудничества с клиентом",
+        "metric_category": "customer",
+        "values": {
+          "current_value": "3",
+          "target_value": null,
+          "previous_value": null,
+          "unit": "год"
+        },
+        "time_context": {
+          "period": "год",
+          "specific_date": "2026-03-09",
+          "comparison_period": null
+        },
+        "trend_analysis": {
+          "direction": "up",
+          "change_percentage": null,
+          "trend_strength": "strong",
+          "seasonality": null
+        },
+        "performance_assessment": {
+          "vs_target": "on",
+          "vs_previous": null,
+          "gap_analysis": null,
+          "performance_rating": "good"
+        },
+        "business_context": {
+          "strategic_importance": "high",
+          "affected_areas": [
+            "Account Management",
+            "Client Retention"
+          ],
+          "root_causes": [],
+          "external_factors": []
+        },
+        "action_items": {
+          "immediate_actions": [
+            "Удержать клиента за счет поставки модуля отчетности в срок"
+          ],
+          "improvement_opportunities": [],
+          "risks_if_unchanged": [
+            "Уход клиента к конкурентам"
+          ]
+        },
+        "related_metrics": [],
+        "data_quality": {
+          "source_reliability": "high",
+          "data_freshness": "current"
+        },
+        "quote": "Look, this is year three for me with you people.",
+        "confidence_score": 1.0,
+        "_extracted_at": "2026-08-25T18:31:02.782581+00:00",
+        "_agent": "EnhancedKPIAgent",
+        "_agent_version": "1.0.0",
+        "_entity_type": "enhanced_kpi"
+      }
+    ],
+    "fact_checks": [],
+    "cogni_profiles": [
+      {
+        "name": "Sergey Volkov",
+        "confidence": 0.4,
+        "_agent": "CogniDimensionsAgent",
+        "_agent_version": "1.0.0",
+        "_extracted_at": "2026-08-25T18:31:01.746307+00:00",
+        "_entity_type": "cogni_profile",
+        "light_cone": {
+          "horizon": "this year",
+          "scale": "market",
+          "depth": null,
+          "confidence": 0.4,
+          "quote": "if it doesn't land this year, we'll start looking elsewhere."
+        },
+        "equalizer": {
+          "action_analysis": {
+            "value": 0.5,
+            "confidence": 0.4,
+            "quote": "\"Pretty confident\" doesn't work for me."
+          },
+          "concrete_abstract": {
+            "value": -0.5,
+            "confidence": 0.4,
+            "quote": "With a date. Not a range, not a quarter."
+          }
+        }
+      },
+      {
+        "name": "Nick Frolov",
+        "confidence": 0.3,
+        "_agent": "CogniDimensionsAgent",
+        "_agent_version": "1.0.0",
+        "_extracted_at": "2026-08-25T18:31:01.746398+00:00",
+        "_entity_type": "cogni_profile",
+        "light_cone": {
+          "horizon": "a week",
+          "scale": "company",
+          "depth": null,
+          "confidence": 0.4,
+          "quote": "Give me a week. I'll come back to you with something concrete, not a feeling."
+        }
+      }
+    ],
+    "agent_results": {
+      "decisions": [
+        {
+          "decision_id": "dec_2026-03-09_1",
+          "decision_summary": "Ник Фролов предоставит Сергею Волкову конкретную дату запуска отчетного модуля в течение недели.",
+          "decision_category": "operational",
+          "details": "Ник Фролов согласился вернуться к Сергею Волкову через неделю с конкретной датой запуска отчетного модуля (не с диапазоном и не с кварталом, а с точной датой).",
+          "participants": [
+            {
+              "name": "Nick Frolov",
+              "role": "Представитель Helion"
+            },
+            {
+              "name": "Sergey Volkov",
+              "role": "SVP, Data & Analytics, Titan Bank"
+            }
+          ],
+          "responsible": {
+            "primary": "Nick Frolov"
+          },
+          "decision_maker_resolved": "Nick Frolov",
+          "decision_maker_speaker": "",
+          "attribution_confidence": "medium",
+          "reasoning": "Клиент потребовал конкретики по срокам реализации отчетного модуля, пригрозив в противном случае начать поиск альтернативных решений на рынке.",
+          "timeline": {
+            "deadline": "1 неделя"
+          },
+          "business_impact": {
+            "scope": "external",
+            "urgency": "high",
+            "risk_level": "high"
+          },
+          "dependencies": [],
+          "action_items": [
+            {
+              "action": "Подготовить и предоставить конкретную дату запуска отчетного модуля",
+              "owner": "Nick Frolov",
+              "deadline": "1 неделя"
+            }
+          ],
+          "quote": "Give me a week. I'll come back to you with something concrete, not a feeling.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:31:00.454078+00:00",
+          "_agent": "DecisionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "decision",
+          "importance_classification": {
+            "business_impact": "low",
+            "urgency_score": 0.5,
+            "complexity_score": 5,
+            "risk_level": "low",
+            "overall_priority": "medium"
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "task_1",
+          "title": "Подготовить конкретный ответ и точную дату по отчетному модулю",
+          "description": "Предоставить клиенту конкретные детали и точную дату выпуска отчетного модуля вместо расплывчатых формулировок.",
+          "task_type": "action",
+          "assignee": {
+            "name": "Nick Frolov",
+            "role": "Helion"
+          },
+          "assignee_speaker": null,
+          "assignment_confidence": "high",
+          "needs_human_review": false,
+          "assigner": "Sergey Volkov",
+          "priority": "high",
+          "status": "new",
+          "deadline": {
+            "date": "2026-03-16",
+            "is_hard": true
+          },
+          "dependencies": [],
+          "related_decision": "",
+          "related_project": "Reporting module",
+          "acceptance_criteria": [
+            "Предоставить дату, а не диапазон или квартал",
+            "Прийти с чем-то конкретным, а не с чувством"
+          ],
+          "blockers": [],
+          "quote": "Give me a week. I'll come back to you with something concrete, not a feeling.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:31:00.117779+00:00",
+          "_agent": "TaskAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "task"
+        }
+      ],
+      "participants": [
+        {
+          "participant_id": "nick_frolov",
+          "name": "Nick Frolov",
+          "normalized_name": "Nick Frolov",
+          "role": "",
+          "department": "Helion",
+          "activity_level": "high",
+          "participation_metrics": {
+            "speaking_turns": 8,
+            "decisions_involved": 1,
+            "tasks_assigned": 1,
+            "questions_asked": 2
+          },
+          "expertise_areas": [
+            "Reporting module",
+            "Client management"
+          ],
+          "communication_style": {
+            "style": "collaborative",
+            "traits": [
+              "Inquiring",
+              "Accommodating",
+              "Responsive"
+            ]
+          },
+          "relationships": [
+            {
+              "with": "Sergey Volkov",
+              "type": "collaborates"
+            }
+          ],
+          "key_contributions": [
+            "Initiated sync-up on the reporting module status",
+            "Agreed to provide a concrete delivery date within a week"
+          ],
+          "sentiment": "neutral",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:31:00.866553+00:00",
+          "_agent": "ParticipantAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "participant"
+        },
+        {
+          "participant_id": "sergey_volkov",
+          "name": "Sergey Volkov",
+          "normalized_name": "Sergey Volkov",
+          "role": "SVP, Data & Analytics",
+          "department": "Titan Bank",
+          "activity_level": "high",
+          "participation_metrics": {
+            "speaking_turns": 7,
+            "decisions_involved": 1,
+            "tasks_assigned": 0,
+            "questions_asked": 1
+          },
+          "expertise_areas": [
+            "Data & Analytics",
+            "Vendor management"
+          ],
+          "communication_style": {
+            "style": "directive",
+            "traits": [
+              "Firm",
+              "Demanding",
+              "Direct"
+            ]
+          },
+          "relationships": [
+            {
+              "with": "Nick Frolov",
+              "type": "collaborates"
+            }
+          ],
+          "key_contributions": [
+            "Demanded a concrete delivery date for the reporting module this year",
+            "Set clear expectations about looking for alternative market solutions if deadlines are missed"
+          ],
+          "sentiment": "negative",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:31:00.866569+00:00",
+          "_agent": "ParticipantAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "participant"
+        }
+      ],
+      "entities": [
+        {
+          "entity_id": "titan_bank",
+          "entity_type": "organization",
+          "name": "Titan Bank",
+          "description": "Client organization represented by Sergey Volkov.",
+          "attributes": {
+            "type": "client",
+            "industry": "banking"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:31:00.503295+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "helion",
+          "entity_type": "company",
+          "name": "Helion",
+          "description": "Provider company represented by Nick Frolov.",
+          "attributes": {
+            "industry": "technology"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 1.0,
+          "_extracted_at": "2026-08-25T18:31:00.503311+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "reporting_module",
+          "entity_type": "feature",
+          "name": "reporting module",
+          "description": "Module whose development status is being discussed during the call.",
+          "attributes": {
+            "status": "planned",
+            "product_name": "reporting module"
+          },
+          "relationships": [
+            {
+              "target_type": "organization",
+              "target_name": "Titan Bank",
+              "relation_type": "related_to"
+            }
+          ],
+          "mentions": [],
+          "importance": "high",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:31:00.503319+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        },
+        {
+          "entity_id": "fintech_thing_in_may",
+          "entity_type": "event",
+          "name": "fintech thing in May",
+          "description": "Fintech event taking place in May.",
+          "attributes": {
+            "date": "May"
+          },
+          "relationships": [],
+          "mentions": [],
+          "importance": "low",
+          "confidence": 0.9,
+          "_extracted_at": "2026-08-25T18:31:00.503323+00:00",
+          "_agent": "EntityAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "entity"
+        }
+      ],
+      "kpis": [
+        {
+          "kpi_id": "titan_cooperation_duration",
+          "name": "Срок сотрудничества",
+          "category": "operational",
+          "value": {
+            "current": 3,
+            "previous": null,
+            "target": null,
+            "unit": "года"
+          },
+          "trend": {
+            "direction": "stable",
+            "change_percent": null,
+            "period": "year"
+          },
+          "context": {
+            "project": "reporting module",
+            "department": "Data & Analytics",
+            "responsible": "Sergey Volkov"
+          },
+          "analysis": {
+            "status": "at_risk",
+            "insight": "Клиент работает с компанией три года и требует конкретных сроков по новому модулю отчета под угрозой ухода.",
+            "action_needed": true
+          },
+          "quote": "Look, this is year three for me with you people.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:31:00.514157+00:00",
+          "_agent": "KPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "kpi"
+        },
+        {
+          "kpi_id": "titan_complaints_count",
+          "name": "Количество жалоб на текущую работу",
+          "category": "quality",
+          "value": {
+            "current": 0,
+            "previous": null,
+            "target": null,
+            "unit": "жалоб"
+          },
+          "trend": {
+            "direction": "stable",
+            "change_percent": null,
+            "period": ""
+          },
+          "context": {
+            "project": "running services",
+            "department": "Data & Analytics",
+            "responsible": "Sergey Volkov"
+          },
+          "analysis": {
+            "status": "on_track",
+            "insight": "У клиента нет претензий к уже запущенным сервисам.",
+            "action_needed": false
+          },
+          "quote": "I have zero complaints about what's already running. Zero.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:31:00.514173+00:00",
+          "_agent": "KPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "kpi"
+        }
+      ],
+      "opinions": [
+        {
+          "opinion_id": "opinion_001",
+          "author": "Nick Frolov",
+          "opinion_summary": "Ник выражает уверенность в том, что модуль отчетности будет создан в текущем году, ссылаясь на согласование деталей с продуктовой командой.",
+          "topic": "Создание модуля отчетности в текущем году",
+          "opinion_category": "strategic",
+          "sentiment_analysis": {
+            "primary_sentiment": "positive",
+            "intensity": 0.6,
+            "emotional_undertones": [
+              "уверенность"
+            ],
+            "confidence_in_opinion": "medium"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "уточнение деталей с продуктовой командой на этой неделе"
+            ],
+            "logical_structure": "moderate",
+            "bias_indicators": [
+              "желание успокоить клиента"
+            ]
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "удержание клиента",
+              "выполнение обязательств"
+            ],
+            "risk_concerns": [
+              "недовольство клиента неопределенностью"
+            ],
+            "opportunity_focus": [
+              "успешная поставка модуля отчетности"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.4,
+            "authority_level": "experienced",
+            "social_influence": "medium",
+            "likely_supporters": []
+          },
+          "business_implications": {
+            "strategic_alignment": "aligned",
+            "resource_implications": [
+              "задействование продуктовой команды"
+            ],
+            "risk_assessment": "high"
+          },
+          "quote": "We are. I'm pretty confident we are — we're nailing the details down with product this week.",
+          "confidence_score": 0.8,
+          "_extracted_at": "2026-08-25T18:31:03.514868+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        },
+        {
+          "opinion_id": "opinion_002",
+          "author": "Sergey Volkov",
+          "opinion_summary": "Сергей полностью доволен текущим работающим решением, но считает формулировку «претти конфидент» недостаточной и угрожает начать поиск альтернатив на рынке, если модуль отчетности не появится в этом году.",
+          "topic": "Оценка текущего ПО и требования к срокам нового модуля отчетности",
+          "opinion_category": "strategic",
+          "sentiment_analysis": {
+            "primary_sentiment": "negative",
+            "intensity": 0.9,
+            "emotional_undertones": [
+              "недовольство",
+              "требовательность",
+              "скептицизм"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "experience_based",
+            "supporting_evidence": [
+              "три года сотрудничества без претензий к текущему функционалу",
+              "отсутствие конкретики с зимы"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": [
+              "угроза уходом из-за затягивания сроков"
+            ]
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "получение надежной отчетности вовремя",
+              "четкость и конкретика от вендора"
+            ],
+            "risk_concerns": [
+              "отсутствие обещанного функционала к концу года",
+              "пустые обещания"
+            ],
+            "opportunity_focus": [
+              "поиск альтернативных решений на рынке"
+            ],
+            "personal_stake": "high"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.9,
+            "authority_level": "expert",
+            "social_influence": "high",
+            "likely_supporters": []
+          },
+          "business_implications": {
+            "strategic_alignment": "misaligned",
+            "resource_implications": [
+              "риск потери ключевого клиента"
+            ],
+            "risk_assessment": "high"
+          },
+          "quote": "I have zero complaints about what's already running. Zero. But if the answer on reporting is \"pretty,\" then I start looking at what else is on the market.",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:31:03.514879+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        },
+        {
+          "opinion_id": "opinion_003",
+          "author": "Sergey Volkov",
+          "opinion_summary": "Сергей негативно относится к финтех-мероприятиям и не планирует их посещать.",
+          "topic": "Посещение финтех-мероприятия в мае",
+          "opinion_category": "personal",
+          "sentiment_analysis": {
+            "primary_sentiment": "negative",
+            "intensity": 0.6,
+            "emotional_undertones": [
+              "неприязнь"
+            ],
+            "confidence_in_opinion": "high"
+          },
+          "argumentation": {
+            "reasoning_type": "intuitive",
+            "supporting_evidence": [
+              "личная нелюбовь к подобным событиям"
+            ],
+            "logical_structure": "strong",
+            "bias_indicators": []
+          },
+          "motivational_analysis": {
+            "underlying_interests": [
+              "экономия времени"
+            ],
+            "risk_concerns": [],
+            "opportunity_focus": [],
+            "personal_stake": "low"
+          },
+          "influence_potential": {
+            "persuasiveness": 0.5,
+            "authority_level": "experienced",
+            "social_influence": "low",
+            "likely_supporters": []
+          },
+          "business_implications": {
+            "strategic_alignment": "neutral",
+            "resource_implications": [],
+            "risk_assessment": "low"
+          },
+          "quote": "Somebody from us, probably. Not me. I'll be honest with you, I don't love those.",
+          "confidence_score": 0.9,
+          "_extracted_at": "2026-08-25T18:31:03.514883+00:00",
+          "_agent": "OpinionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "opinion"
+        }
+      ],
+      "ideas": [
+        {
+          "idea_id": "idea_001",
+          "author": "Nick Frolov",
+          "idea_summary": "Разработка и запуск нового отчетного модуля (reporting module) в текущем году с предоставлением точной даты релиза.",
+          "idea_category": "product",
+          "innovation_assessment": {
+            "novelty_level": "incremental",
+            "creativity_score": 0.3,
+            "uniqueness": "common",
+            "inspiration_source": [
+              "Client requirements"
+            ]
+          },
+          "feasibility_analysis": {
+            "technical_feasibility": "high",
+            "resource_requirements": {
+              "financial": "Standard R&D budget",
+              "human": "Product and development team",
+              "time": "1 week to solidify concrete dates, year for delivery"
+            },
+            "implementation_complexity": "moderate",
+            "risk_factors": [
+              "Client churn if deadlines are missed",
+              "Competition from alternative market solutions"
+            ]
+          },
+          "business_potential": {
+            "market_opportunity": "medium",
+            "competitive_advantage": "strong",
+            "revenue_impact": "high",
+            "scalability": "moderately_scalable"
+          },
+          "stakeholder_impact": {
+            "customers": "positive",
+            "employees": "neutral",
+            "partners": "neutral"
+          },
+          "implementation_roadmap": {
+            "quick_wins": [
+              "Provide a concrete delivery date within one week"
+            ],
+            "pilot_opportunities": [
+              "Titan Bank reporting module testing"
+            ],
+            "success_metrics": [
+              "Delivery date confirmation",
+              "Client retention"
+            ]
+          },
+          "priority_scoring": {
+            "impact_score": 0.9,
+            "effort_score": 0.6,
+            "urgency_score": 0.9,
+            "strategic_fit": 0.9,
+            "overall_priority": "critical"
+          },
+          "next_steps": [
+            "Finalize details with the product team this week",
+            "Return to Sergey Volkov with a specific delivery date within a week"
+          ],
+          "quote": "Give me a week. I'll come back to you with something concrete, not a feeling.",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:31:01.306256+00:00",
+          "_agent": "IdeaAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "idea"
+        }
+      ],
+      "project_statuses": [
+        {
+          "project_id": "project_reporting_module",
+          "project_name": "Reporting Module",
+          "description": "Building and delivering a new reporting module for Titan Bank",
+          "project_category": "product",
+          "lifecycle_stage": "planning",
+          "status_assessment": {
+            "current_status": "planning",
+            "health_indicator": "red",
+            "progress_percentage": null,
+            "last_update": "Nailing down details with product this week, concrete date to be provided in a week"
+          },
+          "scope_analysis": {
+            "primary_objectives": [
+              "Build and deliver the reporting module this year"
+            ],
+            "deliverables": [
+              "Reporting module"
+            ],
+            "success_criteria": [
+              "Delivery of the module within the current year",
+              "Client satisfaction to prevent them from looking at other market solutions"
+            ],
+            "scope_clarity": "moderate"
+          },
+          "stakeholder_mapping": {
+            "project_sponsor": "Sergey Volkov",
+            "project_manager": "Nick Frolov",
+            "core_team": [
+              "Helion product team"
+            ],
+            "key_stakeholders": [
+              "Sergey Volkov"
+            ]
+          },
+          "resource_analysis": {
+            "budget_info": {
+              "estimated_budget": null,
+              "budget_status": "on"
+            },
+            "human_resources": {
+              "team_size": null,
+              "skill_gaps": []
+            }
+          },
+          "timeline_analysis": {
+            "estimated_duration": null,
+            "start_date": null,
+            "target_completion": "This year",
+            "critical_milestones": [
+              "Provide concrete date in one week"
+            ],
+            "timeline_risk": "high"
+          },
+          "risk_assessment": {
+            "identified_risks": [
+              {
+                "risk_description": "Client may look at alternative solutions on the market if the module is not delivered this year",
+                "probability": "high",
+                "impact": "high",
+                "mitigation_strategy": "Provide a concrete delivery date within a week and ensure delivery this year"
+              }
+            ],
+            "overall_risk_level": "high"
+          },
+          "business_value": {
+            "strategic_alignment": "high",
+            "expected_roi": null,
+            "business_benefits": [
+              "Retention of the client for year three and beyond"
+            ]
+          },
+          "dependencies": {
+            "internal_dependencies": [
+              "Product team finalizing details"
+            ],
+            "external_dependencies": [],
+            "blocking_factors": [
+              "Lack of concrete timeline so far"
+            ]
+          },
+          "current_issues": [
+            "Client is dissatisfied with vague status ('pretty confident', 'we're on it')",
+            "Risk of losing the client to competitors"
+          ],
+          "recent_achievements": [],
+          "quote": "Are you building that module this year or not?",
+          "confidence_score": 0.95,
+          "_extracted_at": "2026-08-25T18:31:01.433433+00:00",
+          "_agent": "ProjectStatusAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "project_status"
+        }
+      ],
+      "enhanced_kpis": [
+        {
+          "kpi_id": "kpi_001",
+          "metric_name": "Количество жалоб на действующие запущенные продукты",
+          "metric_category": "quality",
+          "values": {
+            "current_value": "0",
+            "target_value": "0",
+            "previous_value": null,
+            "unit": "шт."
+          },
+          "time_context": {
+            "period": "год",
+            "specific_date": "2026-03-09",
+            "comparison_period": null
+          },
+          "trend_analysis": {
+            "direction": "stable",
+            "change_percentage": 0,
+            "trend_strength": "strong",
+            "seasonality": null
+          },
+          "performance_assessment": {
+            "vs_target": "on",
+            "vs_previous": "same",
+            "gap_analysis": "Жалобы на текущий функционал отсутствуют",
+            "performance_rating": "excellent"
+          },
+          "business_context": {
+            "strategic_importance": "high",
+            "affected_areas": [
+              "Customer Satisfaction",
+              "Product Quality"
+            ],
+            "root_causes": [
+              "Стабильная работа текущего ПО"
+            ],
+            " внешний_факторы": []
+          },
+          "action_items": {
+            "immediate_actions": [
+              "Поддерживать текущее качество работы"
+            ],
+            "improvement_opportunities": [],
+            "risks_if_unchanged": []
+          },
+          "related_metrics": [],
+          "data_quality": {
+            "source_reliability": "high",
+            "data_freshness": "current"
+          },
+          "quote": "I have zero complaints about what's already running. Zero.",
+          "confidence_score": 1.0,
+          "_extracted_at": "2026-08-25T18:31:02.782571+00:00",
+          "_agent": "EnhancedKPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "enhanced_kpi"
+        },
+        {
+          "kpi_id": "kpi_002",
+          "metric_name": "Срок сотрудничества с клиентом",
+          "metric_category": "customer",
+          "values": {
+            "current_value": "3",
+            "target_value": null,
+            "previous_value": null,
+            "unit": "год"
+          },
+          "time_context": {
+            "period": "год",
+            "specific_date": "2026-03-09",
+            "comparison_period": null
+          },
+          "trend_analysis": {
+            "direction": "up",
+            "change_percentage": null,
+            "trend_strength": "strong",
+            "seasonality": null
+          },
+          "performance_assessment": {
+            "vs_target": "on",
+            "vs_previous": null,
+            "gap_analysis": null,
+            "performance_rating": "good"
+          },
+          "business_context": {
+            "strategic_importance": "high",
+            "affected_areas": [
+              "Account Management",
+              "Client Retention"
+            ],
+            "root_causes": [],
+            "external_factors": []
+          },
+          "action_items": {
+            "immediate_actions": [
+              "Удержать клиента за счет поставки модуля отчетности в срок"
+            ],
+            "improvement_opportunities": [],
+            "risks_if_unchanged": [
+              "Уход клиента к конкурентам"
+            ]
+          },
+          "related_metrics": [],
+          "data_quality": {
+            "source_reliability": "high",
+            "data_freshness": "current"
+          },
+          "quote": "Look, this is year three for me with you people.",
+          "confidence_score": 1.0,
+          "_extracted_at": "2026-08-25T18:31:02.782581+00:00",
+          "_agent": "EnhancedKPIAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "enhanced_kpi"
+        }
+      ],
+      "fact_checks": [],
+      "cogni_profiles": [
+        {
+          "name": "Sergey Volkov",
+          "confidence": 0.4,
+          "_agent": "CogniDimensionsAgent",
+          "_agent_version": "1.0.0",
+          "_extracted_at": "2026-08-25T18:31:01.746307+00:00",
+          "_entity_type": "cogni_profile",
+          "light_cone": {
+            "horizon": "this year",
+            "scale": "market",
+            "depth": null,
+            "confidence": 0.4,
+            "quote": "if it doesn't land this year, we'll start looking elsewhere."
+          },
+          "equalizer": {
+            "action_analysis": {
+              "value": 0.5,
+              "confidence": 0.4,
+              "quote": "\"Pretty confident\" doesn't work for me."
+            },
+            "concrete_abstract": {
+              "value": -0.5,
+              "confidence": 0.4,
+              "quote": "With a date. Not a range, not a quarter."
+            }
+          }
+        },
+        {
+          "name": "Nick Frolov",
+          "confidence": 0.3,
+          "_agent": "CogniDimensionsAgent",
+          "_agent_version": "1.0.0",
+          "_extracted_at": "2026-08-25T18:31:01.746398+00:00",
+          "_entity_type": "cogni_profile",
+          "light_cone": {
+            "horizon": "a week",
+            "scale": "company",
+            "depth": null,
+            "confidence": 0.4,
+            "quote": "Give me a week. I'll come back to you with something concrete, not a feeling."
+          }
+        }
+      ]
+    },
+    "cross_insights": {
+      "decision_task_links": [
+        {
+          "decision_id": "dec_2026-03-09_1",
+          "task_id": "task_1",
+          "link_type": "creates"
+        }
+      ],
+      "participant_responsibilities": [
+        {
+          "participant_id": "nick_frolov",
+          "name": "Nick Frolov",
+          "task_ids": [
+            "task_1"
+          ]
+        }
+      ],
+      "entity_mentions": [],
+      "kpi_trends": []
+    },
+    "cross_meeting_links": {},
+    "psychological_analysis": {
+      "personality_profiles": [
+        {
+          "name": "Nick Frolov",
+          "personality_type": "I/S (по модели DISC — преобладание влияния и стабильности, ориентирован на поддержание контакта и гибкость)",
+          "dominant_traits": [
+            "Коммуникабельный и открытый в начале беседы",
+            "Склонный к оптимизму и мягким формулировкам («pretty confident»)",
+            "Гибкий и способный принимать обратную связь без агрессии"
+          ],
+          "communication_style": "Неформальный, дружелюбный, ориентированный на поддержание легкого контакта (включая светские вопросы о мероприятиях), но временами недостаточно конкретный для уровня топ-менеджмента клиента.",
+          "motivation_drivers": [
+            "Поддержание хороших и стабильных партнерских отношений с клиентом",
+            "Сглаживание острых углов в напряженных ситуациях"
+          ],
+          "fears_concerns": [
+            "Потеря клиента из-за задержек с разработкой",
+            "Жесткий прессинг и конфронтация"
+          ],
+          "decision_style": "Согласовательный — опирается на внутренние обсуждения с продуктовой командой («надеюсь согласовать с продуктом»), склонен давать предварительные оценки вместо жестких обязательств.",
+          "stress_response": "Принимает критику и жесткие требования клиента («That's fair. I get it»), не вступает в споры, берет время на доработку («Give me a week»).",
+          "conflict_approach": "Избегание конфронтации и поиск компромисса, признание правоты оппонента для снижения градуса напряжения.",
+          "leadership_style": "Партнерский, клиентоориентированный, действующий как связующее звено между разработкой/продуктом и заказчиком.",
+          "team_role": "Аккаунт-менеджер / представитель во внешней коммуникации.",
+          "strengths": [
+            "Умение слушать критику без защитной агрессии",
+            "Готовность признавать пробелы и исправлять их («I'll come back with a date»)",
+            "Способность поддерживать диалог даже в жестких условиях"
+          ],
+          "development_areas": [
+            "Необходимость большей конкретности и фактологической точности в ответах клиентам",
+            "Управление ожиданиями стейкхолдеров до того, как они перерастут в ультиматумы"
+          ],
+          "management_tips": [
+            "Запрашивать у него четкие дедлайны и факты вместо общих заверений",
+            "Проверять статусы задач внутри компании до звонков с критически важными клиентами"
+          ],
+          "role": ""
+        },
+        {
+          "name": "Sergey Volkov",
+          "personality_type": "D (Доминирование)",
+          "dominant_traits": [
+            "Прямолинейность",
+            "Требовательность к конкретике",
+            "Результативность",
+            "Низкая толерантность к неопределенности"
+          ],
+          "communication_style": "Лаконичный, жесткий, деловой. Переходит сразу к делу, прерывает общие фразы и мягкие формулировки («Pretty confident doesn't work for me»)",
+          "motivation_drivers": [
+            "Четкие сроки и обязательства",
+            "Надежность поставщика",
+            "Реальные результаты, а не обещания"
+          ],
+          "fears_concerns": [
+            "Потерять время на пустые ожидания и затягивание сроков",
+            "Зависимость от вендора, который кормит «завтраками»"
+          ],
+          "decision_style": "Быстрый, прагматичный, основанный на фактах и соблюдении дедлайнов",
+          "stress_response": "Проявляет жесткость, прямо указывает на недовольство («этого не достаточно», «начну смотреть на рынок»)",
+          "conflict_approach": "Прямая конфронтация без агрессии, но с четким обозначением ультиматумов и последствий",
+          "leadership_style": "Требовательный руководитель, ценящий контроль над проектами и прозрачность",
+          "team_role": "Контролер / Критик / Заказчик с жесткими рамками",
+          "strengths": [
+            "Четкость в ожиданиях",
+            "Умение защищать интересы своего бизнеса",
+            "Открытая и прозрачная обратная связь"
+          ],
+          "development_areas": [
+            "Гибкость в коммуникации (склонность к ультиматумам)",
+            "Готовность учитывать контекст разработки"
+          ],
+          "management_tips": [
+            "Никогда не используйте расплывчатые формулировки («постараемся», «примерно», «в этом квартале»)",
+            "Приходите на встречи только с точными датами и конкретными планами",
+            "Цените его время — говорите кратко и по существу"
+          ],
+          "role": "SVP, Data & Analytics"
+        }
+      ],
+      "hidden_motives": [],
+      "group_dynamics": {
+        "trust_level": "medium",
+        "trust_indicators": [
+          "Клиент (Сергей) прямо и без дипломатии заявляет о возможном уходе к конкурентам, что говорит о прозрачности намерений, но подрывает стабильность партнерства.",
+          "Долгосрочные рабочие отношения (3 года) и отсутствие претензий к текущему функционалу создают базу для диалога.",
+          "Поставщик (Ник) принимает жесткую критику без защиты и оправданий."
+        ],
+        "psychological_safety": "medium",
+        "safety_indicators": [
+          "Сергей чувствует себя абсолютно свободным в выражении недовольства и ультиматумах.",
+          "Ник вынужден сглаживать углы и оперативно адаптироваться под жесткие требования клиента, пространство для его маневра ограничено."
+        ],
+        "hidden_conflicts": [
+          {
+            "parties": [
+              "Sergey Volkov",
+              "Nick Frolov (Helion)"
+            ],
+            "nature": "Конфликт ожиданий и сроков: клиент требует конкретики и гарантий (релиз в этом году, точная дата), в то время как поставщик затягивает с разработкой («с зимы» кормят обещаниями «мы на связи»).",
+            "intensity": "high",
+            "trigger_topics": [
+              "сроки разработки модуля отчетности",
+              "размытые формулировки 'pretty confident' / 'мы на это смотрим'"
+            ]
+          }
+        ],
+        "alliances": [],
+        "power_dynamics": [
+          {
+            "influencer": "Sergey Volkov",
+            "influenced": [
+              "Nick Frolov (Helion)"
+            ],
+            "influence_type": "экспертная и ресурсная власть клиента (угроза разрыва контракта и ухода к конкурентам)",
+            "legitimacy": "высокая (заказчик, оплачивающий услуги уже 3 года)"
+          }
+        ],
+        "collective_fears": [
+          "Риск потери контракта со стороны Helion из-за затягивания сроков.",
+          "Риск для Titan Bank остаться без необходимого функционала отчетности в текущем году."
+        ],
+        "team_culture": {
+          "decision_making": "Авторитарное со стороны клиента (ультиматумы, требования точных дат) с реактивным стилем со стороны поставщика.",
+          "communication_norms": "Прямолинейная, деловая, жесткая, без излишней корпоративной вежливости со стороны клиента.",
+          "conflict_resolution": "Через жесткое обозначение границ и ультиматумы («если не лендятся в этом году — смотрим на рынок»).",
+          "innovation_attitude": "Клиент прагматичен: ценит то, что уже работает, но теряет терпение в отношении задержки новых модулей."
+        },
+        "group_maturity": "storming",
+        "improvement_areas": [
+          "Повышение прозрачности процессов разработки со стороны Helion.",
+          "Переход от размытых обещаний ('мы на связи', 'скоро') к четкому планированию и управлению ожиданиями клиента.",
+          "Своевременное эскалирование и информирование о задержках до того, как клиент перейдет к ультиматумам."
+        ]
+      },
+      "behavioral_predictions": [
+        {
+          "participant": "Nick Frolov",
+          "stress_reaction": "Примет критику без агрессии, согласится с позицией оппонента («That's fair. I get it»), постарается взять паузу для урегулирования вопроса вместо того, чтобы оправдываться на месте.",
+          "conflict_behavior": "Склонен избегать открытой конфронтации, сглаживать острые углы, признавать справедливость претензий клиента для снижения градуса напряжения.",
+          "change_adaptation": "Гибко адаптируется к жестким требованиям клиента (например, требованию назвать точную дату вместо квартала), хотя может испытывать внутренний дискомфорт от необходимости давать жесткие обязательства.",
+          "deadline_pressure": "Под давлением жестких ультиматумов («с точной датой в течение недели») будет вынужден срочно привлекать внутреннюю продуктовую команду для фиксации конкретных сроков, отходя от расплывчатых формулировок.",
+          "criticism_response": "Конструктивно и беззащитно принимает жесткую обратную связь от топ-менеджмента, соглашается с тем, что формулировки вроде «pretty confident» больше не работают.",
+          "leadership_emergence": "Проявит партнерское лидерство как связующее звено, когда вернется к клиенту через неделю с конкретной датой и деталями от продуктовой команды.",
+          "collaboration_style": "Клиентоориентированный, ориентированный на поддержание долгосрочных отношений, готовность слушать и подстраиваться под требования заказчика.",
+          "likely_triggers": [
+            "Жесткие ультиматумы и угрозы ухода к конкурентам со стороны клиента",
+            "Давление с требованием точных сроков при неопределенности со стороны собственной продуктовой команды"
+          ],
+          "positive_triggers": [
+            "Успешное закрытие текущих стабильно работающих модулей («Zero complaints»)",
+            "Конструктивный диалог и готовность клиента давать время на доработку («A week's fine»)"
+          ],
+          "prediction_confidence": 0.95
+        },
+        {
+          "participant": "Sergey Volkov",
+          "stress_reaction": "Проявит жесткость и бескомпромиссность, переведет разговор в плоскость ультиматумов и оценки альтернативных решений на рынке («начну смотреть других»).",
+          "conflict_behavior": "Прямолинейный и доминантный стиль. Не склонен к долгим уговорам, четко обозначает границы («год», «точная дата, а не квартал») и последствия невыполнения.",
+          "change_adaptation": "Консервативен к неопределенности и затягиванию сроков («с зимы слышу»); легко меняет лояльность поставщику, если тот не дает конкретики по стратегически важным модулям.",
+          "deadline_pressure": "Сам оказывает жесткое давление на контрагента, требуя конкретных результатов и календарных дат, не принимая отговорки про «хорошие отношения».",
+          "criticism_response": "Выступает источником критики сам; критически оценивает любые обтекаемые формулировки партнера («pretty confident doesn't work for me»).",
+          "leadership_emergence": "Проявляет доминирующее лидерство заказчика с первых минут беседы, перехватывая инициативу и задавая жесткую повестку совещания.",
+          "collaboration_style": "Требовательный, прагматичный, ориентированный на результат и соблюдение сроков; ценит стабильность текущей работы, но ставит жесткие условия для будущих проектов.",
+          "likely_triggers": [
+            "Расплывчатые формулировки, неопределенные сроки и отсутствие конкретных дат («кварталы», «предчувствия»)",
+            "Затягивание реализации критически важных модулей уже третий год подряд"
+          ],
+          "positive_triggers": [
+            "Получение четких, конкретных дат и соблюдение обязательств подрядчиком",
+            "Безупречная работа уже запущенных модулей («Zero complaints»)"
+          ],
+          "prediction_confidence": 0.95
+        }
+      ],
+      "conflict_risks": [
+        {
+          "conflict_type": "ресурсный",
+          "parties": [
+            "Sergey Volkov",
+            "Nick Frolov (Helion)"
+          ],
+          "root_cause": "Хроническое затягивание сроков разработки модуля отчетности («с зимы») со стороны поставщика при исчерпании лимита доверия у клиента.",
+          "triggers": [
+            "Предоставление Ником через неделю размытых формулировок, диапазона дат или квартала вместо точного календарного дня",
+            "Сдвиг обещанного года релиза (2026) на более поздний срок"
+          ],
+          "probability": 0.85,
+          "impact": "critical",
+          "early_warning_signs": [
+            "Клиент открыто ставит под сомнение партнерство («год третий... если ответ 'pretty', то начинаю смотреть на рынок»)",
+            "Жесткие требования к формату ответа («С датой. Не с диапазоном, не с кварталом»)"
+          ],
+          "prevention_strategies": [
+            "Зафиксировать жесткие обязательства с продуктовой командой Helion до истечения недельного срока",
+            "Предоставить Сергею точную дату релиза модуля в 2026 году с промежуточными контрольными точками"
+          ],
+          "resolution_approach": "Экстренное подключение технического/продуктового руководства Helion с готовым и согласованным планом-графиком, признание прошлых задержек и предоставление персональных гарантий выполнения обязательств.",
+          "timeline": "Через 1 неделю (к моменту повторного созвона или предоставления ответа Ником)"
+        },
+        {
+          "conflict_type": "ролевой",
+          "parties": [
+            "Sergey Volkov (Топ-менеджмент заказчика)",
+            "Nick Frolov (Аккаунт-менеджер поставщика)"
+          ],
+          "root_cause": "Разница в коммуникативных стилях и ожиданиях: клиенту нужен жесткий, конкретный язык фактов и гарантий (высокий уровень ответственности), в то время как аккаунт-менеджер использует мягкие формулировки, пытаясь поддерживать легкий партнерский тон («светские» вопросы про финтех-мероприятие).",
+          "triggers": [
+            "Попытки Ника перевести разговор на отвлеченные темы (выставка в мае) во время обсуждения критического для бизнеса вопроса",
+            "Использование расплывчатого бизнес-жаргона («pretty confident») в ответ на ультиматум"
+          ],
+          "probability": 0.65,
+          "impact": "medium",
+          "early_warning_signs": [
+            "Раздражение Сергея на попытки сгладить углы",
+            "Игнорирование или сухое пренебрежение второстепенными вопросами со стороны клиента («Кто-то из нас, наверное. Не я»)"
+          ],
+          "prevention_strategies": [
+            "Перейти в коммуникации с Сергеем исключительно на факты, цифры и дедлайны",
+            "Минимизировать «светскую» составляющую до полного разрешения кризиса со сроками"
+          ],
+          "resolution_approach": "Смена стиля коммуникации Ника на более директивный и прозрачный, демонстрация полного понимания серьезности ситуации без попыток эмоционального сглаживания.",
+          "timeline": "Немедленно / на ближайших этапах взаимодействия"
+        }
+      ],
+      "management_recommendations": [
+        {
+          "category": "конфликты",
+          "recommendation": "Внедрить жесткий протокол работы с критическими дедлайнами для клиентов типа 'D' (Доминирование), исключающий расплывчатые формулировки.",
+          "target": "Nick Frolov и продуктовая команда Helion",
+          "rationale": "Профиль D (Сергей) ориентирован на результат, конкретику и контроль. Ответы вроде 'pretty confident' или 'диапазон дат' воспринимаются им как потеря времени и угроза его бизнес-интересам, что резко повышает риск потери контракта (вероятность 0.85).",
+          "implementation": "Провести экстренный синк с продуктовыми менеджерами до истечения недельного срока, зафиксировать 100% точную календарную дату релиза модуля на 2026 год и исключить любые оговорки.",
+          "expected_outcome": "Снижение риска ухода ключевого клиента, восстановление доверия через демонстрацию надежности и соблюдение жестких требований к коммуникации.",
+          "priority": "high",
+          "timing": "Немедленно (в течение 3-5 дней до истечения обещанного срока)"
+        },
+        {
+          "category": "коммуникация",
+          "rationale": "Ник обладает профилем I/S (влияние/стабильность), что делает его склонным к сглаживанию углов, гибкости и стремлению 'понравиться' клиенту за счет мягких формулировок. В работе с жесткими 'D'-лидерами это интерпретируется как ненадежность.",
+          "recommendation": "Тренировать у Ника навык директивной и фактологической коммуникации без использования оценочных суждений и эмоциональных маркеров.",
+          "target": "Nick Frolov",
+          "implementation": "Провести короткий внутренний коучинг-сессию с Ником перед его повторным звонком Сергею: прописать скрипт ответа по формуле 'Факт — Точная дата — План контроля'.",
+          "expected_outcome": "Ник перестает использовать размытые эпитеты ('pretty confident', 'скоро'), переходя на язык конкретных бизнес-метрик и обязательств, понятный Сергею.",
+          "priority": "high",
+          "timing": "В течение 48 часов"
+        },
+        {
+          "category": "лидерство",
+          "recommendation": "Организовать кросс-функциональный мост между продажами/аккаунтингом (Ник) и разработкой/продуктом для синхронизации обещаний и реальных возможностей.",
+          "target": "Руководство компании Helion / Product Leads",
+          "rationale": "Затягивание сроков 'с зимы' указывает на системный разрыв между тем, что аккаунт-менеджер обещает клиенту для поддержания отношений, и реальным ресурсным планированием продуктовой команды.",
+          "implementation": "Ввести правило 'двойной подписи' для коммитментов по срокам разработки критического функционала для Tier-1 клиентов: ни одно обещание по датам не дается без письменного подтверждения CTO/Head of Product.",
+          "expected_outcome": "Исключение ситуаций, когда аккаунт-менеджер оказывается 'между молотом и наковальней' из-за неготовности продукта.",
+          "priority": "high",
+          "timing": "В течение следующей недели"
+        },
+        {
+          "category": "управление",
+          "recommendation": "Внедрить систему опережающего информирования (Early Warning System) для топ-менеджмента при отклонении проектов от графика более чем на 2 недели.",
+          "target": "Вся команда управления проектами",
+          "rationale": "Клиент 'D'-типа (Сергей) ценит прозрачность даже в плохих новостях выше, чем попытки скрыть проблему до последнего. Узнавать о задержках 'с зимы' в марте — триггер разрушения лояльности.",
+          "implementation": "Автоматизировать алерты для топ-менеджмента по ключевым проектам при задержке спринтов или сдвиге milestones, чтобы эскалировать и решать проблемы до того, как клиент начнет угрожать уходом.",
+          "expected_outcome": "Превентивное управление ожиданиями клиентов, минимизация внезапных кризисных переговоров.",
+          "priority": "medium",
+          "timing": "В течение месяца"
+        },
+        {
+          "category": "мотивация",
+          "recommendation": "Учитывать психотип клиента (D) при планировании неформальных и маркетинговых активностей (например, приглашений на мероприятия).",
+          "target": "Маркетинговая команда Helion",
+          "rationale": "Ник потратил время на обсуждение финтех-мероприятия в мае, на что Сергей четко дал понять, что не любит подобные события и не поедет. Это указывает на неэффективное расходование времени клиента на 'светские' темы при наличии нерешенной ключевой боли.",
+          "implementation": "Сегментировать базу клиентов по DISC: для 'D'-типов минимизировать общие маркетинговые рассылки и приглашения на тусовки, контактируя исключительно по делу и сфокусировано на ROI и бизнес-результатах.",
+          "expected_outcome": "Повышение эффективности коммуникаций, уважение к личному времени и границам клиента, укрепление статуса надежного вендора.",
+          "priority": "low",
+          "timing": "При подготовке к следующим маркетинговым кампаниям"
+        }
+      ],
+      "stats": {
+        "duration_seconds": 26.8,
+        "profiles_created": 2,
+        "motives_identified": 0,
+        "conflicts_detected": 2,
+        "recommendations_generated": 5
+      }
+    },
+    "future_predictions": {
+      "scenarios": [
+        {
+          "name": "Успешное согласование сроков",
+          "type": "optimistic",
+          "probability": 0.35,
+          "description": "Ник Фролов проводит успешную работу с продуктовой командой в течение недели, находит ресурсы и фиксирует точную дату релиза отчетного модуля до конца текущего года. Сергею Волкову предоставляется конкретный план без расплывчатых формулировок, что удовлетворяет клиента и сохраняет партнерские отношения.",
+          "time_horizon": "1 месяц",
+          "key_events": [
+            "Ник проводит встречу с продуктовой командой Helion",
+            "Утверждается детальный план-график с точной датой релиза",
+            "Ник возвращается к Сергею Волкову через неделю с конкретной датой"
+          ],
+          "triggers": [
+            "Продуктовая команда быстро подтверждает загрузку и возможность выполнения модуля в срок",
+            "Успешное согласование ресурсов внутри компании Helion"
+          ],
+          "consequences": [
+            "Клиент (Titan Bank) остается с Helion",
+            "Укрепление доверия после кризисного разговора",
+            "Успешный запуск модуля в текущем году"
+          ],
+          "affected_projects": [
+            "Reporting Module"
+          ],
+          "affected_people": [
+            "Nick Frolov",
+            "Sergey Volkov"
+          ],
+          "decision_points": [
+            "Утверждение даты релиза продуктовой командой в течение недели"
+          ],
+          "success_factors": [
+            "Оперативная поддержка продуктовой команды",
+            "Четкое следование договоренности предоставить точную дату"
+          ],
+          "failure_factors": [
+            "Неожиданные технические блокеры у продукта"
+          ],
+          "recommended_actions": [
+            "Срочно согласовать детали с продуктовой командой в первые 3 дня",
+            "Подготовить четкий и прозрачный отчет для Сергея Волкова к назначенному сроку"
+          ]
+        },
+        {
+          "name": "Компромисс по датам и удержание клиента",
+          "type": "realistic",
+          "probability": 0.45,
+          "description": "Ник возвращается через неделю с датой, но выясняется, что релиз попадает на самый конец года или требует жестких компромиссов по скоупу. Сергей Волковы выражает скепсис, но, учитывая 3 года успешного сотрудничества и отсутствие жалоб на текущий функционал, дает команде шанс при условии строгого контроля вех.",
+          "time_horizon": "3 месяца",
+          "key_events": [
+            "Ник приносит дату, вызывающую у клиента напряжение, но принимает её",
+            "Согласование промежуточных контрольных точек",
+            "Подключение кого-то из команды Titan Bank к профильным выставкам в мае"
+          ],
+          "triggers": [
+            "Загруженность продуктовой команды Helion",
+            "Необходимость урезать часть второстепенных фич ради удержания дедлайна"
+          ],
+          "consequences": [
+            "Клиент продолжает работу с Helion, но уровень контроля и давления возрастает",
+            "Риск срыва сроков остается умеренно высоким"
+          ],
+          "affected_projects": [
+            "Reporting Module"
+          ],
+          "affected_people": [
+            "Nick Frolov",
+            "Sergey Volkov"
+          ],
+          "decision_points": [
+            "Сокращение скоупа ради соблюдения жесткого дедлайна текущего года"
+          ],
+          "success_factors": [
+            "Прозрачная коммуникация без попыток скрыть задержки",
+            "Безупречная работа текущего функционала (на который у Сергея 'zero complaints')"
+          ],
+          "failure_factors": [
+            "Попытка снова отделаться расплывчатыми кварталами или диапазонами дат"
+          ],
+          "recommended_actions": [
+            "Быть предельно честным с клиентом через неделю",
+            "Предложить еженедельный статус-апдейт по прогрессу модуля"
+          ]
+        },
+        {
+          "name": "Эскалация и уход клиента на рынок",
+          "type": "pessimistic",
+          "probability": 0.2,
+          "description": "Продуктовая команда Helion не может гарантировать разработку модуля в текущем году. Ник не способен предоставить точную дату через неделю или приносит расплывчатый ответ. Сергей Волков выполняет свою угрозу и начинает официальный поиск альтернативных вендоров на рынке.",
+          "time_horizon": "6 месяцев",
+          "key_events": [
+            "Ник не находит аргументов или даты через неделю",
+            "Сергей Волков заявляет о старте поиска альтернативных решений",
+            "Постепенное сворачивание партнерства после завершения текущих контрактов"
+          ],
+          "triggers": [
+            "Отсутствие свободных ресурсов у продуктовой команды Helion в этом году",
+            "Неспособность Ника дать конкретную дату по итогам недели"
+          ],
+          "consequences": [
+            "Потеря ключевого клиента (Titan Bank) в перспективе года",
+            "Репутационные потери для Helion после 3 лет успешного сотрудничества"
+          ],
+          "affected_projects": [
+            "Reporting Module"
+          ],
+          "affected_people": [
+            "Nick Frolov",
+            "Sergey Volkov"
+          ],
+          "decision_points": [
+            "Решение руководства Helion о переброске ресурсов на проект Titan Bank (или отказ от него)"
+          ],
+          "success_factors": [
+            "Экстренное вмешательство топ-менеджмента Helion для спасения контракта"
+          ],
+          "failure_factors": [
+            "Игнорирование ультиматума клиента",
+            "Отсутствие коммуникации по существу в течение отведенной недели"
+          ],
+          "recommended_actions": [
+            "Немедленно привлечь руководство Helion и оценить реальные мощности продукта",
+            "В случае невозможности сделать модуль в срок — честно предупредить клиента заранее, до истечения недели, предложив альтернативные варианты компенсации"
+          ]
+        }
+      ],
+      "project_predictions": [
+        {
+          "project_name": "Reporting Module",
+          "current_status": "planning",
+          "success_probability": 0.65,
+          "confidence": 0.8,
+          "predicted_completion": "End of 2026 (exact date pending)",
+          "delay_risk": 0.5,
+          "quality_forecast": "medium",
+          "budget_risk": "on_track",
+          "key_success_factors": [
+            "Строгий дедлайн и жесткое требование клиента о предоставлении точной даты",
+            "Высокая ценность текущих отношений (клиент доволен тем, что уже работает)"
+          ],
+          "key_risk_factors": [
+            "Риск потери клиента, если обещанная дата не будет предоставлена вовремя или модуль затянется",
+            "Отсутствие детализированного плана на старте ('pretty confident')"
+          ],
+          "bottlenecks": [
+            "Согласование деталей с продуктовой командой Helion",
+            "Отсутствие фиксированного графика на момент звонка"
+          ],
+          "dependencies": [
+            "Финализация деталей продуктовой командой Helion в течение недели"
+          ],
+          "team_readiness": "medium",
+          "resource_adequacy": "adequate",
+          "outcome_scenarios": [
+            {
+              "scenario": "Успешная сдача модуля в срок в текущем году при условии оперативной работы продуктовой команды и выполнения обязательств по точной дате.",
+              "probability": 0.65,
+              "impact": "Сохранение ключевого клиента на третий год и далее, укрепление репутации."
+            },
+            {
+              "scenario": "Срыв сроков или предоставление размытой информации через неделю, что приведет к уходу клиента к конкурентам.",
+              "probability": 0.35,
+              "impact": "Потеря крупного клиента (Titan Bank) и потенциальный репутационный ущерб."
+            }
+          ],
+          "recommendations": [
+            "В течение недели выработать с продуктовой командой железобетонный план с точной датой выпуска (без размытых кварталов).",
+            "Проинформировать Сергея Волкова точно в срок (до 16.03.2026) с готовым решением и датой."
+          ]
+        }
+      ],
+      "task_predictions": [
+        {
+          "task": "Подготовить конкретный ответ и точную дату по отчетному модулю",
+          "assignee": "Nick Frolov",
+          "deadline": "2026-03-16",
+          "completion_probability": 0.9,
+          "on_time_probability": 0.85,
+          "predicted_completion": "2026-03-16",
+          "delay_days": 0,
+          "blockers": [],
+          "dependencies": [],
+          "priority_score": 0.95,
+          "effort_estimate": "medium",
+          "risk_factors": [
+            "Необходимость согласования деталей с продуктовой командой в сжатые сроки",
+            "Высокие требования клиента (нужна конкретная дата, а не квартал или диапазон)"
+          ],
+          "success_factors": [
+            "Четкое понимание критичности задачи со стороны исполнителя",
+            "Прямой ультиматум клиента, стимулирующий скорейшее принятие решения"
+          ]
+        }
+      ],
+      "risks": [
+        {
+          "risk_name": "Уход клиента к конкурентам из-за задержки отчетного модуля",
+          "category": "strategic",
+          "description": "Titan Bank (в лице Сергея Волкова) может расторгнуть отношения или начать поиск альтернативных решений на рынке, если модуль отчетности не будет выпущен в текущем году или сроки окажутся размытыми.",
+          "probability": 0.8,
+          "impact": "critical",
+          "affected_projects": [
+            "Reporting Module"
+          ],
+          "affected_people": [
+            "Sergey Volkov",
+            "Nick Frolov"
+          ],
+          "root_causes": [
+            "Отсутствие четких сроков и затягивание разработки модуля (клиент ждет с зимы)",
+            "Неопределенность команды产品 и формулировки в стиле 'pretty confident'"
+          ],
+          "triggers": [
+            "Неспособность Ника Фролова предоставить точную дату релиза через неделю",
+            "Сдвиг сроков запуска модуля за пределы текущего года"
+          ],
+          "early_warning_signs": [
+            "Недовольство клиента расплывчатыми формулировками",
+            "Прямые угрозы клиента начать поиск других решений на рынке"
+          ],
+          "timeline": "В течение текущего года (критическая точка — через неделю при предоставлении даты)",
+          "mitigation_strategies": [
+            "Срочно зафиксировать точную дату релиза с продуктовой командой и предоставить ее клиенту через неделю",
+            "Обеспечить жесткий контроль выполнения сроков разработки"
+          ],
+          "contingency_plans": [
+            "Эскалация руководству Helion для выделения дополнительных ресурсов на разработку модуля",
+            "Проведение внеплановой встречи с высшим руководством Titan Bank для удержания ключевого клиента"
+          ],
+          "owner": "Nick Frolov",
+          "monitoring_frequency": "weekly"
+        },
+        {
+          "risk_name": "Срыв дедлайна по предоставлению точной даты клиенту",
+          "category": "timeline",
+          "description": "Ник Фролов может не успеть согласовать детали с продуктовой командой за неделю и не сможет предоставить Сергею Волкову точную дату (не диапазон и не квартал).",
+          "probability": 0.6,
+          "impact": "high",
+          "affected_projects": [
+            "Reporting Module"
+          ],
+          "affected_people": [
+            "Nick Frolov",
+            "Sergey Volkov"
+          ],
+          "root_causes": [
+            "Зависимость от внутренней продуктовой команды Helion",
+            "Текущая стадия планирования ('nailing the details down this week')"
+          ],
+          "triggers": [
+            "Отсутствие консенсуса с продуктовой командой по срокам в течение недели",
+            "Выявление технических сложностей при детализации требований"
+          ],
+          "early_warning_signs": [
+            "Затягивание обсуждений с продуктовой командой в течение недели",
+            "Отсутствие конкретных черновиков плана релиза за пару дней до истечения срока"
+          ],
+          "timeline": "Через 1 неделю (к 16.03.2026)",
+          "mitigation_strategies": [
+            "Провести приоритетное совещание с продуктовой командой в первые дни недели",
+            "Заложить буфер при формировании даты для клиента"
+          ],
+          "contingency_plans": [
+            "Заблаговременно выйти на связь с клиентом до истечения недельного срока, если дата задерживается, честно объяснить ситуацию и запросить минимальную отсрочку"
+          ],
+          "owner": "Nick Frolov",
+          "monitoring_frequency": "daily"
+        }
+      ],
+      "early_warnings": [
+        {
+          "type": "risk_warning",
+          "severity": "high",
+          "title": "⚠️ Риск: Уход клиента к конкурентам из-за задержки отчетного модуля",
+          "description": "Titan Bank (в лице Сергея Волкова) может расторгнуть отношения или начать поиск альтернативных решений на рынке, если модуль отчетности не будет выпущен в текущем году или сроки окажутся размытыми.",
+          "indicators": [
+            "Недовольство клиента расплывчатыми формулировками",
+            "Прямые угрозы клиента начать поиск других решений на рынке"
+          ],
+          "recommended_action": "Срочно зафиксировать точную дату релиза с продуктовой командой и предоставить ее клиенту через неделю",
+          "deadline": "Немедленно"
+        },
+        {
+          "type": "risk_warning",
+          "severity": "medium",
+          "title": "⚠️ Риск: Срыв дедлайна по предоставлению точной даты клиенту",
+          "description": "Ник Фролов может не успеть согласовать детали с продуктовой командой за неделю и не сможет предоставить Сергею Волкову точную дату (не диапазон и не квартал).",
+          "indicators": [
+            "Затягивание обсуждений с продуктовой командой в течение недели",
+            "Отсутствие конкретных черновиков плана релиза за пару дней до истечения срока"
+          ],
+          "recommended_action": "Провести приоритетное совещание с продуктовой командой в первые дни недели",
+          "deadline": "В течение недели"
+        }
+      ],
+      "opportunities": [
+        {
+          "opportunity_name": "Укрепление долгосрочного партнерства через выполнение обязательств",
+          "category": "growth",
+          "description": "Клиент (Titan Bank) работает с компанией уже 3 года и имеет 'нуль жалоб' на текущие работающие решения. Успешная поставка модуля отчетности в срок позволит зафиксировать высокую лояльность и защитить существующую экосистему продуктов от конкурентов с рынка.",
+          "potential_value": "high",
+          "probability_of_success": 0.8,
+          "time_to_realize": "short term",
+          "required_resources": [
+            "Команда продукт-менеджмента Helion",
+            "Ресурсы разработки"
+          ],
+          "key_enablers": [
+            "Четкая дата релиза вместо размытых формулировок",
+            "Согласование деталей с продуктовой командой в течение недели"
+          ],
+          "barriers": [
+            "Ультиматум со стороны клиента и риск ухода к конкурентам при затягивании сроков"
+          ],
+          "related_projects": [
+            "project_reporting_module"
+          ],
+          "recommended_first_steps": [
+            "Провести встречу с продуктовой командой на текущей неделе",
+            "Сформировать и зафиксировать точную дату релиза модуля отчетности",
+            "Вернуться к Сергею Волкову с конкретным планом в течение недели"
+          ]
+        },
+        {
+          "opportunity_name": "Присутствие представителей Titan Bank на майском финтех-мероприятии",
+          "category": "synergy",
+          "description": "Возможность привлечь коллег Сергея Волкова (из Titan Bank) на майскую финтех-конференцию по запросу маркетинговой команды Helion для укрепления связей и потенциального пиара совместных успехов.",
+          "potential_value": "medium",
+          "probability_of_success": 0.5,
+          "time_to_realize": "medium term",
+          "required_resources": [
+            "Маркетинговая команда Helion",
+            "Бюджет/приглашения на мероприятие"
+          ],
+          "key_enablers": [
+            "Интерес со стороны других сотрудников Titan Bank (несмотря на то, что сам Сергей не планирует присутствовать)"
+          ],
+          "barriers": [
+            "Сам Сергей Волков не любит подобные мероприятия и не планирует их посещать"
+          ],
+          "related_projects": [],
+          "recommended_first_steps": [
+            "Попросить маркетинговую команду связаться с другими стейкхолдерами в Titan Bank по поводу майского мероприятия"
+          ]
+        }
+      ],
+      "recommendations": [
+        {
+          "recommendation": "Срочно провести согласование с продуктовой командой Helion для утверждения точной даты релиза отчетного модуля",
+          "type": "scenario_preparation",
+          "priority": "critical",
+          "rationale": "Клиент (Сергей Волков) поставил жесткий ультиматум: если через неделю не будет названа точная дата (не квартал и не диапазон) с релизом в текущем году, он начнет искать альтернативы на рынке.",
+          "expected_outcome": "Получение железобетонной даты релиза и плана-графика для ответа Сергею Волкову через неделю.",
+          "implementation_steps": [
+            "Организовать внеплановую встречу с лид-продакт менеджером в первые 48 часов",
+            "Оценить текущий бэклог и технические ресурсы, необходимые для завершения модуля",
+            "Зафиксировать точную дату релиза (день/месяц) с учетом возможных рисков"
+          ],
+          "resources_needed": [
+            "Продуктовая команда Helion",
+            "Технический лид проекта"
+          ],
+          "timeline": "3 дня",
+          "success_metrics": [
+            "Утвержденный план-график",
+            "Согласованная точная дата релиза внутри компании"
+          ],
+          "responsible": "Nick Frolov",
+          "dependencies": [
+            "Доступность продуктовой команды"
+          ]
+        },
+        {
+          "recommendation": "Подготовить персональный визит или встреч-звонок с Сергеем Волковым с презентацией жестких и прозрачных сроков",
+          "type": "risk_mitigation",
+          "priority": "critical",
+          "rationale": "Устранение риска потери ключевого клиента с 3-летней историей и нулевым уровнем текущих претензий к работающим продуктам.",
+          "expected_outcome": "Снятие напряжения, демонстрация профессионализма и предотвращение ухода клиента к конкурентам.",
+          "implementation_steps": [
+            "Сформировать лаконичный и прозрачный отчет без воды и расплывчатых формулировок",
+            "Назначить встречу с Сергеем ровно через неделю после текущего звонка",
+            "Зафиксировать договоренности письменно после встречи"
+          ],
+          "resources_needed": [
+            "Презентационные материалы",
+            "Готовый план-график"
+          ],
+          "timeline": "1 неделя",
+          "success_metrics": [
+            "Подтверждение от Сергея Волкова о принятии сроков",
+            "Сохранение контракта с Titan Bank"
+          ],
+          "responsible": "Nick Frolov",
+          "dependencies": [
+            "Успешное выполнение первой рекомендации (согласование с продуктом)"
+          ]
+        },
+        {
+          "recommendation": "Защита текущей экосистемы продуктов от конкурентной разведки через демонстрацию ценности",
+          "type": "opportunity_capture",
+          "priority": "high",
+          "rationale": "У клиента нет претензий к уже работающим решениям Helion. Выполнение обещания по отчетному модулю конвертирует текущую лояльность в долгосрочную защиту контракта.",
+          "expected_outcome": "Укрепление позиций вендора в Titan Bank и блокирование попыток конкурентов зайти на существующие модули.",
+          "implementation_steps": [
+            "Подготовить срез метрик успешности уже работающих модулей за 3 года",
+            "Интегрировать данные по текущей стабильности в разговор с Сергеем при презентации нового модуля"
+          ],
+          "resources_needed": [
+            "Данные поддержки",
+            "Аналитика использования текущих систем"
+          ],
+          "timeline": "2 недели",
+          "success_metrics": [
+            "Положительная обратная связь от клиента по текущим решениям",
+            "Сохранение статуса эксклюзивного партнера"
+          ],
+          "responsible": "Nick Frolov / Account Management",
+          "dependencies": [
+            "Стабильная работа действующих модулей"
+          ]
+        },
+        {
+          "recommendation": "Внедрение жесткого контроля и еженедельного мониторинга разработки отчетного модуля",
+          "type": "optimization",
+          "priority": "high",
+          "rationale": "Учитывая чувствительность клиента и историю затягивания вопроса с зимы, любые отклонения от нового графика приведут к немедленному разрыву отношений.",
+          "expected_outcome": "Раннее обнаружение возможных блокеров разработки и предотвращение срыва согласованной с клиентом даты.",
+          "implementation_steps": [
+            "Настроить еженебельный трекинг статуса разработки reporting module",
+            "Установить триггеры эскалации при отклонении от графика более чем на 3 дня"
+          ],
+          "resources_needed": [
+            "Инструменты управления проектами (Jira/Asana)",
+            "PM-ресурсы"
+          ],
+          "timeline": "Постоянно (в течение всего цикла разработки)",
+          "success_metrics": [
+            "Отсутствие отклонений в спринтах разработки"
+          ],
+          "responsible": "Product Manager / Project Manager",
+          "dependencies": [
+            "Утвержденный план-график"
+          ]
+        },
+        {
+          "recommendation": "Координация с маркетингом по вопросу участия представителей Titan Bank в майском финтех-мероприятии",
+          "type": "optimization",
+          "priority": "low",
+          "rationale": "Клиент выразил скепсис по поводу своего личного участия, но упомянул, что кто-то другой от них может поехать. Важно поддержать коммуникационный контакт на уровне маркетинга.",
+          "expected_outcome": "Корректное взаимодействие с клиентской стороной по неформальным поводам без давления на ЛПР.",
+          "implementation_steps": [
+            "Передать маркетинг-лиду информацию от Сергея Волкова (сам он не приедет, но делегирует кого-то)",
+            "Сделать точечный и ненавязчивый инвайт на уровне коллег Сергея, исключая его самого"
+          ],
+          "resources_needed": [
+            "Маркетинговая команда"
+          ],
+          "timeline": "До мая 2026",
+          "success_metrics": [
+            "Участие представителей Titan Bank в ивенте"
+          ],
+          "responsible": "Marketing Lead / Nick Frolov",
+          "dependencies": [
+            "Контакты коллег Сергея Волкова"
+          ]
+        }
+      ],
+      "stats": {
+        "duration_seconds": 22.36,
+        "scenarios_modeled": 3,
+        "projects_predicted": 1,
+        "tasks_predicted": 1,
+        "risks_identified": 2,
+        "warnings_generated": 2,
+        "opportunities_found": 2,
+        "recommendations_made": 5
+      }
+    },
+    "weighted_priorities": {
+      "weighted_tasks": [
+        {
+          "task_name": "Подготовить конкретный ответ и точную дату по отчетному модулю",
+          "assignee": "Nick Frolov",
+          "urgency_score": 0.95,
+          "importance_score": 1.0,
+          "complexity_score": 0.7,
+          "risk_score": 0.95,
+          "dependency_score": 0.6,
+          "final_weight": 0.88,
+          "priority_level": "critical",
+          "reasoning": "Клиент (ключевое лицо, SVP в Titan Bank) прямо заявил, что если отчетный модуль не будет подтвержден на этот год с конкретной точкой релиза, он начнет искать альтернативные решения на рынке. Угроза потери ключевого клиента при текущем 3-летнем партнерстве делает эту задачу критически важной и срочной (дедлайн ровно 1 неделя).",
+          "blockers": [
+            "Необходимость согласования деталей с продуктовой командой (product team)"
+          ],
+          "accelerators": [
+            "Быстрое привлечение продакт-менеджеров Helion для фиксации сроков на этой неделе"
+          ]
+        }
+      ],
+      "weighted_decisions": [
+        {
+          "decision": "Ник Фролов предоставит Сергею Волкову конкретную дату запуска отчетного модуля в течение недели.",
+          "decision_maker": "Nick Frolov",
+          "strategic_impact": 0.9,
+          "urgency": 0.95,
+          "reversibility": 0.3,
+          "stakeholder_impact": 0.9,
+          "resource_impact": 0.7,
+          "final_weight": 0.87,
+          "priority_level": "critical",
+          "reasoning": "Клиент (SVP крупнейшего банка) прямо угрожает уйти к конкурентам в случае отсутствия точной и надежной информации о сроках запуска модуля. Это создает высокий риск потери ключевого клиента на третьем году сотрудничества, что критично для бизнеса компании Helion.",
+          "implementation_urgency": "this_week",
+          "dependencies": [
+            "Согласование деталей с продуктовой командой Helion на текущей неделе"
+          ]
+        }
+      ],
+      "weighted_projects": [
+        {
+          "project_name": "Reporting Module",
+          "status": "planning",
+          "strategic_value": 0.95,
+          "revenue_impact": 0.9,
+          "resource_intensity": 0.6,
+          "risk_level": 0.95,
+          "timeline_pressure": 0.95,
+          "stakeholder_visibility": 0.9,
+          "final_weight": 0.88,
+          "priority_level": "critical",
+          "reasoning": "Проект имеет критическое значение для удержания ключевого клиента (Titan Bank, сотрудничество 3-й год). Клиент прямо заявил, что при отсутствии четких сроков и срыва дедлайна в текущем году он начнет искать замену на рынке. Индикатор здоровья проекта — красный, доверие клиента подорвано расплывчатыми обещаниями.",
+          "attention_areas": [
+            "Согласование точной даты релиза с продуктовой командой в течение недели",
+            "Исключение расплывчатых формулировок (диапазонов, кварталов) при общении с клиентом",
+            "Удержание клиента под угрозой ухода к конкурентам"
+          ],
+          "quick_wins": [
+            "Предоставить клиенту конкретную дату релиза в течение недели, как и было обещано"
+          ]
+        }
+      ],
+      "weighted_risks": [],
+      "priority_matrix": {
+        "critical": [
+          {
+            "type": "task",
+            "name": "Подготовить конкретный ответ и точную дату по отчетному модулю",
+            "weight": 0.88,
+            "assignee": "Nick Frolov",
+            "reasoning": "Клиент (ключевое лицо, SVP в Titan Bank) прямо заявил, что если отчетный модуль не будет подтвержден на этот год с конкретной точкой релиза, он начнет искать альтернативные решения на рынке. Угроза потери ключевого клиента при текущем 3-летнем партнерстве делает эту задачу критически важной и срочной (дедлайн ровно 1 неделя)."
+          },
+          {
+            "type": "project",
+            "name": "Reporting Module",
+            "weight": 0.88,
+            "status": "planning",
+            "reasoning": "Проект имеет критическое значение для удержания ключевого клиента (Titan Bank, сотрудничество 3-й год). Клиент прямо заявил, что при отсутствии четких сроков и срыва дедлайна в текущем году он начнет искать замену на рынке. Индикатор здоровья проекта — красный, доверие клиента подорвано расплывчатыми обещаниями."
+          },
+          {
+            "type": "decision",
+            "name": "Ник Фролов предоставит Сергею Волкову конкретную дату запуска отчетного модуля в течение недели.",
+            "weight": 0.87,
+            "decision_maker": "Nick Frolov",
+            "reasoning": "Клиент (SVP крупнейшего банка) прямо угрожает уйти к конкурентам в случае отсутствия точной и надежной информации о сроках запуска модуля. Это создает высокий риск потери ключевого клиента на третьем году сотрудничества, что критично для бизнеса компании Helion."
+          }
+        ],
+        "high": [],
+        "medium": [],
+        "low": []
+      },
+      "critical_items": [
+        {
+          "type": "task",
+          "name": "Подготовить конкретный ответ и точную дату по отчетному модулю",
+          "weight": 0.88,
+          "assignee": "Nick Frolov",
+          "reasoning": "Клиент (ключевое лицо, SVP в Titan Bank) прямо заявил, что если отчетный модуль не будет подтвержден на этот год с конкретной точкой релиза, он начнет искать альтернативные решения на рынке. Угроза потери ключевого клиента при текущем 3-летнем партнерстве делает эту задачу критически важной и срочной (дедлайн ровно 1 неделя)."
+        },
+        {
+          "type": "project",
+          "name": "Reporting Module",
+          "weight": 0.88,
+          "status": "planning",
+          "reasoning": "Проект имеет критическое значение для удержания ключевого клиента (Titan Bank, сотрудничество 3-й год). Клиент прямо заявил, что при отсутствии четких сроков и срыва дедлайна в текущем году он начнет искать замену на рынке. Индикатор здоровья проекта — красный, доверие клиента подорвано расплывчатыми обещаниями."
+        },
+        {
+          "type": "decision",
+          "name": "Ник Фролов предоставит Сергею Волкову конкретную дату запуска отчетного модуля в течение недели.",
+          "weight": 0.87,
+          "decision_maker": "Nick Frolov",
+          "reasoning": "Клиент (SVP крупнейшего банка) прямо угрожает уйти к конкурентам в случае отсутствия точной и надежной информации о сроках запуска модуля. Это создает высокий риск потери ключевого клиента на третьем году сотрудничества, что критично для бизнеса компании Helion."
+        }
+      ],
+      "focus_recommendations": [
+        {
+          "recommendation": "Срочно согласовать с продуктовой командой жесткие сроки и точную дату релиза отчетного модуля для Titan Bank",
+          "focus_area": "tasks",
+          "priority": "critical",
+          "items": [
+            "Подготовить конкретный ответ и точную дату по отчетному модулю"
+          ],
+          "rationale": "Клиент (SVP в Titan Bank) находится на грани поиска альтернативных решений на рынке из-за затягивания сроков с зимы. Отсутствие точной даты в течение недели приведет к потере ключевого клиента на 3-м году сотрудничества.",
+          "time_allocation": "60% рабочего времени в течение следующих 3-4 дней",
+          "items_linked": [
+            "Подготовить конкретный ответ и точную дату по отчетному модулю"
+          ],
+          "success_criteria": "Получено подтверждение от продуктовой команды, дата зафиксирована и согласована для предоставления клиенту."
+        },
+        {
+          "recommendation": "Перевести проект 'Reporting Module' в статус 'красный' (критический риск) и задействовать все ресурсы для его реанимации",
+          "focus_area": "projects",
+          "priority": "critical",
+          "items": [
+            "Reporting Module"
+          ],
+          "rationale": "Проект находится под угрозой срыва, доверие клиента подорвано расплывчатыми формулировками ('pretty confident'). Без четкого плана и гарантий реализации в текущем году контракт будет потерян.",
+          "time_allocation": "20% времени на внутренние согласования и пересмотр roadmap проекта",
+          "success_criteria": "Сформирован четкий план разработки модуля с гарантией запуска до конца текущего года."
+        },
+        {
+          "recommendation": "Подготовить персональный созвон с Сергеем Волковым через неделю для презентации точной даты (без диапазонов и кварталов)",
+          "focus_area": "decisions",
+          "priority": "critical",
+          "items": [
+            "Ник Фролов предоставит Сергею Волкову конкретную дату запуска отчетного модуля в течение недели."
+          ],
+          "rationale": "Клиент четко обозначил критерии приемлемости информации: нужна конкретная дата, а не размытые формулировки или кварталы. Выполнение этого обязательства в срок критически важно для сохранения партнерства.",
+          "time_allocation": "10% времени на подготовку коммуникации и презентацию клиенту",
+          "success_criteria": "Проведен звонок с Сергеем Волковым, озвучена точная дата релиза, клиент принял информацию и подтвердил продолжение сотрудничества."
+        }
+      ],
+      "stats": {
+        "duration_seconds": 7.49,
+        "tasks_weighted": 1,
+        "decisions_weighted": 1,
+        "projects_weighted": 1,
+        "risks_weighted": 0,
+        "critical_items_count": 3
+      }
+    },
+    "search_metadata": {
+      "meeting_metadata": {
+        "meeting_id": "meeting_20260825_183058",
+        "title": "Titan Bank: Reporting Module Status and Deadline Discussion",
+        "summary": "Nick Frolov from Helion synced with Sergey Volkov from Titan Bank regarding the reporting module. Sergey expressed frustration with delays and gave Helion one week to provide a specific delivery date for this year, warning that Titan Bank will look at market alternatives if the module is not delivered in 2026.",
+        "main_topics": [
+          "reporting module",
+          "delivery timeline",
+          "client retention",
+          "fintech conference in May"
+        ],
+        "key_outcomes": [
+          "Nick Frolov committed to providing a concrete delivery date for the reporting module within one week.",
+          "Titan Bank confirmed they are satisfied with current systems but require a firm 2026 timeline for reporting or they will look at competitors."
+        ],
+        "action_items_summary": "Nick Frolov to provide a specific release date (not a quarter or range) for the reporting module within one week.",
+        "decisions_summary": "Titan Bank will wait one week for a concrete delivery date before deciding on future cooperation.",
+        "participants_summary": "Nick Frolov (Helion) and Sergey Volkov (SVP, Data & Analytics, Titan Bank)",
+        "mood": "urgent",
+        "meeting_type": "status",
+        "keywords": [
+          "Titan Bank",
+          "Helion",
+          "reporting module",
+          "deadline",
+          "delivery date",
+          "Nick Frolov",
+          "Sergey Volkov",
+          "fintech"
+        ],
+        "related_projects": [
+          "Titan Bank Reporting Module"
+        ],
+        "searchable_text": "Meeting client call Titan Bank reporting module status Nick Frolov Helion Sergey Volkov SVP Data Analytics delivery date year three market alternatives fintech conference May 2026",
+        "importance_score": 0.9,
+        "generated_at": "2026-08-25T18:31:05.456189+00:00"
+      },
+      "node_metadata": [
+        {
+          "node_type": "Person",
+          "name": "Nick Frolov",
+          "summary": "Nick Frolov",
+          "keywords": [
+            "Nick Frolov"
+          ],
+          "searchable_text": "Nick Frolov",
+          "importance_score": 0.7
+        },
+        {
+          "node_type": "Person",
+          "name": "Sergey Volkov",
+          "summary": "Sergey Volkov - SVP, Data & Analytics",
+          "keywords": [
+            "Sergey Volkov",
+            "SVP, Data & Analytics"
+          ],
+          "searchable_text": "Sergey Volkov SVP, Data & Analytics",
+          "importance_score": 0.7
+        },
+        {
+          "node_type": "Task",
+          "name": "Подготовить конкретный ответ и точную дату по отчетному модулю",
+          "summary": "Task: Подготовить конкретный ответ и точную дату по отчетному модулю (assigned to {'name': 'Nick Frolov', 'role': 'Helion'})",
+          "keywords": [
+            "Подготовить конкретный ответ и точную дату по отчетному модулю",
+            {
+              "name": "Nick Frolov",
+              "role": "Helion"
+            },
+            "task",
+            "задача"
+          ],
+          "searchable_text": "Подготовить конкретный ответ и точную дату по отчетному модулю {'name': 'Nick Frolov', 'role': 'Helion'} {'date': '2026-03-16', 'is_hard': True}",
+          "importance_score": 0.8
+        },
+        {
+          "node_type": "Decision",
+          "name": "",
+          "summary": "Decision: ",
+          "keywords": [
+            "",
+            "",
+            "decision",
+            "решение"
+          ],
+          "searchable_text": "",
+          "importance_score": 0.9
+        },
+        {
+          "node_type": "Entity",
+          "name": "Titan Bank",
+          "summary": "organization: Titan Bank",
+          "keywords": [
+            "Titan Bank",
+            "organization"
+          ],
+          "searchable_text": "Titan Bank organization",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "Helion",
+          "summary": "company: Helion",
+          "keywords": [
+            "Helion",
+            "company"
+          ],
+          "searchable_text": "Helion company",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "reporting module",
+          "summary": "feature: reporting module",
+          "keywords": [
+            "reporting module",
+            "feature"
+          ],
+          "searchable_text": "reporting module feature",
+          "importance_score": 0.6
+        },
+        {
+          "node_type": "Entity",
+          "name": "fintech thing in May",
+          "summary": "event: fintech thing in May",
+          "keywords": [
+            "fintech thing in May",
+            "event"
+          ],
+          "searchable_text": "fintech thing in May event",
+          "importance_score": 0.6
+        }
+      ],
+      "keywords": [
+        "a week",
+        "market",
+        "May",
+        "date",
+        "winter",
+        "Nick Frolov",
+        "Data & Analytics",
+        "Sergey Volkov",
+        "fintech",
+        "reporting module",
+        "Titan Bank",
+        "Helion",
+        "SVP",
+        "headset",
+        "quarter",
+        "fintech thing in May",
+        "product",
+        "client call",
+        "marketing",
+        "details",
+        "this year",
+        "status"
+      ],
+      "topics": [
+        {
+          "topic": "Статус разработки модуля отчетности",
+          "description": "Обсуждение планов и сроков создания модуля отчетности для Titan Bank, а также жесткая позиция клиента относительно дедлайнов.",
+          "relevance_score": 1.0,
+          "keywords": [
+            "reporting module",
+            "модуль отчетности",
+            "роки",
+            "разработка",
+            "дедлайн"
+          ],
+          "participants_involved": [
+            "Nick Frolov",
+            "Sergey Volkov"
+          ],
+          "outcomes": [
+            "Клиент выразил недовольство неопределенностью и пригрозил уйти к конкурентам, если модуль не будет запущен в текущем году.",
+            "Ник пообещал вернуться через неделю с конкретной датой релиза (не квартал и не диапазон)."
+          ],
+          "follow_up_needed": true
+        },
+        {
+          "topic": "Угроза потери клиента и риски ухода на рынок",
+          "description": "Обсуждение лояльности клиента и условий продолжения сотрудничества на фоне задержек с новым функционалом.",
+          "relevance_score": 0.9,
+          "keywords": [
+            "Titan Bank",
+            "конкуренты",
+            "сотрудничество",
+            "рынок",
+            "риски"
+          ],
+          "participants_involved": [
+            "Nick Frolov",
+            "Sergey Volkov"
+          ],
+          "outcomes": [
+            "Сергей подтвердил отсутствие претензий к текущей работающей системе (3 год сотрудничества), но поставил жесткое условие по срокам разработки ради сохранения контракта."
+          ],
+          "follow_up_needed": true
+        },
+        {
+          "topic": "Участие в майской финтех-конференции",
+          "description": "Короткий вопрос от маркетингового отдела Helion о возможном посещении представителями Titan Bank отраслевого мероприятия в мае.",
+          "relevance_score": 0.4,
+          "keywords": [
+            "fintech",
+            "финтех",
+            "конференция",
+            "май",
+            "маркетинг"
+          ],
+          "participants_involved": [
+            "Nick Frolov",
+            "Sergey Volkov"
+          ],
+          "outcomes": [
+            "Сергей сообщил, что кто-то из сотрудников банка, вероятно, поедет, но сам он планирует пропустить мероприятие."
+          ],
+          "follow_up_needed": false
+        }
+      ],
+      "searchable_chunks": [
+        {
+          "chunk_id": "chunk_0",
+          "text": "Meeting: Client call — Titan Bank, reporting module status Date: 2026-03-09 Duration: 3 min Participants: Nick Frolov (Helion); Sergey Volkov — SVP, Data & Analytics, Titan Bank --- [00:00] Nick Frolov: Sergey, hi, it's Nick — can you hear me okay? My headset's been dropping out all morning. [00:05] Sergey Volkov: I hear you fine. [00:07] Nick Frolov: Great. Quick one, then — I wanted to sync up on where we are with the reporting module. [00:13] Sergey Volkov: I've got a question for you before you get to yours. Are you building that module this year or not? [00:21] Nick Frolov: We are. I'm pretty confident we are — we're nailing the details down with product this week. [00:28] Sergey Volkov: \"Pretty confident\" doesn't work for me. Look, this is year three for me with you people. I have zero complaints about what's already running. Zero. But if the answer on reporting is \"pretty,\" then I start looking at what else is on the market. [00:45] Nick Frolov: That's fair. I get it. [00:47] Sergey Volkov: Do you? Because I've been hearing \"we're on it\" since the winter. [00:52] Nick Frolov: Give me a week. I'll come back to you with something concrete, not a feeling. [00:58] Sergey Volkov: A week's fine. But understand me — if it doesn't land this year, we'll start looking elsewhere. I'm not going to wait forever for the sake of a nice relationship. [01:10] Nick Frolov: Understood. Loud and clear. I'll come back with a date. [01:14] Sergey Volkov: With a date. Not a range, not a quarter. [01:18] Nick Frolov: With a date. And hey, while I've got you — is anyone from your side going to the fintech thing in May? Our marketing lead keeps asking me. [01:27] Sergey Volkov: Somebody from us, probably. Not me. I'll be honest with you, I don't love those. [01:33] Nick Frolov: Fair enough. Alright — a week. [01:36] Sergey Volkov: I'll wait for it.",
+          "start_position": 0,
+          "end_position": 330,
+          "keywords_found": [
+            "a week",
+            "market",
+            "May",
+            "date",
+            "winter",
+            "Nick Frolov",
+            "Data & Analytics",
+            "Sergey Volkov",
+            "fintech",
+            "reporting module",
+            "Titan Bank",
+            "Helion",
+            "SVP",
+            "headset",
+            "quarter",
+            "fintech thing in May",
+            "product",
+            "client call",
+            "marketing",
+            "details",
+            "this year",
+            "status"
+          ],
+          "keyword_density": 1.0,
+          "importance_score": 1.0
+        }
+      ],
+      "stats": {
+        "duration_seconds": 5.43,
+        "nodes_processed": 8,
+        "keywords_extracted": 22,
+        "topics_identified": 3,
+        "chunks_created": 1
+      }
+    },
+    "decision_learning": {
+      "meeting_id": "meeting_20260825_183058",
+      "timestamp": "2026-08-25T18:31:03.517070+00:00",
+      "decisions": [
+        {
+          "decision_id": "dec_2026-03-09_1",
+          "decision_summary": "Ник Фролов предоставит Сергею Волкову конкретную дату запуска отчетного модуля в течение недели.",
+          "decision_category": "operational",
+          "details": "Ник Фролов согласился вернуться к Сергею Волкову через неделю с конкретной датой запуска отчетного модуля (не с диапазоном и не с кварталом, а с точной датой).",
+          "participants": [
+            {
+              "name": "Nick Frolov",
+              "role": "Представитель Helion"
+            },
+            {
+              "name": "Sergey Volkov",
+              "role": "SVP, Data & Analytics, Titan Bank"
+            }
+          ],
+          "responsible": {
+            "primary": "Nick Frolov"
+          },
+          "decision_maker_resolved": "Nick Frolov",
+          "decision_maker_speaker": "",
+          "attribution_confidence": "medium",
+          "reasoning": "Клиент потребовал конкретики по срокам реализации отчетного модуля, пригрозив в противном случае начать поиск альтернативных решений на рынке.",
+          "timeline": {
+            "deadline": "1 неделя"
+          },
+          "business_impact": {
+            "scope": "external",
+            "urgency": "high",
+            "risk_level": "high"
+          },
+          "dependencies": [],
+          "action_items": [
+            {
+              "action": "Подготовить и предоставить конкретную дату запуска отчетного модуля",
+              "owner": "Nick Frolov",
+              "deadline": "1 неделя"
+            }
+          ],
+          "quote": "Give me a week. I'll come back to you with something concrete, not a feeling.",
+          "confidence": 0.95,
+          "_extracted_at": "2026-08-25T18:31:00.454078+00:00",
+          "_agent": "DecisionAgent",
+          "_agent_version": "1.0.0",
+          "_entity_type": "decision",
+          "importance_classification": {
+            "business_impact": "low",
+            "urgency_score": 0.5,
+            "complexity_score": 5,
+            "risk_level": "low",
+            "overall_priority": "medium"
+          }
+        }
+      ],
+      "decision_patterns": {
+        "decision_types_distribution": {
+          "operational": 1
+        },
+        "urgency_distribution": {
+          "medium": 1
+        },
+        "complexity_distribution": {
+          "medium": 1
+        },
+        "common_patterns": [
+          "Преобладают operational решения"
+        ],
+        "decision_makers": {
+          "Nick Frolov": {
+            "count": 1,
+            "roles": [
+              "Представитель Helion"
+            ]
+          },
+          "Sergey Volkov": {
+            "count": 1,
+            "roles": [
+              "SVP, Data & Analytics, Titan Bank"
+            ]
+          }
+        },
+        "success_factors": [],
+        "risk_factors": []
+      },
+      "learning_data": [
+        {
+          "id": "train_dec_2026-03-09_1",
+          "meeting_id": "meeting_20260825_183058",
+          "input": {
+            "context": "",
+            "decision_type": "",
+            "participants": [
+              "Nick Frolov",
+              "Sergey Volkov"
+            ]
+          },
+          "output": {
+            "classification": {
+              "business_impact": "low",
+              "urgency_score": 0.5,
+              "complexity_score": 5,
+              "risk_level": "low",
+              "overall_priority": "medium"
+            },
+            "reasoning": "Клиент потребовал конкретики по срокам реализации отчетного модуля, пригрозив в противном случае начать поиск альтернативных решений на рынке.",
+            "expected_outcomes": [],
+            "risks": []
+          },
+          "metadata": {
+            "source": "meeting_transcript",
+            "created_at": "2026-08-25T18:31:03.517141+00:00",
+            "quality_score": 0.7999999999999999
+          }
+        }
+      ],
+      "statistics": {
+        "total": 1,
+        "by_type": {
+          "strategic": 0,
+          "tactical": 0,
+          "operational": 0
+        },
+        "by_urgency": {
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "by_priority": {
+          "high": 0,
+          "medium": 1,
+          "low": 0
+        },
+        "avg_complexity": 5.0
+      }
+    },
+    "synthesis_analysis": {
+      "meeting_id": "meeting_20260825_183058",
+      "timestamp": "2026-08-25T18:31:03.517318+00:00",
+      "success_patterns": [],
+      "failure_patterns": [],
+      "cyclical_patterns": [
+        {
+          "pattern_name": "Квартальный цикл планирования",
+          "cycle_length": "3 месяца",
+          "phases": [
+            {
+              "phase_name": "Планирование",
+              "duration": "2 недели"
+            },
+            {
+              "phase_name": "Выполнение",
+              "duration": "10 недель"
+            },
+            {
+              "phase_name": "Ревью",
+              "duration": "1 неделя"
+            }
+          ],
+          "predictability": "высокая"
+        },
+        {
+          "pattern_name": "Недельный цикл встреч",
+          "cycle_length": "1 неделя",
+          "phases": [
+            {
+              "phase_name": "Понедельник - планирование",
+              "duration": "1 день"
+            },
+            {
+              "phase_name": "Вторник-четверг - работа",
+              "duration": "3 дня"
+            },
+            {
+              "phase_name": "Пятница - ревью",
+              "duration": "1 день"
+            }
+          ],
+          "predictability": "высокая"
+        }
+      ],
+      "decision_making_patterns": [],
+      "communication_patterns": [],
+      "predictive_insights": [],
+      "recommendations": []
+    },
+    "goals_tracking": {
+      "meeting_id": "meeting_20260825_183058",
+      "timestamp": "2026-08-25T18:31:03.517492+00:00",
+      "goals": [
+        {
+          "level": "task",
+          "entity_name": {
+            "name": "Nick Frolov",
+            "role": "Helion"
+          },
+          "goal_statement": "Выполнить: Предоставить клиенту конкретные детали и точную дату выпуска отчетного модуля вместо расплывчатых формулировок.",
+          "why_reason": "Причина не указана явно",
+          "why_stated": "",
+          "metrics_quantitative": [],
+          "metrics_qualitative": [],
+          "success_criteria": "Задача выполнена",
+          "pathway": "",
+          "timeline": {
+            "date": "2026-03-16",
+            "is_hard": true
+          },
+          "status": "new",
+          "confidence": 1.0,
+          "is_stated_explicitly": true,
+          "source_quote": "Предоставить клиенту конкретные детали и точную дату выпуска отчетного модуля вместо расплывчатых фо",
+          "related_entities": [
+            {
+              "name": "Nick Frolov",
+              "role": "Helion"
+            }
+          ],
+          "goal_id": "a46a0b9b842697b5",
+          "reasoning_analysis": {
+            "alignment": {
+              "stated_vs_real": "aligned",
+              "confidence": 0.9,
+              "explanation": "Цель полностью совпадает с жестким требованием клиента предоставить точную дату в течение недели, чтобы предотвратить уход клиента к конкурентам."
+            },
+            "true_motivations": [
+              {
+                "type": "defensive",
+                "description": "Удержание ключевого клиента под угрозой его ухода на другой рынок.",
+                "evidence": "Sergey Volkov: 'if the answer on reporting is 'pretty', then I start looking at what else is on the market... if it doesn't land this year, we'll start looking elsewhere.'"
+              }
+            ],
+            "goal_quality": {
+              "is_rational": true,
+              "is_achievable": true,
+              "is_measurable": true,
+              "has_hidden_agenda": false,
+              "quality_score": 9
+            },
+            "red_flags": [
+              "Клиент работает с компанией три года и теряет терпение из-за затягивания сроков с зимы.",
+              "Риск потери контракта в случае отсутствия конкретной даты или срыва релиза в текущем году."
+            ],
+            "recommendations": [
+              "Срочно зафиксировать с продуктовой командой точную дату релиза отчета.",
+              "Вернуться к клиенту строго в течение недели с конкретным днем, избегая диапазонов и расплывчатых формулировок."
+            ]
+          }
+        },
+        {
+          "level": "project",
+          "entity_name": "Reporting Module",
+          "goal_statement": "Завершить проект: Reporting Module",
+          "why_reason": "Building and delivering a new reporting module for Titan Bank",
+          "why_stated": "",
+          "metrics_quantitative": [],
+          "metrics_qualitative": [],
+          "success_criteria": "Проект завершён",
+          "pathway": "",
+          "timeline": "",
+          "status": "in_progress",
+          "confidence": 1.0,
+          "is_stated_explicitly": true,
+          "source_quote": "Reporting Module",
+          "related_entities": [],
+          "goal_id": "87d201ed785e6f06",
+          "reasoning_analysis": {
+            "alignment": {
+              "stated_vs_real": "aligned",
+              "confidence": 0.9,
+              "explanation": "Заявленная причина полностью совпала с реальностью: клиент требует конкретных сроков поставки модуля под угрозой разрыва контракта, а подрядчик пытается зафиксировать эти сроки."
+            },
+            "true_motivations": [
+              {
+                "type": "political",
+                "description": "Удержание клиента и защита контракта перед угрозой ухода к конкурентам",
+                "evidence": "Sergey Volkov: 'if the answer on reporting is 'pretty', then I start looking at what else is on the market.'"
+              },
+              {
+                "type": "defensive",
+                "description": "Снятие неопределенности и предоставление точных обязательств вместо расплывчатых формулировок",
+                "evidence": "Sergey Volkov: 'With a date. Not a range, not a quarter.' Nick Frolov: 'With a date.'"
+              }
+            ],
+            "goal_quality": {
+              "is_rational": true,
+              "is_achievable": true,
+              "is_measurable": false,
+              "has_hidden_agenda": false,
+              "quality_score": 7
+            },
+            "red_flags": [
+              "Клиент открыто рассматривает альтернативные решения на рынке из-за затягивания сроков («year three for me with you people... start looking at what else is on the market»).",
+              "Подрядчик использует неопределенные формулировки («pretty confident», «we're on it»), что подрывает доверие."
+            ],
+            "recommendations": [
+              "Предоставить точную дату релиза отчетного модуля в течение недели, как и было обещано.",
+              "Избегать качественных оценок («примерно», «в этом году») в пользу жестких временных рамок."
+            ]
+          }
+        }
+      ],
+      "progress_updates": [
+        {
+          "goal_id": "a46a0b9b842697b5",
+          "goal_statement": "Выполнить: Предоставить клиенту конкретные детали и точную дату выпуска отчетного модуля вместо расп",
+          "previous_status": "unknown",
+          "current_status": "new",
+          "progress_percentage": 0,
+          "blockers": [],
+          "next_steps": [],
+          "updated_at": "2026-08-25T18:31:07.692147+00:00"
+        },
+        {
+          "goal_id": "87d201ed785e6f06",
+          "goal_statement": "Завершить проект: Reporting Module",
+          "previous_status": "unknown",
+          "current_status": "in_progress",
+          "progress_percentage": 50,
+          "blockers": [],
+          "next_steps": [],
+          "updated_at": "2026-08-25T18:31:07.692156+00:00"
+        }
+      ],
+      "conflicts": [
+        {
+          "conflict_id": "conf_01",
+          "conflict_type": "temporal",
+          "severity": "critical",
+          "goal1_id": "a46a0b9b842697b5",
+          "goal2_id": "87d201ed785e6f06",
+          "description": "Ник Фролов обязан предоставить точную дату выпуска модуля в течение недели (до 2026-03-16), однако по самому проекту (Reporting Module) сроки и детали еще не утверждены с продуктовой командой и находятся на стадии согласования 'на этой неделе'.",
+          "impact": "Риск назначения нереалистичной или неподтвержденной даты, что приведет к потере доверия клиента (Сергей Волков пригрозил уйти к конкурентам) или срыву дедлайна разработки.",
+          "resolution_suggestions": [
+            "Провести срочную встречу с продуктовой командой до истечения недельного срока (до 16 марта) для фиксации архитектуры и жестких сроков.",
+            "Заложить буфер при формировании даты или согласовать с клиентом поэтапный релиз."
+          ],
+          "who_should_resolve": "Ник Фролов (Helion) совместно с Product Lead"
+        }
+      ],
+      "alignment_report": {
+        "alignment_score": 8,
+        "status": "partially_aligned",
+        "aligned_goals_count": 1,
+        "misaligned_goals_count": 0,
+        "vertical_alignment": {
+          "score": 8,
+          "issues": [
+            "Цель нижнего уровня (TASK1) направлена на предоставление конкретной даты, но в текущей формулировке не отражает риски потери клиента, озвученные в контексте разговора."
+          ],
+          "strong_connections": [
+            "TASK1 напрямую поддерживает PROJECT1, фиксируя сроки и детали для создания отчетного модуля."
+          ]
+        },
+        "horizontal_alignment": {
+          "score": 9,
+          "issues": [],
+          "synergies": [
+            "Действия Ника Фролова полностью синхронизированы с жесткими требованиями заказчика (Сергея Волкова) по предоставлению точной даты в течение недели."
+          ]
+        },
+        "cascading_quality": {
+          "score": 7,
+          "well_cascaded": [
+            "PROJECT1 -> TASK1 (переход от разработки модуля к конкретизации сроков по требованию клиента)"
+          ],
+          "poorly_cascaded": []
+        },
+        "recommendations": [
+          {
+            "priority": "high",
+            "action": "Дополнить цель TASK1 требованием согласовать жесткий дедлайн (точную дату, а не квартал) с продуктовой командой во избежание риска расторжения контракта с Titan Bank.",
+            "affected_goals": [
+              "TASK1"
+            ]
+          }
+        ],
+        "missing_goals": [
+          {
+            "level": "Task",
+            "description": "Цель по синхронизации с внутренним продуктовым отделом Helion для подтверждения возможности реализации модуля в текущем году."
+          }
+        ],
+        "level_distribution": {
+          "project": 1,
+          "task": 1
+        }
+      },
+      "statistics": {
+        "total_goals": 2,
+        "by_level": {
+          "task": 1,
+          "project": 1
+        },
+        "by_status": {
+          "new": 1,
+          "in_progress": 1
+        },
+        "conflicts_count": 1,
+        "avg_confidence": 1.0,
+        "explicit_count": 2,
+        "implicit_count": 0
+      }
+    },
+    "knowledge_extraction": {
+      "meeting_id": "meeting_20260825_183058",
+      "summary": {
+        "meeting_id": "meeting_20260825_183058",
+        "summary": "Ник Фролов (Helion) и Сергей Волков (Titan Bank) обсудили статус отчетного модуля. Волков потребовал точных гарантий релиза в текущем году под угрозой смены вендора. Решение: Фролов обязуется через неделю предоставить конкретную дату запуска без размытых формулировок.",
+        "main_topics": [
+          "принятие решений",
+          "планирование задач",
+          "обсуждение метрик"
+        ],
+        "participants": [
+          "Nick Frolov",
+          "Sergey Volkov"
+        ],
+        "content_tags": [
+          "achievement",
+          "insight"
+        ],
+        "value_score": 6.0,
+        "has_actionable_content": true,
+        "stats": {
+          "decisions_count": 1,
+          "tasks_count": 1,
+          "participants_count": 2,
+          "ideas_count": 1,
+          "kpis_count": 2
+        },
+        "timestamp": "2026-08-25T18:31:31.583399"
+      },
+      "cases": [],
+      "methodologies": [],
+      "templates": [],
+      "regulations": [],
+      "best_practices": [],
+      "guidelines": [
+        {
+          "id": "knowledge_guideline_121_meeting_",
+          "category": "guideline",
+          "title": "Предоставление конкретных дат вместо размытых формулировок",
+          "content": "При обсуждении сроков с ключевыми клиентами нельзя использовать расплывчатые формулировки вроде «претти конфидент» или давать временные диапазоны и кварталы — требуется называть точную дату.",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 0.95,
+          "importance": 0.9,
+          "related_entities": [
+            "Sergey Volkov",
+            "Nick Frolov"
+          ],
+          "related_topics": [],
+          "speakers": [
+            "Sergey Volkov"
+          ],
+          "tags": [
+            "communication",
+            "deadlines",
+            "client_management"
+          ],
+          "extracted_at": "2026-08-25T18:31:32.992114",
+          "metadata": {}
+        }
+      ],
+      "insights": [
+        {
+          "id": "knowledge_insight_125_meeting_",
+          "category": "insight",
+          "title": "Накопленный контекст и усталость от процесса",
+          "content": "Клиент работает с компанией уже третий год и полностью удовлетворен текущим функционалом («zero complaints»), но при этом находится на пределе терпения по поводу нового модуля, так как пустые обещания («we're on it») длятся как минимум с зимы.\n\nImplications: Прочность существующих отношений («nice relationship») не защищает вендора от ухода клиента, если затягивается разработка новых обещанных компонентов.",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:31:34.180456",
+          "metadata": {
+            "id": "eafc00b7-8082-4682-b6b9-0665314c9a4c",
+            "type": "discovery",
+            "title": "Накопленный контекст и усталость от процесса",
+            "description": "Клиент работает с компанией уже третий год и полностью удовлетворен текущим функционалом («zero complaints»), но при этом находится на пределе терпения по поводу нового модуля, так как пустые обещания («we're on it») длятся как минимум с зимы.",
+            "implications": "Прочность существующих отношений («nice relationship») не защищает вендора от ухода клиента, если затягивается разработка новых обещанных компонентов.",
+            "actionability": "high",
+            "source_meeting_id": "meeting_20260825_183058",
+            "source_quote": "Look, this is year three for me with you people. I have zero complaints about what's already running. Zero. But if the answer on reporting is 'pretty,' then I start looking at what else is on the market.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:31:34.180410"
+          }
+        },
+        {
+          "id": "knowledge_insight_126_meeting_",
+          "category": "insight",
+          "title": "Смена языка коммуникации под давлением клиента",
+          "content": "Клиент жестко фильтрует уровень неопределенности в ответах вендора: формулировки вроде «pretty confident», «range» или «quarter» приравниваются к отсутствию конкретики и триггерят риск ухода на открытый рынок.\n\nImplications: Вендор обязан изменить формат планирования и отчетности перед этим клиентом с качественного на абсолютно точечный (требуется конкретная дата без размытых сроков).",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:31:34.180464",
+          "metadata": {
+            "id": "4ec8a54f-bdeb-4fff-9d04-4e6dd3303c09",
+            "type": "insight",
+            "title": "Смена языка коммуникации под давлением клиента",
+            "description": "Клиент жестко фильтрует уровень неопределенности в ответах вендора: формулировки вроде «pretty confident», «range» или «quarter» приравниваются к отсутствию конкретики и триггерят риск ухода на открытый рынок.",
+            "implications": "Вендор обязан изменить формат планирования и отчетности перед этим клиентом с качественного на абсолютно точечный (требуется конкретная дата без размытых сроков).",
+            "actionability": "high",
+            "source_meeting_id": "meeting_20260825_183058",
+            "source_quote": "With a date. Not a range, not a quarter.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:31:34.180423"
+          }
+        },
+        {
+          "id": "knowledge_insight_127_meeting_",
+          "category": "insight",
+          "title": "Разрыв контекстов между отделами вендора",
+          "content": "Пока руководство по работе с клиентами тушит критический пожар по поводу срыва сроков ключевого продукта, маркетинг вендора параллельно беспокоит клиента второстепенными вопросами о посещении отраслевых мероприятий.\n\nImplications: Вендор демонстрирует несогласованность внутренних процессов перед ключевым лицом, рискующим разорвать контракт, отвлекая его нерелевантной активностью.",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 0.9,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:31:34.180471",
+          "metadata": {
+            "id": "28e57ce0-cf73-406d-955e-85ae0ba42548",
+            "type": "pattern",
+            "title": "Разрыв контекстов между отделами вендора",
+            "description": "Пока руководство по работе с клиентами тушит критический пожар по поводу срыва сроков ключевого продукта, маркетинг вендора параллельно беспокоит клиента второстепенными вопросами о посещении отраслевых мероприятий.",
+            "implications": "Вендор демонстрирует несогласованность внутренних процессов перед ключевым лицом, рискующим разорвать контракт, отвлекая его нерелевантной активностью.",
+            "actionability": "medium",
+            "source_meeting_id": "meeting_20260825_183058",
+            "source_quote": "And hey, while I've got you — is anyone from your side going to the fintech thing in May? Our marketing lead keeps asking me.",
+            "confidence": 0.9,
+            "extracted_at": "2026-08-25T18:31:34.180432"
+          }
+        }
+      ],
+      "standards": [
+        {
+          "id": "knowledge_standard_120_meeting_",
+          "category": "standard",
+          "title": "Формат предоставления срока по отчетному модулю",
+          "content": "Срок должен быть предоставлен в виде конкретной даты, а не в виде диапазона или квартала.\n\nThreshold: Конкретная дата (не диапазон, не квартал)",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:31:32.723151",
+          "metadata": {
+            "id": "b70e957c-a69f-4129-b595-6bd12062ee54",
+            "type": "criteria",
+            "title": "Формат предоставления срока по отчетному модулю",
+            "description": "Срок должен быть предоставлен в виде конкретной даты, а не в виде диапазона или квартала.",
+            "threshold": "Конкретная дата (не диапазон, не квартал)",
+            "scope": "Ответ по срокам реализации отчетного модуля",
+            "mandatory": true,
+            "source_meeting_id": "meeting_20260825_183058",
+            "source_quote": "Срок: Сделай мне с датой. Не диапазоном, не кварталом.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:31:32.723086"
+          }
+        }
+      ],
+      "achievements": [
+        {
+          "id": "knowledge_achievement_122_meeting_",
+          "category": "achievement",
+          "title": "Высокое качество текущего функционала",
+          "content": "Клиент полностью доволен уже работающей частью системы и не имеет к ней никаких претензий за три года сотрудничества.\n\nImpact: Удержание текущего контракта и позитивный фундамент отношений с ключевым клиентом.\nRoot Cause: Качественная поддержка или разработка ранее запущенных решений.",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:31:33.798020",
+          "metadata": {
+            "id": "21f98a31-e191-4469-82be-2eb084038c96",
+            "type": "achievement",
+            "title": "Высокое качество текущего функционала",
+            "description": "Клиент полностью доволен уже работающей частью системы и не имеет к ней никаких претензий за три года сотрудничества.",
+            "impact": "Удержание текущего контракта и позитивный фундамент отношений с ключевым клиентом.",
+            "root_cause": "Качественная поддержка или разработка ранее запущенных решений.",
+            "metrics": [
+              "Срок сотрудничества: 3 года",
+              "Количество жалоб: 0"
+            ],
+            "contributors": [
+              "Sergey Volkov (SVP, Data & Analytics, Titan Bank)"
+            ],
+            "source_meeting_id": null,
+            "source_quote": "I have zero complaints about what's already running. Zero.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:31:33.797985"
+          }
+        },
+        {
+          "id": "knowledge_achievement_123_meeting_",
+          "category": "achievement",
+          "title": "Отсутствие конкретных сроков и неопределенность по отчетному модулю",
+          "content": "Компания Helion затягивает с конкретикой по разработке отчетного модуля с зимы, используя расплывчатые формулировки («pretty confident», «мы на связи»), что привело к угрозе со стороны клиента уйти к конкурентам.\n\nImpact: Создан риск потери клиента, который готов искать альтернативы на рынке, если модуль не будет запущен в текущем году.\nRoot Cause: Отсутствие четкого планирования и конкретных дат со стороны команды разработки/продукта.",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:31:33.798027",
+          "metadata": {
+            "id": "10758896-d123-4b90-b7be-5f8dcc14550e",
+            "type": "failure",
+            "title": "Отсутствие конкретных сроков и неопределенность по отчетному модулю",
+            "description": "Компания Helion затягивает с конкретикой по разработке отчетного модуля с зимы, используя расплывчатые формулировки («pretty confident», «мы на связи»), что привело к угрозе со стороны клиента уйти к конкурентам.",
+            "impact": "Создан риск потери клиента, который готов искать альтернативы на рынке, если модуль не будет запущен в текущем году.",
+            "root_cause": "Отсутствие четкого планирования и конкретных дат со стороны команды разработки/продукта.",
+            "metrics": [
+              "Срок затягивания неопределенности: с зимы до текущего момента"
+            ],
+            "contributors": [
+              "Nick Frolov (Helion)"
+            ],
+            "source_meeting_id": null,
+            "source_quote": "Because I've been hearing 'we're on it' since the winter.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:31:33.797994"
+          }
+        }
+      ],
+      "expert_knowledge": [
+        {
+          "id": "knowledge_expert_knowledge_124_meeting_",
+          "category": "expert_knowledge",
+          "title": "Удержание ключевых энтерпрайз-клиентов через жесткие дедлайны по роадмапу",
+          "content": "Для удержание давних клиентов (партнерство от 3 лет) при затягивании сроков по новым ключевым модулям (reporting module) недостаточно качественной работы текущего функционала и общих фраз о разработке. Критерием доверия выступает предоставление точной даты релиза (не квартала и не диапазона) в жестком дедлайне, иначе клиент начинает поиск альтернативных решений на рынке.",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 0.95,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:31:34.178153",
+          "metadata": {
+            "id": "d80ce3ae-5acf-4ebd-9a9e-e733837fda70",
+            "type": "strategic",
+            "title": "Удержание ключевых энтерпрайз-клиентов через жесткие дедлайны по роадмапу",
+            "content": "Для удержание давних клиентов (партнерство от 3 лет) при затягивании сроков по новым ключевым модулям (reporting module) недостаточно качественной работы текущего функционала и общих фраз о разработке. Критерием доверия выступает предоставление точной даты релиза (не квартала и не диапазона) в жестком дедлайне, иначе клиент начинает поиск альтернативных решений на рынке.",
+            "expert_name": "Sergey Volkov",
+            "expert_role": "",
+            "domain": "Account Management / Sales Strategy",
+            "complexity": "high",
+            "source_meeting_id": null,
+            "source_quote": "Look, this is year three for me with you people. I have zero complaints about what's already running. Zero. But if the answer on reporting is 'pretty,' then I start looking at what else is on the market... With a date. Not a range, not a quarter.",
+            "confidence": 0.95,
+            "extracted_at": "2026-08-25T18:31:34.178126"
+          }
+        }
+      ],
+      "playbooks": [],
+      "antipatterns": [
+        {
+          "id": "knowledge_antipattern_128_meeting_",
+          "category": "antipattern",
+          "title": "Vague Commitments ('Pretty Confident')",
+          "content": "Использование неуверенных и размытых формулировок («pretty confident», «мы наведем детали с продуктом») при обсуждении сроков реализации ключевого функционала.\n\nConsequences: Потеря доверия клиента, который ждет конкретики с зимы, и риск того, что клиент начнет искать альтернативные решения на рынке.\nSolution: Давать четкие обязательства и конкретные даты, а не полагаться на ощущения или приблизительные оценки.",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:31:35.558532",
+          "metadata": {
+            "id": "e1ab09c1-6f08-4af5-a59c-d51268781a36",
+            "type": "bad_practice",
+            "title": "Vague Commitments ('Pretty Confident')",
+            "description": "Использование неуверенных и размытых формулировок («pretty confident», «мы наведем детали с продуктом») при обсуждении сроков реализации ключевого функционала.",
+            "consequences": "Потеря доверия клиента, который ждет конкретики с зимы, и риск того, что клиент начнет искать альтернативные решения на рынке.",
+            "solution": "Давать четкие обязательства и конкретные даты, а не полагаться на ощущения или приблизительные оценки.",
+            "source_meeting_id": "meeting_20260825_183058",
+            "source_quote": "We are. I'm pretty confident we are — we're nailing the details down with product this week.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:31:35.558485"
+          }
+        },
+        {
+          "id": "knowledge_antipattern_129_meeting_",
+          "category": "antipattern",
+          "title": "Endless Vague Status Quo ('We're on it')",
+          "content": "Кормление клиента общими фразами («we're on it») в течение длительного периода (с зимы) без предоставления конкретных результатов или сроков.\n\nConsequences: Клиент начинает рассматривать предложения конкурентов на рынке и угрожает уходом, несмотря на хорошие текущие результаты работы («zero complaints about what's already running»).\nSolution: Предоставлять клиенту конкретные даты и проверяемые результаты вместо затягивания сроков.",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:31:35.558540",
+          "metadata": {
+            "id": "30af36e6-ecda-4680-9962-2527b2aaf3d3",
+            "type": "bad_practice",
+            "title": "Endless Vague Status Quo ('We're on it')",
+            "description": "Кормление клиента общими фразами («we're on it») в течение длительного периода (с зимы) без предоставления конкретных результатов или сроков.",
+            "consequences": "Клиент начинает рассматривать предложения конкурентов на рынке и угрожает уходом, несмотря на хорошие текущие результаты работы («zero complaints about what's already running»).",
+            "solution": "Предоставлять клиенту конкретные даты и проверяемые результаты вместо затягивания сроков.",
+            "source_meeting_id": "meeting_20260825_183058",
+            "source_quote": "Do you? Because I've been hearing 'we're on it' since the winter.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:31:35.558498"
+          }
+        },
+        {
+          "id": "knowledge_antipattern_130_meeting_",
+          "category": "antipattern",
+          "title": "Premature Topic Shift to Non-Critical Issues",
+          "content": "Перевод разговор на второстепенные темы (посещение маркетингового мероприятия в мае) в момент, когда только что было достигнуто критически важное соглашение по ультиматуму клиента.\n\nConsequences: Размывание фокуса на критической проблеме (сроки сдачи модуля) и создание впечатления легкомысленности со стороны исполнителя.\nSolution: Удерживать фокус на решении критической проблемы и фиксации договоренностей перед переходом к бытовым или маркетинговым вопросам.",
+          "source_meeting_id": "meeting_20260825_183058",
+          "confidence": 1.0,
+          "importance": 0.5,
+          "related_entities": [],
+          "related_topics": [],
+          "speakers": [],
+          "tags": [],
+          "extracted_at": "2026-08-25T18:31:35.558546",
+          "metadata": {
+            "id": "30e91742-b850-4792-994b-e3ce2be75893",
+            "type": "pitfall",
+            "title": "Premature Topic Shift to Non-Critical Issues",
+            "description": "Перевод разговор на второстепенные темы (посещение маркетингового мероприятия в мае) в момент, когда только что было достигнуто критически важное соглашение по ультиматуму клиента.",
+            "consequences": "Размывание фокуса на критической проблеме (сроки сдачи модуля) и создание впечатления легкомысленности со стороны исполнителя.",
+            "solution": "Удерживать фокус на решении критической проблемы и фиксации договоренностей перед переходом к бытовым или маркетинговым вопросам.",
+            "source_meeting_id": "meeting_20260825_183058",
+            "source_quote": "And hey, while I've got you — is anyone from your side going to the fintech thing in May? Our marketing lead keeps asking me.",
+            "confidence": 1.0,
+            "extracted_at": "2026-08-25T18:31:35.558504"
+          }
+        }
+      ],
+      "workflows": [],
+      "extraction_time": 5.241485,
+      "total_extracted": 11,
+      "timestamp": "2026-08-25T18:31:30.317178"
+    },
+    "regulations": [],
+    "extracted_templates": [],
+    "summary": {
+      "total_entities": 19,
+      "decisions_count": 1,
+      "tasks_count": 1,
+      "participants_count": 2,
+      "entities_count": 4,
+      "kpis_count": 2,
+      "opinions_count": 3,
+      "ideas_count": 1,
+      "project_statuses_count": 1,
+      "enhanced_kpis_count": 2,
+      "fact_checks_count": 0,
+      "cross_links_found": 1,
+      "related_meetings_found": 0,
+      "entity_evolution_tracked": 0,
+      "recurring_topics": 0,
+      "personality_profiles_count": 2,
+      "conflict_risks_count": 2,
+      "scenarios_count": 3,
+      "risks_count": 2,
+      "early_warnings_count": 2,
+      "critical_items_count": 3,
+      "keywords_count": 22,
+      "topics_count": 3,
+      "learning_data_count": 1,
+      "success_patterns_count": 0,
+      "failure_patterns_count": 0,
+      "goals_count": 2,
+      "regulations_count": 0,
+      "extracted_templates_count": 0,
+      "goal_conflicts_count": 1,
+      "knowledge_items_count": 11,
+      "knowledge_cases_count": 0,
+      "knowledge_methodologies_count": 0,
+      "knowledge_best_practices_count": 0,
+      "knowledge_insights_count": 3
+    },
+    "llm_stats": {
+      "providers": {
+        "openai": {
+          "model": "gpt-4o-mini",
+          "enabled": true,
+          "requests": {
+            "total": 0,
+            "cached": 0,
+            "errors": 0,
+            "cache_hit_rate": "0.0%"
+          },
+          "tokens": {
+            "input": 0,
+            "cached": 0,
+            "output": 0,
+            "total": 0
+          },
+          "cost": {
+            "actual": "$0.000000",
+            "without_cache": "$0.000000",
+            "savings": "$0.000000",
+            "savings_percent": "0.0%"
+          }
+        },
+        "gemini": {
+          "model": "gemini-flash-lite-latest",
+          "enabled": true,
+          "requests": {
+            "total": 492,
+            "cached": 491,
+            "errors": 0,
+            "cache_hit_rate": "99.8%"
+          },
+          "tokens": {
+            "input": 1290998,
+            "cached": 0,
+            "output": 353324,
+            "total": 1644322
+          },
+          "cost": {
+            "actual": "$0.270429",
+            "without_cache": "$0.270429",
+            "savings": "$0.000000",
+            "savings_percent": "0.0%"
+          }
+        }
+      },
+      "health": {},
+      "total": {
+        "requests": 492,
+        "errors": 0,
+        "estimated_cost": "$0.270429"
+      }
+    },
+    "memory_reinforcement": {
+      "frequency_tracking": {},
+      "hebbian_learning": {},
+      "emotional_salience": {},
+      "enabled": true
+    },
+    "validation": {
+      "enabled": true,
+      "validation": {
+        "is_valid": true,
+        "entities": {
+          "valid": [
+            {
+              "entity_id": "titan_bank",
+              "entity_type": "organization",
+              "name": "Titan Bank",
+              "description": "Client organization represented by Sergey Volkov.",
+              "attributes": {
+                "type": "client",
+                "industry": "banking"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:31:00.503295+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "helion",
+              "entity_type": "company",
+              "name": "Helion",
+              "description": "Provider company represented by Nick Frolov.",
+              "attributes": {
+                "industry": "technology"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 1.0,
+              "_extracted_at": "2026-08-25T18:31:00.503311+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "reporting_module",
+              "entity_type": "feature",
+              "name": "reporting module",
+              "description": "Module whose development status is being discussed during the call.",
+              "attributes": {
+                "status": "planned",
+                "product_name": "reporting module"
+              },
+              "relationships": [
+                {
+                  "target_type": "organization",
+                  "target_name": "Titan Bank",
+                  "relation_type": "related_to"
+                }
+              ],
+              "mentions": [],
+              "importance": "high",
+              "confidence": 0.95,
+              "_extracted_at": "2026-08-25T18:31:00.503319+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            },
+            {
+              "entity_id": "fintech_thing_in_may",
+              "entity_type": "event",
+              "name": "fintech thing in May",
+              "description": "Fintech event taking place in May.",
+              "attributes": {
+                "date": "May"
+              },
+              "relationships": [],
+              "mentions": [],
+              "importance": "low",
+              "confidence": 0.9,
+              "_extracted_at": "2026-08-25T18:31:00.503323+00:00",
+              "_agent": "EntityAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "entity"
+            }
+          ],
+          "invalid": [],
+          "uncertain": []
+        },
+        "decisions": {
+          "valid": [],
+          "invalid": [
+            {
+              "decision_id": "dec_2026-03-09_1",
+              "decision_summary": "Ник Фролов предоставит Сергею Волкову конкретную дату запуска отчетного модуля в течение недели.",
+              "decision_category": "operational",
+              "details": "Ник Фролов согласился вернуться к Сергею Волкову через неделю с конкретной датой запуска отчетного модуля (не с диапазоном и не с кварталом, а с точной датой).",
+              "participants": [
+                {
+                  "name": "Nick Frolov",
+                  "role": "Представитель Helion"
+                },
+                {
+                  "name": "Sergey Volkov",
+                  "role": "SVP, Data & Analytics, Titan Bank"
+                }
+              ],
+              "responsible": {
+                "primary": "Nick Frolov"
+              },
+              "decision_maker_resolved": "Nick Frolov",
+              "decision_maker_speaker": "",
+              "attribution_confidence": "medium",
+              "reasoning": "Клиент потребовал конкретики по срокам реализации отчетного модуля, пригрозив в противном случае начать поиск альтернативных решений на рынке.",
+              "timeline": {
+                "deadline": "1 неделя"
+              },
+              "business_impact": {
+                "scope": "external",
+                "urgency": "high",
+                "risk_level": "high"
+              },
+              "dependencies": [],
+              "action_items": [
+                {
+                  "action": "Подготовить и предоставить конкретную дату запуска отчетного модуля",
+                  "owner": "Nick Frolov",
+                  "deadline": "1 неделя"
+                }
+              ],
+              "quote": "Give me a week. I'll come back to you with something concrete, not a feeling.",
+              "confidence": 0.95,
+              "_extracted_at": "2026-08-25T18:31:00.454078+00:00",
+              "_agent": "DecisionAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "decision",
+              "importance_classification": {
+                "business_impact": "low",
+                "urgency_score": 0.5,
+                "complexity_score": 5,
+                "risk_level": "low",
+                "overall_priority": "medium"
+              },
+              "validation_reason": "Слишком короткое описание решения"
+            }
+          ],
+          "uncertain": []
+        },
+        "tasks": {
+          "valid": [
+            {
+              "task_id": "task_1",
+              "title": "Подготовить конкретный ответ и точную дату по отчетному модулю",
+              "description": "Предоставить клиенту конкретные детали и точную дату выпуска отчетного модуля вместо расплывчатых формулировок.",
+              "task_type": "action",
+              "assignee": {
+                "name": "Nick Frolov",
+                "role": "Helion"
+              },
+              "assignee_speaker": null,
+              "assignment_confidence": "high",
+              "needs_human_review": false,
+              "assigner": "Sergey Volkov",
+              "priority": "high",
+              "status": "new",
+              "deadline": {
+                "date": "2026-03-16",
+                "is_hard": true
+              },
+              "dependencies": [],
+              "related_decision": "",
+              "related_project": "Reporting module",
+              "acceptance_criteria": [
+                "Предоставить дату, а не диапазон или квартал",
+                "Прийти с чем-то конкретным, а не с чувством"
+              ],
+              "blockers": [],
+              "quote": "Give me a week. I'll come back to you with something concrete, not a feeling.",
+              "confidence": 0.95,
+              "_extracted_at": "2026-08-25T18:31:00.117779+00:00",
+              "_agent": "TaskAgent",
+              "_agent_version": "1.0.0",
+              "_entity_type": "task"
+            }
+          ],
+          "invalid": [],
+          "uncertain": []
+        },
+        "issues": [],
+        "recommendations": [],
+        "quality_score": 0.8333333333333334
+      },
+      "filtered_data": {
+        "internal": [
+          {
+            "entity_id": "titan_bank",
+            "entity_type": "organization",
+            "name": "Titan Bank",
+            "description": "Client organization represented by Sergey Volkov.",
+            "attributes": {
+              "type": "client",
+              "industry": "banking"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:31:00.503295+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "helion",
+            "entity_type": "company",
+            "name": "Helion",
+            "description": "Provider company represented by Nick Frolov.",
+            "attributes": {
+              "industry": "technology"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 1.0,
+            "_extracted_at": "2026-08-25T18:31:00.503311+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "reporting_module",
+            "entity_type": "feature",
+            "name": "reporting module",
+            "description": "Module whose development status is being discussed during the call.",
+            "attributes": {
+              "status": "planned",
+              "product_name": "reporting module"
+            },
+            "relationships": [
+              {
+                "target_type": "organization",
+                "target_name": "Titan Bank",
+                "relation_type": "related_to"
+              }
+            ],
+            "mentions": [],
+            "importance": "high",
+            "confidence": 0.95,
+            "_extracted_at": "2026-08-25T18:31:00.503319+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          },
+          {
+            "entity_id": "fintech_thing_in_may",
+            "entity_type": "event",
+            "name": "fintech thing in May",
+            "description": "Fintech event taking place in May.",
+            "attributes": {
+              "date": "May"
+            },
+            "relationships": [],
+            "mentions": [],
+            "importance": "low",
+            "confidence": 0.9,
+            "_extracted_at": "2026-08-25T18:31:00.503323+00:00",
+            "_agent": "EntityAgent",
+            "_agent_version": "1.0.0",
+            "_entity_type": "entity"
+          }
+        ],
+        "external": [],
+        "uncertain": []
+      },
+      "quality_score": 0.8333333333333334
+    }
+  }
+}
