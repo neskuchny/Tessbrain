@@ -1,7 +1,10 @@
 # Tessbrain
 
-**The company brain: meetings, calls and documents become a memory that answers
-with sources — and works.**
+**The company brain: it remembers, it thinks, and it does the work.**
+
+Meetings, calls and documents become a connected memory. It answers with
+sources, notices divergence on its own — and comes back as finished work:
+reports, documents, automations, and specs for AI executors.
 
 🇷🇺 [Русская версия](README.ru.md) · 🌐 [tessent.ai](https://tessent.ai/en) · 🏢 [synlabs.pro](https://synlabs.pro/)
 
@@ -11,36 +14,135 @@ with sources — and works.**
 
 ---
 
-## What it does
+## What it is
 
-A company talks about itself all day — in meetings, calls, chats, documents —
-and almost all of it evaporates. Decisions get made twice. Sales commits to
-October while engineering plans for December, and nobody notices until it's
-expensive. Tessbrain turns that stream into a typed knowledge graph where
-every fact carries its **source, date and confidence**, and then puts it to
-work:
+In summer 2026, Y Combinator named the **company brain** a category in its
+Request for Startups — "Every company in the world will need one." Almost
+everyone building in this niche builds memory: a fact layer for other
+people's agents, knowledge baked into model weights, enterprise search,
+meeting notes.
 
-- **Answers questions with citations.** "What did we promise the bank on
-  timing?" → two conflicting dates from two different meetings, with links to
-  both.
-- **Drafts documents from memory.** Proposals and reports assembled from what
-  was already said; what the system genuinely doesn't know is marked in red —
-  not invented.
-- **Flags divergence on its own.** When two teams have quietly committed to
-  different dates or numbers, the executive view shows it before it gets
+Tessbrain takes a different spot inside the niche: **memory here is the
+foundation, not the product.** The product is what stands on top of it —
+a system that helps run the company on its own data.
+
+- **Watches the company for divergence.** Sales commits to October while
+  engineering plans for December — the system says so before it gets
   expensive.
-- **Enforces access *before* the model.** A restricted fact is removed from
-  the context before the answer is synthesized — the model never saw what
-  your role can't see. Ask about salaries as an intern, and the fact doesn't
-  exist. Not "access denied" — invisible.
-- **Simulates a real client** from the graph, runs process boards, tracks
-  team dynamics from meeting behaviour — the full map is 22 sections long.
+- **Builds a new kind of reporting.** Visual reports people actually read,
+  and documents assembled from what was already said.
+- **Executes tasks.** Automations described in plain words that query
+  company memory instead of an empty model — plus executing agents.
+- **Prepares work for AI.** An employee's idea becomes a verifiable spec
+  grounded in company data: an external AI implements it, the system
+  checks the result.
 
-**Full capability map:** [docs/en/product-capabilities.md](docs/en/product-capabilities.md)
+Underneath is a typed knowledge graph that grows out of conversations by
+itself, no forms to fill: every fact carries its **source, date and
+confidence**, and access control is enforced **before the model**.
+
+## It remembers: a graph with provenance on every fact
+
+- **Feeds on what the company already produces:** meetings, messengers
+  (Telegram, Slack), documents and tables — with privacy at the source:
+  the owner decides what enters shared memory and what stays personal
+  context.
+- One meeting is processed by **~30 specialized extractors**; facts become
+  nodes and links of a typed graph — **33 object types, 48 link types** —
+  not a pile of summaries.
+- Facts are **versioned, never overwritten**: the system answers both
+  "what is the budget now" and "what was it in March, when did it change,
+  and why".
+- Every answer comes **with citations**. "What did we promise the bank on
+  timing?" → two conflicting dates from two meetings, with links to both.
+- Access is cut **before the answer is synthesized**: a restricted fact is
+  removed from context before generation. Ask about salaries as an
+  intern — the fact doesn't exist. Not "access denied" — invisible.
+
+## It thinks: notices what nobody asked about
+
+- **The synchronization loop.** Cross-checks between people, teams and
+  goals run on a schedule, not when somebody remembers to ask: a per-topic
+  sync index, an honest "unknown" where data is thin, and notifications to
+  the parties involved rather than a public channel.
+- **Night self-curiosity.** The system reads its own profile of the
+  company, finds blind spots — "what important thing do I not know?" —
+  and orders itself the research. Every conclusion lists what's missing
+  for confidence, priced by the cost of finding out.
+- **Experience learned from outcomes.** Decisions are linked to how they
+  actually ended (mined from retrospectives). Confidence grows only from
+  confirmed outcomes: ten discussions with unknown endings give low
+  confidence, not high. Old patterns decay, and contradicting cases speed
+  the decay roughly threefold.
+- It knows the difference between "no similar cases" and "archive
+  unavailable" — and never serves the second as the first.
+
+## It does: memory comes back as work
+
+- **Reports people read.** Visual reports in six formats; a report
+  remembers its predecessor and talks about what changed; the numbers
+  inside are recomputed by code, not improvised by the model.
+- **Documents from memory.** Proposals, summaries and regulations built
+  from what was already said; what the system genuinely doesn't know is
+  marked red, not invented. The "coffee scenario": by the time you walk
+  back from the meeting room, drafts for your role in that meeting are
+  ready — the founder gets the summary, sales gets the client letter.
+  Delivered by Mini Tess, the employee's assistant in the messenger.
+- **Profiles and simulations: rehearsal before reality.** Digital profiles
+  of people — the manner of speech, decisions and opinions of a specific
+  person, not a role résumé. Simulation of a real client from the graph,
+  a boardroom session of roles and profiles with a disagreement protocol,
+  a negotiation prep pack.
+- **Automations in plain words.** "Every Monday, collect the week's
+  results and send them to me as a picture" — the system builds the flow
+  itself, labels every block, and runs it on schedule or on company events
+  (meeting ended, task overdue, email arrived). Inside there's an "ask the
+  company brain" block; if a step fails, everything downstream stops — no
+  letters composed out of nothing; a human-approval step can sit in the
+  middle. 31 ready-made flows out of the box.
+- **Specs for AI executors (SIMA).** An employee who can't code describes
+  the mini-service they need, by voice or text. It becomes a structured
+  spec where every requirement carries a supporting quote from company
+  data; built-in roles argue with the author (strategist, user simulator,
+  economics); the system writes the acceptance checks itself. The spec
+  exports in executor formats — Cursor, Claude Code, Lovable — and a
+  failed acceptance goes back with notes. Launch is always a human's
+  button.
+- **A data bus and external agents.** A contractor, partner or another
+  company's agent gets a key and exactly its slice of memory — live
+  answers, not a file export; the slice is applied before the model, and
+  the key has a lifetime, a quota, a journal and one-click revocation.
+  Executing agents take tasks on their channel and deliver results under
+  machine acceptance.
+
+**Full capability map — 22 sections:** [docs/en/product-capabilities.md](docs/en/product-capabilities.md)
 · visual versions: [capability map](https://neskuchny.github.io/Tessbrain/share/en/tessent_capabilities.html)
 · [system diagram](https://neskuchny.github.io/Tessbrain/share/en/tessent_map.html)
 · [what Tessbrain is (article)](https://neskuchny.github.io/Tessbrain/share/en/tessent_article.html)
 · [cost calculator](https://neskuchny.github.io/Tessbrain/share/en/tessent_cost.html)
+· [competitive map (RU)](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html)
+
+---
+
+## How it differs
+
+| The category | What it gives you | Where it stops |
+|---|---|---|
+| Meeting notetakers | a summary of each meeting | meetings never connect; the summary just lies there |
+| Enterprise AI search | an answer when you ask | notices nothing on its own |
+| Memory for AI agents | a fact layer or fine-tuned weights | infrastructure under the hood, not a working environment to run a company |
+| Agent builders | agents over uploaded documents | memory doesn't grow from conversations by itself |
+| Automation platforms | trigger → action chains | the blocks run on a model that doesn't know your company |
+
+Tessbrain is **one graph under all of these jobs**: the same memory answers
+questions, watches synchronization, writes the reports, powers the
+automations and grounds the specs. Per our competitive map, assembled from
+public sources, no player of the eight we profiled combines "graph + people
+profiles + simulations + boardroom sessions + executing agents" in one
+system — and client simulation with profile-based boardroom sessions we
+found at nobody at all. The name-by-name comparison — including honest
+"where we are weaker" rows — is in the
+[competitive map](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html) (RU).
 
 ---
 
@@ -74,9 +176,10 @@ Supabase-compatible stack — documented, not hidden).
 
 ## Honest numbers
 
-We publish benchmark results **including the ones we lose**. On
-[BrainBench](https://github.com/garrytan/gbrain-evals) — someone else's
-corpus, someone else's queries, run in *their* runner:
+The numbers below measure the foundation — memory retrieval: the part of
+the product public benchmarks exist for. We publish results **including the
+ones we lose**. On [BrainBench](https://github.com/garrytan/gbrain-evals) —
+someone else's corpus, someone else's queries, run in *their* runner:
 
 | | P@5 | R@5 |
 |---|---|---|
@@ -95,6 +198,30 @@ in our own benchmark script, and corrected it — is in
 
 Also measured: LongMemEval, LoCoMo, HotpotQA, QMSum, faithfulness —
 [docs/en/what-we-tested.md](docs/en/what-we-tested.md).
+
+---
+
+## What it doesn't do
+
+This is part of the product, not fine print: a product that overpromises
+loses trust at the first demo.
+
+- Secrecy levels are not assigned automatically: every fact defaults to
+  "internal"; higher restriction is set by hand.
+- SIMA's acceptance verifies stated conditions but does not run the
+  delivered code. There is no agent-to-agent negotiation — it's
+  "task → result" under machine acceptance.
+- The experience layer has no screen of its own yet (API only), and its
+  quality is unmeasured; outcomes come from what people said at
+  retrospectives, not from metrics.
+- Cross-company exchange works inside one deployment; there is no
+  discovery between deployments.
+- All published numbers were obtained on cloud models; the harness for
+  measuring an air-gapped setup exists, the measurement itself hasn't
+  been run.
+
+The full list is the "Honest about limits" section of the
+[capability map](docs/en/product-capabilities.md).
 
 ---
 
