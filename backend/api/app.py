@@ -325,7 +325,7 @@ User Request → Intent Engine → KAG Reasoner → Response
 ```
         """,
         contact=Contact(name="SynLabs", email="dev@synlabs.ru"),
-        license=License(name="MIT"),
+        license=License(name="Apache-2.0"),
         path="/docs",
     )
 

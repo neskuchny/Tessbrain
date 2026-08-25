@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "🧠 Цифровой мозг компании - интеллектуальная система анализа и управления знаниями"
 readme = "README.md"
 requires-python = ">=3.11"
-license = {text = "MIT"}
+license = {text = "Apache-2.0"}
 authors = [
     {name = "SynLabs", email = "dev@synlabs.ru"}
 ]
