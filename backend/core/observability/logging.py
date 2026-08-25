@@ -72,6 +72,12 @@ def configure_logging(
         cache_logger_on_first_use=True,
     )
 
+    # httpx/httpcore на INFO печатают полный URL каждого запроса, а у
+    # Telegram Bot API токен — часть URL (…/bot<token>/getUpdates): секрет
+    # утекает в логи. Плюс это самый шумный логгер процесса. WARNING.
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+    logging.getLogger("httpcore").setLevel(logging.WARNING)
+
     _CONFIGURED = True
 
 
