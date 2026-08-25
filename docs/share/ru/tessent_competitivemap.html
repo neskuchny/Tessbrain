@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Цифровой мозг компании — конкурентная карта</title>
+<style>
+  :root {
+    --bg: #12151a;
+    --surface: #1a1e26;
+    --surface-2: #20252e;
+    --border: #2a303a;
+    --border-soft: #232830;
+    --text: #e9e6de;
+    --text-dim: #a6adb8;
+    --text-faint: #6f7680;
+    --accent: #c99a4b;
+    --accent-soft: rgba(201, 154, 75, 0.14);
+    --accent-strong: rgba(201, 154, 75, 0.22);
+    --good: #7cb392;
+    --good-soft: rgba(124, 179, 146, 0.12);
+    --risk: #c97166;
+    --risk-soft: rgba(201, 113, 102, 0.13);
+    --dim-sym: #4d525c;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, ui-serif, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  :root[data-theme="light"] {
+    --bg: #f3f1ea;
+    --surface: #ffffff;
+    --surface-2: #f7f5ef;
+    --border: #ddd8cb;
+    --border-soft: #e6e2d5;
+    --text: #21201b;
+    --text-dim: #5c584e;
+    --text-faint: #8b8677;
+    --accent: #a97a2c;
+    --accent-soft: rgba(169, 122, 44, 0.10);
+    --accent-strong: rgba(169, 122, 44, 0.16);
+    --good: #3f7a56;
+    --good-soft: rgba(63, 122, 86, 0.09);
+    --risk: #a13f34;
+    --risk-soft: rgba(161, 63, 52, 0.09);
+    --dim-sym: #c3bfae;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f3f1ea;
+      --surface: #ffffff;
+      --surface-2: #f7f5ef;
+      --border: #ddd8cb;
+      --border-soft: #e6e2d5;
+      --text: #21201b;
+      --text-dim: #5c584e;
+      --text-faint: #8b8677;
+      --accent: #a97a2c;
+      --accent-soft: rgba(169, 122, 44, 0.10);
+      --accent-strong: rgba(169, 122, 44, 0.16);
+      --good: #3f7a56;
+      --good-soft: rgba(63, 122, 86, 0.09);
+      --risk: #a13f34;
+      --risk-soft: rgba(161, 63, 52, 0.09);
+      --dim-sym: #c3bfae;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  body { padding: 56px 24px 80px; }
+  .page { max-width: 1100px; margin: 0 auto; }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.15;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: var(--text-dim);
+    line-height: 1.55;
+    max-width: 700px;
+    margin: 0 0 6px;
+  }
+  .meta {
+    font-size: 12.5px;
+    color: var(--text-faint);
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-soft);
+  }
+
+  section { margin-top: 56px; }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  h2 .num {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    width: 22px; height: 22px;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+  .section-note {
+    font-size: 14px;
+    color: var(--text-dim);
+    max-width: 720px;
+    line-height: 1.6;
+    margin: 0 0 22px;
+  }
+
+  /* ── Market quote block ────────────────────────────── */
+  .market {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 30px;
+  }
+  .market blockquote {
+    margin: 0 0 18px;
+    padding: 0 0 0 18px;
+    border-left: 3px solid var(--accent);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.45;
+    color: var(--text);
+    font-style: italic;
+  }
+  .market blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 12.5px;
+    color: var(--text-faint);
+  }
+  .market p { font-size: 14.5px; line-height: 1.7; color: var(--text-dim); margin: 0 0 14px; }
+  .market p:last-child { margin-bottom: 0; }
+  .market p b { color: var(--text); font-weight: 600; }
+
+  .signals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .signal {
+    background: var(--surface-2);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .signal .who { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .signal .what { font-size: 12.5px; color: var(--text-dim); line-height: 1.5; }
+
+  .honest-note {
+    font-size: 12.5px;
+    color: var(--text-faint);
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-soft);
+    line-height: 1.6;
+  }
+
+  /* ── Legend ────────────────────────────────────────── */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+  }
+  .legend b { color: var(--text); }
+  .legend .sym { display: inline-flex; align-items: center; gap: 6px; }
+
+  /* ── Matrix ────────────────────────────────────────── */
+  .matrix-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+  }
+  table.matrix {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 1140px;
+    font-size: 13px;
+  }
+  table.matrix th, table.matrix td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-soft);
+    text-align: center;
+  }
+  table.matrix thead th {
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    color: var(--text-faint);
+    font-weight: 600;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    vertical-align: bottom;
+    position: sticky; top: 0;
+  }
+  table.matrix th.cap-head, table.matrix td.cap {
+    text-align: left;
+    font-weight: 500;
+    color: var(--text);
+    white-space: normal;
+    min-width: 230px;
+    position: sticky; left: 0;
+    background: var(--surface);
+    z-index: 1;
+  }
+  table.matrix thead th.cap-head { background: var(--surface-2); z-index: 2; }
+  table.matrix .us-col {
+    background: var(--accent-strong);
+    font-weight: 700;
+    color: var(--text);
+  }
+  table.matrix thead th.us-col { color: var(--accent); }
+  table.matrix tbody tr:last-child td { border-bottom: none; }
+  .sym { font-size: 15px; font-weight: 700; }
+  .sym-yes { color: var(--good); }
+  .sym-partial { color: var(--accent); }
+  .sym-no { color: var(--dim-sym); }
+  .sym-unk { color: var(--text-faint); font-style: italic; font-size: 12px; font-weight: 400; }
+
+  /* ── Where-we-stand summary ────────────────────────── */
+  .stand {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .stand-card {
+    border-radius: 12px;
+    padding: 20px 22px;
+    border: 1px solid;
+  }
+  .stand-card.better { border-color: var(--good); background: var(--good-soft); }
+  .stand-card.worse { border-color: var(--risk); background: var(--risk-soft); }
+  .stand-card .label {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 700; margin-bottom: 10px;
+  }
+  .stand-card.better .label { color: var(--good); }
+  .stand-card.worse .label { color: var(--risk); }
+  .stand-card ul { margin: 0; padding-left: 18px; }
+  .stand-card li { font-size: 13.5px; line-height: 1.6; color: var(--text); margin-bottom: 6px; }
+  .stand-card li:last-child { margin-bottom: 0; }
+  @media (max-width: 640px) { .stand { grid-template-columns: 1fr; } }
+
+  /* ── Profile cards ─────────────────────────────────── */
+  .profiles { display: grid; gap: 16px; }
+  .profile-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .profile-card.us {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .profile-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 8px 16px;
+    margin-bottom: 12px;
+  }
+  .profile-head .name {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 600;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .tag-rf { background: var(--accent-soft); color: var(--accent); }
+  .tag-us { background: var(--good-soft); color: var(--good); }
+  .tag-us2 { background: rgba(124,150,179,0.15); color: #8fa8c9; }
+  .profile-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin: 0 0 14px;
+    max-width: 760px;
+  }
+  .profile-desc.long { max-width: none; }
+  .our-take {
+    font-size: 13px;
+    color: var(--text);
+    background: var(--surface-2);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin: 0 0 16px;
+    line-height: 1.55;
+  }
+  .our-take b { color: var(--accent); font-weight: 700; }
+  .profile-card.us .our-take { background: rgba(0,0,0,0.12); }
+  :root[data-theme="light"] .profile-card.us .our-take,
+  @media (prefers-color-scheme: light) { .profile-card.us .our-take { background: rgba(255,255,255,0.5); } }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px 20px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .fact .k {
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 3px;
+  }
+  .fact .v {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.4;
+    font-variant-numeric: tabular-nums;
+  }
+  .feature-list {
+    margin: 0 0 16px;
+    padding-left: 18px;
+  }
+  .feature-list li {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 5px;
+  }
+  .feature-list li b { color: var(--text); font-weight: 600; }
+
+  /* ── Strategic pull cards ──────────────────────────── */
+  .buyers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .buyer-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .buyer-card .who { font-family: var(--serif); font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+  .buyer-card .why { font-size: 13.5px; color: var(--text-dim); line-height: 1.55; }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-soft);
+    font-size: 12px;
+    color: var(--text-faint);
+    line-height: 1.9;
+  }
+  footer .src-title { color: var(--text-dim); font-weight: 600; margin-bottom: 8px; font-size: 12.5px; }
+
+  @media (max-width: 640px) {
+    body { padding: 36px 16px 60px; }
+    .buyers { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="eyebrow">Конкурентная карта · август 2026</div>
+  <h1>Рынок «цифрового мозга компании»</h1>
+  <p class="subtitle">Потенциал рынка словами Y Combinator, кто реально строит то же самое, подробно — и где мы объективно сильнее или слабее каждого.</p>
+  <div class="meta">Собрано по открытым источникам (список — внизу). Для нас — только качественные факты, без выдуманных цифр там, где реальных данных нет. Для конкурентов — только то, что подтверждено публично; неизвестное честно помечено «?», а не угадано.</div>
+
+  <section>
+    <h2><span class="num">1</span> Потенциал рынка — словами YC</h2>
+    <p class="section-note">Y Combinator формально назвал «Company Brain» отдельной категорией в Summer 2026 Request for Startups — списке из полутора десятков направлений, которые YC считает приоритетными для финансирования прямо сейчас. Автор тезиса — Том Бломфилд, основатель Monzo.</p>
+
+    <div class="market">
+      <blockquote>
+        «Every company in the world will need one.»
+        <cite>— Тезис YC про Company Brain, Summer 2026 RFS</cite>
+      </blockquote>
+      <p>Формулировка YC (близко к тексту): «система, которая вытягивает знание из всех раздробленных источников, структурирует его, поддерживает актуальным и превращает в исполняемый файл для ИИ-агентов». Живая карта того, как компания реально работает — а не статичная вики.</p>
+      <p>Проблема, которую называет YC: критическое знание компании рассеяно по тредам Slack, старым письмам, тикетам поддержки и в головах людей. Как компания обрабатывает возвраты? Какие правила исключений по ценам? Как инженеры реагируют на инциденты? Всё это должно быть читаемо для ИИ-системы, которая затем действует безопасно и последовательно.</p>
+      <p><b>Важно честно:</b> YC не публикует конкретную цифру объёма рынка (TAM) под эту категорию — аргумент качественный: «нужно каждой компании», а не количественный. Ниже — независимый сигнал того же тезиса от разных операторов, не только от одного эссе YC.</p>
+
+      <div class="signals">
+        <div class="signal">
+          <div class="who">Andrej Karpathy</div>
+          <div class="what">Задал сам паттерн — «wiki» из markdown-файлов как память для агентов, независимо от YC. В июне 2026 лично вложился как ангел в Engram — прямого конкурента в этой же категории</div>
+        </div>
+        <div class="signal">
+          <div class="who">Garry Tan (CEO YC)</div>
+          <div class="what">Открыл собственный GBrain + GStack (слой навыков) — 70 000+ звёзд на GitHub</div>
+        </div>
+        <div class="signal">
+          <div class="who">Ramp</div>
+          <div class="what">Внутренняя система Glass + маркетплейс Dojo — 350+ общих навыков внутри компании</div>
+        </div>
+      </div>
+      <p class="honest-note">Три независимых оператора (не венчурных фонда, а компании и практики) пришли к одной и той же архитектуре в одно и то же время — это сильнее одного тезиса YC, хотя и не заменяет собой измеренный рынок. К этому же выводу за последние месяцы пришли и венчурные деньги отдельно от YC: Engram ($98M, ниже), Dust ($40M Series B, Sequoia — «multiplayer AI» для команд) и Cognee (€7.5M, Берлин — инфраструктурный слой памяти) подняли раунды именно под память/контекст как отдельную категорию, а не под очередного чат-ассистента.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span> Кто конкуренты — подробно</h2>
+    <p class="section-note">Основатели, деньги, масштаб, кому продают, и наш взгляд на каждого. Плюс — развёрнутое описание нас самих, той же глубины, что у остальных.</p>
+
+    <div class="profiles">
+
+      <div class="profile-card us">
+        <div class="profile-head">
+          <div class="name">Tessent Brain<span class="tag tag-rf">Synlabs · РФ</span></div>
+        </div>
+        <p class="profile-desc long">Цифровой мозг компании: не набор фич, а единая система с одним графом знаний на тенант. Растёт из встреч и переписок автоматически, а не только из загруженных вручную документов.</p>
+        <ul class="feature-list">
+          <li><b>Граф знаний</b> — сущности и связи между людьми, проектами, решениями, а не плоский поиск по документам</li>
+          <li><b>Автосбор из встреч и переписок</b> (Telegram, Slack) с приватностью на уровне источника — владелец решает, что попадает в общую память, а что остаётся личным контекстом</li>
+          <li><b>Цифровые слепки сотрудников</b> — манера речи, решения, мнения конкретного человека, не общее резюме роли</li>
+          <li><b>Симуляция клиентов, сегментов и партнёров</b> — реакции на предложения, переговоры до реального разговора</li>
+          <li><b>Планёрка</b> — абстрактные роли и слепки живых людей вместе, многораундовое обсуждение с протоколом разногласий</li>
+          <li><b>Визуальный конструктор автоматизаций</b> — доски-процессы с триггерами на события мозга</li>
+          <li><b>Исполняющие агенты</b> — получают задачу на естественном языке, сами идут за данными (встречи, документы, интернет, API сервисов) и доводят её до результата, не только по заранее собранной доске</li>
+          <li><b>Шина данных</b> (в разработке) — межсистемный слой обмена: сторонние агенты смогут заходить и выполнять задачи внутри нашего мозга, а сам мозг — подключаться к данным других компаний и обмениваться данными с внешними системами</li>
+        </ul>
+        <div class="our-take"><b>Наш взгляд:</b> ни у одного конкурента нет этой комбинации целиком — каждый берёт один кусок (граф, слепок, встречи) и останавливается. Честно и про слабое место: нет отдельного on-premise-пакета для крупных клиентов — только архитектурная возможность.</div>
+        <div class="facts">
+          <div class="fact"><div class="k">Стадия</div><div class="v">Прототип — выручки, клиентов и пилотов пока нет</div></div>
+          <div class="fact"><div class="k">Рынок</div><div class="v">Корпоративный сектор, РФ</div></div>
+          <div class="fact"><div class="k">Модель</div><div class="v">B2B SaaS</div></div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-head">
+          <div class="name">VK AI Space<span class="tag tag-rf">РФ</span></div>
+        </div>
+        <p class="profile-desc">Многослойная память для корпоративных агентов — сессионная, пользовательская, проектная, долгосрочная. Готовые агенты под протоколирование встреч и корпоративный поиск, on-premise-поставка. Цель компании — снизить долю повторно решаемых задач на 40–50%.</p>
+        <div class="our-take"><b>Наш взгляд:</b> самый близкий конкурент географически и продуктово — совпадаем в памяти и встречах. У них нет слепков людей, симуляций и планёрки, но за ними ресурсы VK и естественная фора в госсекторе.</div>
+        <div class="facts">
+          <div class="fact"><div class="k">Запуск функции</div><div class="v">Июль 2026</div></div>
+          <div class="fact"><div class="k">За кем стоит</div><div class="v">VK Tech / VK WorkSpace</div></div>
+          <div class="fact"><div class="k">Клиент</div><div class="v">Крупный бизнес, госсектор</div></div>
+          <div class="fact"><div class="k">Тарифы</div><div class="v">Не раскрыты публично</div></div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-head">
+          <div class="name">Сбер: ГигаЧат Бизнес<span class="tag tag-rf">РФ</span></div>
+        </div>
+        <p class="profile-desc">Конструктор AI-агентов поверх базы знаний компании: регламенты, обработка обращений, поиск аналогов оборудования, перевод документов. «Из коробки» — типовые агенты под офисные роли. Три конфигурации поставки: облако, гибрид, локальная (для банков и критической инфраструктуры).</p>
+        <div class="our-take"><b>Наш взгляд:</b> это конструктор агентов поверх загруженных документов, а не автономный сбор памяти — принципиально другая механика, хоть и близкая по названию категории. Охват клиентской базы Сбера — их главное оружие, не глубина продукта.</div>
+        <div class="facts">
+          <div class="fact"><div class="k">Запуск</div><div class="v">Март 2026</div></div>
+          <div class="fact"><div class="k">За кем стоит</div><div class="v">Сбербанк</div></div>
+          <div class="fact"><div class="k">Клиент</div><div class="v">Клиентская база Сбера, госсектор</div></div>
+          <div class="fact"><div class="k">Тарифы</div><div class="v">Не раскрыты публично</div></div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-head">
+          <div class="name">Viven AI<span class="tag tag-us">США</span></div>
+        </div>
+        <p class="profile-desc">Цифровой слепок каждого сотрудника — персональная LLM, обученная на его письмах, документах, встречах и инструментах. Идея выросла из проблемы: знания недоступны, когда нужный человек в отпуске или уволился.</p>
+        <div class="our-take"><b>Наш взгляд:</b> прямее всего пересекается с нашими слепками — и валидирует спрос серьёзным чеком. Но у них нет ни графа знаний компании целиком, ни симуляций клиентов/партнёров, ни планёрки нескольких слепков вместе — слепок у них живёт один на один с вопросом, не в комнате с другими.</div>
+        <div class="facts">
+          <div class="fact"><div class="k">Основатели</div><div class="v">Ashutosh Garg, Varun Kacholia (экс-Eightfold AI)</div></div>
+          <div class="fact"><div class="k">Штаб-квартира</div><div class="v">Санта-Клара / Сан-Франциско</div></div>
+          <div class="fact"><div class="k">Финансирование</div><div class="v">$35M seed (Khosla Ventures, Foundation Capital)</div></div>
+          <div class="fact"><div class="k">Сотрудники</div><div class="v">49 (май 2026)</div></div>
+          <div class="fact"><div class="k">Клиенты</div><div class="v">Genpact, Prodapt</div></div>
+          <div class="fact"><div class="k">Тарифы</div><div class="v">Не раскрыты</div></div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-head">
+          <div class="name">Hyper<span class="tag tag-us">США, YC S2026</span></div>
+        </div>
+        <p class="profile-desc">«Company brain, который питает AI-сотрудников» — позиционирование дословно совпадает с категорией, но продукт на самой ранней стадии.</p>
+        <div class="our-take"><b>Наш взгляд:</b> судить пока почти не о чем — это маркер того, куда смотрит рынок и YC-когорта, а не измеримая угроза сегодня.</div>
+        <div class="facts">
+          <div class="fact"><div class="k">Стадия</div><div class="v">Y Combinator, Spring 2026</div></div>
+          <div class="fact"><div class="k">Команда</div><div class="v">2 человека</div></div>
+          <div class="fact"><div class="k">Тяга</div><div class="v">$1K MRR на 12-й день</div></div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-head">
+          <div class="name">Engram<span class="tag tag-us">США</span></div>
+        </div>
+        <p class="profile-desc">Вышли из тени 23 июня 2026 с $98M и сразу дорогой командой: сооснователи — исследователи Stanford/Berkeley/Cornell, включая профессора Chris Ré. Механика принципиально другая: не граф и не векторная база, а «запекание» контекста компании прямо в веса модели через adapter fine-tuning — модель буквально дообучается на документах и практиках конкретного заказчика и «просто знает» их, как давний сотрудник. Заявляют кратное (до 100×) снижение расхода токенов за счёт этого.</p>
+        <div class="our-take"><b>Наш взгляд:</b> самый серьёзный по деньгам и репутации фаундеров конкурент в списке, и Карпати не просто задал паттерн — лично вложился именно в них. Но подход другой: у них нет собираемого автоматически графа сущностей, нет слепков людей, нет симуляций и планёрки — это скорее движок эффективности под капотом (дешевле и точнее отвечать), а не рабочая среда, где память видна и с ней работают люди. 13 человек и стадия «только вышли из тени» — продукт ещё не проверен в бою.</div>
+        <div class="facts">
+          <div class="fact"><div class="k">Запуск</div><div class="v">23 июня 2026, Сан-Франциско</div></div>
+          <div class="fact"><div class="k">Основатели</div><div class="v">Dan Biderman, Sabri Eyuboglu, Jessy Lin, Jack Morris, Scott Linderman, Chris Ré</div></div>
+          <div class="fact"><div class="k">Финансирование</div><div class="v">$98M при оценке $600M (General Catalyst, Kleiner Perkins, Sequoia)</div></div>
+          <div class="fact"><div class="k">Команда</div><div class="v">13 человек</div></div>
+          <div class="fact"><div class="k">Ранние клиенты</div><div class="v">Microsoft 365, Notion, Harvey</div></div>
+          <div class="fact"><div class="k">Тарифы</div><div class="v">Не раскрыты</div></div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-head">
+          <div class="name">Read AI<span class="tag tag-us">США</span></div>
+        </div>
+        <p class="profile-desc">Связывает встречи, письма и сообщения в один граф — самый продвинутый игрок именно в meeting-intelligence. AI-копилот превращает коммуникации в сводки, инсайты и мгновенные ответы.</p>
+        <div class="our-take"><b>Наш взгляд:</b> ближе всего к нашему пайплайну «встречи → факты», и по охвату (5M+ MAU) заметно нас крупнее в этом узком срезе. Но дальше сбора и связывания коммуникаций они не идут — ни слепков, ни симуляций, ни планёрки.</div>
+        <div class="facts">
+          <div class="fact"><div class="k">Основана</div><div class="v">2021, Сиэтл</div></div>
+          <div class="fact"><div class="k">Основатели</div><div class="v">David Shim (CEO), Rob Williams, Elliott Waldron</div></div>
+          <div class="fact"><div class="k">Финансирование</div><div class="v">$81M за 3 раунда · Series B $50M при $450M (окт. 2024)</div></div>
+          <div class="fact"><div class="k">Масштаб</div><div class="v">5M+ MAU · 90%+ Fortune 500</div></div>
+          <div class="fact"><div class="k">Тарифы</div><div class="v">Free 5 транскриптов/мес · Pro $19.75 · Enterprise $29.75–39.75 (от 10 мест)</div></div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-head">
+          <div class="name">Granola<span class="tag tag-us2">Великобритания</span></div>
+        </div>
+        <p class="profile-desc">Заметки со встреч без бота-участника (обработка звука прямо с устройства) — теперь расширяется в «enterprise context»: командные пространства Spaces, API для интеграции контекста встреч в другие AI-процессы.</p>
+        <div class="our-take"><b>Наш взгляд:</b> самая быстрая траектория роста в списке ($0→$1.5B за 3 года) — показывает, как быстро рынок готов платить за качественный слой встреч. Пока в основном заметки и поиск, не структурированный граф с рассуждением.</div>
+        <div class="facts">
+          <div class="fact"><div class="k">Основана</div><div class="v">2023, Лондон</div></div>
+          <div class="fact"><div class="k">Основатели</div><div class="v">Chris Pedregal (экс-Google, основатель Socratic), Sam Stephenson</div></div>
+          <div class="fact"><div class="k">Финансирование</div><div class="v">Series C $125M при $1.5B (март 2026, Index Ventures)</div></div>
+          <div class="fact"><div class="k">Клиенты</div><div class="v">Vanta, Gusto, Asana, Cursor, Mistral AI</div></div>
+          <div class="fact"><div class="k">Тарифы</div><div class="v">Basic бесплатно · Business $14/мес · Enterprise $35/мес</div></div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-head">
+          <div class="name">Glean<span class="tag tag-us">США</span></div>
+        </div>
+        <p class="profile-desc">Корпоративный поиск + граф знаний + исполняющие агенты (Glean Agents — 250M+ агентных действий на платформе), рыночный лидер категории. В марте 2026 купили Aryn (agentic document intelligence) — первая сделка компании, признак движения к пре-IPO.</p>
+        <div class="our-take"><b>Наш взгляд:</b> рыночный лидер по масштабу и деньгам ($300M ARR, $7.2B) — если сравнивать по выручке, мы не в одной весовой категории. С Glean Agents они выросли из «поиска» в исполняющих агентов, но симуляции людей и единой тенант-системы с планёркой у них по-прежнему нет — другой продукт под тем же общим названием рынка.</div>
+        <div class="facts">
+          <div class="fact"><div class="k">Основана</div><div class="v">2019, Пало-Альто</div></div>
+          <div class="fact"><div class="k">Основатель/CEO</div><div class="v">Arvind Jain (экс-Google, сооснователь Rubrik)</div></div>
+          <div class="fact"><div class="k">Финансирование</div><div class="v">Series F $150M при $7.2B (2026)</div></div>
+          <div class="fact"><div class="k">Выручка</div><div class="v">$300M ARR, +89% год к году (май 2026)</div></div>
+          <div class="fact"><div class="k">Сотрудники</div><div class="v">1 708 (июнь 2026)</div></div>
+        </div>
+      </div>
+
+    </div>
+    <p class="honest-note">Рядом есть ещё слой более узких игроков в РФ, которых мы не выносим в отдельные профили и таблицу — это внутренние ИИ-помощники поверх базы знаний одной компании, а не отдельно продаваемая «память как продукт»: Яндекс 360 разворачивает ассистента «Алиса Про» (пока — работа с почтой) в рамках экосистемы, Т-Банк тихо, без анонсов, запустил внутреннего ассистента «Тая» весной 2026, МТС Банк — RAG-помощника по внутренним базам знаний с локальным развёртыванием. Все три подтверждают тот же тренд, но это внутренние инструменты банков/техкомпаний для себя, а не самостоятельные конкуренты на открытом рынке.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span> Сравнительная таблица — где мы сильнее, где слабее</h2>
+    <p class="section-note">Строка — способность, столбец — компания. Наш столбец подсвечен. Это не рейтинг «кто лучше в целом» — это честная карта, кто что реально умеет.</p>
+
+    <div class="legend">
+      <span class="sym">Как читать:</span>
+      <span class="sym"><span class="sym-yes">✓</span> <b>есть</b>, подтверждено публично</span>
+      <span class="sym"><span class="sym-partial">◐</span> <b>частично</b> / смежная функция</span>
+      <span class="sym"><span class="sym-no">—</span> <b>не найдено</b> в открытых источниках</span>
+      <span class="sym"><span class="sym-unk">?</span> <b>неизвестно</b> — компания слишком ранняя или не раскрывает</span>
+    </div>
+
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th class="cap-head">Способность</th>
+            <th class="us-col">Tessent Brain<br>(мы)</th>
+            <th>VK AI Space<br><span style="font-weight:400">РФ</span></th>
+            <th>Сбер: ГигаЧат<br><span style="font-weight:400">РФ</span></th>
+            <th>Viven AI<br><span style="font-weight:400">США</span></th>
+            <th>Hyper<br><span style="font-weight:400">США, YC</span></th>
+            <th>Engram<br><span style="font-weight:400">США, $600M</span></th>
+            <th>Read AI<br><span style="font-weight:400">США</span></th>
+            <th>Granola<br><span style="font-weight:400">UK</span></th>
+            <th>Glean<br><span style="font-weight:400">США</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cap">Граф знаний компании (сущности и связи, а не просто поиск по документам)</td>
+            <td class="us-col"><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-partial">◐</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td class="cap">Автосбор из встреч (транскрипт → факты в память)</td>
+            <td class="us-col"><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-partial">◐</span></td>
+          </tr>
+          <tr>
+            <td class="cap">Автосбор из переписок (Telegram/Slack) с контролем приватности источника</td>
+            <td class="us-col"><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-partial">◐</span></td>
+          </tr>
+          <tr>
+            <td class="cap">Цифровой слепок сотрудника (манера речи, решения, мнения — не просто резюме)</td>
+            <td class="us-col"><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+          </tr>
+          <tr>
+            <td class="cap">Симуляция клиентов и партнёров (реакции на предложения, переговоры)</td>
+            <td class="us-col"><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+          </tr>
+          <tr>
+            <td class="cap">Планёрка из ролей и слепков вместе (многораундовое обсуждение)</td>
+            <td class="us-col"><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+          </tr>
+          <tr>
+            <td class="cap">Визуальный конструктор автоматизаций (доски-процессы, триггеры)</td>
+            <td class="us-col"><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-partial">◐</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-partial">◐</span></td>
+          </tr>
+          <tr>
+            <td class="cap">Исполняющие агенты (сами идут за данными и во внешние сервисы/API, выполняют многошаговую задачу по запросу — не только доска с готовыми триггерами)</td>
+            <td class="us-col"><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-partial">◐</span></td>
+            <td><span class="sym sym-partial">◐</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td class="cap">Локальное/защищённое развёртывание (on-premise)</td>
+            <td class="us-col"><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+            <td><span class="sym sym-no">—</span></td>
+          </tr>
+          <tr>
+            <td class="cap">Масштаб выручки/пользователей (публично раскрыто)</td>
+            <td class="us-col"><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-unk">?</span></td>
+            <td><span class="sym sym-partial">◐</span></td>
+            <td><span class="sym sym-partial">◐</span></td>
+            <td><span class="sym sym-partial">◐</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+            <td><span class="sym sym-yes">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="stand">
+      <div class="stand-card better">
+        <div class="label">Где мы объективно сильнее</div>
+        <ul>
+          <li>Единственные, у кого граф + слепки + симуляции + планёрка + исполняющие агенты в ОДНОЙ системе, а не по отдельности у разных игроков</li>
+          <li>Единственный найденный игрок с симуляцией клиентов/партнёров и планёркой из слепков — этого нет вообще ни у кого из восьми</li>
+          <li>Приватность на уровне источника переписки — точнее, чем у Read AI и Glean, где интеграция обычно означает «индексируем всё»</li>
+        </ul>
+      </div>
+      <div class="stand-card worse">
+        <div class="label">Где мы объективно слабее</div>
+        <ul>
+          <li>Нет упакованного on-premise-продукта — у VK и Сбера он есть и это их системное преимущество на нашем же рынке</li>
+          <li>У нас пока нет ни выручки, ни клиентов, ни пилотов — честно, стадия прототипа. У шести из восьми конкурентов в списке есть хотя бы часть этого (деньги, стадия, охват) — это работает на доверие покупателя, у нас пока нечем это доверие подкрепить</li>
+          <li>Read AI обгоняет нас по охвату встреч (5M+ MAU) в этом узком срезе функциональности</li>
+          <li>Glean на порядок крупнее по деньгам и команде ($300M ARR, 1700+ человек) — при прямом столкновении в «умном поиске» они сильнее ресурсом</li>
+          <li>Engram подняли $98M при оценке $600M командой топовых AI-исследователей (Stanford/Berkeley/Cornell) и лично Карпати как ангелом — по капиталу и репутации фаундеров это самый тяжёлый конкурент в списке, даже если продукт технически другой</li>
+          <li>Исполняющие агенты — не наша уникальная зона: у VK AI Space (агент сам планирует шаги и работает с корпоративными инструментами) и ГигаЧат Бизнес (агенты по расписанию/триггеру, подключение к корпоративным системам) та же способность подтверждена публично, а Glean с апреля 2026 отчитывается о 250M+ агентных действий на платформе — по ресурсам на её развитие они сильнее</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span> Кто уже смотрит в эту сторону</h2>
+    <p class="section-note">Не список «кто нас купит» — сигнал того, что крупные игроки с деньгами и распределением уже двигаются в сторону ровно тех возможностей, которые у нас есть, а у них — нет. Это подтверждает размер и реальность рынка независимо от YC.</p>
+    <div class="buyers">
+      <div class="buyer-card">
+        <div class="who">Salesforce (через Slack)</div>
+        <div class="why">Инвестирует в work-AI по всему стеку; цифровые слепки и симуляции клиентов/партнёров ложатся прямо в контекст продаж — их родная территория, которой у них пока нет.</div>
+      </div>
+      <div class="buyer-card">
+        <div class="who">ServiceNow</div>
+        <div class="why">Последние два года системно наращивает AI-agent orchestration и корпоративное знание — направление движения совпадает с нашим профилем возможностей.</div>
+      </div>
+      <div class="buyer-card">
+        <div class="who">Zoom / Cisco (Webex)</div>
+        <div class="why">Их AI Companion идёт ровно в сторону «память со встреч», но графа знаний и слепков у них нет — явный пробел в продуктовой линии.</div>
+      </div>
+      <div class="buyer-card">
+        <div class="who">Workday</div>
+        <div class="why">HR-угол: слепок сотрудника и передача знаний при уходе человека — то, что Workday сегодня продаёт крупным клиентам как «преемственность знаний», без технологии под капотом.</div>
+      </div>
+      <div class="buyer-card">
+        <div class="who">Glean</div>
+        <div class="why">Рыночный лидер поиска активно расширяет продуктовый периметр (Aryn, март 2026) — направление показывает, что «поиск» как категория сама по себе считается недостаточной, рынок явно тянется к большему.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="src-title">Источники</div>
+    YC Company Brain RFS, Tom Blomfield — aigrants.in, alexlockey.com, colrows.com · SiliconANGLE, Eightfold AI blog (Viven) · Y Combinator (Hyper) · PRNewswire, CNBC, Calcalist, Dealroom (Engram) · TechFundingNews, Tech.eu, SiliconANGLE (Dust) · EU-Startups (Cognee) · Tracxn, LegalClarity, aiproductivity.ai, read.ai/integrations (Read AI) · work-management.org, pricingsaas.com, TNW/Reworked, tldv.io, createwith.com (Granola) · Glean press, Sacra, CNBC Disruptor 50, glean.com/blog (Glean Agents, Waldo), tipranks.com, biggo.com (Glean) · CNews, content-review.com, kp.ru, tadviser.ru (VK AI Space) · CNews, TAdviser, sber.pro, habr.com/companies/sberbank, b2b.giga.chat, enterprise.giga.chat, vc.ru (ГигаЧат Бизнес) · anti-malware.ru (Яндекс 360) · osp.ru, mtsbank.ru (Т-Банк, МТС Банк — для контекста, не в основной таблице)
+  </footer>
+
+</div>
+</body>
+</html>
