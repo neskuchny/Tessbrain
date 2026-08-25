@@ -28,6 +28,7 @@ docker compose exec api python -m backend.db.migrate
 from __future__ import annotations
 
 import argparse
+import re
 import asyncio
 import hashlib
 import logging
@@ -199,7 +200,27 @@ async def migrate(
     applied: list[str] = []
     skipped: list[str] = []
 
-    conn = await _connect(dsn)
+    try:
+        conn = await _connect(dsn)
+    except OSError as exc:
+        # Постгрес не поднят — самая частая ошибка на шаге 4 быстрого старта.
+        # Сырой трейсбек asyncpg на 40 строк тут ничего не объясняет: человек
+        # видит WinError 1225 / Connection refused и не знает, что забыл
+        # `docker compose up -d`. Показываем, куда стучались и что делать.
+        safe = re.sub(r"://[^@/]*@", "://***@", dsn)
+        raise SystemExit(
+            f"Cannot reach Postgres at {safe}\n"
+            f"  {type(exc).__name__}: {exc}\n\n"
+            "The database is not accepting connections. Usually one of:\n"
+            "  1. Infrastructure is not running — start it: docker compose up -d\n"
+            "     (then wait a few seconds for the postgres healthcheck)\n"
+            "  2. Docker itself is not running.\n"
+            "  3. Your .env points somewhere else — check POSTGRES_HOST/PORT\n"
+            "     or DATABASE_URL. Defaults match docker-compose.yml.\n\n"
+            "To run without Postgres at all, see the zero-infrastructure tier\n"
+            "in deploy/README.md (USE_NETWORKX=true, USE_QDRANT=false)."
+        ) from exc
+
     try:
         # Bootstrap tracking-таблицы ВНЕ advisory_lock — иначе на холодной БД
         # advisory_lock не сможет даже завестись.

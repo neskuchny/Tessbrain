@@ -53,7 +53,10 @@ Then open `.env` and set, at minimum:
 
 - **One model provider key** — `GOOGLE_API_KEY` or `OPENAI_API_KEY`. Without
   one, extraction and chat cannot run.
-- **`JWT_SECRET`** — generate with `openssl rand -hex 32`.
+- **`JWT_SECRET_KEY`** — generate with
+  `python -c "import secrets; print(secrets.token_hex(32))"`. Note the `_KEY`
+  suffix: the setting is `jwt_secret_key`, and unknown keys are ignored
+  silently, so `JWT_SECRET` on its own does nothing.
 
 Everything else has a working default for local use. Full list:
 [Configuration](configuration.md).
