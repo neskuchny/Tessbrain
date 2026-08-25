@@ -69,10 +69,19 @@ mkdir -p data && cp demo/helion/snapshot/*.json data/
 USE_NETWORKX=true USE_QDRANT=false python -m backend.main
 ```
 
-Both are build artifacts: when extractors change, regenerate with
-`python scripts/ingest_data.py --source files --target demo/helion/transcripts
---group public --dump-extractions demo/helion/extracted`. The source of truth
-stays `transcripts/` + `ground-truth.yaml`.
+Both are build artifacts: when extractors change, regenerate them (needs a
+model key; the env vars force the file-based store so the snapshot lands in
+`snapshot/` regardless of what your backend uses):
+
+```bash
+USE_NETWORKX=true USE_QDRANT=false \
+GRAPH_STORAGE_PATH=demo/helion/snapshot/knowledge_graph.json \
+VECTOR_STORAGE_PATH=demo/helion/snapshot/vector_index.json \
+python scripts/ingest_data.py --source files --target demo/helion/transcripts \
+  --group public --dump-extractions demo/helion/extracted
+```
+
+The source of truth stays `transcripts/` + `ground-truth.yaml`.
 
 To run the extraction yourself, load `transcripts/*.txt` and `data/*.csv` into a clean tenant. Two things
 the loader has to preserve, because checks depend on them:

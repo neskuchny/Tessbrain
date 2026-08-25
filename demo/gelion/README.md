@@ -92,9 +92,19 @@ USE_NETWORKX=true USE_QDRANT=false python -m backend.main
 ```
 
 Оба — артефакты сборки: при изменении извлекателей перегенерируйте их
-командой `python scripts/ingest_data.py --source files --target
-demo/gelion/transcripts --group public --dump-extractions
-demo/gelion/extracted`. Источник истины — `transcripts/` + `ground-truth.yaml`.
+(нужен ключ модели; env-переменные принудительно выбирают файловое
+хранилище, чтобы снапшот лёг в `snapshot/` независимо от того, на чём
+работает ваш бекенд):
+
+```bash
+USE_NETWORKX=true USE_QDRANT=false \
+GRAPH_STORAGE_PATH=demo/gelion/snapshot/knowledge_graph.json \
+VECTOR_STORAGE_PATH=demo/gelion/snapshot/vector_index.json \
+python scripts/ingest_data.py --source files --target demo/gelion/transcripts \
+  --group public --dump-extractions demo/gelion/extracted
+```
+
+Источник истины — `transcripts/` + `ground-truth.yaml`.
 
 ## Что теперь можно тестировать только на развёрнутой системе
 

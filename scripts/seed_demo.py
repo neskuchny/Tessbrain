@@ -53,8 +53,10 @@ async def seed(corpus: str, group_override: str = None) -> int:
         return 1
 
     # Тот же путь сохранения, что и в scripts/ingest_data.py — только без
-    # CaptureOrchestrator и LLMRouter.
-    graph = GraphBuilder(use_networkx=True)
+    # CaptureOrchestrator и LLMRouter. Хранилище выбирается как в API
+    # (USE_NETWORKX / наличие Neo4j), чтобы данные легли туда, откуда
+    # бекенд их читает.
+    graph = GraphBuilder()
     indexer = VectorIndexer()
     await graph.connect()
     await indexer.connect()

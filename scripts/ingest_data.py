@@ -25,7 +25,10 @@ logger = logging.getLogger(__name__)
 
 class IngestManager:
     def __init__(self):
-        self.graph = GraphBuilder(use_networkx=True)
+        # Хранилище выбирается так же, как в API: USE_NETWORKX / наличие
+        # Neo4j. Иначе ингест писал бы в NetworkX-файл, а бекенд с поднятым
+        # Neo4j читал бы пустой граф — «данные есть, в интерфейсе пусто».
+        self.graph = GraphBuilder()
         self.indexer = VectorIndexer()
         self.llm_router = LLMRouter()
         self.orchestrator = None # Lazy init
