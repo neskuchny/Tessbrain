@@ -113,7 +113,11 @@ confidence**, and access control is enforced **before the model**.
   answers, not a file export; the slice is applied before the model, and
   the key has a lifetime, a quota, a journal and one-click revocation.
   Executing agents take tasks on their channel and deliver results under
-  machine acceptance.
+  machine acceptance. Where the bus leads — external agent chains
+  orchestrated by the brain, the brain as a source for other systems, and
+  a network of companies with new HR processes at the intersection of
+  their people data — honestly, with the status of each mechanic:
+  [docs/en/data-bus.md](docs/en/data-bus.md).
 
 **Full capability map — 22 sections:** [docs/en/product-capabilities.md](docs/en/product-capabilities.md)
 · visual versions: [capability map](https://neskuchny.github.io/Tessbrain/share/en/tessent_capabilities.html)
@@ -235,6 +239,7 @@ The full list is the "Honest about limits" section of the
 | [Security](docs/en/security.md) | access control, audit, perimeter |
 | [Product capabilities](docs/en/product-capabilities.md) | the full 22-section map |
 | [Benchmarks](docs/en/benchmarks.md) | numbers, including losses |
+| [Data bus](docs/en/data-bus.md) | what works today and where it leads |
 
 Russian originals: [docs/ru/](docs/ru/) · Shareable HTML pages (both
 languages, self-contained): [docs/share/](docs/share/)
@@ -255,7 +260,8 @@ python tests/unit/test_interval_algebra.py
 
 ## Who builds this
 
-Tessbrain is built by **[SYNLABS](https://synlabs.pro/)** — the team behind
+Tessbrain (ex-Tessent — the old name lives on in the team's domain) is
+built by **[SYNLABS](https://synlabs.pro/)** — the team behind
 [tessent.ai](https://tessent.ai/en). We use it ourselves, and we publish the
 benchmark numbers we lose along with the ones we win.
 
