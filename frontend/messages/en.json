@@ -2768,7 +2768,9 @@
     "loading": "Loading...",
     "days_stuck": "Stuck: {days} days",
     "days_overdue": "Overdue: {days} days",
-    "holding_console_menu_label": "Holding console"
+    "holding_console_menu_label": "Holding console",
+    "automations_queue": "⚡ Vibe Tasking",
+    "automations_office": "🤝 Executors"
   },
   "login_page": {
     "nav_problem": "Problem",

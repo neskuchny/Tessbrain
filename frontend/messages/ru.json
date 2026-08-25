@@ -2768,7 +2768,9 @@
     "loading": "Загрузка...",
     "days_stuck": "Застряло: {days} дн.",
     "days_overdue": "Просрочено: {days} дн.",
-    "holding_console_menu_label": "Консоль холдинга"
+    "holding_console_menu_label": "Консоль холдинга",
+    "automations_queue": "⚡ Vibe Tasking",
+    "automations_office": "🤝 Исполнители"
   },
   "login_page": {
     "nav_problem": "Проблема",

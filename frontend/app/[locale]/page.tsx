@@ -854,8 +854,8 @@ export default function Home() {
               {activeTab === 'automations' && [
                 { id: 'classic' as AutomationsSubTab, label: t('main_page.automations_classic') },
                 { id: 'agent' as AutomationsSubTab, label: t('main_page.automations_agent') },
-                { id: 'queue' as AutomationsSubTab, label: '⚡ Vibe Tasking' },
-                { id: 'office' as AutomationsSubTab, label: '🤝 Исполнители' },
+                { id: 'queue' as AutomationsSubTab, label: t('main_page.automations_queue') },
+                { id: 'office' as AutomationsSubTab, label: t('main_page.automations_office') },
                 { id: 'skills' as AutomationsSubTab, label: t('main_page.automations_skills') },
     { id: 'catalog' as AutomationsSubTab, label: t('main_page.subtab_catalog') },
               ].map((sub) => (
