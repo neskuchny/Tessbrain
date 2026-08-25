@@ -13,6 +13,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { useTranslations } from 'next-intl'
 import { authFetch } from '@/lib/authFetch'
 import {
   RefreshCw, Check, X, Loader2, Plus, Trash2, ChevronDown, Send,
@@ -43,19 +44,17 @@ interface CheckRow {
   value: string
 }
 
-const STATUS_LABELS: Record<string, { label: string; cls: string }> = {
-  awaiting_human: { label: 'ждёт вашего решения', cls: 'bg-amber-500/15 text-amber-300' },
-  returned_exhausted: { label: 'доработки исчерпаны — решайте', cls: 'bg-orange-500/15 text-orange-300' },
-  failed: { label: 'исполнитель не справился', cls: 'bg-red-500/15 text-red-300' },
-  closed: { label: 'принято вами', cls: 'bg-green-500/15 text-green-300' },
-  cancelled: { label: 'отклонено вами', cls: 'bg-brain-700/40 text-brain-400' },
+// Тексты статусов/вердиктов — в словаре i18n (office_tasks.status_* /
+// verdict_*); здесь только стили, чтобы неизвестный статус не ронял t().
+const STATUS_CLS: Record<string, string> = {
+  awaiting_human: 'bg-amber-500/15 text-amber-300',
+  returned_exhausted: 'bg-orange-500/15 text-orange-300',
+  failed: 'bg-red-500/15 text-red-300',
+  closed: 'bg-green-500/15 text-green-300',
+  cancelled: 'bg-brain-700/40 text-brain-400',
 }
 
-const VERDICT_LABELS: Record<string, string> = {
-  pass: '✓ проверки прошли',
-  fail: '✗ проверки провалены',
-  inconclusive: '? проверить нечем — читайте сами',
-}
+const KNOWN_VERDICTS = new Set(['pass', 'fail', 'inconclusive'])
 
 function Md({ text }: { text: string }) {
   return (
@@ -66,6 +65,7 @@ function Md({ text }: { text: string }) {
 }
 
 export default function OfficeTasksPanel({ userId }: { userId?: string }) {
+  const t = useTranslations('office_tasks')
   const [runs, setRuns] = useState<OfficeRun[]>([])
   const [loading, setLoading] = useState(false)
   const [running, setRunning] = useState(false)
@@ -74,6 +74,9 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
   const [checks, setChecks] = useState<CheckRow[]>([])
   const [expanded, setExpanded] = useState<string | null>(null)
   const [closing, setClosing] = useState<string | null>(null)
+
+  const statusLabel = (s: string) => (STATUS_CLS[s] ? t(`status_${s}`) : s)
+  const verdictLabel = (v: string) => (KNOWN_VERDICTS.has(v) ? t(`verdict_${v}`) : v)
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -102,7 +105,7 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
 
   const run = async () => {
     if (taskText.trim().length < 20) {
-      setError('Опишите задачу подробнее — минимум 20 символов.')
+      setError(t('err_too_short'))
       return
     }
     setError('')
@@ -115,7 +118,7 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
       })
       const d = await r.json().catch(() => ({}))
       if (!r.ok) {
-        setError(d?.detail || 'Исполнитель недоступен. Проверьте, что openworker-server поднят и адрес задан в настройках.')
+        setError(d?.detail || t('err_unavailable'))
       } else {
         setTaskText('')
         setChecks([])
@@ -123,7 +126,7 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
         await load()
       }
     } catch {
-      setError('Сбой запроса — исполнитель не ответил.')
+      setError(t('err_no_response'))
     }
     setRunning(false)
   }
@@ -138,7 +141,7 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
       })
       if (!r.ok) {
         const d = await r.json().catch(() => ({}))
-        setError(d?.detail || 'Не удалось закрыть прогон.')
+        setError(d?.detail || t('err_close'))
       }
       await load()
     } catch { /* список покажет фактическое состояние */ }
@@ -151,16 +154,16 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
       <div className="rounded-xl border border-brain-700/40 bg-brain-900/60 p-4 space-y-3">
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-semibold text-brain-100">
-            Офисная задача исполнителю
+            {t('title')}
           </h3>
           <span className="text-[11px] text-brain-500">
-            бриф · письмо · сводка · исследование — не код
+            {t('subtitle')}
           </span>
         </div>
         <textarea
           value={taskText}
           onChange={(e) => setTaskText(e.target.value)}
-          placeholder="Например: собери бриф по клиенту N перед завтрашним звонком — история отношений, суммы, открытые вопросы, риски."
+          placeholder={t('task_placeholder')}
           rows={3}
           className="w-full rounded-lg bg-brain-950/70 border border-brain-700/40 px-3 py-2 text-sm text-brain-100 placeholder:text-brain-600 focus:outline-none focus:border-brain-500"
         />
@@ -168,15 +171,15 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
         {/* Проверки приёмки */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="text-xs text-brain-400">Проверки приёмки</span>
+            <span className="text-xs text-brain-400">{t('checks_heading')}</span>
             <span className="text-[11px] text-brain-600">
-              без них результат честно помечается «не доказано»
+              {t('checks_hint')}
             </span>
             <button
               onClick={() => setChecks((c) => [...c, { kind: 'contains', value: '' }])}
               className="ml-auto flex items-center gap-1 text-xs text-brain-400 hover:text-brain-200"
             >
-              <Plus className="w-3.5 h-3.5" /> добавить
+              <Plus className="w-3.5 h-3.5" /> {t('add_check')}
             </button>
           </div>
           {checks.map((c, i) => (
@@ -186,14 +189,14 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
                 onChange={(e) => setChecks((arr) => arr.map((x, j) => (j === i ? { ...x, kind: e.target.value as CheckRow['kind'] } : x)))}
                 className="rounded-md bg-brain-950/70 border border-brain-700/40 px-2 py-1 text-xs text-brain-200"
               >
-                <option value="contains">содержит слово</option>
-                <option value="min_len">минимум символов</option>
-                <option value="regex">по шаблону (regex)</option>
+                <option value="contains">{t('check_contains')}</option>
+                <option value="min_len">{t('check_min_len')}</option>
+                <option value="regex">{t('check_regex')}</option>
               </select>
               <input
                 value={c.value}
                 onChange={(e) => setChecks((arr) => arr.map((x, j) => (j === i ? { ...x, value: e.target.value } : x)))}
-                placeholder={c.kind === 'min_len' ? '400' : c.kind === 'regex' ? '\\d{2,}' : 'риски'}
+                placeholder={c.kind === 'min_len' ? '400' : c.kind === 'regex' ? '\\d{2,}' : t('check_placeholder_contains')}
                 className="flex-1 rounded-md bg-brain-950/70 border border-brain-700/40 px-2 py-1 text-xs text-brain-100"
               />
               <button onClick={() => setChecks((arr) => arr.filter((_, j) => j !== i))}
@@ -208,8 +211,7 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
 
         <div className="flex items-center justify-between">
           <span className="text-[11px] text-brain-600">
-            Провал приёмки вернётся исполнителю с замечаниями (до 2 доработок).
-            Финальное «принято» — только за вами.
+            {t('footer_hint')}
           </span>
           <button
             onClick={run}
@@ -217,14 +219,14 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
             className="flex items-center gap-1.5 rounded-lg bg-brain-600 hover:bg-brain-500 disabled:opacity-50 px-4 py-1.5 text-sm text-white"
           >
             {running ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
-            {running ? 'Исполнитель работает…' : 'Запустить'}
+            {running ? t('running') : t('run')}
           </button>
         </div>
       </div>
 
       {/* ── Прогоны ──────────────────────────────────────────────────── */}
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-brain-100">Прогоны</h3>
+        <h3 className="text-sm font-semibold text-brain-100">{t('runs_heading')}</h3>
         <button onClick={load} className="text-brain-400 hover:text-brain-200">
           <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
         </button>
@@ -232,13 +234,12 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
 
       {runs.length === 0 && !loading && (
         <div className="text-xs text-brain-500 py-6 text-center">
-          Прогонов пока нет. Первая задача появится здесь со всей историей
-          попыток и вердиктами приёмки.
+          {t('empty')}
         </div>
       )}
 
       {runs.map((r) => {
-        const st = STATUS_LABELS[r.status] || { label: r.status, cls: 'bg-brain-700/40 text-brain-300' }
+        const stCls = STATUS_CLS[r.status] || 'bg-brain-700/40 text-brain-300'
         const open = expanded === r.id
         const needsDecision = r.status === 'awaiting_human' || r.status === 'returned_exhausted'
         return (
@@ -249,7 +250,7 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
             >
               <ChevronDown className={`w-4 h-4 text-brain-500 transition-transform ${open ? '' : '-rotate-90'}`} />
               <span className="flex-1 text-sm text-brain-100 truncate">{r.task_text}</span>
-              <span className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] ${st.cls}`}>{st.label}</span>
+              <span className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] ${stCls}`}>{statusLabel(r.status)}</span>
             </button>
 
             {open && (
@@ -258,9 +259,9 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
                 <div className="space-y-1">
                   {r.attempts.map((a) => (
                     <div key={a.attempt} className="text-xs text-brain-400">
-                      Попытка {a.attempt}: {a.error
+                      {t('attempt')} {a.attempt}: {a.error
                         ? <span className="text-red-400">{a.error}</span>
-                        : <span>{VERDICT_LABELS[a.verdict] || a.verdict}</span>}
+                        : <span>{verdictLabel(a.verdict)}</span>}
                       {a.remarks ? (
                         <div className="mt-0.5 pl-3 text-brain-500 whitespace-pre-wrap">{a.remarks}</div>
                       ) : null}
@@ -286,17 +287,17 @@ export default function OfficeTasksPanel({ userId }: { userId?: string }) {
                       disabled={closing === r.id}
                       className="flex items-center gap-1 rounded-lg bg-green-600/80 hover:bg-green-600 disabled:opacity-50 px-3 py-1.5 text-xs text-white"
                     >
-                      <Check className="w-3.5 h-3.5" /> Принять
+                      <Check className="w-3.5 h-3.5" /> {t('accept')}
                     </button>
                     <button
                       onClick={() => close(r.id, false)}
                       disabled={closing === r.id}
                       className="flex items-center gap-1 rounded-lg bg-brain-700 hover:bg-brain-600 disabled:opacity-50 px-3 py-1.5 text-xs text-brain-200"
                     >
-                      <X className="w-3.5 h-3.5" /> Отклонить
+                      <X className="w-3.5 h-3.5" /> {t('reject')}
                     </button>
                     <span className="text-[11px] text-brain-600">
-                      машина уже отбраковала что могла — финал за вами
+                      {t('final_hint')}
                     </span>
                   </div>
                 )}

@@ -442,7 +442,7 @@ function DiagramCanvasInner() {
 
   // Сохраняем позицию в БД и стор после перетаскивания
   const onNodeDragStop = useCallback(
-    async (_: React.MouseEvent, node: Node) => {
+    async (_: MouseEvent | TouchEvent, node: Node) => {
       updateBlock(node.id, {
         positionX: node.position.x,
         positionY: node.position.y,
