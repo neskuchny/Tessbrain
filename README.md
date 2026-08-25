@@ -167,11 +167,10 @@ automations and grounds the specs. Per our competitive map, assembled from
 public sources, no player of the eight we profiled combines "graph + people
 profiles + simulations + boardroom sessions + executing agents" in one
 system — and client simulation with profile-based boardroom sessions we
-found at nobody at all. The name-by-name comparison — including honest
-"where we are weaker" rows — is in the
-[competitive map](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html) (RU):
-
-[![Competitive map: the company-brain market](docs/assets/previews/ru/competitivemap.png)](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html)
+found at nobody at all. The name-by-name comparison — the eight profiles,
+the capability grid and the honest "where we are weaker" rows — is in the
+[competitive map](https://neskuchny.github.io/Tessbrain/share/ru/tessent_competitivemap.html),
+which so far exists in Russian only.
 
 ---
 
