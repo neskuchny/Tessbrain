@@ -175,6 +175,18 @@ found at nobody at all. The name-by-name comparison — including honest
 
 ---
 
+## Run it
+
+Three paths, by how much infrastructure you want to give it:
+
+| Path | What it takes | Where |
+|---|---|---|
+| **See it in 10 minutes** | Docker + a model key | [quickstart](docs/en/quickstart.md) |
+| **Zero infrastructure** | Python and 8 GB of RAM — graph and vectors in local files | [deploy/README.md](deploy/README.md), tier 1 · honest limit: login and meeting ingestion still require a Supabase-compatible stack |
+| **Production** | a VPS with 8 GB+ | [deployment](docs/en/deployment.md) + [deploy/single-vps/](deploy/single-vps/) |
+
+---
+
 ## Try it without your own data
 
 The repo ships with **Gelion**, a synthetic 85-person company: 20 meetings
@@ -266,8 +278,10 @@ The full list is the "Honest about limits" section of the
 | [Benchmarks](docs/en/benchmarks.md) | numbers, including losses |
 | [Data bus](docs/en/data-bus-vision.md) | what works today and where it leads |
 
-Russian originals: [docs/ru/](docs/ru/) · Shareable HTML pages (both
-languages, self-contained): [docs/share/](docs/share/)
+Full documentation index — 21 documents across five sections:
+[English](docs/en/README.md) · [по-русски](docs/ru/README.md).
+Shareable HTML pages (both languages, self-contained):
+[docs/share/](docs/share/)
 
 ---
 

@@ -13,9 +13,9 @@
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-3776AB)
 
-[![Смотреть демо](https://img.youtube.com/vi/6LE8CYxQH7w/maxresdefault.jpg)](https://youtu.be/6LE8CYxQH7w)
+[![Смотреть демо](https://img.youtube.com/vi/6LE8CYxQH7w/maxresdefault.jpg)](https://rutube.ru/video/06dd621cb8538dd97a58cc7418f419c0/)
 
-*▶ 3-минутное демо на YouTube*
+*▶ 3-минутное демо: [RuTube](https://rutube.ru/video/06dd621cb8538dd97a58cc7418f419c0/) · [YouTube](https://youtu.be/6LE8CYxQH7w)*
 
 ---
 
@@ -166,6 +166,18 @@ Tessbrain — **один граф под всеми этими работами*
 
 ---
 
+## Запустить
+
+Три пути — по тому, сколько инфраструктуры вы готовы дать:
+
+| Путь | Что нужно | Где описан |
+|---|---|---|
+| **Посмотреть за 10 минут** | Docker + ключ модели | [быстрый старт](docs/en/quickstart.md) |
+| **Совсем без инфраструктуры** | Python и 8 ГБ памяти — граф и векторы в локальных файлах | [deploy/README.md](deploy/README.md), уровень 1 · честная граница: вход и загрузка встреч пока требуют Supabase-совместимого стека |
+| **В продакшн** | VPS от 8 ГБ | [деплой](docs/en/deployment.md) + [deploy/single-vps/](deploy/single-vps/) |
+
+---
+
 ## Попробовать без своих данных
 
 В репозитории лежит **«Гелион»** — синтетическая компания на 85 человек:
@@ -255,6 +267,8 @@ Supabase-совместимого стека — это записано, а н�
 | [Замеры (RU)](docs/ru/BENCHMARK_BRAINBENCH.md) | числа, включая проигрыши |
 | [Шина данных (RU)](docs/ru/DATA_BUS.md) | что работает сегодня и куда ведёт |
 
+Полный индекс документации — 21 документ по пяти разделам:
+[по-русски](docs/ru/README.md) · [English](docs/en/README.md).
 Отправляемые HTML-страницы (оба языка, самодостаточные):
 [docs/share/](docs/share/)
 
