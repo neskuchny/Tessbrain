@@ -76,7 +76,8 @@ except ImportError as _exc:  # pragma: no cover - зависит от окруж
     _logging.getLogger(__name__).warning(
         "AG2/autogen недоступен (%s). Память, поиск и чат работают; "
         "агентные возможности (A2A, AG2-движки, RAG-ретривер) выключены. "
-        "Чтобы включить: pip install 'ag2[openai,gemini]>=0.9'",
+        "Чтобы включить: pip install 'ag2[openai,gemini]>=0.9,<1.0' "
+        "(в ag2 1.0+ модуля autogen больше нет)",
         _exc,
     )
 

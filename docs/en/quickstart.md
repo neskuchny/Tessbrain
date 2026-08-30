@@ -34,7 +34,8 @@ pip install -r requirements.txt
 > without it: memory, search and chat work, and the agent features log a
 > warning and stay off. Check with
 > `python -c "import backend.core.think as t; print(t.AG2_AVAILABLE)"`.
-> To enable them later: `pip install "ag2[openai,gemini]>=0.9"`.
+> To enable them later: `pip install "ag2[openai,gemini]>=0.9,<1.0"` —
+> the upper bound matters: ag2 1.0+ no longer ships the `autogen` module.
 > Python 3.11 and 3.12 are the tested versions.
 
 Optional, only if you want the browser-driving Web Operator:

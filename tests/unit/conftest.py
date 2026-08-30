@@ -13,10 +13,14 @@
 """
 from __future__ import annotations
 
+import asyncio
+import os
 import sys
 from pathlib import Path
 from types import ModuleType
 from typing import Any
+
+import pytest
 
 # tessent_brain/ в sys.path → импорты вида `from backend....` работают.
 _ROOT = Path(__file__).resolve().parents[2]
@@ -72,3 +76,44 @@ def _try_import_jwt() -> None:
 
 
 _try_import_jwt()
+
+
+@pytest.fixture(autouse=True)
+def _isolated_event_loop():
+    """Свежий event loop на каждый тест — защита от загрязнения порядком.
+
+    Тесты в этом каталоге зовут `asyncio.get_event_loop().run_until_complete`.
+    Стоит какому-то тесту раньше закрыть текущий loop (например через
+    `asyncio.run`) — все последующие такие вызовы падают с
+    «RuntimeError: There is no current event loop». Воспроизводится парой
+    test_grants_for_grantee + test_nl_designer: по одному файлу зелёные,
+    вместе — 12 падений. Фикстура даёт каждому тесту собственный loop и
+    закрывает его после, поэтому порядок файлов перестаёт влиять.
+    pytest-asyncio это не ломает: его раннер строит свой loop сам.
+    """
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
+        yield
+    finally:
+        try:
+            if not loop.is_closed():
+                loop.close()
+        finally:
+            asyncio.set_event_loop(None)
+
+
+@pytest.fixture(autouse=True)
+def _isolated_environ():
+    """Снимок os.environ до теста и откат после.
+
+    Тест, выставивший переменную (флаг, ключ, режим) и не прибравший за
+    собой, менял поведение всех последующих — второй источник зависимости
+    от порядка. Откат снимка делает мутации локальными для теста.
+    """
+    snapshot = dict(os.environ)
+    try:
+        yield
+    finally:
+        os.environ.clear()
+        os.environ.update(snapshot)

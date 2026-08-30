@@ -240,6 +240,15 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    # Проба живости воркера: HTTP-сервера в контейнере нет, поэтому curl
+    # здесь дал бы вечный unhealthy. Смотрим на командную строку PID 1 —
+    # процесс taskiq жив, значит воркер жив.
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0 if b'taskiq' in open('/proc/1/cmdline','rb').read() else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
     restart: unless-stopped
     profiles:
       - app

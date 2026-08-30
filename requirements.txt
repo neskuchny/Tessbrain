@@ -52,7 +52,10 @@ anthropic>=0.40.0
 #   * RetrieveUserProxyAgent/AssistantAgent — not referenced
 # AG2_IMPROVEMENTS.md lists WebSurfer/DeepResearch as TODO; re-enable
 # extras when actually integrating. Pin ag2 floor to >=0.9 (recent stable).
-ag2[openai,gemini]>=0.9
+# Верхняя граница <1.0 обязательна: ag2 1.0+ больше не поставляет модуль
+# `autogen`, и свежая установка молча теряет агентные фичи (guard в
+# backend/core/think/__init__.py переводит их в выключенное состояние).
+ag2[openai,gemini]>=0.9,<1.0
 nest-asyncio>=1.6.0  # For async in Jupyter/nested loops
 
 # === Playwright (for DeepResearchAgent & Web Operator) ===

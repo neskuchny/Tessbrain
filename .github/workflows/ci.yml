@@ -13,6 +13,12 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+# Один контракт вывода на всех ОС: без UTF-8 скрипты с эмодзи в print
+# падают на Windows-машинах разработчиков (cp1251), CI обязан гонять
+# то же окружение, что и инструкция.
+env:
+  PYTHONIOENCODING: utf-8
+
 jobs:
   python-lint:
     name: Python lint (ruff)

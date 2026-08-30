@@ -91,10 +91,14 @@ def run_file(path: str, timeout: int) -> tuple[str, str, float]:
     # Корень репозитория в путях импорта: часть тестов ходит в backend.*
     # и без этого падала «нет модуля backend», хотя код в порядке.
     env["PYTHONPATH"] = ROOT + os.pathsep + env.get("PYTHONPATH", "")
+    # Windows: без UTF-8 дочерний процесс падает на print() эмодзи в cp1251,
+    # а вывод здесь не декодируется. На Linux строка — no-op.
+    env.setdefault("PYTHONIOENCODING", "utf-8")
     try:
         proc = subprocess.run(
             [sys.executable, path], cwd=ROOT, timeout=timeout,
             capture_output=True, text=True, env=env,
+            encoding="utf-8", errors="replace",
         )
     except subprocess.TimeoutExpired:
         return FAILED, f"превышен предел {timeout}с", time.time() - started
