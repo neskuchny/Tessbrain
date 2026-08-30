@@ -56,6 +56,18 @@ NODE_SCHEMA = {
         "required_props": ["meeting_id"],
         "optional_props": ["title", "date", "project_id", "processing_timestamp", "summary", "tags"]
     },
+    # Узел-связка кросс-встречного анализа. Его создаёт
+    # cross_meeting_analyzer._create_graph_links, читает роут cross_meeting
+    # по _label == "MeetingLink" — но в схеме тип отсутствовал, и в STRICT
+    # валидатор отвергал узел, а в warn засорял лог. Меряно на живом
+    # прогоне: «unknown object type 'MeetingLink'» на каждой связи.
+    "MeetingLink": {
+        "description": "Связь между встречами (кросс-встречный анализ)",
+        "required_props": ["source_meeting", "target_meeting"],
+        "optional_props": ["relevance_score", "link_type", "common_participants",
+                           "common_projects", "common_topics",
+                           "temporal_distance_days", "created_at"]
+    },
     "Person": {
         "description": "Участник встречи или сотрудник",
         "required_props": ["name"],
@@ -260,6 +272,14 @@ RELATIONSHIP_SCHEMA = {
     # ═══ ОРГАНИЗАЦИОННЫЕ ═══
     "PARTICIPATED_IN": [
         {"from": "Person", "to": "Meeting"}
+    ],
+    # Рёбра кросс-встречных связей (см. MeetingLink в NODE_SCHEMA):
+    # Meeting --HAS_LINK--> MeetingLink --LINKS_TO--> Meeting.
+    "HAS_LINK": [
+        {"from": "Meeting", "to": "MeetingLink"}
+    ],
+    "LINKS_TO": [
+        {"from": "MeetingLink", "to": "Meeting"}
     ],
     "HOLDS_ROLE": [
         {"from": "Person", "to": "Role"}
