@@ -312,10 +312,16 @@ def test_ui_zone_wired():
     panel = _src("frontend/components/OfficeTasksPanel.tsx")
     assert "/api/v1/executor/office" in panel
     assert "runs/${id}/close" in panel or "/close" in panel
-    assert "Принять" in panel and "Отклонить" in panel, (
+    # После локализации тексты кнопок живут в словарях i18n, компонент
+    # ссылается на ключи — проверяем и ссылки, и сами тексты в обоих языках.
+    assert "t('accept')" in panel and "t('reject')" in panel, (
         "финал человека — кнопки в интерфейсе, а не только API"
     )
-    assert "не доказано" in panel, (
+    ru = _src("frontend/messages/ru.json")
+    en = _src("frontend/messages/en.json")
+    assert "Принять" in ru and "Отклонить" in ru
+    assert '"Accept"' in en and '"Reject"' in en
+    assert "не доказано" in ru and "not proven" in en, (
         "зона обязана объяснять смысл «без проверок — не доказано»"
     )
     print("✅ зона в интерфейсе: вкладка, запуск, финал человека")
