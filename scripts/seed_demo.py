@@ -61,6 +61,15 @@ async def seed(corpus: str, group_override: str = None) -> int:
     await graph.connect()
     await indexer.connect()
 
+    # Досейка знаний из дампов: extract уже оплачен при их создании,
+    # save_extracted только пишет готовое в граф и индекс. llm_router=None
+    # легален — LLM-фазы здесь не вызываются.
+    from backend.core.capture.agents.knowledge_extraction_orchestrator import (
+        KnowledgeExtractionOrchestrator,
+    )
+    knowledge_saver = KnowledgeExtractionOrchestrator(
+        llm_router=None, graph_builder=graph, vector_indexer=indexer)
+
     ok = 0
     try:
         for fp in files:
@@ -81,7 +90,21 @@ async def seed(corpus: str, group_override: str = None) -> int:
                     "title": meeting.get("title", fp.stem),
                 }, group)
 
-            # 2. Готовые извлечения в граф и индекс
+            # 2. Узел встречи — до записи, конвенцией capture-пути
+            #    (meeting_<id>): на него ссылаются рёбра знаний. MERGE в
+            #    save_meeting_results найдёт его по meeting_id и обогатит.
+            await graph.create_node(
+                node_id=f"meeting_{meeting['id']}",
+                label="Meeting",
+                properties={
+                    "meeting_id": meeting["id"],
+                    "title": meeting.get("title", ""),
+                    "date": meeting.get("date", ""),
+                },
+                access_group=group,
+            )
+
+            # 3. Готовые извлечения в граф и индекс
             await graph.save_meeting_results(
                 meeting_id=meeting["id"],
                 results=results,
@@ -94,6 +117,13 @@ async def seed(corpus: str, group_override: str = None) -> int:
                 meeting_metadata=meeting,
                 access_group=group,
             )
+
+            # 4. Знания из дампа (антипаттерны, практики, workflow…) — в
+            #    первом прогоне они извлекались, но не попадали в граф:
+            #    оркестратор работал без graph_builder.
+            ke = results.get("knowledge_extraction") or {}
+            if ke.get("total_extracted"):
+                await knowledge_saver.save_extracted(meeting["id"], ke, text)
             ok += 1
     finally:
         await graph.close(save=True)

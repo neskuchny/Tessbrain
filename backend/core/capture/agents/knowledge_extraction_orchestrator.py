@@ -867,6 +867,17 @@ class KnowledgeExtractionOrchestrator:
             logger.error(f"❌ Error extracting {category.value}: {e}")
             return []
 
+    async def save_extracted(self, meeting_id: str, results: Dict[str, Any],
+                             transcript: Optional[str] = None) -> None:
+        """Персист УЖЕ извлечённых знаний — без единого LLM-вызова.
+
+        Для досейки из дампов (scripts/seed_demo.py): extract-фазы стоят
+        денег и уже отработали при создании дампа, а запись в граф и
+        векторы — чистая. llm_router при этом не нужен (__init__ допускает
+        None), нужны только graph_builder/vector_indexer.
+        """
+        await self._save_to_graph(meeting_id, results, transcript)
+
     async def _save_to_graph(self, meeting_id: str, results: Dict[str, Any], transcript: Optional[str] = None):
         """Сохраняет извлечённые знания в граф и индексирует в векторное хранилище."""
         saved_count = 0

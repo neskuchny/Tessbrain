@@ -1734,6 +1734,20 @@ class GraphBuilder:
         else:
             return await self._merge_node_neo4j(label, key_field, key_value, properties, additional_match)
 
+    def _find_node_by_key(self, label: str, key_field: str, key_value: Any):
+        """Найти узел по (label, key_field == key_value) полным проходом.
+
+        Семантика Neo4j MERGE для NetworkX-режима: узлы, созданные мимо
+        _node_index (create_node), всё равно должны находиться по своему
+        бизнес-ключу. O(N) только на промахе индекса; после находки узел
+        регистрируется в индексе вызывающей стороной.
+        """
+        want = str(key_value)
+        for nid, data in self.nx_graph.nodes(data=True):
+            if data.get("_label") == label and str(data.get(key_field)) == want:
+                return nid
+        return None
+
     def _merge_node_networkx(
         self,
         label: str,
@@ -1761,6 +1775,18 @@ class GraphBuilder:
                 node_id = self._node_index[index_key]
                 # Обновляем свойства
                 self.nx_graph.nodes[node_id].update(properties)
+            # Паритет с Neo4j MERGE: узел мог быть создан через
+            # create_node() (pre-create узла встречи в knowledge_sync и в
+            # ингесте) — тот пишет в граф напрямую, мимо _node_index.
+            # В Neo4j MERGE по (label {key}) находит такой узел и обогащает
+            # его; без этого скана NetworkX-режим создавал ВТОРОЙ узел той
+            # же встречи — рёбра знаний на одном, решения и участники на
+            # другом.
+            elif not additional_match and (
+                    found := self._find_node_by_key(label, key_field, key_value)):
+                node_id = found
+                self.nx_graph.nodes[node_id].update(properties)
+                self._node_index[index_key] = node_id
             else:
                 # Создаём новый узел
                 node_id = f"{label}_{uuid.uuid4().hex[:8]}"

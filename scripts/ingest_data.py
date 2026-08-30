@@ -39,9 +39,14 @@ class IngestManager:
         await self.graph.connect()
         await self.indexer.connect()
 
-        # Init Orchestrator
+        # Init Orchestrator. Сторы обязательны: без graph_builder слой
+        # knowledge extraction отрабатывает (LLM-вызовы идут, деньги
+        # тратятся), но узлы знаний и рёбра к встрече не пишутся никуда —
+        # «Memory reinforcement skipped: no graph_builder» в логе.
         self.orchestrator = CaptureOrchestrator(
-            llm_router=self.llm_router
+            llm_router=self.llm_router,
+            graph_builder=self.graph,
+            vector_indexer=self.indexer,
         )
 
     async def ingest_files(self, folder_path: str, access_group: str,
@@ -90,6 +95,23 @@ class IngestManager:
                     "date": meeting_date,
                     "title": file_path.stem
                 }
+
+                # Узел встречи — ДО конвейера: knowledge/template-слои
+                # линкуют извлечённое на meeting_<id> прямо во время
+                # process_meeting (тот же приём и по той же причине, что в
+                # knowledge_sync.py — иначе рёбра «знание → встреча» молча
+                # отбрасываются). save_meeting_results потом обогатит этот
+                # же узел: MERGE по meeting_id находит его.
+                await self.graph.create_node(
+                    node_id=f"meeting_{meeting_data['id']}",
+                    label="Meeting",
+                    properties={
+                        "meeting_id": meeting_data["id"],
+                        "title": meeting_data["title"],
+                        "date": meeting_data["date"],
+                    },
+                    access_group=access_group,
+                )
 
                 results = await self.orchestrator.process_meeting(
                     meeting_data["transcription_text"],
