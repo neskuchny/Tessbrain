@@ -27,6 +27,7 @@ import asyncio
 import json
 import logging
 import os
+import re
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -623,6 +624,14 @@ class GraphBuilder:
             learned_aliases = get_corrections_store().get_learned_aliases(tenant_id)
         except Exception:
             learned_aliases = {}
+
+        # Дата ИСТОЧНИКА для этой партии узлов. Нужна, чтобы MERGE не давал
+        # старой встрече затирать значение, записанное более свежей.
+        # `updated_at` в свойствах сущностей для этого не годится: он ставится
+        # как datetime.now() в момент ОБРАБОТКИ, а не как дата встречи, и при
+        # пакетной заливке одинаков у всех сессий.
+        self._source_date = self._normalize_source_date(
+            (meeting_metadata or {}).get("date"))
 
         try:
             # 1. Создаём узел Meeting
@@ -1734,6 +1743,98 @@ class GraphBuilder:
         else:
             return await self._merge_node_neo4j(label, key_field, key_value, properties, additional_match)
 
+    @staticmethod
+    def _normalize_source_date(value: Any) -> str:
+        """Дата источника к виду, сравнимому лексикографически ("2023-05-30").
+
+        Набор дат в системе разношёрстный: ISO, "2023/05/30 (Tue) 23:40",
+        datetime. Сравнивать надо только ОДНОРОДНЫЕ значения, поэтому всё,
+        что не разобралось до `YYYY-MM-DD`, возвращается пустой строкой —
+        пустая дата ничего не блокирует и ведёт себя как прежний код.
+        """
+        if not value:
+            return ""
+        if isinstance(value, datetime):
+            return value.strftime("%Y-%m-%d")
+        text = str(value).strip().replace("/", "-")
+        m = re.match(r"(\d{4})-(\d{2})-(\d{2})", text)
+        return f"{m.group(1)}-{m.group(2)}-{m.group(3)}" if m else ""
+
+    def _apply_freshness_guard(
+        self,
+        existing: Dict[str, Any],
+        properties: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        """Отфильтровать свойства, которые НЕ должны затирать более свежие.
+
+        Правило одно: если у узла уже записано значение из источника с более
+        поздней датой, то источник постарше это значение не перезаписывает.
+        Прочие свойства обновляются как раньше.
+
+        Зачем: встречи заливаются в порядке обработки, а не по дате. Слепой
+        `update()` означал «выиграла последняя по индексу», и память уверенно
+        отдавала устаревшую версию факта.
+        """
+        incoming = self._normalize_source_date(properties.get("_source_date")
+                                               or getattr(self, "_source_date", ""))
+        stored = self._normalize_source_date(existing.get("_source_date"))
+        if not incoming or not stored or incoming >= stored:
+            return properties          # нечего сравнивать либо источник свежее
+
+        # Источник старше: не трогаем непустые скалярные значения.
+        keep = {}
+        for k, v in properties.items():
+            if k.startswith("_"):
+                continue
+            old = existing.get(k)
+            if old in (None, "", [], {}) or isinstance(old, (list, dict)):
+                keep[k] = v
+        return keep
+
+    def _update_existing_node(self, node_id: str, properties: Dict[str, Any]) -> None:
+        """Обогатить существующий узел с защитой свежести и штампами.
+
+        Общая точка для ОБОИХ путей попадания в существующий узел: попадание
+        в `_node_index` и находка сканом по бизнес-ключу (паритет с Neo4j
+        MERGE). Если бы guard стоял только в первой ветке, узлы, созданные
+        через create_node (предсозданная встреча), обновлялись бы слепо —
+        ровно тот дефект, который эта правка и закрывает.
+        """
+        existing = self.nx_graph.nodes[node_id]
+        src = self._normalize_source_date(
+            properties.get("_source_date")
+            or getattr(self, "_source_date", ""))
+        incoming = self._apply_freshness_guard(existing, properties)
+        # Паритет с Neo4j по ПУСТЫМ значениям. Ветка ON MATCH SET уже
+        # десятки версий не даёт пустому входящему затирать непустое поле
+        # (`WHEN $props.pk <> '' THEN … ELSE coalesce(n.pk, …)`), а NetworkX
+        # затирал: участник, пришедший из более свежей встречи без роли,
+        # обнулял роль, записанную ранее. Даты тут ни при чём — guard выше
+        # пропускает свежий источник целиком, — поэтому фильтр отдельный.
+        incoming = {
+            k: v for k, v in incoming.items()
+            if not (v in (None, "") and existing.get(k) not in (None, ""))
+        }
+        # Что реально меняется — нужно ниже, чтобы решить, поднимать ли
+        # ватермарк узла.
+        changed = any(existing.get(k) != v for k, v in incoming.items()
+                      if not k.startswith("_"))
+        existing.update(incoming)
+        existing["_updated_at"] = datetime.now(timezone.utc).isoformat()
+        # _source_date узла — самая поздняя из дат, которые РЕАЛЬНО ЧТО-ТО
+        # добавили узлу.
+        #
+        # Считать её просто максимумом всех виденных дат нельзя: ватермарк
+        # тогда поднимает любая свежая встреча, лишь упомянувшая сущность и
+        # ничего не сказавшая про её поля, — и следом законное обновление из
+        # встречи с промежуточной датой блокируется как «устаревшее».
+        # Сценарий: 2023 город=Chicago → 2025 упоминание без города поднимает
+        # ватермарк до 2025 → 2024 город=Boston отвергается, в памяти остаётся
+        # Chicago 2023 года. Ровно тот дефект, ради которого guard и писался.
+        if src and changed:
+            existing["_source_date"] = max(
+                src, self._normalize_source_date(existing.get("_source_date")))
+
     def _find_node_by_key(self, label: str, key_field: str, key_value: Any):
         """Найти узел по (label, key_field == key_value) полным проходом.
 
@@ -1773,8 +1874,9 @@ class GraphBuilder:
             # Проверяем существует ли узел
             if index_key in self._node_index:
                 node_id = self._node_index[index_key]
-                # Обновляем свойства
-                self.nx_graph.nodes[node_id].update(properties)
+                # Обновляем свойства — но старый источник не затирает
+                # значения, записанные более свежей встречей.
+                self._update_existing_node(node_id, properties)
             # Паритет с Neo4j MERGE: узел мог быть создан через
             # create_node() (pre-create узла встречи в knowledge_sync и в
             # ингесте) — тот пишет в граф напрямую, мимо _node_index.
@@ -1785,7 +1887,7 @@ class GraphBuilder:
             elif not additional_match and (
                     found := self._find_node_by_key(label, key_field, key_value)):
                 node_id = found
-                self.nx_graph.nodes[node_id].update(properties)
+                self._update_existing_node(node_id, properties)
                 self._node_index[index_key] = node_id
             else:
                 # Создаём новый узел
@@ -1795,9 +1897,24 @@ class GraphBuilder:
                 node_props = {
                     **properties,
                     "_label": label,
-                    "_key": str(key_value),
+                    # _key обязан совпадать с index_key[1], иначе после
+                    # перезагрузки графа из файла индекс восстанавливается под
+                    # ПРОСТЫМ ключом (_load_graph_from_file), а merge ищет по
+                    # составному — промах, и вместо обогащения создаётся ДУБЛЬ.
+                    # Для Entity это происходило всегда (_create_entities
+                    # передаёт additional_match={"entity_type": …}), из-за чего
+                    # защита свежести обходилась: старое и новое значение
+                    # оседали разными узлами.
+                    "_key": index_key[1],
                     "_created_at": datetime.now(timezone.utc).isoformat()
                 }
+                # Дата источника, из которого узел наполнен. Без неё
+                # сравнивать свежесть при следующем MERGE нечем.
+                _src = self._normalize_source_date(
+                    properties.get("_source_date")
+                    or getattr(self, "_source_date", ""))
+                if _src:
+                    node_props["_source_date"] = _src
 
                 # НОВОЕ: Добавляем поля для весов если флаг включён
                 try:
@@ -1852,25 +1969,49 @@ class GraphBuilder:
             match_str = ", ".join([f"{k}: ${k}" for k in match_props.keys()])
 
             node_id = self._stable_node_id(label, match_props)
-            # FIX: ON MATCH — не затираем непустые поля пустыми значениями
-            # ON CREATE — устанавливаем все свойства
-            # ON MATCH — обновляем только непустые
+            # Дата источника — та же, что в NetworkX-ветке. Без неё бэкенды
+            # разъезжаются: один конвейер отдавал бы на Neo4j устаревший факт,
+            # а на NetworkX свежий.
+            src = self._normalize_source_date(
+                properties.get("_source_date")
+                or getattr(self, "_source_date", ""))
+
+            # ON CREATE — все свойства.
+            # ON MATCH, по убыванию приоритета:
+            #   1) источник СТАРШЕ уже записанного и поле непустое → не трогаем
+            #      (защита свежести, симметрична _apply_freshness_guard);
+            #   2) входящее непустое → пишем;
+            #   3) иначе оставляем что было.
+            # Все три ветки вырождаются в прежнее поведение, когда $src пуст
+            # или у узла ещё нет _source_date, — то есть на данных без дат
+            # запрос ведёт себя ровно как до правки.
             props_set_parts = []
             for pk in properties.keys():
                 props_set_parts.append(
-                    f"n.{pk} = CASE WHEN $props.{pk} IS NOT NULL AND $props.{pk} <> '' THEN $props.{pk} "
+                    f"n.{pk} = CASE "
+                    f"WHEN $src <> '' AND coalesce(n._source_date, '') <> '' "
+                    f"AND $src < n._source_date "
+                    f"AND n.{pk} IS NOT NULL AND n.{pk} <> '' THEN n.{pk} "
+                    f"WHEN $props.{pk} IS NOT NULL AND $props.{pk} <> '' THEN $props.{pk} "
                     f"ELSE coalesce(n.{pk}, $props.{pk}) END"
                 )
-            on_match_set = ", ".join(props_set_parts) if props_set_parts else "n.updated_at = datetime()"
+            # _source_date узла — САМАЯ ПОЗДНЯЯ из виденных.
+            props_set_parts.append(
+                "n._source_date = CASE WHEN $src <> '' AND "
+                "$src > coalesce(n._source_date, '') THEN $src "
+                "ELSE coalesce(n._source_date, $src) END"
+            )
+            on_match_set = ", ".join(props_set_parts)
 
             query = f"""
             MERGE (n:{label} {{{match_str}}})
-            ON CREATE SET n.id = $node_id, n += $props
+            ON CREATE SET n.id = $node_id, n += $props, n._source_date = $src
             ON MATCH SET {on_match_set}, n.updated_at = datetime()
             RETURN n.id as id
             """
 
-            params = {**match_props, "props": properties, "node_id": node_id}
+            params = {**match_props, "props": properties,
+                      "node_id": node_id, "src": src}
 
             async with self.driver.session() as session:
                 result = await session.run(query, params)
