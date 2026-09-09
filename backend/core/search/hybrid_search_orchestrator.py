@@ -982,15 +982,34 @@ class HybridSearchOrchestrator:
         if index_bm25:
             self.bm25.add_document(doc_id, text, metadata)
 
-        # Векторная индексация
+        # Векторная индексация.
+        # doc_id передаётся ЧЕРЕЗ metadata["id"] — именно оттуда его берёт
+        # VectorIndexer.add_document (vector_indexer.py:849,
+        # `doc_id = metadata.get("id") or self._generate_id(...)`). Прежде
+        # здесь стоял именованный аргумент doc_id=, которого в сигнатуре
+        # add_document(text, metadata, access_group) нет: вызов давал
+        # TypeError, а except его гасил — ветка «индексировала» ноль векторов
+        # и молчала об этом. Ошибки теперь ещё и считаются в статистике,
+        # чтобы отказ было видно без чтения логов.
+        #
+        # Про приоритет, честно: в этом репозитории у index_document /
+        # index_documents_batch НЕТ ни одного живого вызова (единственные
+        # совпадения по grep — одноимённый метод другого класса,
+        # DocumentIndexer). То есть это гигиена перед тем, как ветку начнут
+        # использовать, а не починка отказа в проде.
         if index_vector and self.vector_indexer:
+            meta = dict(metadata or {})
+            meta.setdefault("id", doc_id)
             try:
                 await self.vector_indexer.add_document(
-                    doc_id=doc_id,
                     text=text,
-                    metadata=metadata
+                    metadata=meta
                 )
+                self.stats["vector_indexed"] = (
+                    self.stats.get("vector_indexed", 0) + 1)
             except Exception as e:
+                self.stats["vector_index_errors"] = (
+                    self.stats.get("vector_index_errors", 0) + 1)
                 logger.error(f"❌ Vector indexing error: {e}")
 
     async def index_documents_batch(
@@ -1016,16 +1035,24 @@ class HybridSearchOrchestrator:
         if index_bm25:
             indexed = self.bm25.add_documents_batch(documents)
 
-        # Vector batch (по одному, т.к. нужны embeddings)
+        # Vector batch (по одному, т.к. нужны embeddings).
+        # doc_id — через metadata["id"], как и в index_document выше: у
+        # add_document нет параметра doc_id, и прежний вызов падал TypeError
+        # на каждом документе пакета.
         if index_vector and self.vector_indexer:
             for doc_id, text, metadata in documents:
+                meta = dict(metadata or {})
+                meta.setdefault("id", doc_id)
                 try:
                     await self.vector_indexer.add_document(
-                        doc_id=doc_id,
                         text=text,
-                        metadata=metadata
+                        metadata=meta
                     )
+                    self.stats["vector_indexed"] = (
+                        self.stats.get("vector_indexed", 0) + 1)
                 except Exception as e:
+                    self.stats["vector_index_errors"] = (
+                        self.stats.get("vector_index_errors", 0) + 1)
                     logger.error(f"❌ Vector indexing error for {doc_id}: {e}")
 
         logger.info(f"📚 Indexed {indexed} documents in hybrid index")

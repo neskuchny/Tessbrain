@@ -1060,13 +1060,22 @@ class LLMRouter:
 
     def get_stats(self) -> Dict[str, Any]:
         """Получить объединённую статистику по всем провайдерам"""
+        # Токены в агрегате `total` появились по итогам разбора
+        # docs/ru/REVIEW_TZ_FIX_SEARCH_DEFECTS.md (задача 4): счётчики в
+        # клиентах ЗАПОЛНЯЮТСЯ (openai_client.py:132-137 и аналоги), но
+        # наверх не поднимались — здесь были только requests/errors/cost.
+        # Читавший `total` делал вывод, что учёта токенов нет вовсе.
         stats = {
             "providers": {},
             "health": {},
             "total": {
                 "requests": 0,
                 "errors": 0,
-                "estimated_cost": 0.0
+                "estimated_cost": 0.0,
+                "input_tokens": 0,
+                "cached_input_tokens": 0,
+                "output_tokens": 0,
+                "total_tokens": 0
             }
         }
 
@@ -1082,14 +1091,53 @@ class LLMRouter:
         for provider, client in self._clients.items():
             client_stats = client.get_stats()
             stats["providers"][provider.value] = client_stats
-            stats["total"]["requests"] += client_stats["requests"]["total"]
-            stats["total"]["errors"] += client_stats["requests"]["errors"]
-            # Парсим стоимость из строки
-            cost_str = client_stats["cost"]["actual"]
-            cost = float(cost_str.replace("$", ""))
+            req = client_stats.get("requests") or {}
+            stats["total"]["requests"] += int(req.get("total") or 0)
+            stats["total"]["errors"] += int(req.get("errors") or 0)
+
+            # Источник истины — СЫРЫЕ счётчики клиента (base.py:25-33): там
+            # числа. `get_stats()` их форматирует для показа, и парсить
+            # обратно строку "$0.001234" значит терять точность на ровном
+            # месте. К форматированному выводу обращаемся только как к
+            # запасному пути — для duck-typed клиентов без `.stats`.
+            raw = getattr(client, "stats", None) or {}
+            if raw:
+                stats["total"]["input_tokens"] += int(raw.get("total_input_tokens") or 0)
+                stats["total"]["cached_input_tokens"] += int(raw.get("cached_input_tokens") or 0)
+                stats["total"]["output_tokens"] += int(raw.get("output_tokens") or 0)
+                stats["total"]["total_tokens"] += (
+                    int(raw.get("total_input_tokens") or 0)
+                    + int(raw.get("cached_input_tokens") or 0)
+                    + int(raw.get("output_tokens") or 0))
+                stats["total"]["estimated_cost"] += float(raw.get("estimated_cost") or 0.0)
+                continue
+
+            toks = client_stats.get("tokens") or {}
+            stats["total"]["input_tokens"] += int(toks.get("input") or 0)
+            stats["total"]["cached_input_tokens"] += int(toks.get("cached") or 0)
+            stats["total"]["output_tokens"] += int(toks.get("output") or 0)
+            stats["total"]["total_tokens"] += int(toks.get("total") or 0)
+            # Разбор нарочно терпимый: один сбойный клиент не должен ронять
+            # сводку по всем остальным.
+            cost_str = str((client_stats.get("cost") or {}).get("actual", "0"))
+            try:
+                cost = float(cost_str.replace("$", "").replace(",", "").strip())
+            except (TypeError, ValueError):
+                logger.warning(
+                    f"⚠️ Не разобрана стоимость провайдера {provider.value}: "
+                    f"{cost_str!r} — считаем нулём")
+                cost = 0.0
             stats["total"]["estimated_cost"] += cost
 
-        stats["total"]["estimated_cost"] = f"${stats['total']['estimated_cost']:.6f}"
+        # estimated_cost остаётся ЧИСЛОМ: по нему считают и сравнивают.
+        # Форматированная строка живёт отдельным ключом — раньше она
+        # подменяла собой число, и стоимость нельзя было ни сложить, ни
+        # сравнить без обратного разбора.
+        # Округления здесь НЕТ намеренно: round(x, 6) обнулял суммы дешёвых
+        # вызовов (1.2e-7 → 0.0) — ровно ту точность, ради которой строку и
+        # заменили числом. Округляет только строка показа.
+        stats["total"]["estimated_cost_display"] = (
+            f"${stats['total']['estimated_cost']:.6f}")
 
         return stats
 
