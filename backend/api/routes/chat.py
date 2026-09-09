@@ -378,7 +378,22 @@ async def chat_completions(
                 namespace=user_id,
             )
             await _vector_indexer.connect()
-            reasoning_steps.append(f"   Векторный индекс: {_vector_indexer.get_stats().get('total_vectors', 0)} векторов")
+            # total_vectors есть ТОЛЬКО в memory-режиме
+            # (vector_indexer.py:1157 — `if not self.use_qdrant`). А Qdrant —
+            # режим по умолчанию: USE_QDRANT в env.example не задан, а
+            # qdrant-client стоит из requirements, поэтому в обычной установке
+            # ключа нет и прежний `.get(..., 0)` печатал «0 векторов» ВСЕГДА,
+            # даже на полном индексе. Показываем «н/д» вместо ложного нуля:
+            # считать по Qdrant пришлось бы сетевым запросом на каждую
+            # коллекцию, а это строка трассы рассуждений, не метрика.
+            # Замена ключа на vectors_created (как предлагалось) была бы хуже:
+            # это счётчик записей текущей индексации, он обнуляется на каждой
+            # встрече (vector_indexer.py:528).
+            _vec_total = _vector_indexer.get_stats().get("total_vectors")
+            reasoning_steps.append(
+                "   Векторный индекс: "
+                + (f"{_vec_total} векторов" if _vec_total is not None
+                   else "размер н/д (Qdrant)"))
 
             # Инициализируем LLM Router
             llm_router = LLMRouter()
