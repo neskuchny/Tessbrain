@@ -2407,6 +2407,28 @@ class GraphBuilder:
             properties.setdefault("created_at", datetime.now(timezone.utc).isoformat())
             properties.setdefault("updated_at", datetime.now(timezone.utc).isoformat())
 
+            # Дата ИСТОЧНИКА (_source_date) — паритет с путём MERGE.
+            # `created_at` для сравнения свежести не годится: это datetime.now()
+            # момента записи, у пакетной заливки одинаковый для всех встреч.
+            # Через create_node идут Knowledge и Chunk — самый крупный класс
+            # узлов; без этой строки защита свежести их не покрывала вовсе.
+            # Пустое значение не пишем: «нет даты» ≠ «дата пустая строка».
+            #
+            # Порядок источников важен. `properties["date"]` — собственная дата
+            # узла (по схеме она есть только у Meeting) — идёт ПЕРЕД партийной
+            # `self._source_date`: узел встречи создаётся до конвейера
+            # (scripts/ingest_data.py, scripts/seed_demo.py), когда партийная
+            # дата ещё от ПРЕДЫДУЩЕЙ встречи. Взять её здесь — проставить
+            # мартовской встрече апрельскую дату.
+            _src = self._normalize_source_date(
+                properties.get("_source_date")
+                or properties.get("date")
+                or getattr(self, "_source_date", ""))
+            if _src:
+                properties["_source_date"] = _src
+            else:
+                properties.pop("_source_date", None)
+
             # ═══ STEP 1b: data lineage (P7) ═══
             # env-gated (DATA_LINEAGE_ENABLED, default OFF) → пока не
             # включат, props не меняются. Обёрнуто — не может уронить

@@ -66,12 +66,23 @@ class IngestManager:
                 with open(file_path, "r", encoding="utf-8") as f:
                     content = f.read()
 
+                # Дата встречи: из префикса имени файла (2026-03-09_...),
+                # иначе — момент ингеста. Иначе весь корпус штампуется одним
+                # днём и таймлайн/темпоральные запросы врут.
+                date_match = re.match(r"(\d{4}-\d{2}-\d{2})", file_path.stem)
+                meeting_date = (date_match.group(1) if date_match
+                                else datetime.now().isoformat())
+
                 # 1. Index raw document
                 metadata = {
                     "source": "file",
                     "filename": file_path.name,
                     "path": str(file_path),
-                    "title": file_path.stem
+                    "title": file_path.stem,
+                    # Дата источника в payload: по ней датируется цитата в
+                    # ответе. `indexed_at`, который проставит add_document, —
+                    # время заливки и для этого не годится.
+                    "date": meeting_date,
                 }
                 await self.indexer.add_document(content, metadata, access_group)
 
@@ -79,13 +90,6 @@ class IngestManager:
                 # We treat every file as a "Meeting" node for now to reuse the pipeline,
                 # or create a special "Document" node logic.
                 # Let's reuse process_meeting but map it to Document logic later.
-
-                # Дата встречи: из префикса имени файла (2026-03-09_...),
-                # иначе — момент ингеста. Иначе весь корпус штампуется одним
-                # днём и таймлайн/темпоральные запросы врут.
-                date_match = re.match(r"(\d{4}-\d{2}-\d{2})", file_path.stem)
-                meeting_date = (date_match.group(1) if date_match
-                                else datetime.now().isoformat())
 
                 # Mock meeting structure
                 meeting_data = {

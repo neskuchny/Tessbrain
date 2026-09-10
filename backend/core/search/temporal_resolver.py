@@ -73,7 +73,8 @@ _REL: List[Tuple[re.Pattern, int]] = [
 
 def parse_anchor_date(s) -> Optional[datetime.date]:
     """Достать дату-якорь. Принимает: date/datetime, ISO 'YYYY-MM-DD[...]',
-    текст '21 August, 2022' / '3:57 pm on 21 August, 2022'. None, если не распознано."""
+    выгрузочные 'YYYY/MM/DD (Tue) 23:40' и 'YYYY.MM.DD', текст '21 August, 2022'
+    / '3:57 pm on 21 August, 2022'. None, если не распознано."""
     if s is None:
         return None
     if isinstance(s, datetime.datetime):
@@ -83,8 +84,10 @@ def parse_anchor_date(s) -> Optional[datetime.date]:
     s = str(s)
     if not s:
         return None
-    # ISO: 2022-08-21 или 2022-08-21T13:00:00
-    iso = re.match(r"\s*(\d{4})-(\d{2})-(\d{2})", s)
+    # ISO и его экспортные варианты: 2022-08-21, 2022-08-21T13:00:00,
+    # 2023/05/30 (Tue) 23:40 (выгрузки мессенджеров), 2023.05.30.
+    # Разделитель произвольный, но год идёт первым — двусмысленности нет.
+    iso = re.match(r"\s*(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})", s)
     if iso:
         try:
             return datetime.date(int(iso.group(1)), int(iso.group(2)), int(iso.group(3)))
@@ -163,9 +166,23 @@ def annotate(text: str, anchor: Optional[datetime.date]) -> str:
     return f"{text} (resolved date ≈ {_fmt(resolved)})"
 
 
-# поля метаданных, где может лежать дата-якорь источника (по приоритету)
-_ANCHOR_FIELDS = ("date", "meeting_date", "session_date", "decided_at", "created_at",
-                  "timestamp", "deadline", "indexed_at")
+# Поля метаданных, где может лежать дата ИСТОЧНИКА (по приоритету).
+#
+# Только даты события: когда встреча прошла, когда решение принято. НЕ время
+# обработки и НЕ будущие даты. Раньше список заканчивался на
+# `created_at`/`indexed_at`/`deadline`, и это молча ломало резолвинг на
+# продуктовых данных: у 480 из 500 фрагментов демо-корпуса не было ни одного
+# поля с датой встречи, зато `indexed_at` был у всех — якорем становился день
+# заливки. «Вчера» из мартовской встречи разрешалось во «вчера от дня
+# индексации». Отсутствие якоря честнее неверного: без него annotate()
+# возвращает текст байт-в-байт, а заголовок фрагмента остаётся без даты.
+_ANCHOR_FIELDS = ("date", "meeting_date", "session_date", "decided_at")
+
+# Поля времени ОБРАБОТКИ. Перечислены, чтобы не соблазняться ими как якорем:
+# ставятся datetime.now() в момент записи и к содержанию источника отношения
+# не имеют. `deadline` — дата будущая, для резолва прошлых выражений негодна.
+_PROCESS_TIME_FIELDS = ("created_at", "updated_at", "indexed_at", "extracted_at",
+                        "timestamp", "deadline")
 
 
 def anchor_from_metadata(metadata: Optional[dict]) -> Optional[datetime.date]:

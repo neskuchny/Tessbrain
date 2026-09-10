@@ -527,24 +527,35 @@ class VectorIndexer:
 
         self.stats = {"vectors_created": 0, "vectors_updated": 0, "errors": 0}
 
+        # Дата ВСТРЕЧИ — в payload каждого фрагмента, а не только карточки
+        # встречи. Без неё у фрагмента нет ни одного поля с датой источника:
+        # цитата в ответе выходит без даты, а temporal-резолвер остаётся без
+        # якоря. `indexed_at` рядом не считается — это время заливки.
+        meeting_date = str((meeting_metadata or {}).get("date", "") or "")
+
         try:
             # 1. Индексируем встречу
             await self._index_meeting(meeting_id, results, meeting_metadata, access_group)
 
             # 2. Индексируем решения
-            await self._index_decisions(results.get("decisions", []), meeting_id, access_group)
+            await self._index_decisions(results.get("decisions", []), meeting_id, access_group,
+                                        meeting_date)
 
             # 3. Индексируем задачи
-            await self._index_tasks(results.get("tasks", []), meeting_id, access_group)
+            await self._index_tasks(results.get("tasks", []), meeting_id, access_group,
+                                    meeting_date)
 
             # 4. Индексируем участников
-            await self._index_participants(results.get("participants", []), meeting_id, access_group)
+            await self._index_participants(results.get("participants", []), meeting_id, access_group,
+                                           meeting_date)
 
             # 5. Индексируем сущности
-            await self._index_entities(results.get("entities", []), meeting_id, access_group)
+            await self._index_entities(results.get("entities", []), meeting_id, access_group,
+                                       meeting_date)
 
             # 6. Индексируем KPI
-            await self._index_kpis(results.get("kpis", []), meeting_id, access_group)
+            await self._index_kpis(results.get("kpis", []), meeting_id, access_group,
+                                   meeting_date)
 
             # 7. Доменные события встречи в EventLog (MEMORY_DESIGN_PRINCIPLES §6 №4).
             # За флагом OFF → прежнее поведение. Best-effort: не роняем индексацию.
@@ -617,7 +628,8 @@ class VectorIndexer:
             payload=payload
         )
 
-    async def _index_decisions(self, decisions: List[Dict[str, Any]], meeting_id: str, access_group: str):
+    async def _index_decisions(self, decisions: List[Dict[str, Any]], meeting_id: str,
+                               access_group: str, meeting_date: str = ""):
         """Индексировать решения"""
         for d in decisions:
             decision_id = d.get("decision_id", "")
@@ -642,6 +654,7 @@ class VectorIndexer:
                 "risk_level": d.get("business_impact", {}).get("risk_level", "low"),
                 "responsible": d.get("responsible", {}).get("primary", ""),
                 "confidence": d.get("confidence", 0.8),
+                "date": meeting_date,  # дата встречи-источника, не время заливки
                 "indexed_at": datetime.now(timezone.utc).isoformat(),
                 "type": "decision",
                 "access_group": access_group # NEW
@@ -654,7 +667,8 @@ class VectorIndexer:
                 payload=payload
             )
 
-    async def _index_tasks(self, tasks: List[Dict[str, Any]], meeting_id: str, access_group: str):
+    async def _index_tasks(self, tasks: List[Dict[str, Any]], meeting_id: str,
+                           access_group: str, meeting_date: str = ""):
         """Индексировать задачи"""
         for t in tasks:
             task_id = t.get("task_id", "")
@@ -688,6 +702,7 @@ class VectorIndexer:
                 "assignee": assignee_name,
                 "deadline": deadline_date,
                 "confidence": t.get("confidence", 0.8),
+                "date": meeting_date,  # дата встречи-источника, не время заливки
                 "indexed_at": datetime.now(timezone.utc).isoformat(),
                 "type": "task",
                 "access_group": access_group # NEW
@@ -700,7 +715,8 @@ class VectorIndexer:
                 payload=payload
             )
 
-    async def _index_participants(self, participants: List[Dict[str, Any]], meeting_id: str, access_group: str):
+    async def _index_participants(self, participants: List[Dict[str, Any]], meeting_id: str,
+                                  access_group: str, meeting_date: str = ""):
         """Индексировать участников"""
         for p in participants:
             name = p.get("name", "")
@@ -727,6 +743,7 @@ class VectorIndexer:
                 "activity_level": p.get("activity_level", "medium"),
                 "sentiment": p.get("sentiment", "neutral"),
                 "meeting_ids": [meeting_id],  # Список встреч
+                "date": meeting_date,  # дата встречи-источника, не время заливки
                 "indexed_at": datetime.now(timezone.utc).isoformat(),
                 "type": "participant",
                 "access_group": access_group # NEW
@@ -739,7 +756,8 @@ class VectorIndexer:
                 payload=payload
             )
 
-    async def _index_entities(self, entities: List[Dict[str, Any]], meeting_id: str, access_group: str):
+    async def _index_entities(self, entities: List[Dict[str, Any]], meeting_id: str,
+                              access_group: str, meeting_date: str = ""):
         """Индексировать сущности"""
         for e in entities:
             entity_id = e.get("entity_id", "")
@@ -765,6 +783,7 @@ class VectorIndexer:
                 "importance": e.get("importance", "medium"),
                 "confidence": e.get("confidence", 0.8),
                 "meeting_ids": [meeting_id],
+                "date": meeting_date,  # дата встречи-источника, не время заливки
                 "indexed_at": datetime.now(timezone.utc).isoformat(),
                 "type": "entity",
                 "access_group": access_group # NEW
@@ -790,7 +809,8 @@ class VectorIndexer:
         except Exception as e:
             logger.debug(f"cross-source mentions ingestion skipped (non-critical): {e}")
 
-    async def _index_kpis(self, kpis: List[Dict[str, Any]], meeting_id: str, access_group: str):
+    async def _index_kpis(self, kpis: List[Dict[str, Any]], meeting_id: str,
+                          access_group: str, meeting_date: str = ""):
         """Индексировать KPI"""
         for k in kpis:
             kpi_id = k.get("kpi_id", "")
@@ -824,6 +844,7 @@ class VectorIndexer:
                 "trend_direction": direction,
                 "confidence": k.get("confidence", 0.8),
                 "meeting_id": meeting_id,
+                "date": meeting_date,  # дата встречи-источника, не время заливки
                 "indexed_at": datetime.now(timezone.utc).isoformat(),
                 "type": "kpi",
                 "access_group": access_group # NEW

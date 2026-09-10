@@ -1306,22 +1306,37 @@ class EnhancedSearchOrchestrator:
             # текст — модель не путает «дата − смещение» (замер: temporal 0.20→0.60,
             # docs/ru/BENCHMARK_PUBLIC_LOCOMO_HOTPOT.md). Недеструктивно: при отсутствии
             # выражения/даты текст байт-в-байт. Best-effort, не роняет сборку.
-            if text and getattr(self, "_answer_mode", None):
+            # Дата источника нужна ДВАЖДЫ и по разным поводам, поэтому
+            # считается до ветвления по флагу: (1) в заголовке фрагмента —
+            # всегда, чтобы цитата в ответе была датирована; (2) как якорь
+            # резолвера относительных дат — только под флагом.
+            _anchor = None
+            try:
+                from backend.core.search.temporal_resolver import (
+                    anchor_from_metadata,
+                )
+                _anchor = anchor_from_metadata(metadata)
+            except Exception:
+                logger.debug("anchor date skipped", exc_info=True)
+
+            if text and _anchor is not None and getattr(self, "_answer_mode", None):
                 try:
-                    from backend.core.search.temporal_resolver import (
-                        anchor_from_metadata,
-                    )
                     from backend.core.search.temporal_resolver import (
                         annotate as _annotate_dates,
                     )
-                    _anchor = anchor_from_metadata(metadata)
-                    if _anchor is not None:
-                        text = _annotate_dates(text, _anchor)
+                    text = _annotate_dates(text, _anchor)
                 except Exception:
                     logger.debug("temporal resolver skipped", exc_info=True)
 
             if text and len(text.strip()) > 10:
                 source_header = f"[{doc_type}] {title}"
+                # Дата источника прямо в заголовке фрагмента. Без неё модель
+                # физически не может датировать цитату: в контекст уходил
+                # только тип, заголовок и название встречи, и ответ выходил
+                # с «[Unknown]» без даты. Пишем ISO — она же формат хранения,
+                # и её нельзя спутать с датами внутри текста.
+                if _anchor is not None:
+                    source_header += f" ({_anchor.isoformat()})"
                 # Показываем название встречи вместо ID
                 if meeting_title:
                     source_header += f" (встреча: {meeting_title})"

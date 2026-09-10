@@ -383,7 +383,8 @@ class KnowledgeExtractionOrchestrator:
 
             # Сохраняем в граф
             if self.graph_builder:
-                await self._save_to_graph(meeting_id, results, transcript)
+                _mdate = str((context or {}).get("date", "") or "")
+                await self._save_to_graph(meeting_id, results, transcript, _mdate)
 
             return results
 
@@ -868,7 +869,8 @@ class KnowledgeExtractionOrchestrator:
             return []
 
     async def save_extracted(self, meeting_id: str, results: Dict[str, Any],
-                             transcript: Optional[str] = None) -> None:
+                             transcript: Optional[str] = None,
+                             meeting_date: str = "") -> None:
         """Персист УЖЕ извлечённых знаний — без единого LLM-вызова.
 
         Для досейки из дампов (scripts/seed_demo.py): extract-фазы стоят
@@ -876,9 +878,10 @@ class KnowledgeExtractionOrchestrator:
         векторы — чистая. llm_router при этом не нужен (__init__ допускает
         None), нужны только graph_builder/vector_indexer.
         """
-        await self._save_to_graph(meeting_id, results, transcript)
+        await self._save_to_graph(meeting_id, results, transcript, meeting_date)
 
-    async def _save_to_graph(self, meeting_id: str, results: Dict[str, Any], transcript: Optional[str] = None):
+    async def _save_to_graph(self, meeting_id: str, results: Dict[str, Any],
+                             transcript: Optional[str] = None, meeting_date: str = ""):
         """Сохраняет извлечённые знания в граф и индексирует в векторное хранилище."""
         saved_count = 0
         indexed_count = 0
@@ -912,7 +915,10 @@ class KnowledgeExtractionOrchestrator:
                                 "index": chunk["index"],
                                 "char_start": chunk["char_start"],
                                 "char_end": chunk["char_end"],
-                                "source_meeting_id": meeting_id
+                                "source_meeting_id": meeting_id,
+                                # Дата встречи, а не время обработки: по ней
+                                # MERGE решает, чьё значение свежее.
+                                "_source_date": meeting_date,
                             }
                         )
 
@@ -947,7 +953,10 @@ class KnowledgeExtractionOrchestrator:
                                 "confidence": item["confidence"],
                                 "importance": item["importance"],
                                 "tags": item["tags"],
-                                "extracted_at": item["extracted_at"]
+                                "extracted_at": item["extracted_at"],
+                                # `extracted_at` — время прогона; для защиты
+                                # свежести при MERGE нужна дата встречи.
+                                "_source_date": meeting_date,
                             }
                         )
 
@@ -1001,6 +1010,9 @@ class KnowledgeExtractionOrchestrator:
                                     "category": item["category"],
                                     "title": item["title"],
                                     "meeting_id": meeting_id,
+                                    # Без даты фрагмент цитируется без даты, а
+                                    # temporal-резолвер остаётся без якоря.
+                                    "date": meeting_date,
                                     "confidence": item["confidence"],
                                     "importance": item["importance"],
                                     "tags": item.get("tags", [])

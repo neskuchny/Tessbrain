@@ -88,6 +88,10 @@ async def seed(corpus: str, group_override: str = None) -> int:
                     "filename": payload.get("source_file", fp.stem),
                     "path": payload.get("source_file", fp.stem),
                     "title": meeting.get("title", fp.stem),
+                    # Дата встречи — чтобы цитата из транскрипта была
+                    # датирована; add_document проставит рядом ещё и
+                    # indexed_at, но это время заливки, а не источника.
+                    "date": meeting.get("date", ""),
                 }, group)
 
             # 2. Узел встречи — до записи, конвенцией capture-пути
@@ -123,7 +127,8 @@ async def seed(corpus: str, group_override: str = None) -> int:
             #    оркестратор работал без graph_builder.
             ke = results.get("knowledge_extraction") or {}
             if ke.get("total_extracted"):
-                await knowledge_saver.save_extracted(meeting["id"], ke, text)
+                await knowledge_saver.save_extracted(
+                    meeting["id"], ke, text, meeting.get("date", ""))
             ok += 1
     finally:
         await graph.close(save=True)
